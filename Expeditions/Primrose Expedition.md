@@ -6,11 +6,8 @@ Soul Seed: air aspect
 Finale: Saddam Sayed, Sultan of the Sky
 Journey Date: 2022-05-04
 ---
-
 Expedition to [[Primrose]].
-
 ## Expedition Log
-
 Efforts to reclaim Primrose are complete. The city had been buried under the dunes of the desert, and conventional reclamation was mostly out of the question, but it was entirely possible that some buildings may have survived and could be dug into. Trella's Travelers constructed the Oasis Seeker for this purpose - an alchemical scorpion mech that would be able to dig into the desert while crystallizing the sand left in its wake to prevent cave-ins.
 
 The journey was tumultuous and risky, with the Oasis Seeker threatening to fall apart at multiple points throughout the journey, but the Covalonians eventually reached Primrose and managed to bore into its underground sewer system known as the Ratways… or so they thought.
@@ -26,27 +23,16 @@ Thankfully, we were able to defeat Saddam Syed, Sultan of the Sky before his pla
 ![Al-Fazim's Letter.|380](https://raw.githubusercontent.com/covalon/covalon-guide/gh-pages/assets/covalon/PlayersGuide/ExpeditionLog/Letter_from_Al-Fazim.webp)
 
 ![Covalon's outpost under Duneveil. Designed by Sheas.|455](https://raw.githubusercontent.com/covalon/covalon-guide/gh-pages/assets/covalon/PlayersGuide/ExpeditionLog/PrimroseOutpost.webp)
-
 ## Base Camp
-
 *Summary to come.*
-
 ## Missions
-
 ### Mission A
-
 *Summary to come.*
-
 ### Mission B: Playing Politics
-
 *Summary to come.*
-
 ### Mission C
-
 *Summary to come.*
-
 ## Finale
-
 **Boss:** Saddam Sayed, Sultan of the Sky
 
 *Summary to come.*
@@ -74,5 +60,4 @@ Thankfully, we were able to defeat Saddam Syed, Sultan of the Sky before his pla
 > - Violeta (Sorcerer 12)
 
 ## Soul Seed
-
 Completing the finale unlocks the **Air aspect** for your Soul Seed (see Table 3-2 and 3-3 in the [[Chapter 3 - Covalon Gameplay#Soul Seeds|Player's Guide]]).

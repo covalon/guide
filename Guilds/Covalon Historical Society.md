@@ -13,7 +13,6 @@ Goals: Record Covalon's history, catalogue and preserve items from before the ca
 Values: Discovery, recovery, study, preservation.
 Anathema: Damage or deface an item of interest, destroy a source of knowledge, place personal financial gain over the preservation of history.
 ---
-
 A guild dedicated to preserving Covalon's history.
 
 ![Covalon Historical Society Guild Heraldry. Designed by Zoe.|250](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/Guilds/CovalonHistoricalSociety.png?raw=true)

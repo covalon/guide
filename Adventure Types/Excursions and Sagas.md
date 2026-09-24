@@ -5,13 +5,9 @@ Order: 5
 Duration: 3-4 hours
 Description: An adventure that is part of a narratively connected set of missions called a Saga.
 ---
-
 ## For Players
-
 Excursions are a special game type that features up to three connected Excursion missions in a narrative arc called a Saga. Each Saga takes place in the vicinity of one of the Expedition camps Covalon has reclaimed. Each Excursion can last up to one in game day, and may feature recurring locations, characters, and plot lines. They also are a little tougher than the standard dungeon! As Excursions feature connected narratives, the GM will quickly summarize the story so far at the beginning of a connected Excursion mission.
-
 ## For GMs
-
 In Excursions, players explore areas surrounding liberated Expedition locations in an in-world effort to maintain security of settlements and build goodwill with nearby survivors. In contrast to dungeons, these adventures feature some narrative continuity, longer adventuring days, and a larger experience budget."Excursion" refers to one mission in a set of up to three narratively linked sessions. This set of sessions is called a "Saga" or "Excursion Saga."
 
 Each Excursion in a Saga should last between 3 and 4 hours, but not more than 4, and each Saga must include between 1 and 3 Excursions lasting up to 1 day in-world. Excursions have no effect on Downtime activities, and GMs are not required to run Excursions in a given Saga for the same group or tier. Excursions can only be run in previous Expedition locations that have been completed.

@@ -26,7 +26,6 @@ Cleric Spells:
 - '4th: translocate'
 - '5th: synesthesia'
 ---
-
 Self-proclaimed prince of everything that is, was, and will be fun in this world, Peko-Amuzo is the "son" of a terrifying amount of different fiends. Or so he says. How he was conceived remains a mystery, but this amalgamation of different kinds of evil has made him mighty and utterly chaotic — so much so that his power steadily decreases whenever he isn't entertained.
 
 That is the reason why he enjoys creation so much: there's always something new and exciting to make! While he may seem somewhat reasonable or even helpful at first, it turns out that he only gives his knowledge to those who will either entertain him greatly, or who simply have ill intent and will cause trouble.

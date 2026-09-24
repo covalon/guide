@@ -24,7 +24,6 @@ Cleric Spells:
 - '4th: mountain''s resilience'
 - '7th: contingency'
 ---
-
 One of the eldest gods known to civilization, Kujani believes that he and his fellow divines have no more authority over souls than mortals do. Although he participated in the creation of mortal life, Kujani abandoned his children shortly after, leaving them with nothing but a decree that they should live to improve themselves for their own sakes, and a promise that he would free them in the afterlife for doing so. Kujani has never answered a prayer, performed any miracles, or attempted to reach out to his followers in any way (beyond his last decree), believing mortal autonomy to be more sacred than his own power and influence.
 
 His clerics do not draw their powers directly from Kujani, but from a wellspring inside themselves that Kujanite philosophy unlocks. It is said than when a mortal dies, their soul stands before Kujani as he administers final judgment. Souls who dedicated their lives to the development of mortalkind are awarded eternal freedom from the whims of the gods, while souls who consigned themselves to divine enslavement are abandoned by Kujani, to be fought over by the other deities.

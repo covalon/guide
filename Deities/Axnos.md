@@ -26,7 +26,6 @@ Cleric Spells:
 - '3rd: hypercognition'
 - '7th: retrocognition'
 ---
-
 Axnos teaches that every crumbling monument and weathered relic holds a story waiting to be unveiled, a window into the past that illuminates the present and future. They serve as a patron deity for explorers and scholars, drawing a particularly devoted following among archaeologists and anthropologists. While Axnos' followers would never hesitate to extoll the virtues of study and the reading of history, Axnos is most pleased when their followers take to the field, hold the holy artifacts of civilizations in their hands, partake in the rituals of those unlike themselves, and stand in the ruins that once housed heroes of an era.
 
 To read about the past is one thing, but to partake directly in it grants a knowledge of how much one shares in common with their forbearers that a book could never impart. This pursuit of the past also serves to humble many of Axnos' followers and reminds themselves they are a small footnote in the grand tapestry of civilization. In the same way they study the artifacts of the past, someone in the future may study the iconography and rituals they hold dear today. Axnos' holy symbol depicts an hour glass surrounded by a serpent devouring its own tail.

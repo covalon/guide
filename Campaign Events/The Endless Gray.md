@@ -6,9 +6,7 @@ Aliases:
 Event Type: multitable event
 Date: '2024-02-24'
 ---
-
 > [!info] Heroes of The Endless Gray
->
 > The following characters were the vanguard who fought against Captain Laurent Devreaux to defend the Heart of Terra.
 >
 > - Arto Applefield
@@ -65,7 +63,6 @@ Date: '2024-02-24'
 > - 澶安处 (Chan An Chu)
 
 ## Multitable Event: February 24th, 2024
-
 It was a clear, cool winter morning the day an unidentifiable metal orb crashed into the Ikouga outpost. Shortly after, we began to recover them from adventures across Elleaterra. They carried messages in an unknown language, but our skilled linguists eventually deciphered a series of messages: HELLO ANYBODY OUT THERE, WHO IS LEFT ALIVE, WE ARE IN THE SEA, WHO ARE YOU, and finally, WHAT IS COVALON. It became clear these orbs were somehow gathering information from us, and returning a signal to whatever, or whoever sent them.
 
 Unforunately, we discovered these strangers were not friends when we intercepted a transmission. A pirate captain addressing his crew - they had learned of Covalon's existence, the artifact that allows our survival after the Catclysm, and they wanted it for themselves. We've used the Heart of Terra's power to spread across Elleaterra and reclaim the continent by planting its saplings, but these outposts were now a vulnerability. And so we began to fortify.

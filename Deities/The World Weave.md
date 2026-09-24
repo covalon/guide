@@ -27,7 +27,6 @@ Cleric Spells:
 - '4th: elemental gift'
 - '7th: energy aegis'
 ---
-
 The World Weave represents an animistic respect of the six elements and the awareness that they are the foundation of the world as we know it. It did not start as a deity - its followers would offer their shrines and prayers to the world at large, to spirits as small as a leaf in the wind to the grandest of storms. But some sought to put name to the concept of the elements, to truly symbolize them, and from that, six greater aspects were born. Not all agree with the existence of these 'greater aspects', while others claim to know these aspects by more intimate names.
 
 - **The Blazekeeper:** Igniting fervor in the hearts of mortals, they are the crackling symphony of a roaring wildfire and the hiss of smoldering embers, embodying the flame of passion that consumes both in fury and in ardor.

@@ -282,7 +282,7 @@ def figures(text):
 
 # ------------------------------------------------------------------ chapter navigation
 GUIDES = ["📍 Covalon Player's Guide", "📍 Covalon GM's Guide"]
-CHAPTER = re.compile(r"(?m)^# (.+)\n\n!\[\[([^\]|#]+)\]\]")
+CHAPTER = re.compile(r"(?m)^# (.+)\n+!\[\[([^\]|#]+)\]\]")
 NAV = {}  # chapter note name -> (guide note name, [(heading, chapter note name), ...], index)
 for g in GUIDES:
     if g in notes:

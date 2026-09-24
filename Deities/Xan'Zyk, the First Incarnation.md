@@ -32,7 +32,6 @@ Cleric Spells:
 - '8th: summon archmage'
 - '9th: phantasmagoria'
 ---
-
 When the first spell was uttered and the first runes were cast it created neither fire nor force; it created Xan’Zyk. The first incantation entered the world in an avalanche of magic so potent that the spell itself gained sentience and divinity. Xan’Zyk, named after the first two syllables of that first spell, is the pursuit of magical power incarnate. They seek only to see magic used, just as content to see a fireball engulf a town square as a lich disintegrated to ash.
 
 All spells are prayers to Xan’Zyk, expanding their power. They are depicted as an ornate magical sigil or a spellbook shimmering with prismatic light. Xan’Zyk accepts the worship of any who can cast spells of their own power. Legends claim that should the entirety of the incantation which birthed Xan’Zyk be uttered once more, they along with all spells which have followed them would be undone.

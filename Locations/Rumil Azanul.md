@@ -9,7 +9,6 @@ Guild Headquarters of:
 Roleplay Channel:
 - "[🏔 Rumil Azanul](https://discord.com/channels/802423566196539412/1443102719958061229)"
 ---
-
 Nestled in the hills of the north gate district, an awe-inspiring monument stands tall . Behold Rumil Azanul, the Mountain Home both in name and purpose. This great hall symbolizes the alliance of the surviving dwarven clans, united to rebuild and preserve the ancient customs and artisnal crafts of thier people.
 
 A visit to Rumil Azanul immerses you in the rich tapestry of traditional dwarven architecture. Greeting you at its entrance is a life-sized marble sentinel, a tribute to an Ironbeard warrior from Whitespire. As you step inside, the lofty arched corridors unfold, adorned with vivid frescoes narrating the epic sagas of dwarven history and showcasing recent triumphs against formidable adversaries. \

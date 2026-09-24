@@ -27,7 +27,6 @@ Cleric Spells:
 - '4th: weapon storm'
 - '7th: fiery body'
 ---
-
 The Forge Matron appears as a tall, strong woman with goat like legs, and is said to live deep underneath a volcano, eternally perfecting her craft. Legendary tales say the strongest of all magical swords, armors, and other armaments are smelted under her blessing. Originally worshipped by mountain dwelling dwarves, Nimane grew in popularity due to the craftsmanship and skill of her followers.
 
 Now, her worshippers include all races of blacksmiths and craftsmen who value the quality of their work above all else, particularly those who specialize in weapons and armor. You can be sure a smith who worships the Forge Matron will deliver your money's worth.

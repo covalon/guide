@@ -24,5 +24,4 @@ Cleric Spells:
 - '4th: mountain resilience'
 - '7th: planar palace'
 ---
-
 Heleniel is a beacon of hope for those who have lost all. She protects the weak and absent, and encourages her faithful to fulfill their duty in doing the same. She represents balance and justice. She is a favorite of those with little means, and is at the heart of new civilizations and their expansion. Her symbol is an eye and a bleeding dagger.

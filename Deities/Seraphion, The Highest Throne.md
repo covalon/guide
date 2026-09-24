@@ -24,7 +24,6 @@ Cleric Spells:
 - '4th: chromatic ray'
 - '6th: wall of metal'
 ---
-
 The prince fretting over his upcoming betrothal, the noble diligently hearing the pleas of their subjects, and the queen charging to battle - all do so at the whim of Seraphion’s divine decree. Deity of opulence, gems, and nobility, Seraphion teaches that those in power must wield it with wisdom and grace.
 
 From their shining throne at the apex of The Resplendent Court, Seraphion garbs themselves in glittering gems and golden robes; the perfect depiction of noble bearing. while this opulence allows them to shine bright above their subjects, it is also a reminder of the weight of responsibility those in power must bear. Each gem reflects the dreams of their faithful and each carefully woven thread, the destiny of a nation.

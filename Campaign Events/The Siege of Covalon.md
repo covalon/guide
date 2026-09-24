@@ -4,9 +4,7 @@ Tags:
 Event Type: multitable event
 Date: '2021-07-17'
 ---
-
 > [!info] Heroes of Operation Siege Breaker
->
 > The following characters were the vanguard who broke the undead dracolich.
 >
 > - Kor Ironstar
@@ -60,7 +58,6 @@ Date: '2021-07-17'
 > - Zephra
 
 ## Multitable Event: July 17, 2021
-
 When Covalon's walls were young and untested there came a time where dark clouds formed on the desert horizon. Day after day the darkness grew, hungrily eating at sky. Scouts told of purple lightning balling and piercing through the roiling clouds as anguished cries echoed from the maw's chasm. While as yet unaware of what this foretold, the adventurers of Covalon set to prepare in the best ways they knew how.
 
 Each did as they could. Some produced bandages and medicines, blacksmiths forged armor and sharpened weapons, and the bookish sought to uncover the secrets of the vile sorcery that had begun to blot out the sun over their heads. A keening wind brought news of undeath walking the dunes as nightmares plagued Covalon's dreamers.

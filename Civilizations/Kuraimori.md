@@ -18,7 +18,6 @@ Geography: eastern, coastlands, massive mushroom stalks, juniper & cherry blosso
 Fate: engulfed in searing holy energy, consuming the area into blinding light
 Covalon Status: unexplored
 ---
-
 Kuraimori (or 暗い森), the empire that never shun sunlight, illuminated its glorious lands with lanterns, glowing mushrooms and vibrant cherry blossoms. It was a civilization that never feared death, for the people shared a spiritual connection with those who have passed on and allowed them to live in harmony with their ancestors and loved ones. Many festivals were created to honor the dead, crafting handmade paper lanterns and letting them float down the ocean to pay respects.
 
 Those with sunlight sensitivity or preferred the shadows often found peace in Kuraimori for the daytime never came, relying on only the illumination of its natural surroundings to see the path ahead. Languages such as Necril and Shadowtongue were commonly spoken but Common remained most used for the diversity of people who found home in Kuraimori. Fashion and beauty was heavily adored, the citizens of the Dark Empire would tailor and create vibrant outfits such as kimonos, hanboks, hakamas and more.

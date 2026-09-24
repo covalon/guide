@@ -24,5 +24,4 @@ Cleric Spells:
 - '3rd: perseis'' precaution'
 - '7th: contingency'
 ---
-
 Gunvald is one of the first gods and a somewhat enigmatic figure. He is the god concerned with the formalities of war—especially treaties, and sacrificed his hand for humanity's future.

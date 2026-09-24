@@ -4,9 +4,7 @@ Tags:
 Event Type: multitable event
 Date: '2025-06-28'
 ---
-
 > [!info] Heroes of Secrets of the Heart
->
 > The following characters were the vanguard who fought against the Undying Hskarren Queen and her council.
 >
 > - Aerin Velika
@@ -71,7 +69,6 @@ Date: '2025-06-28'
 > - Yit
 
 ## Multitable Event: June 28th, 2025
-
 After overcoming the Maw Vessel in Varceta, at great cost to Covalon, the Heart of Terra began to weaken. Covalonians sensed its distress, and interpreted a message from the Heart: NORTH LIFEBRINGER XORIA QUEEN DANGER. Those present around the artifact was a vision of an individual trudging through the snow, carrying something precious. Using this information, we were able to go through Pre-Cataclysm records, which made our path forward clear. The Heart of Terra was recovered from an archaeological dig in the far northern reaches of Pudersno, from a place we believed to be called "Xoria."
 
 We journeyed north, using the airship *Sleipner*, and discovered the ruins of an ancient civilization of ant like humanoids. Over the coming months, as the Heart continued to weaken, we mapped and explore the depths of the city. We catalogued ancient items, called upon the ghosts of those long dead, snuck past ancient constructs, and finally found that an atifact eerily similar to the Heart of Terra was still sheltered in the Queen's Vault - Lifebringer.

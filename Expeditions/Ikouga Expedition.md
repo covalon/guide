@@ -6,11 +6,8 @@ Soul Seed: water aspect
 Finale: Scylladon
 Journey Date: 2022-01-09
 ---
-
 Expedition to [[Ikouga]].
-
 ## Expedition Log
-
 Efforts to reclaim Ikouga are complete! Thanks to the contributions of Kelani Snowdrop and other citizens, Covalon was able to construct a galley and a large number of feather tokens (fan) to propel them across the windless ocean of the Noctune Tropic. Dubbed The North Star, adventurers boarded the Trella-themed vessel with starry eyes, eager to see what awaited them in Ikouga.
 
 On the last leg of the journey, disaster struck. The ship was attacked by an unseen creature below the waves of the ocean, and the ship crashed onto the city's beach. Luckily, everyone survived, and a base camp was erected on Ikouga's docks. A portal has been created between the base camp at Ikouga and Covalon, and the North Star was repaired, rehabilitated, and sailed home to be the guild hall of the newly created guild Trella's Travellers.
@@ -22,27 +19,16 @@ While exploring Ikouga and the surrounding islands, adventurers managed to unrav
 Scylladon was defeated by a bold contingent of Covalonians who targeted the creature's vulnerable tentacles instead of its heavily armored body. Since the creature's defeat and the destruction of the Maw Vessel, the wind has returned to Ikouga, which may allow civilization to flourish there once again.
 
 ![Covalon's outpost in Ikouga. Designed by Sheas.|470](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/ExpeditionLog/IkougaOutpost.webp)
-
 ## Base Camp
-
 *Summary to come.*
-
 ## Missions
-
 ### Mission A
-
 *Summary to come.*
-
 ### Mission B: Investigate the Goop
-
 *Summary to come.*
-
 ### Mission C
-
 *Summary to come.*
-
 ## Finale
-
 **Boss:** Scylladon
 
 *Summary to come.*
@@ -64,5 +50,4 @@ Scylladon was defeated by a bold contingent of Covalonians who targeted the crea
 > - Stellarys Amaris (Sorcerer 12)
 
 ## Soul Seed
-
 Completing the finale unlocks the **Water aspect** for your Soul Seed (see Table 3-2 and 3-3 in the [[Chapter 3 - Covalon Gameplay#Soul Seeds|Player's Guide]]).

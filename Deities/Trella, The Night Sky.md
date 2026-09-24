@@ -29,5 +29,4 @@ Cleric Spells:
 - '4th: translocate'
 - '6th: blanket of stars'
 ---
-
 Trella is a lesser-known deity of thoughtful travel. She encompasses the inky black and starlight of the night sky. Trella provides navigation for the lost. Her guidance directs travelers and enlightens minds. Her moving the moon and stars in the sky remind us to move and explore existence. Her celestial patterns provide insight into the future directions of the world. Worshippers of Trella come from many walks of life but all have a thirst for exploration and self-improvement.

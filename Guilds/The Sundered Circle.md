@@ -16,7 +16,6 @@ Goals: Collect arcane lore, teach prospective arcanists magic, research new arca
 Values: Knowledge, power, discovery, innovation
 Anathema: Leave arcane knowledge that you find, destroy a source of arcane knowledge, give up your ability to prepare arcane spells
 ---
-
 A convocation of mages determined to expand and restore Covalon's knowledge of arcane magic.
 
 ![The Sundered Circle Guild Heraldry.|350](https://raw.githubusercontent.com/covalon/covalon-guide/refs/heads/gh-pages/assets/covalon/PlayersGuide/Guilds/sundered%20circle%20guild%20heraldry.png)

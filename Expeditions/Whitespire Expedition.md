@@ -6,11 +6,8 @@ Soul Seed: forge aspect
 Finale: The Stonewyrm
 Journey Date: 2026-03-19
 ---
-
 Expedition to [[Whitespire]].
-
 ## Expedition Log
-
 Covalon reclaimed Whitespire from the grasp of the Maw! Our efforts began with the restoration of the drill that dug the way to Gornlar, the Den Mother. We trekked on foot from our Drifthaven camp, narrowly avoiding hordes of undead and then drilled through the mountains to Whitesmouth.
 
 As we approached Whitespire proper, we found more and more shattered humanoid statues. In the city, we located and saved a petrified dwarven elder of the Stoneheart clan. Morag Stoneheart, history keeper from an ancient Dwarven clan, told us his tale. When the city fell to the unstoppable draconic horde, many fled into the catacombs below. But these long forgotten tunnels held their own danger - a petrification gas emanating from the lowest tunnels. The source of both dangers turned out to be a legendary beast.
@@ -18,27 +15,16 @@ As we approached Whitespire proper, we found more and more shattered humanoid st
 The Stonewyrm was trapped beneath Whitespire long, long ago, and somehow during the Cataclysm was corrupted by the Maw. Our finest adventurers searched the Catacombs for a way to slay the beast. We gathered precious metals, and smithed them in ancient dwarven forges, while keeping our camp safe from the horde above. We prepared the Den Mother for a final voyage to destroy yet another vessel of the Maw.
 
 Our bravest fighters delved below, and slew the beast in its adamantine lair. With the monster defeated, the draconic horde above is broken, and Whitespire saved from its clutches.
-
 ## Base Camp
-
 *Summary to come.*
-
 ## Missions
-
 ### Mission A
-
 *Summary to come.*
-
 ### Mission B
-
 *Summary to come.*
-
 ### Mission C
-
 *Summary to come.*
-
 ## Finale
-
 **Boss:** The Stonewyrm
 
 *Summary to come.*
@@ -66,5 +52,4 @@ Our bravest fighters delved below, and slew the beast in its adamantine lair. Wi
 > - Father Bauldric (Cleric 12)
 
 ## Soul Seed
-
 Completing the finale unlocks the **Forge aspect** for your Soul Seed (see Table 3-2 and 3-3 in the [[Chapter 3 - Covalon Gameplay#Soul Seeds|Player's Guide]]).

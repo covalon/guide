@@ -26,7 +26,6 @@ Cleric Spells:
 - '3rd: secret page'
 - '4th: rewrite memory'
 ---
-
 Once long ago, there was an angel named Seruline, made by a god of truth and compassion, revered by many. Seruline was kind and fair and always sought the truth in everything. As her kindness spread though, her shadow grew, and as she grew stronger so too did her shadow. Finally, on a celebration of this angel, her shadow rose up and consumed her, trapping her in magical bindings before her followers.
 
 In desperation, the god that created Seruline offered a deal to the shadow to release her in exchange for anything the god could provide, but the shadow had learned all the angel did, and with a simple trick changed the deal with the god, gaining all their power and consuming the pair. From that day Mendastarum became a god to devour all knowledge, replacing it with deception and misinformation.

@@ -25,7 +25,6 @@ Cleric Spells:
 - '2nd: speak with animals'
 - 7th true target
 ---
-
 "The Great Spirits" refers to an ancient deity whose name has long been forgotten. The practice of worshiping them is referred to as "walking the path" and is most common in tribal communities, with animists, and ancestral worship that venerates the wisdom of those who have passed. Those who dedicate themselves to walking the path see themselves as indistinguishable from the flora and fauna around them, and are therefore one with their ancestors buried in the lands on which they live.
 
 Since the Cataclysm, the survivors of those who walk the path have dedicated themselves to restoring the world to its natural balance and the return of others to their rightful ancestral lands.

@@ -29,7 +29,6 @@ Cleric Spells:
 - '2nd: false vitality'
 - '5th: wall of stone'
 ---
-
 Often depicted as a soldier armored in skulls and bones and a sword with his blade between his feet, Unmortus is revered as the god of eternal vigilance and the one who never fell. Long ago, in the beginnings of civilization, he was worshipped as a god of protection and the homeland and the protector of the heavens.
 
 He was restless and unyielding to his duty to the heavens, right until his unfortunate demise against a forgotten enemy. However, from his death, he rose again and kept his watch in unlife. Unfortunately, due to his new undead nature, his name fell into obscurity, with only a few nations knowing of him. Regardless, he keeps his vigil, even if the gods or mortals he protects despise him due to his nature.

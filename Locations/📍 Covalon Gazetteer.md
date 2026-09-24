@@ -4,12 +4,8 @@ The power of the heart protected Covalon from the destruction wrought by the Cat
 
 Months later, the baron passed away due to natural causes, and the responsibility of leadership was thrust upon the heads of each of Covalon's major organizations and the City Planner. As Covalon's non-adventuring population grew, NPCs stepped up to manage most of the day to day governing of the city.
 
-**Roleplay:** [#💬roleplay-general](https://discord.com/channels/802423566196539412/1441510507386241156) · [🏰 Covalon Walls and Gate](https://discord.com/channels/802423566196539412/1441824177559699577) · [🌄 Covalon Grounds](https://discord.com/channels/802423566196539412/1441824080872476712)
-
-
-
+**Roleplay:** [\#💬roleplay-general](https://discord.com/channels/802423566196539412/1441510507386241156) · [🏰 Covalon Walls and Gate](https://discord.com/channels/802423566196539412/1441824177559699577) · [🌄 Covalon Grounds](https://discord.com/channels/802423566196539412/1441824080872476712)
 #### Covalon (Settlement Level 13)
-
 `City`
 
 The last bastion of mortal civilization in Elleaterra.
@@ -48,9 +44,7 @@ views:
       - property: formula.SortTitle
         direction: ASC
 ```
-
 ## City District
-
 ![[City District]]
 
 ```datacorejsx
@@ -59,9 +53,7 @@ return function View() {
   return <CovalonEntries tag="covalon/location" sortBy="title" district="City District" heading="h3" hide={["District"]} />;
 }
 ```
-
 ## Market District
-
 ![[Market District]]
 
 ```datacorejsx
@@ -70,9 +62,7 @@ return function View() {
   return <CovalonEntries tag="covalon/location" sortBy="title" district="Market District" heading="h3" hide={["District"]} />;
 }
 ```
-
 ## Encore District
-
 ![[Encore District]]
 
 ```datacorejsx
@@ -81,9 +71,7 @@ return function View() {
   return <CovalonEntries tag="covalon/location" sortBy="title" district="Encore District" heading="h3" hide={["District"]} />;
 }
 ```
-
 ## Armory District
-
 ![[Armory District]]
 
 ```datacorejsx
@@ -92,9 +80,7 @@ return function View() {
   return <CovalonEntries tag="covalon/location" sortBy="title" district="Armory District" heading="h3" hide={["District"]} />;
 }
 ```
-
 ## Lake District
-
 ![[Lake District]]
 
 ```datacorejsx
@@ -103,9 +89,7 @@ return function View() {
   return <CovalonEntries tag="covalon/location" sortBy="title" district="Lake District" heading="h3" hide={["District"]} />;
 }
 ```
-
 ## Heart's Forest
-
 ![[Heart's Forest]]
 
 ```datacorejsx
@@ -114,9 +98,7 @@ return function View() {
   return <CovalonEntries tag="covalon/location" sortBy="title" district="Heart's Forest" heading="h3" hide={["District"]} />;
 }
 ```
-
 ## The Docks
-
 ![[The Docks]]
 
 ```datacorejsx
@@ -125,9 +107,7 @@ return function View() {
   return <CovalonEntries tag="covalon/location" sortBy="title" district="The Docks" heading="h3" hide={["District"]} />;
 }
 ```
-
 ## The Farm
-
 ![[The Farm]]
 
 ```datacorejsx
@@ -136,13 +116,9 @@ return function View() {
   return <CovalonEntries tag="covalon/location" sortBy="title" district="The Farm" heading="h3" hide={["District"]} />;
 }
 ```
-
 ## Mountain View District
-
 ![[Mountain View District]]
-
 ## River Run District
-
 ![[River Run District]]
 
 ```datacorejsx
@@ -151,9 +127,7 @@ return function View() {
   return <CovalonEntries tag="covalon/location" sortBy="title" district="River Run District" heading="h3" hide={["District"]} />;
 }
 ```
-
 ## North Gate District
-
 ![[North Gate District]]
 
 ```datacorejsx
@@ -162,9 +136,7 @@ return function View() {
   return <CovalonEntries tag="covalon/location" sortBy="title" district="North Gate District" heading="h3" hide={["District"]} />;
 }
 ```
-
 ## Expedition Districts and Outside Covalon
-
 ![[Expedition Districts and Outside Covalon]]
 
 ```datacorejsx

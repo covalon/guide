@@ -28,7 +28,6 @@ Cleric Spells:
 - '3rd: fireball'
 - '7th: fiery body'
 ---
-
 Aelia was one of the most worshiped gods in the world before the destruction. She was loved not only for bringing light and heat to the world daily without fail, but was also worshiped for her offers of redemption to those who asked for it. Her worshippers believe Aelia came to be at The Beginning. She started out as a floating consciousness shooting through the endless void.
 
 Aelia wished to slow down and think for some time and so she changed her form to that of a large sphere. Realizing that she could change her own form, she attempted to create other forms to accompany her and soon she had created nine other spheres of all different sizes. The void was cold, dark, and lonely though and Aelia wished to create friends to play with and as such, she implanted different personalities in them.

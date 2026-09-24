@@ -20,7 +20,6 @@ Goals: Provide holistic medical care to any citizen in need, Grow and develop th
 Values: Capability, Humility, Respect
 Anathema: Refuse to treat a patient, Break doctor/patient confidentiality, Abuse your role as a caregiver
 ---
-
 Healing focused adventurers dedicated to providing care to all citizens of Covalon.
 
 ![Covalon Medical Society Guild Heraldry. Designed by Kona.|300](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Guilds/CovalonMedicalSociety.webp)

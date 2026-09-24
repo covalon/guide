@@ -1,6 +1,6 @@
 {
   "enabledCssSnippets": [
-    "hide-embed-titles",
-    "image-captions"
+    "image-captions",
+    "custom"
   ]
 }

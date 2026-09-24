@@ -2,8 +2,7 @@
 Tags:
 - covalon/district
 ---
-
-**Roleplay:** [#🌎outside-covalon](https://discord.com/channels/802423566196539412/1441551510377988126)
+**Roleplay:** [\#🌎outside-covalon](https://discord.com/channels/802423566196539412/1441551510377988126)
 
 As Covalon has reclaimed areas of Elleaterra, we have also succeessfully managed to fortify some of our expedition camp locations into fully inhabitable districts in their own right. Many citizens choose to have their residences, businesses, or guild halls in these outer districts.
 

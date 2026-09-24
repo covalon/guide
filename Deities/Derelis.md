@@ -24,5 +24,4 @@ Cleric Spells:
 - '4th: reflective scales'
 - '7th: prismatic armor'
 ---
-
 Derelis was a very ancient, powerful dragon that died many years ago. Stories tell of his crusade for justice, peace, and honor among men and dragons alike. He is a patron to good dragons and any others commited to doing the right thing.

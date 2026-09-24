@@ -25,5 +25,4 @@ Cleric Spells:
 - '3rd: wall of thorns'
 - '6th: rose''s thorns'
 ---
-
 Erimia, The Wild Mother, Mother Nature, she has been called many names. She protects all that grows and all that is born from the earth.

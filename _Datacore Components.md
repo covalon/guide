@@ -1,7 +1,5 @@
 Shared Datacore components used by the `_` overview pages. Edit the code below to change how every overview renders its entries.
-
 ## CovalonEntries
-
 Lists every note with the given tag: a linked heading, the note's properties, then the full note embedded.
 
 Options: `tag` (required), `district` (only locations in that district), `sortBy="title"` (name, ignoring a leading "The"), `sortBy="date"` (or any property name, e.g. `sortBy="Journey Date"`), `heading="h3"`, and `hide={["Some Property"]}` to leave properties out of the panel.

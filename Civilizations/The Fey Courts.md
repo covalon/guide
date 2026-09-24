@@ -13,9 +13,6 @@ Covalon Status: district
 Roleplay Channel:
 - "[🦋 Fey Courts District](https://discord.com/channels/802423566196539412/1441863884469436537)"
 ---
-
 Three or so centuries ago, the Fey Court returned at the behest of the Ailidian Commune of the Ailidian Forests to combat the encroachment of kingdoms wishing to excavate their ancient trees. Upon the Fey Courts’ arrival, the forests took on a more twisted, surreal look, drawing many would-be timberers into nutrients for the slowly expanding woodlands.
-
 ## Expedition
-
 See [[Fey Courts Expedition]] for the expedition log, missions and finale.

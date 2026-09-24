@@ -26,7 +26,6 @@ Cleric Spells:
 - 5th grisly growths
 - '7th: visions of danger'
 ---
-
 Once a mortal priestess renowned for her medical prowess, her practice became an obsession after the loss of a loved one. An intrigue into physiology and how to enhance, preserve, or renew a mortal's condition grew, until she began incorporating darker magic to achieve the results she longed for. Shortly thereafter she was excommunicated from society with a penance of death, her eagerness and inquisitive ambition propelling her forward until obtaining a deific status.
 
 Referred to as crazy, delusional or unnatural; her mentality barricaded the negative inquiries in order to pave the way for self-preservation. She transfigured her own form beyond the commonly perceived mortal shackles, standing as a beacon for others pursuing transcendence.
