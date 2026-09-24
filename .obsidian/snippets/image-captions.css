@@ -1,0 +1,30 @@
+/* Show an image's alt text as a small centred caption underneath it.
+   Works for:
+   - images stored in the vault (Obsidian wraps them in .image-embed with an alt attribute)
+   - web images, once the community plugin "Image Captions" is enabled (it wraps them in <figure>/<figcaption>) */
+
+.image-embed[alt]:not([alt=""]) {
+  display: block;
+  text-align: center;
+}
+.image-embed[alt]:not([alt=""])::after {
+  content: attr(alt);
+  display: block;
+  margin-top: 0.35em;
+  font-size: var(--font-smaller);
+  color: var(--text-muted);
+  font-style: italic;
+  text-align: center;
+}
+
+figure {
+  margin-inline: auto;
+  text-align: center;
+}
+figure > figcaption {
+  margin-top: 0.35em;
+  font-size: var(--font-smaller);
+  color: var(--text-muted);
+  font-style: italic;
+  text-align: center;
+}

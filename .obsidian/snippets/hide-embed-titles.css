@@ -1,0 +1,59 @@
+/* Hide the file-name header Obsidian puts on top of embedded notes */
+.markdown-embed .markdown-embed-title,
+.markdown-embed .embed-title,
+.markdown-embed .inline-title {
+  display: none;
+}
+
+/* Seamless embeds: no left bar, indent or inner scrollbar, so embedded
+   notes read as part of the page they are embedded in */
+body {
+  --embed-border-start: none;
+  --embed-border-left: none;
+  --embed-padding: 0;
+  --embed-max-height: none;
+}
+.markdown-embed,
+.markdown-embed.inline-embed {
+  border: none !important;
+  border-inline-start: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.markdown-embed .markdown-embed-content,
+.markdown-embed .markdown-preview-view,
+.markdown-embed .markdown-preview-sizer {
+  padding: 0 !important;
+  margin: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  min-height: 0 !important;
+}
+.covalon-entry + .covalon-entry {
+  border-top: 1px solid var(--background-modifier-border);
+  margin-top: 1.5em;
+}
+
+/* Property panel shown above each entry on the overview pages */
+.covalon-props {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25em 1em;
+  margin: 0.5em 0 1em;
+  padding: 0.75em 1em;
+  border-radius: var(--radius-m);
+  background: var(--background-secondary);
+  font-size: var(--font-ui-small);
+}
+.covalon-prop { display: contents; }
+.covalon-prop-key {
+  color: var(--text-muted);
+  font-weight: var(--font-semibold);
+}
+
+/* Adventure types: the guides embed just the "For Players" / "For GMs" section of each note,
+   so hide that section heading inside those embeds (it still shows on the note itself) */
+.internal-embed[src$="#For Players"] :is(h1, h2, h3, h4, h5, h6)[data-heading="For Players"],
+.internal-embed[src$="#For GMs"] :is(h1, h2, h3, h4, h5, h6)[data-heading="For GMs"] {
+  display: none;
+}
