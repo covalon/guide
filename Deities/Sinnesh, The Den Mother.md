@@ -26,4 +26,6 @@ Cleric Spells:
 - '3rd: earthbind'
 - '5th: wall of stone'
 ---
-The Den Mother is an ancient being who originally gained power due to the worship of warren dwelling Ysoki. She is a deity of earth, family, and crafting, usually depicted as either a matronly Ysoki woman or as a massive subterranean rat. Though still a patron diety to many Ysoki clans, she has also become popular with all folk who live or travel beneath the surface, mine and utilize underground resources, or value strong familial ties. Her holy symbol is a rat, curled up sleeping in a snug den.
+The Den Mother is an ancient being who originally gained power due to the worship of warren dwelling Ysoki. She is a deity of earth, family, and crafting, usually depicted as either a matronly Ysoki woman or as a massive subterranean rat. Though still a patron diety to many Ysoki clans, she has also become popular with all folk who live or travel beneath the surface, mine and utilize underground resources, or value strong familial ties.
+
+Her holy symbol is a rat, curled up sleeping in a snug den.

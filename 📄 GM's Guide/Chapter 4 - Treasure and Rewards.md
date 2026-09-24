@@ -82,7 +82,11 @@ Tier of Play | Precious Material Value Permitted
 4 | 120-160g |
 5 | 2500g (not a typo) |
 ## GM Rewards
-For running a game in Covalon, you recieve a Hero Point, up to the normal cap of 3. You also receive the rewards listed in tables 4-4 and 4-5. When your adventure ends, you may choose to forgo the rewards in these tables if you wish. If you forgo these rewards, you must forfeit both the experience and the gold. You cannot take one without the other. You can choose to take or forgo the Hero Point.
+For running a game in Covalon, you recieve a Hero Point, up to the normal cap of 3. You also receive the rewards listed in tables 4-4 and 4-5.
+
+When your adventure ends, you may choose to forgo the rewards in these tables if you wish. If you forgo these rewards, you must forfeit both the experience and the gold. You cannot take one without the other.
+
+You can choose to take or forgo the Hero Point.
 #### Table 4-4: Non-Patrol* GM Rewards
 GM Character Level | Experience Reward | Gold Reward |
 --- | :---: | :---: |

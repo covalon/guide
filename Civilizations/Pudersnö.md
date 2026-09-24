@@ -15,6 +15,8 @@ Covalon Status: district
 Roleplay Channel:
 - "[❄️ Pudersnö District](https://discord.com/channels/802423566196539412/1441841799285969099)"
 ---
-The Pudersnö is about as far north as one can travel in the known world, inhabited by nomadic tribes who search the frozen wasteland for food and precious metals. To the north, tribes of raiders controlled the coastline with their swift and easily landed ships. It is a harsh environment where the slightest mistake could kill a man. The tribes of Pudersnö were strong and hardy, but totally unprepared for the sky's wrath that followed the Cataclysm.
+The Pudersnö is about as far north as one can travel in the known world, inhabited by nomadic tribes who search the frozen wasteland for food and precious metals. To the north, tribes of raiders controlled the coastline with their swift and easily landed ships. It is a harsh environment where the slightest mistake could kill a man.
+
+The tribes of Pudersnö were strong and hardy, but totally unprepared for the sky's wrath that followed the Cataclysm.
 ## Expedition
 See [[Pudersnö Expedition]] for the expedition log, missions and finale.

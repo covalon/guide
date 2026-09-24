@@ -23,4 +23,8 @@ Cleric Spells:
 - '4th: chroma leach'
 - '8th: horrid wilting'
 ---
-The final goddess of an unknown pantheon. Records suggest that she was just another goddess of the end, set to reap souls. Until her rebellion, spurred by but a single question. There are claims that all she wanted was a bit of fun, a bit of variety. The rest of the pantheon, purportedly took offence. Wile the rest of the history remains murky, one thing has been ascertained… the question which started it all? The question which brings Chessie to town? "Would you please… die for me?"
+The final goddess of an unknown pantheon. Records suggest that she was just another goddess of the end, set to reap souls. Until her rebellion, spurred by but a single question. There are claims that all she wanted was a bit of fun, a bit of variety.
+
+The rest of the pantheon, purportedly took offence.
+
+Wile the rest of the history remains murky, one thing has been ascertained… the question which started it all? The question which brings Chessie to town? "Would you please… die for me?"

@@ -7,7 +7,9 @@ The following are general gameplay rules for our server, including adjustments t
 Adventurers in Covalon are broken up into tiers based on their levels, which determines the difficulty of adventures they can undertake as well as which players they can adventure alongside with.
 
 > [!note] Maximum Level
-> The maximum level a character can obtain in Covalon is determined by the highest available tier. Once a character reaches 999 XP at the highest level in the highest tier, they can no longer gain XP. Alternate characters have a different max level than main characters, see the Alternate Character rules.
+> The maximum level a character can obtain in Covalon is determined by the highest available tier. Once a character reaches 999 XP at the highest level in the highest tier, they can no longer gain XP.
+>
+> Alternate characters have a different max level than main characters, see the Alternate Character rules.
 
 ##### Table 3-1: Character Tiers by Levels
 | Tier| Character Levels|
@@ -46,12 +48,16 @@ Specific magic items also lose their properties when used by lower-tier characte
 > ##### Looking to Buy/Sell
 > Players can also use the [\#💲looking-to-buy](https://discord.com/channels/802423566196539412/811440118594142248) and [\#👛looking-to-sell](https://discord.com/channels/802423566196539412/811440260810014747) channels to post item requests. Please create threads to discuss transactions.
 > ##### Charity
-> Players can give away equipment in the [\#charity](https://discord.com/channels/802423566196539412/862458314390241300) channel. Check the pinned post in that channel for instructions. Please do not gift or lend large amounts of gold to other players.
+> Players can give away equipment in the [\#charity](https://discord.com/channels/802423566196539412/862458314390241300) channel. Check the pinned post in that channel for instructions.
+>
+> Please do not gift or lend large amounts of gold to other players.
 
 ### Mentorship System
 Covalon's mentor system allows higher-level players to play with lower-level players. Mentor characters can be played in Tier 3 and under games, and can be played by players whose character is in a higher tier than the adventure. For example, a player with a Tier 3 character could play as a mentor in Tier 1 and 2 games.
 
-Mentor players are always added to the waitlist; player characters of the appropriate tier are given priority for table slots. When you play a mentor character, you do not earn any XP, but any gp or items you obtain are transferred to your player character. You also receive 1 Hero Point (see the Hero Point sidebar in the Adventures section).
+Mentor players are always added to the waitlist; player characters of the appropriate tier are given priority for table slots.
+
+When you play a mentor character, you do not earn any XP, but any gp or items you obtain are transferred to your player character. You also receive 1 Hero Point (see the Hero Point sidebar in the Adventures section).
 #### Covalon's Mentors
 The characters that make up Covalon's mentorship program are retired adventurers who have already lived full lives, but have been called to serve the city as wizened guides for green adventurers. The mentors were originally designed by players as part of a "Design a Mentor" contest, where over 50 characters were submitted to become Covalon's official mentor characters!
 
@@ -62,11 +68,17 @@ The characters that make up Covalon's mentorship program are retired adventurers
 - **K'rook** (he/him tripkee Ranger), a precise ranged striker wielding a bow and arrows.
 - **Fire Eater** (he/him catfolk Sorcerer), a fiery primal caster with a focus on blasting.
 ### Afflictions
-Adventurers can contract dangerous diseases and curses during adventures. Afflictions progress in real time, and must be handled at their regular intervals. If your character receives an affliction that is untreated by the end of the adventure, it doesn't go away on its own - they'll have to overcome it or find someone to cure it if they want to avoid its adverse effects. For more information on how tracking afflictions works in Covalon, see the pinnned post in the [\#🤢affliction-tracking](https://discord.com/channels/802423566196539412/942589119454924800) channel in the Discord server.
-### Learning Spells
-Covalon boasts an impressive library that grows larger as adventurers recover historic and legendary spellbooks from their adventures. Players can use the library to learn new spells, including spells that are uncommon or rarer. When using the [Learn a Spell](https://2e.aonprd.com/Actions.aspx?ID=25) activity in between adventures, players can choose to learn any common spell with a level less than or equal to half the settlement level rounded up, as well as any uncommon or rarer spell marked as "ALLOWED" or "ERRATA" on the [Server Allowlist](https://docs.google.com/spreadsheets/d/1yUXF_IAmpim6wkB7QT5l6K_lS5DgOppv99BHjMYbNIU/edit?usp=sharing)  that meets the same level requirements.
+Adventurers can contract dangerous diseases and curses during adventures. Afflictions progress in real time, and must be handled at their regular intervals.
 
-(The settlement level can be found in the City Statblock section of Chapter 4.) When learning a spell between adventures, the time it takes to perform this activity is waived.
+If your character receives an affliction that is untreated by the end of the adventure, it doesn't go away on its own - they'll have to overcome it or find someone to cure it if they want to avoid its adverse effects.
+
+For more information on how tracking afflictions works in Covalon, see the pinnned post in the [\#🤢affliction-tracking](https://discord.com/channels/802423566196539412/942589119454924800) channel in the Discord server.
+### Learning Spells
+Covalon boasts an impressive library that grows larger as adventurers recover historic and legendary spellbooks from their adventures. Players can use the library to learn new spells, including spells that are uncommon or rarer.
+
+When using the [Learn a Spell](https://2e.aonprd.com/Actions.aspx?ID=25) activity in between adventures, players can choose to learn any common spell with a level less than or equal to half the settlement level rounded up, as well as any uncommon or rarer spell marked as "ALLOWED" or "ERRATA" on the [Server Allowlist](https://docs.google.com/spreadsheets/d/1yUXF_IAmpim6wkB7QT5l6K_lS5DgOppv99BHjMYbNIU/edit?usp=sharing)  that meets the same level requirements. (The settlement level can be found in the City Statblock section of Chapter 4.)
+
+When learning a spell between adventures, the time it takes to perform this activity is waived.
 ### Soul Seeds
 As they've spent more time in the vicinity of the Heart of Terra, incredible powers have begun to manifest within Covalonians. Upon completing their first expedition finale, your character unlocks their Soul Seed - an intangible relic bound to their soul that can be customized with special powers. Please use the [\#🌱soul-seed-customization](https://discord.com/channels/802423566196539412/939633845874077766) channel to track changes to your Soul Seed.
 
@@ -75,7 +87,9 @@ Covalon uses the rules for Soul Seeds found in the Gamemastery Guide and Secrets
 A list of aspects and their corresponding gifts can be found on [Archives of Nethys](https://2e.aonprd.com/Relics.aspx). Table 3-2 lists which expedition finales must be completed to unlock a particular aspect category. Soul Seeds are not lost upon character death if the character is revived.
 
 > [!note] GIFT SPECIFICS
-> Gifts that require a weapon as a prerequisite to activate use a weapon you are holding when activating the gift. Ignore any prerequisites that require a worn item. Any gifts that have "Interact" as part of their activation requirement have that replaced with a special somatic component that still has the Manipulate trait. Your Soul Seed's level is equal to your own level.
+> Gifts that require a weapon as a prerequisite to activate use a weapon you are holding when activating the gift. Ignore any prerequisites that require a worn item. Any gifts that have "Interact" as part of their activation requirement have that replaced with a special somatic component that still has the Manipulate trait.
+>
+> Your Soul Seed's level is equal to your own level.
 
 Initially, a character's Soul Seed can only obtain minor gifts, and their Soul Seed can only be customized with gifts from a single aspect. Completing certain Expedition Finales upgrades their Soul Seed with the ability to use stronger gifts or gifts from a second aspect. Table 3-3 lists which expedition finales must be completed to unlock a particular Soul Seed upgrade.
 
@@ -114,7 +128,9 @@ Major Gifts | Complete 3 Unique Finales*
 Grand Gifts | ???
 
 > [!note] *MAJOR GIFTS
-> This upgrade was unlocked via the Secrets of the Heart server event (pg 33). Any approved PC in Covalon during this event (June 28th, 2025) automatically unlocks Major Gifts. You must still meet the requirements in Table 3-4.
+> This upgrade was unlocked via the Secrets of the Heart server event (pg 33). Any approved PC in Covalon during this event (June 28th, 2025) automatically unlocks Major Gifts.
+>
+> You must still meet the requirements in Table 3-4.
 
 ##### Table 3-4: Adding Gifts to a Soul Seed
 Gift Number| Level Requirement | Gift Type | Price (gp)
@@ -133,11 +149,11 @@ Each character also has a status. Active characters can join adventures, use dow
 
 A player starts with 1 active core, and must unlock additional character slots through purchase. At any given moment, a player may have at most: 1 active core, 1 active alt, 1 inactive core, and any number of inactive alts. You cannot have an inactive core until you own at least three character slots.
 #### Purchasing Character Slots
-When your active core reaches core cap, you can purchase an additional character slot.
+When your active core reaches core cap, you can purchase an additional character slot. You must meet 2 requirements to purchase: your active core character must be core capped and all your other slots must be filled with characters that are, at minimum, at the alt cap.
 
-You must meet 2 requirements to purchase: your active core character must be core capped and all your other slots must be filled with characters that are, at minimum, at the alt cap.
+New slots cost 20,000gp × current character slots. This purchase must be recorded in [\#🧐alternate-character-tracking](https://discord.com/channels/802423566196539412/1205685483234136084).
 
-New slots cost 20,000gp × current character slots. This purchase must be recorded in [\#🧐alternate-character-tracking](https://discord.com/channels/802423566196539412/1205685483234136084). Once purchased, [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) to submit your new character using character creation guidelines. After your new character is approved, you may swap them in.
+Once purchased, [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) to submit your new character using character creation guidelines. After your new character is approved, you may swap them in.
 #### Swapping Character Type/Status
 You may set a character's type and status by recording it in [\#🧐alternate-character-tracking](https://discord.com/channels/802423566196539412/1205685483234136084).
 
@@ -146,7 +162,9 @@ Your active alt can be set once every 2 weeks. Your active core can be set once 
 When a core character becomes an alt character, they are de-leveled to the alt cap. When an alt character that is at alt cap becomes a core character, they are leveled to Level 13, EXP 0.
 ### Multiple Character Restrictions
 #### Roleplay
-Your characters can never interact together in RP. You may not actively role play as multiple characters at the same time in multiple Realtime Location channels. Remember you can always “time bubble” an RP into a separate thread to return to later.
+Your characters can never interact together in RP. You may not actively role play as multiple characters at the same time in multiple Realtime Location channels.
+
+Remember you can always “time bubble” an RP into a separate thread to return to later.
 #### Inventory
 Your characters have completely separate inventories—items and gold cannot be shared.
 
@@ -171,7 +189,9 @@ Mentoring rewards can only be applied to an active character that is higher than
 
 "Adventures"  in Covalon are scheduled play sessions between players and a Dungeon Guide where player characters work together to overcome adversaries, obstacles, and other challenges to receive experience points (XP) and loot.
 
-There are several types of adventures in Covalon, each with their own unique gameplay, challenges, and rewards. The amount of loot and XP your character gains varies based on your character's level and the game type. Patrols, our shortest gamemode, always give 250 XP. In Tiers 1-3, game modes other than patrols award 500 XP. In Tiers 4 and 5, Patrols are not available to play, and all other adventure types award 250 XP.
+There are several types of adventures in Covalon, each with their own unique gameplay, challenges, and rewards. The amount of loot and XP your character gains varies based on your character's level and the game type.
+
+Patrols, our shortest gamemode, always give 250 XP. In Tiers 1-3, game modes other than patrols award 500 XP. In Tiers 4 and 5, Patrols are not available to play, and all other adventure types award 250 XP.
 ### Dungeons
 ![[Dungeons#For Players]]
 ### Patrols
@@ -189,20 +209,26 @@ Downtime is an important part of how your character spends their time in between
 ### Earning and Spending Downtime
 Time passes in Covalon at the same rate that time passes in real life. Player characters gain one day of downtime to spend for every real life day that passes, and can spend their downtime whenever they're not currently participating in an adventure by logging it in the appropriate channel. If you forget to log your downtime, you can log those days of missed downtime if they were missed within the past week - any days before that are lost.
 
-You may not log missed downtime for activities that your characters wouldn't have been able to perform on those days - for example, if you missed logging your downtime on Wednesday, you couldn't log it on Friday to spend it on crafting an item from a formula you acquired on Thursday. Eidolons, companions, and familiars cannot participate in downtime activities. The exact time at which player characters gain a day of downtime to spend is at midnight server time every day.
+You may not log missed downtime for activities that your characters wouldn't have been able to perform on those days - for example, if you missed logging your downtime on Wednesday, you couldn't log it on Friday to spend it on crafting an item from a formula you acquired on Thursday.
+
+Eidolons, companions, and familiars cannot participate in downtime activities. The exact time at which player characters gain a day of downtime to spend is at midnight server time every day.
 
 Players are required to roll their downtime checks in [\#🎲downtime-rolls](https://discord.com/channels/802423566196539412/840451283218989056), using our Dice Maiden bot. When rolling, please include the reason for the roll in the roll command. For example, if you were rolling a check to Earn Income using Performance and you had a +7 bonus to Performance, you would type:
 
 `/roll 1d20+7 !Earn Income` to roll once, or `/roll 7 1d20+7 !Earn Income` to roll seven days at once.
 #### Earn Income
-When using the Earn Income activity, you must roll for each individual day of downtime spent instead of once for every four days, and you can choose a Task Level up to the settlement's level (which can be found in the Covalon Gazetteer) or your character's level, whichever is lower. When you critically fail a check to earn income, you earn nothing for that day's work, but you are not prevented from attempting again tomorrow or in the future. In Covalon, you may use Crafting, Performance, or any Lore skill to Earn Income. Some feats may allow you to use other skills.
+When using the Earn Income activity, you must roll for each individual day of downtime spent instead of once for every four days, and you can choose a Task Level up to the settlement's level (which can be found in the Covalon Gazetteer) or your character's level, whichever is lower. When you critically fail a check to earn income, you earn nothing for that day's work, but you are not prevented from attempting again tomorrow or in the future.
+
+In Covalon, you may use Crafting, Performance, or any Lore skill to Earn Income. Some feats may allow you to use other skills.
 #### Crafting
 Due to the very limited equipment options available at the General Store, players will need to obtain most of the items they need through crafting. The crafting hall sells formulas for all common items with a level less than or equal to the settlement's level, but higher level formulas or formulas that are uncommon or rarer will can only be recovered from adventures.
 
 Formulas found on adventures and formulas invented by players (either through deconstruction or the Inventor feat) can be posted on the [public bulletin board](https://docs.google.com/spreadsheets/d/1gcVr4Zk02KkMo44fHfEk5RPuspAKWAwyKj6pAYrwWzM/edit?gid=1191624151#gid=1191624151) - these formulas are free for anyone to copy.
 
 > [!note] DC to Craft an Item
-> The DC to craft an item can be found on the [DCs by Level](https://2e.aonprd.com/Rules.aspx?ID=554) table on page 503 of the CRB. In Covalon, we adjust the DC when crafting uncommon or rarer items as per the [Adjusting Difficulty](https://2e.aonprd.com/Rules.aspx?ID=555) rules. If you have the Inventor feat, the DC to Invent the formula for an item is equal to the DC to craft that item. Many effects - such as Guidance - don't last long enough to benefit a Craft check. For more crafting-related rulings, check out [\#⁉rule-clarification-and-faqs](https://discord.com/channels/802423566196539412/809175735410884620) in the Discord server.
+> The DC to craft an item can be found on the [DCs by Level](https://2e.aonprd.com/Rules.aspx?ID=554) table on page 503 of the CRB. In Covalon, we adjust the DC when crafting uncommon or rarer items as per the [Adjusting Difficulty](https://2e.aonprd.com/Rules.aspx?ID=555) rules. If you have the Inventor feat, the DC to Invent the formula for an item is equal to the DC to craft that item.
+>
+> Many effects - such as Guidance - don't last long enough to benefit a Craft check. For more crafting-related rulings, check out [\#⁉rule-clarification-and-faqs](https://discord.com/channels/802423566196539412/809175735410884620) in the Discord server.
 
 #### Gather Resources
 Instead of using the traditional Earn Income activity, you can instead choose to Gather Resources using an applicable Lore skill. Gathering resources earns you an amount of material suitable for crafting equal to double the amount you would earn for performing Earn Income at an equivalent task level, and you can Gather Resources up to your character level, regardless of Covalon's settlement level.
@@ -259,9 +285,13 @@ Character Level | Retraining Cost (per day)
 
 ------
 
-You imbue a fragment of your soul into the Heart of Terra, which will regenerate your body and soul in the event of your death (except by natural causes). When you purchase the contract, choose a level up to your character's current level and pay the associated cost. If you die while in an adventure, your contract is consumed and the Heart of Terra regenerates your body and soul in Covalon.
+You imbue a fragment of your soul into the Heart of Terra, which will regenerate your body and soul in the event of your death (except by natural causes).
 
-You return to life at a level equal or lower to the level of contract you purchased, and your XP towards the next level is reset to 0. It takes some time for your soul to adjust to regeneration, leaving you clumsy 2, drained 2, and enfeebled 2 for 1 week; these conditions can't be removed or reduced by any means until the week has passed. You can upgrade your contract to a higher level by paying the cost difference.
+When you purchase the contract, choose a level up to your character's current level and pay the associated cost. If you die while in an adventure, your contract is consumed and the Heart of Terra regenerates your body and soul in Covalon.
+
+You return to life at a level equal or lower to the level of contract you purchased, and your XP towards the next level is reset to 0. It takes some time for your soul to adjust to regeneration, leaving you clumsy 2, drained 2, and enfeebled 2 for 1 week; these conditions can't be removed or reduced by any means until the week has passed.
+
+You can upgrade your contract to a higher level by paying the cost difference.
 
 > [!note] CONTRACTS FOR COMPANIONS
 > You can purchase a Contract of Terran Revival for your animal companion or familiar. The price to do so is always 50 gp, and the revived companion or familiar will be the same level as the character that owns them.
@@ -381,10 +411,16 @@ In order to form a new guild, the following requirements must be met:
 - A guild needs a unique name, purpose, and heraldry.
 - A registration fee of 50 gp must be paid. Alternatively, a fee of 500 gp can be paid to have a guild hall constructed for the guild along with the registration (see the "Houses, Businesses, and Guild Halls" section).
 
-When these three requirements are met, the guild leader can [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) to submit their guild to the staff team. If they approve, the guild will become official. Players may be in a maximum of two guilds, and a guild may have a maximum of 10 members. This member cap is raised by 2 after a guild hosts an event or project.
+When these three requirements are met, the guild leader can [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) to submit their guild to the staff team. If they approve, the guild will become official.
+
+Players may be in a maximum of two guilds, and a guild may have a maximum of 10 members. This member cap is raised by 2 after a guild hosts an event or project.
 
 > [!note] ROLEPLAY EVENTS/NARRATIVE PROJECTS
-> Members of a guild can run server events that award 1 Hero Point to all hosts and participants. After a guild hosts an event or project, their member cap is raised by 2. To host a roleplay event or start a narrative project (such as building a statue or a building), please have a member of your guild [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) with the following information: Event Name, Date, Location, Summary of Event, Event Goals, and the in-character announcement post for your event to be shared in the [\#📜official-postings](https://discord.com/channels/802423566196539412/818094145033207839) channel.
+> Members of a guild can run server events that award 1 Hero Point to all hosts and participants.
+>
+> After a guild hosts an event or project, their member cap is raised by 2.
+>
+> To host a roleplay event or start a narrative project (such as building a statue or a building), please have a member of your guild [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) with the following information: Event Name, Date, Location, Summary of Event, Event Goals, and the in-character announcement post for your event to be shared in the [\#📜official-postings](https://discord.com/channels/802423566196539412/818094145033207839) channel.
 
 ### Guild Event Rewards
 In addition to increasing their guild member cap by 2, individuals and guilds that host events can gain these special rewards.
@@ -397,9 +433,15 @@ In addition to increasing their guild member cap by 2, individuals and guilds th
 > [!info] MOVING A BUILDING
 > It costs 50% of the original payment to move a house, business, or guild hall to a new location. If you wish to move a building, please [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492).
 
-Players can own property in Covalon by purchasing a house, business, or a guild hall. A player can own only one of each type of property at a time. To purchase property, you must [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492). Guild Halls may be located in Covalon, or any of the following Expedition districts: Ikouga, Gornlar, Middlemist, Pudersno, Ratchethallow.
+Players can own property in Covalon by purchasing a house, business, or a guild hall. A player can own only one of each type of property at a time.
+
+To purchase property, you must [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492).
+
+Guild Halls may be located in Covalon, or any of the following Expedition districts: Ikouga, Gornlar, Middlemist, Pudersno, Ratchethallow.
 #### Standard Housing
-Private housing suitable as a permanent living residence can be purchased for 200 gp. A single house can accommodate up to four players, including any companions, familiars, or pets they may own. After the staff team approves your purchase, you may speak with the City Planner to choose your plot of land and have your house added to the official map of Covalon. Plots of land can be chosen from one of the below housing districts, or any of the following Expedition districts: Ikouga, Gornlar, Middlemist, Pudersno, Ratchethallow.
+Private housing suitable as a permanent living residence can be purchased for 200 gp. A single house can accommodate up to four players, including any companions, familiars, or pets they may own.
+
+After the staff team approves your purchase, you may speak with the City Planner to choose your plot of land and have your house added to the official map of Covalon. Plots of land can be chosen from one of the below housing districts, or any of the following Expedition districts: Ikouga, Gornlar, Middlemist, Pudersno, Ratchethallow.
 
 > [!note] Covalon Residental Districts
 > - **Main Street** Located east of the town square, and south of the marketplace.
@@ -408,17 +450,25 @@ Private housing suitable as a permanent living residence can be purchased for 20
 > - **River Run** Located along the western bank of the river.
 > - **Hillside** Located along the western forest among the rolling hills south of the farm.
 
-Houses can have up to four bedrooms, a common living area, a kitchen, a bathroom, and one unique feature, such as a training room, crafting workshop, or study. Exceptions can be made with staff approval. Housing lots are 75' x 75' (15 x 15 grid). This includes all exterior features, such as gardens.
+Houses can have up to four bedrooms, a common living area, a kitchen, a bathroom, and one unique feature, such as a training room, crafting workshop, or study. Exceptions can be made with staff approval.
 
-Lots must contain at least one square of green space around the building, and the building must be no taller than two stories (including anything below ground). After your house has constructed and you have moved in, be sure to update the housing registry in [\#👥citizen-directories](https://discord.com/channels/802423566196539412/874598427105828874) .
+Housing lots are 75' x 75' (15 x 15 grid). This includes all exterior features, such as gardens. Lots must contain at least one square of green space around the building, and the building must be no taller than two stories (including anything below ground).
+
+After your house has constructed and you have moved in, be sure to update the housing registry in [\#👥citizen-directories](https://discord.com/channels/802423566196539412/874598427105828874) .
 #### Businesses
-Larger buildings suitable for running a store can be purchased for 500 gp. Purchasing a business comes with a public RP text channel. Businesses may be located in Covalon, or any of the following Expedition districts: Ikouga, Gornlar, Middlemist, Pudersno, Ratchethallow. Commercial lots are 100' x 100' (20 x 20 grid), must contain at least one square of green space around the building, and can be no more than two stories tall (including anything below ground). This includes all exterior amenities.
+Larger buildings suitable for running a store can be purchased for 500 gp. Purchasing a business comes with a public RP text channel. Businesses may be located in Covalon, or any of the following Expedition districts: Ikouga, Gornlar, Middlemist, Pudersno, Ratchethallow.
+
+Commercial lots are 100' x 100' (20 x 20 grid), must contain at least one square of green space around the building, and can be no more than two stories tall (including anything below ground). This includes all exterior amenities.
 #### House and Business Combinations
-A business with adjoined living quarters can be purchased for 700 gp. House and Businesses may be located in Covalon, or any of the following Expedition districts: Ikouga, Gornlar, Middlemist, Pudersno, Ratchethallow. Living quarters are to be located above or behind the store front, and may not exceed the lot's total square footage. The size of the lot is 100' x 100' (20 x 20 grid), must contain at least one square of green space around the building, and can be no more than two stories tall (including anything below ground). This includes all exterior amenities.
+A business with adjoined living quarters can be purchased for 700 gp. House and Businesses may be located in Covalon, or any of the following Expedition districts: Ikouga, Gornlar, Middlemist, Pudersno, Ratchethallow. Living quarters are to be located above or behind the store front, and may not exceed the lot's total square footage.
+
+The size of the lot is 100' x 100' (20 x 20 grid), must contain at least one square of green space around the building, and can be no more than two stories tall (including anything below ground). This includes all exterior amenities.
 #### Guild Halls
 A player serving as a guild leader may optionally purchase a hall for their guild for 500 gp. Guild halls can be up to 100' x 100' (20 x 20 grid), including all exterior amenities. Guild halls may have up to two floors, and will primarily consist of a meeting room, but additionally may have up to three other reasonably sized unique spaces which are related to the purpose of the guild.
 
-Barracks-style common sleeping areas will be provided for nine members, with a private room for the guild leader. A small kitchen, bathroom, and living area are included. Lots must contain at least one square of green space around the building, and the building must be no taller than two stories (including anything below ground). Guild Halls may be located in Covalon, or any of the following Expedition districts: Ikouga, Gornlar, Middlemist, Pudersno, Ratchethallow.
+Barracks-style common sleeping areas will be provided for nine members, with a private room for the guild leader. A small kitchen, bathroom, and living area are included.
+
+Lots must contain at least one square of green space around the building, and the building must be no taller than two stories (including anything below ground). Guild Halls may be located in Covalon, or any of the following Expedition districts: Ikouga, Gornlar, Middlemist, Pudersno, Ratchethallow.
 
 > [!note] Roleplay Channels
 > Businesses and guild halls come with public roleplay channels that you can use to roleplay your personal and guild business. Standard housing does not come with a public roleplay channel, but you can always create a thread in one of the housing district channels.
@@ -432,14 +482,18 @@ Characters who cannot afford property or do not wish to purchase property (such 
 > *I understand, that in accordance with Covalon law, no creation of a permanent structure or modification to the campgrounds or the forest is permitted. I understand that this permit is subject to revocation if these laws are broken.*
 
 ### Crime and Punishment
-Covalon is a city, and like all cities, its citizens must follow laws or face consequences. But Covalon is also a roleplaying game, and what would a roleplaying game be without a little bit of crime now and then? In Covalon, laws are categorized into four groups of severity, where more severe crimes result in more severe punishments. The first three categories of severity are referred to as "Roleplay Laws," and the consequences for breaking these laws is restricted to roleplay only (such as being asked to do community service or serve jail time).
+Covalon is a city, and like all cities, its citizens must follow laws or face consequences. But Covalon is also a roleplaying game, and what would a roleplaying game be without a little bit of crime now and then?
+
+In Covalon, laws are categorized into four groups of severity, where more severe crimes result in more severe punishments. The first three categories of severity are referred to as "Roleplay Laws," and the consequences for breaking these laws is restricted to roleplay only (such as being asked to do community service or serve jail time).
 
 The fourth category of severity details crimes that go against our Player Expectations; if any of these crimes are committed, there will be significant out-of-character consequences, which could include dismissal from the campaign. While we encourage players to interact with the Roleplay Laws in ways that enhance their roleplaying experience, we forbid players from breaking any of the laws that coincide with our Player Expectations (known as Extreme Offenses).
 
 Additionally, before a player character commits a crime against another player character(s), all involved players must privately and explicitly consent to the interaction. If your character becomes the victim of a roleplay crime that you did not explicitly consent to, please [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) and let the staff team know immediately.
 
 > [!note] CRIME AS A STORYTELLING DEVICE
-> Committing a crime can be a fun way to spice up roleplaying, especially when used to drive character development. For example, a character might steal something and be so riddled with guilt afterwards that they make a point to always do the right thing in the future, or a character might vandalize another character's business to ignite a conflict between the two. Remember to always ask for permission before committing a crime against another player's character, and inform the staff team via [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492). The staff team will determine if the city of Covalon takes legal action against a character after a crime is commited.
+> Committing a crime can be a fun way to spice up roleplaying, especially when used to drive character development. For example, a character might steal something and be so riddled with guilt afterwards that they make a point to always do the right thing in the future, or a character might vandalize another character's business to ignite a conflict between the two.
+>
+> Remember to always ask for permission before committing a crime against another player's character, and inform the staff team via [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492). The staff team will determine if the city of Covalon takes legal action against a character after a crime is commited.
 
 #### Roleplay Laws
 If a player character breaks a Roleplay Law, the crime can be reported by the victim of the crime, any witness to the crime, or the perpetrator themselves (if they feel guilty and want to turn themselves in). Depending on the severity of the crime, an appropriate consequence will be administered. These consequences only exist for the purposes of roleplaying and have no effect on mechanical aspects of the server, such adventures or downtime systems.

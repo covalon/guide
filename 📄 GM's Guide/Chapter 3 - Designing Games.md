@@ -5,7 +5,9 @@ When designing a game adventure, you should start with determining your Average 
 
 Most adventures in Covalon assume **6 players** in attendance. You can run an adventure with a minimum of 4 and a maximum of 6 players.
 
-Keep in mind that your party size will impact your [experience Budget](https://2e.aonprd.com/Rules.aspx?ID=498). Sometimes you will find that the average party level of a group is in the middle of two whole levels. In the event of finding you have a party of a 0.5 interval, you should balance for one additional player of the lower level. For example, if you have a party of six with an APL of 6.5, you should balance for 7 level 6 characters.
+Keep in mind that your party size will impact your [experience Budget](https://2e.aonprd.com/Rules.aspx?ID=498).
+
+Sometimes you will find that the average party level of a group is in the middle of two whole levels. In the event of finding you have a party of a 0.5 interval, you should balance for one additional player of the lower level. For example, if you have a party of six with an APL of 6.5, you should balance for 7 level 6 characters.
 
 > [!note] Rebalancing
 > Sometimes you need to change the APL of your adventure based on player sign ups, level ups, or drop outs. Whenever possible, these adjustments MUST be approved ahead of time in a ticket. This rebalancing should include changing encounter EXP and loot for the new APL and party size.
@@ -16,7 +18,9 @@ Keep in mind that your party size will impact your [experience Budget](https://2
 > [!info] Level 1 Characters
 > Level 1 characters are especially fragile. When a first level character is present, no creatures above level 3 can be used.
 
-It's time to select your creatures! For most Covalon game modes, you need to design for Moderate difficulty encounters. [This page](https://2e.aonprd.com/Rules.aspx?ID=497) is the perfect place to check the experience values of monsters you are selecting for your challenges. Keep in mind you cannot select a monster that is more than 3 levels above the lowest level player in the party. Keep this in mind when designing encounters, especially if you don't know who your players are yet.
+It's time to select your creatures! For most Covalon game modes, you need to design for Moderate difficulty encounters. [This page](https://2e.aonprd.com/Rules.aspx?ID=497) is the perfect place to check the experience values of monsters you are selecting for your challenges.
+
+Keep in mind you cannot select a monster that is more than 3 levels above the lowest level player in the party. Keep this in mind when designing encounters, especially if you don't know who your players are yet.
 
 Of course, monsters aren't the only challenges your players will face. You can find the experience costs of [hazards here](https://2e.aonprd.com/Rules.aspx?ID=679).
 
@@ -37,20 +41,20 @@ Unless specified otherwise in the game type instructions, all adventures in Cova
 * The adventure must stick to the timeframe for the game type. If it appears to be going over time, wrap the adventure up early.
 * As long as players overcome at least one challenge or encounter, they receive full experience if they leave early. They receive all of the loot that they have found so far.
 ## Alternate Encounters
-Alternate encounters are any kind of encounter that counts towards the adventure's XP budget but is not a standard combat. Some examples of this are chases, skill challenges, or social encounters. The following are just some examples of the many subsystems detailed in chapter 4 of the [Gamemastery Guide](https://2e.aonprd.com/Rules.aspx?ID=1187). As long as encounters are balanced, fun, and fit within Covalon's general adventure rules, we're willing to review them for use in your Covalon adventures! Many Expedition missions include examples of using subsystems.
+Alternate encounters are any kind of encounter that counts towards the adventure's XP budget but is not a standard combat. Some examples of this are chases, skill challenges, or social encounters.
+
+The following are just some examples of the many subsystems detailed in chapter 4 of the [Gamemastery Guide](https://2e.aonprd.com/Rules.aspx?ID=1187). As long as encounters are balanced, fun, and fit within Covalon's general adventure rules, we're willing to review them for use in your Covalon adventures! Many Expedition missions include examples of using subsystems.
 ### Chases
 For chases, please include all obstacles, their relevant skills and DC of those checks, and the failure condition. There are many ways to run a chase! Some of the most common are having every PC take damage equal to Table 2-16 Complex Damage in the hazard building rules at the end of a round, or something happens at the end of each round based on how many total successes and failures the party obtained. More guidance on chases can be found on [this](https://2e.aonprd.com/Rules.aspx?ID=1210) Archives of Nethys page.
 ### Influence/Social Encounters
-The Influence subsystem is one way to run a structured social encounter. If you wish to submit an influence encounter, please provide the influence stat blocks of your NPCs.  Note that if a social encounter doesn't really have a clear goal or consequences, it might be better off as just an NPC the party can interact with, and not a social encounter that is worth XP. More guidance on the Influence subsystem can be found on [this](https://2e.aonprd.com/Rules.aspx?ID=1201) Archives of Nethys page.
+The Influence subsystem is one way to run a structured social encounter. If you wish to submit an influence encounter, please provide the influence stat blocks of your NPCs.
+
+Note that if a social encounter doesn't really have a clear goal or consequences, it might be better off as just an NPC the party can interact with, and not a social encounter that is worth XP. More guidance on the Influence subsystem can be found on [this](https://2e.aonprd.com/Rules.aspx?ID=1201) Archives of Nethys page.
 ### Skill Challenges/Victory Points
-Skill challenges and social encounters can also be less defined, or take place over a longer time than a typical initiative round. For example, maybe the party needs to succeed at certain checks X number of times before they fail such checks Y number of times, or overcome different obstacles as they travel to a dangerous location. In order to approve these, we will need a description of the challenge, relevant skills, DCs of all checks, and the consequences or benefits of failure and success.
+Skill challenges and social encounters can also be less defined, or take place over a longer time than a typical initiative round. For example, maybe the party needs to succeed at certain checks X number of times before they fail such checks Y number of times, or overcome different obstacles as they travel to a dangerous location.
+
+In order to approve these, we will need a description of the challenge, relevant skills, DCs of all checks, and the consequences or benefits of failure and success.
 ### Expedition Examples
 See the end of this document for instructions to install the Covalon module, which contains our campaign's Foundry VTT content, including our expedition missions. Many of these expedition missions use unique subsystems and mechanics that you can reference as an example before building your own!
 
-Verndhelt B: Playing Both Sides has an example of a structured social encounter using the Influence rules, and a free form social/skill encounter using a simple Victory Point system.
-
-Verndhelt C: Search the Sinkhole and Middlemist A: Delve the Dark both use a hex grid and skill checks to represent hexploration.
-
-Ikouga B: Investigate the Goop uses a simple skill challenge to research goop.
-
-Gornlar Mission B: Explore the Fire Mountain and Primrose Mission B: Playing Politics both utilize the chase subsystem for one of their required encounters.
+Verndhelt B: Playing Both Sides has an example of a structured social encounter using the Influence rules, and a free form social/skill encounter using a simple Victory Point system. Verndhelt C: Search the Sinkhole and Middlemist A: Delve the Dark both use a hex grid and skill checks to represent hexploration. Ikouga B: Investigate the Goop uses a simple skill challenge to research goop. Gornlar Mission B: Explore the Fire Mountain and Primrose Mission B: Playing Politics both utilize the chase subsystem for one of their required encounters.

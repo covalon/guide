@@ -95,6 +95,8 @@ Covalonians mustered to prepare the offensive. We created a clockwork drill to d
 
 With support from the Archons, our Vanguard teams attacked the heart directly. They dealt a fatal blow, and it seemed to perish...only for it to recieve a boost of life energy from arteries connected to something outside of Maw. Saskia and her legion bought us time to retreat, but we never saw them escape.
 
-The failed assault brought more questions than answers. What was the heart of the Maw drawing power from? Where else has its corruption spread? To answer this, Covalon would begin to set out on Expeditions to Pre-Cataclysm civilizations. Perhaps once Elleaterra is reclaimed, and the Maw's influence across the continent uprooted, we can kill it once and for all.
+The failed assault brought more questions than answers. What was the heart of the Maw drawing power from? Where else has its corruption spread? To answer this, Covalon would begin to set out on Expeditions to Pre-Cataclysm civilizations.
+
+Perhaps once Elleaterra is reclaimed, and the Maw's influence across the continent uprooted, we can kill it once and for all.
 
 A recording of the briefings and debriefings from Operation Heartbreaker can be found on Youtube [here.](https://youtu.be/b7ClPvDvLcE)

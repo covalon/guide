@@ -22,4 +22,6 @@ Cleric Spells:
 - '4th: containment'
 - '6th: wall of force'
 ---
-Specific doctrine on this divine being is lacking since the end of the world, even the name is a placeholder based on second-hand information. What is clear is that their followers pursued physical improvement and discipline to defend, restrain, and heal. Seeking always to offer the wicked the option to forgo their previous ways, redemption of evil is held above its destruction. The most valued follower is one who once persecuted the Lotus.
+Specific doctrine on this divine being is lacking since the end of the world, even the name is a placeholder based on second-hand information.
+
+What is clear is that their followers pursued physical improvement and discipline to defend, restrain, and heal. Seeking always to offer the wicked the option to forgo their previous ways, redemption of evil is held above its destruction. The most valued follower is one who once persecuted the Lotus.

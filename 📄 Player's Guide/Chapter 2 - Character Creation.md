@@ -1,6 +1,8 @@
 *This section details the rules for creating an appropriate character for Covalon. While our campaign uses the base Pathfinder 2nd Edition ruleset, we have some additional restrictions on character creation in order to ensure all characters fit our setting.*
 
-Before you can participate in Covalon, you need to create a level 1 character. If you don't own the Pathfinder 2e source books or you're new to the game, you can find all rules and character options at the [Archives of Nethys](https://2e.aonprd.com/PlayersGuide.aspx) website. Each player may only have one active character until they reach max level (see Alternate Character rules), so create a character that you'll love to play!
+Before you can participate in Covalon, you need to create a level 1 character. If you don't own the Pathfinder 2e source books or you're new to the game, you can find all rules and character options at the [Archives of Nethys](https://2e.aonprd.com/PlayersGuide.aspx) website.
+
+Each player may only have one active character until they reach max level (see Alternate Character rules), so create a character that you'll love to play!
 ## Character Creation Rules
 For the most part, Covalon uses the same character creation rules as the default character creation rules in the Pathfinder 2nd Edition Core Rulebook (CRB), but there are some key differences.
 ### Alternative Ability Boosts
@@ -61,7 +63,11 @@ The exception to this rule is starting equipment - you can only swap out your st
 
 You must [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) to have your rebuild or reincarnation approved by staff.
 ## Retiring Your Character
-If you aren't enjoying playing your character or if you just want to start over with a new one, you can voluntarily retire your current character. A retired character must forfeit all of their equipment, currency, and titles - these cannot be donated to another character before retirement. If the character owns private property, a business, or a guild hall, the property may be transferred to another tenant, employee, or guild member respectively, otherwise the property is forfeit as well. Once a character has been retired, they can never be played again.
+If you aren't enjoying playing your character or if you just want to start over with a new one, you can voluntarily retire your current character.
+
+A retired character must forfeit all of their equipment, currency, and titles - these cannot be donated to another character before retirement. If the character owns private property, a business, or a guild hall, the property may be transferred to another tenant, employee, or guild member respectively, otherwise the property is forfeit as well.
+
+Once a character has been retired, they can never be played again.
 
 > [!note] Questions About Builds and Rules?
 > If you're new to building a character in the PF2e system, don't hesitate to ask for help in the [\#🐣newbie-help-and-discussion](https://discord.com/channels/802423566196539412/988493362371891250) channel. If you have questions about how specific rules interactions are handled in Covalon, try searching in the [\#⁉rule-clarification-and-faqs](https://discord.com/channels/802423566196539412/809175735410884620) channel.

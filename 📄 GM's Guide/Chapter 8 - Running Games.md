@@ -2,13 +2,19 @@
 ### LFGM
 The LFGM channel is the easiest way to get a ready made batch of players. LFGM posts are organized into individual threads, and you can be pinged by groups that are ready for a dungeon guide by selecting the LFGM tag in [\#role-selection](https://discord.com/channels/802423566196539412/931305989477658624). You can browse through the LFGM threads to find a group whose APL matches your dungeon and whose schedule matches your own, and notify them in the thread that you will run their adventure, at which point they will mark it closed.
 ### Scheduled Events
-If you do not find a group in LFGM, or would rather not use LFGM, you may instead simply post your adventure directly to #📅scheduled-events. When you do so, you should indicate to players that they should get in touch with you via PM to send you their character details, including their token art and JSON, or other relevant means to import their character sheet to your table. You do not have to take players first-come, first-serve. You can add them to a pool instead, and select the players you think are most appropriate for your dungeon.
+If you do not find a group in LFGM, or would rather not use LFGM, you may instead simply post your adventure directly to [\#📅scheduled-events](https://discord.com/channels/802423566196539412/802438937120735262). When you do so, you should indicate to players that they should get in touch with you via PM to send you their character details, including their token art and JSON, or other relevant means to import their character sheet to your table.
+
+You do not have to take players first-come, first-serve. You can add them to a pool instead, and select the players you think are most appropriate for your dungeon.
 ### Mentors
-If you are struggling to fill out the players required for a lower level game, the mentor system allows higher level players to join lower tier games by utilising pre-made NPC characters. Mentors should be used when you are unable to get enough lower tier players for your adventure, and can be used in any tier that patrols are permitted. You will need to install the Covalon Mentor Module in order to use Mentors in your game.
+If you are struggling to fill out the players required for a lower level game, the mentor system allows higher level players to join lower tier games by utilising pre-made NPC characters. Mentors should be used when you are unable to get enough lower tier players for your adventure, and can be used in any tier that patrols are permitted.
+
+You will need to install the Covalon Mentor Module in order to use Mentors in your game.
 ### Making Adjustments
-Sometimes you will need to make adjustments to your dungeon after it has been submitted and approved. This might be because a player has dropped out, or enough players have levelled up that your APL has changed. When making adjustments to your dungeon, these must also be approved. Please Create a Ticket and submit your adjusted dungeon for approval with enough time to allow it to be processed.
+Sometimes you will need to make adjustments to your dungeon after it has been submitted and approved. This might be because a player has dropped out, or enough players have levelled up that your APL has changed.
+
+When making adjustments to your dungeon, these must also be approved. Please Create a Ticket and submit your adjusted dungeon for approval with enough time to allow it to be processed.
 ### Post your Adventure
-Once you have decided how you want to gather players, post your adventure in #📅scheduled-events. Your post should include the tier of adventure, what type of adventure it is, the date and time you intend to run the adventure, and the adventure hook. If the group was formed via LFGM, you should put player names and levels here as well in a numbered list; Otherwise, fill the list out with applicants that get in contact with you, or add the players who apply to a pool and select them later.
+Once you have decided how you want to gather players, post your adventure in [\#📅scheduled-events](https://discord.com/channels/802423566196539412/802438937120735262). Your post should include the tier of adventure, what type of adventure it is, the date and time you intend to run the adventure, and the adventure hook. If the group was formed via LFGM, you should put player names and levels here as well in a numbered list; Otherwise, fill the list out with applicants that get in contact with you, or add the players who apply to a pool and select them later.
 
 > [!note] Waitlist
 > LFGM games may have a waitlist in them, or you may get more applicants than you have slots in your game. When this happens, the extra players go on a waitlist. This waitlist is used if the primary selected players cannot make it for any reason, and waitlisters are used to fill gaps.
@@ -28,13 +34,15 @@ In the event that a player or audience member is actively disruptive and detrime
 ### Adjudicating Rules
 Pathfinder Second Edition is a complex game with a lot of rules, and we try to stick to RAW interpretations as much as possible. Sometimes however, there are some rules that you will need to make a decision on during a session, or you may have forgotten how a particular interaction works and it would be disruptive to the flow of the session to spend a significant amount of time looking it up.
 
-In such cases you should make a table ruling for that session, and endeavour to look up the correct rule after the session. You can do so in any of the appropriate text channels (🧮munchkins-and-mathfinder or 🐣newbie-help-and-discussion are a great place to start) or via creating a ticket to ask the staff team.
+In such cases you should make a table ruling for that session, and endeavour to look up the correct rule after the session. You can do so in any of the appropriate text channels ([\#🧮munchkins-and-mathfinder](https://discord.com/channels/802423566196539412/804570381310361631) or [\#🐣newbie-help-and-discussion](https://discord.com/channels/802423566196539412/988493362371891250) are a great place to start) or via creating a ticket to ask the staff team.
 ### Death and Downed Characters
 Pathfinder Second Edition is a tightly balanced system, and players will often find their character in the dying state in combat. For Covalon adventures, you are generally discouraged from attacking players with the dying condition, unless it makes clear tactical sense for the monster to do so.
 
-Actively trying to kill player characters is against the ethos of Covalon, but that doesn't mean to say that character death will never happen.
+Actively trying to kill player characters is against the ethos of Covalon, but that doesn't mean to say that character death will never happen. The hallmark of a well-balanced encounter is one that is high in tension and the party barely makes it out alive. Sometimes though, characters don't make it out due to bad luck with the dice, poor tactical decisions, or a combination of both.
 
-The hallmark of a well-balanced encounter is one that is high in tension and the party barely makes it out alive. Sometimes though, characters don't make it out due to bad luck with the dice, poor tactical decisions, or a combination of both. In the event that a player character does die, give the player the space to act out any final moments if they wish. After the session is concluded, please ping the @Servant Of Terra role. This guild handles the enacting of contracts and roleplay associated with character deaths.
+In the event that a player character does die, give the player the space to act out any final moments if they wish.
+
+After the session is concluded, please ping the @Servant Of Terra role. This guild handles the enacting of contracts and roleplay associated with character deaths.
 
 > [!note] Areas of Effect
 > Sometimes dying player characters will find themselves in the area of a damaging effect that is focused on another party member. While it is discouraged to specifically avoid hitting an active combat participant in order to hit a dying player character, AoEs are dangerous and they will still sometimes hit a dying character!
@@ -43,13 +51,13 @@ The hallmark of a well-balanced encounter is one that is high in tension and the
 ### Loot Distribution
 Items must be distributed according to the following procedure:
 
-- 1: At the conclusion of the adventure, all players go to the #🧮dice-channel and roll 1d100.
+- 1: At the conclusion of the adventure, all players go to the [\#🧮dice-channel](https://discord.com/channels/802423566196539412/803952560708124714) and roll 1d100.
 - 2: The GM notes each result, then posts the loot table in #💰loot-chat.
 - 3: Players, in order of highest D100 roll to lowest, claim items by typing !claim [item name].
 
 Players can select a maximum of one permanent item. Any permanent items left over after all players have claimed an item are lost, but consumables may be claimed by player choice or distributed by the GM.
 ### Lingering Affects
-Resolve and track any remaining lingering effects that have been applied to player characters throughout the dungeon. In most cases this will be making a post in 🤢 affliction-tracking and pinging the affected player.
+Resolve and track any remaining lingering effects that have been applied to player characters throughout the dungeon. In most cases this will be making a post in [\#🤢affliction-tracking](https://discord.com/channels/802423566196539412/942589119454924800) and pinging the affected player.
 
 At the end of an adventure, create a thread for each player who has received an untreated affliction from that adventure. Your thread title should follow the following format:
 
@@ -87,4 +95,4 @@ A summary of your dungeon must be posted in the #📜dungeon-summary channel, wi
 
 Dungeon summaries are mandatory, and are used to help track experience and level for players on the server. You must complete any outstanding dungeon summaries before submitting further adventures for approval.
 ### Delete Your Post
-Once everything else is done, and you have done everything else you need to do, including writing your dungeon summary, the final step is removing your post in #📅scheduled-events. This keeps clutter down and avoids confusing players.
+Once everything else is done, and you have done everything else you need to do, including writing your dungeon summary, the final step is removing your post in [\#📅scheduled-events](https://discord.com/channels/802423566196539412/802438937120735262). This keeps clutter down and avoids confusing players.

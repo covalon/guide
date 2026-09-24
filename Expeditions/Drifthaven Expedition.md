@@ -8,11 +8,17 @@ Journey Date: 2023-11-19
 ---
 Expedition to [[Drifthaven]].
 ## Expedition Log
-Our efforts to reclaim Drifthaven are complete! The journey to Drifthaven was like no other. Hordes of undead swarmed the once peaceful land.  We’d contended with terrain, temperature, and tentacles before, but never a veritable army! This would require a more creative approach. From gathered bones, we birthed a mighty chariot. Drawn by undead bulls, this vessel was perfect to delve deep into Drifthaven, a domain of death.
+Our efforts to reclaim Drifthaven are complete! The journey to Drifthaven was like no other. Hordes of undead swarmed the once peaceful land. We’d contended with terrain, temperature, and tentacles before, but never a veritable army!
 
-During our travels,  we had unexpected river complications, were serenaded by spooky spectres and fought through throngs of corpses. The greatest danger was when our rouse almost faltered and dead eyes fell upon us. Thankfully, we had disguise kits at the ready to mend our macabre masquerade. We established a yurt ringed in bone as our base of operations. While most of the undead in the area were mindless, we realised quickly that a lich was directing their movements.
+This would require a more creative approach. From gathered bones, we birthed a mighty chariot. Drawn by undead bulls, this vessel was perfect to delve deep into Drifthaven, a domain of death.
 
-So we hit them where it hurts, right in the soul cage. We disrupted their supply chain; wars need weapons and we had exactly the tools to take them off the table, explosives. Finally, we turned to the spirits of those who had met their end. Channelling their songs they guided us to our ultimate enemy, the Archlich Faltyr. To approach the undead lord, we carved through swarms of countless undead in his Cathedral of Death. Yet for all their numbers, we were stronger. We destroyed the lich’s soul cages and cast his spirit into the beyond. Life beats in the heart of Drifthaven once more.
+During our travels,  we had unexpected river complications, were serenaded by spooky spectres and fought through throngs of corpses. The greatest danger was when our rouse almost faltered and dead eyes fell upon us. Thankfully, we had disguise kits at the ready to mend our macabre masquerade. We established a yurt ringed in bone as our base of operations.
+
+While most of the undead in the area were mindless, we realised quickly that a lich was directing their movements. So we hit them where it hurts, right in the soul cage. We disrupted their supply chain; wars need weapons and we had exactly the tools to take them off the table, explosives.
+
+Finally, we turned to the spirits of those who had met their end. Channelling their songs they guided us to our ultimate enemy, the Archlich Faltyr.
+
+To approach the undead lord, we carved through swarms of countless undead in his Cathedral of Death. Yet for all their numbers, we were stronger. We destroyed the lich’s soul cages and cast his spirit into the beyond. Life beats in the heart of Drifthaven once more.
 
 ![Covalon's disguised yurt in Drifthaven. Designed by Rinka.|360](https://raw.githubusercontent.com/covalon/covalon-guide/gh-pages/assets/covalon/PlayersGuide/ExpeditionLog/DrifthavenOutpost.webp)
 ## Base Camp

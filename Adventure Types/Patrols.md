@@ -6,7 +6,11 @@ Duration: 1 hour
 Description: A short combat encounter of moderate difficulty near Covalon-controlled areas.
 ---
 ## For Players
-As the last bastion of civilization, Covalon faces minor threats on a daily basis. Patrols deal with handling these minor threats, and are intended to help lower-level characters level up quickly. These adventures typically last an hour and include a single combat encounter. They generally don't feature any exploration or puzzles and contain minimal roleplay opportunities, and only award gold and consumables as treasure. Patrols are currently available to Tier 1, 2 and 3 players.
+As the last bastion of civilization, Covalon faces minor threats on a daily basis. Patrols deal with handling these minor threats, and are intended to help lower-level characters level up quickly.
+
+These adventures typically last an hour and include a single combat encounter. They generally don't feature any exploration or puzzles and contain minimal roleplay opportunities, and only award gold and consumables as treasure.
+
+Patrols are currently available to Tier 1, 2 and 3 players.
 
 > [!note] HERO POINTS
 > Unlike a traditional campaign, not all Hero Points granted in Covalon expire at the end of a session; some stay with you until they are used.
@@ -16,7 +20,9 @@ As the last bastion of civilization, Covalon faces minor threats on a daily basi
 > Players can obtain Hero Points that don't expire at the end of an adventure (but are still consumed upon use) by playing in adventures, participating in or hosting events with a guild, or participating in special server events.
 
 ## For GMs
-Covalon Patrols are small adventures and missions that take place in the immediate vicinity of Covalon-controlled locations. A patrol consists of a single moderate combat encounter, and is expected to last no more than an hour. Patrols should have little to no narrative elements or non-combat encounters. Patrols never contain permanent magic items as loot, but magical consumables (such as talismans, potions, scrolls, etc) are allowed.
+Covalon Patrols are small adventures and missions that take place in the immediate vicinity of Covalon-controlled locations. A patrol consists of a single moderate combat encounter, and is expected to last no more than an hour. Patrols should have little to no narrative elements or non-combat encounters.
+
+Patrols never contain permanent magic items as loot, but magical consumables (such as talismans, potions, scrolls, etc) are allowed.
 
 > [!note] A Note on Experience
 > Remember that the experience budget for a dungeon is 250 **pre-adjusted** experience. This means that for a party of 4 you have 250 experience to spend on challenges. For a party of 6, you have around 375 experience to spend and a moderate encounter has a budget of 120 experience!

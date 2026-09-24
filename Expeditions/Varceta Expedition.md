@@ -12,7 +12,9 @@ Our efforts to relcaim Varceta are complete! We travelled across the plains of R
 
 We worked with this resistance to rally troops, investigate lava magic, and even performed underwater reconnaisance in a Dungeoneering Society crafted special Shark Diver Submarine! Together, we made a plan to lure in the psychopomp war master. A trap was laid at the peak of a nearby volcano, combining void and fire magic to create special Lava Tethers that bound Traseem, the Great Seabird in place!
 
-Traseem proved to be no easy foe, even bound, and the first group to challenge him was unfortunately slain, though revived by the Heart of Terra. When our heroes finally slayed the psychopomp, we found the vessel of the Maw contained within it. The Heart of Terra pushed to destroy it, but it struggled. Covalonians present for Traseem's destruction or at the Shrine of Terra noticed it falter. It managed to overcome the Maw, but not without cost. Varceta is freed, but it will take effort to bolster the Heart.
+Traseem proved to be no easy foe, even bound, and the first group to challenge him was unfortunately slain, though revived by the Heart of Terra. When our heroes finally slayed the psychopomp, we found the vessel of the Maw contained within it.
+
+The Heart of Terra pushed to destroy it, but it struggled. Covalonians present for Traseem's destruction or at the Shrine of Terra noticed it falter. It managed to overcome the Maw, but not without cost. Varceta is freed, but it will take effort to bolster the Heart.
 
 ![Covalon's outpost in Varceta. Designed by Komainu.|370](https://raw.githubusercontent.com/covalon/covalon-guide/refs/heads/gh-pages/assets/covalon/PlayersGuide/ExpeditionLog/VarcetaOutpost.webp)
 ## Base Camp

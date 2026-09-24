@@ -73,7 +73,9 @@ After overcoming the Maw Vessel in Varceta, at great cost to Covalon, the Heart 
 
 We journeyed north, using the airship *Sleipner*, and discovered the ruins of an ancient civilization of ant like humanoids. Over the coming months, as the Heart continued to weaken, we mapped and explore the depths of the city. We catalogued ancient items, called upon the ghosts of those long dead, snuck past ancient constructs, and finally found that an atifact eerily similar to the Heart of Terra was still sheltered in the Queen's Vault - Lifebringer.
 
-Covalonian adventurers, guided by the Dungeoneering Society, mobilized to retrieve the artifact. The Queen's Vault was magically sealed, and to open it required half a dozen teams of adventurers to activate magical obelisks scattered throughout the levels of the ruin. Our strongest teams were stationed deepest, to get inside the Vault and recover the artifact. There, they fought the crazed Undying Hskarren Council, and the Hskarren Queen herself, who was fused with Lifebringer in a vile attempt at eternal life. However, when Lifebringer was recovered, the entire ruin began to collapse.
+Covalonian adventurers, guided by the Dungeoneering Society, mobilized to retrieve the artifact. The Queen's Vault was magically sealed, and to open it required half a dozen teams of adventurers to activate magical obelisks scattered throughout the levels of the ruin.
+
+Our strongest teams were stationed deepest, to get inside the Vault and recover the artifact. There, they fought the crazed Undying Hskarren Council, and the Hskarren Queen herself, who was fused with Lifebringer in a vile attempt at eternal life. However, when Lifebringer was recovered, the entire ruin began to collapse.
 
 Each team of Covalonians had to hold the way open for the groups deeper below, working as a team to get everyone to safety. When Team Griffon finally led us to the surface, the Heart's power surged, teleporting everyone safely back to Covalon as the entire island where Xoria stood collapsed beneath the frozen sea.
 

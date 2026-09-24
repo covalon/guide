@@ -12,9 +12,11 @@ Efforts to reclaim Gornlar are complete! Due to roaming dragons, the safest way 
 
 ![The Den Maker. Designed by Sheas.|350](https://raw.githubusercontent.com/covalon/covalon-guide/gh-pages/assets/covalon/PlayersGuide/ExpeditionLog/TheDenMaker.webp)
 
-Upon breaching the mountain between Covalon and Gornlar, the drill was set upon by a pair of ancient dragons. Amidst a storm of frost and magma, it went into overdrive to burrow into a nearby cliff.  Luckily, the drill uncovered a series of tunnels that led into the domains of the two dragons - a conjoined pair of mountains, one covered in flame, and the other covered in frost. By exploring these mountains, we discovered information crucuial to defeating the two dragons.
+Upon breaching the mountain between Covalon and Gornlar, the drill was set upon by a pair of ancient dragons. Amidst a storm of frost and magma, it went into overdrive to burrow into a nearby cliff. Luckily, the drill uncovered a series of tunnels that led into the domains of the two dragons - a conjoined pair of mountains, one covered in flame, and the other covered in frost. By exploring these mountains, we discovered information crucuial to defeating the two dragons.
 
-Ashgut, the magma dragon, and Fjordcarver, the white dragon, were mortal enemies for centuries before they knocked each other into comas in a fierce battle. The cataclysm reawakened the two, and their ensuing battles razed Gornlar to the ground. The Covalonians found that these two mighty dragons were invincible when challenged on their own, but by battling both at the same time, they were able to turn the dragons' elemental powers against them. Ashgut and Fjordcarver were felled in a ravine at the intersection of the conjoined mountains, where a Vessel of the Maw was discovered and destroyed by our own Seed of Terra.
+Ashgut, the magma dragon, and Fjordcarver, the white dragon, were mortal enemies for centuries before they knocked each other into comas in a fierce battle. The cataclysm reawakened the two, and their ensuing battles razed Gornlar to the ground.
+
+The Covalonians found that these two mighty dragons were invincible when challenged on their own, but by battling both at the same time, they were able to turn the dragons' elemental powers against them. Ashgut and Fjordcarver were felled in a ravine at the intersection of the conjoined mountains, where a Vessel of the Maw was discovered and destroyed by our own Seed of Terra.
 
 ![Covalon's outpost in Gornlar. Designed by Sheas.|470](https://raw.githubusercontent.com/covalon/covalon-guide/gh-pages/assets/covalon/PlayersGuide/ExpeditionLog/GornlarOutpost.webp)
 ## Base Camp

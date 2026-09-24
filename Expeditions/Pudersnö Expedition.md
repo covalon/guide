@@ -14,11 +14,11 @@ It was impossible to know though just how bitterly cold those frozen lands had b
 
 Just as the furnaces were needed to heat our hands, our precious supplies of cocoa were needed to warm our hearts and they were under siege by a swarm of impossibly cute mice! Few remember how we managed the rest of the journey after these losses, but manage we did.
 
-Then it happened.
+Then it happened. Lightning crashing, wind howling and a resonant "BAAAAAAAAAAHHHH" that will linger in our quiet moments until the day we leave this world. We were falling, the ship was falling! Only by Captain Greenbeard's quick thinking and masterful skymanship did we manage the surprisingly graceful landing we did.
 
-Lightning crashing, wind howling and a resonant "BAAAAAAAAAAHHHH" that will linger in our quiet moments until the day we leave this world. We were falling, the ship was falling! Only by Captain Greenbeard's quick thinking and masterful skymanship did we manage the surprisingly graceful landing we did.
+Our mission on the ground was equally perilous to our journey through the sky. Forced to thin the ranks of our adversaries, investigate mysterious craters and even tame the power of lightning itself reclaiming Pudersnö proved to be one of our most difficult tasks yet.
 
-Our mission on the ground was equally perilous to our journey through the sky. Forced to thin the ranks of our adversaries, investigate mysterious craters and even tame the power of lightning itself reclaiming Pudersnö proved to be one of our most difficult tasks yet. Little did we know how baaaad things would get. At the crescendo of our reclamations we had to face down The Mpeshi King himself, a vicious beast of storm given flesh. This horny fiend clashed with our finest but was ultimately thrown down, as we smote his ruin upon the mountainside.
+Little did we know how baaaad things would get. At the crescendo of our reclamations we had to face down The Mpeshi King himself, a vicious beast of storm given flesh. This horny fiend clashed with our finest but was ultimately thrown down, as we smote his ruin upon the mountainside.
 
 ![Covalon's outpost in Pudersnö. Designed by Rinka.|465](https://raw.githubusercontent.com/covalon/covalon-guide/gh-pages/assets/covalon/PlayersGuide/ExpeditionLog/PudersnoOutpost.webp)
 ## Base Camp

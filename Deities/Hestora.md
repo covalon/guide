@@ -24,4 +24,6 @@ Cleric Spells:
 Pantheons:
 - '[[The Home of Hearth and Health]]'
 ---
-Hestora is a deity of the home, of earth and flames. She grants guidance to those who wish to provide safety and rest to others. She prefers to let her actions, and food speak for her. Stories say Hestora was formed from the ashes of the first flames. It was there she built the first fireplace and where she calls home. Inviting all for safety and comfort.
+Hestora is a deity of the home, of earth and flames. She grants guidance to those who wish to provide safety and rest to others. She prefers to let her actions, and food speak for her.
+
+Stories say Hestora was formed from the ashes of the first flames. It was there she built the first fireplace and where she calls home. Inviting all for safety and comfort.
