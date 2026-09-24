@@ -57,3 +57,14 @@ body {
 .internal-embed[src$="#For GMs"] :is(h1, h2, h3, h4, h5, h6)[data-heading="For GMs"] {
   display: none;
 }
+
+/* More room between list items */
+.markdown-rendered li + li,
+.markdown-rendered li > ul,
+.markdown-rendered li > ol {
+  margin-top: 0.8em;
+}
+/* editing view: lines can't take margins without upsetting the cursor, so pad them instead */
+.markdown-source-view.mod-cm6 .HyperMD-list-line + .HyperMD-list-line {
+  padding-top: 0.8em;
+}
