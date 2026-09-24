@@ -4,7 +4,7 @@ Tags:
 Event Type: multitable event
 Date: '2021-07-17'
 ---
-> [!info] Heroes of Operation Siege Breaker
+> [!heroes|right] Heroes of Operation Siege Breaker
 > The following characters were the vanguard who broke the undead dracolich.
 >
 > - Kor Ironstar

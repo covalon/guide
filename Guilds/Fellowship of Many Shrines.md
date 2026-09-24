@@ -17,4 +17,4 @@ Anathema: Force your beliefs on others, Disrespect another's faith
 ---
 A place for the faithful of Covalon to celebrate, record, and share religious culture and practices for many different deities.
 
-![Fellowship of Many Shrines Guild Heraldry.|250](https://raw.githubusercontent.com/covalon/covalon-guide/refs/heads/gh-pages/assets/covalon/PlayersGuide/Guilds/Fellowship%20heraldry.webp)
+![Fellowship of Many Shrines Guild Heraldry.](https://raw.githubusercontent.com/covalon/covalon-guide/refs/heads/gh-pages/assets/covalon/PlayersGuide/Guilds/Fellowship%20heraldry.webp)

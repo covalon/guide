@@ -16,6 +16,6 @@ Each Excursion within a Saga can include recurring NPCs, locations, and themes.
 
 Encounters in excursions follow the normal rules for Dungeons. Each excursion has an additional 40 XP (30 or 20 for parties of smaller size) added to the total session budget. This XP can be used to include additional creatures or hazards at any point in the excursion, including to create encounters more difficult than a 120 XP Moderate Encounter (100, or 80 for parties of smaller size).
 
-Excursions may optionally reward additional loot - this can be up to 10% of the loot value for an equivalent APL/Party Size non-patrol. This means an excursion's maximum loot value is 110% of the values listed in Table 4-1 Loot Values for Non-Patrols.
+Excursions may optionally reward additional loot - this can be up to 10% of the loot value for an equivalent APL/Party Size non-patrol. This means an excursion's maximum loot value is 110% of the values listed in [[Chapter 4 - Treasure and Rewards#Table 4-1 Loot values for Non-Patrols|Table 4-1: Loot Values for Non-Patrols]].
 
 Excursion submissions must include a narrative. These storylines cannot affect Covalon as a whole (e.g. new deities, attacks or plots against on Covalon itself) and must focus on the Excursion's region. Dungeon Summary posts for Excursions should be no more than 200 words long.

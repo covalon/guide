@@ -11,8 +11,8 @@ Our premier grapes are grown with careful application of kinetic magic, resultin
 
 Come in, and be shown to a seat inside the custom wooden interior, or relax on our upper balcony to enjoy a gorgeous view of Covalon's river.
 
-![Verdant Flame Ground. Designed by Rinka.|350](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/Maps/Verdant_Flame_Ground.png?raw=true)
+![Verdant Flame Ground. Designed by Rinka.](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/Maps/Verdant_Flame_Ground.png?raw=true)
 
-![Verdant Flame Sign. Designed by Kona.|250](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/Verdant_Flame_Sign.webp)
+![Verdant Flame Sign. Designed by Kona.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/Verdant_Flame_Sign.webp)
 
-![Verdant Flame Upper. Designed by Rinka.|350](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/Maps/Verdant_Flame_Upper.png?raw=true)
+![Verdant Flame Upper. Designed by Rinka.](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/Maps/Verdant_Flame_Upper.png?raw=true)

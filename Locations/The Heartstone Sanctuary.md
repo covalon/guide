@@ -10,6 +10,6 @@ Roleplay Channel:
 ---
 Symbolizing Covalon's cooperative efforts to stand against the Cataclysm, the Heartstone Sanctuary was commissioned by the Servants of Terra to provide free living quarters to new arrivals in Covalon. Its day to day operations are orchestrated by the sanctuary overseer Bumble the Humble (male kitsune cleric), who keeps the establishment clean, the baths warm, and the kitchen stocked with food.
 
-![Heartstone Sanctuary, ground floor. Designed by Sheas.|380](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/HeartstoneSanctuary.webp)
+![Heartstone Sanctuary, ground floor. Designed by Sheas.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/HeartstoneSanctuary.webp)
 
-![Heartstone Sanctuary, second floor. Designed by Sheas.|380](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/HeartstoneSanctuary2.webp)
+![Heartstone Sanctuary, second floor. Designed by Sheas.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/HeartstoneSanctuary2.webp)

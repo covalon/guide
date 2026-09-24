@@ -19,4 +19,4 @@ A guild dedicated to the maintenance and prosperity of Covalon's Library, throug
 
 All members get a small handcrafted stamp with The Archivists herald, to use when publishing books and approving documents. Although not a requirement, members can (and are encouraged) to earn their keep by publishing new works for The Archivists.
 
-![The Archivists Guild Heraldry. Designed by Ateia.|250](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/Guilds/TheArchivists.png?raw=true)
+![The Archivists Guild Heraldry. Designed by Ateia.](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/Guilds/TheArchivists.png?raw=true)

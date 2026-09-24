@@ -48,7 +48,7 @@ views:
 ![[City District]]
 
 ```datacorejsx
-const { CovalonEntries } = await dc.require(dc.headerLink("_Datacore Components.md", "CovalonEntries"));
+const { CovalonEntries } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
   return <CovalonEntries tag="covalon/location" sortBy="title" district="City District" heading="h3" hide={["District"]} />;
 }
@@ -57,7 +57,7 @@ return function View() {
 ![[Market District]]
 
 ```datacorejsx
-const { CovalonEntries } = await dc.require(dc.headerLink("_Datacore Components.md", "CovalonEntries"));
+const { CovalonEntries } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
   return <CovalonEntries tag="covalon/location" sortBy="title" district="Market District" heading="h3" hide={["District"]} />;
 }
@@ -66,7 +66,7 @@ return function View() {
 ![[Encore District]]
 
 ```datacorejsx
-const { CovalonEntries } = await dc.require(dc.headerLink("_Datacore Components.md", "CovalonEntries"));
+const { CovalonEntries } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
   return <CovalonEntries tag="covalon/location" sortBy="title" district="Encore District" heading="h3" hide={["District"]} />;
 }
@@ -75,7 +75,7 @@ return function View() {
 ![[Armory District]]
 
 ```datacorejsx
-const { CovalonEntries } = await dc.require(dc.headerLink("_Datacore Components.md", "CovalonEntries"));
+const { CovalonEntries } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
   return <CovalonEntries tag="covalon/location" sortBy="title" district="Armory District" heading="h3" hide={["District"]} />;
 }
@@ -84,7 +84,7 @@ return function View() {
 ![[Lake District]]
 
 ```datacorejsx
-const { CovalonEntries } = await dc.require(dc.headerLink("_Datacore Components.md", "CovalonEntries"));
+const { CovalonEntries } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
   return <CovalonEntries tag="covalon/location" sortBy="title" district="Lake District" heading="h3" hide={["District"]} />;
 }
@@ -93,7 +93,7 @@ return function View() {
 ![[Heart's Forest]]
 
 ```datacorejsx
-const { CovalonEntries } = await dc.require(dc.headerLink("_Datacore Components.md", "CovalonEntries"));
+const { CovalonEntries } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
   return <CovalonEntries tag="covalon/location" sortBy="title" district="Heart's Forest" heading="h3" hide={["District"]} />;
 }
@@ -102,7 +102,7 @@ return function View() {
 ![[The Docks]]
 
 ```datacorejsx
-const { CovalonEntries } = await dc.require(dc.headerLink("_Datacore Components.md", "CovalonEntries"));
+const { CovalonEntries } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
   return <CovalonEntries tag="covalon/location" sortBy="title" district="The Docks" heading="h3" hide={["District"]} />;
 }
@@ -111,7 +111,7 @@ return function View() {
 ![[The Farm]]
 
 ```datacorejsx
-const { CovalonEntries } = await dc.require(dc.headerLink("_Datacore Components.md", "CovalonEntries"));
+const { CovalonEntries } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
   return <CovalonEntries tag="covalon/location" sortBy="title" district="The Farm" heading="h3" hide={["District"]} />;
 }
@@ -122,7 +122,7 @@ return function View() {
 ![[River Run District]]
 
 ```datacorejsx
-const { CovalonEntries } = await dc.require(dc.headerLink("_Datacore Components.md", "CovalonEntries"));
+const { CovalonEntries } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
   return <CovalonEntries tag="covalon/location" sortBy="title" district="River Run District" heading="h3" hide={["District"]} />;
 }
@@ -131,7 +131,7 @@ return function View() {
 ![[North Gate District]]
 
 ```datacorejsx
-const { CovalonEntries } = await dc.require(dc.headerLink("_Datacore Components.md", "CovalonEntries"));
+const { CovalonEntries } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
   return <CovalonEntries tag="covalon/location" sortBy="title" district="North Gate District" heading="h3" hide={["District"]} />;
 }
@@ -140,7 +140,7 @@ return function View() {
 ![[Expedition Districts and Outside Covalon]]
 
 ```datacorejsx
-const { CovalonEntries } = await dc.require(dc.headerLink("_Datacore Components.md", "CovalonEntries"));
+const { CovalonEntries } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
   return <CovalonEntries tag="covalon/location" sortBy="title" district="Expedition Districts and Outside Covalon" heading="h3" hide={["District"]} />;
 }

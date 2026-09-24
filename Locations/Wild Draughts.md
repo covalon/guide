@@ -9,6 +9,6 @@ A modest structure for those who wish to partake in the wilds of the forest alon
 
 Come at the right time and perhaps catch a glimpse of the two proprietors at work at their vats and retorts and learn a bit about diverse alchemical traditions. Rinka’s connection to the unchecked vitality of nature and Yksys’s commitment to the hospitality of the Heart’s Sanctuary blend to yield a taste of serenity in this trying world we find ourselves in.
 
-![Wild Draughts Sign. Designed by Rinka.|400](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/WildDroughtsSign.webp)
+![Wild Draughts Sign. Designed by Rinka.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/WildDroughtsSign.webp)
 
-![Wild Draughts. Designed by Rinka.|580](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/WildDroughts.webp)
+![Wild Draughts. Designed by Rinka.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/WildDroughts.webp)

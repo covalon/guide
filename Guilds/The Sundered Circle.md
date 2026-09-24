@@ -18,4 +18,4 @@ Anathema: Leave arcane knowledge that you find, destroy a source of arcane knowl
 ---
 A convocation of mages determined to expand and restore Covalon's knowledge of arcane magic.
 
-![The Sundered Circle Guild Heraldry.|350](https://raw.githubusercontent.com/covalon/covalon-guide/refs/heads/gh-pages/assets/covalon/PlayersGuide/Guilds/sundered%20circle%20guild%20heraldry.png)
+![The Sundered Circle Guild Heraldry.](https://raw.githubusercontent.com/covalon/covalon-guide/refs/heads/gh-pages/assets/covalon/PlayersGuide/Guilds/sundered%20circle%20guild%20heraldry.png)

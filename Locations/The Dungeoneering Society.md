@@ -9,4 +9,4 @@ Covalon produces what it can to sustain itself, but as more refugees flock to th
 
 Portal specialists channel magical gateways to distant locations where adventurers salvage food, magic items, and everything in between. These excursions are crucial to Covalon's prosperity, and the participating adventurers earn their fair share of treasure and glory for their efforts.
 
-![The Dungeoneering Society. Designed by Sheas.|700](https://raw.githubusercontent.com/covalon/covalon-guide/gh-pages/assets/covalon/PlayersGuide/Maps/DungeoneeringSociety.webp)
+![The Dungeoneering Society. Designed by Sheas.](https://raw.githubusercontent.com/covalon/covalon-guide/gh-pages/assets/covalon/PlayersGuide/Maps/DungeoneeringSociety.webp)

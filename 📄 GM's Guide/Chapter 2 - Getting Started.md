@@ -12,7 +12,7 @@ This can be as simple as a block of text, or utilising one of the tools created 
 - A breakdown of the narrative of the dungeon
 - Any other specific details that the staff team should know about, including potential trigger warnings or themes.
 
-> [!note]
+> [!tip] Submission Sheet
 > Covalon has a spreadsheet that lays out everything you need for submission. You can use this by visiting this [link](https://docs.google.com/spreadsheets/d/1ROCS4OqesafnsqDbvwLztm8U4CzmHruYDBtFndqIgAo/edit?usp=sharing) and creating a copy for your own use! We encourage all Covalon GMs to use this tool!
 
 ## Your Portal Specialist NPC

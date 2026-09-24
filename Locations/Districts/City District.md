@@ -6,4 +6,4 @@ Tags:
 
 Community events are often organized in Covalon's square, which features relaxing gardens and a multipurpose stage to facilitate a wide variety of activities. Performances, feasts, and even Heartbond ceremonies have all been held in the town square.
 
-![The Town Square. Designed by Sheas.|400](https://raw.githubusercontent.com/covalon/covalon-guide/gh-pages/assets/covalon/PlayersGuide/Maps/TownSquare.webp)
+![The Town Square. Designed by Sheas.](https://raw.githubusercontent.com/covalon/covalon-guide/gh-pages/assets/covalon/PlayersGuide/Maps/TownSquare.webp)

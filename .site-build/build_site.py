@@ -16,7 +16,7 @@ What it does, so the published pages read like the Obsidian ones:
   * Emoji prefixes are dropped from file and folder names, and every wikilink is
     rewritten to the note's full path in the output so links never resolve ambiguously.
 """
-import re
+import html, re
 import sys
 import shutil
 import pathlib
@@ -25,7 +25,7 @@ import yaml
 
 SRC = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else pathlib.Path(__file__).resolve().parent.parent)
 OUT = pathlib.Path(sys.argv[2] if len(sys.argv) > 2 else "quartz/content")
-SKIP = {"_Datacore Components"}
+SKIP_FOLDERS = {"🔑 Setup"}   # Obsidian-only notes, never published
 HIDDEN_PROPS = {"tags", "aliases", "cssclasses"}
 PREFIX = re.compile(r"^(?:📍|📄)\s*")
 
@@ -59,7 +59,7 @@ class Note:
 
 notes = {}
 for p in sorted(SRC.rglob("*.md")):
-    if any(part.startswith(".") for part in p.relative_to(SRC).parts) or p.stem in SKIP:   # .obsidian, .site-build
+    if any(part.startswith(".") for part in p.relative_to(SRC).parts) or p.relative_to(SRC).parts[0] in SKIP_FOLDERS:   # .obsidian, .site-build, 🔑 Setup
         continue
     n = Note(p)
     notes[n.name] = n
@@ -180,7 +180,8 @@ def render_base(src):
                 cells.append(cell.replace("\n", " "))
             out.append("| " + " | ".join(cells) + " |")
         out.append("")
-    return "\n".join(out)
+    # on the site these tables get a filter box, a drop-down per short column and click-to-sort headers
+    return '<div class="covalon-filterable">\n\n' + "\n".join(out) + '\n\n</div>\n'
 
 
 # ------------------------------------------------------------------ Datacore CovalonEntries -> headings
@@ -194,7 +195,41 @@ def jsx_prop(src, key):
     return None
 
 
+MISSION = re.compile(r"^### Mission ([A-Z])(?::\s*(.+?))?\s*$")
+
+
+def render_missions():
+    """<MissionOverview />: every expedition's missions (from their ## Missions sections) as one table."""
+    rows = ["| Expedition | Mission | Summary |", "| :-- | :-- | :-- |"]
+    exps = sorted(tagged("covalon/expedition"), key=lambda n: plain(n.prop("Journey Date")))
+    for n in exps:
+        in_missions, cur, missions = False, None, []
+        for line in n.body.split("\n"):
+            if line.startswith("## "):
+                in_missions, cur = line.strip() == "## Missions", None
+                continue
+            if not in_missions:
+                continue
+            m = MISSION.match(line)
+            if m:
+                cur = [m.group(1), (m.group(2) or "").strip(), []]
+                missions.append(cur)
+            elif re.match(r"^#{1,3} ", line):
+                cur = None
+            elif cur:
+                cur[2].append(line.strip())
+        for i, (letter, name, text) in enumerate(missions):
+            place = f"[[{n.name}|{n.name.removesuffix(' Expedition')}]]"   # on every row, so the filter box keeps whole expeditions
+            anchor = f"Mission {letter} {name}".strip()
+            label = f"{letter}: {name}" if name else letter
+            summary = "<br>".join(t for t in text if t).replace("|", "\\|")   # paragraphs on their own lines
+            rows.append(f"| {place} | [[{n.name}#{anchor}\\|{label}]] | {summary} |")
+    return '<div class="covalon-filterable">\n\n' + "\n".join(rows) + '\n\n</div>\n'
+
+
 def render_entries(src, stack):
+    if "MissionOverview" in src:
+        return render_missions()
     tag = jsx_prop(src, "tag")
     if not tag:
         return ""
@@ -246,7 +281,12 @@ def render(note, stack=()):
         else:
             inner = section_of(target, m.group(2)) if m.group(2) else render(target, stack)
             level = last_heading_level("".join(out))
-            out.append(shift_to(inner.strip(), level + 1) if level else inner.strip())
+            inner = shift_to(inner.strip(), level + 1) if level else inner.strip()
+            classes = target.prop("cssclasses") or []
+            classes = [classes] if isinstance(classes, str) else list(classes)
+            if classes and not m.group(2):   # keep the embedded note's cssclasses (e.g. even-columns)
+                inner = f'<div class="{" ".join(classes)}">\n\n{inner}\n\n</div>'
+            out.append(inner)
         pos = m.end()
     out.append(text[pos:])
     return "".join(out).strip() + "\n"
@@ -300,12 +340,54 @@ def chapter_nav(name):
     prev = f"[[{chapters[i-1][1]}|← {chapters[i-1][0]}]]" if i > 0 else ""
     here = f"[[{guide}#{chapters[i][0]}|{chapters[i][0]}]]"
     nxt = f"[[{chapters[i+1][1]}|{chapters[i+1][0]} →]]" if i + 1 < len(chapters) else ""
-    return (f'<span class="chapter-nav"><span class="prev">{prev}</span>'
+    return (f'<span class="chapter-nav" data-pagefind-ignore><span class="prev">{prev}</span>'
             f'<span class="current">{here}</span><span class="next">{nxt}</span></span>')
+
+
+# ------------------------------------------------------------------ Pagefind (site search with filters)
+# Each page is marked up for Pagefind: its text is indexed, and its short properties become search filters.
+TYPES = {"Deities": "Deity", "Guilds": "Guild", "Locations": "Location", "Civilizations": "Civilization",
+         "Expeditions": "Expedition", "Campaign Events": "Campaign Event", "Adventure Types": "Adventure Type"}
+# Properties left out of the search filters: long text, dates, and lists too long to be useful as filters
+NOT_FILTERS = {"order", "description", "tagline", "expedition summary", "roleplay channel",
+               "edicts", "anathema", "membership requirements", "goals", "values", "date", "journey date",
+               "finale first cleared", "population", "created by", "cleric spells", "members", "leader",
+               "pantheon members", "guild headquarters of", "primary exports", "finale", "fate"}
+
+
+def page_type(note):
+    top = note.path.relative_to(SRC).parts[0]
+    if top.startswith("📄"):
+        return "Table" if note.name.startswith("Table ") else PREFIX.sub("", top)
+    return TYPES.get(top, top)
+
+
+def search_markup(note):
+    esc = lambda t: html.escape(str(t), quote=True)
+    tags = [f'<span hidden data-pagefind-meta="title">{esc(note.title)}</span>',
+            f'<span hidden data-pagefind-filter="Type">{esc(page_type(note))}</span>']
+    for k, v in note.props.items():
+        if k.lower() in HIDDEN_PROPS or k.lower() in NOT_FILTERS or v in (None, "", []):
+            continue
+        values = [plain_case(x) for x in (v if isinstance(v, list) else [v])]
+        if not all(0 < len(x) <= 40 for x in values):   # long text makes a poor filter
+            continue
+        tags += [f'<span hidden data-pagefind-filter="{esc(k)}">{esc(x)}</span>' for x in values]
+    return "".join(tags)
+
+
+def plain_case(v):
+    s = value_text(v)
+    s = re.sub(r"\[\[(?:[^\]|]*\|)?([^\]]*)\]\]", r"\1", s)
+    return re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", s).strip()
 
 
 def write_page(note):
     body = render(note)
+    classes = note.prop("cssclasses") or []
+    classes = [classes] if isinstance(classes, str) else list(classes)
+    if classes:   # the note's cssclasses (e.g. even-columns) apply to its own page too
+        body = f'<div class="{" ".join(classes)}">\n\n{body.strip()}\n\n</div>\n'
     props = props_list(note)
     if props:
         body = props + "\n\n" + body
@@ -313,6 +395,8 @@ def write_page(note):
         nav = chapter_nav(note.name)
         body = nav + "\n\n" + body.strip() + "\n\n" + nav + "\n"
     body = figures(rewrite_links(body))
+    if not note.name.startswith("📍"):   # overview pages repeat their entries' text, so leave them out of search
+        body = f'<div data-pagefind-body>\n\n{search_markup(note)}\n\n{body.strip()}\n\n</div>\n'
     fm = {"title": NAV[note.name][1][NAV[note.name][2]][0] if note.name in NAV else note.title}
     tags = [t.lower() for t in note.tags]
     if tags:
@@ -336,6 +420,7 @@ Welcome to the Covalon guides: everything you need to play in, or run games for,
 - [[{player}|Covalon Player's Guide]]: the full player's guide on one page.
 - [[{gm}|Covalon GM's Guide]]: the full guide for Dungeon Guides on one page.
 - [[{types}|Adventure Types]]: every kind of adventure Covalon runs.
+- [[search|Advanced search]]: search every page, filtered by type and properties (deity domains, soul seeds, districts and more).
 
 ## The world
 
@@ -345,6 +430,13 @@ Welcome to the Covalon guides: everything you need to play in, or run games for,
 - [[{exps}|Expeditions]]
 - [[{deities}|Deities, Faith, and Ideologies]]
 - [[{events}|Campaign Events]]
+"""
+
+SEARCH = """---
+title: Advanced Search
+---
+
+Search every page of the guides. Use the filters to narrow the results by page type or by properties such as a deity's domains, an expedition's soul seed or a location's district.
 """
 
 
@@ -360,7 +452,8 @@ def main():
         gaz=p("📍 Covalon Gazetteer"), guilds=p("📍 Guilds"), civs=p("📍 Pre-Cataclysm Civilizations"),
         exps=p("📍 Expeditions"), types=p("📍 Adventure Types"), deities=p("📍 Deities, Faith, and Ideologies"), events=p("📍 Campaign Events"),
     ), encoding="utf-8")
-    print(f"wrote {len(notes) + 1} pages to {OUT}")
+    (OUT / "search.md").write_text(SEARCH, encoding="utf-8")
+    print(f"wrote {len(notes) + 2} pages to {OUT}")
 
 
 if __name__ == "__main__":

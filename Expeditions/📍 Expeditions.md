@@ -4,22 +4,26 @@ The expeditions Covalon has launched to reclaim the lost civilizations of Elleat
 filters:
   and:
     - file.hasTag("covalon/expedition")
+properties:
+  file.name:
+    displayName: Expedition Location
 views:
   - type: table
     name: Expeditions
     order:
       - file.name
       - Journey Date
-      - Civilization
+      - Finale First Cleared
       - Soul Seed
       - Finale
     sort:
       - property: Journey Date
         direction: ASC
+
 ```
 
 ```datacorejsx
-const { CovalonEntries } = await dc.require(dc.headerLink("_Datacore Components.md", "CovalonEntries"));
+const { CovalonEntries } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
   return <CovalonEntries tag="covalon/expedition" sortBy="Journey Date" />;
 }

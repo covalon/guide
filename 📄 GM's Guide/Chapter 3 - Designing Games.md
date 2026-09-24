@@ -9,13 +9,13 @@ Keep in mind that your party size will impact your [experience Budget](https://2
 
 Sometimes you will find that the average party level of a group is in the middle of two whole levels. In the event of finding you have a party of a 0.5 interval, you should balance for one additional player of the lower level. For example, if you have a party of six with an APL of 6.5, you should balance for 7 level 6 characters.
 
-> [!note] Rebalancing
+> [!tip] Rebalancing
 > Sometimes you need to change the APL of your adventure based on player sign ups, level ups, or drop outs. Whenever possible, these adjustments MUST be approved ahead of time in a ticket. This rebalancing should include changing encounter EXP and loot for the new APL and party size.
 >
 > Staff understands that sometimes players don't show up and this necesitates rebalancing right before a game. If possible, try to ping @Mentors and get an extra player, but if you absolutely have to rebalance on the fly, [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) and let us know who didn't show up, your new APL and party size, and what you're changing.
 
 ## Building Encounters
-> [!info] Level 1 Characters
+> [!warning] Level 1 Characters
 > Level 1 characters are especially fragile. When a first level character is present, no creatures above level 3 can be used.
 
 It's time to select your creatures! For most Covalon game modes, you need to design for Moderate difficulty encounters. [This page](https://2e.aonprd.com/Rules.aspx?ID=497) is the perfect place to check the experience values of monsters you are selecting for your challenges.
@@ -57,4 +57,7 @@ In order to approve these, we will need a description of the challenge, relevant
 ### Expedition Examples
 See the end of this document for instructions to install the Covalon module, which contains our campaign's Foundry VTT content, including our expedition missions. Many of these expedition missions use unique subsystems and mechanics that you can reference as an example before building your own!
 
-Verndhelt B: Playing Both Sides has an example of a structured social encounter using the Influence rules, and a free form social/skill encounter using a simple Victory Point system. Verndhelt C: Search the Sinkhole and Middlemist A: Delve the Dark both use a hex grid and skill checks to represent hexploration. Ikouga B: Investigate the Goop uses a simple skill challenge to research goop. Gornlar Mission B: Explore the Fire Mountain and Primrose Mission B: Playing Politics both utilize the chase subsystem for one of their required encounters.
+- Verndhelt B: Playing Both Sides has an example of a structured social encounter using the **Influence rules**, and a free form social/skill encounter using a **simple Victory Point system**. 
+- Verndhelt C: Search the Sinkhole and Middlemist A: Delve the Dark both use a **hex grid** and skill checks to represent **hexploration**. 
+- Ikouga B: Investigate the Goop uses a simple **skill challenge** to research goop. 
+- Gornlar Mission B: Explore the Fire Mountain and Primrose Mission B: Playing Politics both utilize the **chase subsystem** for one of their required encounters.

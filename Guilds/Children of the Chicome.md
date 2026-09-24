@@ -17,4 +17,4 @@ Anathema: Allow nature to be harmed unnecessarily, stifle growth and change, neg
 ---
 A community dedicated to restoring the balance of nature in the land.
 
-![Children of the Chicome Guild Heraldry.|300](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/Guilds/ChildrenoftheChicome-Transparent.png?raw=true)
+![Children of the Chicome Guild Heraldry.](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/Guilds/ChildrenoftheChicome-Transparent.png?raw=true)

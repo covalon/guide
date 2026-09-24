@@ -4,7 +4,7 @@ Tags:
 Event Type: multitable event
 Date: '2025-06-28'
 ---
-> [!info] Heroes of Secrets of the Heart
+> [!heroes|right] Heroes of Secrets of the Heart
 > The following characters were the vanguard who fought against the Undying Hskarren Queen and her council.
 >
 > - Aerin Velika
@@ -81,4 +81,4 @@ Each team of Covalonians had to hold the way open for the groups deeper below, w
 
 Lifebringer and the Heart of Terra, two halves of the same ancient artifact, are reunited once more. Their reunion caused a renewing, magical rain to spread across Elleaterra, bringing with it strange new powers. The Heart of Terra is renewed and restored, and our adventurers empowered. We're more ready than ever to continue our expedition missions to destroy the Maw, and reclaim the rest of the world from the Cataclysm.
 
-![A sketch found in Pre-Cataclysm archaeological records. Drawn by Kona.|450](https://raw.githubusercontent.com/covalon/covalon-guide/refs/heads/gh-pages/assets/covalon/PlayersGuide/ExpeditionLog/SotH%20P1%20Journal%20Diagram.webp)
+![A sketch found in Pre-Cataclysm archaeological records. Drawn by Kona.](https://raw.githubusercontent.com/covalon/covalon-guide/refs/heads/gh-pages/assets/covalon/PlayersGuide/ExpeditionLog/SotH%20P1%20Journal%20Diagram.webp)

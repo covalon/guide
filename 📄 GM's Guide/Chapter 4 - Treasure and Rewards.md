@@ -1,49 +1,17 @@
-> [!info] One Permenant Item
+> [!tip] One Permanent Item
 > It is important to keep in mind that players can only select a maximum of one permanent item from each adventure, so don't add more than the number of players you have or it will go to waste!
 
 Selecting loot for your adventure is a critical part of its design! Below, you will find the rules and guidelines for selecting loot and treasure for your Covalon adventures. Keep in mind the theme of your dungeon, and take a look through the available items and equipment in order to select thematically appropriate loot.
 
-The total value of loot for each APL value can be found in Table 4-1 and 4-2. Underneath, you will find loot guidelines to ensure your submission will be approved!
+The total value of loot for each APL value can be found in [[Chapter 4 - Treasure and Rewards#Table 4-1 Loot values for Non-Patrols|Table 4-1]] and [[Chapter 4 - Treasure and Rewards#Table 4-2 Loot values for Patrols|4-2]]. Underneath, you will find loot guidelines to ensure your submission will be approved!
 ##### Table 4-1: Loot values for Non-Patrols
-APL | Total Gold Value of Loot | EXP
---- | :---: |----
-1 | 132g   | 500
-2 | 228g   | 500
-3 | 384g   | 500
-4 | 648g  | 500
-5 | 1,020g  | 500
-6 | 1,500g  | 500
-7 | 2,184g  | 500
-8 | 3,000g  | 500
-9 | 4,284g  | 500
-10| 3000g  | 250
-11| 4313g  | 250
-12| 6192g  | 250
-13| 9378g  | 250
-14| 13692g | 250
-15| 20442g | 250
+![[Table 4-1 - Loot values for Non-Patrols]]
 ##### Table 4-2: Loot values for Patrols
-| APL | Total Gold Value of Loot | EXP |
-| --- | :----------------------: | --- |
-| 1   |           66g            | 250 |
-| 2   |           114g           | 250 |
-| 3   |           192g           | 250 |
-| 4   |           324g           | 250 |
-| 5   |           510g           | 250 |
-| 6   |           750g           | 250 |
-| 7   |          1092g           | 250 |
-| 8   |          1500g           | 250 |
-| 9   |          2142g           | 250 |
-| 10  |           N/A            | N/A |
-| 11  |           N/A            | N/A |
-| 12  |           N/A            | N/A |
-| 13  |           N/A            | N/A |
-| 14  |           N/A            | N/A |
-| 15  |           N/A            | N/A |
+![[Table 4-2 - Loot values for Patrols]]
 
 Keep in mind that the above tables are for a 6 person party. You will need to adjust for a lower number of party members if you are running for fewer than 6 players! You can do this by dividing the above figures by 6, and multiplying the resulting number by the total number of players you will be running for.
 
-> [!note]
+> [!note|notitle]
 > For example, if you planned to run an APL 9 patrol for 5 players, you would divide 2142 by 6 to get 357. You then multiply 357 by 5 for a total loot budget for the adventure of 1785g.
 
 ## Loot Should Contain
@@ -56,7 +24,7 @@ Permenant items of a maximum level of the party's APL make for good loot. Partic
 ### Appropriately Levelled Formulas
 Formulas are the only way for Covalonians to gain access to uncommon and rare items! Formulas given as loot should be the same level or lower than the APL of the party.
 
-> [!note]
+> [!note|notitle]
 > Up to 2 formulas can be included as loot for an appropriately themed dungeon. When distributing loot at the end of a adventure, a formula is not considered a permanent item and can be directly donated to Covalon!
 
 ## Loot Should Not Contain
@@ -74,13 +42,7 @@ The technology level for the Covalon setting is ‘Gunpowder and Clockwork’ an
 Any items marked as disallowed on our server allowlist, which can be viewed [here](https://docs.google.com/spreadsheets/d/1yUXF_IAmpim6wkB7QT5l6K_lS5DgOppv99BHjMYbNIU/edit#gid=2120003232).
 ### How much Precious Material can be given out in a single adventure?
 #### Table 4-3: Precious Material Values
-Tier of Play | Precious Material Value Permitted
-:---: | :---: |
-1 | 2-3g |
-2 | 8-10g |
-3 | 45-55g |
-4 | 120-160g |
-5 | 2500g (not a typo) |
+![[Table 4-3 - Precious Material Values]]
 ## GM Rewards
 For running a game in Covalon, you recieve a Hero Point, up to the normal cap of 3. You also receive the rewards listed in tables 4-4 and 4-5.
 
@@ -88,41 +50,9 @@ When your adventure ends, you may choose to forgo the rewards in these tables if
 
 You can choose to take or forgo the Hero Point.
 #### Table 4-4: Non-Patrol* GM Rewards
-GM Character Level | Experience Reward | Gold Reward |
---- | :---: | :---: |
-1 | 500 | 22g
-2 | 500 | 38g
-3 | 500 | 64g
-4 | 500 | 108g
-5 | 500 | 170g
-6 | 500 | 250g
-7 | 500  | 364g
-8 | 500  | 500g
-9 | 500  | 714g
-10| 250  | 500g
-11| 250  | 719g
-12| 250  | 1032g
-13| 250  | 1563g
-14| 250  | 2282g
-15| 250  | 3407g
+![[Table 4-4 - Non-Patrol GM Rewards]]
 #### Table 4-5: Patrol GM Rewards
-GM Character Level | Experience Reward | Gold Reward |
---- | :---: | :---: |
-1 | 250 | 11g
-2 | 250 | 19g
-3 | 250 | 32g
-4 | 250 | 54g
-5 | 250 | 85g
-6 | 250 | 125g
-7 | 250  | 182g
-8 | 250  | 250g
-9 | 250  | 357g
-10| 0  | 125g
-11| 0  | 179g
-12| 0  | 258g
-13| 0  | 390g
-14| 0  | 570g
-15| 0  | 852g
+![[Table 4-5 - Patrol GM Rewards]]
 
 '* Non-Patrol rewards consist of Dungeons, Descents, Expeditions, Finales, Excursions, and Brawls.
 ## Hero Points and Keepsakes

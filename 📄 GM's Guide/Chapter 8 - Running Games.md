@@ -56,12 +56,12 @@ Items must be distributed according to the following procedure:
 - 3: Players, in order of highest D100 roll to lowest, claim items by typing !claim [item name].
 
 Players can select a maximum of one permanent item. Any permanent items left over after all players have claimed an item are lost, but consumables may be claimed by player choice or distributed by the GM.
-### Lingering Affects
+### Lingering Effects
 Resolve and track any remaining lingering effects that have been applied to player characters throughout the dungeon. In most cases this will be making a post in [\#🤢affliction-tracking](https://discord.com/channels/802423566196539412/942589119454924800) and pinging the affected player.
 
 At the end of an adventure, create a thread for each player who has received an untreated affliction from that adventure. Your thread title should follow the following format:
 
-> [!note]
+> [!note|notitle]
 > Afflicted Player's Name | Name of Affliction | YYYY/MM/DD
 
 If the player has not identified their affliction, the name of the affliction can be "unknown disease," "unknown curse," or even just "unknown affliction."
@@ -78,13 +78,13 @@ Normally, you should only include information that the player's character has un
 
 If the player character has an affliction that doesn't show symptoms until a certain stage, you have two options: make the thread as normal, but don't tag the player in it until they need to make their next save, OR make the thread and tag the player in it as normal, but let them know their character doesn't know they have an affliction until after their next save.
 
-> [!note] Lycanthropy
+> [!warning] Lycanthropy
 > Wereanimal curses can result in a player losing control of their character on the night of a full moon. In the event this takes place, you must create a ticket and add the afflicted player to the ticket. There you can talk with the staff team and player to come up with a fun, safe way for the curse to be resolved!
 
 ### Dungeon Summary
 A summary of your dungeon must be posted in the #📜dungeon-summary channel, with the following format:
 
-> [!warning]
+> [!example] Summary Format Example
 > Dungeon Name
 >
 > Month, Day, Year | Average Party Level
@@ -93,6 +93,8 @@ A summary of your dungeon must be posted in the #📜dungeon-summary channel, wi
 >
 > Write a brief summary here. It doesn't have to be detailed, just a general overview of what happened is fine to help players kickstart conversations in RP. Maximum length should be a single post.
 
-Dungeon summaries are mandatory, and are used to help track experience and level for players on the server. You must complete any outstanding dungeon summaries before submitting further adventures for approval.
+**Dungeon summaries are mandatory**, and are used to help track experience and level for players on the server. 
+
+You must complete any outstanding dungeon summaries before submitting further adventures for approval.
 ### Delete Your Post
 Once everything else is done, and you have done everything else you need to do, including writing your dungeon summary, the final step is removing your post in [\#📅scheduled-events](https://discord.com/channels/802423566196539412/802438937120735262). This keeps clutter down and avoids confusing players.

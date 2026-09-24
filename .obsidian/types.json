@@ -1,5 +1,6 @@
 {
   "types": {
-    "Journey Date": "date"
+    "Journey Date": "date",
+    "Finale First Cleared": "date"
   }
 }

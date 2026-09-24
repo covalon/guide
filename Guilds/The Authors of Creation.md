@@ -18,4 +18,4 @@ Anathema: Taking advantage of another's need for inordinate gain.
 ---
 A guild for the crafters of Covalon.
 
-![The Authors of Creation Guild Heraldry. Designed by Kosta.|300](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/Guilds/AuthorsofCreatrionpng.png?raw=true)
+![The Authors of Creation Guild Heraldry. Designed by Kosta.](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/Guilds/AuthorsofCreatrionpng.png?raw=true)

@@ -21,7 +21,7 @@ The level of technology for the setting can be summarised as 'Gunpowder and Cloc
 
 This means that settings that include heavy sci-fi elements, factories, heavy industralisation or similarly non-clockwork mechanical elements are not appropriate for Covalon adventures. Mixtures of magic and machine can be allowable. If you're unsure, feel free to ask in a ticket along with your game approval.
 
-> [!note] SHOPKEEPERS AND MERCHANTS
+> [!note] Shopkeepers and Merchants
 > You may choose to include NPCs that sell items in your adventures. You may also submit a recurring merchant NPC that shows up in multiple adventures (IE Phyllis the contract devil merchant, or Frisk the celestial trader).
 >
 > These NPCs may only sell consumables, and they should be sold at a 5-15% markup from their listed price. They may not sell disallowed items from the allowlist.

@@ -58,51 +58,57 @@ Monster Mash is a modified Death Match won by the first team to score 4 points.
 A point is scored when a player on the enemy team is knocked to Dying 4, or respawns. A respawn is triggered when a player begins their turn with the unconscious or dying conditions. If a player is knocked to dying, move their intiative as normal. If they take damage again and hit dying 4, they become untargetable and respawn on their initiative.
 
 On a respawn, players can elect to stay in the same stat block or switch to their other option. When you respawn, you remove all negative conditions and refresh any used abilties, such as spells or breath weapons. Unlike normal brawls, in Monster Mash you respawn upright and can immediatly take a turn.
-#### Dino Brawl
-Number | Dino
-:---: | :---:
-1 | Ankylosaurus
-2 | Brontosaurus
-3 | Carnotarus
-4 | Iguanodon
-5 | Majungasaurus
-6 | Pachycephalosaurus
-7 | Stegosaurus
-8 | Therizinosaurus
-9 | Triceratops
-10| Tyrannosaurus
-
-Stat block complexity: Low, recommended for players newer to PF2e's rules.
-#### Furious Fey
-Number | Fey
-:---: | :---:
-1 | Baobhan Sith
-2 | Dryad
-3 | Elananx
-4 | Lampad
-5 | Mighty Faerie Dragon
-6 | Naiad
-7 | Pixie
-8 | Redcap
-9 | Satyr
-10| Unicorn
-
-Stat block complexity: Moderate, includes spells and unique abilities, including healing.
-#### Dragons
-Number | Dragon
-:---: | :---:
-1 | Adamantine Dragon
-2 | Brine Dragon
-3 | Conspirator Dragon
-4 | Crystal Dragon
-5 | Diabolic Dragon
-6 | Empyreal Dragon
-7 | Ice Dragon
-8 | Magma Dragon
-9 | Omen Dragon
-10| Sky Dragon
-
-Stat block complexity: High, includes spells, special abilities, and fly speeds. Not recommended for players that are less familiar with PF2e.
+> [!columns|notitle]
+> > [!note] Dino Brawl
+> > | Number | Dino |
+> > | :---: | :---: |
+> > | 1 | Ankylosaurus |
+> > | 2 | Brontosaurus |
+> > | 3 | Carnotarus |
+> > | 4 | Iguanodon |
+> > | 5 | Majungasaurus |
+> > | 6 | Pachycephalosaurus |
+> > | 7 | Stegosaurus |
+> > | 8 | Therizinosaurus |
+> > | 9 | Triceratops |
+> > | 10| Tyrannosaurus |
+> >
+> > ##### Stat block complexity 
+> > Low, recommended for players newer to PF2e's rules.
+>
+> > [!note] Furious Fey
+> > | Number | Fey |
+> > | :---: | :---: |
+> > | 1 | Baobhan Sith |
+> > | 2 | Dryad |
+> > | 3 | Elananx |
+> > | 4 | Lampad |
+> > | 5 | Mighty Faerie Dragon |
+> > | 6 | Naiad |
+> > | 7 | Pixie |
+> > | 8 | Redcap |
+> > | 9 | Satyr |
+> > | 10| Unicorn |
+> >
+> > ##### Stat block complexity
+> > Moderate, includes spells and unique abilities, including healing.
+>
+> > [!note] Dragons
+> > | Number | Dragon |
+> > | :---: | :---: |
+> > | 1 | Adamantine Dragon |
+> > | 2 | Brine Dragon |
+> > | 3 | Conspirator Dragon |
+> > | 4 | Crystal Dragon |
+> > | 5 | Diabolic Dragon |
+> > | 6 | Empyreal Dragon |
+> > | 7 | Ice Dragon |
+> > | 8 | Magma Dragon |
+> > | 9 | Omen Dragon |
+> > | 10| Sky Dragon |
+> >
+> > ##### Stat block complexity
+> > High, includes spells, special abilities, and fly speeds. Not recommended for players that are less familiar with PF2e.
 ## For GMs
 Specific PVP events where two teams of three players face off against each other are brawls. Brawls may only be hosted by Senior Dungeon Guides.
 

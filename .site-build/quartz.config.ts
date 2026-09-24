@@ -18,35 +18,38 @@ const config: QuartzConfig = {
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
-      fontOrigin: "googleFonts",
+      // Matched to Obsidian's default theme (and its default purple accent) so the site looks like the vault.
+      // Fonts: Obsidian uses the system font; custom.scss sets the same font stacks.
+      fontOrigin: "local",
       cdnCaching: true,
       typography: {
-        header: "Schibsted Grotesk",
-        body: "Source Sans Pro",
-        code: "IBM Plex Mono",
+        header: "system-ui",
+        body: "system-ui",
+        code: "ui-monospace",
       },
       colors: {
         lightMode: {
-          light: "#faf8f8",
-          lightgray: "#e5e5e5",
-          gray: "#b8b8b8",
-          darkgray: "#4e4e4e",
-          dark: "#2b2b2b",
-          secondary: "#284b63",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#fff23688",
+          // parchment colours from the original Homebrewery guide (the vault's snippet uses the same)
+          light: "#f3e7cc", // page background
+          lightgray: "#d7c9a8", // borders
+          gray: "#4a5a8a", // faint text (muted navy)
+          darkgray: "#1f1a12", // body text
+          dark: "#0c246a", // headings (navy)
+          secondary: "#3b62c4", // links and accent (a slightly lighter navy than the headings)
+          tertiary: "#0c246a", // link hover (heading navy)
+          highlight: "rgba(59, 98, 196, 0.1)",
+          textHighlight: "rgba(255, 208, 0, 0.4)",
         },
         darkMode: {
-          light: "#161618",
-          lightgray: "#393639",
-          gray: "#646464",
-          darkgray: "#d4d4d4",
-          dark: "#ebebec",
-          secondary: "#7b97aa",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#b3aa0288",
+          light: "#1e1e1e",
+          lightgray: "#363636",
+          gray: "#666666",
+          darkgray: "#dadada",
+          dark: "#dadada",
+          secondary: "#9478f0",
+          tertiary: "#a68af9",
+          highlight: "rgba(148, 120, 240, 0.12)",
+          textHighlight: "rgba(255, 208, 0, 0.4)",
         },
       },
     },

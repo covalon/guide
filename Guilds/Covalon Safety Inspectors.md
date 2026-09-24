@@ -21,4 +21,4 @@ Anathema: Negligence with potentially dangerous factors that would negatively af
 ---
 A guild dedicated to assuring safe and healthy working conditions for Covalon's adventurers. We achieve this by setting and enforcing standards via training, outreach, education, and assistance for locations inside and outside of Covalon in a post-Cataclysm world.
 
-![CSI Guild Heraldry.|250](https://raw.githubusercontent.com/covalon/covalon-guide/refs/heads/gh-pages/assets/covalon/PlayersGuide/Guilds/csi%20guild%20heraldry.png)
+![CSI Guild Heraldry.](https://raw.githubusercontent.com/covalon/covalon-guide/refs/heads/gh-pages/assets/covalon/PlayersGuide/Guilds/csi%20guild%20heraldry.png)

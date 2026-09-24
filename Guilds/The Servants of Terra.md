@@ -18,4 +18,4 @@ Anathema: Exploit or destroy the resources given by the heart, deny shelter to t
 ---
 Protectors and servitors of the Heart of Terra.
 
-![The Servants of Terra Guild Heraldry. Designed by Sheas.|300](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/Guilds/ServantsofTerra.png?raw=true)
+![The Servants of Terra Guild Heraldry. Designed by Sheas.](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/Guilds/ServantsofTerra.png?raw=true)

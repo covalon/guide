@@ -9,4 +9,4 @@ The soft sounds of music and the sweet smell of pastries linger around Fayne's S
 
 Along with Mima's pastries, potions, and spellcasting services, the establishment also demos and sells toys made by Alora (female halfling ganzi summoner), and Rhia Fizzlefang (female gnoll champion) can often be found helping with orders and entertaining guests.
 
-![Fayne's Sweet Freedoms. Designed by Sheas.|680](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/FaynesSweetFreedoms.webp)
+![Fayne's Sweet Freedoms. Designed by Sheas.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/FaynesSweetFreedoms.webp)

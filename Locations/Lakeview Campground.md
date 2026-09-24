@@ -7,4 +7,4 @@ Roleplay Channel:
 ---
 For Covalonians who can't afford property or prefer sleeping under the stars, the Servants of Terra have cleared an area of the forest to be used as a public campground. The ranger station is staffed by forest warden Kouzo (male goloma cleric), and any citizen of Covalon can obtain a permit to stay at the campgrounds as long as they like if they promise to respect the forest and pay a small fee.
 
-![Lakeview Campgound. Designed by Sheas.|700](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/LakeviewCampground.webp)
+![Lakeview Campgound. Designed by Sheas.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/LakeviewCampground.webp)

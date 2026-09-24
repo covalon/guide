@@ -1,12 +1,10 @@
 ---
 Tags:
-- covalon/event
-Aliases:
-- 'Covalon: Out of Time'
+  - covalon/event
 Event Type: multitable event
-Date: '2023-05-20'
+Date: 2023-05-20
 ---
-> [!info] Heroes of Out of Time
+> [!heroes|right] Heroes of Out of Time
 > The following characters were the vanguard who fought the Eschatelpis Siktempora at the End of Time at the height of its power.
 >
 > - Arto Applefield

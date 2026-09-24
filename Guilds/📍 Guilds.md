@@ -20,7 +20,7 @@ views:
 ```
 
 ```datacorejsx
-const { CovalonEntries } = await dc.require(dc.headerLink("_Datacore Components.md", "CovalonEntries"));
+const { CovalonEntries } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
   return <CovalonEntries tag="covalon/guild" sortBy="title" />;
 }

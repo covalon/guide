@@ -9,4 +9,4 @@ The store is owned by the mysterious Qetello Fate-Weaver (nonbinary human witch)
 
 Newcomers can often be seen walking into the Weaver's Web with a smile and walking out with gear and potions; Qetello is as charitable as they are enigmatic!
 
-![The Weaver's Web. Designed by Sheas.|710](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/WeaversWeb.webp)
+![The Weaver's Web. Designed by Sheas.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/WeaversWeb.webp)

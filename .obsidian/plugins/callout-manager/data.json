@@ -1,0 +1,213 @@
+{
+  "callouts": {
+    "custom": [
+      "heroes"
+    ],
+    "settings": {
+      "note": [
+        {
+          "changes": {
+            "icon": "lucide-info",
+            "color": "166, 189, 197"
+          }
+        }
+      ],
+      "info": [
+        {
+          "changes": {
+            "color": "166, 189, 197"
+          }
+        }
+      ],
+      "example": [
+        {
+          "changes": {
+            "icon": "lucide-square-dashed-bottom-code",
+            "color": "166, 189, 197"
+          }
+        }
+      ],
+      "todo": [
+        {
+          "changes": {
+            "color": "158, 158, 158"
+          }
+        }
+      ],
+      "heroes": [
+        {
+          "changes": {
+            "icon": "lucide-swords",
+            "color": "166, 189, 197"
+          }
+        }
+      ],
+      "bug": [
+        {
+          "changes": {
+            "color": "158, 158, 158"
+          }
+        }
+      ],
+      "abstract": [
+        {
+          "changes": {
+            "color": "166, 189, 197"
+          }
+        }
+      ],
+      "summary": [
+        {
+          "changes": {
+            "color": "166, 189, 197"
+          }
+        }
+      ],
+      "tldr": [
+        {
+          "changes": {
+            "color": "166, 189, 197"
+          }
+        }
+      ],
+      "tip": [
+        {
+          "changes": {
+            "color": "233, 151, 63"
+          }
+        }
+      ],
+      "hint": [
+        {
+          "changes": {
+            "color": "233, 151, 63"
+          }
+        }
+      ],
+      "important": [
+        {
+          "changes": {
+            "color": "233, 151, 63"
+          }
+        }
+      ],
+      "success": [
+        {
+          "changes": {
+            "color": "158, 158, 158"
+          }
+        }
+      ],
+      "check": [
+        {
+          "changes": {
+            "color": "158, 158, 158"
+          }
+        }
+      ],
+      "done": [
+        {
+          "changes": {
+            "color": "158, 158, 158"
+          }
+        }
+      ],
+      "question": [
+        {
+          "changes": {
+            "color": "83, 223, 221"
+          }
+        }
+      ],
+      "help": [
+        {
+          "changes": {
+            "color": "83, 223, 221"
+          }
+        }
+      ],
+      "faq": [
+        {
+          "changes": {
+            "color": "83, 223, 221"
+          }
+        }
+      ],
+      "warning": [
+        {
+          "changes": {
+            "color": "201, 60, 65"
+          }
+        }
+      ],
+      "caution": [
+        {
+          "changes": {
+            "color": "201, 60, 65"
+          }
+        }
+      ],
+      "attention": [
+        {
+          "changes": {
+            "color": "201, 60, 65"
+          }
+        }
+      ],
+      "failure": [
+        {
+          "changes": {
+            "color": "158, 158, 158"
+          }
+        }
+      ],
+      "fail": [
+        {
+          "changes": {
+            "color": "158, 158, 158"
+          }
+        }
+      ],
+      "missing": [
+        {
+          "changes": {
+            "color": "158, 158, 158"
+          }
+        }
+      ],
+      "danger": [
+        {
+          "changes": {
+            "color": "158, 158, 158"
+          }
+        }
+      ],
+      "error": [
+        {
+          "changes": {
+            "color": "158, 158, 158"
+          }
+        }
+      ],
+      "quote": [
+        {
+          "changes": {
+            "color": "158, 158, 158"
+          }
+        }
+      ],
+      "cite": [
+        {
+          "changes": {
+            "color": "158, 158, 158"
+          }
+        }
+      ]
+    }
+  },
+  "calloutDetection": {
+    "obsidian": true,
+    "theme": true,
+    "snippet": true
+  }
+}

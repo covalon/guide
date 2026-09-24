@@ -14,4 +14,4 @@ Anathema: permanently animate an intelligent undead against its will, destroy ne
 ---
 Spellcasters delving into the secrets of resurrection and reanimation. "Life and Death are a cycle, we learn of death to better understand our lives." This is the ethos of The House of Dusk and Dawn.
 
-![House of Dusk and Dawn Guild Heraldry. Designed by Ateia.|250](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/Guilds/HouseofDuskandDawn.png?raw=true)
+![House of Dusk and Dawn Guild Heraldry. Designed by Ateia.](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/Guilds/HouseofDuskandDawn.png?raw=true)

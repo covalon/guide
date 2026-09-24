@@ -18,4 +18,4 @@ Anathema: Destroying natural habitats of reptiles
 ---
 Reptiles and reptile adjacent covalonians unite!
 
-![SSSSS Guild Heraldry.|500](https://raw.githubusercontent.com/covalon/covalon-guide/refs/heads/gh-pages/assets/covalon/PlayersGuide/Guilds/sssss%20guild%20heraldry.png)
+![SSSSS Guild Heraldry.](https://raw.githubusercontent.com/covalon/covalon-guide/refs/heads/gh-pages/assets/covalon/PlayersGuide/Guilds/sssss%20guild%20heraldry.png)

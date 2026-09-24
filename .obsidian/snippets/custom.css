@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
 /* Hide the file-name header Obsidian puts on top of embedded notes */
 .markdown-embed .markdown-embed-title,
 .markdown-embed .embed-title,
@@ -45,7 +46,9 @@ body {
   background: var(--background-secondary);
   font-size: var(--font-ui-small);
 }
-.covalon-prop { display: contents; }
+.covalon-prop {
+  display: contents;
+}
 .covalon-prop-key {
   color: var(--text-muted);
   font-weight: var(--font-semibold);
@@ -53,8 +56,10 @@ body {
 
 /* Adventure types: the guides embed just the "For Players" / "For GMs" section of each note,
    so hide that section heading inside those embeds (it still shows on the note itself) */
-.internal-embed[src$="#For Players"] :is(h1, h2, h3, h4, h5, h6)[data-heading="For Players"],
-.internal-embed[src$="#For GMs"] :is(h1, h2, h3, h4, h5, h6)[data-heading="For GMs"] {
+.internal-embed[src$='#For Players']
+  :is(h1, h2, h3, h4, h5, h6)[data-heading='For Players'],
+.internal-embed[src$='#For GMs']
+  :is(h1, h2, h3, h4, h5, h6)[data-heading='For GMs'] {
   display: none;
 }
 
@@ -72,26 +77,501 @@ body {
 /* Editing view: space above headings, callouts and the properties block
    (these used to come from blank lines in the notes). Padding, not margin,
    so the cursor still lines up. */
-.markdown-source-view.mod-cm6 .HyperMD-header-1 { padding-top: 1.8em; padding-bottom: 0.8em; }
-.markdown-source-view.mod-cm6 .HyperMD-header-2 { padding-top: 1.5em; padding-bottom: 0.65em; }
-.markdown-source-view.mod-cm6 .HyperMD-header-3 { padding-top: 1.2em; padding-bottom: 0.5em; }
-.markdown-source-view.mod-cm6 .HyperMD-header-4 { padding-top: 0.9em; padding-bottom: 0.4em; }
-.markdown-source-view.mod-cm6 .HyperMD-header-5 { padding-top: 0.9em; padding-bottom: 0.35em; }
-.markdown-source-view.mod-cm6 .HyperMD-header-6 { padding-top: 0.9em; padding-bottom: 0.3em; }
+.markdown-source-view.mod-cm6 .HyperMD-header-1 {
+  padding-top: 1.8em;
+  padding-bottom: 0.8em;
+}
+.markdown-source-view.mod-cm6 .HyperMD-header-2 {
+  padding-top: 1.5em;
+  padding-bottom: 0.65em;
+}
+.markdown-source-view.mod-cm6 .HyperMD-header-3 {
+  padding-top: 1.2em;
+  padding-bottom: 0.5em;
+}
+.markdown-source-view.mod-cm6 .HyperMD-header-4 {
+  padding-top: 0.9em;
+  padding-bottom: 0.4em;
+}
+.markdown-source-view.mod-cm6 .HyperMD-header-5 {
+  padding-top: 0.9em;
+  padding-bottom: 0.35em;
+}
+.markdown-source-view.mod-cm6 .HyperMD-header-6 {
+  padding-top: 0.9em;
+  padding-bottom: 0.3em;
+}
 /* no extra gap when a heading is the very first line */
-.markdown-source-view.mod-cm6 .cm-content > .HyperMD-header:first-child { padding-top: 0; }
-.markdown-source-view.mod-cm6 .cm-embed-block.cm-callout { margin-block: 0.8em; }
-.markdown-source-view.mod-cm6 .metadata-container { margin-bottom: 1.2em; }
+.markdown-source-view.mod-cm6 .cm-content > .HyperMD-header:first-child {
+  padding-top: 0;
+}
+.markdown-source-view.mod-cm6 .cm-embed-block.cm-callout {
+  margin-block: 0.8em;
+}
+.markdown-source-view.mod-cm6 .metadata-container {
+  margin-bottom: 1.2em;
+}
 
 /* Callouts (reading and editing view): even spacing between the title, headings and paragraphs */
-.callout .callout-content { padding-top: 0.2em; }
-.callout .callout-content > :first-child { margin-top: 0.4em; }
-.callout .callout-content > :last-child { margin-bottom: 0.2em; }
-.callout .callout-content p { margin-block: 0.6em; }
-.callout .callout-content :is(ul, ol) { margin-block: 0.6em; }
-.callout .callout-content h1 { margin-top: 1.4em; margin-bottom: 0.6em; }
-.callout .callout-content h2 { margin-top: 1.3em; margin-bottom: 0.55em; }
-.callout .callout-content h3 { margin-top: 1.2em; margin-bottom: 0.5em; }
-.callout .callout-content h4 { margin-top: 1.1em; margin-bottom: 0.45em; }
-.callout .callout-content :is(h5, h6) { margin-top: 1em; margin-bottom: 0.4em; }
-.callout .callout-content > :is(h1, h2, h3, h4, h5, h6):first-child { margin-top: 0.4em; }
+.callout .callout-content {
+  padding-top: 0.2em;
+}
+.callout .callout-content > :first-child {
+  margin-top: 0.4em;
+}
+.callout .callout-content > :last-child {
+  margin-bottom: 0.2em;
+}
+.callout .callout-content p {
+  margin-block: 0.6em;
+}
+.callout .callout-content :is(ul, ol) {
+  margin-block: 0.6em;
+}
+.callout .callout-content h1 {
+  margin-top: 1.4em;
+  margin-bottom: 0.6em;
+}
+.callout .callout-content h2 {
+  margin-top: 1.3em;
+  margin-bottom: 0.55em;
+}
+.callout .callout-content h3 {
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+}
+.callout .callout-content h4 {
+  margin-top: 1.1em;
+  margin-bottom: 0.45em;
+}
+.callout .callout-content :is(h5, h6) {
+  color: var(--callout-color);
+  margin-top: 1em;
+  margin-bottom: 0.2em;
+  font-size: 1em;
+  font-style: italic;
+  display: flex;
+  gap: 1ch;
+  &::after {
+    content: '';
+    flex: 1;
+    border-bottom: 0.5px solid currentColor;
+    align-self: center;
+  }
+}
+.callout .callout-content > :is(h1, h2, h3, h4, h5, h6):first-child {
+  margin-top: 0.4em;
+}
+
+/* Callout colours and icons are set with the Callout Manager plugin (Settings → Callout Manager),
+   which the site build also reads. Keep them out of this snippet so the plugin isn't overruled. */
+
+/* Callout header band: the title gets its own layer of the callout's background,
+   so the tint doubles up behind the title and icon, edge to edge. */
+
+.callout {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+}
+.callout > .callout-title {
+  position: relative;
+  background-color: inherit;
+  contain: layout paint;
+  display: flex;
+}
+.callout > :is(.callout-content, .callout-title) {
+  padding: var(--size-4-2) var(--size-4-3);
+}
+.callout > .callout-title > .callout-icon {
+  --icon-size: 150%;
+  opacity: 0.3;
+  position: absolute;
+  height: 100%;
+  right: 0.5ch;
+  margin: 0;
+  align-self: center;
+}
+.callout > .callout-title > .callout-icon svg {
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+/* Faded header band: the band fades out towards the right on every callout.
+   The title's own background is clipped to the text (hidden under the opaque title colour),
+   and a ::before layer inherits the same tint and is masked with a gradient, so it works
+   with any callout colour. */
+.callout > .callout-title {
+  isolation: isolate;
+  background-clip: text;
+}
+.callout > .callout-title::before {
+  --mask-gradient: linear-gradient(to right, #000 10%, transparent 150%);
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.8;
+  background-color: inherit;
+  background-clip: border-box;
+  -webkit-mask-image: var(--mask-gradient);
+  mask-image: var(--mask-gradient);
+}
+/* Callouts without a title: add |notitle after the type, e.g. > [!note|notitle]
+   (CSS can't tell a default "Note" title from a written one, so it needs the marker).
+   Hides the whole title bar (text, icon and band) and moves the text up into its place. */
+.callout[data-callout-metadata~='notitle'] > .callout-title {
+  display: none;
+}
+.callout[data-callout-metadata~='notitle'] > .callout-content {
+  padding-top: var(--size-4-2);
+}
+.callout[data-callout-metadata~='notitle'] > .callout-content > :first-child {
+  margin-top: 0.2em;
+}
+
+/* Floating callouts: add |right or |left after the type, e.g. > [!info|right] Title
+   (reading view and embeds; the editing view keeps them full width so they stay easy to edit) */
+.markdown-rendered .callout {
+  li {
+    margin-top: 0.2em;
+  }
+
+  &:is([data-callout-metadata~='right'], [data-callout-metadata~='left']) {
+    width: min(40%, 20rem);
+    margin-block: 0.25em 0.3em;
+
+    > .callout-title {
+      padding-block: 0.75rem;
+    }
+    > .callout-content {
+      padding-bottom: 1.5rem;
+    }
+
+    li {
+      font-size: 0.8em;
+      margin-top: 0.2em;
+      margin-left: 1.5ch;
+    }
+  }
+}
+
+.markdown-rendered .callout[data-callout-metadata~='right'] {
+  float: right;
+  clear: right;
+  margin-left: 1.5em;
+}
+.markdown-rendered .callout[data-callout-metadata~='left'] {
+  float: left;
+  clear: left;
+  margin-right: 1.5em;
+}
+/* keep floats inside the entry they belong to on the overview pages */
+.covalon-entry::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+@media (max-width: 700px) {
+  .markdown-rendered
+    .callout:is(
+      [data-callout-metadata~='right'],
+      [data-callout-metadata~='left']
+    ) {
+    float: none;
+    width: auto;
+    margin-inline: 0;
+  }
+}
+
+/* Callout list on 🔑 Setup/Callouts: reading view adds its own margin around each callout on top of
+   the list's gap, so drop it and let the gap alone set the spacing in both views */
+.covalon-callout-list .callout {
+  margin-block: 0;
+}
+
+/* Callout Manager's edit page: the callout preview is drawn inside a miniature copy of Obsidian
+   (in a shadow DOM that also loads this snippet), and that copy's <body> gets Obsidian's full-height
+   body styling, leaving a big empty gap under the callout. Let it shrink to fit.
+   `:not(html > body)` keeps this off the real Obsidian window. */
+body.obsidian-app:not(html > body) {
+  height: unset;
+}
+
+.calloutmanager-edit-callout-preview {
+  min-height: 0;
+}
+
+/* Links: keep each link on one line where possible (a link wraps as a whole to the next line
+   instead of splitting mid-name; very long links still wrap inside themselves).
+   Reading view and embeds only: in the editing view links are made of several pieces, and
+   changing their layout there can throw off the cursor. */
+.markdown-rendered :is(p, li, td, th) a {
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* Light mode: callout colours can look washed out on a white page. Cap each callout colour's
+   lightness (OKLCH lightness, 0 = black, 1 = white) so it's never lighter than
+   --callout-max-lightness, keeping its hue and saturation. Dark colours are left as they are.
+   Raise the number for lighter callouts, lower it for darker ones. */
+@supports (color: oklch(from red l c h)) {
+  .theme-light {
+    --callout-max-lightness: 0.5;
+    --callout-max-chroma: 0.4;
+  }
+  .theme-light .callout {
+    --callout-ink: oklch(
+      from var(--callout-color) min(l, var(--callout-max-lightness))
+        min(c, var(--callout-max-chroma)) h
+    );
+    background-color: color-mix(in srgb, var(--callout-ink) 10%, transparent);
+
+    :is(.callout-title, [data-heading]) {
+      color: var(--callout-ink);
+    }
+
+    .callout-icon .svg-icon {
+      color: var(--callout-ink);
+    }
+  }
+}
+
+/* Tables live in their own notes ("Table 3-1 - …") and are embedded under their heading in the
+   chapter. Keep the heading close to the table, so the two read as one unit. Matched by the embed's
+   link text, which starts with "Table ". Reading view and embeds: */
+.markdown-rendered :is(.el-h1, .el-h2, .el-h3, .el-h4, .el-h5, .el-h6):has(+ * .internal-embed[src^="Table "]) > :is(h1, h2, h3, h4, h5, h6) {
+  margin-bottom: 0.25em;
+}
+/* Editing view: */
+.markdown-source-view.mod-cm6 .HyperMD-header:is(:has(+ .internal-embed[src^="Table "]), :has(+ * .internal-embed[src^="Table "])) {
+  padding-bottom: 0.25em;
+}
+/* Both views: no extra space at the top of the embedded table */
+.internal-embed[src^="Table "] :is(.markdown-embed-content, .markdown-preview-view, .markdown-preview-section) {
+  padding-top: 0;
+  margin-top: 0;
+}
+.internal-embed[src^="Table "] table {
+  margin-top: 0;
+}
+/* Table header rows get a tint of the accent colour, so they read as headers.
+   Change the percentage for a stronger or softer tint. Applies in reading and editing view. */
+table th {
+  background-color: color-mix(in lab, var(--table-header-border-color) 60%, transparent) !important;
+}
+
+/* Same for a table written directly under its heading (e.g. the Brawls tables) */
+.markdown-rendered :is(.el-h1, .el-h2, .el-h3, .el-h4, .el-h5, .el-h6):has(+ .el-table) > :is(h1, h2, h3, h4, h5, h6) {
+  margin-bottom: 0.25em;
+}
+.markdown-rendered :is(.el-h1, .el-h2, .el-h3, .el-h4, .el-h5, .el-h6) + .el-table > table {
+  margin-top: 0;
+}
+.markdown-source-view.mod-cm6 .HyperMD-header:has(+ .cm-table-widget) {
+  padding-bottom: 0.25em;
+}
+
+/* Side-by-side boxes: a [!columns] callout lays out the callouts inside it in a row.
+   > [!columns|notitle]
+   > > [!note|notitle]
+   > > First box…
+   >
+   > > [!note|notitle]
+   > > Second box…
+   The outer callout itself is invisible; the boxes wrap onto new rows on narrow screens. */
+.callout[data-callout="columns"] {
+  background: none !important;
+  border: none;
+  padding: 0;
+  overflow: visible;
+}
+.callout[data-callout="columns"] > .callout-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 1em;
+  padding: 0;
+  margin-inline: -1rem;
+  font-size: 0.9em;
+}
+.callout[data-callout="columns"] > .callout-content > * {
+  flex: 1 1 22ch;
+  min-width: 0;
+  margin: 0;
+}
+.callout[data-callout="columns"] > .callout-content > .callout {
+  --callout-gutter: var(--size-4-3);
+}
+.callout[data-callout="columns"] > .callout-content > .callout table {
+  width: 100%;
+  --table-text-size: 0.9em;
+  --table-header-size: 0.9em;
+}
+.callout[data-callout="columns"] > .callout-content > .callout :is(th, td) {
+  padding: 0.2em 0.35em;
+}
+
+/* Light mode: parchment colours from the original Homebrewery guide (tan page, darker tan panels,
+   navy headings). The site uses the same colours (.site-build/quartz.config.ts). */
+.theme-light {
+  --background-primary: #f1ece0;          /* page */
+  --background-primary-alt: rgba(94, 82, 62, 0.1);   /* see-through dark tan-grey (code, embeds, inputs) */
+  --background-secondary: #eadcbd;        /* sidebars */
+  --background-secondary-alt: #e2d2b0;
+  --background-modifier-border: #d7c9a8;
+  --background-modifier-form-field: #f8efdb;
+  --titlebar-background: #e2d2b0;
+  --titlebar-background-focused: #eadcbd;
+  --tab-container-background: #e2d2b0;
+  --code-background: rgba(94, 82, 62, 0.15);
+  --text-normal: #1f1a12;
+  --heading-color: #0c246a;
+  --h1-color: #0c246a;
+  --h2-color: #0c246a;
+  --h3-color: #0c246a;
+  --h4-color: #0c246a;
+  --h5-color: #0c246a;
+  --h6-color: #0c246a;
+  --inline-title-color: #0c246a;
+  /* faint text (markdown syntax like ## and >, callout markers, placeholders): the link blue instead of light grey */
+  --text-faint: #a0836e;
+  /* links: a slightly lighter navy */
+  --link-color: #3b62c4;
+  --link-color-hover: #0c246a;
+  --link-external-color: #3b62c4;
+  --link-external-color-hover: #0c246a;
+  --link-unresolved-color: #3b62c4;
+}
+
+/* PF2e statblocks: > [!statblock] styled like the original guide's activity and ritual blocks.
+   > [!statblock]
+   > ##### Raise a Creature *Downtime*        ← the heading is the title; *text* sits on the right
+   > ==Uncommon== `Covalon` `Downtime`        ← `code` is a trait; ==highlight== is the rarity
+   >
+   > **Requirements** …; **Cost** …           ← properties
+   >
+   > ---
+   >
+   > Body text…
+   >
+   > **Critical Success** …                   ← after a rule, bold-first lines get a hanging indent
+   Rarity: ==Uncommon==, ==**Rare**==, ==*Unique*==. */
+.callout[data-callout="statblock"] {
+  --statblock-font: "Roboto Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
+  --statblock-trait: #5d0000;
+  --statblock-trait-border: #d8c483;
+  --statblock-uncommon: #98513d;
+  --statblock-rare: #002664;
+  --statblock-unique: #54166e;
+  background: none !important;
+  border: none;
+  border-radius: 0;
+  padding: 0 !important;
+  overflow: visible;
+  margin-block: 1.5em;
+}
+.callout[data-callout="statblock"] > .callout-title { display: none; }
+.callout[data-callout="statblock"] > .callout-content { padding: 0 !important; }
+.callout[data-callout="statblock"] > .callout-content > :is(h1, h2, h3, h4, h5, h6):first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1em;
+  margin: 0 0 0.3em !important;
+  padding: 0 0 0.1em;
+  border-bottom: 2px solid currentColor;
+  font-family: var(--statblock-font);
+  font-size: 1.2em;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: inherit;
+}
+.callout[data-callout="statblock"] > .callout-content > :is(h1, h2, h3, h4, h5, h6):first-child em {
+  font-style: normal;
+  white-space: nowrap;
+}
+/* traits and rarity */
+.callout[data-callout="statblock"] :is(code, mark, .text-highlight) {
+  display: inline-block;
+  margin: 0 0.1em 0.25em 0;
+  padding: 0.05em 0.35em;
+  border: 2px solid var(--statblock-trait-border);
+  border-radius: 0;
+  background: var(--statblock-trait);
+  color: #ffffff;
+  font-family: var(--statblock-font);
+  font-size: 0.9em;
+  font-weight: 700;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+.callout[data-callout="statblock"] :is(mark, .text-highlight) { background: var(--statblock-uncommon); }
+.callout[data-callout="statblock"] :is(mark, .text-highlight):has(> strong) { background: var(--statblock-rare); }
+.callout[data-callout="statblock"] :is(mark, .text-highlight):has(> em) { background: var(--statblock-unique); }
+.callout[data-callout="statblock"] :is(mark, .text-highlight) :is(strong, em) { font-weight: inherit; font-style: normal; }
+/* text: tight lines, later paragraphs indented, rules between sections */
+.callout[data-callout="statblock"] .callout-content p { margin: 0.2em 0 !important; }
+.callout[data-callout="statblock"] .callout-content p + p { text-indent: 1em; }
+.callout[data-callout="statblock"] .callout-content p:has(> strong:first-child) { text-indent: 0; }
+.callout[data-callout="statblock"] .callout-content strong { color: inherit; }
+.callout[data-callout="statblock"] .callout-content hr ~ p:has(> strong:first-child) {
+  text-indent: -1em;
+  padding-left: 1em;
+}
+.callout[data-callout="statblock"] .callout-content hr {
+  margin: 0.35em 0;
+  border: none;
+  border-top: 1px solid currentColor;
+}
+
+/* Callouts stand out with a thin outline in their own ink colour (in light mode the darkened
+   colour from the rule above). Statblock and columns callouts keep no outline. */
+.callout {
+  --callout-ink: var(--callout-color);
+  border: 1px solid var(--callout-ink);
+}
+
+.callout:is([data-callout="statblock"], [data-callout="columns"]) { border: none; }
+
+/* Note title bar: a slight drop shadow so it stands out from the note */
+.workspace-leaf-content > .view-header {
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+.theme-dark .workspace-leaf-content > .view-header {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+}
+
+/* Image captions (Image Captions plugin): no background behind the image or its caption
+   (the plugin gives them a solid grey) */
+.image-captions-figure,
+.image-captions-caption {
+  background: transparent;
+}
+.image-captions-caption {
+  margin-top: 0;   /* the plugin overlaps the caption by 5px, which would double the tint there */
+}
+
+/* Clear floats: a line with just > [!clear] makes whatever follows start below any floated callout.
+   Invisible in reading view; in the editing view it shows as a thin dashed line so it can be found. */
+.markdown-rendered .callout[data-callout="clear"] {
+  clear: both;
+  display: block;
+  height: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  overflow: hidden;
+  visibility: hidden;
+}
+.markdown-source-view .callout[data-callout="clear"] {
+  height: 0;
+  padding: 0 !important;
+  margin: 0.4em 0 !important;
+  border: none !important;
+  border-top: 1px dashed var(--text-faint) !important;
+  background: none !important;
+  overflow: hidden;
+}

@@ -12,17 +12,11 @@ Adventurers in Covalon are broken up into tiers based on their levels, which det
 > Alternate characters have a different max level than main characters, see the Alternate Character rules.
 
 ##### Table 3-1: Character Tiers by Levels
-| Tier| Character Levels|
-|:----------:|:--------:|
-| 1          |    1-3   |
-| 2          |    4-6   |
-| 3          |    7-9   |
-| 4          |  10-12   |
-| 5          |    13-15 |
+![[Table 3-1 - Character Tiers by Levels]]
 ### Resting and Daily Preparations
 Unlike a traditional campaign, your character's sleep schedule is intertwined with your own real-life sleep schedule. Your character benefits from a full night's rest every time you do in real life, and your character can choose to perform their daily preparations at any time between their last rest and their next adventure.
 
-> [!note] Remember to Rest!
+> [!tip] Remember to Rest!
 > If your character relies heavily on abilities with a limited number of usages per rest (such as spells or infused reagents), you may want to think carefully about participating in multiple adventures in the same day - your character won't recharge these abilities in between!
 
 ### Purchasing Equipment
@@ -84,62 +78,34 @@ As they've spent more time in the vicinity of the Heart of Terra, incredible pow
 
 Covalon uses the rules for Soul Seeds found in the Gamemastery Guide and Secrets of Magic books, with the following changes. A character's physical appearance does not change as a result of their developing Soul Seed. A character does not have access to upgrading or modifying their Soul Seed until they unlock their first aspect category by completing (or GMing) an expedition finale, and they can only choose aspects from categories they unlock by completing expedition finales.
 
-A list of aspects and their corresponding gifts can be found on [Archives of Nethys](https://2e.aonprd.com/Relics.aspx). Table 3-2 lists which expedition finales must be completed to unlock a particular aspect category. Soul Seeds are not lost upon character death if the character is revived.
+A list of aspects and their corresponding gifts can be found on [Archives of Nethys](https://2e.aonprd.com/Relics.aspx). [[Chapter 3 - Covalon Gameplay#Table 3-2 Aspect Category Unlocks|Table 3-2]] lists which expedition finales must be completed to unlock a particular aspect category. Soul Seeds are not lost upon character death if the character is revived.
 
-> [!note] GIFT SPECIFICS
-> Gifts that require a weapon as a prerequisite to activate use a weapon you are holding when activating the gift. Ignore any prerequisites that require a worn item. Any gifts that have "Interact" as part of their activation requirement have that replaced with a special somatic component that still has the Manipulate trait.
+> [!note] Gift Specifics
+> Gifts that require a weapon as a prerequisite to activate use a weapon you are holding when activating the gift. 
+> 
+> Ignore any prerequisites that require a worn item. 
+> 
+> Any gifts that have "Interact" as part of their activation requirement have that replaced with a special somatic component that still has the Manipulate trait.
 >
 > Your Soul Seed's level is equal to your own level.
 
-Initially, a character's Soul Seed can only obtain minor gifts, and their Soul Seed can only be customized with gifts from a single aspect. Completing certain Expedition Finales upgrades their Soul Seed with the ability to use stronger gifts or gifts from a second aspect. Table 3-3 lists which expedition finales must be completed to unlock a particular Soul Seed upgrade.
+Initially, a character's Soul Seed can only obtain minor gifts, and their Soul Seed can only be customized with gifts from a single aspect. Completing certain Expedition Finales upgrades their Soul Seed with the ability to use stronger gifts or gifts from a second aspect. [[Chapter 3 - Covalon Gameplay#Table 3-3 Soul Seed Upgrade Unlocks|Table 3-3]] lists which expedition finales must be completed to unlock a particular Soul Seed upgrade.
 
-Adding a new gift to a Soul Seed requires communing with the Heart of Terra and paying a gold cost. This does not consume downtime, but can only be performed in between adventures. A character also must meet a minimum level requirement, based on the gift they are attempting to add. Table 3-4 lists the cost and minimum level requirement for adding a new gift.
+Adding a new gift to a Soul Seed requires communing with the Heart of Terra and paying a gold cost. This does not consume downtime, but can only be performed in between adventures. A character also must meet a minimum level requirement, based on the gift they are attempting to add. [[Chapter 3 - Covalon Gameplay#Table 3-4 Adding Gifts to a Soul Seed|Table 3-4]] lists the cost and minimum level requirement for adding a new gift.
 
 Once a gift has been added to a Soul Seed, it cannot be removed. It can be changed to a different gift within the aspect with four days of retraining. A character can also retrain one or more of their Soul Seed's aspects, which also takes four days. When a Soul Seed's aspect is retrained, any incompatible gifts it has are rendered inert until they are retrained. Terran Reincarnation can be used to change Soul Seed's gifts or aspects.
 ##### Table 3-2: Aspect Category Unlocks
-Gift | Expedition Finale to Unlock
-:---: | :---:
-Air | [[Primrose]]
-Artistry | ???
-Beast | [[Pudersnö]]
-Celestial | ???
-Death | [[Drifthaven]]
-Dragon | [[Gornlar]]
-Earth | ???
-Emotion | [[Alatar]]
-Fiend | [[Verndhelt]]
-Fire | [[The Kingdom of Varceta\|Varceta]]
-Forge | [[Whitespire]]
-Life | ???
-Luck | ???
-Metal | [[The Fey Courts]]
-Mind | ???
-Plant | [[The Briarmurk\|Briarmurk]]
-Shadow | [[Middlemist]]
-Soul | [[Taltain]]
-Time | Automatically unlocked*
-Water | [[Ikouga]]
-.* The Time aspect is automatically unlocked once a player obtains their Soul Seed. ||
+![[Table 3-2 - Aspect Category Unlocks]]
 ##### Table 3-3: Soul Seed Upgrade Unlocks
-Upgrade | Expedition Finale to Unlock
-:---: | :---:
-Second Aspect | [[Ratchethallow]]
-Major Gifts | Complete 3 Unique Finales*
-Grand Gifts | ???
+![[Table 3-3 - Soul Seed Upgrade Unlocks]]
 
-> [!note] *MAJOR GIFTS
-> This upgrade was unlocked via the Secrets of the Heart server event (pg 33). Any approved PC in Covalon during this event (June 28th, 2025) automatically unlocks Major Gifts.
+> [!note] Major Gifts*
+> This upgrade was unlocked via the Secrets of the Heart server event (pg 33). Any approved PC in Covalon during this event (June 28th, 2025) automatically unlocked Major Gifts.
 >
-> You must still meet the requirements in Table 3-4.
+> You must still meet the requirements in [[Chapter 3 - Covalon Gameplay#Table 3-4 Adding Gifts to a Soul Seed|Table 3-4]].
 
 ##### Table 3-4: Adding Gifts to a Soul Seed
-Gift Number| Level Requirement | Gift Type | Price (gp)
-:----: | :----: | :----: | :-----:
-1 | 1 | Minor | 20
-2 | 5 | Minor | 160
-3 | 9 | Major | 700
-4 | 13 | Major | 3,000
-5 | 17 | Grand | 15,000
+![[Table 3-4 - Adding Gifts to a Soul Seed]]
 ### Additional Character Slots
 The Additional Character System allows players who reach the level cap to spend gold to play new characters without retiring existing ones.
 #### Core vs Alt / Active vs Inactive
@@ -185,7 +151,9 @@ As a GM, you can choose which of your active characters gets your GM rewards. Th
 Mentoring rewards can only be applied to an active character that is higher than the tier of the mentored game.
 ## Adventures
 > [!info] Server Time
-> Events are scheduled according to "server time," which is Covalon's standard time zone. During the winter and spring, it operates on Pacific Standard Time (UTC -8), and during the summer and fall, it uses Pacific Daylight Time (UTC -7).
+> Events are scheduled according to "server time," which is Covalon's standard time zone. During the winter and spring, it operates on **Pacific Standard Time (UTC -8)**, and during the summer and fall, it uses **Pacific Daylight Time (UTC -7)**.
+> 
+> There is a locked channel in the *Covalon Player's Guide* channel category with the current server time (give or take 5 minutes).
 
 "Adventures"  in Covalon are scheduled play sessions between players and a Dungeon Guide where player characters work together to overcome adversaries, obstacles, and other challenges to receive experience points (XP) and loot.
 
@@ -226,7 +194,11 @@ Due to the very limited equipment options available at the General Store, player
 Formulas found on adventures and formulas invented by players (either through deconstruction or the Inventor feat) can be posted on the [public bulletin board](https://docs.google.com/spreadsheets/d/1gcVr4Zk02KkMo44fHfEk5RPuspAKWAwyKj6pAYrwWzM/edit?gid=1191624151#gid=1191624151) - these formulas are free for anyone to copy.
 
 > [!note] DC to Craft an Item
-> The DC to craft an item can be found on the [DCs by Level](https://2e.aonprd.com/Rules.aspx?ID=554) table on page 503 of the CRB. In Covalon, we adjust the DC when crafting uncommon or rarer items as per the [Adjusting Difficulty](https://2e.aonprd.com/Rules.aspx?ID=555) rules. If you have the Inventor feat, the DC to Invent the formula for an item is equal to the DC to craft that item.
+> The DC to craft an item can be found on the [DCs by Level](https://2e.aonprd.com/Rules.aspx?ID=554) table on page 503 of the CRB. 
+> 
+> In Covalon, we adjust the DC when crafting uncommon or rarer items as per the [Adjusting Difficulty](https://2e.aonprd.com/Rules.aspx?ID=555) rules. 
+> 
+> If you have the Inventor feat, the DC to Invent the formula for an item is equal to the DC to craft that item.
 >
 > Many effects - such as Guidance - don't last long enough to benefit a Craft check. For more crafting-related rulings, check out [\#⁉rule-clarification-and-faqs](https://discord.com/channels/802423566196539412/809175735410884620) in the Discord server.
 
@@ -239,167 +211,118 @@ Crafting material obtained this way can alternatively be sold to the General Sto
 
 Gathering resources can also be used to obtain precious materials for crafting. The following table contains all of the precious materials that can currently be gathered in Covalon. More varieties of precious materials may become available in the future as Covalon expands and players discover new sources of materials.
 ##### Table 3-5: Available Precious Materials
-Precious Material | Applicable Lores
-:---: | :---:
-Cold iron | Mining, Caves, etc.
-Silver | Mining, Caves, etc.
-Dawnsilver | Mining, Caves, etc.
-Adamantine | Mining, Caves, etc.
-Duskwood | Woodcutting, Forest, etc.
-Dragonhide | Tanning, Dragon, etc.
-Siccatite (hot and cold) | Mining, Caves, Gornlar, etc.
-Abysium | Mining, Metal, etc.
-Djezet | Mining, Metal, etc.
-Inubrix | Mining, Metal, etc.
-Noqual | Mining, Metal, etc.
+![[Table 3-5 - Available Precious Materials]]
 #### Retraining
-Covalon's robust training facility and expansive library allows characters to retrain faster than in a traditional campaign. Retraining a feat, skill increase, selected language, or spell in a spell repertoire takes only four days of downtime, and retraining any other type of class feature only takes fourteen days. The use of these amenities is not free, however - for every day spent retraining, your character must pay the amount of gold listed for their level in Table 3-6: Retraining Costs.
+Covalon's robust training facility and expansive library allows characters to retrain faster than in a traditional campaign. Retraining a feat, skill increase, selected language, or spell in a spell repertoire takes only four days of downtime, and retraining any other type of class feature only takes fourteen days. The use of these amenities is not free, however - for every day spent retraining, your character must pay the amount of gold listed for their level in [[Chapter 3 - Covalon Gameplay#Table 3-6 Retraining Costs|Table 3-6: Retraining Costs]].
 
 Ancestry, heritage, background, class, and ability scores cannot be retrained. A player who wishes to change these things about their character will need to undergo a Terran Reincarnation ritual instead.
 ### Special Covalon Activities
 There are a number of unique activities that can be performed in between adventures in Covalon. Activities with the downtime trait require you to spend your downtime to perform them, while activities with the exploration trait can be performed without significant time investment.
 ##### Table 3-6: Retraining Costs
-Character Level | Retraining Cost (per day)
-:---: | :---:
-1 | 2 sp
-2 | 3 sp
-3 | 5 sp
-4 | 8 sp
-5 | 1 gp
-6 | 2 gp
-7 | 2 gp, 5 sp
-8 | 3 gp
-9 | 4 gp
-10 | 6 gp
-11 | 8 gp
-12 | 10 gp
-13 | 15 gp
-14 | 20 gp
-15 | 28 gp
-##### PURCHASE CONTRACT OF TERRAN REVIVAL
------
+![[Table 3-6 - Retraining Costs]]
+> [!statblock]
+> #### Purchase Contract of Terran Revival
+> `Covalon` `Exploration`
+>
+> **Cost** Cost a fragment of your soul plus an amount of money as detailed on [[Chapter 3 - Covalon Gameplay#Table 3-7 Contract Pricing|Table 3-7: Contract Pricing]]
+>
+> ------
+>
+> You imbue a fragment of your soul into the Heart of Terra, which will regenerate your body and soul in the event of your death (except by natural causes).
+>
+> When you purchase the contract, choose a level up to your character's current level and pay the associated cost. If you die while in an adventure, your contract is consumed and the Heart of Terra regenerates your body and soul in Covalon.
+>
+> You return to life at a level equal or lower to the level of contract you purchased, and your XP towards the next level is reset to 0. It takes some time for your soul to adjust to regeneration, leaving you clumsy 2, drained 2, and enfeebled 2 for 1 week; these conditions can't be removed or reduced by any means until the week has passed.
+>
+> You can upgrade your contract to a higher level by paying the cost difference.
 
-`Covalon` `Exploration`
-
-**Cost** Cost a fragment of your soul plus an amount of money as detailed on Table 3-7: Contract Pricing
-
-------
-
-You imbue a fragment of your soul into the Heart of Terra, which will regenerate your body and soul in the event of your death (except by natural causes).
-
-When you purchase the contract, choose a level up to your character's current level and pay the associated cost. If you die while in an adventure, your contract is consumed and the Heart of Terra regenerates your body and soul in Covalon.
-
-You return to life at a level equal or lower to the level of contract you purchased, and your XP towards the next level is reset to 0. It takes some time for your soul to adjust to regeneration, leaving you clumsy 2, drained 2, and enfeebled 2 for 1 week; these conditions can't be removed or reduced by any means until the week has passed.
-
-You can upgrade your contract to a higher level by paying the cost difference.
-
-> [!note] CONTRACTS FOR COMPANIONS
+> [!note] Contracts for Companions
 > You can purchase a Contract of Terran Revival for your animal companion or familiar. The price to do so is always 50 gp, and the revived companion or familiar will be the same level as the character that owns them.
 
 ##### Table 3-7: Contract Pricing
-Level | Cost
-:---: | :---:
-1 | 30 gp
-2 | 60 gp
-3 | 90 gp
-4 | 150 gp
-5 | 240 gp
-6 | 375 gp
-7 | 540 gp
-8 | 750 gp
-9 | 1,050 gp
-10 | 1,500 gp
-11 | 2,100 gp
-12 | 3,000 gp
-13 | 4,500 gp
-14 | 6,600 gp
-15 | 10,500 gp
-##### RAISE A CREATURE
------
+![[Table 3-7 - Contract Pricing]]
+> [!statblock]
+> #### Raise a Creature
+> `Covalon` `Downtime`
+>
+> **Requirements** You have taken a sample of a creature defeated during an adventure with the beast or animal trait, and you have had this creature sample approved after submitting a ticket.
+>
+> ------
+>
+> You invoke the power of the Heart of Terra to create a new creature from the sample of an old one. The Heart consumes the sample you provide it and produces an egg, which you spend seven days of consecutive downtime to incubate and care for. After seven days, this egg hatches into a creature of the same species as the one from the provided sample.
+>
+> If you have a feat or feature that gives you access to an animal companion, this creature can serve as your animal companion, using the stat blocks of a similar type of animal companion if an entry for this creature does not exist. Alternatively, the creature may be kept as a vanity pet, and you can own a maximum of four vanity pets.
+>
+> In order for a creature to be approved for Raise a Creature, it must have the animal or beast tag, not be a Maw-related creature, not have any vaguely humanoid characteristics, not have the Spirit or Dragon tag, and must not be a custom or 3rd-party creature. Creatures created from Raise a Creature have their diet changed to consist of meat or plants commonly found in rations and have none of the abilities or spellcasting usually associated with their creature type (though they keep their forms of movement).
+>
+> Vanity pets become small or tiny in size, have their intelligence modifier reduced to -4, and lose the ability to speak any languages. Creatures hatched via the Raise a Creature activity can be traded to other players.
 
-`Covalon` `Downtime`
+> [!statblock]
+> #### Seek Treatment
+> `Covalon` `Exploration` `Healing`
+>
+> **Frequency** once per day
+>
+> ------
+>
+> You visit Doc's Medical Center and solicit treatment from a healer. You are restored to full hit points, and your wounded condition (if any) is removed. If you have an animal companion(s) or familiar(s), they are also restored to full hit points.
+>
+> By paying 1 gp, the infirmary will also remove any conditions affecting you. The infirmary can remove any conditions (except doomed) as long as that condition was inflicted by an environmental effect, a creature or hazard with a level lesser than or equal to that of the settlement's, or by a spell with a level lesser than or equal to that of half the settlement's level (rounded up). (For a list of applicable conditions, see page 442 in the Player Core Rulebook.)
 
-**Requirements** You have taken a sample of a creature defeated during an adventure with the beast or animal trait, and you have had this creature sample approved after submitting a ticket.
-
-------
-
-You invoke the power of the Heart of Terra to create a new creature from the sample of an old one. The Heart consumes the sample you provide it and produces an egg, which you spend seven days of consecutive downtime to incubate and care for. After seven days, this egg hatches into a creature of the same species as the one from the provided sample.
-
-If you have a feat or feature that gives you access to an animal companion, this creature can serve as your animal companion, using the stat blocks of a similar type of animal companion if an entry for this creature does not exist. Alternatively, the creature may be kept as a vanity pet, and you can own a maximum of four vanity pets.
-
-In order for a creature to be approved for Raise a Creature, it must have the animal or beast tag, not be a Maw-related creature, not have any vaguely humanoid characteristics, not have the Spirit or Dragon tag, and must not be a custom or 3rd-party creature. Creatures created from Raise a Creature have their diet changed to consist of meat or plants commonly found in rations and have none of the abilities or spellcasting usually associated with their creature type (though they keep their forms of movement).
-
-Vanity pets become small or tiny in size, have their intelligence modifier reduced to -4, and lose the ability to speak any languages. Creatures hatched via the Raise a Creature activity can be traded to other players.
-##### SEEK TREATMENT
------
-
-`Covalon` `Exploration` `Healing`
-
-**Frequency** once per day
-
-------
-
-You visit Doc's Medical Center and solicit treatment from a healer. You are restored to full hit points, and your wounded condition (if any) is removed. If you have an animal companion(s) or familiar(s), they are also restored to full hit points.
-
-By paying 1 gp, the infirmary will also remove any conditions affecting you. The infirmary can remove any conditions (except doomed) as long as that condition was inflicted by an environmental effect, a creature or hazard with a level lesser than or equal to that of the settlement's, or by a spell with a level lesser than or equal to that of half the settlement's level (rounded up). (For a list of applicable conditions, see page 442 in the Player Core Rulebook.)
-##### Cure a Curse
------
-
-`Covalon` `Exploration`
-
-**Frequency** once per day; **Cost** 40 gp
-
-------
-
-You visit the chapel to remove a curse. The church automatically counteracts one curse afflicting your character or an item your character possesses. The church can remove a curse with a level up to the settlement's level, or up to a spell rank lesser than or equal to half the settlement's level (rounded up).
+> [!statblock]
+> #### Cure a Curse
+> `Covalon` `Exploration`
+>
+> **Frequency** once per day; 
+> **Cost** 40 gp
+>
+> ------
+>
+> You visit the chapel to remove a curse. The church automatically counteracts one curse afflicting your character or an item your character possesses. The church can remove a curse with a level up to the settlement's level, or up to a spell rank lesser than or equal to half the settlement's level (rounded up).
 ### Special Covalon Rituals
 A select few number of rituals are available in Covalon. In addition to the allowed rituals in the [Server Allowlist](https://docs.google.com/spreadsheets/d/1yUXF_IAmpim6wkB7QT5l6K_lS5DgOppv99BHjMYbNIU/edit?usp=sharing), the following rituals are also available. Like all rituals, they must be learned with the Learn a Spell activity before they can be cast, and characters without the ability to Cast a Spell can cast these rituals. These rituals must be cast by players; there are no NPCs that are capable of casting them.
-#### Terran Reincarnation (Ritual 3)
-`UNCOMMON` `COVALON` `EXPLORATION`
-
-**Cost** rare herbs worth a total value of the level the target wishes to reincarnate into (minimum 1) x 25 gp
-
-**Secondary Casters** 2
-
-**Primary Check** Nature (expert)
-
-**Secondary Checks** Occultism, Religion
-
-**Range** 10 Feet
-
-**Target(s)** 1 living creature
-
----
-
-You harness the Heart of Terra's ambient energies of renewal to allow the target to change fundamental aspects about themself. The target gains a full character rebuild, allowing them to change their name, ancestry, background, class, feats, skill increases, attribute scores, spell repertoire selections and any other aspects of their character they wish, although the character's equipment, wealth, memories, learned spells, and past remain intact.
-
-The target can choose to reincarnate up to level 8 or their original character level, whichever is lower. Terran Reincarnations vary in appearance, with each ritual manifesting differently depending on the target.
-
-Players wishing to undergo Terran Reincarnation must first submit their new character sheet with a log of changes from their previous character to the moderation team by creating a ticket. They must also include details on how their particular reincarnation will manifest if they wish to incorporate narrative elements into their reincarnation. At minimum, all narratives must involve undergoing the ritual itself.
-
-**Critical Success** You reincarnate the target without side effects.
-
-**Success** You reincarnate the target with some side effects. The target has 1 HP and all of its limited use per day abilities (including spellcasting) aren't available until the target's next daily preparations. The target takes some time to adjust to the reincarnation, leaving them clumsy 2, drained 2, and enfeebled 2 for 1 week; these conditions can't be removed or reduced by any means until the week has passed.
-
-**Failure** You fail to reincarnate the target.
-
-**Critical Failure** The reincarnation backfires. If the target has a Contract of Terran Revival, they can execute it immediately (this does not count as dying), otherwise they become an unintelligent animal creature of their choosing with a level no greater than half their original level. They may attempt to be reincarnated again. If they don't, the target is considered dead and their player must create a new character.
-
------
-
-**Heightened (4th)** The maximum level the target can reincarnate to increases to 10. The cost is the level the target wishes to reincarnate into (minimum 1) x 40 gp.
-
-**Heightened (5th)** The maximum level the target can reincarnate to increases to 12. The cost is the level the target wishes to reincarnate into (minimum 1) x 75 gp.
-
-**Heightened (6th)** The maximum level the target can reincarnate to increases to 14. The cost is the level the target wishes to reincarnate into (minimum 1) x 125 gp.
-
-**Heightened (7th)** The maximum level the target can reincarnate to increases to 16. The cost is the level the target wishes to reincarnate into (minimum 1) x 200 gp.
-
-**Heightened (8th)** The maximum level the target can reincarnate to increases to 18. The cost is the level the target wishes to reincarnate into (minimum 1) x 300 gp.
-
-**Heightened (9th)** The maximum level the target can reincarnate to increases to 20. The cost is the level the target wishes to reincarnate into (minimum 1) x 600 gp.
-
-The Terran Reincarnation ritual was invented by the Seekers of Secrets as a method of harnessing the Heart of Terra's ambient magic to allow people to change their biology, personality, and aptitudes. For some, these changes help them adapt better to a post-Cataclysm world, and for others, it allows them to assume their perfect idea of themself in order to better defend the last bastion of civilization.
+> [!statblock]
+> #### Terran Reincarnation *Ritual 3*
+> ==Uncommon== `Covalon` `Exploration`
+>
+> **Cost** rare herbs worth a total value of the level the target wishes to reincarnate into (minimum 1) x 25 gp; 
+> **Secondary Casters** 2; 
+> **Primary Check** Nature (expert); 
+> **Secondary Checks** Occultism, Religion; 
+> **Range** 10 Feet; 
+> **Target(s)** 1 living creature
+>
+> ---
+>
+> You harness the Heart of Terra's ambient energies of renewal to allow the target to change fundamental aspects about themself. The target gains a full character rebuild, allowing them to change their name, ancestry, background, class, feats, skill increases, attribute scores, spell repertoire selections and any other aspects of their character they wish, although the character's equipment, wealth, memories, learned spells, and past remain intact.
+>
+> The target can choose to reincarnate up to level 8 or their original character level, whichever is lower. Terran Reincarnations vary in appearance, with each ritual manifesting differently depending on the target.
+>
+> Players wishing to undergo Terran Reincarnation must first submit their new character sheet with a log of changes from their previous character to the moderation team by creating a ticket. They must also include details on how their particular reincarnation will manifest if they wish to incorporate narrative elements into their reincarnation. At minimum, all narratives must involve undergoing the ritual itself.
+>
+> **Critical Success** You reincarnate the target without side effects.
+>
+> **Success** You reincarnate the target with some side effects. The target has 1 HP and all of its limited use per day abilities (including spellcasting) aren't available until the target's next daily preparations. The target takes some time to adjust to the reincarnation, leaving them clumsy 2, drained 2, and enfeebled 2 for 1 week; these conditions can't be removed or reduced by any means until the week has passed.
+>
+> **Failure** You fail to reincarnate the target.
+>
+> **Critical Failure** The reincarnation backfires. If the target has a Contract of Terran Revival, they can execute it immediately (this does not count as dying), otherwise they become an unintelligent animal creature of their choosing with a level no greater than half their original level. They may attempt to be reincarnated again. If they don't, the target is considered dead and their player must create a new character.
+>
+> -----
+>
+> **Heightened (4th)** The maximum level the target can reincarnate to increases to 10. The cost is the level the target wishes to reincarnate into (minimum 1) x 40 gp.
+>
+> **Heightened (5th)** The maximum level the target can reincarnate to increases to 12. The cost is the level the target wishes to reincarnate into (minimum 1) x 75 gp.
+>
+> **Heightened (6th)** The maximum level the target can reincarnate to increases to 14. The cost is the level the target wishes to reincarnate into (minimum 1) x 125 gp.
+>
+> **Heightened (7th)** The maximum level the target can reincarnate to increases to 16. The cost is the level the target wishes to reincarnate into (minimum 1) x 200 gp.
+>
+> **Heightened (8th)** The maximum level the target can reincarnate to increases to 18. The cost is the level the target wishes to reincarnate into (minimum 1) x 300 gp.
+>
+> **Heightened (9th)** The maximum level the target can reincarnate to increases to 20. The cost is the level the target wishes to reincarnate into (minimum 1) x 600 gp.
+>
+> The Terran Reincarnation ritual was invented by the Seekers of Secrets as a method of harnessing the Heart of Terra's ambient magic to allow people to change their biology, personality, and aptitudes. For some, these changes help them adapt better to a post-Cataclysm world, and for others, it allows them to assume their perfect idea of themself in order to better defend the last bastion of civilization.
 ## Roleplay
 Covalon features several special systems designed to facilitate and enhance roleplaying experiences. Participating in these systems allows for both veteran and new roleplayers alike to enrich their gameplay between adventures with meaningful interplayer engagement.
 ### Guilds
@@ -415,12 +338,18 @@ When these three requirements are met, the guild leader can [\#create-a-ticket](
 
 Players may be in a maximum of two guilds, and a guild may have a maximum of 10 members. This member cap is raised by 2 after a guild hosts an event or project.
 
-> [!note] ROLEPLAY EVENTS/NARRATIVE PROJECTS
+> [!note] Roleplay Events / Narrative Projects
 > Members of a guild can run server events that award 1 Hero Point to all hosts and participants.
 >
 > After a guild hosts an event or project, their member cap is raised by 2.
 >
-> To host a roleplay event or start a narrative project (such as building a statue or a building), please have a member of your guild [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) with the following information: Event Name, Date, Location, Summary of Event, Event Goals, and the in-character announcement post for your event to be shared in the [\#📜official-postings](https://discord.com/channels/802423566196539412/818094145033207839) channel.
+> To host a roleplay event or start a narrative project (such as building a statue or a building), please have a member of your guild [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) with the following information: 
+> - Event Name
+> - Date
+> - Location
+> - Summary of Event
+> - Event Goals
+> - IC announcement, to be shared in the [\#📜official-postings](https://discord.com/channels/802423566196539412/818094145033207839) channel.
 
 ### Guild Event Rewards
 In addition to increasing their guild member cap by 2, individuals and guilds that host events can gain these special rewards.
@@ -430,7 +359,7 @@ In addition to increasing their guild member cap by 2, individuals and guilds th
 - A guild that hosts 5 events will be added to a special registry of Covalon's Most Valuable Guilds, and have a public statue dedicated to their guild built in a location of their choice in the city. The registry will be pinned in #⁠:trophy:guild-recruitment , and a description of your statue pinned in the channel of your choice.
 - A guild that hosts 10 events will have their guild tag changed to a custom color of their choice, and their guild role will be moved above the adventurer and dungeon guide roles, so you can show off your fancy color! Colors must be approved by staff.
 ### Housing, Businesses, and Guild Halls
-> [!info] MOVING A BUILDING
+> [!info] Moving a Building
 > It costs 50% of the original payment to move a house, business, or guild hall to a new location. If you wish to move a building, please [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492).
 
 Players can own property in Covalon by purchasing a house, business, or a guild hall. A player can own only one of each type of property at a time.
@@ -443,7 +372,7 @@ Private housing suitable as a permanent living residence can be purchased for 20
 
 After the staff team approves your purchase, you may speak with the City Planner to choose your plot of land and have your house added to the official map of Covalon. Plots of land can be chosen from one of the below housing districts, or any of the following Expedition districts: Ikouga, Gornlar, Middlemist, Pudersno, Ratchethallow.
 
-> [!note] Covalon Residental Districts
+> [!note] Covalon Residential Districts
 > - **Main Street** Located east of the town square, and south of the marketplace.
 > - **Woodlands** Located along the outside edge of the southeastern forest.
 > - **Mountain View** Located in the northwestern foothills of Covalon.
@@ -476,7 +405,7 @@ Lots must contain at least one square of green space around the building, and th
 #### Campground
 Characters who cannot afford property or do not wish to purchase property (such as wild order druids) may instead purchase a permit to camp at the campgrounds. A permit costs 10 gp and does not expire. In order to purchase a camping permit, a character must reach out to the forest warden, Kouzo (male goloma cleric).
 
-> [!note] Camping Permit
+> [!quote] Camping Permit
 > *I understand that this permit entitles me to a space to camp at Lakeview Campground. This space is — excluding animal companions, eidolons, and familiars — a single occupancy space. I understand that a fire pit is provided and that outside of torches or lanterns, fire is to be contained to the fire pit. I understand that in the interest of public health and safety a latrine is available. I understand that this permit has a one time fee of 10gp.*
 >
 > *I understand, that in accordance with Covalon law, no creation of a permanent structure or modification to the campgrounds or the forest is permitted. I understand that this permit is subject to revocation if these laws are broken.*
@@ -490,7 +419,7 @@ The fourth category of severity details crimes that go against our Player Expect
 
 Additionally, before a player character commits a crime against another player character(s), all involved players must privately and explicitly consent to the interaction. If your character becomes the victim of a roleplay crime that you did not explicitly consent to, please [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) and let the staff team know immediately.
 
-> [!note] CRIME AS A STORYTELLING DEVICE
+> [!tip] Crime as a Storytelling Device
 > Committing a crime can be a fun way to spice up roleplaying, especially when used to drive character development. For example, a character might steal something and be so riddled with guilt afterwards that they make a point to always do the right thing in the future, or a character might vandalize another character's business to ignite a conflict between the two.
 >
 > Remember to always ask for permission before committing a crime against another player's character, and inform the staff team via [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492). The staff team will determine if the city of Covalon takes legal action against a character after a crime is commited.
@@ -500,38 +429,12 @@ If a player character breaks a Roleplay Law, the crime can be reported by the vi
 
 A player character who commits an Infraction will receive an official warning and may be ordered to take remedial classes. A player character who commits a Misdemeanor will be asked to complete community service as atonement. Lastly, a player who commits a Felony must atone for it by serving jail time.
 ##### Table 3-8: Infractions
-Infraction | Description
-:---: | :---
-Disturbing the Peace | Public unruly behavior, such as rowdy public drunkenness or excessive noisemaking.
-Trespassing | Entering the Shrine of Terra without the Servants of Terra or NPC shrinekeepers. Entering the Maw Outpost without an escort from the NPC guards.
-Irresponsible Use of Magic, Technology, or Alchemy | Using magic, technology, or alchemy in such a way that it causes a public nuisance or disruption.
-Threats | Making a statement of intention to harm or perform some other hostile action against another citizen or their property.
+![[Table 3-8 - Infractions]]
 ##### Table 3-9: Misdemeanors
-Misdemeanor | Description
-:---: | :---
-Breaking and Entering | Entering a citizen or guild's private property without their permission.
-Theft | Stealing property from a citizen or guild.
-Assault & Battery (Nonlethal) | Harming or attempting to harm another citizen without lethal intent.
-Fraud | Misrepresenting or breaking an explicit or implicit agreement. This includes lying about the nature of goods being sold, constructing a building with shoddy or inappropriate materials, breaking a contract, or lying while under oath during a trial.
-Bribery | Bribing a juror or some other city official to receive preferential treatment.
-Destruction of Property | Defacing/destroying public property or property belonging to another citizen or guild.
-Unsanctioned Building or Burying | Building without a permit from the City Planner or burying a body without permission from the church.
-Environmental Crimes | Exploiting or destroying the bounty that the Heart of Terra provides for Covalon, such as strip mining, clear cutting, excessive hunting, or polluting the lake.
-Irresponsible Use of Magic, Technology, or Alchemy | Using magic, technology, or alchemy that has the potential to cause harm or damage, summons a creature outside of the training ring or arena without official permission, or causes mind-influencing effects on a citizen of Covalon without official permission.
+![[Table 3-9 - Misdemeanors]]
 ##### Table 3-10: Felonies
-Felony | Description
-:---: | :---
-Assault & Battery (Lethal) | Harming or attempting to harm another citizen with lethal intent.
-Corruption | Accepting a bribe as a juror or some other city official.
-Impersonating an Official | Falsifying authority in order to manipulate others.
-Treason | Actions that endanger citizens or the city of Covalon on a grand scale.
-Usury | Participating in the lending of money and charging interest on its return as a form of business.
-Irresponsible Use of Magic, Technology, or Alchemy | Using magic, technology, or alchemy that causes large amounts of environmental, structural, or personal damage.
+![[Table 3-10 - Felonies]]
 ##### Table 3-11: Extreme Offenses
 Extreme Offenses are violations of our Player Expectations and will result in out-of-character consequences.
 
-Extreme Offense | Description
-:---: | :---
-Explicit Sexual Themes | Roleplaying themes must be kept appropriate for a PG-13 rating. Obscene acts of promiscuity are not permitted in Covalon's public role playing channels, including (but not limited to) prostitution, sexual harassment, sexual assault, and fornication.
-Murder | Characters may not murder each other.
-Extortion | Characters may not extort each other.
+![[Table 3-11 - Extreme Offenses]]

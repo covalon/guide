@@ -9,4 +9,4 @@ Specializing in personal staffs, wands, and other wood projects, Reginald’s it
 
 If a friendly voice is all you need, Reginald enjoys narrating while crafting. Stop on by and enjoy a demonstration or ask questions, but be careful, it might end up as a longwinded lecture.
 
-![W.O.O.D. S.H.O.P. sign. Designed by Reginald-4.|700](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/woodshopsign.webp)
+![W.O.O.D. S.H.O.P. sign. Designed by Reginald-4.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/woodshopsign.webp)

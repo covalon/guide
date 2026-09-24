@@ -1,12 +1,10 @@
 ---
 Tags:
-- covalon/event
-Aliases:
-- 'Covalon: The Endless Gray'
+  - covalon/event
 Event Type: multitable event
-Date: '2024-02-24'
+Date: 2024-02-24
 ---
-> [!info] Heroes of The Endless Gray
+> [!heroes|right] Heroes of the Endless Gray
 > The following characters were the vanguard who fought against Captain Laurent Devreaux to defend the Heart of Terra.
 >
 > - Arto Applefield
@@ -75,4 +73,4 @@ Covalonians broke into teams and mustered defenses, beating back the attacks at 
 
 We fought the raiders in the streets of the city, and even at the Shrine of Terra, as the Endless Gray attempted to assimilate it, through the Captain. Thankfully, we fought back the invaders, crashing their airship into the mountains beyond. Our barriers were breached, but Covalon stands, stronger than before.
 
-![A crashed metal orb. Designed by Kona.|350](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/ExpeditionLog/crashedorbEG.gif?raw=true)
+![A crashed metal orb. Designed by Kona.](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/ExpeditionLog/crashedorbEG.gif?raw=true)

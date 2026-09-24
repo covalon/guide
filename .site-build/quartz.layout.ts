@@ -1,11 +1,15 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+// Covalon components (copied from .site-build/components into quartz/components at build time)
+import PagefindSearch from "./quartz/components/PagefindSearch"
+import FilterableTables from "./quartz/components/FilterableTables"
+import ExtraFonts from "./quartz/components/ExtraFonts"
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [PagefindSearch(), FilterableTables(), ExtraFonts()],
   footer: Component.Footer({
     links: {
       "Join Covalon": "https://discord.gg/covalon",

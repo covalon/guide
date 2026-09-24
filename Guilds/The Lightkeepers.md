@@ -16,4 +16,4 @@ Anathema: Laughing at others’ misery with malicious intent, not helping those 
 ---
 A guild for those who seek a warm home and friendly faces in a broken world.
 
-![The Lightkeepers Guild Heraldry.|280](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/Guilds/TheLightkeepers.png?raw=true)
+![The Lightkeepers Guild Heraldry.](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/Guilds/TheLightkeepers.png?raw=true)

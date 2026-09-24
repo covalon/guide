@@ -4,7 +4,7 @@ Tags:
 Event Type: multitable event
 Date: '2021-12-04'
 ---
-> [!info] Heroes of Operation Heartbreaker
+> [!heroes|right] Heroes of Operation Heartbreaker
 > The following characters were the vanguard who led the charge to kill the Maw's heart.
 >
 > - Ambrose

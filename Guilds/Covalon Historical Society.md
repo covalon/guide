@@ -15,4 +15,4 @@ Anathema: Damage or deface an item of interest, destroy a source of knowledge, p
 ---
 A guild dedicated to preserving Covalon's history.
 
-![Covalon Historical Society Guild Heraldry. Designed by Zoe.|250](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/Guilds/CovalonHistoricalSociety.png?raw=true)
+![Covalon Historical Society Guild Heraldry. Designed by Zoe.](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/Guilds/CovalonHistoricalSociety.png?raw=true)

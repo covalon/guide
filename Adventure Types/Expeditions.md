@@ -16,7 +16,8 @@ Expeditions are multi-phase adventures that require players to cooperate togethe
 > Once Phase 2 has been unlocked for an expedition, three missions become available that are always referred to as Mission A, Mission B, and Mission C. Though the missions are all narratively linked, they can be experienced in any order, as they are not prequels or sequels to each other.
 >
 > It may also be worthwhile to select the mission that has been played the least, as all missions must be completed a number of times before the finale unlocks
-> ##### REQUESTING AN EXPEDITION FINALE
+
+> [!info] Requesting an Expedition Finale
 > Soul Seed aspects must be unlocked by completing specific expedition finales, which you can use [\#🛡️lfgm-forum](https://discord.com/channels/802423566196539412/1472263264585908430) to organize a party for.
 >
 > Normal mode finales utilize variant modifications to keep repeats interesting, so if you have a friend who needs help attempting a finale that you've already completed, give them a hand and you might see something new. Players with characters in the highest tier can alternatively request hard mode, which employs all variant modifications at once!
@@ -38,22 +39,25 @@ Finales have two difficulty modes. Normal mode is the standard finale experience
 ### Expedition Locations
 The following is a list of currently active expeditions. For more information on each expedition, see the city's corresponding entry of the Campaign Lore chapter. Mission and finale details for each are in [[📍 Expeditions|Expeditions]].
 
-> [!note]
-> - [[Ikouga]] (Complete)
-> - [[Gornlar]] (Complete)
-> - [[Taltain]] (Complete)
-> - [[Primrose]] (Complete)
-> - [[Middlemist]] (Complete)
-> - [[Pudersnö]] (Complete)
-> - [[Ratchethallow]] (Complete)
-> - [[Verndhelt]] (Complete)
-> - [[Drifthaven]] (Complete)
-> - [[The Fey Courts]] (Complete)
-> - [[The Kingdom of Varceta|Varceta]] (Complete)
-> - [[Alatar]] (Completed)
-> - [[The Briarmurk|Briarmurk]] (Completed)
-> - [[Whitespire]] (Completed)
+```base
+filters:
+  and:
+    - file.hasTag("covalon/expedition")
+properties:
+  file.name:
+    displayName: Expedition Location
+views:
+  - type: table
+    name: Expeditions
+    order:
+      - file.name
+      - Soul Seed
+      - Finale
+    sort:
+      - property: Journey Date
+        direction: ASC
 
+```
 ## For GMs
 Expedition missions are a special game-mode that is intertwined with the ongoing meta-narrative of Covalon. Expeditions represent our efforts to reclaim the world after the Cataclysm and face the challenges left behind in a shattered realm.
 

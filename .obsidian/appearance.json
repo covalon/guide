@@ -1,6 +1,8 @@
 {
   "enabledCssSnippets": [
+    "custom",
     "image-captions",
-    "custom"
-  ]
+    "parchment-background"
+  ],
+  "theme": "moonstone"
 }

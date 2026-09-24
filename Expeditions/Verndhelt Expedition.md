@@ -5,9 +5,20 @@ Civilization: '[[Verndhelt]]'
 Soul Seed: fiend aspect
 Finale: Archdevil Yazeri and Celestial Court Marshal Solarius
 Journey Date: 2023-07-19
+Finale First Cleared: 2023-09-08
 ---
 Expedition to [[Verndhelt]].
 ## Expedition Log
+> [!heroes|right] Heroes of Verndhelt
+> The following characters were the first to defeat Archdevil Yazeri and Celestial Court Marshal Solarius in Verndhelt's expedition finale.
+>
+> - Brumata (Kineticist 15)
+> - Celeste (Barbarian 15)
+> - Jez (Fighter 14)
+> - Lumie (Bard 15)
+> - Tox (Thaumaturge 15)
+> - Sej, the Starless (Fighter 15)
+
 Our efforts to reclaim Verndhelt are complete! Learning from the lessons of past successes, we continued our strategy of retaking the world by air, building a blimp to ferry us to our destination. The Revolution, as it was called, built upon all our previous aeronautic knowledge and allowed us to journey further than we ever had before. As always though, our journey was not without its perils.
 
 Our craft was harried by minor infernal and celestial nuisances, obviously remnants of whatever misfortune befell the land during the Cataclysm. Little did we know these pests were simply foreshadowing something much more powerful to come. As we made our final approach we were halted by a manifestation of the heavens themselves, a one winged angel calling itself Solarius. It warned us to turn back or be destroyed.
@@ -20,26 +31,20 @@ Our investigations ultimately led us to face down a diabolical general named Yaz
 ## Base Camp
 *Summary to come.*
 ## Missions
-### Mission A
-*Summary to come.*
+### Mission A: Ritual of Locating
+Join forces with a devil to help locate the Maw Vessel.
 ### Mission B: Playing Both Sides
-*Summary to come.*
+While the Angels and Devils are busy fighting each other, we might be able to use that to our advantage to get our hands on some intel about Verndhelt’s situation.
+
+*This mission focuses on skill challenges and influence encounters.*
 ### Mission C: Search the Sinkhole
-*Summary to come.*
+Protect the civilian search party as they attempt to map out the giant sinkhole.
+
+*This mission focuses on Hexploration.*
 ## Finale
 **Boss:** Archdevil Yazeri and Celestial Court Marshal Solarius
 
 *Summary to come.*
 
-> [!info] Heroes of Verndhelt
-> The following characters were the first to defeat Archdevil Yazeri and Celestial Court Marshal Solarius in Verndhelt's expedition finale.
->
-> - Brumata (Kineticist 15)
-> - Celeste (Barbarian 15)
-> - Jez (Fighter 14)
-> - Lumie (Bard 15)
-> - Tox (Thaumaturge 15)
-> - Sej, the Starless (Fighter 15)
-
 ## Soul Seed
-Completing the finale unlocks the **Fiend aspect** for your Soul Seed (see Table 3-2 and 3-3 in the [[Chapter 3 - Covalon Gameplay#Soul Seeds|Player's Guide]]).
+Completing the finale unlocks the **Fiend aspect** for your Soul Seed (see [[Chapter 3 - Covalon Gameplay#Table 3-2 Aspect Category Unlocks|Table 3-2]] and [[Chapter 3 - Covalon Gameplay#Table 3-3 Soul Seed Upgrade Unlocks|3-3]] in the [[Chapter 3 - Covalon Gameplay#Soul Seeds|Player's Guide]]).

@@ -22,7 +22,7 @@ Do not threaten or harass other users. This includes "doxxing," or revealing any
 
 Do not engage in unsolicited or unwanted sexual advances or conversations of a personal sexual nature. These types of conversations should be limited to Discord direct messaging, and only after receiving the explicit consent of all involved users.
 
-> [!tip] Managing Conflicts between players
+> [!warning] Managing Conflicts Between Players
 > Despite our best efforts, sometimes we come into conflict with others. You can find guidance on how Covalon manages conflicts between players in [this guide.](https://docs.google.com/document/d/1_qpEsvT58OKODNMlMV5kV43A9LB8gNUUaLYXaOJm9_g/edit?usp=sharing)
 
 ### 5. Additional Discord Accounts
@@ -36,7 +36,7 @@ If you're unsure if you can advertise your service, please [\#create-a-ticket](h
 ### 7. Questions and Concerns
 All suggestions for the server or sensitive concerns should be brought to the private attention of the Administrator and Moderator teams via the ticket system, which can be accessed via the [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) channel in the Discord server.
 
-> [!tip] Community Guidelines
+> [!warning] Community Guidelines
 > We take the safety of our community very seriously. If at any point, you feel harassed, threatened, or uncomfortable, please [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492). The Administrators and Moderators will investigate the situation and take action appropriately.
 
 ## Roleplay Guidelines
@@ -54,7 +54,7 @@ While charity and acts of kindness are encouraged in Covalon, please do not pres
 ### 6. Player Vs. Player
 Any player vs. player (PvP) conflicts that require rolling dice must have explicit OOC consent of both parties before commencing. If you are expecting role play with another player that involves conflict, please ensure you obtain their consent first. Once you have both agreed, please [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) (adding all involved players) to inform the Moderator team of the expected narrative and outcome.
 
-> [!tip] Character Death and Equipment
+> [!warning] Character Death and Equipment
 > If you die and your corpse cannot be recovered because the party has fled, you lose all of the gear on your person permanently.
 >
 > Before a session, you must mark equipment as being explicitly "left at home" on your character sheet. Your gold is always assumed to be left at home unless you state otherwise. Any gear not marked in this way will be assumed to have been brought with you.
@@ -79,7 +79,11 @@ During an adventure, the Dungeon Guide has the final say on interpretation of ru
 If you have concerns about a Dungeon Guide's rulings during an adventure, you may privately message them after the game or [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492). Repeated attempts to interpret game rules in bad faith in or out of game sessions will result in warnings and further attempts may result in being removed from the server.
 
 > [!tip] Text RP Formatting
-> Text RP should be legible and understandable. Generally, actions should be formatted in italics, "speech should be formatted in quotes," ||and OOC comments should be formatted behind a spoiler.|| Try not to use OOC text often. Please do not post images or gifs in roleplay channels.
+> Text RP should be legible and understandable. Generally, *actions should be formatted in italics*, "speech should be formatted in quotes," ||and OOC comments should be formatted behind a spoiler.|| 
+> 
+> Try not to use OOC text often. 
+> 
+> Please do not post images or gifs in roleplay channels.
 
 ## Getting Started
 Ready to start playing? Please read the following for instructions on getting started in Covalon.
@@ -100,7 +104,7 @@ The Citizen Registry in [\#👥citizen-directories](https://discord.com/channels
 #### 7. Begin Playing!
 You're all set to begin participating in the Covalon campaign! Head into one of the role play channels or look for an adventure to join!
 
-> [!tip] First Steps into Covalon
+> [!note] First Steps into Covalon
 > Need some ideas for where to start role playing? Here are some suggestions! Make sure to check out the [\#🧾roleplay-channels-guide](https://discord.com/channels/802423566196539412/1441502648410050672) for how to use our roleplay forums, and ask any questions or arrange RP with other players in [\#🧑‍🤝‍🧑ooc-roleplay-chat](https://discord.com/channels/802423566196539412/1441502508840124522).
 > ##### Heartstone Sanctuary
 > The [👥 The Heartstone Sanctuary](https://discord.com/channels/802423566196539412/1441832070677795041) has boarding, food, and baths for all players who can not yet afford a house. You are welcome to stay there at no cost until another option becomes available.
@@ -109,7 +113,7 @@ You're all set to begin participating in the Covalon campaign! Head into one of 
 > ##### The Brass Snail Tavern
 > The [🍻 The Brass Snail Tavern](https://discord.com/channels/802423566196539412/1441826252045684806) offers a free meal for newcomers, and is a common social gathering place. Entering the Snail is a great way to signal to other players that you'd like to role play.
 
-> [!tip] Joining Adventures
+> [!note] Joining Adventures
 > There are two primary methods for singing up to play in adventures in Covalon.
 > ##### Scheduled Events
 > Upcoming adventures are posted in the [\#📅scheduled-events](https://discord.com/channels/802423566196539412/802438937120735262) channel. When a Dungeon Guide has an adventure to run, they'll make a post in this channel with sign-up instructions and players of the appropriate level will be notified. If an adventure's roster is full, players can still join a waitlist in case there's a vacancy.
@@ -117,7 +121,9 @@ You're all set to begin participating in the Covalon campaign! Head into one of 
 > Players can form pre-made parties in the [\#🛡️lfgm-forum](https://discord.com/channels/802423566196539412/1472263264585908430) channel and then request a Dungeon Guide to run a certain type of adventure for the party at a particular time. Check the pinned post in the [\#🛡️lfgm-forum](https://discord.com/channels/802423566196539412/1472263264585908430) channel for specific instructions on how to use it.
 
 > [!warning] Covalon Adventures
-> Adventures are all run in the Discord voice channels and through Foundry VTT; it's browser-based and free to access for players. This means you will need a working microphone and access to a desktop browser in order to participate in game sessions.
+> Adventures are all run in the Discord voice channels and through **Foundry VTT**; it's browser-based and free to access for players. 
+> 
+> This means you will **need a working microphone and access to a desktop browser** in order to participate in game sessions.
 
 ## Covalon Creative Works Policy
 If you produce any creative works for Covalon, you must agree to the Covalon Creative Works Policy. Any work created by a member of the Covalon Discord server that is shared in the Covalon Discord server or as part of the Covalon campaign ("the campaign") that is considered eligible for copyright protection by the United States Copyright Act of 1976 (and its revisions) falls under this policy.

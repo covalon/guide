@@ -14,11 +14,13 @@ Dungeon operations are overseen by the portal specialists of the Dungeoneering S
 
 There is no limit to the number of consumables players can receive from dungeons, but a player can claim a maximum of 1 non-consumable piece of equipment from a dungeon (excluding formulas, which are given to the players to donate to the Crafting Hall). Anything not claimed by a player is donated to the Dungeoneering Society.
 
-> [!note] COMMUNICATE YOUR LEVEL!
-> When signing up for an adventure, be sure to tell the Dungeon Guide the level you expect your character to be when the adventure occurs. If you have other adventures in between, your character may level up before the adventure occurs. Be sure to let your Dungeon Guide know about this as soon as possible so they can appropriately adjust their adventure.
+> [!warning] Communicate Your Level!
+> When signing up for an adventure, be sure to tell the Dungeon Guide the level you expect your character to be when the adventure occurs. 
+> 
+> If you have other adventures in between, your character may level up before the adventure occurs. Be sure to let your Dungeon Guide know about this as soon as possible so they can appropriately adjust their adventure.
 
 ## For GMs
-> [!info] Singular Sessions
+> [!warning] Singular Sessions
 > Excluding Excursions, all adventures must be entirely self-contained. You may not run a dungeon or patrol that is a sequel, prequel or otherwise narratively linked to another adventure.
 
 Dungeons are a game type initiated as a mission from the Dungeoneering Society. Your Portal Specialist transports the party to faraway lands via portal magic to investigate mysteries, gather supplies and defeat dangers.

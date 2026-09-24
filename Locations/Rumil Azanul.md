@@ -17,6 +17,6 @@ The centerpiece of this magnificent hold is its grand hall, where a colossal tab
 
 Nestled directly beneath the great hall, the workshop plays host to an expansive and intricately designed forge, surrounded by a multitude of work tables and anvils. It's immediately apparent, even to those unfamiliar with such domains, that this is where the bulk of their efforts went into construction, and likely where the guild members dedicate their time and skill. Within these hallowed walls, the legacy of the dwarven clans is expertly crafted and preserved for generations to come
 
-![Rumil Azanul, Workshop. Designed by Kosta Chaosbrand.|400](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/RumilAzanu.webp)
+![Rumil Azanul, Workshop. Designed by Kosta Chaosbrand.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/RumilAzanu.webp)
 
-![Runil Azanul, Main Floor. Designed by Kosta Chaosbrand.|400](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/RumilAzanu2.webp)
+![Runil Azanul, Main Floor. Designed by Kosta Chaosbrand.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/RumilAzanu2.webp)

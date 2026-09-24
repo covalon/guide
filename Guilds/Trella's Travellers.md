@@ -17,4 +17,4 @@ Anathema: None
 ---
 Adventurers dedicated to the rediscovery of Elleaterra.
 
-![Trella's Travellers Guild Heraldry. Designed by Kona.|200](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/Guilds/TrellasTravellers.png?raw=true)
+![Trella's Travellers Guild Heraldry. Designed by Kona.](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/Guilds/TrellasTravellers.png?raw=true)

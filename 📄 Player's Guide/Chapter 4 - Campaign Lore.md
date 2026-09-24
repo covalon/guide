@@ -20,9 +20,9 @@ Scholars discovered that the Maw has a physical Heart that could be killed to de
 
 Since then, the citizens have discovered that the surge of life energy the Heart of the Maw received came from Maw Vessels - nodes of power scattered throughout the world. Covalon has launched a series of expeditions to find these Vessels, destroy them, and in doing so, reclaim the civilizations that were lost to the Cataclysm.
 ## Maps of Elleaterra
-![The world of Elleaterra, before the Cataclysm. Designed by Rinka.|700](https://raw.githubusercontent.com/covalon/covalon-guide/gh-pages/assets/covalon/PlayersGuide/Maps/PC-Elleaterra_World_Map.webp)
+![The world of Elleaterra, before the Cataclysm. Designed by Rinka.](https://raw.githubusercontent.com/covalon/covalon-guide/gh-pages/assets/covalon/PlayersGuide/Maps/PC-Elleaterra_World_Map.webp)
 
-![The city of Covalon. Designed by Sheas.|700](https://raw.githubusercontent.com/covalon/covalon-guide/gh-pages/assets/covalon/PlayersGuide/Maps/CovalonCity.webp)
+![The city of Covalon. Designed by Sheas.](https://raw.githubusercontent.com/covalon/covalon-guide/gh-pages/assets/covalon/PlayersGuide/Maps/CovalonCity.webp)
 ## Campaign Events
 ![[📍 Campaign Events]]
 ## Covalon Gazetteer

@@ -8,12 +8,12 @@ Portals are opened by using "portal keys," which can be any small object, but mo
 
 But the location that a portal opens to is also affected by two other major factors: strong emotions and ley lines.
 
-> [!warning] Living portal keys
+> [!warning] Living Portal Keys
 > It is possible to use a living creature as a portal key.
 >
 > This was only ever done once in Covalon, using a captured goblin raider as a portal key to attempt to find the location of the goblin raiding camp that was causing the city trouble. The goblin didn't appear to suffer any ill effects as a result of being a focus for the key, but our specialists theorise that the practice could permanently shatter the mind of the creature serving as a key.
 >
-> Thus, using a living creature as a portal key is a felony in Covalon, and you cannot have your Portal Guide do this.
+> **Thus, using a living creature as a portal key is a felony in Covalon, and you cannot have your Portal Guide do this.**
 
 ## Dungeoneering Contracts
 All new characters to the dungeoneering society must sign a dungeoneering contract before they can complete any adventures on behalf of Covalon. This is a great opportunity to have people introduce their character to a group, and a copy of the contract can be found in the Covalon Module.
@@ -24,7 +24,7 @@ The other major factor that influences portals are ley lines, which are invisibl
 ## Holding Portals Open
 Once a portal is opened, it must be receive a constant flow of magical energy in order to remain stable. Portal specialists are capable of keeping portals open, though keeping one open for too long can cause quite a bit of strain on the spellcaster. For this reason, dungeons should be kept to no more than a few hours in length.
 
-> [!note]
+> [!note|notitle]
 > This is also a great, in-universe way to keep the party moving inside an adventure and prevent excessive stalling or delaying tactics.
 
 ## Aftermath
