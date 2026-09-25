@@ -93,7 +93,7 @@ Initially, a character's Soul Seed can only obtain minor gifts, and their Soul S
 
 Adding a new gift to a Soul Seed requires communing with the Heart of Terra and paying a gold cost. This does not consume downtime, but can only be performed in between adventures. A character also must meet a minimum level requirement, based on the gift they are attempting to add. [[Chapter 3 - Covalon Gameplay#Table 3-4 Adding Gifts to a Soul Seed|Table 3-4]] lists the cost and minimum level requirement for adding a new gift.
 
-Once a gift has been added to a Soul Seed, it cannot be removed. It can be changed to a different gift within the aspect with four days of retraining. A character can also retrain one or more of their Soul Seed's aspects, which also takes four days. When a Soul Seed's aspect is retrained, any incompatible gifts it has are rendered inert until they are retrained. Terran Reincarnation can be used to change Soul Seed's gifts or aspects.
+Once a gift has been added to a Soul Seed, it cannot be removed. It can be changed to a different gift within the aspect with four days of retraining. A character can also [[Chapter 5 - Downtime#Retraining|retrain]] one or more of their Soul Seed's aspects, which also takes four days. When a Soul Seed's aspect is retrained, any incompatible gifts it has are rendered inert until they are retrained. [[Chapter 5 - Downtime#Terran Reincarnation|Terran Reincarnation]] can be used to change Soul Seed's gifts or aspects.
 ##### Table 3-2: Aspect Category Unlocks
 ![[Table 3-2 - Aspect Category Unlocks]]
 ##### Table 3-3: Soul Seed Upgrade Unlocks
@@ -109,11 +109,22 @@ Once a gift has been added to a Soul Seed, it cannot be removed. It can be chang
 ## Additional Character Slots
 The Additional Character System allows players who reach the level cap to spend gold to play new characters without retiring existing ones.
 ### Core vs Alt / Active vs Inactive
-There are two character types. Core characters can reach the highest level of Covalon play, known as the core cap (currently Level 15, EXP 999). Alt characters can reach one tier lower, known as the alt cap (currently Level 12, EXP 999).
+There are two character **types**. 
+- Core characters can reach the highest level of Covalon play, known as the core cap (currently Level 15, EXP 999). 
+- Alt characters can reach one tier lower, known as the alt cap (currently Level 12, EXP 999).
 
-Each character also has a status. Active characters can join adventures, use downtime, and participate in roleplay. Inactive characters cannot do any of these activities.
+Each character also has a **status**. 
+- Active characters can join adventures, use downtime, and participate in roleplay. 
+- Inactive characters cannot do any of these activities.
 
-A player starts with 1 active core, and must unlock additional character slots through purchase. At any given moment, a player may have at most: 1 active core, 1 active alt, 1 inactive core, and any number of inactive alts. You cannot have an inactive core until you own at least three character slots.
+> [!info] Number of Character Slots
+> A player starts with **1 active core**, and must unlock additional character slots through purchase. At any given moment, a player may have at most: 
+> - 1 active core, 
+> - 1 active alt, 
+> - 1 inactive core,
+> - any number of inactive alts. 
+> 
+> You cannot have an inactive core until you own at least three character slots.
 ### Purchasing Character Slots
 When your active core reaches core cap, you can purchase an additional character slot. You must meet 2 requirements to purchase: your active core character must be core capped and all your other slots must be filled with characters that are, at minimum, at the alt cap.
 
@@ -123,7 +134,9 @@ Once purchased, [\#create-a-ticket](https://discord.com/channels/802423566196539
 ### Swapping Character Type/Status
 You may set a character's type and status by recording it in [\#🧐alternate-character-tracking](https://discord.com/channels/802423566196539412/1205685483234136084).
 
-Your active alt can be set once every 2 weeks. Your active core can be set once every 3 months. Your inactive alts and inactive cores can be set freely.
+- Your active alt can be set once every 2 weeks. 
+- Your active core can be set once every 3 months. 
+- Your inactive alts and inactive cores can be set freely.
 
 When a core character becomes an alt character, they are de-leveled to the alt cap. When an alt character that is at alt cap becomes a core character, they are leveled to Level 13, EXP 0.
 ## Multiple Character Restrictions

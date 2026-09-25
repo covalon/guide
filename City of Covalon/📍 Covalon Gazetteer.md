@@ -9,8 +9,8 @@ Months later, the baron passed away due to natural causes, and the responsibilit
 
 **Roleplay:** [\#💬roleplay-general](https://discord.com/channels/802423566196539412/1441510507386241156) · [🏰 Covalon Walls and Gate](https://discord.com/channels/802423566196539412/1441824177559699577) · [🌄 Covalon Grounds](https://discord.com/channels/802423566196539412/1441824080872476712)
 
-> [!statblock]
-> #### Covalon *Settlement 13*
+#### Covalon
+> [!statblock|Settlement 13]
 > `City`
 >
 > *The last bastion of mortal civilization in Elleaterra.*
@@ -23,11 +23,11 @@ Months later, the baron passed away due to natural causes, and the responsibilit
 >
 > ---
 >
-> **Religions** All
+> > **Religions** All
 >
-> **Threats** Raiding bands of goblin and kobold tribes, dangerous creatures emerging from the Maw, denizens of the outer planes seeking to exterminate mortal life
+> > **Threats** Raiding bands of goblin and kobold tribes, dangerous creatures emerging from the Maw, denizens of the outer planes seeking to exterminate mortal life
 >
-> **The City at the End of the World** Covalon is the only known civilization to have survived the Cataclysm, thanks to a living artifact known as the Heart of Terra. Though it started out as little more than a baron's keep on infertile land, it has grown into a hospitable place to live - though it lacks many of the modern conveniences that previous societies developed. Nevertheless, a stubbornness to survive has allowed Covalon to grow to its current state and is what keeps it standing to this day.
+> > **The City at the End of the World** Covalon is the only known civilization to have survived the Cataclysm, thanks to a living artifact known as the Heart of Terra. Though it started out as little more than a baron's keep on infertile land, it has grown into a hospitable place to live - though it lacks many of the modern conveniences that previous societies developed. Nevertheless, a stubbornness to survive has allowed Covalon to grow to its current state and is what keeps it standing to this day.
 
 ```base
 formulas:

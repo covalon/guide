@@ -525,10 +525,6 @@ table th {
 .callout[data-callout="statblock"] .callout-content p + p { text-indent: 1em; }
 .callout[data-callout="statblock"] .callout-content p:has(> strong:first-child) { text-indent: 0; }
 .callout[data-callout="statblock"] .callout-content strong { color: inherit; }
-.callout[data-callout="statblock"] .callout-content hr ~ p:has(> strong:first-child) {
-  text-indent: -1em;
-  padding-left: 1em;
-}
 .callout[data-callout="statblock"] .callout-content hr {
   margin: 0.35em 0;
   border: none;
@@ -671,10 +667,129 @@ table tbody tr:hover > td {
   box-shadow: inset 1px 0 0 currentColor, inset -1px 0 0 currentColor;
   margin: 0 !important;
 }
-/* hanging indent after a rule keeps clear of the box's left edge */
-.callout[data-callout="statblock"] > .callout-content > hr ~ p:has(> strong:first-child) {
-  padding-left: calc(var(--statblock-box-pad) + 1em);
+
+/* Statblocks with their title as a real heading just above the callout, so it can be linked to and shows in
+   the outline:
+     #### Terran Reincarnation
+     > [!statblock|Ritual 3]          ← the type (optional) sits on the right of the title's line
+     > ==Uncommon== `Covalon` `Exploration`
+   The heading takes the title's look; the callout below is the box, framed on the sides and bottom, with the
+   heading's underline as its top edge. (The old way, a heading inside the callout, still works too.) */
+:is(.el-h1, .el-h2, .el-h3, .el-h4, .el-h5, .el-h6):has(+ .el-div > .callout[data-callout="statblock"]) > :is(h1, h2, h3, h4, h5, h6) {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1em;
+  margin: 1.5em 0 0 !important;
+  padding: 0 0 0.1em;
+  border-bottom: 2px solid currentColor;
+  font-family: var(--statblock-font, "Roboto Condensed", "Arial Narrow", "Helvetica Neue", sans-serif);
+  font-size: 1.2em;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--text-normal);
 }
+:is(.el-h1, .el-h2, .el-h3, .el-h4, .el-h5, .el-h6):has(+ .el-div > .callout[data-callout="statblock"]) {
+  --statblock-font: "Roboto Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
+}
+.el-div:has(> .callout[data-callout="statblock"]) { margin-top: 0; }
+/* live preview: the heading line takes the title's look too, but stays an ordinary line (no flex or margins,
+   which would throw off the cursor), and the box's widget lets the type show above it */
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header:has(+ .cm-callout .callout[data-callout="statblock"]) {
+  padding-bottom: 0.1em;
+  border-bottom: 2px solid currentColor;
+  font-family: "Roboto Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-header:has(+ .cm-callout .callout[data-callout="statblock"]) :is(.cm-header, .cm-formatting-header) {
+  font-family: inherit;
+  font-weight: inherit;
+}
+.markdown-source-view.mod-cm6 .cm-embed-block.cm-callout:has(> .callout[data-callout="statblock"]),
+.markdown-source-view.mod-cm6 .cm-embed-block.cm-callout:has(> .callout[data-callout="statblock"]):is(:hover, :focus-within),
+.markdown-source-view.mod-cm6 .cm-embed-block.cm-callout > .callout[data-callout="statblock"] {
+  overflow: visible !important;
+  contain: none !important;   /* Obsidian's "contain: paint" (and its hover styles) would clip the type, which sits above the box */
+}
+.markdown-source-view.mod-cm6 .cm-embed-block.cm-callout:has(> .callout[data-callout="statblock"]) { margin-top: 0 !important; }
+.callout[data-callout="statblock"]:not(:has(> .callout-content > :is(h1, h2, h3, h4, h5, h6):first-child)) {
+  position: relative;
+  margin-top: 0 !important;
+}
+/* the whole box, from its first line */
+.callout[data-callout="statblock"]:not(:has(> .callout-content > :is(h1, h2, h3, h4, h5, h6):first-child)) > .callout-content > * {
+  margin-block: 0 !important;
+  border-inline: var(--statblock-box-border);
+  padding-inline: var(--statblock-box-pad);
+}
+.callout[data-callout="statblock"]:not(:has(> .callout-content > :is(h1, h2, h3, h4, h5, h6):first-child)) > .callout-content > :first-child {
+  padding-top: 0.45em;
+}
+.callout[data-callout="statblock"]:not(:has(> .callout-content > :is(h1, h2, h3, h4, h5, h6):first-child)) > .callout-content > :last-child {
+  border-bottom: var(--statblock-box-border);
+  padding-bottom: 0.45em;
+}
+/* the type, on the right of the title's line (above the box) */
+.callout[data-callout="statblock"]:not([data-callout-metadata=""])[data-callout-metadata]::before {
+  content: attr(data-callout-metadata);
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 2px + 0.1em);
+  font-family: var(--statblock-font);
+  font-size: 1.2em;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Statblocks, easier to read: more room inside the box, space between paragraphs (instead of indents),
+   airy property lines, and softer frame and rules. */
+.callout[data-callout="statblock"] {
+  --statblock-box-pad: 1em;
+  --statblock-line: color-mix(in srgb, currentColor 40%, transparent);
+  --statblock-box-border: 1px solid var(--statblock-line);
+  line-height: 1.6;
+}
+.callout[data-callout="statblock"] > .callout-content > :is(p, div) { padding-block: 0.35em !important; }
+.callout[data-callout="statblock"] .callout-content p + p { text-indent: 0 !important; }
+/* first and last lines of the box: a little more breathing room from the frame */
+.callout[data-callout="statblock"] > .callout-content > :is(:first-child:not(:is(h1, h2, h3, h4, h5, h6)), :is(h1, h2, h3, h4, h5, h6):first-child + *) {
+  padding-top: 0.75em !important;
+}
+.callout[data-callout="statblock"] > .callout-content > :last-child:not(:first-child) { padding-bottom: 0.75em !important; }
+/* the traits line sits a little apart from what follows */
+.callout[data-callout="statblock"] > .callout-content > p:has(> :is(code, mark, .text-highlight):first-child) { padding-bottom: 0.5em !important; }
+.callout[data-callout="statblock"] :is(code, mark, .text-highlight) { margin: 0 0.15em 0.2em 0; font-size: 0.82em; }
+/* rules: softer, with space on both sides */
+.callout[data-callout="statblock"] > .callout-content > hr {
+  border-top-color: var(--statblock-line) !important;
+  box-shadow: inset 1px 0 0 var(--statblock-line), inset -1px 0 0 var(--statblock-line) !important;
+}
+/* hanging indents: lines marked with an extra ">" ("> > **Success** …", a quote inside the statblock), e.g.
+   the degrees of success and heightened entries. No quote bar; the first line hangs out by 1em. */
+.callout[data-callout="statblock"] > .callout-content > blockquote {
+  margin: 0 !important;
+  padding-block: 0.3em !important;
+  border-left: none;
+  border-inline: var(--statblock-box-border) !important;
+  padding-inline: var(--statblock-box-pad) !important;
+  background: none;
+  font-style: normal;
+  color: inherit;
+}
+.callout[data-callout="statblock"] > .callout-content > blockquote > p {
+  margin: 0 !important;
+  padding: 0 0 0 1em !important;
+  text-indent: -1em !important;
+}
+.callout[data-callout="statblock"] > .callout-content > blockquote > p + p { margin-top: 0.3em !important; }
+
+.callout[data-callout="statblock"] > .callout-content > :has(+ hr) { padding-bottom: 1.2em !important; }
+.callout[data-callout="statblock"] > .callout-content > hr + * { padding-top: 1.2em !important; }
 
 /* Overview entries in the "aside" layout (the guilds): the note's images float to the right of its
    text and properties; the property names line up on the right, next to their values */

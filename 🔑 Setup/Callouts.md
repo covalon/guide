@@ -192,16 +192,17 @@ A `[!columns]` callout lays out the callouts inside it side by side, like the th
 
 A `[!statblock]` callout is styled like a PF2e activity, spell or ritual block. 
 
-Its first heading is the title, and `*text*` in the heading sits on the right. 
+Put the title as a heading **just above** the callout (so it can be linked to, and shows in the outline and "On this page"). The type, if there is one, goes after a `|` in the callout's first line and sits on the right of the title: `> [!statblock|Ritual 3]`. Without a type, just write `> [!statblock]`.
 
 Inline code is a trait: \`Trait\`.
 A highlight is the rarity: `==Uncommon==`, `==**Rare**==` or `==*Unique*==`. 
 
-Leave a blank `>` line around each `---`. After a rule, lines that start with a bold label get a hanging indent.
+Leave a blank `>` line around each `---`. For a hanging indent (the first line sticks out, the rest are indented), like the degrees of success, start the line with an extra `>`: `> > **Success** …`.
 
 ```markdown
-> [!statblock]
-> #### Cure a Curse *Activity*
+
+#### Cure a Curse
+> [!statblock|Activity]
 > ==Uncommon== `Covalon` `Exploration`
 > **Frequency** once per day; **Cost** 40 gp
 >
@@ -209,11 +210,11 @@ Leave a blank `>` line around each `---`. After a rule, lines that start with a 
 >
 > You visit the chapel to remove a curse.
 >
-> **Success** The curse is removed.
+> > **Success** The curse is removed.
 ```
 
-> [!statblock]
-> #### Cure a Curse *Activity*
+#### Cure a Curse
+> [!statblock|Activity]
 > ==Uncommon== `Covalon` `Exploration`
 >
 > **Frequency** once per day; **Cost** 40 gp
@@ -222,6 +223,6 @@ Leave a blank `>` line around each `---`. After a rule, lines that start with a 
 >
 > You visit the chapel to remove a curse. The church automatically counteracts one curse afflicting your character or an item your character possesses.
 >
-> **Success** The curse is removed.
+> > **Success** The curse is removed.
 >
-> **Failure** The curse remains.
+> > **Failure** The curse remains.

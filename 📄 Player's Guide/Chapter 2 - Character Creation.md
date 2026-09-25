@@ -59,7 +59,9 @@ If you'd like to utilize a character option that isn't listed in the [Server All
 ## Rebuilding Your Character
 If you're unhappy with your character, you may rebuild any or all aspects of that character with no cost before reaching level 4 by submitting a ticket with the changes.
 
-The exception to this rule is starting equipment - you can only swap out your starting equipment if you are level 1 with 0 XP. Characters that ascend past level 3 but later have their level reduced (due to a failed Terran Reincarnation or reviving at a lower level due to a low level Contract of Terran Revival) are not eligible for free rebuilds, and must retrain or have the ritual of Terran Reincarnation performed on them instead.
+The exception to this rule is starting equipment - you can only swap out your starting equipment if you are level 1 with 0 XP. 
+
+Characters that ascend past level 3 but later have their level reduced (due to a failed [[Chapter 5 - Downtime#Terran Reincarnation|Terran Reincarnation]] or reviving at a lower level due to a low level [[Chapter 5 - Downtime#Purchase Contract of Terran Revival|Contract of Terran Revival]]) are not eligible for free rebuilds, and must [[Chapter 5 - Downtime#Retraining|retrain]] or have the ritual of [[Chapter 5 - Downtime#Terran Reincarnation|Terran Reincarnation]] performed on them instead.
 
 You must [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) to have your rebuild or reincarnation approved by staff.
 ## Retiring Your Character
@@ -77,6 +79,6 @@ Once a character has been retired, they can never be played again.
 > [!warning] Planning for Retirement
 > Retiring a character is a decision that shouldn't be made lightly. Here are some things to consider before deciding to retire your character:
 > ##### Terran Reincarnation
-> You can undergo a ritual of Terran Reincarnation to change almost any aspect of your character without needing to start over. This is a great option if you want to try out a different ancestry or class without losing your character's identity or equipment, or if you want to lower your character's level with no other changes.
+> You can undergo a ritual of [[Chapter 5 - Downtime#Terran Reincarnation|Terran Reincarnation]] to change almost any aspect of your character without needing to start over. This is a great option if you want to try out a different ancestry or class without losing your character's identity or equipment, or if you want to lower your character's level with no other changes.
 > ##### Don't Go Out with a Bang
 > Covalon - the largest remaining civilization in the world - only thrives because of its citizens' commitment to cooperating and surviving together. Thus, a flashy retirement narrative is inappropriate for our setting. Roleplaying a character's decision to retire should be quiet and subtle, such as giving up adventuring to live a simple farmer's life, or silently absconding from the city in the dead of night.

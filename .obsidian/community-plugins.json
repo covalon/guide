@@ -2,6 +2,6 @@
   "datacore",
   "callout-manager",
   "image-converter",
-  "obisidian-note-linker",
-  "inline-spoilers"
+  "inline-spoilers",
+  "easy-wikilink"
 ]

@@ -72,7 +72,7 @@ Do not try to "metagame" or exploit the game system for mechanical advantage. Th
 ### 5. Character Deaths
 Character deaths in Covalon are permanent. If your character dies, you will need to create a new one to continue playing.
 
-If you wish to insure your character against death, you can purchase a Contract of Terran Revival for your character, which will give them protection against the next time they would die.
+If you wish to insure your character against death, you can purchase a [[Chapter 5 - Downtime#Purchase Contract of Terran Revival|Contract of Terran Revival]] for your character, which will give them protection against the next time they would die.
 ### 6. Rules Arbitration
 During an adventure, the Dungeon Guide has the final say on interpretation of rules. Please do not argue rulings during an adventure.
 

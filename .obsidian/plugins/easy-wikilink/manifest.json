@@ -1,0 +1,9 @@
+{
+  "id": "easy-wikilink",
+  "name": "Easy Wikilink",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Works like Ctrl+K but for internal wikilinks. Select text, pick a page, generates [[page|selected text]]",
+  "author": "Rockorolla",
+  "isDesktopOnly": false
+}
