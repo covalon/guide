@@ -55,4 +55,4 @@ To approach the undead lord, we carved through swarms of countless undead in his
 *Summary to come.*
 
 ## Soul Seed
-Completing the finale unlocks the ||Death aspect|| for your Soul Seed (see [[Chapter 3 - Covalon Gameplay#Table 3-2 Aspect Category Unlocks|Table 3-2]] and [[Chapter 3 - Covalon Gameplay#Table 3-3 Soul Seed Upgrade Unlocks|3-3]] in the [[Chapter 3 - Covalon Gameplay#Soul Seeds|Player's Guide]]).
+Completing the finale unlocks the [||Death aspect||](https://2e.aonprd.com/Relics.aspx?Aspect=4) for your Soul Seed (see [[Chapter 3 - Covalon Gameplay#Table 3-2 Aspect Category Unlocks|Table 3-2]] and [[Chapter 3 - Covalon Gameplay#Table 3-3 Soul Seed Upgrade Unlocks|3-3]] in the [[Chapter 3 - Covalon Gameplay#Soul Seeds|Player's Guide]]).
