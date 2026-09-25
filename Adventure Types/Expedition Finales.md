@@ -24,6 +24,6 @@ After the initial period, Finales can be run by any Dungeon Guide in either Norm
 ### Modifications
 Every Finale has three modifications that alter the encounter, usually by adding additional abilities or improving existing ones.
 
-To run a Normal Mode Finale, a GM chooses or randomly picks one of the available modifications. Do not tell the players which modifications is in effect.
+To run a Normal Mode Finale, a GM chooses or randomly picks one of the available modifications. Do not tell the players which modification is in effect.
 
 In Hard Mode, all three modifications are active at the same time.

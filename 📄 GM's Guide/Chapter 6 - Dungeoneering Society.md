@@ -1,6 +1,6 @@
 *Consisting of a group of specialist spellcasters, the Dungeoneering Society is what makes Covalon thrive. The Dungeoneering Society is staffed by Portal Specialists that open portals and sustain them for adventurers to go through and return with vital supplies.*
 ## Portal Specialists
-Before you can run adventures, you must first have a Portal Specialists approved via a ticket.
+Before you can run adventures, you must first have a Portal Specialist approved via a ticket.
 
 Portal specialists are the workers of the dungeoneering society that work tirelessly identifying, testing and using portal keys to send players on adventures. Specialists open portals during portal key testing and briefly scout the surrounding area to get a sense of how valuable the area is… and how dangerous.
 ## Portal Keys
@@ -22,12 +22,12 @@ Areas where strong emotions were released tend to magnetize portals to those are
 
 The other major factor that influences portals are ley lines, which are invisible loci of magical power scattered across the world. Ley line interference is highly unpredictable, and can cause portals to open quite a distance off from the source of the object memory feeding the portal. As a result, it is impossible to "pinpoint" a specific location with portals.
 ## Holding Portals Open
-Once a portal is opened, it must be receive a constant flow of magical energy in order to remain stable. Portal specialists are capable of keeping portals open, though keeping one open for too long can cause quite a bit of strain on the spellcaster. For this reason, dungeons should be kept to no more than a few hours in length.
+Once a portal is opened, it must receive a constant flow of magical energy in order to remain stable. Portal specialists are capable of keeping portals open, though keeping one open for too long can cause quite a bit of strain on the spellcaster. For this reason, dungeons should be kept to no more than a few hours in length.
 
 > [!note|notitle]
 > This is also a great, in-universe way to keep the party moving inside an adventure and prevent excessive stalling or delaying tactics.
 
 ## Aftermath
-After a portal key has been used and a dungeon has been finished, portal specialists are instructed to destroy the portal key. This ensures that a portal key is not accidentally used again (as a to somewhere that's already been cleaned out would be a waste of time) and keeps powerful entities from tracking Covalonians when they return home.
+After a portal key has been used and a dungeon has been finished, portal specialists are instructed to destroy the portal key. This ensures that a portal key is not accidentally used again (as a portal to somewhere that's already been cleaned out would be a waste of time) and keeps powerful entities from tracking Covalonians when they return home.
 
 As long as the portal specialist doesn't come into contact with any creatures while scouting, the portal key is not destroyed during testing.

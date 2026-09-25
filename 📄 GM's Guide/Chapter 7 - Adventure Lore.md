@@ -5,7 +5,7 @@ The location of your adventure is one of the most important considerations after
 ### A Post-Cataclysm World in Recovery
 The Cataclysm wiped out all known civilisations, with only scattered individual survivors. Covalon is the largest settlement that presently exists, but other survivors are beginning to recover.
 
-You adventure can include individuals or groups of NPCs surviving together in up to numbers of a small village (no more than 100 individuals). It is important to remember that there are no cities remaining, and Covalon is the largest remaining civilization. Any survivors out there should still be struggling with the post-apocalyptic conditions.
+Your adventure can include individuals or groups of NPCs surviving together in up to numbers of a small village (no more than 100 individuals). It is important to remember that there are no cities remaining, and Covalon is the largest remaining civilization. Any survivors out there should still be struggling with the post-apocalyptic conditions.
 ### Living in a Material World
 All adventures must take place on the material plane. Covalon is not a multi-planar campaign, although localised planar influences may be permitted if the narrative remains cohesive with the wider setting. Make sure to include any details in your ticket!
 ## NPCs
@@ -19,7 +19,7 @@ Players can give out directions to get to Covalon or our expedition outposts if 
 ## Technology
 The level of technology for the setting can be summarised as 'Gunpowder and Clockwork'. Stasian technology is too advanced, and even the most advanced pre-Cataclysm civilisations were only in the very early stages of industrialisation.
 
-This means that settings that include heavy sci-fi elements, factories, heavy industralisation or similarly non-clockwork mechanical elements are not appropriate for Covalon adventures. Mixtures of magic and machine can be allowable. If you're unsure, feel free to ask in a ticket along with your game approval.
+This means that settings that include heavy sci-fi elements, factories, heavy industrialisation or similarly non-clockwork mechanical elements are not appropriate for Covalon adventures. Mixtures of magic and machine can be allowable. If you're unsure, feel free to ask in a ticket along with your game approval.
 
 > [!note] Shopkeepers and Merchants
 > You may choose to include NPCs that sell items in your adventures. You may also submit a recurring merchant NPC that shows up in multiple adventures (IE Phyllis the contract devil merchant, or Frisk the celestial trader).

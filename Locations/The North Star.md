@@ -9,9 +9,9 @@ Roleplay Channel:
 ---
 Welcome to the North Star! Covalon's first full scale galleon, which ferried our adventurers on their first expedition to Ikouga.
 
-After a mishap with a powerful Kraken left her beached, a group of dedicated explorers banded together to repair and bring it home, founding the Trella's Travellers Guild! Trellas seeks to support Covalon's efforts to reclaim and reexplore the vast world of Elleaterra.
+After a mishap with a powerful Kraken left her beached, a group of dedicated explorers banded together to repair and bring it home, founding the Trella's Travellers Guild! The guild seeks to support Covalon's efforts to reclaim and reexplore the vast world of Elleaterra.
 
-Though the North Star is now a permeant base of operations in Covalon for the guild, it still offers a plethora of spaces for it's guild members to meet, plan further expedition projects, create maps, research lost cultures, and occasionally relax and have fun!
+Though the North Star is now a permanent base of operations in Covalon for the guild, it still offers a plethora of spaces for its guild members to meet, plan further expedition projects, create maps, research lost cultures, and occasionally relax and have fun!
 
 ![[The_North_Star_-_Progress_2022-04-02-2.webp|The North Star. Designed by Mikom.]]
 

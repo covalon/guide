@@ -24,7 +24,7 @@ Cleric Spells:
 - '3rd: sea of thought'
 - '7th: indolent haze'
 ---
-Everything has one true place in the Universe and the tapestry of fate. Even if despair spreads, hope will resurface. There is no need to get anxious, for everything will fall into place one day. And with a bit of luck, that day may be today." These are the core Tycheamian beliefs.
+"Everything has one true place in the Universe and the tapestry of fate. Even if despair spreads, hope will resurface. There is no need to get anxious, for everything will fall into place one day. And with a bit of luck, that day may be today." These are the core Tycheamian beliefs.
 
 The true nature of Tycheam, whether a deity, philosophy, or a powerful but lazy seer, has been lost to time. Similarly, the freedom of interpretation — or rather lack of direction regarding how one should find their true place has led to numerous, sometimes violent clashes within the faith.
 

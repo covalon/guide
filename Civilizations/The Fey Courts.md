@@ -1,7 +1,7 @@
 ---
 Tags:
 - covalon/civilization
-Tagline: Subjects of the Alidian Forest
+Tagline: Subjects of the Ailidian Forest
 Government: Fey Courts (monarchy)
 Population: fey, elves, leshy, gnomes, and various druids
 Religions: naturalism

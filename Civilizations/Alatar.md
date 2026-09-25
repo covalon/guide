@@ -12,7 +12,7 @@ Geography: partially forested mountain range next to the ocean
 Fate: madness and undead
 Covalon Status: outpost camp
 ---
-Alatar was a loose alliance of coastal mountain communities. All gods were worshipped there. In an effort to accommadate all religions, it was common to simply avoid speaking on the topic.
+Alatar was a loose alliance of coastal mountain communities. All gods were worshipped there. In an effort to accommodate all religions, it was common to simply avoid speaking on the topic.
 
 Communities with more status lived higher up the mountains, believed to be closer to the gods. Six "peak communities" had the highest status, with extremely strict expectations, laws, and punishments for their citizens. They worshipped only a few deities per community, as religious obligations conflicted with laws otherwise. They were an example for lower communities to follow.
 

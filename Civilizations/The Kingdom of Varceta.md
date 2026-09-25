@@ -17,7 +17,7 @@ _url: varceta
 ---
 The nation of Varceta was run by a family of benevolent vampires. This supposed benevolence hid jealous politics behind closed doors. Fearing the queen would never give up her throne, her spoiled children conspired against her.
 
-During the Cataclysm, the nobility realized their way of life was threatened. They enacted their conspiracy, and the queen vanished. Further confusion ensued as each sibling lay claim to her throne, and civil war broke out.
+During the Cataclysm, the nobility realized their way of life was threatened. They enacted their conspiracy, and the queen vanished. Further confusion ensued as each sibling laid claim to her throne, and civil war broke out.
 
 Quickly expending their undead work-force, the vampiric barons turned to their mortal citizens as conscripted soldiers. Several villages and castles were abandoned almost overnight as the citizenry rebelled against their uncaring aristocratic leaders, electing to flee in search of safer lands as the ancient vampires clung to their petty feud and crumbling kingdom’s past comforts.
 

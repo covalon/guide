@@ -16,7 +16,7 @@ Covalon Status: outpost camp
 ---
 The generational home of countless dwarves, Whitespire was a shining beacon of law and order on the northern coasts for as long as anyone can remember. Its child city Whitesmouth sat at the mouth of the River White and served as the trade hub and "public face" of the keep proper.
 
-Although they were masters of constructions, their stone vaults did little to protect them from the dragon attacks brought forth by the Cataclysm.
+Although they were masters of construction, their stone vaults did little to protect them from the dragon attacks brought forth by the Cataclysm.
 
 **Links**
 - **Expedition Log:** [[Whitespire Expedition#Expedition Log|Whitespire Expedition]]

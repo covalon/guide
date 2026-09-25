@@ -8,7 +8,7 @@ Members:
 - Tenvar
 - Rinka
 Membership Requirements: the ability to cast a necromancy spell
-Goals: research ways to extend life, promote the public image of necromancy, work collaboratively with the livng and the dead, investigate the applications of positive and negative energy.
+Goals: research ways to extend life, promote the public image of necromancy, work collaboratively with the living and the dead, investigate the applications of positive and negative energy.
 Values: knowledge, pragmatism, open-mindedness, ambition
 Anathema: permanently animate an intelligent undead against its will, destroy necromantic knowledge
 ---

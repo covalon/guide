@@ -17,6 +17,6 @@ Anathema: leave the library in a mess or destroy any of its property. Keep new i
 ---
 A guild dedicated to the maintenance and prosperity of Covalon's Library, through the organization and creation of reading material and the upkeep of its property.
 
-All members get a small handcrafted stamp with The Archivists herald, to use when publishing books and approving documents. Although not a requirement, members can (and are encouraged) to earn their keep by publishing new works for The Archivists.
+All members get a small handcrafted stamp with The Archivists' herald, to use when publishing books and approving documents. Although not a requirement, members can (and are encouraged) to earn their keep by publishing new works for The Archivists.
 
 ![[TheArchivists.webp|The Archivists Guild Heraldry. Designed by Ateia.]]

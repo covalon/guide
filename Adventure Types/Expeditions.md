@@ -15,7 +15,7 @@ Expeditions are multi-phase adventures that require players to cooperate togethe
 >
 > Once Phase 2 has been unlocked for an expedition, three missions become available that are always referred to as Mission A, Mission B, and Mission C. Though the missions are all narratively linked, they can be experienced in any order, as they are not prequels or sequels to each other.
 >
-> It may also be worthwhile to select the mission that has been played the least, as all missions must be completed a number of times before the finale unlocks
+> It may also be worthwhile to select the mission that has been played the least, as all missions must be completed a number of times before the finale unlocks.
 
 > [!info] Requesting an Expedition Finale
 > Soul Seed aspects must be unlocked by completing specific expedition finales, which you can use [\#🛡️lfgm-forum](https://discord.com/channels/802423566196539412/1472263264585908430) to organize a party for.
@@ -73,4 +73,4 @@ Expedition missions are a special game-mode that is intertwined with the ongoing
 
 Expeditions require the installation of the Covalon Expedition Module on Foundry VTT.
 
-Expeditions consist of a choice of three missions that have special instructions that can be found inside the module. Expedition missions are replayable even after the initial Expedition storyline to a location is completed, though some missions require reflavoring slightly to make narrative sense (such as the Maw creating fascimilies of enemies).
+Expeditions consist of a choice of three missions that have special instructions that can be found inside the module. Expedition missions are replayable even after the initial Expedition storyline to a location is completed, though some missions require reflavoring slightly to make narrative sense (such as the Maw creating facsimiles of enemies).

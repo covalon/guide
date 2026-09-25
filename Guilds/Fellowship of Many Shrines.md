@@ -12,8 +12,8 @@ Members:
 - Father Sunstone
 Membership Requirements: actively worship a deity
 Goals: preserve and share spiritual practices and cultures
-Values: share knowledge of your faith, Preserve Pre-Cataclysm spiritual practices and history, teach those who want to learn
-Anathema: force your beliefs on others, Disrespect another's faith
+Values: share knowledge of your faith, preserve Pre-Cataclysm spiritual practices and history, teach those who want to learn
+Anathema: force your beliefs on others, disrespect another's faith
 ---
 A place for the faithful of Covalon to celebrate, record, and share religious culture and practices for many different deities.
 

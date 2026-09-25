@@ -19,7 +19,7 @@ Domains:
 Cleric Spells:
   - "1st: object reading"
   - "2nd: speak with animals"
-  - 7th true target
+  - "7th: true target"
 Pantheons:
   - "[[The Cabal of Everlasting Rest]]"
 ---

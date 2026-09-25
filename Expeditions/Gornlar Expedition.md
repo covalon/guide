@@ -40,7 +40,7 @@ Efforts to reclaim Gornlar are complete! Due to roaming dragons, the safest way 
 
 ![[TheDenMaker.webp|The Den Maker. Designed by Sheas.]]
 
-Upon breaching the mountain between Covalon and Gornlar, the drill was set upon by a pair of ancient dragons. Amidst a storm of frost and magma, it went into overdrive to burrow into a nearby cliff. Luckily, the drill uncovered a series of tunnels that led into the domains of the two dragons - a conjoined pair of mountains, one covered in flame, and the other covered in frost. By exploring these mountains, we discovered information crucuial to defeating the two dragons.
+Upon breaching the mountain between Covalon and Gornlar, the drill was set upon by a pair of ancient dragons. Amidst a storm of frost and magma, it went into overdrive to burrow into a nearby cliff. Luckily, the drill uncovered a series of tunnels that led into the domains of the two dragons - a conjoined pair of mountains, one covered in flame, and the other covered in frost. By exploring these mountains, we discovered information crucial to defeating the two dragons.
 
 Ashgut, the magma dragon, and Fjordcarver, the white dragon, were mortal enemies for centuries before they knocked each other into comas in a fierce battle. The cataclysm reawakened the two, and their ensuing battles razed Gornlar to the ground.
 

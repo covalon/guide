@@ -13,7 +13,7 @@ Members:
 - Basilla
 - Munqir
 Membership Requirements: trained in Nature or Religion
-Goals: understand and Execute the will of the Heart of Terra and protection of the heart and the resources it provides.
+Goals: understand and execute the will of the Heart of Terra and protection of the heart and the resources it provides.
 Anathema: exploit or destroy the resources given by the heart, deny shelter to those in need, refuse counsel to those who ask.
 ---
 Protectors and servitors of the Heart of Terra.

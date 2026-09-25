@@ -8,7 +8,7 @@ All players must be 18 years of age or older. In addition to this, all character
 ### 2. Be Civil
 This is a diverse community of many countries, cultures, religions, sexual orientations, gender identities, and beliefs. Disrespectful talk of any kind will not be tolerated.
 ### 3. Prohibited Themes
-Although the minimum age requirement to join the server is 18, all out of character conversations and role playing themes must be kept appropriate for a PG-13 rating. Additionally, the following topics and themes are not permitted to be discussed or role played on the server
+Although the minimum age requirement to join the server is 18, all out of character conversations and role playing themes must be kept appropriate for a PG-13 rating. Additionally, the following topics and themes are not permitted to be discussed or role played on the server:
 
 * Slavery
 * Racism
@@ -109,12 +109,12 @@ You're all set to begin participating in the Covalon campaign! Head into one of 
 > ##### Heartstone Sanctuary
 > The [👥 The Heartstone Sanctuary](https://discord.com/channels/802423566196539412/1441832070677795041) has boarding, food, and baths for all players who can not yet afford a house. You are welcome to stay there at no cost until another option becomes available.
 > ##### Doc's Medical Center
-> Going to the [🩺 Doc's Medical Center](https://discord.com/channels/802423566196539412/1441825129956114705) is another place to start. Your character can receive a medical exam and have a patient file created by one of the hospital staff in the Covalon Medical Society guild..
+> Going to the [🩺 Doc's Medical Center](https://discord.com/channels/802423566196539412/1441825129956114705) is another place to start. Your character can receive a medical exam and have a patient file created by one of the hospital staff in the Covalon Medical Society guild.
 > ##### The Brass Snail Tavern
 > The [🍻 The Brass Snail Tavern](https://discord.com/channels/802423566196539412/1441826252045684806) offers a free meal for newcomers, and is a common social gathering place. Entering the Snail is a great way to signal to other players that you'd like to role play.
 
 > [!note] Joining Adventures
-> There are two primary methods for singing up to play in adventures in Covalon.
+> There are two primary methods for signing up to play in adventures in Covalon.
 > ##### Scheduled Events
 > Upcoming adventures are posted in the [\#📅scheduled-events](https://discord.com/channels/802423566196539412/802438937120735262) channel. When a Dungeon Guide has an adventure to run, they'll make a post in this channel with sign-up instructions and players of the appropriate level will be notified. If an adventure's roster is full, players can still join a waitlist in case there's a vacancy.
 > ##### LFGM
@@ -134,9 +134,9 @@ For more information or to request that your work be removed from the campaign, 
 ## Covalon AI Policy
 Covalon permits, but does not encourage the use of AI for generating images for gameplay on the server.
 
-AI images are permitted for character artwork, tokens, and other character related images such as shop signs. AI images are permitted for use by GMs for the purpose of running game session.
+AI images are permitted for character artwork, tokens, and other character related images such as shop signs. AI images are permitted for use by GMs for the purpose of running game sessions.
 
-AI generated images are **not** permitted to be posted in the [\#🎨artwork](https://discord.com/channels/802423566196539412/802439973383045121) channel, even if they have been edited by a human. Players may **not** advertise comissions that use AI.
+AI generated images are **not** permitted to be posted in the [\#🎨artwork](https://discord.com/channels/802423566196539412/802439973383045121) channel, even if they have been edited by a human. Players may **not** advertise commissions that use AI.
 
 All images, whether human made or AI generated, must adhere to Covalon's player expectations and must be "safe for work".
 

@@ -37,6 +37,6 @@ Patrols never contain permanent magic items as loot, but magical consumables (su
 #### Tier 1
 Patrols for levels 1-3 take place in the immediate vicinity around Covalon. They must not take place inside the city walls.
 #### Tier 2
-Patrols for level 4-6 take place around the Maw near Covalon. Monsters for Tier 2 patrols should be themed or described as corrupted or influenced by the Maw in some way. This does not change their statblocks and is for narrative reasons only.
+Patrols for levels 4-6 take place around the Maw near Covalon. Monsters for Tier 2 patrols should be themed or described as corrupted or influenced by the Maw in some way. This does not change their statblocks and is for narrative reasons only.
 #### Tier 3
 Patrols for levels 7-9 take place in the immediate vicinity of our Expedition Camps. They must not take place inside the camps, and monsters should be themed around the locale of the expedition.

@@ -14,13 +14,13 @@ Sometimes you will need to make adjustments to your dungeon after it has been su
 
 When making adjustments to your dungeon, these must also be approved. Please Create a Ticket and submit your adjusted dungeon for approval with enough time to allow it to be processed.
 ### Post your Adventure
-Once you have decided how you want to gather players, post your adventure in [\#📅scheduled-events](https://discord.com/channels/802423566196539412/802438937120735262). Your post should include the tier of adventure, what type of adventure it is, the date and time you intend to run the adventure, and the adventure hook. If the group was formed via LFGM, you should put player names and levels here as well in a numbered list; Otherwise, fill the list out with applicants that get in contact with you, or add the players who apply to a pool and select them later.
+Once you have decided how you want to gather players, post your adventure in [\#📅scheduled-events](https://discord.com/channels/802423566196539412/802438937120735262). Your post should include the tier of adventure, what type of adventure it is, the date and time you intend to run the adventure, and the adventure hook. If the group was formed via LFGM, you should put player names and levels here as well in a numbered list; otherwise, fill the list out with applicants that get in contact with you, or add the players who apply to a pool and select them later.
 
 > [!note] Waitlist
 > LFGM games may have a waitlist in them, or you may get more applicants than you have slots in your game. When this happens, the extra players go on a waitlist. This waitlist is used if the primary selected players cannot make it for any reason, and waitlisters are used to fill gaps.
 
 ## During the Session
-You have spent time finely tuning your encounters, scouring over loot, gathered your players and its finally time for your session! Here are some key tips to help make your session a successful and safe environment for both you and your players.
+You have spent time finely tuning your encounters, scouring over loot, gathered your players and it's finally time for your session! Here are some key tips to help make your session a successful and safe environment for both you and your players.
 ### Setting Ground Rules
 It is recommended that at the beginning of your session you set some ground rules for how you like to run your table in terms of player participation. Playing over Discord can be much harder than playing over a tabletop, especially when playing games with people you don't know well yet.
 

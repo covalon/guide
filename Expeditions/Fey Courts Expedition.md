@@ -10,7 +10,7 @@ Finale First Cleared: 2024-09-22
 Expedition to [[The Fey Courts]].
 ## Expedition Log
 > [!heroes|right] Heroes of the Fey Courts
-> The following characters were the first to defeat the metal elemental Lethallica in the Fey Court's expedition finale.
+> The following characters were the first to defeat the metal elemental Lethallica in the Fey Courts' expedition finale.
 >
 > - Aerin Velika (Cleric 10)
 > - Bhoomi (Fighter 15)

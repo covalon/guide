@@ -7,7 +7,7 @@ Guild Headquarters of:
 Roleplay Channel:
 - "[Nature’s Serenity](https://discord.com/channels/802423566196539412/1442550024402894869)"
 ---
-A beautiful garden that stands as a testament to the harmony between nature and humanoids is the center of the Children of the Chicome. The garden is filled with both flowers and various plants that grow herbs and fruits. In the center is a well maintened pond with lovely lillypads resting on top of the surface. On a nearby tree rests a swingset, so once may relax and take in the eneviornment around them.
+A beautiful garden that stands as a testament to the harmony between nature and humanoids is the center of the Children of the Chicome. The garden is filled with both flowers and various plants that grow herbs and fruits. In the center is a well maintained pond with lovely lily pads resting on top of the surface. On a nearby tree rests a swingset, so one may relax and take in the environment around them.
 
 In the back is a greenhouse dedicated to more sensitive plants.
 

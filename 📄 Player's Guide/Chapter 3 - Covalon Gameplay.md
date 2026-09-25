@@ -20,7 +20,7 @@ Unlike a traditional campaign, your character's sleep schedule is intertwined wi
 > If your character relies heavily on abilities with a limited number of usages per rest (such as spells or infused reagents), you may want to think carefully about participating in multiple adventures in the same day - your character won't recharge these abilities in between!
 
 ### Purchasing Equipment
-Most of the stores ran by NPCs in Covalon are little more than market stalls selling food and mundane goods, but there are two establishments that are of interest to adventurers - the General Store and Crafting Hall. From these stores, players are able to purchase the following items:
+Most of the stores run by NPCs in Covalon are little more than market stalls selling food and mundane goods, but there are two establishments that are of interest to adventurers - the General Store and Crafting Hall. From these stores, players are able to purchase the following items:
 
 - Common level 0 mundane equipment
 - All Uncommon level 0 classic firearms
@@ -38,7 +38,7 @@ Specific magic items also lose their properties when used by lower-tier characte
 > [!note] Buy! Sell! Trade!
 > Use these channels for player to player purchases!
 > ##### Store Menus
-> Players can create a forum post in the [\#🛍store-menus](https://discord.com/channels/802423566196539412/1355639262304796724) channel to showcase wares they have available or take crafting comissions.
+> Players can create a forum post in the [\#🛍store-menus](https://discord.com/channels/802423566196539412/1355639262304796724) channel to showcase wares they have available or take crafting commissions.
 > ##### Looking to Buy/Sell
 > Players can also use the [\#💲looking-to-buy](https://discord.com/channels/802423566196539412/811440118594142248) and [\#👛looking-to-sell](https://discord.com/channels/802423566196539412/811440260810014747) channels to post item requests. Please create threads to discuss transactions.
 > ##### Charity
@@ -66,11 +66,11 @@ Adventurers can contract dangerous diseases and curses during adventures. Afflic
 
 If your character receives an affliction that is untreated by the end of the adventure, it doesn't go away on its own - they'll have to overcome it or find someone to cure it if they want to avoid its adverse effects.
 
-For more information on how tracking afflictions works in Covalon, see the pinnned post in the [\#🤢affliction-tracking](https://discord.com/channels/802423566196539412/942589119454924800) channel in the Discord server.
+For more information on how tracking afflictions works in Covalon, see the pinned post in the [\#🤢affliction-tracking](https://discord.com/channels/802423566196539412/942589119454924800) channel in the Discord server.
 ### Learning Spells
 Covalon boasts an impressive library that grows larger as adventurers recover historic and legendary spellbooks from their adventures. Players can use the library to learn new spells, including spells that are uncommon or rarer.
 
-When using the [Learn a Spell](https://2e.aonprd.com/Actions.aspx?ID=25) activity in between adventures, players can choose to learn any common spell with a level less than or equal to half the settlement level rounded up, as well as any uncommon or rarer spell marked as "ALLOWED" or "ERRATA" on the [Server Allowlist](https://docs.google.com/spreadsheets/d/1yUXF_IAmpim6wkB7QT5l6K_lS5DgOppv99BHjMYbNIU/edit?usp=sharing)  that meets the same level requirements. (The settlement level can be found in the City Statblock section of Chapter 4.)
+When using the [Learn a Spell](https://2e.aonprd.com/Actions.aspx?ID=25) activity in between adventures, players can choose to learn any common spell with a level less than or equal to half the settlement level rounded up, as well as any uncommon or rarer spell marked as "ALLOWED" or "ERRATA" on the [Server Allowlist](https://docs.google.com/spreadsheets/d/1yUXF_IAmpim6wkB7QT5l6K_lS5DgOppv99BHjMYbNIU/edit?usp=sharing) that meets the same level requirements. (The settlement level can be found in the City Statblock section of Chapter 4.)
 
 When learning a spell between adventures, the time it takes to perform this activity is waived.
 ### Soul Seeds
@@ -155,7 +155,7 @@ Mentoring rewards can only be applied to an active character that is higher than
 > 
 > There is a locked channel in the *Covalon Player's Guide* channel category with the current server time (give or take 5 minutes).
 
-"Adventures"  in Covalon are scheduled play sessions between players and a Dungeon Guide where player characters work together to overcome adversaries, obstacles, and other challenges to receive experience points (XP) and loot.
+"Adventures" in Covalon are scheduled play sessions between players and a Dungeon Guide where player characters work together to overcome adversaries, obstacles, and other challenges to receive experience points (XP) and loot.
 
 There are several types of adventures in Covalon, each with their own unique gameplay, challenges, and rewards. The amount of loot and XP your character gains varies based on your character's level and the game type.
 
@@ -189,7 +189,7 @@ When using the Earn Income activity, you must roll for each individual day of do
 
 In Covalon, you may use Crafting, Performance, or any Lore skill to Earn Income. Some feats may allow you to use other skills.
 #### Crafting
-Due to the very limited equipment options available at the General Store, players will need to obtain most of the items they need through crafting. The crafting hall sells formulas for all common items with a level less than or equal to the settlement's level, but higher level formulas or formulas that are uncommon or rarer will can only be recovered from adventures.
+Due to the very limited equipment options available at the General Store, players will need to obtain most of the items they need through crafting. The crafting hall sells formulas for all common items with a level less than or equal to the settlement's level, but higher level formulas or formulas that are uncommon or rarer can only be recovered from adventures.
 
 Formulas found on adventures and formulas invented by players (either through deconstruction or the Inventor feat) can be posted on the [public bulletin board](https://docs.google.com/spreadsheets/d/1gcVr4Zk02KkMo44fHfEk5RPuspAKWAwyKj6pAYrwWzM/edit?gid=1191624151#gid=1191624151) - these formulas are free for anyone to copy.
 
@@ -213,7 +213,7 @@ Gathering resources can also be used to obtain precious materials for crafting. 
 ##### Table 3-5: Available Precious Materials
 ![[Table 3-5 - Available Precious Materials]]
 #### Retraining
-Covalon's robust training facility and expansive library allows characters to retrain faster than in a traditional campaign. Retraining a feat, skill increase, selected language, or spell in a spell repertoire takes only four days of downtime, and retraining any other type of class feature only takes fourteen days. The use of these amenities is not free, however - for every day spent retraining, your character must pay the amount of gold listed for their level in [[Chapter 3 - Covalon Gameplay#Table 3-6 Retraining Costs|Table 3-6: Retraining Costs]].
+Covalon's robust training facility and expansive library allow characters to retrain faster than in a traditional campaign. Retraining a feat, skill increase, selected language, or spell in a spell repertoire takes only four days of downtime, and retraining any other type of class feature only takes fourteen days. The use of these amenities is not free, however - for every day spent retraining, your character must pay the amount of gold listed for their level in [[Chapter 3 - Covalon Gameplay#Table 3-6 Retraining Costs|Table 3-6: Retraining Costs]].
 
 Ancestry, heritage, background, class, and ability scores cannot be retrained. A player who wishes to change these things about their character will need to undergo a Terran Reincarnation ritual instead.
 ### Special Covalon Activities
@@ -280,7 +280,7 @@ There are a number of unique activities that can be performed in between adventu
 >
 > You visit the chapel to remove a curse. The church automatically counteracts one curse afflicting your character or an item your character possesses. The church can remove a curse with a level up to the settlement's level, or up to a spell rank lesser than or equal to half the settlement's level (rounded up).
 ### Special Covalon Rituals
-A select few number of rituals are available in Covalon. In addition to the allowed rituals in the [Server Allowlist](https://docs.google.com/spreadsheets/d/1yUXF_IAmpim6wkB7QT5l6K_lS5DgOppv99BHjMYbNIU/edit?usp=sharing), the following rituals are also available. Like all rituals, they must be learned with the Learn a Spell activity before they can be cast, and characters without the ability to Cast a Spell can cast these rituals. These rituals must be cast by players; there are no NPCs that are capable of casting them.
+A select few rituals are available in Covalon. In addition to the allowed rituals in the [Server Allowlist](https://docs.google.com/spreadsheets/d/1yUXF_IAmpim6wkB7QT5l6K_lS5DgOppv99BHjMYbNIU/edit?usp=sharing), the following rituals are also available. Like all rituals, they must be learned with the Learn a Spell activity before they can be cast, and characters without the ability to Cast a Spell can cast these rituals. These rituals must be cast by players; there are no NPCs that are capable of casting them.
 > [!statblock]
 > #### Terran Reincarnation *Ritual 3*
 > ==Uncommon== `Covalon` `Exploration`
@@ -326,7 +326,7 @@ A select few number of rituals are available in Covalon. In addition to the allo
 ## Roleplay
 Covalon features several special systems designed to facilitate and enhance roleplaying experiences. Participating in these systems allows for both veteran and new roleplayers alike to enrich their gameplay between adventures with meaningful interplayer engagement.
 ### Guilds
-Players who wish to team up with like-minded adventurers and form a permenant company can do so by creating a guild. Guilds are player-led groups that gain access to several features, such as private text & voice channels, hosting roleplay events, and enacting narrative projects around the city.
+Players who wish to team up with like-minded adventurers and form a permanent company can do so by creating a guild. Guilds are player-led groups that gain access to several features, such as private text & voice channels, hosting roleplay events, and enacting narrative projects around the city.
 
 In order to form a new guild, the following requirements must be met:
 
@@ -356,7 +356,7 @@ In addition to increasing their guild member cap by 2, individuals and guilds th
 
 - Upon completion of 1 event, the individual member of the guild that created a ticket and submitted the event for staff approval will gain the @Social Butterfly tag on Discord.
 - A guild that hosts 3 events can gain a background NPC that performs some function at their Guild Hall. This NPC must be approved by staff before they come to work for your guild.
-- A guild that hosts 5 events will be added to a special registry of Covalon's Most Valuable Guilds, and have a public statue dedicated to their guild built in a location of their choice in the city. The registry will be pinned in #⁠:trophy:guild-recruitment , and a description of your statue pinned in the channel of your choice.
+- A guild that hosts 5 events will be added to a special registry of Covalon's Most Valuable Guilds, and have a public statue dedicated to their guild built in a location of their choice in the city. The registry will be pinned in #⁠:trophy:guild-recruitment, and a description of your statue pinned in the channel of your choice.
 - A guild that hosts 10 events will have their guild tag changed to a custom color of their choice, and their guild role will be moved above the adventurer and dungeon guide roles, so you can show off your fancy color! Colors must be approved by staff.
 ### Housing, Businesses, and Guild Halls
 > [!info] Moving a Building
@@ -383,7 +383,7 @@ Houses can have up to four bedrooms, a common living area, a kitchen, a bathroom
 
 Housing lots are 75' x 75' (15 x 15 grid). This includes all exterior features, such as gardens. Lots must contain at least one square of green space around the building, and the building must be no taller than two stories (including anything below ground).
 
-After your house has constructed and you have moved in, be sure to update the housing registry in [\#👥citizen-directories](https://discord.com/channels/802423566196539412/874598427105828874) .
+After your house has been constructed and you have moved in, be sure to update the housing registry in [\#👥citizen-directories](https://discord.com/channels/802423566196539412/874598427105828874).
 #### Businesses
 Larger buildings suitable for running a store can be purchased for 500 gp. Purchasing a business comes with a public RP text channel. Businesses may be located in Covalon, or any of the following Expedition districts: Ikouga, Gornlar, Middlemist, Pudersno, Ratchethallow.
 
@@ -413,7 +413,7 @@ Characters who cannot afford property or do not wish to purchase property (such 
 ### Crime and Punishment
 Covalon is a city, and like all cities, its citizens must follow laws or face consequences. But Covalon is also a roleplaying game, and what would a roleplaying game be without a little bit of crime now and then?
 
-In Covalon, laws are categorized into four groups of severity, where more severe crimes result in more severe punishments. The first three categories of severity are referred to as "Roleplay Laws," and the consequences for breaking these laws is restricted to roleplay only (such as being asked to do community service or serve jail time).
+In Covalon, laws are categorized into four groups of severity, where more severe crimes result in more severe punishments. The first three categories of severity are referred to as "Roleplay Laws," and the consequences for breaking these laws are restricted to roleplay only (such as being asked to do community service or serve jail time).
 
 The fourth category of severity details crimes that go against our Player Expectations; if any of these crimes are committed, there will be significant out-of-character consequences, which could include dismissal from the campaign. While we encourage players to interact with the Roleplay Laws in ways that enhance their roleplaying experience, we forbid players from breaking any of the laws that coincide with our Player Expectations (known as Extreme Offenses).
 
@@ -422,10 +422,10 @@ Additionally, before a player character commits a crime against another player c
 > [!tip] Crime as a Storytelling Device
 > Committing a crime can be a fun way to spice up roleplaying, especially when used to drive character development. For example, a character might steal something and be so riddled with guilt afterwards that they make a point to always do the right thing in the future, or a character might vandalize another character's business to ignite a conflict between the two.
 >
-> Remember to always ask for permission before committing a crime against another player's character, and inform the staff team via [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492). The staff team will determine if the city of Covalon takes legal action against a character after a crime is commited.
+> Remember to always ask for permission before committing a crime against another player's character, and inform the staff team via [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492). The staff team will determine if the city of Covalon takes legal action against a character after a crime is committed.
 
 #### Roleplay Laws
-If a player character breaks a Roleplay Law, the crime can be reported by the victim of the crime, any witness to the crime, or the perpetrator themselves (if they feel guilty and want to turn themselves in). Depending on the severity of the crime, an appropriate consequence will be administered. These consequences only exist for the purposes of roleplaying and have no effect on mechanical aspects of the server, such adventures or downtime systems.
+If a player character breaks a Roleplay Law, the crime can be reported by the victim of the crime, any witness to the crime, or the perpetrator themselves (if they feel guilty and want to turn themselves in). Depending on the severity of the crime, an appropriate consequence will be administered. These consequences only exist for the purposes of roleplaying and have no effect on mechanical aspects of the server, such as adventures or downtime systems.
 
 A player character who commits an Infraction will receive an official warning and may be ordered to take remedial classes. A player character who commits a Misdemeanor will be asked to complete community service as atonement. Lastly, a player who commits a Felony must atone for it by serving jail time.
 ##### Table 3-8: Infractions

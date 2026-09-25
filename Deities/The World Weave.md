@@ -2,7 +2,7 @@
 Tags:
 - covalon/deity
 Edicts: find beauty in all displays of the Elements both mighty and subtle, honor the Elements in equal measure, respect that devotion to the Elements is as dynamic from person to person as the Elements themselves
-Anathema: benefit from the Elements influence without thanks, forsake an Element for exclusive devotion to others, disregard extreme manifestations of the Elements without investigation
+Anathema: benefit from the Elements' influence without thanks, forsake an Element for exclusive devotion to others, disregard extreme manifestations of the Elements without investigation
 Divine Font:
 - harm
 - heal

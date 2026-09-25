@@ -10,7 +10,7 @@ Finale First Cleared: 2022-06-26
 Expedition to [[Primrose]].
 ## Expedition Log
 > [!heroes|right] Heroes of Primrose
-> The following characters were the first to defeat the Saddam Sayed, Sultan of the Sky in Primrose's expedition finale.
+> The following characters were the first to defeat Saddam Sayed, Sultan of the Sky in Primrose's expedition finale.
 >
 > - Ambrose Silversprout (Magus 12)
 > - Bumble (Cleric 12)
@@ -41,7 +41,7 @@ Their arrival did not go unnoticed. A small fire wisp approached the camp and de
 
 Their sultan had plans to raise an army of undead and elementals in order to reconquer the surface world, but Al-Fazim and the other Shahs of Primrose have offered to help the Covalonians put a stop to his plans in return for assisting their own ambitious agendas. In addition to potentially locating a Vessel of the Maw, the Covalonians found themselves tasked with infiltrating a city, sowing political discord, and overthrowing a tyrant before a new force of destruction comes for their homes.
 
-Thankfully, we were able to defeat Saddam Syed, Sultan of the Sky before his plans could come to fruition, and destroy the Maw Vessel in Primrose in the process, bringing a tentative peace to the underground city.
+Thankfully, we were able to defeat Saddam Sayed, Sultan of the Sky before his plans could come to fruition, and destroy the Maw Vessel in Primrose in the process, bringing a tentative peace to the underground city.
 
 ![[Letter_from_Al-Fazim.webp|Al-Fazim's Letter.]]
 ## Base Camp

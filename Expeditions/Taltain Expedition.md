@@ -37,7 +37,7 @@ Expedition to [[Taltain]].
 > - Vilwin (Alchemist 12)
 > - Yali Fa'el (Alchemist 12)
 
-Efforts to reclaim Taltain are complete! After being shipwrecked while en route to Ikouga, a submersible means of locomotion was deemed necessary to cross the ocean again. This led to the invention of a vessel built to resemble an octopus. Financed largely by resident cephalopod enthusiast Turner T. Turnip, the Tentacle's Grasp jet its way through the western sea.
+Efforts to reclaim Taltain are complete! After being shipwrecked while en route to Ikouga, a submersible means of locomotion was deemed necessary to cross the ocean again. This led to the invention of a vessel built to resemble an octopus. Financed largely by resident cephalopod enthusiast Turner T. Turnip, the Tentacle's Grasp jetted its way through the western sea.
 
 The Tentacle's Grasp reached Taltain without incident. Strangely, the entire city looked to be in pristine condition, bustling with people, as if the Cataclysm had never happened! This immediately raised suspicion.
 

@@ -34,4 +34,4 @@ Aelia wished to slow down and think for some time and so she changed her form to
 
 Now the void wasn't lonely, but it was still cold and dark. She created a fire so bright and hot and surrounded herself with it. Now there was light and heat, but it was too much for some of her friends, and so they had to move away from her, and this formed the Solar System with Aelia as the Sun, and her friends lined up continuously going circles around her. The planets are now worshiped as other gods with Aelia as their leader.
 
-Aelia's clergy is generally very kind, passionate, warmhearted people and are known for healing those in need, no matter the personal cost, their truthfulness, and their endless patience.
+Aelia's clergy are generally very kind, passionate, warmhearted people and are known for healing those in need, no matter the personal cost, their truthfulness, and their endless patience.

@@ -12,7 +12,7 @@ Sometimes you will find that the average party level of a group is in the middle
 > [!tip] Rebalancing
 > Sometimes you need to change the APL of your adventure based on player sign ups, level ups, or drop outs. Whenever possible, these adjustments MUST be approved ahead of time in a ticket. This rebalancing should include changing encounter EXP and loot for the new APL and party size.
 >
-> Staff understands that sometimes players don't show up and this necesitates rebalancing right before a game. If possible, try to ping @Mentors and get an extra player, but if you absolutely have to rebalance on the fly, [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) and let us know who didn't show up, your new APL and party size, and what you're changing.
+> Staff understands that sometimes players don't show up and this necessitates rebalancing right before a game. If possible, try to ping @Mentors and get an extra player, but if you absolutely have to rebalance on the fly, [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) and let us know who didn't show up, your new APL and party size, and what you're changing.
 
 ## Building Encounters
 > [!warning] Level 1 Characters

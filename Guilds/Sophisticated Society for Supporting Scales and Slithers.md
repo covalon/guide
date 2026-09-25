@@ -16,6 +16,6 @@ Goals: host lizard themed activities, raise awareness for reptile ancestries, co
 Values: reptile pride, hosting fun events, building cold blooded accommodations
 Anathema: destroying natural habitats of reptiles
 ---
-Reptiles and reptile adjacent covalonians unite!
+Reptiles and reptile adjacent Covalonians unite!
 
 ![[sssss guild heraldry.webp|SSSSS Guild Heraldry.]]

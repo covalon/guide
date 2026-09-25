@@ -16,11 +16,11 @@ Only Senior Dungeon Guides may run brawls, and brawls can only be scheduled by p
 ### Deathmatch
 It's a fight to the (almost) death! When a team member is knocked out and taken to the arena medbay, the opposing team receives 1 point. The first team to 3 points wins!
 ### Control Points
-Three control points exist on the map. At the end of each round, 1 point is awarded to each team who has more allies touching the ground in a control point than their opponents do. The first team to  7 points wins. If both teams reach 7 points simultaneously, the match continues until one team creates a point lead. Unconscious bodies can't score points!
+Three control points exist on the map. At the end of each round, 1 point is awarded to each team who has more allies touching the ground in a control point than their opponents do. The first team to 7 points wins. If both teams reach 7 points simultaneously, the match continues until one team creates a point lead. Unconscious bodies can't score points!
 ### Capture the Flag
 A flag appears at the center of the arena. A player with a free hand can use an Interact action to grab the flag, which is light bulk. The player with the flag must bring it to a specified location and use a two-action Score activity to consume the flag and score 1 point for their team. After a flag is Scored, it immediately returns to the middle of the battlefield. The first team to 3 points wins. If a team is eliminated, the surviving team wins.
 ### Brawl Titles
-In addition to normal rewards, when your team wins a brawl, you recieve a Gladiator Token that represents your martial prowess. Upon reaching certain milestones, players can [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) to gain a prestigious title for their character.
+In addition to normal rewards, when your team wins a brawl, you receive a Gladiator Token that represents your martial prowess. Upon reaching certain milestones, players can [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) to gain a prestigious title for their character.
 
 - **Gladiator:** 5 Tokens
 - **Slayer:** 20 Tokens
@@ -55,16 +55,16 @@ None of a PC's abilities or feats work while Mythic Polymorphed. Players should 
 
 Monster Mash is a modified Death Match won by the first team to score 4 points.
 
-A point is scored when a player on the enemy team is knocked to Dying 4, or respawns. A respawn is triggered when a player begins their turn with the unconscious or dying conditions. If a player is knocked to dying, move their intiative as normal. If they take damage again and hit dying 4, they become untargetable and respawn on their initiative.
+A point is scored when a player on the enemy team is knocked to Dying 4, or respawns. A respawn is triggered when a player begins their turn with the unconscious or dying conditions. If a player is knocked to dying, move their initiative as normal. If they take damage again and hit dying 4, they become untargetable and respawn on their initiative.
 
-On a respawn, players can elect to stay in the same stat block or switch to their other option. When you respawn, you remove all negative conditions and refresh any used abilties, such as spells or breath weapons. Unlike normal brawls, in Monster Mash you respawn upright and can immediatly take a turn.
+On a respawn, players can elect to stay in the same stat block or switch to their other option. When you respawn, you remove all negative conditions and refresh any used abilities, such as spells or breath weapons. Unlike normal brawls, in Monster Mash you respawn upright and can immediately take a turn.
 > [!columns|notitle]
 > > [!dino] Dino Brawl
 > > | Number | Dino |
 > > | :---: | :---: |
 > > | 1 | Ankylosaurus |
 > > | 2 | Brontosaurus |
-> > | 3 | Carnotarus |
+> > | 3 | Carnotaurus |
 > > | 4 | Iguanodon |
 > > | 5 | Majungasaurus |
 > > | 6 | Pachycephalosaurus |
@@ -118,4 +118,4 @@ All platforms are 10 feet high. The DC to climb any ladder or rigging is 10, but
 
 For control points, the three yellow squares indicate the control points, while the blue flag in the top-left and the red flag in the bottom-right indicate the locations of the blue and red flags respectively, as well as the scoring locations for the blue and red teams, respectively.
 
-All participants in Brawl gain Gold and experience, even if they lose. The winning team's players each receives a Gladiator Token for prestige. For more information on brawls, check the Brawl listing in the Player's Guide.
+All participants in Brawl gain Gold and experience, even if they lose. The winning team's players each receive a Gladiator Token for prestige. For more information on brawls, check the Brawl listing in the Player's Guide.

@@ -25,4 +25,4 @@ The final goddess of an unknown pantheon. Records suggest that she was just anot
 
 The rest of the pantheon, purportedly took offence.
 
-Wile the rest of the history remains murky, one thing has been ascertained… the question which started it all? The question which brings Chessie to town? "Would you please… die for me?"
+While the rest of the history remains murky, one thing has been ascertained… the question which started it all? The question which brings Chessie to town? "Would you please… die for me?"

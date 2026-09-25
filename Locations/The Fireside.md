@@ -7,7 +7,7 @@ Guild Headquarters of:
 Roleplay Channel:
 - "[🔥 The Fireside](https://discord.com/channels/802423566196539412/1444145052057342135)"
 ---
-The Fireside, the headquarters of the Lightkeepers, is a quaint building made of simple stone bricks and wood, at first glance looking more like a home than anything else, with a thick column of white smoke coming out of the impressively sized chimney. It has small passage with a stony floor somewhat over-taken by the surrounding grass that leads to a set of double doors that give entrance to the main tavern.
+The Fireside, the headquarters of the Lightkeepers, is a quaint building made of simple stone bricks and wood, at first glance looking more like a home than anything else, with a thick column of white smoke coming out of the impressively sized chimney. It has a small passage with a stony floor somewhat over-taken by the surrounding grass that leads to a set of double doors that give entrance to the main tavern.
 
 Here, guild members will usually man the bar or hang around with any would be patrons, offering a conversation, a drink, some song, a good story or just the warmth of the big fireplace that is always aflame to warm any weary soul.
 

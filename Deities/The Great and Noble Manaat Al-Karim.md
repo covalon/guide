@@ -23,7 +23,7 @@ Cleric Spells:
 - '4th: airlift'
 - '7th: fiery body'
 ---
-Long ago the Great and Noble Janni Manaat al-Karim established a grand city in the great southern deserts. For several centuries this long lost city was a hub for trade, magic, and intellectual discourse. The city became home to many genie and their kin.
+Long ago the Great and Noble Janni Manaat al-Karim established a grand city in the great southern deserts. For several centuries this long lost city was a hub for trade, magic, and intellectual discourse. The city became home to many genies and their kin.
 
 Her brother, jealous of her success, poisoned her drink causing her to fall into a deep sickness. For a year and a day her people prayed for her recovery. At the end, their prayers were answered and she ascended.
 

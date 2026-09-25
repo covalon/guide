@@ -24,9 +24,9 @@ If the Descent reaches the four hour mark, the current encounter must be complet
 
 Between encounters, players can only use exactly 10 minutes of exploration activities, after which they can choose to undertake the next encounter or retreat home with the loot they've received so far. Players cannot retreat during combat encounters, and a player character that dies during a descent into the Maw cannot have their gear recovered by their allies.
 
-Players earn gold for each encounter they defeat, with the potential to earn more than that of other adventure types for defeating at least three encounters.x§
+Players earn gold for each encounter they defeat, with the potential to earn more than that of other adventure types for defeating at least three encounters.
 ### Other Locations
-In the vast world of Elleaterra, other locations harboring dangerous power may exist that warrant exploration by the strongest of adventures. Who knows what secrets await discovery, laying buried underneath the destruction wrought by the Cataclysm?
+In the vast world of Elleaterra, other locations harboring dangerous power may exist that warrant exploration by the strongest of adventurers. Who knows what secrets await discovery, lying buried underneath the destruction wrought by the Cataclysm?
 ## For GMs
 Descents can only be run by Senior DGs and Administrators. These adventures are exclusively for the highest and second highest tier of play, and always balanced for the maximum level players in these tiers can achieve.
 
