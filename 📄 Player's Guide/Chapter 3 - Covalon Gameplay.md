@@ -25,7 +25,7 @@ Most of the stores run by NPCs in Covalon are little more than market stalls sel
 - Common level 0 mundane equipment
 - All Uncommon level 0 classic firearms
 - Uncommon level 0 weapons for which Covalon has the formula listed in the [Crafting Hall](https://docs.google.com/spreadsheets/d/1gcVr4Zk02KkMo44fHfEk5RPuspAKWAwyKj6pAYrwWzM/edit?gid=1191624151#gid=1191624151)
-- Common formulas for items with levels less than or equal to the settlement's level
+- Common formulas for items with levels less than or equal to the [[📍 Covalon Gazetteer#Covalon|settlement level]] 
 
 All other items must be found as loot during adventures, traded between players, or crafted by players. Players cannot sell equipment to NPC stores, but they can sell crafting reagents for half their value. For more information on obtaining equipment, see the Crafting section in this guide.
 ## Infused and Temporary Items
@@ -70,7 +70,7 @@ For more information on how tracking afflictions works in Covalon, see the pinne
 ## Learning Spells
 Covalon boasts an impressive library that grows larger as adventurers recover historic and legendary spellbooks from their adventures. Players can use the library to learn new spells, including spells that are uncommon or rarer.
 
-When using the [Learn a Spell](https://2e.aonprd.com/Actions.aspx?ID=25) activity in between adventures, players can choose to learn any common spell with a level less than or equal to half the settlement level rounded up, as well as any uncommon or rarer spell marked as "ALLOWED" or "ERRATA" on the [Server Allowlist](https://docs.google.com/spreadsheets/d/1yUXF_IAmpim6wkB7QT5l6K_lS5DgOppv99BHjMYbNIU/edit?usp=sharing) that meets the same level requirements. (The settlement level can be found in the City Statblock section of Chapter 4.)
+When using the [Learn a Spell](https://2e.aonprd.com/Actions.aspx?ID=25) activity in between adventures, players can choose to learn any common spell with a level less than or equal to half the [[📍 Covalon Gazetteer#Covalon|settlement level]] rounded up, as well as any uncommon or rarer spell marked as "ALLOWED" or "ERRATA" on the [Server Allowlist](https://docs.google.com/spreadsheets/d/1yUXF_IAmpim6wkB7QT5l6K_lS5DgOppv99BHjMYbNIU/edit?usp=sharing) that meets the same level requirements.
 
 When learning a spell between adventures, the time it takes to perform this activity is waived.
 ## Soul Seeds

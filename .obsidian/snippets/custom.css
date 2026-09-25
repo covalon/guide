@@ -330,6 +330,7 @@ body.obsidian-app:not(html > body) {
 .markdown-rendered :is(p, li, td, th) a {
   display: inline-block;
   max-width: 100%;
+  text-indent: 0;   /* an inline block takes on its paragraph's text-indent, e.g. a statblock's hanging -1em */
 }
 
 /* Links to Discord channels (#create-a-ticket …): a soft, squared-off chip in the accent colour,

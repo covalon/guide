@@ -61,7 +61,7 @@ If you're unhappy with your character, you may rebuild any or all aspects of tha
 
 The exception to this rule is starting equipment - you can only swap out your starting equipment if you are level 1 with 0 XP. 
 
-Characters that ascend past level 3 but later have their level reduced (due to a failed [[Chapter 5 - Downtime#Terran Reincarnation|Terran Reincarnation]] or reviving at a lower level due to a low level [[Chapter 5 - Downtime#Purchase Contract of Terran Revival|Contract of Terran Revival]]) are not eligible for free rebuilds, and must [[Chapter 5 - Downtime#Retraining|retrain]] or have the ritual of [[Chapter 5 - Downtime#Terran Reincarnation|Terran Reincarnation]] performed on them instead.
+Characters that ascend past level 3 but later have their level reduced (due to a failed [[Chapter 5 - Downtime#Terran Reincarnation|Terran Reincarnation]] or reviving at a lower level due to a low level [[Chapter 5 - Downtime#Purchase Contract of Terran Revival|Contract of Terran Revival]]) are not eligible for free rebuilds, and must [[Chapter 5 - Downtime#Retraining|retrain]] or have the ritual of Terran Reincarnation performed on them instead.
 
 You must [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) to have your rebuild or reincarnation approved by staff.
 ## Retiring Your Character

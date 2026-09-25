@@ -1,4 +1,5 @@
 Downtime is an important part of how your character spends their time in between adventures in Covalon. Your character can spend downtime to earn income, craft items, retrain their abilities, and perform other special activities to improve themselves and get ready for future adventures.
+
 ## Earning and Spending Downtime
 Time passes in Covalon at the same rate that time passes in real life. Player characters gain one day of downtime to spend for every real life day that passes, and can spend their downtime whenever they're not currently participating in an adventure by logging it in the appropriate channel. The exact time at which player characters gain a day of downtime to spend is at midnight server time every day.
 
@@ -13,16 +14,17 @@ Players are required to roll their downtime checks in [\#🎲downtime-rolls](htt
 For example, if you were rolling a check to Earn Income using Performance and you had a +7 bonus to Performance, you would type:
 
 > [!example] Rolling Earn Income
-`/roll 1d20+7 !Earn Income` to roll once
- or `/roll 7 1d20+7 !Earn Income` to roll seven days at once.
+> `/roll 1d20+7 !Earn Income` to roll once or `/roll 7 1d20+7 !Earn Income` to roll seven days at once.
+
 ### Earn Income
-When using the [Earn Income](https://2e.aonprd.com/Actions.aspx?ID=2364) activity, you must roll for each individual day of downtime spent instead of once for every four days, and you can choose a Task Level up to the settlement's level (which can be found in the [[Chapter 11 - Covalon Gazetteer|Covalon Gazetteer]]) or your character's level, whichever is lower. When you critically fail a check to earn income, you earn nothing for that day's work, but you are not prevented from attempting again tomorrow or in the future.
+When using the [Earn Income](https://2e.aonprd.com/Actions.aspx?ID=2364) activity, you must roll for each individual day of downtime spent instead of once for every four days, and you can choose a Task Level up to the [[📍 Covalon Gazetteer#Covalon|settlement level]] or your character's level, whichever is lower. When you critically fail a check to earn income, you earn nothing for that day's work, but you are not prevented from attempting again tomorrow or in the future.
 
 In Covalon, you may use Crafting, Performance, or any Lore skill to Earn Income. Some feats may allow you to use other skills.
+
 ### Crafting
 Due to the very limited equipment options available at [[City of Covalon/Market District/The General Store|the General Store]], players will need to obtain most of the items they need through [crafting](https://2e.aonprd.com/Actions.aspx?ID=2385&Redirected=1). 
 
-[[City of Covalon/City District/The Crafting Hall|The Crafting Hall]] sells formulas for all common items with a level less than or equal to the settlement's level, but higher level formulas or formulas that are uncommon or rarer can only be recovered from adventures.
+[[City of Covalon/City District/The Crafting Hall|The Crafting Hall]] sells formulas for all common items with a level less than or equal to the [[📍 Covalon Gazetteer#Covalon|settlement level]], but higher level formulas or formulas that are uncommon or rarer can only be recovered from adventures.
 
 Formulas found on adventures and formulas invented by players (either through deconstruction or the Inventor feat) can be posted on the [public bulletin board](https://docs.google.com/spreadsheets/d/1gcVr4Zk02KkMo44fHfEk5RPuspAKWAwyKj6pAYrwWzM/edit?gid=1191624151#gid=1191624151) - these formulas are free for anyone to copy.
 
@@ -122,7 +124,7 @@ Activities with the **downtime** trait require you to spend your downtime to per
 > 
 > You are restored to full hit points, and your wounded condition (if any) is removed. If you have an animal companion(s) or familiar(s), they are also restored to full hit points.
 >
-> By paying **1 gp**, the infirmary will also remove any conditions affecting you. The infirmary can remove any conditions (except doomed) as long as that condition was inflicted by an environmental effect, a creature or hazard with a level lesser than or equal to that of the settlement's level, or by a spell with a rank lesser than or equal to that of half the settlement's level (rounded up). 
+> By paying **1 gp**, the infirmary will also remove any conditions affecting you. The infirmary can remove any conditions (except doomed) as long as that condition was inflicted by an environmental effect, a creature or hazard with a level lesser than or equal to the [[📍 Covalon Gazetteer#Covalon|settlement level]], or by a spell with a rank lesser than or equal to that of half the settlement level (rounded up). 
 > 
 > (For a list of applicable conditions, see page 442 in the Player Core Rulebook.)
 
@@ -137,7 +139,7 @@ Activities with the **downtime** trait require you to spend your downtime to per
 >
 > *You visit the [[The Chapel|Chapel]] to remove a curse.* 
 > 
-> The church automatically counteracts one curse afflicting your character or an item your character possesses. The church can remove a curse with a level up to the settlement's level, or up to a spell rank lesser than or equal to half the settlement's level (rounded up).
+> The church automatically counteracts one curse afflicting your character or an item your character possesses. The church can remove a curse with a level up to the [[📍 Covalon Gazetteer#Covalon|settlement level]] , or up to a spell rank lesser than or equal to half the settlement level (rounded up).
 ## Special Covalon Rituals
 A select few rituals are available in Covalon. In addition to the allowed rituals in the [Server Allowlist](https://docs.google.com/spreadsheets/d/1yUXF_IAmpim6wkB7QT5l6K_lS5DgOppv99BHjMYbNIU/edit?usp=sharing), the following rituals are also available. 
 

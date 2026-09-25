@@ -1031,3 +1031,19 @@ html.show-spoilers .covalon-inline-spoiler,
 .covalon-heading-link:hover { color: var(--covalon-accent, var(--color-accent)); background: var(--background-modifier-hover); }
 .covalon-heading-link:focus-visible { outline: 2px solid var(--covalon-accent, var(--color-accent)); outline-offset: 1px; }
 @media (hover: none) { .covalon-heading-link { opacity: 0.45; } }   /* touch screens: always there, faintly */
+
+/* links to other websites: a small ↗ after them (like Obsidian's external-link icon), so they stand apart
+   from links within the guide. Not on Discord channel chips (already their own look) or picture links. */
+.markdown-rendered a.external-link:not([href*="discord.com/channels/"], [href*="discordapp.com/channels/"], :has(img))::after {
+  content: "";
+  display: inline-block;
+  width: 0.62em;
+  height: 0.62em;
+  margin-left: 0.15em;
+  vertical-align: 0.35em;
+  background-color: currentColor;
+  opacity: 0.65;
+  -webkit-mask: var(--covalon-external-icon) center / contain no-repeat;
+  mask: var(--covalon-external-icon) center / contain no-repeat;
+}
+:root { --covalon-external-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17 17 7'/%3E%3Cpath d='M8 7h9v9'/%3E%3C/svg%3E"); }
