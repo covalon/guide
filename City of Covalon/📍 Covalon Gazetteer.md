@@ -1,3 +1,6 @@
+---
+_preview: "[[CovalonCity.webp]]"
+---
 Before the Cataclysm, Covalon was nothing more than a small fief of nearly inhospitable land entrusted to the lesser baron Eagor Freetide as a cruel joke. But in a fortuitous twist of fate, the baron would discover something worth protecting in the wasteland - the seed of an artifact we now know as the Heart of Terra.
 
 The power of the heart protected Covalon from the destruction wrought by the Cataclysm; while his home kingdom was razed to the ground by dragons, the baron enjoyed peace and safety in Covalon. In the aftermath of the chaos, survivors began turning up at the gates of Covalon, and Baron Freetide welcomed them in with open arms, determined to rise to the responsibility fate had set before him.

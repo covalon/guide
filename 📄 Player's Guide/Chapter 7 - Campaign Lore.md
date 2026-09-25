@@ -1,4 +1,4 @@
-*This section details all of our unique setting lore that makes Covalon and the world of Elleaterra distinct from other settings.*
+This section details all of our unique setting lore that makes Covalon and the world of Elleaterra distinct from other settings.
 ## Basic Lore
 The world of Elleaterra is vast, home to many different types of creatures and cultures. Though they all have generations of personal, familial, and national history, a period of wanton destruction has forced these varied peoples to cooperate in order to survive a post-apocalyptic world.
 ### The Cataclysm

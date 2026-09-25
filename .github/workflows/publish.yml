@@ -39,6 +39,15 @@ jobs:
         run: pip install -r .site-build/requirements.txt
       - name: Build the site
         run: python .site-build/build.py . public
+      # the headless browser that photographs the tables for the link previews (kept between runs)
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ hashFiles('.site-build/requirements.txt') }}
+      - name: Install the headless browser
+        run: python -m playwright install --with-deps chromium
+      - name: Take the tables' preview pictures
+        run: python .site-build/previews.py public
       - name: Build the search index
         run: python -m pagefind --site public
       - uses: actions/upload-pages-artifact@v3

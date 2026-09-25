@@ -1,4 +1,4 @@
-*This section details the gameplay systems present in the Covalon campaign. While many gameplay systems are similar to those of a traditional campaign, Covalon has several unique systems as well as twists on familiar ones.*
+This section details the gameplay systems present in the Covalon campaign. While many gameplay systems are similar to those of a traditional campaign, Covalon has several unique systems as well as twists on familiar ones.
 
 Covalon has been designed with a focus on slow, gradual progression that's jam-packed with activities along the way. In order to achieve that goal, some of the core PF2e gameplay systems have been adjusted to better suit the campaign's needs while other entirely new systems have been created.
 

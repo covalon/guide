@@ -107,7 +107,7 @@ def slug(text):
 # Short addresses for some folders and pages; every other folder and page is its name in lower case,
 # with plain letters for accented ones (/guilds/the-archivists/, /civilizations/pudersno/)
 # A page can pick its own address with a `_url` property (e.g. `_url: briarmurk` on The Briarmurk).
-FOLDER_URLS = {"Player's Guide": "players", "GM's Guide": "gms", "Tables": "table"}
+FOLDER_URLS = {"Player's Guide": "players", "GM's Guide": "gms", "Tables": "table", "City of Covalon": "city"}
 
 
 def plain_letters(text):
@@ -157,8 +157,8 @@ for folders, group in _pinned.items():
     if main:
         main.url = "/".join(url_part(p) for p in folders) + "/index.html"
         FOLDER_HOME[folders] = main
-# A folder without a pinned overview whose note has the folder's own name (Locations/Armory District/
-# Armory District) makes that note the folder's page, too: /locations/armory-district/.
+# A folder without a pinned overview whose note has the folder's own name (City of Covalon/Armory District/
+# Armory District) makes that note the folder's page, too: /city/armory-district/.
 for n in notes.values():
     folders = tuple(n.folders)
     if folders and folders not in FOLDER_HOME and n.title == folders[-1]:
@@ -665,7 +665,7 @@ def chapter_nav(name):
 
 
 # ================================================================== search (Pagefind)
-TYPES = {"Deities": "Deity", "Guilds": "Guild", "Locations": "Location", "Civilizations": "Civilization",
+TYPES = {"Deities": "Deity", "Guilds": "Guild", "City of Covalon": "Location", "Civilizations": "Civilization",
          "Expeditions": "Expedition", "Campaign Events": "Campaign Event", "Adventure Types": "Adventure Type"}
 # Properties left out of the search filters: long text, dates, and lists too long to be useful as filters
 NOT_FILTERS = {"order", "description", "tagline", "expedition summary", "roleplay channel",
@@ -1435,6 +1435,7 @@ BUILD_DATE = datetime.datetime.now(datetime.timezone.utc).date()
 SITE_URL = "https://covalon.github.io/guide/"   # where the site is published: previews need full addresses
 SITE_NAME = "Covalon Guides"
 PREVIEW_COLOR = "#d6b46a"   # the dark-mode accent (Discord is mostly used in dark mode)
+# A note can pick the big picture on its card with a hidden property: `_preview: "[[CovalonCity.webp]]"`.
 # the properties shown in bold on an entry's card, by the entry's tag
 PREVIEW_PROPS = {
     "covalon/deity": ["Domains", "Divine Font", "Favored Weapon"],
@@ -1533,11 +1534,11 @@ def preview_head(note, title, soup):
     # chapters: their main sections; a whole guide: its chapters
     if note.name in NAV or note.name in GUIDES:
         level = "h1" if note.name in GUIDES else "h2"
-        heads = [" ".join(h.get_text(" ").split()) for h in soup.find_all(level)]
-        heads = [h for h in heads if h and h != title]
-        if heads:
-            shown = heads[:6]
-            lines.append(md_escape(" · ".join(shown)) + (" · …" if len(heads) > 6 else ""))
+        heads = [(" ".join(h.get_text(" ").split()), h.get("id")) for h in soup.find_all(level)]
+        heads = [(t, i) for t, i in heads if t and t != title]
+        if heads:   # each one a link to its heading on the page
+            shown = [f"[{md_escape(t)}]({page_url}#{urllib.parse.quote(i)})" if i else md_escape(t) for t, i in heads[:6]]
+            lines.append(" · ".join(shown) + (" · …" if len(heads) > 6 else ""))
     if note.name in NAV:
         guide, chapters, i = NAV[note.name]
         if i > 0:
@@ -1557,14 +1558,20 @@ def preview_head(note, title, soup):
     if m:
         buttons.append(link_button(m.group(1).replace("\\", ""), m.group(2)))
     picture = first_picture(note) or file_url(LOGO)   # the page's own picture, or the Covalon logo
+    # the big picture under the card: the note's `_preview` picture if it names one (the maps on the
+    # Gazetteer and the Civilizations overview), else a picture of the page's table, made by previews.py
+    chosen = re.search(r"\[\[([^\]|#]+)", str(note.prop("_preview") or "")) or re.match(r"\s*([^\[\]]+\.\w+)\s*$", str(note.prop("_preview") or ""))
+    shot = file_url(chosen.group(1).strip()) if chosen else None
+    shot = shot or table_shot(note, soup)
     image = absolute(picture) if picture else None
 
     trail = preview_trail(note)
     text = f"## {md_escape(title)}\n" + "\n\n".join(lines)
     top = {"type": 10, "content": shorten_md(text, 1800)}
     head = {"type": 9, "components": [top], "accessory": {"type": 11, "media": {"url": image}}} if image else top
+    gallery = [{"type": 12, "items": [{"media": {"url": absolute(shot)}, "description": shorten(title, 200)}]}] if shot else []
     card = {"type": 17, "accent_color": int(PREVIEW_COLOR[1:], 16), "components": [
-        head,
+        head, *gallery,
         {"type": 14, "divider": True, "spacing": 1},
         {"type": 10, "content": "-# " + md_escape(SITE_NAME + (" · " + trail if trail else ""))},
         {"type": 1, "components": buttons[:5]},
@@ -1572,12 +1579,46 @@ def preview_head(note, title, soup):
     payload = json.dumps({"component": card}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     description = shorten(tagline + (" " if tagline and blurb else "") + (blurb if blurb != tagline else ""), 300) or SITE_NAME
     meta = [("og:site_name", SITE_NAME), ("og:type", "website"), ("og:title", title), ("og:description", description),
-            ("og:url", page_url)] + ([("og:image", image)] if image else [])
+            ("og:url", page_url)] + ([("og:image", absolute(shot) if shot else image)] if image or shot else [])
     tags = "".join(f'<meta property="{k}" content="{html.escape(v)}">' for k, v in meta)
     tags += (f'<meta name="description" content="{html.escape(description)}">'
-             f'<meta name="twitter:card" content="summary"><meta name="theme-color" content="{PREVIEW_COLOR}">'
+             f'<meta name="twitter:card" content="{"summary_large_image" if shot else "summary"}"><meta name="theme-color" content="{PREVIEW_COLOR}">'
              f'<link rel="canonical" href="{html.escape(page_url)}">')
     return f'\n{tags}\n<script id="discord:component-embed" type="application/json">{payload}</script>'
+
+
+# Pictures of tables for the previews: the build notes each table (its HTML, rows cut to PREVIEW_ROWS) in
+# public/_previews.json under a name made from its contents, and previews.py (run after the build, like the
+# search index) photographs them in dark mode with a headless browser. Unchanged tables keep their picture.
+PREVIEW_SHOTS = {}   # site address of the picture -> the table's HTML
+PREVIEW_ROWS = 12
+PREVIEW_COLS = 5   # wider tables show their first five columns
+
+
+def table_shot(note, soup):
+    is_table = note.folders and note.folders[-1] == "Tables"
+    box = soup.find("table") if is_table else (soup.select_one(".covalon-filterable table") if is_overview(note) or "covalon/district" in note.tags else None)
+    if not box:
+        return None
+    t = BeautifulSoup(str(box), "html.parser").find("table")
+    for tr in t.find_all("tr"):
+        for cell in tr.find_all(["td", "th"], recursive=False)[PREVIEW_COLS:]:
+            cell.decompose()
+    body = t.find("tbody") or t
+    rows = body.find_all("tr", recursive=False)
+    if len(rows) > PREVIEW_ROWS:
+        for r in rows[PREVIEW_ROWS:]:
+            r.decompose()
+        cols = max(len(r.find_all(["td", "th"])) for r in rows[:PREVIEW_ROWS])
+        more = BeautifulSoup(f'<tr class="covalon-shot-more"><td colspan="{cols}">…and {len(rows) - PREVIEW_ROWS} more</td></tr>', "html.parser")
+        body.append(more)
+    for a in t.find_all("a"):   # links look like links, but point nowhere
+        a["href"] = "#"
+    markup = str(t)
+    key = hashlib.sha256((markup + ASSET_VERSIONS["style.css"]).encode()).hexdigest()[:16]
+    url = f"files/previews/{key}.jpg"
+    PREVIEW_SHOTS[url] = markup
+    return url
 
 
 def shorten_md(text, limit):
@@ -1689,7 +1730,9 @@ def main():
     CUR["url"] = "search/index.html"
     search_head = ""
     write("search/index.html", page("Advanced Search", str(to_html(SEARCH)), "", extra_head=search_head, search_page=True))
-    print(f"wrote {len(notes) + 2} pages to {OUT}")
+    # the tables to photograph for the link previews (previews.py takes the pictures)
+    (OUT / "_previews.json").write_text(json.dumps(PREVIEW_SHOTS, ensure_ascii=False), encoding="utf-8")
+    print(f"wrote {len(notes) + 2} pages to {OUT} ({len(PREVIEW_SHOTS)} table pictures for previews.py)")
 
 
 if __name__ == "__main__":

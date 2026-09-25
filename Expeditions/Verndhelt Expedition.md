@@ -29,7 +29,7 @@ While we made good progress searching this forgotten sinkhole, we needed more in
 
 Our investigations ultimately led us to face down a diabolical general named Yazeri who we overcame with ease, or so we thought. As we cast what we thought was the final blow she held on to life. But before the battle could resume, our triumph was stolen by Solarius, the Angel who had warned us on our arrival to Verndhelt. Convinced we were interlopers, he turned on us after slaying the devil. Unfortunately for him, we slew him first. Not even the heavens can stand between us and reclaiming our homes.
 ## Base Camp
-![[Verndhelt Expedition-1790344786980.webp]]
+![[Verndhelt Expedition-1790344786980.webp|Covalon's outpost in Verndhelt. Designed by Kore.]]
 ## Missions
 | Mission | Summary |
 | :-- | :-- |

@@ -20,6 +20,9 @@ fi
 
 echo "▶ Building the site…"
 COVALON_CACHE="$HOME_DIR/cache" "$PY" "$SITE/build.py" "$VAULT" "$OUT"
+echo "▶ Taking the tables' preview pictures…"
+"$PY" -m playwright install chromium >/dev/null
+COVALON_CACHE="$HOME_DIR/cache" "$PY" "$SITE/previews.py" "$OUT"
 echo "▶ Building the search index…"
 "$PY" -m pagefind --site "$OUT" --silent
 

@@ -3,7 +3,9 @@ _url: introduction
 ---
 ![[Covalon-Logo-Bold-Wood-Cropped-Small.webp|Covalon Logo|286]]
 
-Welcome to Covalon, a Pathfinder 2nd Edition living world campaign! Our campaign offers players a way to experience the Pathfinder 2e roleplaying game at their own pace. Whether you want to dive into dangerous dungeons every other day or just do a bit of text roleplaying a couple of times a month, Covalon has something for everyone.
+Welcome to Covalon, a Pathfinder 2nd Edition living world campaign! 
+
+Our campaign offers players a way to experience the Pathfinder 2e roleplaying game at their own pace. Whether you want to dive into dangerous dungeons every other day or just do a bit of text roleplaying a couple of times a month, Covalon has something for everyone.
 ## What is Covalon?
 Covalon is a "living world" style tabletop RPG campaign, using the Pathfinder 2e system, with a focus on providing drop-in/drop-out style adventures and role play in a post-apocalyptic fantasy setting. Our unique campaign weaves a cohesive and open narrative from the backstory and role play contributions of the players with a focus on slow and relaxed progression, giving everyone a chance to enjoy the campaign and develop their character at their own pace.
 

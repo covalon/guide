@@ -5,3 +5,4 @@ beautifulsoup4>=4.12
 PyYAML>=6
 pagefind[bin]>=1.1
 Pillow>=10          # makes big pictures smaller for the site
+playwright>=1.40   # pictures of the tables for the link previews (previews.py)

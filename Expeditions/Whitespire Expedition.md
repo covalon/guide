@@ -41,7 +41,7 @@ The Stonewyrm was trapped beneath Whitespire long, long ago, and somehow during 
 
 Our bravest fighters delved below, and slew the beast in its adamantine lair. With the monster defeated, the draconic horde above is broken, and Whitespire saved from its clutches.
 ## Base Camp
-*Image to come.*
+![[Whitespire Expedition-1790350987851.webp|Covalon's outpost in Whitespire. Designed by Ateia.]]
 ## Missions
 | Mission | Summary |
 | :-- | :-- |

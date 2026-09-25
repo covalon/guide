@@ -1,4 +1,4 @@
-*This section details the rules for creating an appropriate character for Covalon. While our campaign uses the base Pathfinder 2nd Edition ruleset, we have some additional restrictions on character creation in order to ensure all characters fit our setting.*
+This section details the rules for creating an appropriate character for Covalon. While our campaign uses the base Pathfinder 2nd Edition ruleset, we have some additional restrictions on character creation in order to ensure all characters fit our setting.
 
 Before you can participate in Covalon, you need to create a level 1 character. If you don't own the Pathfinder 2e source books or you're new to the game, you can find all rules and character options at the [Archives of Nethys](https://2e.aonprd.com/PlayersGuide.aspx) website.
 
