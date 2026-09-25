@@ -610,7 +610,8 @@ def render(note, stack=(), bases=True):
     stack = stack + (note.name,)
     body = align_pictures(note, note.body if bases else OWN_BASE.sub("", note.body))
     # blank lines around the generated HTML, so a heading right after the code block stays a heading
-    text = CODE.sub(lambda m: "\n\n" + (render_base(m.group(2), note) if m.group(1) == "base" else render_entries(m.group(2), stack)) + "\n\n", body)
+    code = lambda t, where: CODE.sub(lambda m: "\n\n" + (render_base(m.group(2), where) if m.group(1) == "base" else render_entries(m.group(2), stack)) + "\n\n", t)
+    text = code(body, note)
     out, pos = [], 0
     for m in EMBED.finditer(text):
         out.append(text[pos:m.start()])
@@ -618,7 +619,8 @@ def render(note, stack=(), bases=True):
         if not target:
             out.append(m.group(0))
         else:
-            inner = section_of(target, m.group(2)) if m.group(2) else render(target, stack)
+            # an embedded section's bases and Datacore views are drawn too (e.g. ![[Expeditions#For Players]])
+            inner = code(section_of(target, m.group(2)), target) if m.group(2) else render(target, stack)
             level = last_heading_level("".join(out))
             inner = shift_to(inner.strip(), level + 1) if level else inner.strip()
             if target.classes and not m.group(2):   # keep the embedded note's cssclasses (e.g. even-columns)

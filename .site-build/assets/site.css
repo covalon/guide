@@ -344,7 +344,7 @@ html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoil
   margin-inline: -2rem;
   /* the words start where the chapter navigation's "← Previous" words do (after its arrow): the
      tables' extra width, plus the arrow (1em) and its gap (0.4em) at the navigation's text size */
-  --covalon-table-width: min(calc(100cqw - 4rem), calc(100% + 3rem));
+  --covalon-table-width: min(calc(var(--covalon-main-width) - 4rem), calc(100% + 3rem));
   padding-left: calc(2rem + min(0px, (100% - var(--covalon-table-width)) / 2) + 1.4 * 0.875 * var(--font-text-size));
   margin-bottom: var(--size-4-2);
   font-size: var(--font-ui-small);
@@ -415,6 +415,11 @@ html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoil
 .markdown-rendered :is(img, figure).image-position-right.image-wrap { float: right; clear: right; margin: 0 0 0.5em 1em; }
 .markdown-rendered figure.image-converter-aligned { width: fit-content; max-width: 100%; }
 .markdown-rendered figure.image-wrap { max-width: min(50%, 24rem); }
+@container covalon-note (max-width: 500px) {   /* a narrow note: a wrapped (floated) picture sits centred on its own instead */
+  .markdown-rendered :is(img, figure).image-wrap:is(.image-position-left, .image-position-right) {
+    float: none; display: block; margin: 0.5em auto 1em; max-width: min(100%, 24rem);
+  }
+}
 
 /* the page title at the top of "On this page" */
 .site-toc .toc-title a { font-weight: var(--font-semibold); color: var(--text-normal); }
@@ -423,8 +428,12 @@ html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoil
    past the text on both sides (less on narrow screens, always keeping 2rem from the edge), and one
    taller than 85% of the screen scrolls inside its box with its header row pinned to the top. */
 .site-main { container-type: inline-size; }
+/* the main column's width, taken where it's measured (on its children) and passed down as a length, so the
+   note's own container (covalon-note, in custom.css) doesn't change what the tables measure against */
+@property --covalon-main-width { syntax: "<length>"; inherits: true; initial-value: 100vw; }
+.site-main > * { --covalon-main-width: 100cqw; }
 .covalon-filterable, .chapter-nav {   /* the chapter navigation gets the same extra width */
-  --covalon-table-width: min(calc(100cqw - 4rem), calc(100% + 3rem));
+  --covalon-table-width: min(calc(var(--covalon-main-width) - 4rem), calc(100% + 3rem));
   margin-inline: min(0px, calc((100% - var(--covalon-table-width)) / 2));
 }
 .covalon-filter-bar { display: flex; flex-wrap: wrap; gap: var(--size-4-2); align-items: center; margin: var(--size-4-4) 0 var(--size-4-2); }
@@ -494,17 +503,17 @@ html, body { overscroll-behavior: none; }
 /* always keep room for the page's scrollbar, so the layout doesn't shift sideways between short
    pages (no scrollbar) and long ones, or when the search pop-over locks the page */
 html { overflow-y: scroll; }
-/* scrollbars in the accent colour, on a faint track of the same colour (the page, the sidebars,
+/* scrollbars in the accent colour, on a faint track matching the sidebar sidebars,
    tables and the search results all inherit this). The theme class is on <html> as well as <body>
    so the page's own scrollbar gets the colours too. */
 html, body {
-  scrollbar-color: var(--color-accent) color-mix(in hsl, var(--color-accent), transparent 85%);
+  scrollbar-color: var(--color-accent) color-mix(in hsl, var(--background-secondary), transparent 15%);
 }
 /* dark mode: a darker, duller shade of the tan accent, so the scrollbar doesn't glare.
    Raise the 35% for a lighter scrollbar, lower it for a darker one. */
 html.theme-dark, body.theme-dark {
   --covalon-scrollbar: hsl(var(--accent-h), calc(var(--accent-s) * 0.6), 35%);
-  scrollbar-color: var(--covalon-scrollbar) color-mix(in hsl, var(--covalon-scrollbar), transparent 85%);
+  scrollbar-color: var(--covalon-scrollbar) color-mix(in hsl, var(--background-secondary), transparent 55%);
 }
 
 /* search: the pop-over (and the same search on the Advanced Search page) */
@@ -745,3 +754,55 @@ html.lightbox-open { overflow: hidden; }
   .covalon-lightbox-button.is-prev, .covalon-lightbox-button.is-next { top: auto; bottom: 0.75rem; translate: none; }
   .covalon-lightbox-button.is-next { right: 0.75rem; }
 }
+
+/* code blocks: a copy button in the corner, and a notice once copied (site.js) */
+.covalon-code { position: relative; }
+.markdown-rendered .covalon-code pre { padding-right: 6.5rem; }
+.covalon-copy {
+  position: absolute;
+  top: 50%;
+  right: var(--size-4-2);
+  translate: 0 -50%;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.25em 0.6em;
+  font: inherit;
+  font-family: var(--font-interface);
+  font-size: var(--font-ui-small);
+  color: var(--text-muted);
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-s);
+  box-shadow: none;
+  cursor: pointer;
+}
+.covalon-copy svg { width: 1em; height: 1em; flex: none; }
+.covalon-copy:hover { color: var(--text-normal); border-color: var(--covalon-accent, var(--color-accent)); }
+.covalon-copy:focus-visible { outline: 2px solid var(--covalon-accent, var(--color-accent)); outline-offset: 1px; }
+.covalon-copy.is-done { color: var(--covalon-accent, var(--color-accent)); }
+.covalon-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  z-index: 250;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.6em 1em;
+  font-family: var(--font-interface);
+  font-size: var(--font-ui-small);
+  color: var(--text-normal);
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  translate: -50% 0.75rem;
+  pointer-events: none;
+  transition: opacity 0.2s ease, translate 0.2s ease;
+}
+.covalon-toast.is-shown { opacity: 1; translate: -50% 0; }
+.covalon-toast.is-failed { border-left-color: var(--text-error, #c33); }
+.covalon-toast svg { width: 1.1em; height: 1.1em; color: var(--covalon-accent, var(--color-accent)); flex: none; }
+@media (prefers-reduced-motion: reduce) { .covalon-toast { transition: none; } }

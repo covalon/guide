@@ -2,7 +2,9 @@
 The Covalon Module provides a compendium of all information required to run games in Covalon, including all of our current Mentors, Expeditions and Deities. You can install the Covalon Module at the below Manifest URL.
 
 > [!note] Manifest URL
+> ```
 > https://github.com/covalon/covalon/releases/latest/download/module.json
+> ```
 >
 > Paste this URL into the module manifest URL link inside Foundry. 
 > Do not download the json file, it won't be useful for you.

@@ -164,7 +164,7 @@ body {
 .markdown-preview-sizer {
   max-width: var(--file-line-width);
   margin: 0 auto;
-  padding-bottom: 30vh;
+  padding-bottom: var(--size-4-12);   /* a little room under the last line (Obsidian itself leaves 30vh) */
 }
 .inline-title {
   font-size: var(--inline-title-size);

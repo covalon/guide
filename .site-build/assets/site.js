@@ -145,24 +145,37 @@
   };
   if (active) scrollWithin(active, active.closest(".site-sidebar"), true);
 
-  // table of contents: highlight the heading being read
+  // table of contents: highlight the heading being read. A heading counts as reached once it passes a
+  // line near the top of the window. The last few sections are too short to ever reach that line, so over
+  // the last screen of scrolling the line slides down to the bottom of the window: each of them lights up in
+  // turn, the last one at the very bottom, and the outline scrolls along to its end.
   var links = Array.prototype.slice.call(document.querySelectorAll(".site-toc a"));
-  if (links.length && "IntersectionObserver" in window) {
+  if (links.length) {
     var byId = {};
     links.forEach(function (a) { byId[decodeURIComponent(a.getAttribute("href").slice(1))] = a; });
     var heads = Object.keys(byId).map(function (id) { return document.getElementById(id); }).filter(Boolean);
-    var current = null;
-    var observer = new IntersectionObserver(function () {
+    var tocList = links[0].closest(".site-toc-list");
+    var current = null, queued = false;
+    var READ_LINE = 120;
+    var update = function () {
+      queued = false;
+      var view = window.innerHeight;
+      var left = document.documentElement.scrollHeight - view - window.scrollY;   // scrolling still to go
+      var line = left < view ? READ_LINE + (view - READ_LINE) * (1 - Math.max(0, left) / view) : READ_LINE;
       var top = null;
-      heads.forEach(function (h) { if (h.getBoundingClientRect().top < 120) top = h; });
+      heads.forEach(function (h) { if (h.getBoundingClientRect().top < line) top = h; });
       var link = top ? byId[top.id] : null;
       if (link !== current) {
         if (current) current.classList.remove("is-active");
-        if (link) { link.classList.add("is-active"); scrollWithin(link, link.closest(".site-toc-list"), false, 40); }
+        if (link) { link.classList.add("is-active"); scrollWithin(link, tocList, false, 40); }
         current = link;
       }
-    }, { rootMargin: "0px 0px -70% 0px", threshold: [0, 1] });
-    heads.forEach(function (h) { observer.observe(h); });
+      if (tocList && left <= 2) tocList.scrollTop = tocList.scrollHeight;   // at the very end: the outline's end too
+    };
+    var queue = function () { if (!queued) { queued = true; requestAnimationFrame(update); } };
+    window.addEventListener("scroll", queue, { passive: true });
+    window.addEventListener("resize", queue);
+    update();
   }
 
   // filterable tables (the Bases tables): a filter box, and headers that sort on click
@@ -352,4 +365,65 @@
       stops[(i + (e.shiftKey ? -1 : 1) + stops.length) % stops.length].focus();
     }
   }, true);
+})();
+
+
+// Copy buttons: every code block gets one (e.g. the Covalon Module's manifest URL, written as a code block
+// so Obsidian offers its own copy button too). A short "Copied" notice confirms it.
+(function () {
+  var blocks = document.querySelectorAll(".markdown-rendered pre");
+  if (!blocks.length) return;
+  var ICON_COPY = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>';
+  var ICON_DONE = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
+  var toast = null, toastTimer = null;
+  var notify = function (text, failed) {
+    if (!toast) {
+      toast = document.createElement("div");
+      toast.className = "covalon-toast";
+      toast.setAttribute("role", "status");
+      toast.setAttribute("aria-live", "polite");
+      document.body.appendChild(toast);
+    }
+    toast.innerHTML = (failed ? "" : ICON_DONE) + "<span></span>";
+    toast.lastChild.textContent = text;
+    toast.classList.toggle("is-failed", !!failed);
+    toast.classList.remove("is-shown");
+    void toast.offsetWidth;   // restart the fade when copying twice in a row
+    toast.classList.add("is-shown");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.classList.remove("is-shown"); }, 2200);
+  };
+  var copyText = function (text) {
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function (ok, fail) {   // older browsers, or the site opened from a file
+      var area = document.createElement("textarea");
+      area.value = text; area.setAttribute("readonly", ""); area.style.position = "fixed"; area.style.opacity = "0";
+      document.body.appendChild(area); area.select();
+      var done = false;
+      try { done = document.execCommand("copy"); } catch (e) {}
+      area.remove();
+      done ? ok() : fail();
+    });
+  };
+  blocks.forEach(function (pre) {
+    var code = pre.querySelector("code") || pre;
+    var wrap = document.createElement("div");
+    wrap.className = "covalon-code";
+    pre.parentNode.insertBefore(wrap, pre);
+    wrap.appendChild(pre);
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "covalon-copy";
+    b.innerHTML = ICON_COPY + "<span>Copy</span>";
+    b.title = "Copy to clipboard";
+    b.addEventListener("click", function () {
+      copyText(code.textContent.replace(/\n$/, "")).then(function () {
+        b.innerHTML = ICON_DONE + "<span>Copied</span>";
+        b.classList.add("is-done");
+        setTimeout(function () { b.innerHTML = ICON_COPY + "<span>Copy</span>"; b.classList.remove("is-done"); }, 2000);
+        notify("Copied to clipboard");
+      }, function () { notify("Couldn't copy — select the text and copy it instead", true); });
+    });
+    wrap.appendChild(b);
+  });
 })();

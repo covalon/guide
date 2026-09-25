@@ -282,12 +282,18 @@ body {
   margin-right: 1.5em;
 }
 /* keep floats inside the entry they belong to on the overview pages */
+/* The note's column is a container ("covalon-note"), so layouts that stack on narrow screens go by the
+   width the note actually has (a narrow pane in Obsidian, the text column on the site) rather than the
+   window's width. Reading view and the site use .markdown-preview-sizer, the editor .cm-sizer. */
+.markdown-preview-sizer,
+.markdown-source-view.mod-cm6 .cm-sizer { container: covalon-note / inline-size; }
+
 .covalon-entry::after {
   content: '';
   display: table;
   clear: both;
 }
-@media (max-width: 700px) {
+@container covalon-note (max-width: 500px) {
   .markdown-rendered
     .callout:is(
       [data-callout-metadata~='right'],
@@ -689,7 +695,7 @@ table tbody tr:hover > td {
 .covalon-entry-aside .covalon-prop-key {
   text-align: right;
 }
-@media (max-width: 700px) {
+@container covalon-note (max-width: 500px) {
   .covalon-entry-aside .covalon-entry-images { float: none; width: auto; margin: 0 0 1em; }
 }
 
@@ -725,9 +731,13 @@ table tbody tr:hover > td {
   object-position: center;
 }
 .covalon-props-images figcaption { flex: none; }
-@media (max-width: 700px) {
+@container covalon-note (max-width: 500px) {
+  /* stacked: the picture sits under the properties box at its own height (up to 16rem), since there's
+     no box beside it to take the height from; otherwise the zero-basis flex sizing above squashes it away */
   .covalon-props-row { flex-direction: column; }
-  .covalon-props-images img { max-height: 16rem; }
+  .covalon-props-images,
+  .covalon-props-images :is(div, p, span, figure):has(img) { flex: none; }
+  .covalon-props-images img { flex: none; height: auto; max-height: 16rem; }
 }
 
 /* Tagline under an overview entry's heading (the tagline="…" option, e.g. the civilizations) */
