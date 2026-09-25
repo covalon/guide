@@ -176,7 +176,7 @@
       return out;
     };
 
-    // before anything is searched: a few quick tips, with examples to try, and a link to the full guide
+    // before anything is searched: a few quick tips, with examples to try (the full guide is behind "Search tips" above)
     var EXAMPLES = [
       ["dragon", "words anywhere on a page"],
       ["[soul seed:air]", "a property that contains a value"],
@@ -201,9 +201,6 @@
         ul.appendChild(item);
       });
       li.appendChild(ul);
-      var more = el("a", "covalon-search-help-link", "How to search: the full guide →");
-      more.href = root + "how-to-search/";
-      li.appendChild(more);
       list.appendChild(li);
     };
 

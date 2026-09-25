@@ -624,6 +624,24 @@ def first_paragraph(soup, limit=240):
     return ""
 
 
+# Pages that other pages point to in a property are found by that property too, without showing it:
+# Alatar is an expedition's Civilization, so [civilization:alatar] finds the Alatar page as well as the
+# Alatar Expedition. (note name -> {property: {value as the other pages show it}})
+LINKED_AS = {}
+
+
+def collect_linked_as():
+    for n in notes.values():
+        for k, v in n.props.items():
+            if k.lower() in HIDDEN_PROPS or k.startswith("_"):
+                continue
+            for item in (v if isinstance(v, list) else [v]):
+                for m in re.finditer(r"\[\[([^\]|#]+)", str(item or "")):
+                    target = find(m.group(1))
+                    if target and target is not n:
+                        LINKED_AS.setdefault(target.name, {}).setdefault(k, set()).add(plain_case(item))
+
+
 def search_markup(note, title, snippet=""):
     esc = lambda t: html.escape(str(t), quote=True)
     tags = [f'<span hidden data-pagefind-meta="title">{esc(title)}</span>',
@@ -639,6 +657,12 @@ def search_markup(note, title, snippet=""):
         short = k.lower() not in NOT_FILTERS and all(0 < len(x) <= 40 for x in values)
         key = k if short else "~" + k
         tags += [f'<span hidden data-pagefind-filter="{esc(key)}">{esc(x)}</span>' for x in values if x]
+    own = {k.lower() for k in note.props}
+    for k, values in LINKED_AS.get(note.name, {}).items():
+        if k.lower() in own:
+            continue
+        key = k if k.lower() not in NOT_FILTERS else "~" + k
+        tags += [f'<span hidden data-pagefind-filter="{esc(key)}">{esc(x)}</span>' for x in sorted(values) if x]
     return "".join(tags)
 
 
@@ -1343,6 +1367,7 @@ def main():
         ASSET_VERSIONS[name] = f"{name}?v={digest}"
 
     collect_entry_styles()
+    collect_linked_as()
     file_url(LOGO)
     for n in notes.values():
         build_note(n)

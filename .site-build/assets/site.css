@@ -593,7 +593,7 @@ html.search-open { overflow: hidden; }
 .covalon-search-excerpt mark { background: color-mix(in srgb, var(--text-accent) 30%, transparent); color: inherit; }
 .covalon-search-help { padding: var(--size-4-3) var(--size-4-2) var(--size-4-2); font-size: var(--font-ui-small); color: var(--text-muted); }
 .covalon-search-help-intro { margin: 0 0 var(--size-4-2); }
-.covalon-search-examples { list-style: none; margin: 0 0 var(--size-4-3); padding: 0; display: grid; gap: var(--size-4-1); }
+.covalon-search-examples { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--size-4-1); }
 .covalon-search-examples li { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--size-4-1) var(--size-4-3); }
 .covalon-search .covalon-search-example { padding: 1px var(--size-4-2); background: var(--background-modifier-form-field); }
 .covalon-search-example code { font-size: var(--font-ui-small); background: none; padding: 0; color: var(--text-normal); }
