@@ -17,6 +17,7 @@
   dark.addEventListener && dark.addEventListener("change", function () { if (!get("theme")) applyTheme(); });
   var settingValue = function (name) {
     if (name === "theme") return get("theme") || "auto";
+    if (name === "width") return get("width") || "readable";
     return get("spoilers") || "hide";
   };
   var mark = function () {
@@ -42,6 +43,10 @@
       if (!b) return;
       var name = b.closest(".site-setting").dataset.setting;
       if (name === "theme") { put("theme", b.dataset.value === "auto" ? null : b.dataset.value); applyTheme(); }
+      else if (name === "width") {
+        put("width", b.dataset.value === "wide" ? "wide" : null);
+        document.documentElement.classList.toggle("wide-mode", b.dataset.value === "wide");
+      }
       else if (name === "spoilers") {
         put("spoilers", b.dataset.value === "show" ? "show" : null);
         document.documentElement.classList.toggle("show-spoilers", b.dataset.value === "show");
@@ -99,6 +104,17 @@
     });
   });
 
+  // file tree: a folder's name opens its overview, and the folder stays open there (it would otherwise
+  // fold shut as the summary is clicked, just before the new page loads)
+  document.querySelectorAll(".tree-folder-link").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+      e.preventDefault();
+      a.closest("details").open = true;
+      location.href = a.href;
+    });
+  });
+
   // keep the current page visible in the file tree
   var active = document.querySelector(".site-tree .is-active");
   // (scrolls only the sidebar: scrollIntoView would also scroll the page itself, so some pages
@@ -145,18 +161,33 @@
     bar.className = "covalon-filter-bar";
     var text = document.createElement("input");
     text.type = "search";
-    text.placeholder = "Filter " + rows.length + " entries…";
+    text.placeholder = "Filter " + rows.length + " entries…  (-word to leave out, \"word\" for whole words)";
     bar.appendChild(text);
 
     var count = document.createElement("span");
     count.className = "covalon-filter-count";
     bar.appendChild(count);
 
+    // the filter box: every word has to be in the row; -word leaves out rows with it; "quotes" match a
+    // whole word or phrase only (so "holy" doesn't match unholy); -"holy" leaves out rows with the word holy
+    var escRe = function (t) { return t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); };
+    var terms = function (q) {
+      var out = [], m, re = /(-?)(?:"([^"]*)"?|(\S+))/g;
+      while ((m = re.exec(q))) {
+        var t = (m[2] !== undefined ? m[2] : m[3] || "").trim().toLowerCase();
+        if (!t) continue;
+        out.push({ not: !!m[1] && t !== "", test: m[2] !== undefined
+          ? (function (w) { return function (s) { return w.test(s); }; })(new RegExp("(^|[^\\p{L}\\p{N}])" + escRe(t) + "($|[^\\p{L}\\p{N}])", "u"))
+          : (function (w) { return function (s) { return s.indexOf(w) >= 0; }; })(t) });
+      }
+      return out;
+    };
     var apply = function () {
-      var q = text.value.trim().toLowerCase();
+      var want = terms(text.value);
       var shown = 0;
       rows.forEach(function (tr) {
-        var ok = !q || tr.textContent.toLowerCase().indexOf(q) >= 0;
+        var row = tr.textContent.toLowerCase();
+        var ok = want.every(function (t) { return t.test(row) !== t.not; });
         tr.hidden = !ok;
         if (ok) shown++;
       });
@@ -180,6 +211,13 @@
 
     // tables taller than the screen scroll inside their box (see site.css)
     var scroller = table.closest(".table-wrapper");
-    if (scroller) scroller.parentElement.classList.add("covalon-table-box");
+    if (scroller) {
+      var box = scroller.parentElement;
+      box.classList.add("covalon-table-box");
+      // a slight shadow under the pinned header row once rows are scrolling beneath it
+      var pinned = function () { box.classList.toggle("is-scrolled", scroller.scrollTop > 0); };
+      scroller.addEventListener("scroll", pinned, { passive: true });
+      pinned();
+    }
   });
 })();

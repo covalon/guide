@@ -12,6 +12,7 @@ Covalon Status: outpost camp
 _url: briarmurk
 ---
 Briarmurk was less of a nation and more of an inhospitable wasteland dominated by poisonous flora. Still, some tribes  managed to survive…until the Cataclsym struck. No one knows for sure what happeneD; survivors only report that they were separated from their tribes and unable to find them again.
-## Links
+
+**Links**
 - **Expedition Log:** [[Briarmurk Expedition#Expedition Log|Briarmurk Expedition]]
 - **Roleplay:** [🐛 Briarmurk Camp](https://discord.com/channels/802423566196539412/1447663387831177458)

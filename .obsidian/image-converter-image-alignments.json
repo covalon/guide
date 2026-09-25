@@ -109,6 +109,12 @@
       "width": "",
       "height": "",
       "wrap": false
+    },
+    "fcdad972d82c8ddf982aa18f3ca2a1c1": {
+      "position": "center",
+      "width": "",
+      "height": "",
+      "wrap": false
     }
   },
   "Expeditions/Briarmurk Expedition.md": {
@@ -1489,10 +1495,10 @@
   },
   "📍 Home.md": {
     "f5a9cb710e9ba5bba99856ce11287bb9": {
-      "position": "center",
-      "width": "",
-      "height": "",
-      "wrap": false
+      "position": "right",
+      "width": "258px",
+      "height": "320px",
+      "wrap": true
     },
     "677a6d5b8cec130cc3d5a41fc02d200c": {
       "position": "center",
@@ -1515,6 +1521,76 @@
   },
   "📄 Player's Guide/📍 Covalon Player's Guide.md": {
     "a656ed97cd8b953830ee63e392979648": {
+      "position": "center",
+      "width": "",
+      "height": "",
+      "wrap": false
+    }
+  },
+  "Expeditions/Varceta Expedition.md": {
+    "8e01a4229a874678297cb2018dd7a126": {
+      "position": "center",
+      "width": "",
+      "height": "",
+      "wrap": false
+    },
+    "9f9fbd8bfc8d7390e94d7d7c37c3805c": {
+      "position": "center",
+      "width": "",
+      "height": "",
+      "wrap": false
+    }
+  },
+  "Locations/The General Store.md": {
+    "f71135b495538e16d06818a1ef65a226": {
+      "position": "center",
+      "width": "",
+      "height": "",
+      "wrap": false
+    },
+    "a913643772469312c0ffa0cd694bda1f": {
+      "position": "center",
+      "width": "",
+      "height": "",
+      "wrap": false
+    }
+  },
+  "Campaign Events/Operation Heartbreaker.md": {
+    "bde4767dc552533d8d86a7afd6876f78": {
+      "position": "center",
+      "width": "",
+      "height": "",
+      "wrap": false
+    }
+  },
+  "Campaign Events/The Siege of Covalon.md": {
+    "69ddcd5f8c922942e53bc04d436a8d27": {
+      "position": "center",
+      "width": "",
+      "height": "",
+      "wrap": false
+    }
+  },
+  "📄 Player's Guide/Chapter 7 - Campaign Events.md": {
+    "de7588facdbd41bf9458a3d6732e35d7": {
+      "position": "center",
+      "width": "",
+      "height": "",
+      "wrap": false
+    },
+    "4390636cc40c0f967c3593d0f266ac76": {
+      "position": "center",
+      "width": "",
+      "height": "",
+      "wrap": false
+    },
+    "49f4155aa7eaa2e8aeeaf5b59157b927": {
+      "position": "center",
+      "width": "",
+      "height": "",
+      "wrap": false
+    },
+    "9c39496a213b40d8ae730b3325de9d08": {
       "position": "center",
       "width": "",
       "height": "",

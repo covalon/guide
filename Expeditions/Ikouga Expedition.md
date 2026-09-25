@@ -36,10 +36,8 @@ A portal has been created between the base camp at Ikouga and Covalon, and the N
 While exploring Ikouga and the surrounding islands, adventurers managed to unravel the mystery of the fate that befell Ikouga. Ancient Ikougans worshipped a legendary sea monster called Scylladon, the Starbreaker, which they believed had been responsible for creating the islands in the Noctune Tropic. Not only did Scylladon turn out to be real, it had also been corrupted by the foul energies of the Maw, enslaved to guard one of the Maw's vile Vessels that formed underneath the island.
 
 Scylladon was defeated by a bold contingent of Covalonians who targeted the creature's vulnerable tentacles instead of its heavily armored body. Since the creature's defeat and the destruction of the Maw Vessel, the wind has returned to Ikouga, which may allow civilization to flourish there once again.
-
-![[IkougaOutpost.webp|Covalon's outpost in Ikouga. Designed by Sheas.]]
 ## Base Camp
-*Summary to come.*
+![[IkougaOutpost.webp|Covalon's outpost in Ikouga. Designed by Sheas.]]
 ## Missions
 | Mission | Summary |
 | :-- | :-- |

@@ -51,6 +51,19 @@
 .site-right { border-left: 1px solid var(--background-modifier-border); }
 .site-main { min-width: 0; }
 
+/* the top of the left sidebar (site name, settings, search) stays put while the file tree scrolls under it */
+.site-sidebar-top {
+  position: sticky;
+  top: calc(-1 * var(--size-4-4));   /* flush with the sidebar's top edge, over its padding */
+  z-index: 5;
+  margin: calc(-1 * var(--size-4-4)) calc(-1 * var(--size-4-3)) var(--size-4-2);
+  padding: var(--size-4-4) var(--size-4-3) var(--size-4-2);
+  background: color-mix(in lab, var(--background-secondary), transparent 15%);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.site-sidebar-top .site-search { margin-bottom: 0; }
+
 /* header: site name and the light/dark switch */
 .site-header { position: relative; display: flex; align-items: center; gap: var(--size-4-2); margin-bottom: var(--size-4-3); }
 .site-title {
@@ -112,6 +125,7 @@
 .tree-pin { font-size: 0.9em; margin-inline-end: 0.15em; }
 .tree-item.is-active { background-color: var(--background-modifier-active-hover); color: var(--text-normal); font-weight: var(--font-medium); }
 .tree-folder > summary { list-style: none; font-weight: var(--font-medium); }
+.tree-folder-link { flex: 1; color: inherit; text-decoration: none; }
 .tree-folder > summary::-webkit-details-marker { display: none; }
 .tree-folder > summary .svg-icon { --icon-size: 14px; color: var(--text-faint); transition: transform 100ms ease-in-out; }
 .tree-folder[open] > summary .svg-icon { transform: rotate(90deg); }
@@ -163,6 +177,19 @@
   margin-block: var(--size-4-4);
   font-size: var(--font-smaller);
 }
+/* the navigation above a chapter's title takes the same room as the guide's title does on the one-page
+   guide (title + its margin, then a heading's spacing), so a chapter's title sits exactly where that
+   chapter's heading does on the one-page guide (e.g. "Introduction") */
+.markdown-rendered .chapter-nav-top {
+  font-size: var(--font-text-size);   /* so the title size (in em) below is measured at the note's text size */
+  box-sizing: border-box;
+  height: calc(1.7 * var(--inline-title-size));
+  margin-top: 0;
+  margin-bottom: calc(2.5 * var(--font-text-size));   /* a heading's spacing, at the note's text size */
+  align-items: center;
+}
+.markdown-rendered .chapter-nav-top :is(.prev, .next) > a { height: auto; }
+.markdown-rendered .chapter-nav-top > * { font-size: var(--font-smaller); }
 .chapter-nav .current { align-self: center; text-align: center; font-weight: var(--font-semibold); max-width: 40ch; }
 /* previous / next: the whole box is the link, not just the words. Names that don't fit on one line
    are cut short with "…" (the full name shows on hover). */
@@ -186,6 +213,10 @@
 .chapter-nav .next > a { justify-content: flex-end; }
 .chapter-nav-arrow { flex: none; width: 1em; text-align: center; }
 .chapter-nav :is(.prev, .next) > a:hover { background-color: var(--background-modifier-hover); }
+
+/* wide mode (Settings → Page width → Wide): the note uses the whole middle column instead of a
+   readable line length, up to a limit so lines don't get absurdly long on huge screens */
+html.wide-mode .markdown-preview-sizer { max-width: min(100%, 1400px); }
 
 /* the settings pop-over under the gear icon */
 .site-settings {
@@ -356,6 +387,16 @@ html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoil
 /* "Last updated …" on the home page */
 .site-updated { font-size: var(--font-ui-small); color: var(--text-faint); }
 
+/* picture alignment from the Image Converter plugin (on the picture, or on its captioned figure) */
+.markdown-rendered :is(img, figure).image-converter-aligned { clear: both; float: none; }
+.markdown-rendered :is(img, figure).image-position-center { display: block; margin-inline: auto; }
+.markdown-rendered :is(img, figure).image-position-left.image-no-wrap { display: block; margin-left: 0; margin-right: auto; }
+.markdown-rendered :is(img, figure).image-position-right.image-no-wrap { display: block; margin-left: auto; margin-right: 0; }
+.markdown-rendered :is(img, figure).image-position-left.image-wrap { float: left; clear: left; margin: 0 1em 0.5em 0; }
+.markdown-rendered :is(img, figure).image-position-right.image-wrap { float: right; clear: right; margin: 0 0 0.5em 1em; }
+.markdown-rendered figure.image-converter-aligned { width: fit-content; max-width: 100%; }
+.markdown-rendered figure.image-wrap { max-width: min(50%, 24rem); }
+
 /* the page title at the top of "On this page" */
 .site-toc .toc-title a { font-weight: var(--font-semibold); color: var(--text-normal); }
 
@@ -381,20 +422,53 @@ html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoil
 .covalon-filter-count { font-size: var(--font-ui-small); color: var(--text-faint); }
 .covalon-table-box { margin-block: var(--p-spacing); }
 .covalon-table-box > .table-wrapper { max-height: 85vh; overflow: auto; overscroll-behavior: auto; }
-.covalon-table-box table { width: 100%; margin: 0; }
+/* separate (not shared) cell borders, so the pinned header row carries its own borders: with shared
+   borders, the table's top edge stays behind while scrolling and the rows show through a thin gap
+   above the header (Safari especially) */
+.covalon-table-box table { width: 100%; margin: 0; border-collapse: separate; border-spacing: 0; }
+.covalon-table-box :is(th, td) { border-width: 0 1px 1px 0; }
+.covalon-table-box :is(th, td):first-child { border-left-width: 1px; }
+.covalon-table-box thead th { border-top-width: 1px; }
+/* (::before, since ::after shows the sort arrow) a slight shadow under the pinned header row while rows scroll beneath it (a strip under each
+   cell, running on into the next one, so it reads as one shadow across the row) */
+.covalon-table-box thead th::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  right: 0;
+  top: 100%;
+  height: 7px;
+  pointer-events: none;
+  background: linear-gradient(rgba(0, 0, 0, 0.16), transparent);
+  opacity: 0;
+  transition: opacity 150ms;
+}
+.theme-dark .covalon-table-box thead th::before { background: linear-gradient(rgba(0, 0, 0, 0.45), transparent); }
+.covalon-table-box.is-scrolled thead th::before { opacity: 1; }
 .covalon-table-box thead th {
   position: sticky;
   top: 0;
   z-index: 1;
   /* the header's tint mixed into the page colour, fully solid, so rows don't show through it while scrolling */
   background-color: color-mix(in srgb, var(--table-header-border-color) 60%, var(--background-primary)) !important;
-  /* the table's shared (collapsed) borders stay with the table and scroll away, leaving a see-through
-     line above and below the pinned header; the header draws its own top and bottom border instead */
-  box-shadow: inset 0 1px 0 var(--table-header-border-color), inset 0 -1px 0 var(--table-header-border-color);
 }
-th.covalon-sortable { cursor: pointer; user-select: none; }
-th.covalon-sortable[data-sort="asc"]::after { content: " ▲"; font-size: 0.7em; }
-th.covalon-sortable[data-sort="desc"]::after { content: " ▼"; font-size: 0.7em; }
+/* list properties (in tables and properties boxes): each item and its comma wrap together */
+.covalon-list-item { display: inline-block; max-width: 100%; }
+.markdown-rendered .covalon-list-item a { display: inline; }   /* the item is the block; the comma follows the link's last word */
+
+/* column headers never wrap; a sortable one always keeps room at its end for the sort arrow, so the
+   column doesn't change width when it's sorted */
+.markdown-rendered th { white-space: nowrap; }
+th.covalon-sortable { cursor: pointer; user-select: none; padding-right: calc(var(--size-4-2) + 1em); }
+th.covalon-sortable[data-sort]::after {
+  position: absolute;
+  right: var(--size-4-2);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7em;
+}
+th.covalon-sortable[data-sort="asc"]::after { content: "▲"; }
+th.covalon-sortable[data-sort="desc"]::after { content: "▼"; }
 
 /* no rubber-band bounce when scrolling past the top or bottom of the page */
 html, body { overscroll-behavior: none; }

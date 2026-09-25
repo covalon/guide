@@ -18,6 +18,7 @@ Taltain was a small sovereign nation led by powerful noble families. Only humans
 Only a decade before the Cataclysm, the lower class sought aid from the nearby freeholds of Gornlar to overthrow their noble oppressors, staging an assault upon the island chains. With their help, the noble families of Taltain were all but decimated. Taltain, now ran by the usurping lower class, joined Gornlar as an official vassal.
 
 Ironically, the Cataclysm would manifest itself in Taltain by way of another coup. Faceless aberrations disguised as mercenaries infiltrated the city and slaughtered the citizens of Taltain indiscriminately.
-## Links
+
+**Links**
 - **Expedition Log:** [[Taltain Expedition#Expedition Log|Taltain Expedition]]
 - **Roleplay:** [🐙 Taltain Tavern Camp](https://discord.com/channels/802423566196539412/1441850011087274105)

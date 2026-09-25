@@ -18,6 +18,7 @@ Verndhelt was a highly xenophobic and amibitious empire that leveraged their hea
 Citizens of Verndhelt could expect strict law enforcement, though activities within the bounds of law were encouraged, as the belief that beneficial destiny came to those who earned it with the toil of their back, but non-humans were ostricised by the nation's culture, with tieflings treated especially poorly.
 
 When the Cataclysm found Verndhelt, it came as a rumbling of the earth. The Iron Palace, the military academies, and most of their standing armies crumpled into the depths as a sinkhole swallowed the capital whole.
-## Links
+
+**Links**
 - **Expedition Log:** [[Verndhelt Expedition#Expedition Log|Verndhelt Expedition]]
 - **Roleplay:** [😇😈 Verndhelt Camp](https://discord.com/channels/802423566196539412/1441853024845693200)

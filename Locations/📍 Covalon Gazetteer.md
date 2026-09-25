@@ -39,6 +39,8 @@ views:
     order:
       - file.name
       - District
+      - Roleplay Channel
+      - Guild Headquarters of
     sort:
       - property: formula.DistrictSort
         direction: ASC

@@ -13,6 +13,13 @@ views:
       - file.name
       - Tagline
       - Covalon Status
+      - Created by
+      - Government
+      - Population
+      - Religions
+      - Primary Exports
+      - Geography
+      - Fate
     sort:
       - property: formula.SortTitle
         direction: ASC
@@ -22,6 +29,6 @@ views:
 ```datacorejsx
 const { CovalonEntries } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
-  return <CovalonEntries tag="covalon/civilization" sortBy="title" tagline="Tagline" aside />;
+  return <CovalonEntries tag="covalon/civilization" sortBy="title" tagline="Tagline" aside propsFirst />;
 }
 ```

@@ -40,10 +40,17 @@ Finales have two difficulty modes. Normal mode is the standard finale experience
 The following is a list of currently active expeditions. For more information on each expedition, see the city's corresponding entry of the Campaign Lore chapter. Mission and finale details for each are in [[📍 Expeditions|Expeditions]].
 
 ```base
+formulas:
+  JourneyDate: note["Journey Date"].format("MMMM Do, YYYY")
+  FinaleCleared: note["Finale First Cleared"].format("MMMM Do, YYYY")
 filters:
   and:
     - file.hasTag("covalon/expedition")
 properties:
+  formula.JourneyDate:
+    displayName: Journey Date
+  formula.FinaleCleared:
+    displayName: Finale First Cleared
   file.name:
     displayName: Expedition Location
 views:
@@ -53,6 +60,9 @@ views:
       - file.name
       - Soul Seed
       - Finale
+      - Civilization
+      - formula.JourneyDate
+      - formula.FinaleCleared
     sort:
       - property: Journey Date
         direction: ASC

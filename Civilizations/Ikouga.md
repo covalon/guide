@@ -22,6 +22,7 @@ Out of the thousands of islands in the Noctune Tropic archipelago, only a fracti
 Its idyllic climate and acces to a wealth of natural resources made it an attractive place for those both looking to fill their purse and their minds, housing headquarters for several international trading companies as well as an academy of magic and science. In time, Ikouga's technology grew and urban development expanded, with the city encompassing more and more of the original island with every passing year, until the city expanded to the point where the entire original island had been covered by city - no original tropical forest remained.
 
 In spite of their wealth and knowledge, the denizens of Ikouga found themselves powerless on the day the wind stopped and the ocean stood still. Over the weeks that followed, civilization in Ikouga completely destabilized from being cut off from the rest of the world, and the city descended to anarchy. Some people were killed over conflicts for food while others merely starved to death, but the greatest fools of all were the ones who attempted to flee the city by rowboat; although the ocean's surface stood still, the beasts below the surface were more restless than ever.
-## Links
+
+**Links**
 - **Expedition Log:** [[Ikouga Expedition#Expedition Log|Ikouga Expedition]]
 - **Roleplay:** [🌊 Ikouga District](https://discord.com/channels/802423566196539412/1441829791580946532)

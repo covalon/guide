@@ -1,2 +1,16 @@
+# Obsidian: per-device window layout and caches
 .obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.trash/
+
+# macOS / Windows clutter
 .DS_Store
+Thumbs.db
+
+# the site build: Python caches, and a site built into the vault by hand
+# (build-local.sh builds outside the vault, in ~/.covalon-site)
+__pycache__/
+*.pyc
+/public/
+.site-build/_preview*.tgz

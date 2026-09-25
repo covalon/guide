@@ -46,10 +46,8 @@ All of these people wore wooden masks to cover their faces, and went about their
 Finally, their efforts paid off - they learned that there was a Vessel of the Maw in Taltain, under guard by the city's council. Covalonians stormed the office and battled against an assembly of councilors eerily similar to Covalon's own! They operated under a single hivemind, but showed much more cohesion than their citizens - figuratively through their tactics, and literally as they combined their bodies together into an amalgam that was powerful and hideous. The Covalonians prevailed, uncovering a Vessel of the Maw underneath the councilors' thrones and destroying it with the help of a Seed of Terra.
 
 > [!clear]
-
-![[TaltainOutpost.webp|Covalon's outpost in Taltain. Designed by Sheas.]]
 ## Base Camp
-*Summary to come.*
+![[TaltainOutpost.webp|Covalon's outpost in Taltain. Designed by Sheas.]]
 ## Missions
 | Mission | Summary |
 | :-- | :-- |

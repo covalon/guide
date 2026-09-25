@@ -16,6 +16,11 @@ views:
       - file.name
       - Headquarters
       - Membership Requirements
+      - Leader
+      - Members
+      - Goals
+      - Values
+      - Anathema
     sort:
       - property: formula.SortTitle
         direction: ASC

@@ -23,6 +23,7 @@ views:
       - formula.FinaleCleared
       - Soul Seed
       - Finale
+      - Civilization
     sort:
       - property: Journey Date
         direction: ASC

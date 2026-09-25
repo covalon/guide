@@ -28,10 +28,8 @@ After piercing the veil of darkness we found that the land within had become cor
 Fighting against the land itself we delved deeper and deeper into the darkness until we found the greatest horror of all, innocent leshies being siphoned of their life by terrible roots to feed some unseen entity.
 
 This entity turned out to be the Shadow Titan, a being of pure shadow, composed of two grasping hands and a hideous visage all working in tandem to attempt to thwart our attempts to reclaim Middlemist from darkness. Though bombarded with a torrent of lasers, slaps and shadowspawn we were ultimately triumphant. We destroyed the Vessel of the Maw and shed light on Middlemist once more.
-
-![[MiddlemistOutpost.webp|Covalon's outpost in Middlemist. Designed by Rinka.]]
 ## Base Camp
-*Summary to come.*
+![[MiddlemistOutpost.webp|Covalon's outpost in Middlemist. Designed by Rinka.]]
 ## Missions
 | Mission | Summary |
 | :-- | :-- |

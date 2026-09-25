@@ -38,10 +38,8 @@ Expedition to [[The Fey Courts]].
 The Fey Courts expedition has been COMPLETED - summary to come!
 
 > [!clear]
-
-![[Fey_Courts_Camp.webp|Covalon's hidden camp in the trees. Designed by Rinka.]]
 ## Base Camp
-*Summary to come.*
+![[Fey_Courts_Camp.webp|Covalon's hidden camp in the trees. Designed by Rinka.]]
 ## Missions
 | Mission | Summary |
 | :-- | :-- |

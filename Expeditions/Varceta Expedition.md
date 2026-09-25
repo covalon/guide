@@ -26,10 +26,8 @@ We worked with this resistance to rally troops, investigate lava magic, and even
 Traseem proved to be no easy foe, even bound, and the first group to challenge him was unfortunately slain, though revived by the Heart of Terra. When our heroes finally slayed the psychopomp, we found the vessel of the Maw contained within it.
 
 The Heart of Terra pushed to destroy it, but it struggled. Covalonians present for Traseem's destruction or at the Shrine of Terra noticed it falter. It managed to overcome the Maw, but not without cost. Varceta is freed, but it will take effort to bolster the Heart.
-
-![[VarcetaOutpost.webp|Covalon's outpost in Varceta. Designed by Komainu.]]
 ## Base Camp
-*Summary to come.*
+![[VarcetaOutpost.webp|Covalon's outpost in Varceta. Designed by Komainu.]]
 ## Missions
 | Mission | Summary |
 | :-- | :-- |

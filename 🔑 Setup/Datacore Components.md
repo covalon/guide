@@ -2,7 +2,7 @@ Shared Datacore components used by the 📍 overview pages. Edit the code below 
 ## CovalonEntries
 Lists every note with the given tag: a linked heading, the note's properties, then the full note embedded.
 
-Options: `tag` (required), `inline={["Roleplay Channel"]}` (with `aside`: show those properties as a line of text after the note's text, instead of in the properties box), `tagline="Tagline"` (show that property as a tagline right under each heading, instead of in the properties box), `aside` (a different layout, used for the guilds: heading, the note's text, then its properties, with the note's images floated to the right beside them), `district` (only locations in that district), `sortBy="title"` (name, ignoring a leading "The"), `sortBy="date"` (or any property name, e.g. `sortBy="Journey Date"`), `heading="h3"`, and `hide={["Some Property"]}` to leave properties out of the panel.
+Options: `tag` (required), `inline={["Roleplay Channel"]}` (with `aside`: show those properties as a line of text after the note's text, instead of in the properties box), `tagline="Tagline"` (show that property as a tagline right under each heading, instead of in the properties box), `aside` (a different layout, used for the guilds: heading, the note's text, then its properties, with the note's images floated to the right beside them), `propsFirst` (with `aside`: the properties box comes before the note's text instead of after it, used for the deities and civilizations), `district` (only locations in that district), `sortBy="title"` (name, ignoring a leading "The"), `sortBy="date"` (or any property name, e.g. `sortBy="Journey Date"`), `heading="h3"`, and `hide={["Some Property"]}` to leave properties out of the panel.
 
 ```jsx
 // properties never shown: these, and any starting with _ (settings for the website, e.g. _url)
@@ -61,7 +61,7 @@ function InlineProps({ page, props = [] }) {
   ));
 }
 
-function AsideEntry({ page, hide = [], level = 2, inline = [] }) {
+function AsideEntry({ page, hide = [], level = 2, inline = [], propsFirst = false }) {
   const [parts, setParts] = dc.useState({ text: "", images: "" });
   dc.useEffect(() => {
     let live = true;
@@ -79,9 +79,10 @@ function AsideEntry({ page, hide = [], level = 2, inline = [] }) {
   return (
     <div className="covalon-entry-body">
       {parts.images && <div className="covalon-entry-images"><dc.Markdown content={parts.images} sourcePath={page.$path} /></div>}
+      {propsFirst && <Properties page={page} hide={[...hide, ...inline]} />}
       <dc.Markdown content={parts.text} sourcePath={page.$path} />
       <InlineProps page={page} props={inline} />
-      <Properties page={page} hide={[...hide, ...inline]} />
+      {!propsFirst && <Properties page={page} hide={[...hide, ...inline]} />}
     </div>
   );
 }
@@ -92,7 +93,7 @@ function Tagline({ page, prop }) {
   return <div className="covalon-tagline"><dc.Markdown inline content={show(entry.raw)} sourcePath={page.$path} /></div>;
 }
 
-function CovalonEntries({ tag, district, sortBy = "name", heading = "h2", hide = [], aside = false, tagline, inline = [] }) {
+function CovalonEntries({ tag, district, sortBy = "name", heading = "h2", hide = [], aside = false, propsFirst = false, tagline, inline = [] }) {
   if (tagline) hide = [...hide, tagline];
   const pages = dc.useQuery(`@page and #${tag}`);
   let entries = [...pages];
@@ -114,7 +115,7 @@ function CovalonEntries({ tag, district, sortBy = "name", heading = "h2", hide =
           <div key={p.$path} className="covalon-entry covalon-entry-aside">
             <H><dc.Link link={p.$link} /></H>
             <Tagline page={p} prop={tagline} />
-            <AsideEntry page={p} hide={hide} inline={inline} level={Number(heading.slice(1)) || 2} />
+            <AsideEntry page={p} hide={hide} inline={inline} propsFirst={propsFirst} level={Number(heading.slice(1)) || 2} />
           </div>
         ) : (
           <div key={p.$path} className="covalon-entry">

@@ -41,10 +41,8 @@ While most of the undead in the area were mindless, we realised quickly that a l
 Finally, we turned to the spirits of those who had met their end. Channelling their songs they guided us to our ultimate enemy, the Archlich Faltyr.
 
 To approach the undead lord, we carved through swarms of countless undead in his Cathedral of Death. Yet for all their numbers, we were stronger. We destroyed the lich’s soul cages and cast his spirit into the beyond. Life beats in the heart of Drifthaven once more.
-
-![[DrifthavenOutpost.webp|Covalon's disguised yurt in Drifthaven. Designed by Rinka.]]
 ## Base Camp
-*Summary to come.*
+![[DrifthavenOutpost.webp|Covalon's disguised yurt in Drifthaven. Designed by Rinka.]]
 ## Missions
 | Mission | Summary |
 | :-- | :-- |

@@ -34,7 +34,7 @@ Alatar Expedition is complete! See the [\#📙expedition-logs](https://discord.c
 
 ![[Alatar_Missive.webp|Letter from Governor Alekin]]
 ## Base Camp
-*Summary to come.*
+*Image to come.*
 ## Missions
 | Mission | Summary |
 | :-- | :-- |

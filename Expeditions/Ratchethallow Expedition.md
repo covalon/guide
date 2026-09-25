@@ -24,10 +24,8 @@ Efforts to reclaim Ratchethallow are complete! The greater community of Covalonâ
 Covalon adventurers set up camp in a sandy strait several miles outside the dome before beginning subtle excursions into the city proper to observe the inhabitants there. Ratchethallow appeared primarily unoccupied at first glance, save for what appeared to be a veritable army of mechanized constructs, obeying the commands of a shadowy figure known only as the Lord of Gears. After several close calls with constructs following adventurers back to camp and nearly alerting the city to their presence, our adventurers managed to locate the Lord of Gears to a workshop in the heart of the city.
 
 The Lord of Gears appeared to be a massive construct housed in a workshop in the center of the dome, his size only matched by his tactical intellect. A fervent ally of the Maw, he possessed a Vessel hidden in his workshop, and was an enormous threat in his own right. A group of brave adventurers faced him in combat, and emerged victorious after a grueling battle, having reclaimed the city of Ratchethallow.
-
-![[RachethallowOutpost.webp|Covalon's outpost in Ratchethallow Designed by Rinka.]]
 ## Base Camp
-*Summary to come.*
+![[RachethallowOutpost.webp|Covalon's outpost in Ratchethallow Designed by Rinka.]]
 ## Missions
 | Mission | Summary |
 | :-- | :-- |

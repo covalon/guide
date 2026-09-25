@@ -25,10 +25,10 @@ Cleric Spells:
   - "4th: life's flowing river"
 Pantheon Members:
   - "[[Aelia]]"
-  - "[[Golgolgoss, The Watcher]]"
+  - "[[Golgolgoss, The Watcher|Golgolgoss]]"
   - "[[The Grey Ocean]]"
   - "[[The Path of the Great Spirits]]"
-  - "[[Unmortus, The Dead Guardian]]"
+  - "[[Unmortus, The Dead Guardian|Unmortus]]"
 ---
 Followers of the Cabal know well the inevitability of life, death, and undeath, each a valuable moment in a soul's journey towards its final resting place. This pantheon was originally formed by worshippers of various deities working together to handle undead related strife and unrest in their communities. The Cabal's beliefs have expanded beyond its founding, with undeath seen as an additional step along a soul's pathway, sometimes taken willingly, sometimes forced, or skipped entirely.
 

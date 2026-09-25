@@ -44,10 +44,8 @@ Their sultan had plans to raise an army of undead and elementals in order to rec
 Thankfully, we were able to defeat Saddam Syed, Sultan of the Sky before his plans could come to fruition, and destroy the Maw Vessel in Primrose in the process, bringing a tentative peace to the underground city.
 
 ![[Letter_from_Al-Fazim.webp|Al-Fazim's Letter.]]
-
-![[PrimroseOutpost.webp|Covalon's outpost under Duneveil. Designed by Sheas.]]
 ## Base Camp
-*Summary to come.*
+![[PrimroseOutpost.webp|Covalon's outpost under Duneveil. Designed by Sheas.]]
 ## Missions
 | Mission | Summary |
 | :-- | :-- |

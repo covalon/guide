@@ -24,7 +24,7 @@ Cleric Spells:
 Pantheon Members:
   - "[[Aelia]]"
   - "[[Noctune]]"
-  - "[[Trella, The Night Sky]]"
+  - "[[Trella, The Night Sky|Trella]]"
 ---
 The Circle of Stars is a loose pantheon of celestial deities of both day and night. It is worshipped primarily by agrarian cultures who place heavy reliance on their community’s safety. They recognize the union of the sun, moon, and stars as important as the union between seed and soil. The sun provides their crops, the night provides their rest, while the moon and stars keep them lit well enough to keep watch over their fields.
 

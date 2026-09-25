@@ -38,3 +38,7 @@ Typing `[` shows a list of properties; pick one and the list moves on to that pr
 - A property that doesn't exist gives no results.
 ## Filtering the tables
 Some tables have a filter box of their own above them. Use them to filter to rows that contain that text. You can also click a column's heading to sort by it (click again to reverse).
+
+- Every word has to be in the row: `fire cities` keeps rows with both.
+- Put `-` in front of a word to leave out the rows that have it: `holy -unholy`.
+- Put a word or phrase in quotes to match it as a whole word only: `"holy"` keeps *can choose holy* but not *must choose unholy*, and `-"holy"` leaves out rows with the word *holy*.

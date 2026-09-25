@@ -30,10 +30,8 @@ Then it happened. Lightning crashing, wind howling and a resonant "BAAAAAAAAAAHH
 Our mission on the ground was equally perilous to our journey through the sky. Forced to thin the ranks of our adversaries, investigate mysterious craters and even tame the power of lightning itself reclaiming Pudersnö proved to be one of our most difficult tasks yet.
 
 Little did we know how baaaad things would get. At the crescendo of our reclamations we had to face down The Mpeshi King himself, a vicious beast of storm given flesh. This horny fiend clashed with our finest but was ultimately thrown down, as we smote his ruin upon the mountainside.
-
-![[PudersnoOutpost.webp|Covalon's outpost in Pudersnö. Designed by Rinka.]]
 ## Base Camp
-*Summary to come.*
+![[PudersnoOutpost.webp|Covalon's outpost in Pudersnö. Designed by Rinka.]]
 ## Missions
 | Mission | Summary |
 | :-- | :-- |

@@ -24,6 +24,11 @@ views:
       - Alternate Domains
       - Favored Weapon
       - Divine Skill
+      - Edicts
+      - Anathema
+      - Cleric Spells
+      - Pantheons
+      - Pantheon Members
     sort:
       - property: formula.SortTitle
         direction: ASC
@@ -33,6 +38,6 @@ views:
 ```datacorejsx
 const { CovalonEntries } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
-  return <CovalonEntries tag="covalon/deity" sortBy="title" aside />;
+  return <CovalonEntries tag="covalon/deity" sortBy="title" aside propsFirst />;
 }
 ```

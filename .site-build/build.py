@@ -232,7 +232,7 @@ def props_panel(note, hide=()):
     for k, v in note.props.items():
         if k.lower() in HIDDEN_PROPS or k.startswith("_") or k.lower() in hide or v in (None, "", []):
             continue
-        value = md.renderInline(inline_markdown(value_text(v)))
+        value = md.renderInline(inline_markdown(list_markup(v)))
         rows.append(f'<div class="covalon-prop"><span class="covalon-prop-key">{html.escape(str(k))}</span>'
                     f' <span class="covalon-prop-value">{value}</span></div>')
     return f'<div class="covalon-props">{"".join(rows)}</div>' if rows else ""
@@ -274,6 +274,15 @@ def section_of(note, heading, keep_heading=False):
 
 
 # ================================================================== Bases -> tables
+def list_markup(v):
+    """A list property, each item (with its comma) kept together when the line wraps: links are shown as
+    inline blocks, which would otherwise let a comma drop onto a line of its own."""
+    if not isinstance(v, list):
+        return value_text(v)
+    items = [value_text(x) for x in v if x not in (None, "")]
+    return " ".join(f'<span class="covalon-list-item">{x}{"," if i < len(items) - 1 else ""}</span>' for i, x in enumerate(items))
+
+
 def base_cell(n, col, spec):
     if col.startswith("formula."):   # the formulas the vault uses: a date property shown with .format(...)
         expr = str((spec.get("formulas") or {}).get(col[8:], ""))
@@ -281,7 +290,7 @@ def base_cell(n, col, spec):
         if m:
             return value_text(n.prop(m.group(1) or m.group(2)))
         return ""
-    return value_text(n.prop(col))
+    return list_markup(n.prop(col))
 
 
 def render_base(src):
@@ -377,14 +386,16 @@ def inline_props(note, props):
     return "".join(lines)
 
 
-def render_note_aside(n, stack, inline=(), hide=()):
-    """A note's text, its images floated right, a line per `inline` property, then its properties box."""
+def render_note_aside(n, stack, inline=(), hide=(), props_first=False):
+    """A note's text, its images floated right, a line per `inline` property, and its properties box
+    (after the text, or before it with props_first)."""
     lines = render(n, stack).split("\n")
     images = [l for l in lines if IMAGE_LINE.match(l)]
     text = "\n".join(l for l in lines if not IMAGE_LINE.match(l)).strip()
     pics = ('<div class="covalon-entry-images">\n\n' + "\n\n".join(images) + '\n\n</div>\n\n') if images else ""
-    return ('<div class="covalon-entry-body">\n\n' + pics + text + "\n\n" + inline_props(n, inline)
-            + props_panel(n, list(hide) + list(inline)) + '\n\n</div>')
+    props = props_panel(n, list(hide) + list(inline))
+    return ('<div class="covalon-entry-body">\n\n' + pics + (props + "\n\n" if props_first else "") + text + "\n\n"
+            + inline_props(n, inline) + ("" if props_first else props) + '\n\n</div>')
 
 
 def render_entries(src, stack):
@@ -418,6 +429,7 @@ def render_entries(src, stack):
         keyf = lambda n: (lambda v: v.isoformat() if isinstance(v, datetime.date) else plain(v))(n.prop(sort_prop))
     entries.sort(key=keyf)
     aside = bool(re.search(r"<CovalonEntries\b[^>]*\baside\b", src))
+    props_first = bool(re.search(r"<CovalonEntries\b[^>]*\bpropsFirst\b", src))
     out = []
     for n in entries:
         if aside:   # heading, the note's text, its properties; the note's images floated right beside them
@@ -425,13 +437,99 @@ def render_entries(src, stack):
             images = [l for l in lines if IMAGE_LINE.match(l)]
             text = "\n".join(l for l in lines if not IMAGE_LINE.match(l)).strip()
             pics = ('<div class="covalon-entry-images">\n\n' + "\n\n".join(images) + '\n\n</div>\n\n') if images else ""
+            props = props_panel(n, list(hide) + list(inline))
             out.append('<div class="covalon-entry covalon-entry-aside">\n\n' + f"{'#' * level} [[{n.name}]]\n\n" + tagline_html(n, tagline)
-                       + '<div class="covalon-entry-body">\n\n' + pics + text + "\n\n" + inline_props(n, inline)
-                       + props_panel(n, list(hide) + list(inline)) + '\n\n</div>\n\n</div>')
+                       + '<div class="covalon-entry-body">\n\n' + pics + (props + "\n\n" if props_first else "") + text + "\n\n"
+                       + inline_props(n, inline) + ("" if props_first else props) + '\n\n</div>\n\n</div>')
             continue
         part = [f"{'#' * level} [[{n.name}]]", tagline_html(n, tagline), props_panel(n, hide), shift_to(render(n, stack), level + 1)]
         out.append('<div class="covalon-entry">\n\n' + "\n\n".join(p for p in part if p) + '\n\n</div>')
     return '<div class="covalon-entries">\n\n' + "\n\n".join(out) + '\n\n</div>'
+
+
+# ================================================================== image alignment (Image Converter plugin)
+# The Image Converter plugin keeps each picture's alignment (left / center / right, wrap text or not, and a
+# width) in .obsidian/image-converter-image-alignments.json, under the note and a hash of
+# "<note path>:<picture path>". The site gives the same pictures the same alignment.
+def _alignments():
+    f = SRC / ".obsidian" / "image-converter-image-alignments.json"
+    try:
+        return json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
+    except ValueError:
+        return {}
+
+
+def _alignment_settings():
+    f = SRC / ".obsidian" / "plugins" / "image-converter" / "data.json"
+    try:
+        d = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
+    except ValueError:
+        d = {}
+    return d.get("isImageAlignmentEnabled", False), d.get("imageAlignmentDefaultAlignment", "none")
+
+
+ALIGNMENTS = _alignments()
+ALIGN_ENABLED, ALIGN_DEFAULT = _alignment_settings()
+
+
+_M32 = 0xFFFFFFFF
+def rotl(x, r): return ((x << r) | (x >> (32 - r))) & _M32
+def mul(a, b): return (a * b) & _M32
+def fmix(h):
+    h ^= h >> 16; h = mul(h, 2246822507); h ^= h >> 13; h = mul(h, 3266489909); h ^= h >> 16; return h
+def plugin_hash(text):
+    b = [ord(c) & 255 for c in text.encode("utf-16-le").decode("latin-1")[::2]]   # low byte of each UTF-16 unit
+    s = len(b); a, o = 2277735313, 1291169091
+    r = t = n = f = 0
+    def k(x): x = mul(x, a); x = rotl(x, 15); return mul(x, o)
+    word = lambda i: b[i] | b[i+1] << 8 | b[i+2] << 16 | b[i+3] << 24
+    for blk in range(s >> 4):
+        p = 16 * blk
+        r ^= k(word(p)); r = rotl(r, 19); r = (mul(r, 5) + 3864292196) & _M32
+        t ^= k(word(p + 4)); t = rotl(t, 17); t = (mul(t, 5) + 3864292196) & _M32
+        n ^= k(word(p + 8)); n = rotl(n, 15); n = (mul(n, 5) + 3864292196) & _M32
+        f ^= k(word(p + 12)); f = rotl(f, 13); f = (mul(f, 5) + 3864292196) & _M32
+    c = 16 * (s >> 4); d = s % 16
+    lanes = [0, 0, 0, 0]
+    for i in range(d):
+        lanes[i // 4] ^= b[c + i] << (8 * (i % 4))
+    if d > 12: f ^= k(lanes[3])
+    if d > 8: n ^= k(lanes[2])
+    if d > 4: t ^= k(lanes[1])
+    if d > 0: r ^= k(lanes[0])
+    r ^= s; t ^= s; n ^= s; f ^= s
+    r = (r + t) & _M32; r = (r + n) & _M32; r = (r + f) & _M32
+    t = (t + r) & _M32; t = (t + n) & _M32; t = (t + f) & _M32
+    n = (n + r) & _M32; n = (n + t) & _M32; n = (n + f) & _M32
+    f = (f + r) & _M32; f = (f + t) & _M32; f = (f + n) & _M32
+    r, t, n, f = fmix(r), fmix(t), fmix(n), fmix(f)
+    return f"{f:08x}{n:08x}{t:08x}{r:08x}"
+
+
+PICTURE_EMBED = re.compile(r"!\[\[([^\]|#]+\.(?:png|jpe?g|webp|gif|svg|avif|bmp))((?:\|[^\]]*)?)\]\]", re.I)
+
+
+def align_pictures(note, text):
+    """Mark each picture embedded in this note with its alignment: ![[pic.webp|caption|@align=left,wrap,300px]]."""
+    if not ALIGN_ENABLED:
+        return text
+    note_path = str(note.path.relative_to(SRC))
+    saved = ALIGNMENTS.get(note_path, {})
+
+    def mark(m):
+        pic = files.get(m.group(1).strip().split("/")[-1].casefold())
+        if not pic:
+            return m.group(0)
+        a = saved.get(plugin_hash(f"{note_path}:{pic.relative_to(SRC)}"))
+        if a is None:
+            if ALIGN_DEFAULT in (None, "", "none"):
+                return m.group(0)
+            a = {"position": ALIGN_DEFAULT, "wrap": False}
+        if a.get("position") in (None, "", "none"):
+            return m.group(0)
+        spec = ",".join([a["position"], "wrap" if a.get("wrap") else "nowrap", str(a.get("width") or ""), str(a.get("height") or "")])
+        return f"![[{m.group(1)}{m.group(2) or '|'}{'|' if m.group(2) else ''}@align={spec}]]"
+    return PICTURE_EMBED.sub(mark, text)
 
 
 # ================================================================== embeds
@@ -443,8 +541,9 @@ def render(note, stack=()):
     if note.name in stack:
         return f"*(embed loop: {note.name})*"
     stack = stack + (note.name,)
+    body = align_pictures(note, note.body)
     # blank lines around the generated HTML, so a heading right after the code block stays a heading
-    text = CODE.sub(lambda m: "\n\n" + (render_base(m.group(2)) if m.group(1) == "base" else render_entries(m.group(2), stack)) + "\n\n", note.body)
+    text = CODE.sub(lambda m: "\n\n" + (render_base(m.group(2)) if m.group(1) == "base" else render_entries(m.group(2), stack)) + "\n\n", body)
     out, pos = [], 0
     for m in EMBED.finditer(text):
         out.append(text[pos:m.start()])
@@ -565,6 +664,14 @@ def href_to(url):
 WIKILINK = re.compile(r"(!?)\[\[([^\[\]|#\\]*)(#[^\[\]|\\]*)?(?:\\?\|((?:[^\[\]]|\[[^\]]*\])*?))?\]\]")
 
 
+def align_attrs(align):
+    """"left,wrap,300px," (from align_pictures) -> the Image Converter plugin's classes, and a style for its size."""
+    pos, wrap, w_css, h_css = (align.split(",") + ["", "", "", ""])[:4]
+    cls = f'image-converter-aligned image-position-{pos} {"image-wrap" if wrap == "wrap" else "image-no-wrap"}'
+    style = "".join(f"{k}:{v};" for k, v in (("width", w_css), ("height", h_css)) if v)
+    return cls, style
+
+
 def wikilink_html(m):
     embed, target, heading, alias = m.group(1), m.group(2), (m.group(3) or "")[1:], m.group(4)
     heading = heading.strip()
@@ -574,12 +681,14 @@ def wikilink_html(m):
             return f'<span class="internal-link is-unresolved">{html.escape(target)}</span>'
         # ![[pic.webp|caption]], ![[pic.webp|300]] or ![[pic.webp|caption|300]]: a trailing number is the width
         parts = (alias or "").split("|")
+        align = parts.pop()[len("@align="):] if parts and parts[-1].startswith("@align=") else ""
         width = parts.pop() if parts and re.fullmatch(r"\d+(x\d+)?", parts[-1].strip()) else ""
         alt = "|".join(parts).strip()
-        if width:
-            w = width.split("x")[0]
-            return f'<img src="{href_to(url)}" alt="{html.escape(alt, quote=True)}" width="{w}">'
-        return f'![{alt}](<{href_to(url)}>)'
+        # the width and alignment ride along in the picture's title; to_html turns them into attributes.
+        # (Written as a Markdown picture, not an <img> tag: an <img> at the start of a line would make
+        # Markdown treat the lines after it as raw HTML, up to the next blank line.)
+        extra = " ".join(x for x in [f"w={width.split('x')[0]}" if width else "", f"align={align}" if align else ""] if x)
+        return f'![{alt}](<{href_to(url)}>' + (f' "@img {extra}"' if extra else "") + ")"
     note = find(target) if target.strip() else None
     if target.strip() and not note:
         label = alias or target
@@ -805,13 +914,43 @@ def to_html(markdown):
     # images with alt text become captioned figures (like the Image Captions plugin)
     for img in soup.find_all("img"):
         img["loading"] = "lazy"
+        sized = False
+        if img.get("title", "").startswith("@img "):
+            for part in img["title"][5:].split():
+                key, _, val = part.partition("=")
+                if key == "w":
+                    img["width"], sized = val, True
+                elif key == "align":
+                    cls, style = align_attrs(val)
+                    img["class"] = (img.get("class") or []) + cls.split()
+                    if style:
+                        img["style"] = style
+            del img["title"]
         p = img.parent
         if img.get("alt") and p and p.name == "p" and len([c for c in p.contents if str(c).strip()]) == 1:
             fig = soup.new_tag("figure", attrs={"class": "image-captions-figure"})
+            aligned = [c for c in img.get("class", []) if c.startswith("image-")]
+            if aligned:   # the caption goes with the picture: the figure is what's aligned / wrapped
+                fig["class"] = ["image-captions-figure"] + aligned
+                img["class"] = [c for c in img["class"] if c not in aligned]
+                if not img["class"]:
+                    del img["class"]
             cap = soup.new_tag("figcaption", attrs={"class": "image-captions-caption"})
             cap.string = img["alt"]
             fig.extend([img.extract(), cap])
             p.replace_with(fig)
+    # table columns are at least as wide as their widest cell's text on one line, or 10 characters,
+    # whichever is less (and never narrower than their header, which doesn't wrap), so short columns
+    # don't get squeezed into a word per line
+    for table in soup.find_all("table"):
+        heads = table.select("thead tr:first-child > th")
+        widths = [0] * len(heads)
+        for tr in table.find_all("tr"):
+            for i, cell in enumerate(tr.find_all(["th", "td"], recursive=False)[:len(heads)]):
+                widths[i] = max(widths[i], len(" ".join(cell.get_text(" ").split())))
+        for th, w in zip(heads, widths):
+            if w:
+                th["style"] = (th.get("style", "").rstrip("; ") + "; " if th.get("style") else "") + f"min-width: min(10ch, {w + 1}ch)"
     for a in soup.find_all("a", href=True):
         if re.match(r"https?://|mailto:", a["href"]):
             a["class"] = (a.get("class") or []) + ["external-link"]
@@ -866,14 +1005,19 @@ def tree_html(current):
         chapter = NAV[child.name][2] if isinstance(child, Note) and child.name in NAV else 999   # guide chapters in reading order
         return (first, last, pinned, kind != "folder", chapter, natural(name))
 
-    def walk(node, depth):
+    def walk(node, depth, path=()):
         out = []
         for (kind, name), child in sorted(node.items(), key=order):
             if kind == "folder":
                 inside = any(n is current for n in iter_notes(child))
+                home = FOLDER_HOME.get(path + (name,))
+                # a folder with a pinned overview: its name opens the overview (where the folder is shown
+                # open); the arrow just folds / unfolds it
+                label = (f'<a class="tree-folder-link" href="{href_to(home.url)}">{html.escape(name)}</a>' if home
+                         else f'<span>{html.escape(name)}</span>')
                 out.append(f'<details class="tree-folder"{" open" if inside else ""}><summary class="tree-item tree-folder-title">'
-                           f'{lucide("chevron-right")}<span>{html.escape(name)}</span></summary>'
-                           f'<div class="tree-children">{walk(child, depth + 1)}</div></details>')
+                           f'{lucide("chevron-right")}{label}</summary>'
+                           f'<div class="tree-children">{walk(child, depth + 1, path + (name,))}</div></details>')
             else:
                 cls = "tree-item tree-file" + (" is-active" if child is current else "")
                 pin = '<span class="tree-pin" aria-hidden="true">📍</span>' if child.name.startswith("📍") else ""   # pinned overviews keep their pin, as in Obsidian
@@ -911,6 +1055,7 @@ def setting(name, label, options):
 # the settings pop-over behind the gear icon (site.js makes it work; choices are kept in the browser)
 SETTINGS = ('<div class="site-settings" hidden role="dialog" aria-label="Settings">'
             + setting("theme", "Appearance", [("light", "sun", "Light"), ("dark", "moon", "Dark"), ("auto", "monitor", "Auto")])
+            + setting("width", "Page width", [("readable", "align-center", "Readable"), ("wide", "move-horizontal", "Wide")])
             + setting("spoilers", "Spoilers", [("hide", "eye-off", "Hidden"), ("show", "eye", "Shown")])
             + '<p class="site-setting-note">GM sections on the adventure type pages are hidden until you click them, unless spoilers are shown.</p>'
             + "</div>")
@@ -993,13 +1138,14 @@ def page(title, body_html, toc, current=None, extra_head="", search_page=False, 
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{html.escape(title)}{"" if title == SITE_TITLE else " · " + SITE_TITLE}</title>
+<title>{html.escape(SITE_TITLE if title == SITE_TITLE else SITE_TITLE + " | " + title)}</title>
 {links}{scripts}{favicon(root)}{extra_head}
 </head>
 <body class="theme-light">
-<script>(function(){{var t=null;try{{t=localStorage.getItem("theme")}}catch(e){{}}if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.body.className=document.documentElement.className="theme-"+t;try{{if(localStorage.getItem("spoilers")==="show")document.documentElement.classList.add("show-spoilers")}}catch(e){{}}}})()</script>
+<script>(function(){{var t=null;try{{t=localStorage.getItem("theme")}}catch(e){{}}if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.body.className=document.documentElement.className="theme-"+t;try{{if(localStorage.getItem("spoilers")==="show")document.documentElement.classList.add("show-spoilers");if(localStorage.getItem("width")==="wide")document.documentElement.classList.add("wide-mode")}}catch(e){{}}}})()</script>
 <div class="site">
   <aside class="site-sidebar site-left workspace-split mod-left-split">
+    <div class="site-sidebar-top">
     <div class="site-header">
       <a class="site-title" href="{root}">{SITE_TITLE}</a>
       <button class="site-settings-toggle" type="button" title="Settings" aria-label="Settings" aria-haspopup="true" aria-expanded="false">{lucide("settings")}</button>
@@ -1008,6 +1154,7 @@ def page(title, body_html, toc, current=None, extra_head="", search_page=False, 
     <form class="site-search" action="{root}search/" role="search">
       {lucide("search")}<input type="search" name="q" placeholder="Search…" aria-label="Search the guides"><kbd>⌘K</kbd>
     </form>
+    </div>
     {tree_html(current)}
   </aside>
   <main class="site-main">
@@ -1046,6 +1193,7 @@ def collect_entry_styles():
             tag = jsx_prop(src, "tag")
             if tag and "<CovalonEntries" in src:
                 ENTRY_STYLE.setdefault(tag, {"aside": bool(re.search(r"<CovalonEntries\b[^>]*\baside\b", src)),
+                                             "props_first": bool(re.search(r"<CovalonEntries\b[^>]*\bpropsFirst\b", src)),
                                              "tagline": jsx_prop(src, "tagline"), "inline": jsx_prop(src, "inline") or []})
 
 
@@ -1095,7 +1243,8 @@ def build_note(note):
     style = entry_style(note)
     if style and style["aside"]:   # tagline, text with images floated right, inline properties, properties box at the bottom
         body = (tagline_html(note, style["tagline"]) + '<div class="covalon-entry covalon-entry-aside">\n\n'
-                + render_note_aside(note, (), style["inline"], [style["tagline"]] if style["tagline"] else []) + '\n\n</div>\n')
+                + render_note_aside(note, (), style["inline"], [style["tagline"]] if style["tagline"] else [],
+                                    style.get("props_first", False)) + '\n\n</div>\n')
     elif style:                    # tagline, properties box, then the text
         hide = [style["tagline"]] if style["tagline"] else []
         body = ('<div class="covalon-entry">\n\n' + tagline_html(note, style["tagline"]) + props_panel(note, hide)
@@ -1110,9 +1259,11 @@ def build_note(note):
     if note.path.relative_to(SRC).parts[0] in SPOILER_FOLDERS:
         spoiler_sections(soup)
     parts = [str(soup)] if style else [props_panel(note), str(soup)]
-    if note.name in NAV:
+    pre_title = ""
+    if note.name in NAV:   # chapter pages: ← previous / next → above the title, and again at the end
         nav = chapter_nav(note.name)
-        parts = [nav] + parts + [nav]
+        pre_title = nav.replace('class="chapter-nav"', 'class="chapter-nav chapter-nav-top"', 1)
+        parts = parts + [nav]
     content = "\n".join(p for p in parts if p)
     if not note.name.startswith("📍"):   # overview pages repeat their entries' text, so they're left out of search
         content = f'<div data-pagefind-body>{search_markup(note, title, first_paragraph(soup))}{content}</div>'
@@ -1122,7 +1273,7 @@ def build_note(note):
         if first:
             side = (f'<a class="guide-paged-link internal-link" href="{href_to(notes[first].url)}" data-pagefind-ignore>'
                     f'{lucide("book-open")}<span>View in paged mode</span></a>')
-    write(note.url, page(title, content, toc_html(soup, title), current=note, crumbs=breadcrumbs(note, title), title_side=side))
+    write(note.url, page(title, content, toc_html(soup, title), current=note, crumbs=breadcrumbs(note, title) + pre_title, title_side=side))
 
 
 HOME = """<!-- used only if the vault has no "📍 Home" note -->

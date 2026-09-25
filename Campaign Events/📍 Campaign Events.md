@@ -17,6 +17,7 @@ views:
     order:
       - file.name
       - formula.EventDate
+      - Type
     sort:
       - property: Date
         direction: ASC
