@@ -80,16 +80,16 @@ function AsideEntry({ page, hide = [], level = 2, inline = [], propsFirst = fals
   }, [page.$path, page.$mtime]);
   return (
     <div className="covalon-entry-body">
-      {parts.images && !imagesBesideProps && <div className="covalon-entry-images"><dc.Markdown content={parts.images} sourcePath={page.$path} /></div>}
+      {parts.images && !imagesBesideProps && <div className="covalon-entry-images"><dc.Markdown inline={false} content={parts.images} sourcePath={page.$path} /></div>}
       {children /* the entry's heading and tagline: after the images, so the images float from the top of the entry */}
       {propsFirst && <Properties page={page} hide={[...hide, ...inline]} />}
-      <dc.Markdown content={parts.text} sourcePath={page.$path} />
+      <dc.Markdown inline={false} content={parts.text} sourcePath={page.$path} />
       <InlineProps page={page} props={inline} />
       {!propsFirst && !imagesBesideProps && <Properties page={page} hide={[...hide, ...inline]} />}
       {imagesBesideProps && (
         <div className="covalon-props-row">
           <Properties page={page} hide={[...hide, ...inline]} />
-          {parts.images && <div className="covalon-props-images"><dc.Markdown content={parts.images} sourcePath={page.$path} /></div>}
+          {parts.images && <div className="covalon-props-images"><dc.Markdown inline={false} content={parts.images} sourcePath={page.$path} /></div>}
         </div>
       )}
     </div>
@@ -164,11 +164,49 @@ function CovalonList({ tag, where, is, after }) {
     const extra = after && prop(p, after);
     return `- [[${p.$name}]]` + (extra && !isEmpty(extra.raw) ? ` (${show(extra.raw)})` : "");
   }).join("\n");
-  return <dc.Markdown content={md} sourcePath={rows[0].$path} />;
+  return <dc.Markdown inline={false} content={md} sourcePath={rows[0].$path} />;
 }
 
-return { CovalonEntries, CovalonNote, CovalonList };
+// The whole guide on one page: every "Chapter N - Title" note in the guide's own folder, in number order, each
+// under its heading ("# Chapter 3: Title"; chapter 0 is "# Introduction"). Used by the two pinned guides:
+// <CovalonGuide />. (The site builds the guide's page the same way.)
+// Note: dc.Markdown is inline by default (it unwraps paragraphs, running them together), so every block of
+// text in these components passes inline={false}.
+function GuideChapter({ page, heading }) {
+  const [text, setText] = dc.useState("");
+  dc.useEffect(() => {
+    let live = true;
+    const file = dc.app.vault.getAbstractFileByPath(page.$path);
+    if (file) dc.app.vault.cachedRead(file).then((raw) => {
+      if (live) setText(raw.replace(/^---\n[\s\S]*?\n---\n?/, ""));
+    });
+    return () => { live = false; };
+  }, [page.$path, page.$mtime]);
+  return <dc.Markdown inline={false} content={`# ${heading}\n\n${text}`} sourcePath={page.$path} />;
+}
+
+function CovalonGuide() {
+  const here = dc.useCurrentFile();
+  const folder = here.$path.split("/").slice(0, -1).join("/");
+  const pages = dc.useQuery(`@page and path("${folder}")`);
+  const chapters = pages
+    .map((p) => ({ p, m: p.$name.match(/^Chapter (\d+) - (.+)$/) }))
+    .filter(({ p, m }) => m && p.$path.split("/").slice(0, -1).join("/") === folder)
+    .sort((a, b) => Number(a.m[1]) - Number(b.m[1]));
+  return (
+    <div className="covalon-guide">
+      {chapters.map(({ p, m }) => (
+        <GuideChapter key={p.$path} page={p} heading={m[1] === "0" ? "Introduction" : `Chapter ${Number(m[1])}: ${m[2]}`} />
+      ))}
+    </div>
+  );
+}
+
+return { CovalonEntries, CovalonNote, CovalonList, CovalonGuide };
 ```
+## CovalonGuide
+The whole guide on one page. It embeds every note named "Chapter N - Title" in the guide's own folder, in number order, each under a heading "Chapter N: Title" (chapter 0 is "Introduction"), so a new chapter only needs a new note with the next number. Used by the two pinned guides: `<CovalonGuide />`. It's part of the CovalonEntries code block above.
+
 ## CovalonList
 A bulleted list of notes with a tag, each linked, sorted by name (ignoring a leading "The"). Options: `tag` (required), `where` and `is` (only the notes whose property `where` has the value `is`, e.g. `where="Covalon Status" is="district"`), and `after` (a property shown in brackets after each name, e.g. `after="Roleplay Channel"`). The Expedition Districts and Outside Covalon page uses it to list the civilizations that are districts and camps. It's part of the CovalonEntries code block above.
 

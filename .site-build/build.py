@@ -636,6 +636,24 @@ def render(note, stack=(), bases=True):
 # ================================================================== chapter navigation
 GUIDES = ["📍 Covalon Player's Guide", "📍 Covalon GM's Guide"]
 CHAPTER = re.compile(r"(?m)^# (.+)\n+!\[\[([^\]|#]+)\]\]")
+CHAPTER_FILE = re.compile(r"^Chapter (\d+) - (.+)$")
+
+
+def guide_chapters(guide):
+    """<CovalonGuide />: the chapter notes in the guide's own folder ("Chapter 3 - Covalon Gameplay"), in
+    number order, each under its heading ("# Chapter 3: Covalon Gameplay"; chapter 0 is "# Introduction")."""
+    found = []
+    for n in notes.values():
+        m = CHAPTER_FILE.match(n.title)
+        if m and n.path.parent == guide.path.parent:
+            found.append((int(m.group(1)), "Introduction" if m.group(1) == "0" else f"Chapter {int(m.group(1))}: {m.group(2)}", n.name))
+    return "\n".join(f"# {heading}\n![[{name}]]" for _, heading, name in sorted(found))
+
+
+for g in GUIDES:   # a guide written as <CovalonGuide /> lists its chapters itself (Obsidian does the same with Datacore)
+    if g in notes and "<CovalonGuide" in notes[g].body:
+        notes[g].body = CODE.sub(lambda m: guide_chapters(notes[g]) if m.group(1) == "datacorejsx" and "<CovalonGuide" in m.group(2) else m.group(0),
+                                 notes[g].body)
 NAV = {}   # chapter note name -> (guide note name, [(heading, chapter note name), ...], index)
 for g in GUIDES:
     if g in notes:
