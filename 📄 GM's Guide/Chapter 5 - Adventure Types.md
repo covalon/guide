@@ -1,6 +1,10 @@
 ```base
 filters:
   and:
+    - or:
+        - not:
+            - file.hasProperty("_published")
+        - note["_published"] == true
     - file.hasTag("covalon/adventure-type")
 views:
   - type: table

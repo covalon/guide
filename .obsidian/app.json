@@ -1,5 +1,6 @@
 {
   "settingsPopoutWindow": false,
   "attachmentFolderPath": "🖼️ Assets",
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "current"
 }

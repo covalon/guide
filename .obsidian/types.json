@@ -4,6 +4,7 @@
     "Finale First Cleared": "date",
     "Divine Sanctification": "text",
     "Date": "date",
-    "Type": "text"
+    "Type": "text",
+    "_published": "checkbox"
   }
 }

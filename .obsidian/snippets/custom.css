@@ -857,3 +857,29 @@ img[alt="Covalon Logo"] {
   --h6-color: color-mix(in lab, var(--heading-color), var(--text-normal) 0%);
   --inline-title-color: color-mix(in lab, var(--heading-color), var(--text-normal) 40%);
 }
+/* Drafts: a note with _published unticked (_published: false) gets a "Draft" badge after its title, and its
+   _published property is outlined, so it's clear the note won't be on the website. (Obsidian only: the
+   site leaves drafts out altogether.) The property is a checkbox (.obsidian/types.json). */
+:is(.markdown-reading-view, .markdown-source-view):has(.metadata-property[data-property-key="_published"] input[type="checkbox"]:not(:checked)) .inline-title::after {
+  content: "Draft";
+  display: inline-block;
+  margin-left: 0.6em;
+  padding: 0.15em 0.6em;
+  vertical-align: middle;
+  font-size: 0.4em;
+  font-weight: var(--font-semibold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  color: var(--text-on-accent, #fff);
+  background: var(--color-orange, #e0843a);
+  border-radius: 99px;
+}
+.metadata-property[data-property-key="_published"]:has(input[type="checkbox"]:not(:checked)) {
+  outline: 1px dashed var(--color-orange, #e0843a);
+  outline-offset: -1px;
+  border-radius: var(--radius-s);
+}
+.metadata-property[data-property-key="_published"]:has(input[type="checkbox"]:not(:checked)) .metadata-property-key-input {
+  color: var(--color-orange, #e0843a);
+}

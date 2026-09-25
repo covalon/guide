@@ -1,9 +1,21 @@
 #!/usr/bin/env bash
 # Build the Covalon site from this vault and preview it at http://localhost:3000
 #   bash .site-build/build-local.sh          (run from the vault folder; Ctrl+C stops the preview)
+#   bash .site-build/build-local.sh --prod   also takes the tables' pictures for the link previews, like the
+#                                            published site (slower: needs a headless browser)
+# Without --prod it's a quick "dev" build: everything but those pictures (only link previews use them).
 # Needs Python 3.9+. Everything else (the Python packages, the search tool, the callout icons) is set up
 # on the first run in ~/.covalon-site, outside the vault.
 set -euo pipefail
+
+MODE="dev"
+for arg in "$@"; do
+  case "$arg" in
+    --prod) MODE="prod" ;;
+    --dev) MODE="dev" ;;
+    *) echo "Unknown option: $arg (use --prod or --dev)"; exit 1 ;;
+  esac
+done
 
 SITE="$(cd "$(dirname "$0")" && pwd)"     # .site-build
 VAULT="$(dirname "$SITE")"
@@ -20,9 +32,14 @@ fi
 
 echo "▶ Building the site…"
 COVALON_CACHE="$HOME_DIR/cache" "$PY" "$SITE/build.py" "$VAULT" "$OUT"
-echo "▶ Taking the tables' preview pictures…"
-"$PY" -m playwright install chromium >/dev/null
-COVALON_CACHE="$HOME_DIR/cache" "$PY" "$SITE/previews.py" "$OUT"
+if [ "$MODE" = "prod" ]; then
+  echo "▶ Taking the tables' preview pictures…"
+  "$PY" -m playwright install chromium >/dev/null
+  COVALON_CACHE="$HOME_DIR/cache" "$PY" "$SITE/previews.py" "$OUT"
+else
+  echo "▶ Skipping the tables' preview pictures (dev build; add --prod to include them)"
+  rm -f "$OUT/_previews.json"
+fi
 echo "▶ Building the search index…"
 "$PY" -m pagefind --site "$OUT" --silent
 

@@ -42,6 +42,10 @@ The following is a list of currently active expeditions. For more information on
 ```base
 filters:
   and:
+    - or:
+        - not:
+            - file.hasProperty("_published")
+        - note["_published"] == true
     - file.hasTag("covalon/expedition")
 formulas:
   JourneyDate: note["Journey Date"].format("MMMM Do, YYYY")

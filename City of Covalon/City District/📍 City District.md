@@ -15,6 +15,10 @@ formulas:
   SortTitle: file.name.replace(/^(the )?(kingdom of )?/i, '')
 filters:
   and:
+    - or:
+        - not:
+            - file.hasProperty("_published")
+        - note["_published"] == true
     - file.hasTag("covalon/location")
     - District.linksTo(this.file)
 views:

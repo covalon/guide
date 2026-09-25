@@ -73,7 +73,7 @@
   color: var(--h1-color);
   text-decoration: none;
 }
-.site-settings-toggle, .site-menu-button {
+.site-settings-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -85,7 +85,7 @@
   cursor: pointer;
   backdrop-filter: blur(10px);
 }
-.site-settings-toggle:hover, .site-settings-toggle[aria-expanded="true"], .site-menu-button:hover { 
+.site-settings-toggle:hover, .site-settings-toggle[aria-expanded="true"] { 
   background-color: var(--background-modifier-hover); color: var(--text-normal); }
 
 /* search box */
@@ -508,7 +508,7 @@ th.covalon-sortable[data-sort="desc"]::after { content: "▼"; }
 html, body { overscroll-behavior: none; }
 /* always keep room for the page's scrollbar, so the layout doesn't shift sideways between short
    pages (no scrollbar) and long ones, or when the search pop-over locks the page */
-html { overflow-y: scroll; }
+html { overflow-y: scroll; scrollbar-gutter: stable; }
 /* scrollbars in the accent colour, on a faint track matching the sidebar sidebars,
    tables and the search results all inherit this). The theme class is on <html> as well as <body>
    so the page's own scrollbar gets the colours too. */
@@ -636,45 +636,11 @@ html.search-open { overflow: hidden; }
 .covalon-search-help-link:hover { color: var(--link-color-hover); }
 .covalon-search-more { padding: var(--size-4-2); font-size: var(--font-ui-small); color: var(--text-faint); }
 
-/* menu button: only on small screens */
-.site-menu-button {
-  display: none;
-  position: fixed;
-  top: var(--size-4-2);
-  left: var(--size-4-2);
-  z-index: 150;   /* above the sticky breadcrumbs */
-  background-color: var(--background-secondary);
-  box-shadow: var(--shadow-s);
-}
 
 @media (max-width: 1100px) {
   .site { grid-template-columns: 260px minmax(0, 1fr); }
   .site-right { display: none; }
 }
-@media (max-width: 760px) {
-  .site { display: block; }
-  .site-left {
-    position: fixed;
-    inset: 0 auto 0 0;
-    width: min(85vw, 300px);
-    z-index: 140;   /* over the sticky breadcrumbs when the menu is open */
-    transform: translateX(-100%);
-    transition: transform 150ms ease-out;
-    box-shadow: var(--shadow-s);
-  }
-  body.menu-open .site-left { transform: none; }
-  /* the sidebar slides over the page here, so it's solid rather than see-through to the parchment */
-  :is(.theme-light, .theme-dark) .site-left.workspace-split.mod-left-split {
-    background-color: var(--background-secondary) !important;
-  }
-  /* room for the menu button, which sits over the sidebar's top left corner */
-  .site-left .site-header { padding-left: 36px; }
-  /* the breadcrumbs span the narrow page, leaving room for the menu button on the left */
-  .site-breadcrumbs { margin-inline: calc(-1 * var(--size-4-4)); padding-inline: 56px var(--size-4-4); }
-  .site-menu-button { display: flex; }
-  .markdown-preview-view { padding: var(--size-4-12) var(--size-4-4) var(--size-4-8); }
-}
-
 /* the Font setting's icons: an "Aa" in each kind of font */
 .site-font-sample { font-size: 1.05em; line-height: 1; min-width: 1.4em; text-align: center; font-weight: 600; }
 .site-font-sample.is-sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
@@ -854,3 +820,214 @@ html:not(.show-spoilers) .covalon-inline-spoiler:not(.is-revealed):hover .covalo
 html.show-spoilers .covalon-inline-spoiler,
 .covalon-inline-spoiler.is-revealed { background-color: color-mix(in srgb, var(--covalon-accent, var(--color-accent)) 10%, transparent); }
 :root { --covalon-eye: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E"); }
+
+/* ================================================================== small screens (phones)
+   The sidebars become panels that open from the bottom, from an app bar with two buttons: Menu (the file
+   tree, search and settings) and On this page (the outline). One panel at a time (site.js). */
+.site-appbar { display: none; }
+@media (max-width: 760px) {
+  :root { --appbar-height: calc(56px + env(safe-area-inset-bottom, 0px)); }
+  .site { display: block; }
+  body { padding-bottom: var(--appbar-height); }
+  html.panel-open { overflow: hidden; }   /* the page stays put while a panel is open: the panel scrolls */
+  .site-appbar {
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: 160;
+    display: flex;
+    height: var(--appbar-height);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    box-sizing: border-box;
+    background: var(--background-secondary);
+    border-top: 1px solid var(--background-modifier-border);
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+  }
+  .site-appbar-button {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    min-height: 48px;
+    padding: 0;
+    font: inherit;
+    font-family: var(--font-interface);
+    font-size: var(--font-ui-smaller);
+    color: var(--text-muted);
+    background: none;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+  }
+  .site-appbar-button .svg-icon { --icon-size: 22px; width: 22px; height: 22px; }
+  .site-appbar-button[aria-expanded="true"] {   /* the open panel's button: a bar on top, and stronger text */
+    color: var(--link-color);
+    font-weight: var(--font-semibold);
+    box-shadow: inset 0 2px 0 var(--covalon-accent, var(--color-accent));
+  }
+  .site-appbar-button:focus-visible { outline: 2px solid var(--covalon-accent, var(--color-accent)); outline-offset: -4px; }
+  /* the panels */
+  .site-sidebar.site-left, .site-sidebar.site-right {
+    position: fixed;
+    inset: auto 0 var(--appbar-height) 0;
+    z-index: 150;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    max-height: min(75dvh, calc(100dvh - var(--appbar-height) - 3rem));
+    box-sizing: border-box;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border: 1px solid var(--background-modifier-border);
+    border-bottom: none;
+    border-radius: var(--radius-l) var(--radius-l) 0 0;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(calc(100% + var(--appbar-height)));
+    visibility: hidden;
+    transition: transform 180ms ease-out, visibility 0s linear 180ms;
+  }
+  .site-sidebar.site-left { display: block; }
+  body.panel-menu .site-sidebar.site-left,
+  body.panel-outline .site-sidebar.site-right { transform: none; visibility: visible; transition: transform 180ms ease-out; }
+  .site-sidebar.site-right { overflow: hidden; }   /* its outline list does the scrolling */
+  .site-right .site-toc { min-height: 0; }
+  /* the panels are solid, not see-through to the parchment */
+  :is(.theme-light, .theme-dark) .site-sidebar.workspace-split { background-color: var(--background-secondary) !important; }
+  /* the page dims behind an open panel; a tap there closes it */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0 0 var(--appbar-height) 0;
+    z-index: 140;
+    background: rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 180ms;
+  }
+  html.panel-open body::after { opacity: 1; pointer-events: auto; }
+  .markdown-preview-view { padding: var(--size-4-2) var(--size-4-4) var(--size-4-8); }   /* breadcrumbs right at the top */
+  .site-breadcrumbs { margin-inline: calc(-1 * var(--size-4-4)); padding-inline: var(--size-4-4); }
+  /* the strip spans the whole narrow screen: no fading at its ends (it would eat into the words) */
+  .site-breadcrumbs { --breadcrumb-fade: none; }
+  .covalon-toast { bottom: calc(var(--appbar-height) + 1rem); }
+  .covalon-search-overlay { z-index: 170; }
+  @media (prefers-reduced-motion: reduce) { .site-sidebar.site-left, .site-sidebar.site-right, body::after { transition: none; } }
+}
+
+/* touch screens and small screens: everything tappable is at least 24px tall (most are 32px or more) */
+@media (max-width: 760px), (pointer: coarse) {
+  .tree-item { min-height: 32px; padding-block: 4px; box-sizing: border-box; }
+  .tree-folder-link { display: flex; align-items: center; align-self: stretch; flex: 1; min-height: 24px; }
+  .site-toc a { display: flex; align-items: center; min-height: 32px; padding-block: 4px; box-sizing: border-box; }
+  .site-settings-toggle { min-width: 36px; min-height: 36px; }
+  .site-setting-option { min-height: 36px; }
+  .site-breadcrumbs a { display: inline-flex; align-items: center; min-height: 28px; }
+  .chapter-nav :is(.prev, .next) > a { min-height: 44px; }
+  .covalon-copy { min-height: 32px; }
+  .covalon-search :is(input, select, button) { min-height: 36px; }
+  .site-search { min-height: 40px; box-sizing: border-box; }
+}
+
+/* narrow notes: previous / next are just their arrows (a name cut down to a letter or two helps no one);
+   the name stays for screen readers and in the link's tooltip */
+@container covalon-note (max-width: 500px) {
+  .markdown-rendered .chapter-nav { grid-template-columns: 44px minmax(0, 1fr) 44px; margin-inline: 0; }
+  .chapter-nav :is(.prev, .next) > a { justify-content: center; padding: 0; min-width: 44px; min-height: 44px; font-size: 1.25em; }
+  .chapter-nav .chapter-nav-name {
+    position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+  }
+  .chapter-nav .current { max-width: none; }
+}
+
+/* medium screens (761–1100px): the outline has no column here, so a half-round tab on the right edge
+   slides it out over the page (and back in). The tab rides along on the panel's edge while it's open. */
+.site-outline-tab { display: none; }
+@media (min-width: 761px) and (max-width: 1100px) {
+  :root { --outline-drawer: min(320px, 80vw); }
+  html.panel-open { overflow: hidden; }
+  .site-sidebar.site-right {
+    position: fixed;
+    inset: 0 0 0 auto;
+    z-index: 150;
+    display: flex;
+    flex-direction: column;
+    width: var(--outline-drawer);
+    height: 100dvh;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-left: 1px solid var(--background-modifier-border);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 200ms ease-out, visibility 0s linear 200ms;
+  }
+  :is(.theme-light, .theme-dark) .site-sidebar.site-right.workspace-split { background-color: var(--background-secondary) !important; }
+  body.panel-outline .site-sidebar.site-right { transform: none; visibility: visible; transition: transform 200ms ease-out; }
+  .site-outline-tab {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    z-index: 155;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 60px;
+    padding: 0 0 0 4px;
+    translate: 0 -50%;
+    color: var(--text-muted);
+    background: var(--background-secondary);
+    border: 1px solid var(--background-modifier-border);
+    border-right: none;
+    border-radius: 30px 0 0 30px;
+    box-shadow: -3px 0 10px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: right 200ms ease-out, color 100ms;
+  }
+  .site-outline-tab .svg-icon { --icon-size: 16px; width: 16px; height: 16px; }
+  .site-outline-tab:hover, .site-outline-tab[aria-expanded="true"] { color: var(--covalon-accent, var(--color-accent)); }
+  .site-outline-tab:focus-visible { outline: 2px solid var(--covalon-accent, var(--color-accent)); outline-offset: 2px; }
+  body.panel-outline .site-outline-tab { right: var(--outline-drawer); box-shadow: none; }
+  body::after {   /* the page dims behind the open outline; a tap there closes it */
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 140;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms;
+  }
+  html.panel-open body::after { opacity: 1; pointer-events: auto; }
+  @media (prefers-reduced-motion: reduce) { .site-sidebar.site-right, .site-outline-tab, body::after { transition: none; } }
+}
+
+/* heading links: a small link icon after a heading copies its address (site.js) */
+.covalon-heading-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  width: 1.4em;
+  height: 1.4em;
+  min-width: 24px;
+  min-height: 24px;
+  margin-left: 0.3em;
+  padding: 0;
+  font-size: max(0.6em, 14px);
+  color: var(--text-faint);
+  background: none;
+  border: none;
+  border-radius: var(--radius-s);
+  box-shadow: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 120ms, color 120ms;
+}
+.covalon-heading-link svg { width: 1em; height: 1em; }
+:is(h1, h2, h3, h4, h5, h6):hover > .covalon-heading-link,
+.covalon-heading-link:focus-visible { opacity: 1; }
+.covalon-heading-link:hover { color: var(--covalon-accent, var(--color-accent)); background: var(--background-modifier-hover); }
+.covalon-heading-link:focus-visible { outline: 2px solid var(--covalon-accent, var(--color-accent)); outline-offset: 1px; }
+@media (hover: none) { .covalon-heading-link { opacity: 0.45; } }   /* touch screens: always there, faintly */

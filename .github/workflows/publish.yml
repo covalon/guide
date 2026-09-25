@@ -22,6 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          fetch-depth: 0   # the whole history, for the sitemap's "last changed" dates
           lfs: true   # the pictures in 🖼️ Assets are stored with Git LFS
       - uses: actions/setup-python@v5
         with:

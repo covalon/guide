@@ -24,6 +24,8 @@ From the vault folder:
 bash .site-build/build-local.sh
 ```
 
+That's a quick dev build: everything except the tables' pictures for the link previews. Add `--prod` (`bash .site-build/build-local.sh --prod`) to take those too, like the published site (slower: it installs and runs a headless browser).
+
 Then open http://localhost:3000. Run it again after changing notes or snippets. It needs Python 3.9 or
 newer; on the first run it installs what it needs into `~/.covalon-site` (outside the vault), including
 Pagefind for the search index and the Lucide icons for callouts.

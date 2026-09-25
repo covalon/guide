@@ -3,6 +3,10 @@ Covalon's major multitable events, in chronological order.
 ```base
 filters:
   and:
+    - or:
+        - not:
+            - file.hasProperty("_published")
+        - note["_published"] == true
     - file.hasTag("covalon/event")
 formulas:
   EventDate: note["Date"].format("MMMM Do, YYYY")

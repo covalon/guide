@@ -104,13 +104,38 @@
     stuck();
   }
 
-  // menu (small screens)
-  var menu = document.querySelector(".site-menu-button");
-  if (menu) menu.addEventListener("click", function () { document.body.classList.toggle("menu-open"); });
-  document.addEventListener("click", function (e) {
-    if (document.body.classList.contains("menu-open") && !e.target.closest(".site-left, .site-menu-button"))
-      document.body.classList.remove("menu-open");
+  // small screens: an app bar at the bottom with Menu (the file tree, search and settings) and On this page
+  // (the outline). Each opens its panel from the bottom; its button again closes it, the other button swaps
+  // to the other panel, so only one is open at a time. While a panel is open the page itself doesn't scroll.
+  // (on medium screens, where the outline has no column of its own, a tab on the right edge opens it
+  // from the side instead; it uses the same "outline" panel)
+  var appButtons = Array.prototype.slice.call(document.querySelectorAll(".site-appbar-button, .site-outline-tab"));
+  var openPanel = null;
+  var setPanel = function (name) {
+    openPanel = name;
+    document.body.classList.toggle("panel-menu", name === "menu");
+    document.body.classList.toggle("panel-outline", name === "outline");
+    document.documentElement.classList.toggle("panel-open", !!name);
+    appButtons.forEach(function (b) { b.setAttribute("aria-expanded", b.dataset.panel === name ? "true" : "false"); });
+    if (name === "outline") {   // show the heading being read
+      var here = document.querySelector(".site-toc a.is-active");
+      if (here) scrollWithin(here, here.closest(".site-toc-list"), true);
+    }
+  };
+  appButtons.forEach(function (b) {
+    b.addEventListener("click", function (e) { e.stopPropagation(); setPanel(openPanel === b.dataset.panel ? null : b.dataset.panel); });
   });
+  document.addEventListener("click", function (e) {   // a tap outside the panel closes it
+    if (openPanel && !e.target.closest(".site-left, .site-right, .site-appbar, .site-outline-tab, .site-settings, .covalon-search-overlay")) setPanel(null);
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && openPanel) setPanel(null); });
+  document.querySelectorAll(".site-toc a").forEach(function (a) {   // picking a heading closes the outline
+    a.addEventListener("click", function () { if (openPanel === "outline") setPanel(null); });
+  });
+  var searchField = document.querySelector(".site-search input");
+  if (searchField) searchField.addEventListener("focus", function () { if (openPanel) setPanel(null); });
+  // a panel that no longer applies at the new size (e.g. turning a tablet) closes
+  ["(min-width: 761px)", "(min-width: 1101px)"].forEach(function (q) { matchMedia(q).addEventListener("change", function () { setPanel(null); }); });
 
   // foldable callouts: > [!note]- Title
   document.querySelectorAll(".callout.is-collapsible > .callout-title").forEach(function (title) {
@@ -122,10 +147,14 @@
 
   // file tree: a folder's name opens its overview, and the folder stays open there (it would otherwise
   // fold shut as the summary is clicked, just before the new page loads)
+  // (on small screens the name just folds / unfolds the folder, like its arrow: the overview is the
+  // folder's first item anyway)
+  var small = matchMedia("(max-width: 760px)");
   document.querySelectorAll(".tree-folder-link").forEach(function (a) {
     a.addEventListener("click", function (e) {
       if (e.metaKey || e.ctrlKey || e.shiftKey) return;
       e.preventDefault();
+      if (small.matches) { var d = a.closest("details"); d.open = !d.open; return; }
       a.closest("details").open = true;
       location.href = a.href;
     });
@@ -372,7 +401,6 @@
 // so Obsidian offers its own copy button too). A short "Copied" notice confirms it.
 (function () {
   var blocks = document.querySelectorAll(".markdown-rendered pre");
-  if (!blocks.length) return;
   var ICON_COPY = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>';
   var ICON_DONE = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
   var toast = null, toastTimer = null;
@@ -405,6 +433,29 @@
       done ? ok() : fail();
     });
   };
+  // Heading links: a small link icon beside each heading (shown on hover, faintly always on touch screens)
+  // copies the address of that heading, e.g. to point someone at a rule in Discord.
+  var ICON_LINK = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
+  document.querySelectorAll(".markdown-rendered :is(h1, h2, h3, h4, h5, h6)[id]").forEach(function (h) {
+    if (h.closest(".callout, .covalon-search, .site-toc")) return;
+    var b = document.createElement("button");
+    b.type = "button";
+    b.className = "covalon-heading-link";
+    b.innerHTML = ICON_LINK;
+    b.title = "Copy a link to this heading";
+    b.setAttribute("aria-label", "Copy a link to “" + h.textContent.trim() + "”");
+    b.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var url = location.href.split("#")[0] + "#" + encodeURIComponent(h.id);
+      copyText(url).then(function () {
+        try { history.replaceState(null, "", "#" + encodeURIComponent(h.id)); } catch (err) {}
+        notify("Link to “" + h.textContent.trim() + "” copied");
+      }, function () { notify("Couldn't copy the link", true); });
+    });
+    h.appendChild(b);
+  });
+
   blocks.forEach(function (pre) {
     var code = pre.querySelector("code") || pre;
     var wrap = document.createElement("div");

@@ -124,11 +124,28 @@ def heading_slug(text):
 
 
 notes = {}
+# Drafts: a note with `_published` unticked or blank is left out of the site completely (no page, not in the sidebar,
+# lists, tables, guides or search). Links to it show as plain text, and embeds of it are left out.
+DRAFTS = set()   # the drafts' names (and paths), in lower case
+
+
+def is_draft(n):
+    """_published unticked, or added but left blank (Obsidian shows a new checkbox property as "-"): a draft.
+    Only a note without the property, or with it ticked, is published."""
+    if not any(k.lower() == "_published" for k in n.props):
+        return False
+    v = n.prop("_published")
+    return v is None or v is False or str(v).strip().lower() in ("", "false", "no", "0")
+
+
 for p in sorted(SRC.rglob("*.md")):
     rel = p.relative_to(SRC)
     if any(part.startswith(".") for part in rel.parts) or rel.parts[0] in SKIP_FOLDERS:
         continue
     n = Note(p)
+    if is_draft(n):
+        DRAFTS.update({n.name.casefold(), str(rel.with_suffix("")).casefold()})
+        continue
     if n.name in notes:   # two notes with the same name (e.g. each guide's "Chapter 0 - Introduction"): like
         # Obsidian, tell them apart by their folder path ("📄 GM's Guide/Chapter 0 - Introduction")
         other = notes.pop(n.name)
@@ -196,6 +213,12 @@ for n in notes.values():
 def find(target):
     target = target.strip().replace("''", "'").removesuffix(".md")
     return notes.get(target) or lookup.get(target.casefold()) or lookup.get(target.split("/")[-1].casefold())
+
+
+def drafted(target):
+    """Whether a link or embed points at a draft (and no published note of that name)."""
+    target = target.strip().replace("''", "'").removesuffix(".md")
+    return not find(target) and (target.casefold() in DRAFTS or target.split("/")[-1].casefold() in DRAFTS)
 
 
 # ================================================================== helpers
@@ -618,7 +641,9 @@ def render(note, stack=(), bases=True):
     for m in EMBED.finditer(text):
         out.append(text[pos:m.start()])
         target = find(m.group(1))
-        if not target:
+        if not target and drafted(m.group(1)):   # an embedded draft: left out
+            pass
+        elif not target:
             out.append(m.group(0))
         else:
             # an embedded section's bases and Datacore views are drawn too (e.g. ![[Expeditions#For Players]])
@@ -809,6 +834,8 @@ def wikilink_html(m):
         extra = " ".join(x for x in [f"w={width.split('x')[0]}" if width else "", f"align={align}" if align else ""] if x)
         return f'![{alt}](<{href_to(url)}>' + (f' "@img {extra}"' if extra else "") + ")"
     note = find(target) if target.strip() else None
+    if target.strip() and not note and drafted(target):   # a link to a draft: just its words
+        return alias or target.strip().split("/")[-1]
     if target.strip() and not note:
         label = alias or target
         return f'<span class="internal-link is-unresolved">{label}</span>'
@@ -1339,7 +1366,11 @@ def page(title, body_html, toc, current=None, extra_head="", search_page=False, 
   </main>
   <aside class="site-sidebar site-right workspace-split mod-right-split">{toc}</aside>
 </div>
-<button class="site-menu-button" type="button" aria-label="Menu">{lucide("menu")}</button>
+{'<button class="site-outline-tab" type="button" data-panel="outline" aria-expanded="false" aria-label="On this page" title="On this page">' + lucide("list") + '</button>' if toc else ""}
+<nav class="site-appbar" aria-label="Menu and outline">
+  <button class="site-appbar-button" type="button" data-panel="menu" aria-expanded="false">{lucide("menu")}<span>Menu</span></button>
+  {'<button class="site-appbar-button" type="button" data-panel="outline" aria-expanded="false">' + lucide("list") + '<span>On this page</span></button>' if toc else ""}
+</nav>
 </body>
 </html>
 """
@@ -1471,17 +1502,11 @@ SITE_URL = "https://covalon.github.io/guide/"   # where the site is published: p
 SITE_NAME = "Covalon Guides"
 PREVIEW_COLOR = "#d6b46a"   # the dark-mode accent (Discord is mostly used in dark mode)
 # A note can pick its card's thumbnail with a hidden property: `_preview: "[[CovalonCity.webp]]"`.
-# the properties shown in bold on an entry's card, by the entry's tag
-PREVIEW_PROPS = {
-    "covalon/deity": ["Domains", "Divine Font", "Favored Weapon"],
-    "covalon/guild": ["Leader", "Headquarters"],
-    "covalon/civilization": ["Covalon Status"],
-    "covalon/location": ["District"],
-    "covalon/district": [],
-    "covalon/expedition": ["Civilization", "Soul Seed", "Journey Date"],
-    "covalon/event": ["Type", "Date"],
-    "covalon/adventure-type": ["Duration"],
-}
+# An entry's card lists its properties (as on its page) in small print, one per line: "**Domains:** death". These
+# are left out: shown elsewhere on the card (tagline, description, roleplay channel) or only for sorting.
+PREVIEW_SKIP = {"tagline", "description", "roleplay channel", "order"}
+PREVIEW_MAX_PROPS = 10
+GUIDE_EMOJI = {"📍 Covalon Player's Guide": "⚔️", "📍 Covalon GM's Guide": "🎲"}   # the guides' buttons on the home card
 
 
 def absolute(url):
@@ -1502,8 +1527,15 @@ def shorten(text, limit):
     return text if len(text) <= limit else text[:limit].rsplit(" ", 1)[0].rstrip(",;:.") + "…"
 
 
-def first_picture(note):
-    """The site address of the first picture the note shows (e.g. a guild's heraldry), or None."""
+def first_picture(note, soup=None):
+    """The site address of the first picture the page shows (e.g. a guild's heraldry, or the logo at the top
+    of a guide, which comes from its Introduction), or None."""
+    for img in (soup.find_all("img") if soup is not None else []):
+        src = urllib.parse.unquote(img.get("src", "")).split("#")[0].split("?")[0]
+        if src and not re.match(r"^[a-z]+:", src):
+            url = os.path.normpath(os.path.join(os.path.dirname(note.url), src)).replace(os.sep, "/")
+            if url.startswith("files/"):
+                return url
     for m in PICTURE_EMBED.finditer(note.body):
         url = file_url(m.group(1).strip())
         if url:
@@ -1524,13 +1556,27 @@ def preview_trail(note):
     return " › ".join(parts)
 
 
-def link_button(label, url):
-    return {"type": 2, "style": 5, "label": shorten(label, 78), "url": url}
+def link_button(label, url, emoji=None):
+    b = {"type": 2, "style": 5, "url": url}
+    if label:   # (a button can be just its emoji, like the chapters' ⬅️ / ➡️)
+        b["label"] = shorten(label, 78)
+    if emoji:
+        b["emoji"] = {"name": emoji}
+    return b
+
+
+def button_row(hint, button):
+    """A card button. (The hint is what it's for; the buttons share one row at the bottom of the card.)"""
+    return button
+
+
+LEADING_EMOJI = re.compile(r"^[^\w#\s(\[]+\s*")   # "🌊 Ikouga District" -> "Ikouga District"
 
 
 def preview_head(note, title, soup):
     page_url = absolute(note.url)
-    lines, buttons = [], [link_button("Open in the guide", page_url)]
+    lines = []
+    rows = [button_row(md_escape(page_type(note) if note.name != HOME_NOTE else SITE_NAME), link_button("Open", page_url, "📖"))]
     tagline = plain_case(note.prop("Tagline") or note.prop("Description") or "")
     hidden = []   # ||spoilers|| in the first paragraph: Discord spoilers on the card
     def keep_spoiler(text):
@@ -1539,10 +1585,12 @@ def preview_head(note, title, soup):
     blurb = first_paragraph(soup, 300, keep_spoiler)
     if note.name == HOME_NOTE:
         blurb = first_paragraph(soup, 300) or "The Covalon guides."
-        buttons = [link_button(notes[g].title, absolute(notes[g].url)) for g in GUIDES if g in notes]
+        rows = [button_row("The whole guide on one page", link_button(re.sub(r"^Covalon ", "", PREFIX.sub("", notes[g].title)),
+                                                                     absolute(notes[g].url), GUIDE_EMOJI.get(g, "📖")))
+                for g in GUIDES if g in notes]
         how = find("🔎 How to Search")
         if how:
-            buttons.append(link_button("How to Search", absolute(how.url)))
+            rows.append(button_row("Tips for finding things", link_button("How to Search", absolute(how.url), "🔎")))
     table = re.match(r"Table (\d+-\d+) - (.*)$", note.title)
     if table and note.folders and note.folders[-1] == "Tables":   # Table 3-1: … — from which chapter, and its columns
         title = f"Table {table.group(1)}: {table.group(2)}"
@@ -1550,27 +1598,22 @@ def preview_head(note, title, soup):
         if chapter:
             ch = NAV[chapter][1][NAV[chapter][2]][0]
             lines.append("From " + md_escape(ch))
-            buttons.append(link_button("Open " + ch.split(":")[0], absolute(notes[chapter].url)))
-        cols = [" ".join(th.get_text(" ").split()) for th in soup.find_all("th")]
-        if cols:
-            lines.append("**Columns** " + md_escape(" · ".join(cols[:8])))
+            rows.append(button_row("The chapter it's from", link_button(ch.split(":")[0], absolute(notes[chapter].url), "📖")))
         blurb = ""
     if tagline:
         lines.append("*" + md_escape(shorten(tagline, 150)) + "*")
     if blurb and blurb != tagline:
         lines.append(re.sub("\u2063(\\d+)\u2063", lambda m: "||" + md_escape(hidden[int(m.group(1))]) + "||", md_escape(blurb)))
     blurb = re.sub("\u2063\\d+\u2063", "▒▒▒▒", blurb)   # the plain description (other apps) keeps them hidden
-    # key properties (entries)
-    for tag, keys in PREVIEW_PROPS.items():
-        if tag in note.tags:
-            facts = []
-            for k in keys:
-                v = note.prop(k)
-                if v not in (None, "", []):
-                    facts.append(f"**{md_escape(k)}** {md_escape(shorten(plain_case(v), 80))}")
-            if facts:   # ||spoilers|| in a property stay Discord spoilers
-                lines.append(re.sub(r"\\\|\\\|(.+?)\\\|\\\|", r"||\1||", " · ".join(facts)))
-            break
+    # the entry's properties, one per line
+    if entry_style(note) or any(t.startswith("covalon/") for t in note.tags):
+        facts = []
+        for k, v in note.props.items():
+            if (k.lower() in HIDDEN_PROPS or k.startswith("_") or k.lower() in PREVIEW_SKIP or v in (None, "", [])):
+                continue
+            facts.append(f"**{md_escape(k)}:** {md_escape(shorten(plain_case(v), 120))}")
+        if facts:   # ||spoilers|| in a property stay Discord spoilers
+            lines.append(re.sub(r"\\\|\\\|(.+?)\\\|\\\|", r"||\1||", "\n".join("-# " + f for f in facts[:PREVIEW_MAX_PROPS])))   # small print
     # chapters: their main sections; a whole guide: its chapters
     if note.name in NAV or note.name in GUIDES:
         level = "h1" if note.name in GUIDES else "h2"
@@ -1581,10 +1624,10 @@ def preview_head(note, title, soup):
             lines.append(" · ".join(shown) + (" · …" if len(heads) > 6 else ""))
     if note.name in NAV:
         guide, chapters, i = NAV[note.name]
-        if i > 0:
-            buttons.append(link_button("← " + chapters[i - 1][0], absolute(notes[chapters[i - 1][1]].url)))
-        if i + 1 < len(chapters):
-            buttons.append(link_button(chapters[i + 1][0] + " →", absolute(notes[chapters[i + 1][1]].url)))
+        # [ 📖 Open chapter ] [ 📜 Open in full guide ] (the chapter's heading on the one-page guide)
+        rows = [button_row("This chapter on its own", link_button("Open chapter", page_url, "📖")),
+                button_row("The chapter in the whole guide",
+                           link_button("Open in full guide", absolute(notes[guide].url) + "#" + heading_slug(chapters[i][0]), "📜"))]
     # overviews: how many entries they list
     listed = [n for n, (o, _, _) in ENTRY_ORDER.items() if o is note]
     if listed and is_overview(note):
@@ -1596,16 +1639,17 @@ def preview_head(note, title, soup):
     channel = channel[0] if isinstance(channel, list) and channel else channel
     m = re.search(r"\[([^\]]+)\]\((https://discord(?:app)?\.com/channels/[^)]+)\)", str(channel or ""))
     if m:
-        buttons.append(link_button(m.group(1).replace("\\", ""), m.group(2)))
+        rows.append(button_row("Roleplay channel", link_button(LEADING_EMOJI.sub("", m.group(1).replace("\\", "")) or m.group(1), m.group(2), "💬")))
     # the thumbnail: the note's `_preview` picture if it names one (the maps on the Gazetteer and the
     # Civilizations overview), else a picture of the page's table, its own first picture, or the Covalon logo
     chosen = re.search(r"\[\[([^\]|#]+)", str(note.prop("_preview") or "")) or re.match(r"\s*([^\[\]]+\.\w+)\s*$", str(note.prop("_preview") or ""))
     picture = ((file_url(chosen.group(1).strip()) if chosen else None) or table_shot(note, soup)   # a table's picture: previews.py
-               or first_picture(note) or file_url(LOGO))
+               or first_picture(note, soup) or first_picture(note) or file_url(LOGO))
     shot = None
+    if table and note.folders and note.folders[-1] == "Tables":   # tables (only): their picture full size, not as a thumbnail
+        shot, picture = picture, None
     image = absolute(picture) if picture else None
 
-    trail = preview_trail(note)
     text = f"## {md_escape(title)}\n" + "\n\n".join(lines)
     top = {"type": 10, "content": shorten_md(text, 1800)}
     head = {"type": 9, "components": [top], "accessory": {"type": 11, "media": {"url": image}}} if image else top
@@ -1613,8 +1657,7 @@ def preview_head(note, title, soup):
     card = {"type": 17, "accent_color": int(PREVIEW_COLOR[1:], 16), "components": [
         head, *gallery,
         {"type": 14, "divider": True, "spacing": 1},
-        {"type": 10, "content": "-# " + md_escape(SITE_NAME + (" · " + trail if trail else ""))},
-        {"type": 1, "components": buttons[:5]},
+        {"type": 1, "components": rows[:5]},   # the buttons, in one row
     ]}
     payload = json.dumps({"component": card}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     description = shorten(tagline + (" " if tagline and blurb else "") + (blurb if blurb != tagline else ""), 300) or SITE_NAME
@@ -1637,6 +1680,8 @@ PREVIEW_COLS = 5   # wider tables show their first five columns
 
 
 def table_shot(note, soup):
+    if note.name in GUIDES:   # a whole guide shows its first picture (the logo), not one of its chapters' tables
+        return None
     is_table = note.folders and note.folders[-1] == "Tables"
     box = soup.find("table") if is_table else (soup.select_one(".covalon-filterable table") if is_overview(note) or "covalon/district" in note.tags else None)
     if not box:
@@ -1709,10 +1754,54 @@ def build_note(note):
     write(note.url, page(title, content, toc_html(soup, title), current=note, crumbs=breadcrumbs(note, title) + pre_title, title_side=side,
                          extra_head=preview_head(note, title, soup)))
 
+NOT_FOUND = """This page doesn't exist, or it has moved: the guides were reorganised, so an old link may point to where a page used to be.
+
+Try one of these, or search for it below:
+
+- [[📍 Home|Home]]
+- [[📍 Covalon Player's Guide|Covalon Player's Guide]]
+- [[📍 Covalon GM's Guide|Covalon GM's Guide]]
+
+<div id="search" data-from-address></div>
+"""
+
 SEARCH = """Search every page. See [[🔎 How to Search]] for guidance.
 
 <div id="search"></div>
 """
+
+
+def last_changed():
+    """When each note last changed, from git (one pass over the history), for the sitemap. Empty when the
+    vault isn't a git repository or git isn't available."""
+    try:
+        import subprocess
+        log = subprocess.run(["git", "-C", str(SRC), "-c", "core.quotepath=off", "log", "--format=@%cI", "--name-only", "--", "*.md"],
+                             capture_output=True, text=True, timeout=60).stdout
+    except Exception:
+        return {}
+    seen, when = {}, None
+    for line in log.splitlines():
+        line = line.strip().strip('"')
+        if line.startswith("@"):
+            when = line[1:]
+        elif line and when:
+            seen.setdefault(line, when)   # newest first, so the first date seen is the latest change
+    return seen
+
+
+def write_sitemap():
+    """sitemap.xml: every page, for search engines (submit it once in Google Search Console: the site
+    lives under /guide/, where a robots.txt isn't read, so it can't be announced that way)."""
+    dates = last_changed()
+    rows = []
+    for n in sorted(notes.values(), key=lambda n: n.url):
+        rel = str(n.path.relative_to(SRC))
+        lastmod = dates.get(rel)   # (none for a note not committed yet)
+        rows.append(f"  <url><loc>{html.escape(absolute(n.url))}</loc>" + (f"<lastmod>{lastmod[:10]}</lastmod>" if lastmod else "") + "</url>")
+    (OUT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
+                                     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+                                     + "\n".join(rows) + "\n</urlset>\n", encoding="utf-8")
 
 
 def write(url, text):
@@ -1725,13 +1814,14 @@ def main():
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir(parents=True)
-    # styles: the stand-in for Obsidian's theme, the vault's enabled snippets, callout colours, the site frame
-    appearance = SRC / ".obsidian" / "appearance.json"
-    enabled = json.loads(appearance.read_text()).get("enabledCssSnippets", []) if appearance.exists() else []
+    # styles: the stand-in for Obsidian's theme, the vault's snippets, callout colours, the site frame
+    # every snippet in .obsidian/snippets is part of the site (in name order), except the serif fonts, which are
+    # the Font setting's choice. (Not the snippets turned on in Obsidian: appearance.json holds personal
+    # settings like the theme, so it isn't committed; see .gitignore.)
     (OUT / "assets").mkdir(parents=True)
-    for name in enabled:
-        if name != SERIF_SNIPPET and (SRC / ".obsidian" / "snippets" / f"{name}.css").exists():
-            SNIPPETS.append(name)
+    for f in sorted((SRC / ".obsidian" / "snippets").glob("*.css")):
+        if f.stem != SERIF_SNIPPET:
+            SNIPPETS.append(f.stem)
     for f in (HERE / "assets").iterdir():
         if f.is_file() and f.suffix != ".css":
             shutil.copy(f, OUT / "assets" / f.name)
@@ -1771,6 +1861,15 @@ def main():
     CUR["url"] = "search/index.html"
     search_head = ""
     write("search/index.html", page("Advanced Search", str(to_html(SEARCH)), "", extra_head=search_head, search_page=True))
+    # 404.html: GitHub Pages shows it for any address on the site that doesn't exist. It's served at that
+    # address (e.g. /guide/some/old/page/), so its links go from the site's root (the <base> tag), and its
+    # search starts with the words of the missing address.
+    CUR["url"] = "index.html"
+    base = urllib.parse.urlparse(SITE_URL).path or "/"
+    missing = page("Page not found", str(to_html(NOT_FOUND)), "", extra_head='\n<meta name="robots" content="noindex">', search_page=True)
+    # (the <base> has to come before the first link in <head>, so it goes right after the charset)
+    write("404.html", missing.replace('<meta charset="utf-8">', f'<meta charset="utf-8">\n<base href="{base}">', 1))
+    write_sitemap()
     # the tables to photograph for the link previews (previews.py takes the pictures)
     (OUT / "_previews.json").write_text(json.dumps(PREVIEW_SHOTS, ensure_ascii=False), encoding="utf-8")
     print(f"wrote {len(notes) + 2} pages to {OUT} ({len(PREVIEW_SHOTS)} table pictures for previews.py)")

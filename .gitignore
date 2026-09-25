@@ -1,4 +1,6 @@
-# Obsidian: per-device window layout and caches
+# Obsidian: per-device window layout and caches, and personal settings (theme, accent colour, which
+# snippets are turned on: the site uses every snippet anyway)
+.obsidian/appearance.json
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 .obsidian/cache

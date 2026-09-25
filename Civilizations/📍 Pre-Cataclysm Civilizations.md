@@ -6,6 +6,10 @@ Before the Cataclysm, the world flourished with nations and societies across the
 ```base
 filters:
   and:
+    - or:
+        - not:
+            - file.hasProperty("_published")
+        - note["_published"] == true
     - file.hasTag("covalon/civilization")
 formulas:
   SortTitle: file.name.replace(/^(the )?(kingdom of )?/i, '')

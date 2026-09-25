@@ -5,6 +5,10 @@ If you feel a specific niche is missing, you may [\#create-a-ticket](https://dis
 ```base
 filters:
   and:
+    - or:
+        - not:
+            - file.hasProperty("_published")
+        - note["_published"] == true
     - file.hasTag("covalon/deity")
 formulas:
   SortTitle: file.name.replace(/^(the )?(kingdom of )?/i, '')

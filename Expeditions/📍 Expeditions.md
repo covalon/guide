@@ -3,6 +3,10 @@ The expeditions Covalon has launched to reclaim the lost civilizations of Elleat
 ```base
 filters:
   and:
+    - or:
+        - not:
+            - file.hasProperty("_published")
+        - note["_published"] == true
     - file.hasTag("covalon/expedition")
 formulas:
   JourneyDate: note["Journey Date"].format("MMMM Do, YYYY")

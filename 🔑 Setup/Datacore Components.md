@@ -1,3 +1,6 @@
+---
+_published: 
+---
 Shared Datacore components used by the 📍 overview pages. Edit the code below to change how every overview renders its entries.
 ## CovalonEntries
 Lists every note with the given tag: a linked heading, the note's properties, then the full note embedded.
@@ -13,6 +16,12 @@ const MONTHS = ["January", "February", "March", "April", "May", "June", "July", 
 const ordinal = (n) => n + (n % 100 >= 11 && n % 100 <= 13 ? "th" : ({ 1: "st", 2: "nd", 3: "rd" })[n % 10] || "th");
 const niceDate = (s) => s.replace(/^(\d{4})-(\d{2})-(\d{2})(?:T[\d:.]+)?$/, (_, y, m, d) => `${MONTHS[+m - 1]} ${ordinal(+d)}, ${y}`);
 const show = (v) => (Array.isArray(v) ? v.map(show).join(", ") : niceDate(String(v ?? "")));
+// drafts (_published: false) are left out of every list, as on the website
+const isPublished = (p) => {
+  const e = Object.values(p.$frontmatter ?? {}).find((x) => x.key === "_published");
+  // no _published: published; ticked: published; unticked or blank ("-"): a draft
+  return !e || e.raw === true || String(e.raw).trim().toLowerCase() === "true";
+};
 const isEmpty = (v) => v === null || v === undefined || v === "" || (Array.isArray(v) && v.length === 0);
 
 function Properties({ page, hide = [] }) {
@@ -104,7 +113,7 @@ function Tagline({ page, prop }) {
 
 function CovalonEntries({ tag, district, sortBy = "name", heading = "h2", hide = [], aside = false, propsFirst = false, imagesBesideProps = false, tagline, inline = [] }) {
   if (tagline) hide = [...hide, tagline];
-  const pages = dc.useQuery(`@page and #${tag}`);
+  const pages = dc.useQuery(`@page and #${tag}`).filter(isPublished);
   let entries = [...pages];
   if (district) entries = entries.filter((p) => districtOf(p) === district);
   const sortProp = sortBy === "date" ? "Date" : sortBy;
@@ -143,7 +152,7 @@ function CovalonEntries({ tag, district, sortBy = "name", heading = "h2", hide =
 // One note in the aside layout (its text, its images floated right, its properties box), without a heading.
 // Used for the districts on the Gazetteer: <CovalonNote name="📍 City District" propsFirst />
 function CovalonNote({ name, tag = "covalon/district", inline = [], propsFirst = false }) {
-  const pages = dc.useQuery(`@page and #${tag}`);
+  const pages = dc.useQuery(`@page and #${tag}`).filter(isPublished);
   const page = pages.find((p) => p.$name === name);
   if (!page) return null;
   return <div className="covalon-entry-aside covalon-note"><AsideEntry page={page} inline={inline} propsFirst={propsFirst} /></div>;
@@ -153,7 +162,7 @@ function CovalonNote({ name, tag = "covalon/district", inline = [], propsFirst =
 // by another property in brackets. The Expedition Districts page lists the civilizations this way:
 // <CovalonList tag="covalon/civilization" where="Covalon Status" is="district" after="Roleplay Channel" />
 function CovalonList({ tag, where, is, after }) {
-  const pages = dc.useQuery(`@page and #${tag}`);
+  const pages = dc.useQuery(`@page and #${tag}`).filter(isPublished);
   const prop = (p, k) => Object.values(p.$frontmatter ?? {}).find((e) => e.key.toLowerCase() === String(k).toLowerCase());
   const title = (p) => p.$name.replace(/^(the )?(kingdom of )?/i, "");
   const rows = pages
@@ -188,7 +197,7 @@ function GuideChapter({ page, heading }) {
 function CovalonGuide() {
   const here = dc.useCurrentFile();
   const folder = here.$path.split("/").slice(0, -1).join("/");
-  const pages = dc.useQuery(`@page and path("${folder}")`);
+  const pages = dc.useQuery(`@page and path("${folder}")`).filter(isPublished);
   const chapters = pages
     .map((p) => ({ p, m: p.$name.match(/^Chapter (\d+) - (.+)$/) }))
     .filter(({ p, m }) => m && p.$path.split("/").slice(0, -1).join("/") === folder)
@@ -217,6 +226,13 @@ One note shown in the `aside` layout of `CovalonEntries` (its text, its images f
 Every expedition's missions in one table (each named after its expedition, e.g. "Ikouga A: Retame the Island"),, read straight from the expedition notes: each `### Mission X` heading under `## Missions` (with its name after a colon, if it has one) and the text underneath it as the summary. Edit a mission on its expedition note and the table follows. Expeditions are listed in journey order.
 
 ```jsx
+// drafts (_published: false) are left out, as on the website
+const isPublished = (p) => {
+  const e = Object.values(p.$frontmatter ?? {}).find((x) => x.key === "_published");
+  // no _published: published; ticked: published; unticked or blank ("-"): a draft
+  return !e || e.raw === true || String(e.raw).trim().toLowerCase() === "true";
+};
+
 function missionsIn(text) {
   // the expedition note's "## Missions" table: | A: Mission name | summary |
   const missions = [];
@@ -233,7 +249,7 @@ function missionsIn(text) {
 }
 
 function MissionOverview({ tag = "covalon/expedition" }) {
-  const pages = dc.useQuery(`@page and #${tag}`);
+  const pages = dc.useQuery(`@page and #${tag}`).filter(isPublished);
   const [rows, setRows] = dc.useState([]);
   const stamp = pages.map((p) => p.$path + p.$mtime).join("|");
   dc.useEffect(() => {

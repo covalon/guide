@@ -3,6 +3,10 @@ Adventurers who share a common cause can band together to establish an official 
 ```base
 filters:
   and:
+    - or:
+        - not:
+            - file.hasProperty("_published")
+        - note["_published"] == true
     - file.hasTag("covalon/guild")
 formulas:
   SortTitle: file.name.replace(/^(the )?(kingdom of )?/i, '')

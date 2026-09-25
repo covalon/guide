@@ -35,6 +35,10 @@ formulas:
   DistrictSort: District.toString().replace(/[\[\]]/g, '').replace(/^(the )?(kingdom of )?/i, '')
 filters:
   and:
+    - or:
+        - not:
+            - file.hasProperty("_published")
+        - note["_published"] == true
     - file.hasTag("covalon/location")
 views:
   - type: table

@@ -8,10 +8,10 @@
   var loading = null;
   var load = function () {
     if (pagefind) return Promise.resolve(pagefind);
-    if (!loading) loading = import(new URL(root + "pagefind/pagefind.js", location.href).href).then(function (pf) {
+    if (!loading) loading = import(new URL(root + "pagefind/pagefind.js", document.baseURI).href).then(function (pf) {
       pagefind = pf;
       // result links are relative to the site's root, wherever the site is hosted (e.g. under /covalon/)
-      return Promise.resolve(pf.options && pf.options({ baseUrl: new URL(root || "./", location.href).pathname }))
+      return Promise.resolve(pf.options && pf.options({ baseUrl: new URL(root || "./", document.baseURI).pathname }))
         .then(function () { if (pf.init) pf.init(); return pf; });
     });
     return loading;
@@ -407,6 +407,12 @@
   var inline = inlineHost ? mount(inlineHost, {}) : null;
   if (inline) {
     var q = new URLSearchParams(location.search).get("q");
+    // the "page not found" page: search for the words of the address that wasn't found
+    // (/guide/city/market-district/iruxi/ -> "iruxi")
+    if (!q && inlineHost.hasAttribute("data-from-address")) {
+      var parts = decodeURIComponent(location.pathname).split("/").filter(Boolean);
+      q = (parts[parts.length - 1] || "").replace(/\.html?$/, "").replace(/[-_]+/g, " ").trim();
+    }
     if (q) inline.search(q);
   }
 
