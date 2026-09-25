@@ -1589,9 +1589,10 @@ def preview_head(note, title, soup):
 
 # Pictures of tables for the previews: the build notes each table (its HTML, rows cut to PREVIEW_ROWS) in
 # public/_previews.json under a name made from its contents, and previews.py (run after the build, like the
-# search index) photographs them in dark mode with a headless browser. Unchanged tables keep their picture.
+# search index) photographs them in light mode with a headless browser. Unchanged tables keep their picture.
 PREVIEW_SHOTS = {}   # site address of the picture -> the table's HTML
 PREVIEW_ROWS = 12
+PREVIEW_THEME = "light"   # the pictures are taken in light mode (previews.py); part of their names, so a change retakes them
 PREVIEW_COLS = 5   # wider tables show their first five columns
 
 
@@ -1615,7 +1616,7 @@ def table_shot(note, soup):
     for a in t.find_all("a"):   # links look like links, but point nowhere
         a["href"] = "#"
     markup = str(t)
-    key = hashlib.sha256((markup + ASSET_VERSIONS["style.css"]).encode()).hexdigest()[:16]
+    key = hashlib.sha256((markup + ASSET_VERSIONS["style.css"] + PREVIEW_THEME).encode()).hexdigest()[:16]
     url = f"files/previews/{key}.jpg"
     PREVIEW_SHOTS[url] = markup
     return url

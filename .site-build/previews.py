@@ -2,7 +2,7 @@
 
 Run after build.py, on the built site:   python .site-build/previews.py public
 The build lists the tables in public/_previews.json (site address of each picture -> the table's HTML).
-Each one is photographed in dark mode with the site's own styles by a headless Chromium (Playwright;
+Each one is photographed in light mode with the site's own styles by a headless Chromium (Playwright;
 install it once with:  python -m playwright install chromium). Pictures are kept in the build cache
 (COVALON_CACHE, ~/.cache/covalon-site) by name, and the name comes from the table's contents and the
 site's styles, so only new or changed tables are photographed again.
@@ -19,7 +19,7 @@ WIDTH = 960        # the width the tables are laid out in
 MAX_HEIGHT = 900   # taller tables are cut off here, fading out
 
 PAGE = """<!doctype html>
-<html class="theme-dark"><head><meta charset="utf-8"><link rel="stylesheet" href="{css}">
+<html class="theme-light"><head><meta charset="utf-8"><link rel="stylesheet" href="{css}">
 <style>
   html, body {{ margin: 0; overflow: hidden; }}
   .shot {{ display: inline-block; padding: 20px; max-width: {width}px; box-sizing: border-box; }}
@@ -29,7 +29,7 @@ PAGE = """<!doctype html>
     background: linear-gradient(transparent, var(--background-primary)); }}
   .covalon-shot-more td {{ text-align: center; font-style: italic; color: var(--text-muted); }}
 </style></head>
-<body class="theme-dark"><div class="markdown-preview-view markdown-rendered"><div class="shot">{table}</div></div></body></html>"""
+<body class="theme-light"><div class="markdown-preview-view markdown-rendered"><div class="shot">{table}</div></div></body></html>"""
 
 
 def main():
