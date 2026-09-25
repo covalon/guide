@@ -1435,7 +1435,7 @@ BUILD_DATE = datetime.datetime.now(datetime.timezone.utc).date()
 SITE_URL = "https://covalon.github.io/guide/"   # where the site is published: previews need full addresses
 SITE_NAME = "Covalon Guides"
 PREVIEW_COLOR = "#d6b46a"   # the dark-mode accent (Discord is mostly used in dark mode)
-# A note can pick the big picture on its card with a hidden property: `_preview: "[[CovalonCity.webp]]"`.
+# A note can pick its card's thumbnail with a hidden property: `_preview: "[[CovalonCity.webp]]"`.
 # the properties shown in bold on an entry's card, by the entry's tag
 PREVIEW_PROPS = {
     "covalon/deity": ["Domains", "Divine Font", "Favored Weapon"],
@@ -1557,12 +1557,12 @@ def preview_head(note, title, soup):
     m = re.search(r"\[([^\]]+)\]\((https://discord(?:app)?\.com/channels/[^)]+)\)", str(channel or ""))
     if m:
         buttons.append(link_button(m.group(1).replace("\\", ""), m.group(2)))
-    picture = first_picture(note) or file_url(LOGO)   # the page's own picture, or the Covalon logo
-    # the big picture under the card: the note's `_preview` picture if it names one (the maps on the
-    # Gazetteer and the Civilizations overview), else a picture of the page's table, made by previews.py
+    # the thumbnail: the note's `_preview` picture if it names one (the maps on the Gazetteer and the
+    # Civilizations overview), else a picture of the page's table, its own first picture, or the Covalon logo
     chosen = re.search(r"\[\[([^\]|#]+)", str(note.prop("_preview") or "")) or re.match(r"\s*([^\[\]]+\.\w+)\s*$", str(note.prop("_preview") or ""))
-    shot = file_url(chosen.group(1).strip()) if chosen else None
-    shot = shot or table_shot(note, soup)
+    picture = ((file_url(chosen.group(1).strip()) if chosen else None) or table_shot(note, soup)   # a table's picture: previews.py
+               or first_picture(note) or file_url(LOGO))
+    shot = None
     image = absolute(picture) if picture else None
 
     trail = preview_trail(note)
