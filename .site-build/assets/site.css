@@ -178,6 +178,10 @@
   gap: var(--size-4-2);
   margin-block: var(--size-4-4);
   font-size: var(--font-smaller);
+
+  &:last-child {
+    margin-block-start: var(--size-4-16);
+  }
 }
 /* the navigation above a chapter's title takes the same room as the guide's title does on the one-page
    guide (title + its margin, then a heading's spacing), so a chapter's title sits exactly where that
