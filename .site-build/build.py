@@ -27,6 +27,7 @@ import json
 import os
 import pathlib
 import re
+import urllib.parse
 import shutil
 import sys
 import tarfile
@@ -1427,6 +1428,162 @@ def spoiler_sections(soup):
 BUILD_DATE = datetime.datetime.now(datetime.timezone.utc).date()
 
 
+# ================================================================== link previews (Discord and others)
+# Each page carries a Discord "component embed" (a small card made of Discord's own components, read by
+# Discord's crawler from the page's HTML; https://discord.com/developers/docs → Link Previews) plus the usual
+# Open Graph tags, which Discord falls back to and other apps (iMessage, Slack, WhatsApp …) use.
+SITE_URL = "https://covalon.github.io/guide/"   # where the site is published: previews need full addresses
+SITE_NAME = "Covalon Guides"
+PREVIEW_COLOR = "#d6b46a"   # the dark-mode accent (Discord is mostly used in dark mode)
+# the properties shown in bold on an entry's card, by the entry's tag
+PREVIEW_PROPS = {
+    "covalon/deity": ["Domains", "Divine Font", "Favored Weapon"],
+    "covalon/guild": ["Leader", "Headquarters"],
+    "covalon/civilization": ["Covalon Status"],
+    "covalon/location": ["District"],
+    "covalon/district": [],
+    "covalon/expedition": ["Civilization", "Soul Seed", "Journey Date"],
+    "covalon/event": ["Type", "Date"],
+    "covalon/adventure-type": ["Duration"],
+}
+
+
+def absolute(url):
+    """A site-relative address (players/chapter-1/index.html) as a full, encoded one."""
+    url = url.removesuffix("index.html")
+    return SITE_URL + urllib.parse.quote(url, safe="/#:?=&-._~%")
+
+
+def md_escape(text):
+    """Plain text made safe inside Discord markdown: its formatting characters, and a # - > or number
+    that would start a heading, list or quote at the beginning of a line."""
+    text = re.sub(r"([\\*_~`|\[\]])", r"\\\1", text)
+    return re.sub(r"(?m)^(\s*)([#>-]|\d+\.)", r"\1\\\2", text)
+
+
+def shorten(text, limit):
+    text = " ".join(text.split())
+    return text if len(text) <= limit else text[:limit].rsplit(" ", 1)[0].rstrip(",;:.") + "…"
+
+
+def first_picture(note):
+    """The site address of the first picture the note shows (e.g. a guild's heraldry), or None."""
+    for m in PICTURE_EMBED.finditer(note.body):
+        url = file_url(m.group(1).strip())
+        if url:
+            return url
+    return None
+
+
+def preview_trail(note):
+    """Where the page sits, for the card's small print: Player's Guide › Chapter 3 …"""
+    parts, folders = [], tuple(note.folders)
+    for depth in range(1, len(folders) + 1):
+        home = FOLDER_HOME.get(folders[:depth])
+        if home is note:
+            continue
+        parts.append(home.title if home else folders[depth - 1])
+    if note.name in NAV and not parts:
+        parts.append(notes[NAV[note.name][0]].title)
+    return " › ".join(parts)
+
+
+def link_button(label, url):
+    return {"type": 2, "style": 5, "label": shorten(label, 78), "url": url}
+
+
+def preview_head(note, title, soup):
+    page_url = absolute(note.url)
+    lines, buttons = [], [link_button("Open in the guide", page_url)]
+    tagline = plain_case(note.prop("Tagline") or note.prop("Description") or "")
+    blurb = first_paragraph(soup, 300)
+    if note.name == HOME_NOTE:
+        blurb = first_paragraph(soup, 300) or "The Covalon guides."
+        buttons = [link_button(notes[g].title, absolute(notes[g].url)) for g in GUIDES if g in notes]
+        how = find("🔎 How to Search")
+        if how:
+            buttons.append(link_button("How to Search", absolute(how.url)))
+    table = re.match(r"Table (\d+-\d+) - (.*)$", note.title)
+    if table and note.folders and note.folders[-1] == "Tables":   # Table 3-1: … — from which chapter, and its columns
+        title = f"Table {table.group(1)}: {table.group(2)}"
+        chapter = next((c for c, (g, ch, i) in NAV.items() if re.search(r"!\[\[" + re.escape(note.name) + r"[\]|#]", notes[c].body)), None)
+        if chapter:
+            ch = NAV[chapter][1][NAV[chapter][2]][0]
+            lines.append("From " + md_escape(ch))
+            buttons.append(link_button("Open " + ch.split(":")[0], absolute(notes[chapter].url)))
+        cols = [" ".join(th.get_text(" ").split()) for th in soup.find_all("th")]
+        if cols:
+            lines.append("**Columns** " + md_escape(" · ".join(cols[:8])))
+        blurb = ""
+    if tagline:
+        lines.append("*" + md_escape(shorten(tagline, 150)) + "*")
+    if blurb and blurb != tagline:
+        lines.append(md_escape(blurb))
+    # key properties (entries)
+    for tag, keys in PREVIEW_PROPS.items():
+        if tag in note.tags:
+            facts = []
+            for k in keys:
+                v = note.prop(k)
+                if v not in (None, "", []):
+                    facts.append(f"**{md_escape(k)}** {md_escape(shorten(plain_case(v), 80))}")
+            if facts:
+                lines.append(" · ".join(facts))
+            break
+    # chapters: their main sections; a whole guide: its chapters
+    if note.name in NAV or note.name in GUIDES:
+        level = "h1" if note.name in GUIDES else "h2"
+        heads = [" ".join(h.get_text(" ").split()) for h in soup.find_all(level)]
+        heads = [h for h in heads if h and h != title]
+        if heads:
+            shown = heads[:6]
+            lines.append(md_escape(" · ".join(shown)) + (" · …" if len(heads) > 6 else ""))
+    if note.name in NAV:
+        guide, chapters, i = NAV[note.name]
+        if i > 0:
+            buttons.append(link_button("← " + chapters[i - 1][0], absolute(notes[chapters[i - 1][1]].url)))
+        if i + 1 < len(chapters):
+            buttons.append(link_button(chapters[i + 1][0] + " →", absolute(notes[chapters[i + 1][1]].url)))
+    # overviews: how many entries they list
+    listed = [n for n, (o, _, _) in ENTRY_ORDER.items() if o is note]
+    if listed and is_overview(note):
+        kind = page_type(notes[listed[0]])
+        plural = kind[:-1] + "ies" if kind.endswith("y") else kind + "s"
+        lines.append(f"-# {len(listed)} {plural.lower()}")
+    # a roleplay channel: a button straight into it
+    channel = note.prop("Roleplay Channel")
+    channel = channel[0] if isinstance(channel, list) and channel else channel
+    m = re.search(r"\[([^\]]+)\]\((https://discord(?:app)?\.com/channels/[^)]+)\)", str(channel or ""))
+    if m:
+        buttons.append(link_button(m.group(1).replace("\\", ""), m.group(2)))
+    picture = first_picture(note) or file_url(LOGO)   # the page's own picture, or the Covalon logo
+    image = absolute(picture) if picture else None
+
+    trail = preview_trail(note)
+    text = f"## {md_escape(title)}\n" + "\n\n".join(lines)
+    top = {"type": 10, "content": shorten_md(text, 1800)}
+    head = {"type": 9, "components": [top], "accessory": {"type": 11, "media": {"url": image}}} if image else top
+    card = {"type": 17, "accent_color": int(PREVIEW_COLOR[1:], 16), "components": [
+        head,
+        {"type": 14, "divider": True, "spacing": 1},
+        {"type": 10, "content": "-# " + md_escape(SITE_NAME + (" · " + trail if trail else ""))},
+        {"type": 1, "components": buttons[:5]},
+    ]}
+    payload = json.dumps({"component": card}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    description = shorten(tagline + (" " if tagline and blurb else "") + (blurb if blurb != tagline else ""), 300) or SITE_NAME
+    meta = [("og:site_name", SITE_NAME), ("og:type", "website"), ("og:title", title), ("og:description", description),
+            ("og:url", page_url)] + ([("og:image", image)] if image else [])
+    tags = "".join(f'<meta property="{k}" content="{html.escape(v)}">' for k, v in meta)
+    tags += (f'<meta name="description" content="{html.escape(description)}">'
+             f'<meta name="twitter:card" content="summary"><meta name="theme-color" content="{PREVIEW_COLOR}">'
+             f'<link rel="canonical" href="{html.escape(page_url)}">')
+    return f'\n{tags}\n<script id="discord:component-embed" type="application/json">{payload}</script>'
+
+
+def shorten_md(text, limit):
+    return text if len(text) <= limit else text[:limit].rsplit(" ", 1)[0] + "…"
+
+
 def build_note(note):
     CUR["url"] = note.url
     title = NAV[note.name][1][NAV[note.name][2]][0] if note.name in NAV else SITE_TITLE if note.name == HOME_NOTE else note.title
@@ -1467,7 +1624,8 @@ def build_note(note):
         if first:
             side = (f'<a class="guide-paged-link internal-link" href="{href_to(notes[first].url)}" data-pagefind-ignore>'
                     f'{lucide("book-open")}<span>View in paged mode</span></a>')
-    write(note.url, page(title, content, toc_html(soup, title), current=note, crumbs=breadcrumbs(note, title) + pre_title, title_side=side))
+    write(note.url, page(title, content, toc_html(soup, title), current=note, crumbs=breadcrumbs(note, title) + pre_title, title_side=side,
+                         extra_head=preview_head(note, title, soup)))
 
 SEARCH = """Search every page. See [[🔎 How to Search]] for guidance.
 

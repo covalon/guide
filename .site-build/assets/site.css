@@ -449,7 +449,7 @@ html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoil
 }
 .covalon-filter-count { font-size: var(--font-ui-small); color: var(--text-faint); }
 .covalon-table-box { margin-block: var(--p-spacing); }
-.covalon-table-box > .table-wrapper { max-height: 85vh; overflow: auto; overscroll-behavior: auto; }
+.covalon-table-box > .table-wrapper { max-height: 75vh; overflow: auto; overscroll-behavior: auto; }
 /* separate (not shared) cell borders, so the pinned header row carries its own borders: with shared
    borders, the table's top edge stays behind while scrolling and the rows show through a thin gap
    above the header (Safari especially) */
