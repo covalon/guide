@@ -39,3 +39,15 @@ Pages → Source to "GitHub Actions".
 The vault's pictures live in `🖼️ Assets` and are stored with Git LFS (see `.gitattributes` in the vault root),
 so the repository stays small. On each computer that commits to the vault, run `git lfs install` once
 (install Git LFS first if needed, e.g. `brew install git-lfs`). The publish workflow fetches the pictures itself.
+
+## Pictures and caching
+
+- Pictures are copied into the site at most 1800 pixels wide and re-compressed (`PICTURE_MAX_WIDTH` and
+  `PICTURE_QUALITY` in `build.py`), so pages don't download the multi-megabyte originals. The vault's own files
+  aren't changed. Animated pictures are copied as they are. The smaller copies are cached (in
+  `~/.covalon-site/cache` locally, and between runs of the publish workflow), so only new or changed pictures
+  take time.
+- All the styles go into one file, `assets/style.css`. Its link, and the links to `site.js` and `search.js`,
+  carry a stamp of the file's contents (`style.css?v=…`), so browsers pick up a new version as soon as it's
+  published.
+

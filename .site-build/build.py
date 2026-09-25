@@ -20,6 +20,7 @@ What the build does with the notes:
 """
 import datetime
 import unicodedata
+import hashlib
 import html
 import io
 import json
@@ -45,7 +46,7 @@ SITE_TITLE = "Covalon"
 SKIP_FOLDERS = {"🔑 Setup"}   # Obsidian-only notes, never published
 HIDDEN_PROPS = {"tags", "aliases", "cssclasses"}
 PREFIX = re.compile(r"^(?:📍|📄)\s*")
-FIRST = ["Player's Guide", "GM's Guide"]   # shown first in the sidebar, in this order
+FIRST = ["Home", "Player's Guide", "GM's Guide"]   # shown first in the sidebar, in this order
 
 
 # ================================================================== notes
@@ -117,7 +118,20 @@ for p in sorted(SRC.rglob("*.md")):
     if any(part.startswith(".") for part in rel.parts) or rel.parts[0] in SKIP_FOLDERS:
         continue
     n = Note(p)
+    if n.name in notes:   # two notes with the same name (e.g. each guide's "Chapter 0 - Introduction"): like
+        # Obsidian, tell them apart by their folder path ("📄 GM's Guide/Chapter 0 - Introduction")
+        other = notes.pop(n.name)
+        other.name = str(other.path.relative_to(SRC).with_suffix(""))
+        notes[other.name] = other
+        n.name = str(rel.with_suffix(""))
+    elif any(str(m.path.relative_to(SRC).with_suffix("")).endswith("/" + n.name) for m in notes.values()):
+        n.name = str(rel.with_suffix(""))   # a third note with an already-shared name
     notes[n.name] = n
+
+# The home page (/) is the note "📍 Home" in the vault's top folder, so it can be edited in Obsidian.
+HOME_NOTE = "📍 Home"
+if HOME_NOTE in notes:
+    notes[HOME_NOTE].url = "index.html"
 
 # A folder's pinned overview (📍) is the folder's own page: /Guilds/ rather than /Guilds/Guilds/.
 # With several pinned notes in a folder, the one named after the folder gets it (/Expeditions/), and the
@@ -126,10 +140,12 @@ _pinned = {}
 for n in notes.values():
     if n.name.startswith("📍") and n.folders:
         _pinned.setdefault(tuple(n.folders), []).append(n)
+FOLDER_HOME = {}   # folder (as a tuple of names) -> its pinned overview note, for the breadcrumbs
 for folders, group in _pinned.items():
     main = group[0] if len(group) == 1 else next((n for n in group if n.title == folders[-1]), None)
     if main:
         main.url = "/".join(url_part(p) for p in folders) + "/index.html"
+        FOLDER_HOME[folders] = main
 
 # pictures and other files kept in the vault (e.g. 🖼️ Assets), found by file name like Obsidian does
 FILE_EXT = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg", ".avif", ".bmp", ".pdf"}
@@ -160,7 +176,7 @@ for n in notes.values():
 
 
 def find(target):
-    target = target.strip().replace("''", "'")
+    target = target.strip().replace("''", "'").removesuffix(".md")
     return notes.get(target) or lookup.get(target.casefold()) or lookup.get(target.split("/")[-1].casefold())
 
 
@@ -423,16 +439,6 @@ EMBED = re.compile(r"(?m)^[ \t]*!\[\[([^\]|#]+)(?:#([^\]|]+))?(?:\|[^\]]*)?\]\][
 CODE = re.compile(r"```(base|datacorejsx)\n(.*?)\n```", re.S)
 
 
-def render_text(note, text):
-    """render(), for some other text than the note's own (e.g. just a guide's introduction)."""
-    body = note.body
-    note.body = text
-    try:
-        return render(note)
-    finally:
-        note.body = body
-
-
 def render(note, stack=()):
     if note.name in stack:
         return f"*(embed loop: {note.name})*"
@@ -468,27 +474,9 @@ for g in GUIDES:
             NAV[target] = (g, chapters, i)
 
 
-# The guides can be read two ways, picked in the settings pop-over (gear icon) and remembered in the browser:
-#   paged:  an introduction page, then one page per chapter, with ← previous / next → links
-#   scroll: the whole guide on one long page
-# Each page knows where its headings are in the other mode, so switching keeps your place.
-def intro_text(guide):
-    body = notes[guide].body
-    m = CHAPTER.search(body)
-    return body[:m.start()] if m else body
-
-
-def intro_url(guide):
-    """The paged version's first page: the introduction, or chapter 1 if the guide has no introduction."""
-    if not intro_text(guide).strip():
-        first = next((c for c, (g, ch, i) in NAV.items() if g == guide and i == 0), None)
-        if first:
-            return notes[first].url
-    return notes[guide].url.removesuffix("index.html") + "introduction/index.html"
-
-
-def has_intro(guide):
-    return bool(intro_text(guide).strip())
+# Each guide is two things on the site: its pinned note is the whole guide on one long page (/players/), and
+# its chapters (the notes it embeds under "# …" headings, starting with its Introduction) are pages of their
+# own to page through with ← previous / next → links.
 
 
 def nav_link(url, text, side):
@@ -501,82 +489,10 @@ def nav_link(url, text, side):
 
 def chapter_nav(name):
     guide, chapters, i = NAV[name]
-    prev = (nav_link(notes[chapters[i-1][1]].url, chapters[i-1][0], "prev") if i > 0
-            else nav_link(intro_url(guide), "Introduction", "prev") if has_intro(guide) else "")
+    prev = nav_link(notes[chapters[i-1][1]].url, chapters[i-1][0], "prev") if i > 0 else ""
     nxt = nav_link(notes[chapters[i+1][1]].url, chapters[i+1][0], "next") if i + 1 < len(chapters) else ""
     return (f'<nav class="chapter-nav" data-pagefind-ignore><span class="prev">{prev}</span>'
             f'<span class="current" title="{html.escape(chapters[i][0])}">{html.escape(chapters[i][0])}</span><span class="next">{nxt}</span></nav>')
-
-
-def intro_nav(guide):
-    first = next(((h, c) for c, (g, ch, i) in NAV.items() if g == guide and i == 0 for h in [ch[0][0]]), None)
-    nxt = nav_link(notes[first[1]].url, first[0], "next") if first else ""
-    return (f'<nav class="chapter-nav" data-pagefind-ignore><span class="prev"></span>'
-            f'<span class="current">Introduction</span><span class="next">{nxt}</span></nav>')
-
-
-MODES = {}   # page url -> {"mode": this page's mode, "other": the same place in the other mode, "map": {id: url#id}}
-
-
-def heading_ids(soup):
-    return [h for h in soup.find_all(re.compile(r"^h[1-6]$")) if h.get("id")]
-
-
-def plan_guide_modes():
-    """Match every heading of the one-page guide with the same heading on the intro and chapter pages."""
-    for g in GUIDES:
-        if g not in notes:
-            continue
-        guide = notes[g]
-        chapters = [(h, c) for c, (gg, ch, i) in sorted(NAV.items(), key=lambda kv: kv[1][2]) if gg == g for h in [ch[i][0]]]
-        CUR["url"] = guide.url
-        full = heading_ids(to_html(render(guide)))
-        intro_heads = heading_ids(to_html(render_text(guide, intro_text(g)))) if has_intro(g) else []
-        full_map, i = {}, 0
-        for h in intro_heads:   # the introduction comes first on the one page too
-            if i < len(full) and full[i].get_text(" ", strip=True) == h.get_text(" ", strip=True):
-                full_map[full[i]["id"]] = intro_url(g) + "#" + h["id"]
-                MODES.setdefault(intro_url(g), {"mode": "paged", "other": guide.url, "map": {}})["map"][h["id"]] = guide.url + "#" + full[i]["id"]
-                i += 1
-        if has_intro(g):
-            MODES.setdefault(intro_url(g), {"mode": "paged", "other": guide.url, "map": {}})
-        text = lambda h: h.get_text(" ", strip=True)
-        tops = []   # where each chapter's title heading is on the one page
-        for title, cname in chapters:
-            k = next((k for k in range(i, len(full)) if full[k].name == "h1" and text(full[k]) == title), None)
-            if k is None:
-                continue
-            tops.append((k, cname))
-            i = k + 1
-        for n, (k, cname) in enumerate(tops):
-            c = notes[cname]
-            section = full[k + 1:tops[n + 1][0] if n + 1 < len(tops) else len(full)]
-            full_map[full[k]["id"]] = c.url
-            CUR["url"] = c.url
-            mine = heading_ids(to_html(render(c)))
-            entry = MODES.setdefault(c.url, {"mode": "paged", "other": guide.url + "#" + full[k]["id"], "map": {}})
-            j = 0
-            for h in mine:   # same headings in the same order; skip any the other page doesn't have
-                t = next((t for t in range(j, len(section)) if text(section[t]) == text(h)), None)
-                if t is None:
-                    continue
-                full_map[section[t]["id"]] = c.url + "#" + h["id"]
-                entry["map"][h["id"]] = guide.url + "#" + section[t]["id"]
-                j = t + 1
-        MODES[guide.url] = {"mode": "scroll", "other": intro_url(g), "map": full_map}
-
-
-def mode_bits(url):
-    """The script that takes you to your reading mode's version of this page (the mode is picked in the settings)."""
-    m = MODES.get(url)
-    if not m:
-        return "", ""
-    rel = lambda u: href_to(u.split("#")[0]) + ("#" + u.split("#")[1] if "#" in u else "")
-    data = {"mode": m["mode"], "other": rel(m["other"]), "map": {k: rel(v) for k, v in m["map"].items()}}
-    script = ('<script>(function(){var d=' + json.dumps(data, ensure_ascii=False).replace("</", "<\\/") + ';window.COVALON_MODE=d;'
-              'var m=null;try{m=localStorage.getItem("readMode")}catch(e){}if(!m||m===d.mode)return;'
-              'var h=decodeURIComponent(location.hash.slice(1));location.replace((h&&d.map[h])||d.other)})()</script>')
-    return script, ""
 
 
 # ================================================================== search (Pagefind)
@@ -926,7 +842,7 @@ def toc_html(soup, title=None):
     for h in heads:
         depth = int(h.name[1]) - base
         items.append(f'<li class="toc-depth-{depth}"><a href="#{h["id"]}">{html.escape(h.get_text(" ", strip=True))}</a></li>')
-    return '<nav class="site-toc"><div class="site-panel-title">On this page</div><ul>' + "".join(items) + "</ul></nav>"
+    return '<nav class="site-toc"><div class="site-panel-title">On this page</div><ul class="site-toc-list">' + "".join(items) + "</ul></nav>"
 
 
 def natural(s):
@@ -943,10 +859,12 @@ def tree_html(current):
         node[("file", n.title)] = n
 
     def order(item):
-        (kind, name), _ = item
+        (kind, name), child = item
         first = FIRST.index(name) if name in FIRST else len(FIRST)
-        pinned = 0 if kind == "file" and isinstance(item[1], Note) and item[1].name.startswith("📍") else 1
-        return (first, pinned, kind != "folder", natural(name))
+        pinned = 0 if isinstance(child, Note) and child.name.startswith("📍") else 1
+        last = 1 if kind == "folder" and name == "Tables" else 0   # a guide's Tables folder goes below its chapters
+        chapter = NAV[child.name][2] if isinstance(child, Note) and child.name in NAV else 999   # guide chapters in reading order
+        return (first, last, pinned, kind != "folder", chapter, natural(name))
 
     def walk(node, depth):
         out = []
@@ -993,25 +911,90 @@ def setting(name, label, options):
 # the settings pop-over behind the gear icon (site.js makes it work; choices are kept in the browser)
 SETTINGS = ('<div class="site-settings" hidden role="dialog" aria-label="Settings">'
             + setting("theme", "Appearance", [("light", "sun", "Light"), ("dark", "moon", "Dark"), ("auto", "monitor", "Auto")])
-            + setting("readMode", "Guides", [("paged", "book-open", "Paged"), ("scroll", "scroll-text", "Scroll")])
-            + '<p class="site-setting-note">Paged shows the Player\'s and GM\'s Guides a chapter at a time; Scroll shows each guide on one long page.</p>'
             + setting("spoilers", "Spoilers", [("hide", "eye-off", "Hidden"), ("show", "eye", "Shown")])
             + '<p class="site-setting-note">GM sections on the adventure type pages are hidden until you click them, unless spoilers are shown.</p>'
             + "</div>")
 
 
-def page(title, body_html, toc, current=None, extra_head="", search_page=False, url=None):
-    mode_script, mode_switch = mode_bits(url or CUR["url"])
+ASSET_VERSIONS = {}   # asset file -> its link with a version stamp (filled in by main)
+
+# Pictures are copied into the site at most PICTURE_MAX_WIDTH pixels wide and re-compressed, so pages
+# don't download multi-megabyte originals. The vault's own files are left as they are. Animated pictures
+# (e.g. the crashed orb) are copied unchanged. Results are cached next to the icons, so it's only slow once.
+PICTURE_MAX_WIDTH = 1800
+PICTURE_QUALITY = 82
+
+
+def copy_picture(src, dest):
+    if src.suffix.lower() not in {".png", ".jpg", ".jpeg", ".webp"}:
+        shutil.copy(src, dest)
+        return
+    key = hashlib.sha256(src.read_bytes() + f"|{PICTURE_MAX_WIDTH}|{PICTURE_QUALITY}".encode()).hexdigest()[:20]
+    cached = ICON_CACHE / "pictures" / (key + src.suffix.lower())
+    if not cached.exists():
+        try:
+            from PIL import Image
+            with Image.open(src) as im:
+                if getattr(im, "is_animated", False):
+                    raise ValueError("animated")
+                im.load()
+                if im.width > PICTURE_MAX_WIDTH:
+                    im = im.resize((PICTURE_MAX_WIDTH, round(im.height * PICTURE_MAX_WIDTH / im.width)), Image.LANCZOS)
+                fmt = {".png": "PNG", ".jpg": "JPEG", ".jpeg": "JPEG", ".webp": "WEBP"}[src.suffix.lower()]
+                if fmt == "JPEG" and im.mode not in ("RGB", "L"):
+                    im = im.convert("RGB")
+                cached.parent.mkdir(parents=True, exist_ok=True)
+                tmp = cached.with_name(cached.name + ".tmp")
+                opts = {"optimize": True} if fmt == "PNG" else {"quality": PICTURE_QUALITY, "method": 4} if fmt == "WEBP" else {"quality": PICTURE_QUALITY, "optimize": True, "progressive": True}
+                im.save(tmp, fmt, **opts)
+            # keep whichever is smaller (a small original can already be better compressed)
+            if tmp.stat().st_size < src.stat().st_size:
+                tmp.replace(cached)
+            else:
+                tmp.unlink()
+                shutil.copy(src, cached)
+        except Exception:
+            shutil.copy(src, dest)
+            return
+    shutil.copy(cached, dest)
+
+
+def breadcrumbs(note, title):
+    """Home › Guilds › The Archivists: each folder links to its pinned overview, at this page's own entry
+    (or chapter) where it has one, so it's one click from an entry to its place in the big overview."""
+    if note.name == HOME_NOTE:
+        return ""
+    link = lambda url, text: f'<a class="internal-link" href="{href_to(url)}">{html.escape(text)}</a>'
+    crumbs = [link("index.html", "Home")]
+    for depth in range(1, len(note.folders) + 1):
+        folders = tuple(note.folders[:depth])
+        home = FOLDER_HOME.get(folders)
+        if home is note:
+            break
+        if home is None:
+            crumbs.append(f'<span>{html.escape(folders[-1])}</span>')
+            continue
+        at = ""
+        if depth == len(note.folders) and not note.name.startswith("📍"):   # jump to this page's entry / chapter there
+            anchor = NAV[note.name][1][NAV[note.name][2]][0] if note.name in NAV and NAV[note.name][0] == home.name else note.title
+            at = "#" + heading_slug(anchor)
+        crumbs.append(link(home.url + at, home.title))
+    crumbs.append(f'<span aria-current="page">{html.escape(title)}</span>')
+    return ('<nav class="site-breadcrumbs" aria-label="Breadcrumbs" data-pagefind-ignore>'
+            + '<span class="site-breadcrumbs-sep" aria-hidden="true">›</span>'.join(crumbs) + "</nav>")
+
+
+def page(title, body_html, toc, current=None, extra_head="", search_page=False, url=None, crumbs="", title_side=""):
     root = href_to("index.html").removesuffix("index.html")
-    css = ["assets/base.css"] + [f"assets/snippets/{s}.css" for s in SNIPPETS] + ["assets/callouts.css", "assets/site.css"]
-    links = "".join(f'<link rel="stylesheet" href="{root}{c}">' for c in css)
+    links = f'<link rel="stylesheet" href="{root}assets/{ASSET_VERSIONS["style.css"]}">'
+    scripts = "".join(f'<script src="{root}assets/{ASSET_VERSIONS[js]}" defer></script>' for js in ("site.js", "search.js"))
     return f"""<!doctype html>
-<html lang="en">
+<html lang="en" data-root="{root}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(title)}{"" if title == SITE_TITLE else " · " + SITE_TITLE}</title>
-{mode_script}{links}{favicon(root)}{extra_head}
+{links}{scripts}{favicon(root)}{extra_head}
 </head>
 <body class="theme-light">
 <script>(function(){{var t=null;try{{t=localStorage.getItem("theme")}}catch(e){{}}if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.body.className=document.documentElement.className="theme-"+t;try{{if(localStorage.getItem("spoilers")==="show")document.documentElement.classList.add("show-spoilers")}}catch(e){{}}}})()</script>
@@ -1030,7 +1013,7 @@ def page(title, body_html, toc, current=None, extra_head="", search_page=False, 
   <main class="site-main">
     <div class="markdown-preview-view markdown-rendered{" is-search-page" if search_page else ""}">
       <div class="markdown-preview-sizer">
-        <div class="inline-title" id="page-title">{html.escape(title)}</div>
+        {crumbs}{f'<div class="page-title-row">' if title_side else ""}<div class="inline-title" id="page-title">{html.escape(title)}</div>{title_side + "</div>" if title_side else ""}
         {body_html}
       </div>
     </div>
@@ -1038,8 +1021,6 @@ def page(title, body_html, toc, current=None, extra_head="", search_page=False, 
   <aside class="site-sidebar site-right workspace-split mod-right-split">{toc}</aside>
 </div>
 <button class="site-menu-button" type="button" aria-label="Menu">{lucide("menu")}</button>
-<script src="{root}assets/site.js"></script>
-<script src="{root}assets/search.js"></script>
 </body>
 </html>
 """
@@ -1105,9 +1086,12 @@ def spoiler_sections(soup):
         wrap.append(content)
 
 
+BUILD_DATE = datetime.datetime.now(datetime.timezone.utc).date()
+
+
 def build_note(note):
     CUR["url"] = note.url
-    title = NAV[note.name][1][NAV[note.name][2]][0] if note.name in NAV else note.title
+    title = NAV[note.name][1][NAV[note.name][2]][0] if note.name in NAV else SITE_TITLE if note.name == HOME_NOTE else note.title
     style = entry_style(note)
     if style and style["aside"]:   # tagline, text with images floated right, inline properties, properties box at the bottom
         body = (tagline_html(note, style["tagline"]) + '<div class="covalon-entry covalon-entry-aside">\n\n'
@@ -1121,6 +1105,8 @@ def build_note(note):
     if note.classes:
         body = f'<div class="{" ".join(note.classes)}">\n\n{body.strip()}\n\n</div>\n'
     soup = to_html(body)
+    for el in soup.select("[data-last-updated]"):   # e.g. on the home page: the date the site was published
+        el.string = nice_date(BUILD_DATE)
     if note.path.relative_to(SRC).parts[0] in SPOILER_FOLDERS:
         spoiler_sections(soup)
     parts = [str(soup)] if style else [props_panel(note), str(soup)]
@@ -1130,15 +1116,18 @@ def build_note(note):
     content = "\n".join(p for p in parts if p)
     if not note.name.startswith("📍"):   # overview pages repeat their entries' text, so they're left out of search
         content = f'<div data-pagefind-body>{search_markup(note, title, first_paragraph(soup))}{content}</div>'
-    write(note.url, page(title, content, toc_html(soup, title), current=note))
-    if note.name in GUIDES and has_intro(note.name):   # the paged version's first page: the guide's introduction
-        CUR["url"] = intro_url(note.name)
-        isoup = to_html(render_text(note, intro_text(note.name)))
-        nav = intro_nav(note.name)
-        write(CUR["url"], page(title, "\n".join([nav, str(isoup), nav]), toc_html(isoup, title), current=note))
+    side = ""
+    if note.name in GUIDES:   # the whole guide on one page: offer reading it a chapter at a time (right of the title)
+        first = next((c for c, (g, ch, i) in NAV.items() if g == note.name and i == 0), None)
+        if first:
+            side = (f'<a class="guide-paged-link internal-link" href="{href_to(notes[first].url)}" data-pagefind-ignore>'
+                    f'{lucide("book-open")}<span>View in paged mode</span></a>')
+    write(note.url, page(title, content, toc_html(soup, title), current=note, crumbs=breadcrumbs(note, title), title_side=side))
 
 
-HOME = """Welcome to the Covalon guides: everything you need to play in, or run games for, Covalon, a Pathfinder 2nd Edition living world campaign.
+HOME = """<!-- used only if the vault has no "📍 Home" note -->
+
+Welcome to the Covalon guides: everything you need to play in, or run games for, Covalon, a Pathfinder 2nd Edition living world campaign.
 
 ## The guides
 
@@ -1159,7 +1148,7 @@ HOME = """Welcome to the Covalon guides: everything you need to play in, or run 
 <p class="site-credits">Some icons by Delapouite and Lorc from <a href="https://game-icons.net">game-icons.net</a>, licensed <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
 """
 
-SEARCH = """Search every page of the guides. Pick a page type, then use **Add filter** to narrow the results by properties such as a deity's domains, an expedition's soul seed or a location's district (“is” or “is not”). The same search opens over any page from the search box in the sidebar, or with Ctrl K / ⌘ K.
+SEARCH = """Search every page. See [[How to Search]] for guidance.
 
 <div id="search"></div>
 """
@@ -1178,28 +1167,41 @@ def main():
     # styles: the stand-in for Obsidian's theme, the vault's enabled snippets, callout colours, the site frame
     appearance = SRC / ".obsidian" / "appearance.json"
     enabled = json.loads(appearance.read_text()).get("enabledCssSnippets", []) if appearance.exists() else []
-    (OUT / "assets" / "snippets").mkdir(parents=True)
+    (OUT / "assets").mkdir(parents=True)
     for name in enabled:
-        f = SRC / ".obsidian" / "snippets" / f"{name}.css"
-        if f.exists():
-            shutil.copy(f, OUT / "assets" / "snippets" / f.name)
+        if (SRC / ".obsidian" / "snippets" / f"{name}.css").exists():
             SNIPPETS.append(name)
     for f in (HERE / "assets").iterdir():
-        if f.is_file():
+        if f.is_file() and f.suffix != ".css":
             shutil.copy(f, OUT / "assets" / f.name)
-    (OUT / "assets" / "callouts.css").write_text(callouts_css(), encoding="utf-8")
+    # All the styles in one file, in the order they'd apply in Obsidian: the stand-in for Obsidian's theme,
+    # the vault's enabled snippets, callout colours, then the site frame. (@import lines have to come first.)
+    parts = [(HERE / "assets" / "base.css").read_text(encoding="utf-8")]
+    parts += [(SRC / ".obsidian" / "snippets" / f"{n}.css").read_text(encoding="utf-8") for n in SNIPPETS]
+    parts += [callouts_css(), (HERE / "assets" / "site.css").read_text(encoding="utf-8")]
+    imports = []
+    def keep_import(m):
+        imports.append(m.group(0).strip())
+        return ""
+    body = "\n\n".join(re.sub(r"""(?m)^@import\s+(?:url\([^)]*\)|"[^"]*"|'[^']*')[^;\n]*;[ \t]*$""", keep_import, p) for p in parts)
+    (OUT / "assets" / "style.css").write_text("\n".join(imports) + "\n\n" + body, encoding="utf-8")
+    # Each asset's link carries a stamp of its contents (style.css?v=3f9a1c), so after a publish browsers
+    # fetch the new version straight away instead of using a cached old one.
+    for name in ("style.css", "site.js", "search.js"):
+        digest = hashlib.sha256((OUT / "assets" / name).read_bytes()).hexdigest()[:10]
+        ASSET_VERSIONS[name] = f"{name}?v={digest}"
 
     collect_entry_styles()
-    plan_guide_modes()
     file_url(LOGO)
     for n in notes.values():
         build_note(n)
-    for src, url in USED_FILES.items():   # the vault's pictures the pages use
+    for src, url in USED_FILES.items():   # the vault's pictures the pages use (big ones made smaller)
         dest = OUT / url
         dest.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy(src, dest)
+        copy_picture(src, dest)
     CUR["url"] = "index.html"
-    write("index.html", page(SITE_TITLE, str(to_html(HOME)), ""))
+    if HOME_NOTE not in notes:   # no home note in the vault: a plain list of the guides
+        write("index.html", page(SITE_TITLE, str(to_html(HOME)), ""))
     CUR["url"] = "search/index.html"
     search_head = ""
     write("search/index.html", page("Advanced Search", str(to_html(SEARCH)), "", extra_head=search_head, search_page=True))

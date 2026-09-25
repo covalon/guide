@@ -1,7 +1,7 @@
-// The site's small bits of behaviour: the settings pop-over (light/dark, paged/scroll), foldable callouts, the menu on small screens,
+// The site's small bits of behaviour: the settings pop-over (light/dark, spoilers), foldable callouts, the menu on small screens,
 // highlighting the current heading in the table of contents, and the filterable tables.
 (function () {
-  // settings pop-over (the gear icon): appearance (light / dark / auto) and how the guides are read
+  // settings pop-over (the gear icon): appearance (light / dark / auto) and spoilers
   var get = function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } };
   var put = function (k, v) { try { if (v == null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) {} };
   var gear = document.querySelector(".site-settings-toggle");
@@ -17,8 +17,7 @@
   dark.addEventListener && dark.addEventListener("change", function () { if (!get("theme")) applyTheme(); });
   var settingValue = function (name) {
     if (name === "theme") return get("theme") || "auto";
-    if (name === "spoilers") return get("spoilers") || "hide";
-    return get("readMode") || (window.COVALON_MODE && window.COVALON_MODE.mode) || "";
+    return get("spoilers") || "hide";
   };
   var mark = function () {
     if (!panel) return;
@@ -29,19 +28,6 @@
         b.setAttribute("aria-pressed", b.dataset.value === v ? "true" : "false");
       });
     });
-  };
-  // guides: open the other reading mode at the heading you're reading (each guide page carries where
-  // its headings are in the other mode)
-  var switchMode = function (mode) {
-    put("readMode", mode);
-    var d = window.COVALON_MODE;
-    if (!d || d.mode === mode) return;
-    var here = null;
-    document.querySelectorAll(".markdown-preview-sizer :is(h1, h2, h3, h4, h5, h6)[id]").forEach(function (h) {
-      if (h.getBoundingClientRect().top < 140) here = h;
-    });
-    var id = here ? here.id : decodeURIComponent(location.hash.slice(1));
-    location.href = (id && d.map[id]) || d.other;
   };
   var openPanel = function (open) {
     if (!panel) return;
@@ -60,7 +46,6 @@
         put("spoilers", b.dataset.value === "show" ? "show" : null);
         document.documentElement.classList.toggle("show-spoilers", b.dataset.value === "show");
       }
-      else switchMode(b.dataset.value);
       mark();
     });
     document.addEventListener("click", function (e) {
@@ -77,6 +62,26 @@
       box.classList.add("is-revealed");
     });
   });
+
+  // the outline ("On this page"): fade the list's top / bottom edge while there's more to scroll that way
+  document.querySelectorAll(".site-toc-list").forEach(function (bar) {
+    var edges = function () {
+      bar.classList.toggle("has-more-above", bar.scrollTop > 1);
+      bar.classList.toggle("has-more-below", bar.scrollTop + bar.clientHeight < bar.scrollHeight - 1);
+    };
+    bar.addEventListener("scroll", edges, { passive: true });
+    window.addEventListener("resize", edges);
+    edges();
+    setTimeout(edges, 0);   // after the current page / heading has been scrolled into view
+  });
+
+  // breadcrumbs: a shadow under them once the page scrolls beneath them
+  var crumbs = document.querySelector(".site-breadcrumbs");
+  if (crumbs) {
+    var stuck = function () { crumbs.classList.toggle("is-stuck", window.scrollY > 0 && crumbs.getBoundingClientRect().top <= 0.5); };
+    window.addEventListener("scroll", stuck, { passive: true });
+    stuck();
+  }
 
   // menu (small screens)
   var menu = document.querySelector(".site-menu-button");
@@ -98,12 +103,13 @@
   var active = document.querySelector(".site-tree .is-active");
   // (scrolls only the sidebar: scrollIntoView would also scroll the page itself, so some pages
   // opened a little way down)
-  var scrollWithin = function (el, box, center) {
+  var scrollWithin = function (el, box, center, margin) {
     if (!el || !box) return;
+    margin = margin || 0;   // keep this far from the edges (e.g. clear of the outline's faded ends)
     var top = el.getBoundingClientRect().top - box.getBoundingClientRect().top + box.scrollTop;
     if (center) box.scrollTop = top - box.clientHeight / 2 + el.offsetHeight / 2;
-    else if (top < box.scrollTop) box.scrollTop = top;
-    else if (top + el.offsetHeight > box.scrollTop + box.clientHeight) box.scrollTop = top + el.offsetHeight - box.clientHeight;
+    else if (top - margin < box.scrollTop) box.scrollTop = top - margin;
+    else if (top + el.offsetHeight + margin > box.scrollTop + box.clientHeight) box.scrollTop = top + el.offsetHeight + margin - box.clientHeight;
   };
   if (active) scrollWithin(active, active.closest(".site-sidebar"), true);
 
@@ -120,7 +126,7 @@
       var link = top ? byId[top.id] : null;
       if (link !== current) {
         if (current) current.classList.remove("is-active");
-        if (link) { link.classList.add("is-active"); scrollWithin(link, link.closest(".site-sidebar"), false); }
+        if (link) { link.classList.add("is-active"); scrollWithin(link, link.closest(".site-toc-list"), false, 40); }
         current = link;
       }
     }, { rootMargin: "0px 0px -70% 0px", threshold: [0, 1] });

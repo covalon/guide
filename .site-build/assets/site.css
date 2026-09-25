@@ -16,8 +16,37 @@
   font-size: var(--font-ui-small);
   color: var(--text-muted);
   padding: var(--size-4-4) var(--size-4-3);
+  /* the sidebars' own scrollbars stay out of sight until the pointer is over them, so the right one
+     doesn't sit as a second bar beside the page's scrollbar; a fade at the top / bottom edge shows
+     there's more to scroll (site.js sets has-more-above / has-more-below) */
   scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 150ms;
 }
+/* the right sidebar: "On this page" stays put at the top, and only the list of headings under it
+   scrolls, with its top / bottom edge fading while there's more to scroll that way (site.js sets
+   has-more-above / has-more-below) and its scrollbar showing on hover like the sidebars' */
+.site-right { display: flex; flex-direction: column; overflow: hidden; }
+.site-right .site-toc { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.site-toc-list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  --toc-fade-top: #000;
+  --toc-fade-bottom: #000;
+  -webkit-mask-image: linear-gradient(to bottom, var(--toc-fade-top), #000 2rem, #000 calc(100% - 2rem), var(--toc-fade-bottom));
+  mask-image: linear-gradient(to bottom, var(--toc-fade-top), #000 2rem, #000 calc(100% - 2rem), var(--toc-fade-bottom));
+}
+.site-toc-list:hover, .site-toc-list:focus-within { scrollbar-color: var(--covalon-scrollbar, var(--color-accent)) transparent; }
+.site-toc-list.has-more-above { --toc-fade-top: transparent; }
+.site-toc-list.has-more-below { --toc-fade-bottom: transparent; }
+.site-sidebar:hover, .site-sidebar:focus-within {
+  scrollbar-color: var(--covalon-scrollbar, var(--color-accent)) transparent;
+}
+
 .site-left { border-right: 1px solid var(--background-modifier-border); }
 .site-right { border-left: 1px solid var(--background-modifier-border); }
 .site-main { min-width: 0; }
@@ -118,7 +147,7 @@
 .site-toc .toc-depth-3 a { padding-inline-start: 44px; }
 
 /* headings leave room for the sticky nothing-above when jumped to */
-.markdown-rendered [id] { scroll-margin-top: var(--size-4-6); }
+.markdown-rendered [id] { scroll-margin-top: 3.5rem; }   /* clear of the sticky breadcrumbs */
 
 /* chapter navigation (← previous | chapter | next →) */
 /* the links' own padding sits outside the tables' edge, so their words line up with the tables */
@@ -155,7 +184,7 @@
   text-overflow: ellipsis;
 }
 .chapter-nav .next > a { justify-content: flex-end; }
-.chapter-nav-arrow { flex: none; }
+.chapter-nav-arrow { flex: none; width: 1em; text-align: center; }
 .chapter-nav :is(.prev, .next) > a:hover { background-color: var(--background-modifier-hover); }
 
 /* the settings pop-over under the gear icon */
@@ -249,6 +278,84 @@ html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoil
 
 .site-credits { margin-top: var(--size-4-8); font-size: var(--font-smaller); color: var(--text-faint); }
 
+/* breadcrumbs above the page title: Home › Guilds › The Archivists */
+/* It stays at the top of the screen while reading, on a frosted strip of the page colour whose ends fade
+   into the page; a soft shadow shows under it once the page has scrolled beneath it. */
+.site-breadcrumbs {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 var(--size-4-2);
+  padding-block: 0.5rem;
+  padding-inline: 2rem;
+  margin-inline: -2rem;
+  /* the words start where the chapter navigation's "← Previous" words do (after its arrow): the
+     tables' extra width, plus the arrow (1em) and its gap (0.4em) at the navigation's text size */
+  --covalon-table-width: min(calc(100cqw - 4rem), calc(100% + 3rem));
+  padding-left: calc(2rem + min(0px, (100% - var(--covalon-table-width)) / 2) + 1.4 * 0.875 * var(--font-text-size));
+  margin-bottom: var(--size-4-2);
+  font-size: var(--font-ui-small);
+  color: var(--text-faint);
+  --breadcrumb-fade: linear-gradient(to right, transparent, #000 2rem, #000 calc(100% - 2rem), transparent);
+}
+.site-breadcrumbs::before, .site-breadcrumbs::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  -webkit-mask-image: var(--breadcrumb-fade);
+  mask-image: var(--breadcrumb-fade);
+}
+.site-breadcrumbs::before {   /* the frosted strip */
+  inset-block: 0;
+  z-index: -1;
+  background: color-mix(in lab, var(--background-primary), transparent 30%);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  /* only there once the page scrolls beneath it: at the top of the page the breadcrumbs sit on the page
+     itself (in dark mode the strip would otherwise show as a darker band over the parchment) */
+  opacity: 0;
+  transition: opacity 150ms;
+}
+.site-breadcrumbs.is-stuck::before { opacity: 1; }
+.site-breadcrumbs::after {    /* the shadow under it, only while the page scrolls beneath it */
+  top: 100%;
+  height: 10px;
+  background: linear-gradient(rgba(0, 0, 0, 0.14), transparent);
+  opacity: 0;
+  transition: opacity 150ms;
+}
+.site-breadcrumbs.is-stuck::after { opacity: 1; }
+.theme-dark .site-breadcrumbs::after { background: linear-gradient(rgba(0, 0, 0, 0.4), transparent); }
+.site-breadcrumbs a { color: var(--text-muted); text-decoration: none; }
+.site-breadcrumbs a:hover { color: var(--link-color-hover); text-decoration: underline; }
+.site-breadcrumbs [aria-current] { color: var(--text-muted); }
+/* the one-page guides: a small "View in paged mode" link to the right of the title */
+.page-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--size-4-1) var(--size-4-4);
+}
+.page-title-row > .inline-title { flex: 1 1 auto; min-width: 0; }
+.guide-paged-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  flex: none;
+  font-size: var(--font-ui-small);
+  text-decoration: none;
+}
+.guide-paged-link:hover span { text-decoration: underline; }
+.guide-paged-link .svg-icon { --icon-size: 1.15em; width: var(--icon-size); height: var(--icon-size); flex: none; }
+/* "Last updated …" on the home page */
+.site-updated { font-size: var(--font-ui-small); color: var(--text-faint); }
+
 /* the page title at the top of "On this page" */
 .site-toc .toc-title a { font-weight: var(--font-semibold); color: var(--text-normal); }
 
@@ -339,7 +446,8 @@ html.search-open { overflow: hidden; }
   border: 1px solid var(--background-modifier-border);
   border-radius: var(--radius-l);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-  overflow: hidden;
+  /* no overflow clipping here, so the property suggestions can hang out below the panel;
+     the results list scrolls on its own */
 }
 .covalon-search-panel .covalon-search { display: flex; flex-direction: column; min-height: 0; padding: var(--size-4-3); }
 .covalon-search-panel .covalon-search-results { overflow-y: auto; overscroll-behavior: contain; min-height: 0; }
@@ -356,11 +464,40 @@ html.search-open { overflow: hidden; }
 }
 .covalon-search button { cursor: pointer; }
 .covalon-search button:hover { background: var(--background-modifier-hover); }
+.covalon-search-field { position: relative; flex: 1; display: flex; }
+.covalon-search-suggest {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  right: 0;
+  z-index: 5;
+  list-style: none;
+  margin: 0;
+  padding: var(--size-4-1);
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-s);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.covalon-search-suggest[hidden] { display: none; }
+.covalon-search-suggestion {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--size-4-3);
+  padding: var(--size-4-1) var(--size-4-2);
+  border-radius: var(--radius-s);
+  font-size: var(--font-ui-small);
+  cursor: pointer;
+}
+.covalon-search-suggestion.is-active, .covalon-search-suggestion:hover { background: var(--background-modifier-hover); }
+.covalon-search-suggestion-hint { color: var(--text-faint); }
 .covalon-search .covalon-search-input { flex: 1; font-size: var(--font-ui-medium); padding: var(--size-4-2) var(--size-4-3); }
 .covalon-search-close { color: var(--text-muted) !important; }
 .covalon-search-options, .covalon-search-filter { display: flex; flex-wrap: wrap; gap: var(--size-4-2); align-items: center; margin-top: var(--size-4-2); }
 .covalon-search-options .covalon-search-add { color: var(--text-accent); }
 .covalon-search-options select:last-child { margin-left: auto; }
+.covalon-search-tips { margin-left: auto; font-size: var(--font-ui-small); color: var(--text-muted); }
+.covalon-search-tips + select { margin-left: 0 !important; }
 .covalon-search-filter select:last-of-type { flex: 1 1 10rem; }
 .covalon-search-filter button { color: var(--text-muted); line-height: 1; }
 .covalon-search-status { margin: var(--size-4-3) 0 var(--size-4-1); font-size: var(--font-ui-small); color: var(--text-faint); }
@@ -380,6 +517,15 @@ html.search-open { overflow: hidden; }
 }
 .covalon-search-excerpt { margin: var(--size-4-1) 0 0; font-size: var(--font-ui-small); color: var(--text-muted); }
 .covalon-search-excerpt mark { background: color-mix(in srgb, var(--text-accent) 30%, transparent); color: inherit; }
+.covalon-search-help { padding: var(--size-4-3) var(--size-4-2) var(--size-4-2); font-size: var(--font-ui-small); color: var(--text-muted); }
+.covalon-search-help-intro { margin: 0 0 var(--size-4-2); }
+.covalon-search-examples { list-style: none; margin: 0 0 var(--size-4-3); padding: 0; display: grid; gap: var(--size-4-1); }
+.covalon-search-examples li { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--size-4-1) var(--size-4-3); }
+.covalon-search .covalon-search-example { padding: 1px var(--size-4-2); background: var(--background-modifier-form-field); }
+.covalon-search-example code { font-size: var(--font-ui-small); background: none; padding: 0; color: var(--text-normal); }
+.covalon-search-example-note { color: var(--text-faint); }
+.covalon-search-help-link { font-size: var(--font-ui-small); color: var(--link-color); }
+.covalon-search-help-link:hover { color: var(--link-color-hover); }
 .covalon-search-more { padding: var(--size-4-2); font-size: var(--font-ui-small); color: var(--text-faint); }
 
 /* menu button: only on small screens */
@@ -388,7 +534,7 @@ html.search-open { overflow: hidden; }
   position: fixed;
   top: var(--size-4-2);
   left: var(--size-4-2);
-  z-index: 20;
+  z-index: 150;   /* above the sticky breadcrumbs */
   background-color: var(--background-secondary);
   box-shadow: var(--shadow-s);
 }
@@ -403,7 +549,7 @@ html.search-open { overflow: hidden; }
     position: fixed;
     inset: 0 auto 0 0;
     width: min(85vw, 300px);
-    z-index: 10;
+    z-index: 140;   /* over the sticky breadcrumbs when the menu is open */
     transform: translateX(-100%);
     transition: transform 150ms ease-out;
     box-shadow: var(--shadow-s);
@@ -415,6 +561,8 @@ html.search-open { overflow: hidden; }
   }
   /* room for the menu button, which sits over the sidebar's top left corner */
   .site-left .site-header { padding-left: 36px; }
+  /* the breadcrumbs span the narrow page, leaving room for the menu button on the left */
+  .site-breadcrumbs { margin-inline: calc(-1 * var(--size-4-4)); padding-inline: 56px var(--size-4-4); }
   .site-menu-button { display: flex; }
   .markdown-preview-view { padding: var(--size-4-12) var(--size-4-4) var(--size-4-8); }
 }

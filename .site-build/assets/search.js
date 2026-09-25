@@ -3,8 +3,7 @@
 // after the site is built; see build-local.sh), in the style of the Archives of Nethys' advanced search:
 // a search box, a page type, "Add filter" rows (property · is / is not · value), and sort order.
 (function () {
-  var root = (document.querySelector('link[href$="assets/site.css"]') || { getAttribute: function () { return "assets/site.css"; } })
-    .getAttribute("href").replace(/assets\/site\.css$/, "");
+  var root = document.documentElement.getAttribute("data-root") || "";   // the site's root, relative to this page
   var pagefind = null;
   var loading = null;
   var load = function () {
@@ -30,7 +29,13 @@
     input.type = "search";
     input.placeholder = "Search the guides…  e.g. fire [domains:sun] [soul seed:air]";
     input.setAttribute("aria-label", "Search the guides");
-    top.appendChild(input);
+    var field = el("div", "covalon-search-field");
+    field.appendChild(input);
+    var suggest = el("ul", "covalon-search-suggest");
+    suggest.hidden = true;
+    suggest.setAttribute("role", "listbox");
+    field.appendChild(suggest);
+    top.appendChild(field);
     if (opts.onClose) {
       var close = el("button", "covalon-search-close", "Esc");
       close.type = "button";
@@ -49,8 +54,11 @@
     sortSel.appendChild(new Option("Sort: title Z–A", "desc"));
     var add = el("button", "covalon-search-add", "+ Add filter");
     add.type = "button";
+    var tips = el("a", "covalon-search-tips", "Search tips");
+    tips.href = root + "how-to-search/";
     bar.appendChild(typeSel);
     bar.appendChild(add);
+    bar.appendChild(tips);
     bar.appendChild(sortSel);
     ui.appendChild(bar);
     var rowsBox = el("div", "covalon-search-filters");
@@ -113,25 +121,45 @@
     // contains "air"; in quotes, [divine sanctification:"holy"] matches the whole word only (so not
     // "unholy"); [domains] finds pages that have Domains at all; -[domains:fire] leaves them out.
     var PROP = /(-?)\[([^\]:]+)(?::\s*("?)([^\]"]*)\3)?\s*\]/g;
+    // Terms joined by OR (in capitals, like Obsidian) match pages that have any of them:
+    // [domains:air] OR [alternate domains:air]. Everything else must all match.
     var parseBox = function () {
-      var words = input.value.replace(PROP, " ").replace(/\s+/g, " ").trim();
-      var all = [], none = [], m;
+      var v = input.value, terms = [], m;
       PROP.lastIndex = 0;
-      while ((m = PROP.exec(input.value))) {
-        var want = m[2].trim().toLowerCase(), text = (m[4] || "").trim().toLowerCase();
-        var whole = m[3] === '"' && text ? new RegExp("(^|[^\\p{L}\\p{N}])" + text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "($|[^\\p{L}\\p{N}])", "u") : null;
-        var keys = Object.keys(allFilters).filter(function (k) { return k.replace(/^~/, "").toLowerCase() === want; });
-        var any = [];
-        keys.forEach(function (k) {
-          present(allFilters[k]).forEach(function (v) {
-            var lv = v.toLowerCase();
-            if (!text || (whole ? whole.test(lv) : lv.indexOf(text) >= 0)) { var f = {}; f[k] = v; any.push(f); }
+      while ((m = PROP.exec(v))) terms.push({ m: m, start: m.index, end: m.index + m[0].length });
+      // the OR between two terms (and nothing else between them) joins them into one group
+      var joined = terms.map(function (t, i) { return i > 0 && !t.m[1] && !terms[i - 1].m[1] && /^\s+OR\s+$/.test(v.slice(terms[i - 1].end, t.start)); });
+      var words = v;
+      for (var i = terms.length - 1; i >= 0; i--) {
+        var from = joined[i] ? terms[i - 1].end : terms[i].start;
+        words = words.slice(0, from) + " " + words.slice(terms[i].end);
+      }
+      words = words.replace(/\s+/g, " ").trim();
+      var matches = function (t) {
+        var want = t.m[2].trim().toLowerCase(), text = (t.m[4] || "").trim().toLowerCase();
+        var whole = t.m[3] === '"' && text ? new RegExp("(^|[^\\p{L}\\p{N}])" + text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "($|[^\\p{L}\\p{N}])", "u") : null;
+        var out = [];
+        Object.keys(allFilters).filter(function (k) { return k.replace(/^~/, "").toLowerCase() === want; }).forEach(function (k) {
+          present(allFilters[k]).forEach(function (val) {
+            var lv = val.toLowerCase();
+            if (!text || (whole ? whole.test(lv) : lv.indexOf(text) >= 0)) { var f = {}; f[k] = val; out.push(f); }
           });
         });
-        if (!any.length) any.push({ "~nothing": "~nothing" });   // no such property or value: no results
-        (m[1] ? none : all).push(any.length === 1 ? any[0] : { any: any });
-      }
-      return { words: words, all: all, none: none };
+        return out;
+      };
+      var all = [], none = [], group = null;
+      terms.forEach(function (t, i) {
+        if (joined[i] && group) group.push.apply(group, matches(t));
+        else {
+          group = matches(t);
+          (t.m[1] ? none : all).push(group);
+        }
+      });
+      var tidy = function (any) {
+        if (!any.length) return { "~nothing": "~nothing" };   // no such property or value: no results
+        return any.length === 1 ? any[0] : { any: any };
+      };
+      return { words: words, all: all.map(tidy), none: none.map(function (g) { return g.length ? tidy(g) : null; }).filter(Boolean) };
     };
 
     var filtersNow = function (box) {
@@ -148,6 +176,37 @@
       return out;
     };
 
+    // before anything is searched: a few quick tips, with examples to try, and a link to the full guide
+    var EXAMPLES = [
+      ["dragon", "words anywhere on a page"],
+      ["[soul seed:air]", "a property that contains a value"],
+      ['[divine sanctification:"holy"]', "a whole word only"],
+      ["dragon OR fey", "either word"],
+      ["[domains:air] OR [alternate domains:air]", "either of two properties"],
+      ["[domains:fire] -[domains:sun]", "leave some out"],
+    ];
+    var showTips = function () {
+      list.innerHTML = "";
+      var li = el("li", "covalon-search-help");
+      li.appendChild(el("p", "covalon-search-help-intro", "Type to search every page, or try one of these (type [ for property suggestions):"));
+      var ul = el("ul", "covalon-search-examples");
+      EXAMPLES.forEach(function (x) {
+        var item = el("li");
+        var b = el("button", "covalon-search-example");
+        b.type = "button";
+        b.appendChild(el("code", "", x[0]));
+        b.addEventListener("click", function () { input.value = x[0]; input.focus(); go(); });
+        item.appendChild(b);
+        item.appendChild(el("span", "covalon-search-example-note", x[1]));
+        ul.appendChild(item);
+      });
+      li.appendChild(ul);
+      var more = el("a", "covalon-search-help-link", "How to search: the full guide →");
+      more.href = root + "how-to-search/";
+      li.appendChild(more);
+      list.appendChild(li);
+    };
+
     var seq = 0;
     var timer = null;
     var run = function () { clearTimeout(timer); timer = setTimeout(go, 120); };
@@ -157,19 +216,45 @@
       var term = box.words;
       var filters = filtersNow(box);
       var any = term || Object.keys(filters).length;
-      if (!any) { list.innerHTML = ""; status.textContent = ""; available = {}; rows.forEach(function (r) { fillProps(r); fillValues(r); }); return; }
+      if (!any) { showTips(); status.textContent = ""; available = {}; rows.forEach(function (r) { fillProps(r); fillValues(r); }); return; }
+      // words joined by OR (in capitals): one search for each side, merged, e.g. dragon OR air
+      var alternatives = term ? term.split(/\s+OR\s+/).map(function (t) { return t.trim(); }).filter(Boolean) : [];
+      if (!alternatives.length) alternatives = [null];
+      var many = alternatives.length > 1;
       load().then(function (pf) {
         var o = { filters: filters };
         if (sortSel.value) o.sort = { title: sortSel.value };
-        return pf.search(term || null, o);
-      }).then(function (res) {
-        if (mine !== seq || !res) return;
-        available = res.filters || {};
+        return Promise.all(alternatives.map(function (t) { return pf.search(t, o); }));
+      }).then(function (found) {
+        if (mine !== seq || !found || !found[0]) return;
+        var res = found[0];
+        if (many) {   // pages found by several alternatives rank higher; each keeps its own highlighted snippet
+          var byId = {}, merged = [];
+          available = {};
+          found.forEach(function (r) {
+            Object.keys(r.filters || {}).forEach(function (k) {
+              available[k] = available[k] || {};
+              Object.keys(r.filters[k]).forEach(function (v) { available[k][v] = Math.max(available[k][v] || 0, r.filters[k][v]); });
+            });
+            r.results.forEach(function (x) {
+              if (byId[x.id]) byId[x.id].score += x.score || 0;
+              else { byId[x.id] = { id: x.id, score: x.score || 0, data: x.data }; merged.push(byId[x.id]); }
+            });
+          });
+          merged.sort(function (a, b) { return b.score - a.score; });
+          res = { results: merged };
+        } else available = res.filters || {};
         rows.forEach(function (r) { fillProps(r); fillValues(r); });
         status.textContent = res.results.length ? res.results.length + (res.results.length === 1 ? " result" : " results") : "No results";
         list.innerHTML = "";
-        return Promise.all(res.results.slice(0, 40).map(function (r) { return r.data(); })).then(function (data) {
+        var sorted = many && sortSel.value;   // merged results sorted by title need every page's title first
+        return Promise.all(res.results.slice(0, sorted ? 300 : 40).map(function (r) { return r.data(); })).then(function (data) {
           if (mine !== seq) return;
+          if (sorted) {
+            var key = function (d) { return String(d.meta.title || "").replace(/^the /i, ""); };
+            data.sort(function (a, b) { return byName(key(a), key(b)) * (sortSel.value === "desc" ? -1 : 1); });
+            data = data.slice(0, 40);
+          }
           data.forEach(function (d) {
             var li = el("li", "covalon-search-result");
             var type = (d.filters && d.filters.Type || [])[0];
@@ -187,6 +272,87 @@
     };
 
     input.addEventListener("input", run);
+    showTips();
+
+    // autocomplete for [property:value]: typing "[" offers property names, and after the ":" that
+    // property's values. ↑/↓ to pick, Enter or Tab to take it, Esc to close the list.
+    var picks = [], active = 0, span = null;
+    var names = function () {
+      var seen = {};
+      Object.keys(allFilters).forEach(function (k) { if (present(allFilters[k]).length) seen[k.replace(/^~/, "")] = true; });
+      return Object.keys(seen).sort(byName);
+    };
+    // matches that start with what's typed come first, then ones that contain it
+    var ranked = function (list, typed) {
+      return list.filter(function (x) { return x.toLowerCase().indexOf(typed) >= 0; })
+        .sort(function (a, b) { return (a.toLowerCase().indexOf(typed) !== 0) - (b.toLowerCase().indexOf(typed) !== 0) || byName(a, b); });
+    };
+    var hideSuggest = function () { suggest.hidden = true; picks = []; };
+    var showSuggest = function () {
+      var caret = input.selectionStart, before = input.value.slice(0, caret);
+      var m = /(-?)\[([^\]:]*)(?::\s*("?)([^\]"]*))?$/.exec(before);
+      if (!m) return hideSuggest();
+      var start = m.index + m[1].length, typed = m[2].trim().toLowerCase();
+      if (m[4] === undefined && before.slice(m.index).indexOf(":") < 0) {
+        picks = ranked(names(), typed).slice(0, 8)
+          .map(function (n) { return { label: n, text: "[" + n + ":", hint: "property" }; });
+      } else {
+        var want = typed, text = (m[4] || "").toLowerCase(), vals = {};
+        Object.keys(allFilters).forEach(function (k) {
+          if (k.replace(/^~/, "").toLowerCase() !== want) return;
+          present(allFilters[k]).forEach(function (v) { vals[v] = (vals[v] || 0) + allFilters[k][v]; });
+        });
+        var name = names().filter(function (n) { return n.toLowerCase() === want; })[0] || m[2].trim();
+        picks = ranked(Object.keys(vals), text).slice(0, 8)
+          .map(function (v) { return { label: v, text: "[" + name + ":" + (m[3] ? '"' + v + '"' : v) + "]", hint: vals[v] + (vals[v] === 1 ? " page" : " pages") }; });
+      }
+      if (!picks.length) return hideSuggest();
+      span = [start, caret];
+      active = 0;
+      suggest.innerHTML = "";
+      picks.forEach(function (p, i) {
+        var li = el("li", "covalon-search-suggestion" + (i === active ? " is-active" : ""));
+        li.setAttribute("role", "option");
+        li.appendChild(el("span", "", p.label));
+        li.appendChild(el("span", "covalon-search-suggestion-hint", p.hint));
+        li.addEventListener("mousedown", function (e) { e.preventDefault(); take(i); });
+        suggest.appendChild(li);
+      });
+      suggest.hidden = false;
+    };
+    var mark = function () {
+      Array.prototype.forEach.call(suggest.children, function (li, i) { li.classList.toggle("is-active", i === active); });
+    };
+    var take = function (i) {
+      var p = picks[i];
+      if (!p) return;
+      var v = input.value, after = v.slice(span[1]).replace(/^[^\]\s]*\]?/, "");
+      var tail = p.text.slice(-1) === "]" && !/^\s/.test(after) ? " " : "";
+      input.value = v.slice(0, span[0]) + p.text + tail + after;
+      var caret = span[0] + p.text.length + tail.length;
+      input.setSelectionRange(caret, caret);
+      input.focus();
+      run();
+      showSuggest();   // after a property name, go straight on to its values
+    };
+    input.addEventListener("input", showSuggest);
+    input.addEventListener("click", showSuggest);
+    input.addEventListener("blur", function () { setTimeout(hideSuggest, 100); });
+    input.addEventListener("keydown", function (e) {
+      if (suggest.hidden) return;
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+        e.preventDefault();
+        active = (active + (e.key === "ArrowDown" ? 1 : picks.length - 1)) % picks.length;
+        mark();
+      } else if (e.key === "Enter" || e.key === "Tab") {
+        e.preventDefault();
+        take(active);
+      } else if (e.key === "Escape") {
+        e.preventDefault();
+        e.stopPropagation();   // close the list, not the search
+        hideSuggest();
+      }
+    });
     typeSel.addEventListener("change", function () {
       var t = typeSel.value;
       if (!t) { typeFilters = {}; rows.forEach(function (r) { fillProps(r); fillValues(r); }); run(); return; }

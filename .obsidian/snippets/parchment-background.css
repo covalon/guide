@@ -71,3 +71,8 @@ body.theme-dark::before {
 .theme-dark :is(.workspace-split.mod-left-split, .workspace-split.mod-right-split, .workspace-ribbon, .workspace-tab-header-container, .titlebar, .status-bar) {
   background-color: rgba(0, 0, 0, 0.25) !important;
 }
+/* the note area: a little darker than the parchment around it (a 15% black layer).
+   .mod-root is Obsidian's main note area; .site-main is the website's. */
+.theme-dark :is(.workspace-split.mod-root .workspace-leaf-content, .site-main) {
+  background-color: rgba(0, 0, 0, 0.15) !important;
+}

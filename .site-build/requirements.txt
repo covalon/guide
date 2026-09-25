@@ -4,3 +4,4 @@ mdit-py-plugins>=0.4
 beautifulsoup4>=4.12
 PyYAML>=6
 pagefind[bin]>=1.1
+Pillow>=10          # makes big pictures smaller for the site

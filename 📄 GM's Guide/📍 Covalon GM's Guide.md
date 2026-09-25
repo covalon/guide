@@ -1,4 +1,5 @@
-*Welcome to the GM's guide for running adventures in the Covalon Living World server. This guide offers new and existing GM's a single location for all of the rules, guidelines and tools available for running high quality, fun adventures in Covalon!*
+# Introduction
+![[📄 GM's Guide/Chapter 0 - Introduction]]
 # Chapter 1: Running Games in Covalon
 ![[Chapter 1 - Running Games in Covalon]]
 # Chapter 2: Getting Started

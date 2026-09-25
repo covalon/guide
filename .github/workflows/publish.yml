@@ -26,6 +26,15 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: pip   # keeps the downloaded Python packages between runs
+          cache-dependency-path: .site-build/requirements.txt
+      # the callout icons and the made-smaller pictures, kept between runs so only new or changed
+      # pictures are processed (each run saves a fresh copy; the newest one is restored)
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/covalon-site
+          key: covalon-site-${{ github.run_id }}
+          restore-keys: covalon-site-
       - name: Install the build's Python packages
         run: pip install -r .site-build/requirements.txt
       - name: Build the site
