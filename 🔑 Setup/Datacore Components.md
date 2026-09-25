@@ -2,7 +2,7 @@ Shared Datacore components used by the 📍 overview pages. Edit the code below 
 ## CovalonEntries
 Lists every note with the given tag: a linked heading, the note's properties, then the full note embedded.
 
-Options: `tag` (required), `inline={["Roleplay Channel"]}` (with `aside`: show those properties as a line of text after the note's text, instead of in the properties box), `tagline="Tagline"` (show that property as a tagline right under each heading, instead of in the properties box), `aside` (a different layout, used for the guilds: heading, the note's text, then its properties, with the note's images floated to the right beside them), `propsFirst` (with `aside`: the properties box comes before the note's text instead of after it, used for the deities and civilizations), `district` (only locations in that district), `sortBy="title"` (name, ignoring a leading "The"), `sortBy="date"` (or any property name, e.g. `sortBy="Journey Date"`), `heading="h3"`, and `hide={["Some Property"]}` to leave properties out of the panel.
+Options: `tag` (required), `inline={["Roleplay Channel"]}` (with `aside`: show those properties as a line of text after the note's text, instead of in the properties box), `tagline="Tagline"` (show that property as a tagline right under each heading, instead of in the properties box), `aside` (a different layout, used for the guilds: heading, the note's text, then its properties, with the note's images floated to the right beside them), `propsFirst` (with `aside`: the properties box comes before the note's text instead of after it, used for the deities and civilizations), `imagesBesideProps` (with `aside`: the note's images sit beside its properties box instead of floating, the box taking 2/3 of the width and the images 1/3, fitted to the box's height; used for the guilds' heraldry), `district` (only locations in that district), `sortBy="title"` (name, ignoring a leading "The"), `sortBy="date"` (or any property name, e.g. `sortBy="Journey Date"`), `heading="h3"`, and `hide={["Some Property"]}` to leave properties out of the panel.
 
 ```jsx
 // properties never shown: these, and any starting with _ (settings for the website, e.g. _url)
@@ -61,13 +61,15 @@ function InlineProps({ page, props = [] }) {
   ));
 }
 
-function AsideEntry({ page, hide = [], level = 2, inline = [], propsFirst = false }) {
+function AsideEntry({ page, hide = [], level = 2, inline = [], propsFirst = false, imagesBesideProps = false, children = null }) {
   const [parts, setParts] = dc.useState({ text: "", images: "" });
   dc.useEffect(() => {
     let live = true;
     const file = dc.app.vault.getAbstractFileByPath(page.$path);
     if (file) dc.app.vault.cachedRead(file).then((raw) => {
-      const body = raw.replace(/^---\n[\s\S]*?\n---\n?/, "");
+      // the note's own bases (and the heading above them) are left out: e.g. a district's "## Locations"
+      // table, which the Gazetteer already lists below it
+      const body = raw.replace(/^---\n[\s\S]*?\n---\n?/, "").replace(/(^#{1,6} [^\n]*\n+)?^```base\n[\s\S]*?\n```[ \t]*\n?/gm, "");
       const lines = body.split("\n");
       if (live) setParts({
         text: shiftHeadings(lines.filter((l) => !IMAGE_LINE.test(l)).join("\n").trim(), level),
@@ -78,11 +80,18 @@ function AsideEntry({ page, hide = [], level = 2, inline = [], propsFirst = fals
   }, [page.$path, page.$mtime]);
   return (
     <div className="covalon-entry-body">
-      {parts.images && <div className="covalon-entry-images"><dc.Markdown content={parts.images} sourcePath={page.$path} /></div>}
+      {parts.images && !imagesBesideProps && <div className="covalon-entry-images"><dc.Markdown content={parts.images} sourcePath={page.$path} /></div>}
+      {children /* the entry's heading and tagline: after the images, so the images float from the top of the entry */}
       {propsFirst && <Properties page={page} hide={[...hide, ...inline]} />}
       <dc.Markdown content={parts.text} sourcePath={page.$path} />
       <InlineProps page={page} props={inline} />
-      {!propsFirst && <Properties page={page} hide={[...hide, ...inline]} />}
+      {!propsFirst && !imagesBesideProps && <Properties page={page} hide={[...hide, ...inline]} />}
+      {imagesBesideProps && (
+        <div className="covalon-props-row">
+          <Properties page={page} hide={[...hide, ...inline]} />
+          {parts.images && <div className="covalon-props-images"><dc.Markdown content={parts.images} sourcePath={page.$path} /></div>}
+        </div>
+      )}
     </div>
   );
 }
@@ -93,13 +102,13 @@ function Tagline({ page, prop }) {
   return <div className="covalon-tagline"><dc.Markdown inline content={show(entry.raw)} sourcePath={page.$path} /></div>;
 }
 
-function CovalonEntries({ tag, district, sortBy = "name", heading = "h2", hide = [], aside = false, propsFirst = false, tagline, inline = [] }) {
+function CovalonEntries({ tag, district, sortBy = "name", heading = "h2", hide = [], aside = false, propsFirst = false, imagesBesideProps = false, tagline, inline = [] }) {
   if (tagline) hide = [...hide, tagline];
   const pages = dc.useQuery(`@page and #${tag}`);
   let entries = [...pages];
   if (district) entries = entries.filter((p) => districtOf(p) === district);
   const sortProp = sortBy === "date" ? "Date" : sortBy;
-  const title = (p) => p.$name.replace(/^the /i, "");
+  const title = (p) => p.$name.replace(/^(the )?(kingdom of )?/i, "");
   entries.sort(
     sortBy === "name"
       ? (a, b) => a.$name.localeCompare(b.$name)
@@ -113,9 +122,10 @@ function CovalonEntries({ tag, district, sortBy = "name", heading = "h2", hide =
       {entries.map((p) => (
         aside ? (
           <div key={p.$path} className="covalon-entry covalon-entry-aside">
-            <H><dc.Link link={p.$link} /></H>
-            <Tagline page={p} prop={tagline} />
-            <AsideEntry page={p} hide={hide} inline={inline} propsFirst={propsFirst} level={Number(heading.slice(1)) || 2} />
+            <AsideEntry page={p} hide={hide} inline={inline} propsFirst={propsFirst} imagesBesideProps={imagesBesideProps} level={Number(heading.slice(1)) || 2}>
+              <H><dc.Link link={p.$link} /></H>
+              <Tagline page={p} prop={tagline} />
+            </AsideEntry>
           </div>
         ) : (
           <div key={p.$path} className="covalon-entry">
@@ -131,18 +141,39 @@ function CovalonEntries({ tag, district, sortBy = "name", heading = "h2", hide =
 }
 
 // One note in the aside layout (its text, its images floated right, its properties box), without a heading.
-// Used for the districts on the Gazetteer: <CovalonNote name="City District" />
-function CovalonNote({ name, tag = "covalon/district", inline = [] }) {
+// Used for the districts on the Gazetteer: <CovalonNote name="📍 City District" propsFirst />
+function CovalonNote({ name, tag = "covalon/district", inline = [], propsFirst = false }) {
   const pages = dc.useQuery(`@page and #${tag}`);
   const page = pages.find((p) => p.$name === name);
   if (!page) return null;
-  return <div className="covalon-entry-aside covalon-note"><AsideEntry page={page} inline={inline} /></div>;
+  return <div className="covalon-entry-aside covalon-note"><AsideEntry page={page} inline={inline} propsFirst={propsFirst} /></div>;
 }
 
-return { CovalonEntries, CovalonNote };
+// A bulleted list of the notes with a tag, optionally only those whose property `where` is `is`, each followed
+// by another property in brackets. The Expedition Districts page lists the civilizations this way:
+// <CovalonList tag="covalon/civilization" where="Covalon Status" is="district" after="Roleplay Channel" />
+function CovalonList({ tag, where, is, after }) {
+  const pages = dc.useQuery(`@page and #${tag}`);
+  const prop = (p, k) => Object.values(p.$frontmatter ?? {}).find((e) => e.key.toLowerCase() === String(k).toLowerCase());
+  const title = (p) => p.$name.replace(/^(the )?(kingdom of )?/i, "");
+  const rows = pages
+    .filter((p) => !where || String(prop(p, where)?.raw ?? "").trim().toLowerCase() === String(is ?? "").trim().toLowerCase())
+    .sort((a, b) => title(a).localeCompare(title(b)));
+  if (!rows.length) return null;
+  const md = rows.map((p) => {
+    const extra = after && prop(p, after);
+    return `- [[${p.$name}]]` + (extra && !isEmpty(extra.raw) ? ` (${show(extra.raw)})` : "");
+  }).join("\n");
+  return <dc.Markdown content={md} sourcePath={rows[0].$path} />;
+}
+
+return { CovalonEntries, CovalonNote, CovalonList };
 ```
+## CovalonList
+A bulleted list of notes with a tag, each linked, sorted by name (ignoring a leading "The"). Options: `tag` (required), `where` and `is` (only the notes whose property `where` has the value `is`, e.g. `where="Covalon Status" is="district"`), and `after` (a property shown in brackets after each name, e.g. `after="Roleplay Channel"`). The Expedition Districts and Outside Covalon page uses it to list the civilizations that are districts and camps. It's part of the CovalonEntries code block above.
+
 ## CovalonNote
-One note shown in the `aside` layout of `CovalonEntries` (its text, its images floated to the right, then its properties box), without a heading of its own. The Gazetteer uses it for each district: `<CovalonNote name="City District" />`. It's part of the CovalonEntries code block above.
+One note shown in the `aside` layout of `CovalonEntries` (its text, its images floated to the right, then its properties box), without a heading of its own. The Gazetteer uses it for each district: `<CovalonNote name="📍 City District" propsFirst />`. Options: `tag` (default `covalon/district`), `inline`, and `propsFirst` (the properties box before the note's text), as for `CovalonEntries`. It's part of the CovalonEntries code block above.
 
 ## MissionOverview
 Every expedition's missions in one table (each named after its expedition, e.g. "Ikouga A: Retame the Island"),, read straight from the expedition notes: each `### Mission X` heading under `## Missions` (with its name after a colon, if it has one) and the text underneath it as the summary. Edit a mission on its expedition note and the table follows. Expeditions are listed in journey order.

@@ -1,16 +1,16 @@
 ---
 Tags:
-- covalon/civilization
+  - covalon/civilization
+_url: vyrm
 Tagline: A legacy of majesty
 Government: The King and People's Council (king and senate)
 Population: humans, elves, dwarves
 Religions:
-- '[[Gunvald]]'
+  - "[[Gunvald]]"
 Primary Exports: precious metals, crops, livestock
 Geography: woods, plains, mountains
 Fate: mindrot plague
 Covalon Status: unexplored
-_url: vyrm
 ---
 The Kingdom of Vyrm had a storied history of success due to its unique partnership between its nobility and common citizens. Working hand-in-hand to secure better lives for their future generations, Vyrm prospered economically for dozens of generations, until recent years. Once the Misty Shores were captured by pirates, the king of Vyrm became increasingly uncooperative with the people's council, sealing himself and the nobility inside his palace right before the Cataclysm reached the nation.
 

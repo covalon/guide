@@ -18,6 +18,8 @@
   var settingValue = function (name) {
     if (name === "theme") return get("theme") || "auto";
     if (name === "width") return get("width") || "readable";
+    if (name === "textSize") return get("textSize") || "default";
+    if (name === "fonts") return get("fonts") === "serif" ? "serif" : "sans";
     return get("spoilers") || "hide";
   };
   var mark = function () {
@@ -43,6 +45,20 @@
       if (!b) return;
       var name = b.closest(".site-setting").dataset.setting;
       if (name === "theme") { put("theme", b.dataset.value === "auto" ? null : b.dataset.value); applyTheme(); }
+      else if (name === "textSize") {
+        put("textSize", b.dataset.value === "default" ? null : b.dataset.value);
+        ["small", "large", "larger"].forEach(function (t) { document.documentElement.classList.toggle("text-" + t, b.dataset.value === t); });
+      }
+      else if (name === "fonts") {   // serif: add the original guide's fonts (see SERIF_SNIPPET in build.py)
+        var serif = b.dataset.value === "serif";
+        put("fonts", serif ? "serif" : null);
+        var fl = document.getElementById("serif-fonts");
+        if (serif && !fl) {
+          fl = document.createElement("link");
+          fl.rel = "stylesheet"; fl.id = "serif-fonts"; fl.href = document.documentElement.dataset.serifFonts;
+          document.head.appendChild(fl);
+        } else if (!serif && fl) fl.remove();
+      }
       else if (name === "width") {
         put("width", b.dataset.value === "wide" ? "wide" : null);
         document.documentElement.classList.toggle("wide-mode", b.dataset.value === "wide");
@@ -202,7 +218,7 @@
         var dir = th.dataset.sort === "asc" ? "desc" : "asc";
         heads.forEach(function (h) { delete h.dataset.sort; });
         th.dataset.sort = dir;
-        var key = function (tr) { return cellText(tr, i).replace(/^the /i, ""); };
+        var key = function (tr) { return cellText(tr, i).replace(/^(the )?(kingdom of )?/i, ""); };
         rows.sort(function (a, b) { return key(a).localeCompare(key(b), undefined, { numeric: true }) * (dir === "asc" ? 1 : -1); });
         rows.forEach(function (tr) { tbody.appendChild(tr); });
       });
@@ -220,4 +236,120 @@
       pinned();
     }
   });
+})();
+
+// Lightbox: click a picture in the text to see it large, over the page. ← / → (or the buttons) step
+// through the page's pictures, clicking the big picture zooms to its full size (drag or scroll to look
+// around), and Esc, the × button or a click beside the picture closes it.
+(function () {
+  var pics = Array.prototype.filter.call(document.querySelectorAll(".markdown-rendered img"), function (img) {
+    return !img.closest("a") && !/logo/i.test(img.getAttribute("src") || "");
+  });
+  if (!pics.length) return;
+  var el = function (tag, cls) { var e = document.createElement(tag); e.className = cls; return e; };
+  var box = el("div", "covalon-lightbox");
+  box.hidden = true;
+  box.setAttribute("role", "dialog");
+  box.setAttribute("aria-modal", "true");
+  box.setAttribute("aria-label", "Picture");
+  var stage = el("div", "covalon-lightbox-stage");
+  var big = el("img", "covalon-lightbox-img");
+  var caption = el("div", "covalon-lightbox-caption");
+  var count = el("span", "covalon-lightbox-count");
+  var text = el("span", "covalon-lightbox-text");
+  caption.appendChild(text);
+  caption.appendChild(count);
+  var button = function (cls, label, glyph) {
+    var b = el("button", "covalon-lightbox-button " + cls);
+    b.type = "button"; b.title = label; b.setAttribute("aria-label", label); b.textContent = glyph;
+    return b;
+  };
+  var close = button("is-close", "Close (Esc)", "×");
+  var prev = button("is-prev", "Previous picture (←)", "‹");
+  var next = button("is-next", "Next picture (→)", "›");
+  stage.appendChild(big);
+  [stage, caption, close, prev, next].forEach(function (e) { box.appendChild(e); });
+  document.body.appendChild(box);
+
+  var at = 0, lastFocus = null;
+  var show = function (i) {
+    at = (i + pics.length) % pics.length;
+    var img = pics[at];
+    var fig = img.closest("figure");
+    var cap = fig && fig.querySelector("figcaption");
+    box.classList.remove("is-zoomed");
+    big.src = img.currentSrc || img.src;
+    big.alt = img.alt || "";
+    text.textContent = cap ? cap.textContent : (img.alt && !/\.(webp|png|jpe?g|gif|avif)$/i.test(img.alt) ? img.alt : "");
+    count.textContent = pics.length > 1 ? (at + 1) + " / " + pics.length : "";
+    caption.hidden = !text.textContent && !count.textContent;
+    prev.hidden = next.hidden = pics.length < 2;
+  };
+  var open = function (i) {
+    lastFocus = document.activeElement;
+    show(i);
+    box.hidden = false;
+    document.documentElement.classList.add("lightbox-open");
+    close.focus();
+  };
+  var shut = function () {
+    if (box.hidden) return;
+    box.hidden = true;
+    big.removeAttribute("src");
+    document.documentElement.classList.remove("lightbox-open");
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  };
+  // zoom only helps when the picture is bigger than it's shown
+  var canZoom = function () { return big.naturalWidth > big.clientWidth + 8 || big.naturalHeight > big.clientHeight + 8; };
+  big.addEventListener("load", function () { box.classList.toggle("can-zoom", canZoom()); });
+
+  pics.forEach(function (img, i) {
+    img.classList.add("covalon-zoomable");
+    img.tabIndex = 0;
+    img.setAttribute("role", "button");
+    img.setAttribute("aria-label", "View larger" + (img.alt ? ": " + img.alt : ""));
+    img.addEventListener("click", function (e) { e.preventDefault(); e.stopPropagation(); open(i); });
+    img.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(i); } });
+  });
+  close.addEventListener("click", shut);
+  prev.addEventListener("click", function () { show(at - 1); });
+  next.addEventListener("click", function () { show(at + 1); });
+  big.addEventListener("click", function (e) {
+    e.stopPropagation();
+    if (box.classList.contains("is-zoomed")) { box.classList.remove("is-zoomed"); return; }
+    if (!box.classList.contains("can-zoom")) return;
+    // zoom in on the spot that was clicked
+    var r = big.getBoundingClientRect(), fx = (e.clientX - r.left) / r.width, fy = (e.clientY - r.top) / r.height;
+    box.classList.add("is-zoomed");
+    stage.scrollLeft = fx * big.naturalWidth - stage.clientWidth / 2;
+    stage.scrollTop = fy * big.naturalHeight - stage.clientHeight / 2;
+  });
+  // drag to look around a zoomed picture
+  var drag = null;
+  stage.addEventListener("pointerdown", function (e) {
+    if (!box.classList.contains("is-zoomed") || e.pointerType !== "mouse") return;
+    drag = { x: e.clientX, y: e.clientY, l: stage.scrollLeft, t: stage.scrollTop, moved: false };
+  });
+  window.addEventListener("pointermove", function (e) {
+    if (!drag) return;
+    var dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+    if (Math.abs(dx) + Math.abs(dy) > 4) drag.moved = true;
+    stage.scrollLeft = drag.l - dx; stage.scrollTop = drag.t - dy;
+  });
+  window.addEventListener("pointerup", function () { if (drag && drag.moved) big.addEventListener("click", swallow, { capture: true, once: true }); drag = null; });
+  var swallow = function (e) { e.stopPropagation(); e.preventDefault(); };
+  stage.addEventListener("click", function (e) { if (e.target === stage && !box.classList.contains("is-zoomed")) shut(); });
+  box.addEventListener("click", function (e) { if (e.target === box) shut(); });
+  document.addEventListener("keydown", function (e) {
+    if (box.hidden) return;
+    if (e.key === "Escape") { e.stopPropagation(); shut(); }
+    else if (e.key === "ArrowLeft" && pics.length > 1) show(at - 1);
+    else if (e.key === "ArrowRight" && pics.length > 1) show(at + 1);
+    else if (e.key === "Tab") {   // keep the keyboard inside the lightbox
+      var stops = [close, prev, next].filter(function (b) { return !b.hidden; });
+      var i = stops.indexOf(document.activeElement);
+      e.preventDefault();
+      stops[(i + (e.shiftKey ? -1 : 1) + stops.length) % stops.length].focus();
+    }
+  }, true);
 })();

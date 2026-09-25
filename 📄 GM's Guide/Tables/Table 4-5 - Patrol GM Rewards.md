@@ -1,5 +1,5 @@
 | GM Character Level | Experience Reward | Gold Reward |
-| --- | :---: | :---: |
+| :---: | :----------------------: | :---: |
 | 1 | 250 | 11g |
 | 2 | 250 | 19g |
 | 3 | 250 | 32g |

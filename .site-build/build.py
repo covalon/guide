@@ -88,9 +88,19 @@ class Note:
         return [c] if isinstance(c, str) else list(c)
 
 
+# Names sort without a leading "The" or "Kingdom of" (The Kingdom of Varceta sorts as Varceta), as in the
+# vault's bases and Datacore lists (their formulas use /^(the )?(kingdom of )?/i).
+SORT_PREFIX = re.compile(r"^(?:the )?(?:kingdom of )?", re.I)
+
+
+def sort_name(text):
+    return SORT_PREFIX.sub("", text)
+
+
 def slug(text):
-    """File and anchor names: letters and digits kept (any language), everything else becomes '-'."""
-    return re.sub(r"[^\w]+", "-", text).strip("-") or "page"
+    """File and anchor names: letters and digits kept (any language), apostrophes dropped (the-teachers-union,
+    not the-teacher-s-union), everything else becomes '-'."""
+    return re.sub(r"[^\w]+", "-", re.sub(r"['’‘`]", "", text)).strip("-") or "page"
 
 
 # Short addresses for some folders and pages; every other folder and page is its name in lower case,
@@ -146,6 +156,13 @@ for folders, group in _pinned.items():
     if main:
         main.url = "/".join(url_part(p) for p in folders) + "/index.html"
         FOLDER_HOME[folders] = main
+# A folder without a pinned overview whose note has the folder's own name (Locations/Armory District/
+# Armory District) makes that note the folder's page, too: /locations/armory-district/.
+for n in notes.values():
+    folders = tuple(n.folders)
+    if folders and folders not in FOLDER_HOME and n.title == folders[-1]:
+        n.url = "/".join(url_part(p) for p in folders) + "/index.html"
+        FOLDER_HOME[folders] = n
 
 # pictures and other files kept in the vault (e.g. 🖼️ Assets), found by file name like Obsidian does
 FILE_EXT = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg", ".avif", ".bmp", ".pdf"}
@@ -293,7 +310,8 @@ def base_cell(n, col, spec):
     return list_markup(n.prop(col))
 
 
-def render_base(src):
+def render_base(src, this=None):
+    """A base's table views. `this` is the note the base is in (for filters like District.linksTo(this.file))."""
     spec = yaml.safe_load(src) or {}
     filters = (spec.get("filters") or {}).get("and", [])
     rows = list(notes.values())
@@ -302,6 +320,13 @@ def render_base(src):
         m = re.match(r'file\.hasTag\("([^"]+)"\)', f)
         if m:
             rows = [n for n in rows if m.group(1) in n.tags]
+            continue
+        m = re.match(r'(\w[\w ]*?)\.linksTo\(this(?:\.file)?\)$', f.strip())
+        if m:   # the property links to the note the base is in
+            key = m.group(1)
+            targets = (this.name, this.title) if this else ()
+            rows = [n for n in rows if (district_of(n) if key.lower() == "district" else
+                    (lambda r: (re.search(r"\[\[([^\]|#]+)", r) or re.match(r"(.*)", r)).group(1).strip())(value_text(n.prop(key, "")))) in targets]
             continue
         m = re.match(r'(\w[\w ]*?)\s*==\s*"([^"]+)"', f)
         if m:
@@ -317,14 +342,14 @@ def render_base(src):
             if key.startswith("formula."):
                 expr = str((spec.get("formulas") or {}).get(key[8:], ""))
                 src_key = "file.name" if expr.startswith("file.name") else expr.split(".")[0]
-                strip_the = "/^the /i" in expr
+                strip_the = "/^the /i" in expr or "/^(the )?(kingdom of )?/i" in expr
             else:
                 src_key, strip_the = key, False
 
             def keyf(n, src_key=src_key, strip_the=strip_the):
                 raw = n.prop(src_key)
                 v = n.name if src_key == "file.name" else (raw.isoformat() if isinstance(raw, datetime.date) else plain(raw))
-                return (re.sub(r"^the ", "", v, flags=re.I) if strip_the else v).casefold()
+                return (sort_name(v) if strip_the else v).casefold()
             view_rows.sort(key=keyf, reverse=s.get("direction", "ASC") == "DESC")
         head = ["Name" if c == "file.name" else names.get(c, c) for c in cols]
         out.append("| " + " | ".join(head) + " |")
@@ -386,37 +411,34 @@ def inline_props(note, props):
     return "".join(lines)
 
 
-def render_note_aside(n, stack, inline=(), hide=(), props_first=False):
+def props_with_images(props, images):
+    """The properties box and the note's pictures side by side (2/3 and 1/3), the pictures fitted to the
+    box's height: the imagesBesideProps option (the guilds' heraldry)."""
+    if not images:
+        return props
+    return ('<div class="covalon-props-row">\n\n' + props + '\n\n<div class="covalon-props-images">\n\n'
+            + "\n\n".join(images) + '\n\n</div>\n\n</div>')
+
+
+def render_note_aside(n, stack, inline=(), hide=(), props_first=False, beside=False, own_page=False):
     """A note's text, its images floated right, a line per `inline` property, and its properties box
     (after the text, or before it with props_first)."""
-    lines = render(n, stack).split("\n")
+    lines = render(n, stack, bases=own_page).split("\n")
     images = [l for l in lines if IMAGE_LINE.match(l)]
     text = "\n".join(l for l in lines if not IMAGE_LINE.match(l)).strip()
     pics = ('<div class="covalon-entry-images">\n\n' + "\n\n".join(images) + '\n\n</div>\n\n') if images else ""
     props = props_panel(n, list(hide) + list(inline))
+    if beside:
+        props, pics = props_with_images(props, images), ""
     return ('<div class="covalon-entry-body">\n\n' + pics + (props + "\n\n" if props_first else "") + text + "\n\n"
             + inline_props(n, inline) + ("" if props_first else props) + '\n\n</div>')
 
 
-def render_entries(src, stack):
-    if "MissionOverview" in src:
-        return render_missions()
-    m = re.search(r'<CovalonNote\b[^>]*\bname="([^"]+)"', src)
-    if m:   # one note (a district on the Gazetteer) in the aside layout, without a heading
-        n = find(m.group(1))
-        return ('<div class="covalon-entry-aside covalon-note">\n\n' + render_note_aside(n, stack, jsx_prop(src, "inline") or []) + '\n\n</div>') if n else ""
-
+def entries_for(src):
+    """The notes a <CovalonEntries … /> block lists, in its order (tag, district, sortBy)."""
     tag = jsx_prop(src, "tag")
-    if not tag:
-        return ""
     district = jsx_prop(src, "district")
     sort_by = jsx_prop(src, "sortBy") or "name"
-    level = int((jsx_prop(src, "heading") or "h2")[1])
-    hide = jsx_prop(src, "hide") or []
-    tagline = jsx_prop(src, "tagline")
-    if tagline:
-        hide = list(hide) + [tagline]
-    inline = jsx_prop(src, "inline") or []   # shown as a line of text after the note's text (aside layout)
     entries = tagged(tag)
     if district:
         entries = [n for n in entries if district_of(n) == district]
@@ -424,22 +446,62 @@ def render_entries(src, stack):
     if sort_by == "name":
         keyf = lambda n: n.name.casefold()
     elif sort_by == "title":
-        keyf = lambda n: re.sub(r"^the ", "", n.name, flags=re.I).casefold()
+        keyf = lambda n: sort_name(n.name).casefold()
     else:
         keyf = lambda n: (lambda v: v.isoformat() if isinstance(v, datetime.date) else plain(v))(n.prop(sort_prop))
     entries.sort(key=keyf)
+    return entries
+
+
+def render_list(src):
+    """<CovalonList tag="…" where="…" is="…" after="…" />: the tagged notes as a bulleted list of links."""
+    tag, where, is_, after = (jsx_prop(src, k) for k in ("tag", "where", "is", "after"))
+    rows = [n for n in tagged(tag or "") if not where or plain(n.prop(where)).strip().casefold() == (is_ or "").strip().casefold()]
+    rows.sort(key=lambda n: sort_name(n.name).casefold())
+    lines = []
+    for n in rows:
+        extra = n.prop(after) if after else None
+        lines.append(f"- [[{n.name}]]" + (f" ({list_markup(extra)})" if extra not in (None, "", []) else ""))
+    return "\n".join(lines)
+
+
+def render_entries(src, stack):
+    if "MissionOverview" in src:
+        return render_missions()
+    if "<CovalonList" in src:
+        return render_list(src)
+    m = re.search(r'<CovalonNote\b[^>]*\bname="([^"]+)"', src)
+    if m:   # one note (a district on the Gazetteer) in the aside layout, without a heading
+        n = find(m.group(1))
+        return ('<div class="covalon-entry-aside covalon-note">\n\n' + render_note_aside(n, stack, jsx_prop(src, "inline") or [], props_first=bool(re.search(r"<CovalonNote\b[^>]*\bpropsFirst\b", src))) + '\n\n</div>') if n else ""
+
+    tag = jsx_prop(src, "tag")
+    if not tag:
+        return ""
+    level = int((jsx_prop(src, "heading") or "h2")[1])
+    hide = jsx_prop(src, "hide") or []
+    tagline = jsx_prop(src, "tagline")
+    if tagline:
+        hide = list(hide) + [tagline]
+    inline = jsx_prop(src, "inline") or []   # shown as a line of text after the note's text (aside layout)
+    entries = entries_for(src)
     aside = bool(re.search(r"<CovalonEntries\b[^>]*\baside\b", src))
     props_first = bool(re.search(r"<CovalonEntries\b[^>]*\bpropsFirst\b", src))
+    beside = bool(re.search(r"<CovalonEntries\b[^>]*\bimagesBesideProps\b", src))
     out = []
     for n in entries:
         if aside:   # heading, the note's text, its properties; the note's images floated right beside them
-            lines = shift_to(render(n, stack), level + 1).split("\n")
+            lines = shift_to(render(n, stack, bases=False), level + 1).split("\n")
             images = [l for l in lines if IMAGE_LINE.match(l)]
             text = "\n".join(l for l in lines if not IMAGE_LINE.match(l)).strip()
             pics = ('<div class="covalon-entry-images">\n\n' + "\n\n".join(images) + '\n\n</div>\n\n') if images else ""
             props = props_panel(n, list(hide) + list(inline))
-            out.append('<div class="covalon-entry covalon-entry-aside">\n\n' + f"{'#' * level} [[{n.name}]]\n\n" + tagline_html(n, tagline)
-                       + '<div class="covalon-entry-body">\n\n' + pics + (props + "\n\n" if props_first else "") + text + "\n\n"
+            if beside:
+                props, pics = props_with_images(props, images), ""
+            # the images come first, then the heading, so they float from the top of the entry
+            out.append('<div class="covalon-entry covalon-entry-aside">\n\n<div class="covalon-entry-body">\n\n' + pics
+                       + f"{'#' * level} [[{n.name}]]\n\n" + tagline_html(n, tagline)
+                       + (props + "\n\n" if props_first else "") + text + "\n\n"
                        + inline_props(n, inline) + ("" if props_first else props) + '\n\n</div>\n\n</div>')
             continue
         part = [f"{'#' * level} [[{n.name}]]", tagline_html(n, tagline), props_panel(n, hide), shift_to(render(n, stack), level + 1)]
@@ -537,13 +599,18 @@ EMBED = re.compile(r"(?m)^[ \t]*!\[\[([^\]|#]+)(?:#([^\]|]+))?(?:\|[^\]]*)?\]\][
 CODE = re.compile(r"```(base|datacorejsx)\n(.*?)\n```", re.S)
 
 
-def render(note, stack=()):
+# A note's own bases (with the heading just above them), left out where the note is shown inside a list
+# on another page, e.g. a district's "## Locations" table on the Gazetteer, which lists them already.
+OWN_BASE = re.compile(r"(?m)(^#{1,6} [^\n]*\n+)?^```base\n.*?\n```[ \t]*\n?", re.S)
+
+
+def render(note, stack=(), bases=True):
     if note.name in stack:
         return f"*(embed loop: {note.name})*"
     stack = stack + (note.name,)
-    body = align_pictures(note, note.body)
+    body = align_pictures(note, note.body if bases else OWN_BASE.sub("", note.body))
     # blank lines around the generated HTML, so a heading right after the code block stays a heading
-    text = CODE.sub(lambda m: "\n\n" + (render_base(m.group(2)) if m.group(1) == "base" else render_entries(m.group(2), stack)) + "\n\n", body)
+    text = CODE.sub(lambda m: "\n\n" + (render_base(m.group(2), note) if m.group(1) == "base" else render_entries(m.group(2), stack)) + "\n\n", body)
     out, pos = [], 0
     for m in EMBED.finditer(text):
         out.append(text[pos:m.start()])
@@ -600,7 +667,7 @@ TYPES = {"Deities": "Deity", "Guilds": "Guild", "Locations": "Location", "Civili
 # Properties left out of the search filters: long text, dates, and lists too long to be useful as filters
 NOT_FILTERS = {"order", "description", "tagline", "expedition summary", "roleplay channel",
                "edicts", "anathema", "membership requirements", "goals", "values", "date", "journey date",
-               "finale first cleared", "population", "created by", "cleric spells", "members", "leader",
+               "finale first cleared", "expedition log", "population", "created by", "cleric spells", "members", "leader",
                "pantheon members", "guild headquarters of", "primary exports", "finale", "fate"}
 
 
@@ -646,7 +713,7 @@ def search_markup(note, title, snippet=""):
     esc = lambda t: html.escape(str(t), quote=True)
     tags = [f'<span hidden data-pagefind-meta="title">{esc(title)}</span>',
             f'<span hidden data-pagefind-meta="snippet">{esc(snippet)}</span>' if snippet else "",
-            f'<span hidden data-pagefind-sort="title">{esc(PREFIX.sub("", title).removeprefix("The ").strip())}</span>',
+            f'<span hidden data-pagefind-sort="title">{esc(sort_name(PREFIX.sub("", title)).strip())}</span>',
             f'<span hidden data-pagefind-filter="Type">{esc(page_type(note))}</span>']
     for k, v in note.props.items():
         if k.lower() in HIDDEN_PROPS or k.startswith("_") or v in (None, "", []):
@@ -718,7 +785,8 @@ def wikilink_html(m):
         label = alias or target
         return f'<span class="internal-link is-unresolved">{label}</span>'
     if note:
-        label = alias or (note.title + (f" > {heading}" if heading else ""))
+        # without an alias the link reads as written, like in Obsidian (📍 pins and all), minus any folder path
+        label = alias or (target.strip().split("/")[-1] + (f" > {heading}" if heading else ""))
         url = href_to(note.url) if note.url != CUR["url"] else ""
     else:   # [[#Heading]] on the same page
         label, url = alias or heading, ""
@@ -1012,22 +1080,49 @@ def natural(s):
     return [int(t) if t.isdigit() else t.casefold() for t in re.split(r"(\d+)", s)]
 
 
-def tree_html(current):
-    """The file tree in the sidebar (like Obsidian's file explorer)."""
+# Entries whose overview lists them in an order of its own (sortBy a property: Adventure Types by Order,
+# Expeditions by Journey Date, Campaign Events by date) keep that order in the sidebar too, instead of A–Z.
+OVERVIEW_RANK = {}   # note name -> its place on its overview (filled in by collect_entry_order)
+
+
+def tree_root():
     root = {}
     for n in notes.values():
         node = root
         for f in n.folders:
             node = node.setdefault(("folder", f), {})
         node[("file", n.title)] = n
+    return root
 
-    def order(item):
-        (kind, name), child = item
-        first = FIRST.index(name) if name in FIRST else len(FIRST)
-        pinned = 0 if isinstance(child, Note) and child.name.startswith("📍") else 1
-        last = 1 if kind == "folder" and name == "Tables" else 0   # a guide's Tables folder goes below its chapters
-        chapter = NAV[child.name][2] if isinstance(child, Note) and child.name in NAV else 999   # guide chapters in reading order
-        return (first, last, pinned, kind != "folder", chapter, natural(name))
+
+def tree_order(item):
+    """The sidebar's order (also used by the entry pages' previous / next links)."""
+    (kind, name), child = item
+    first = FIRST.index(name) if name in FIRST else len(FIRST)
+    pinned = 0 if isinstance(child, Note) and (child.name.startswith("📍") or FOLDER_HOME.get(tuple(child.folders)) is child) else 1   # a folder's own page first
+    last = 1 if kind == "folder" and name == "Tables" else 0   # a guide's Tables folder goes below its chapters
+    chapter = NAV[child.name][2] if isinstance(child, Note) and child.name in NAV else 999   # guide chapters in reading order
+    ranked = OVERVIEW_RANK.get(child.name, 10**6) if isinstance(child, Note) else 10**6   # e.g. expeditions by journey date
+    return (first, last, pinned, kind != "folder", chapter, ranked, natural(sort_name(name)))   # then A–Z ignoring "The" and "Kingdom of"
+
+
+def sidebar_positions():
+    """Each note's place in the sidebar, top to bottom with every folder open."""
+    pos = {}
+    def walk(node):
+        for (kind, name), child in sorted(node.items(), key=tree_order):
+            if kind == "folder":
+                walk(child)
+            else:
+                pos[child.name] = len(pos)
+    walk(tree_root())
+    return pos
+
+
+def tree_html(current):
+    """The file tree in the sidebar (like Obsidian's file explorer)."""
+    root = tree_root()
+    order = tree_order
 
     def walk(node, depth, path=()):
         out = []
@@ -1045,7 +1140,10 @@ def tree_html(current):
             else:
                 cls = "tree-item tree-file" + (" is-active" if child is current else "")
                 pin = '<span class="tree-pin" aria-hidden="true">📍</span>' if child.name.startswith("📍") else ""   # pinned overviews keep their pin, as in Obsidian
-                out.append(f'<a class="{cls}{" is-pinned" if pin else ""}" href="{href_to(child.url)}">{pin}{html.escape(name)}</a>')
+                icon = re.match(r"^([^\w\s'\"(\[]+)\s+(.*)$", name)   # a note named with an icon (🔎 How to Search) keeps it, set like the pins
+                label = (f'<span class="tree-pin" aria-hidden="true">{html.escape(icon.group(1))}</span>{html.escape(icon.group(2))}'
+                         if icon and not pin else html.escape(name))
+                out.append(f'<a class="{cls}{" is-pinned" if pin or icon else ""}" href="{href_to(child.url)}">{pin}{label}</a>')
         return "".join(out)
     return f'<nav class="site-tree">{walk(root, 0)}</nav>'
 
@@ -1070,16 +1168,28 @@ def favicon(root):
 
 
 def setting(name, label, options):
-    buttons = "".join(f'<button type="button" class="site-setting-option" data-value="{v}">{lucide(icon)}{text}</button>'
+    buttons = "".join(f'<button type="button" class="site-setting-option" data-value="{v}">{icon if icon.startswith("<") else lucide(icon)}{text}</button>'
                       for v, icon, text in options)
     return (f'<div class="site-setting" data-setting="{name}"><div class="site-setting-label">{label}</div>'
             f'<div class="site-setting-options" role="group" aria-label="{label}">{buttons}</div></div>')
 
 
+# Fonts: sans serif (the default, the vault's usual look) or serif (the original Homebrewery guide's
+# fonts, the original-guide-fonts snippet). That snippet isn't bundled into style.css: the page adds it
+# only when "Serif" is picked, so nobody else downloads the fonts.
+SERIF_SNIPPET = "original-guide-fonts"
+FONTS_SETTING = setting("fonts", "Font", [
+    ("sans", '<span class="site-font-sample is-sans" aria-hidden="true">Aa</span>', "Sans serif"),
+    ("serif", '<span class="site-font-sample is-serif" aria-hidden="true">Aa</span>', "Serif")])
+
+
 # the settings pop-over behind the gear icon (site.js makes it work; choices are kept in the browser)
 SETTINGS = ('<div class="site-settings" hidden role="dialog" aria-label="Settings">'
             + setting("theme", "Appearance", [("light", "sun", "Light"), ("dark", "moon", "Dark"), ("auto", "monitor", "Auto")])
+            + setting("textSize", "Text size", [("small", "a-arrow-down", "Small"), ("default", "type", "Default"),
+                                                ("large", "a-arrow-up", "Large"), ("larger", "a-arrow-up", "Larger")])
             + setting("width", "Page width", [("readable", "align-center", "Readable"), ("wide", "move-horizontal", "Wide")])
+            + FONTS_SETTING
             + setting("spoilers", "Spoilers", [("hide", "eye-off", "Hidden"), ("show", "eye", "Shown")])
             + '<p class="site-setting-note">GM sections on the adventure type pages are hidden until you click them, unless spoilers are shown.</p>'
             + "</div>")
@@ -1144,7 +1254,7 @@ def breadcrumbs(note, title):
             crumbs.append(f'<span>{html.escape(folders[-1])}</span>')
             continue
         at = ""
-        if depth == len(note.folders) and not note.name.startswith("📍"):   # jump to this page's entry / chapter there
+        if depth == len(note.folders) and not is_overview(note):   # jump to this page's entry / chapter there
             anchor = NAV[note.name][1][NAV[note.name][2]][0] if note.name in NAV and NAV[note.name][0] == home.name else note.title
             at = "#" + heading_slug(anchor)
         crumbs.append(link(home.url + at, home.title))
@@ -1158,7 +1268,7 @@ def page(title, body_html, toc, current=None, extra_head="", search_page=False, 
     links = f'<link rel="stylesheet" href="{root}assets/{ASSET_VERSIONS["style.css"]}">'
     scripts = "".join(f'<script src="{root}assets/{ASSET_VERSIONS[js]}" defer></script>' for js in ("site.js", "search.js"))
     return f"""<!doctype html>
-<html lang="en" data-root="{root}">
+<html lang="en" data-root="{root}" data-serif-fonts="{root}assets/{ASSET_VERSIONS.get(SERIF_SNIPPET + '.css', '')}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -1166,7 +1276,7 @@ def page(title, body_html, toc, current=None, extra_head="", search_page=False, 
 {links}{scripts}{favicon(root)}{extra_head}
 </head>
 <body class="theme-light">
-<script>(function(){{var t=null;try{{t=localStorage.getItem("theme")}}catch(e){{}}if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.body.className=document.documentElement.className="theme-"+t;try{{if(localStorage.getItem("spoilers")==="show")document.documentElement.classList.add("show-spoilers");if(localStorage.getItem("width")==="wide")document.documentElement.classList.add("wide-mode")}}catch(e){{}}}})()</script>
+<script>(function(){{var t=null;try{{t=localStorage.getItem("theme")}}catch(e){{}}if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.body.className=document.documentElement.className="theme-"+t;try{{if(localStorage.getItem("spoilers")==="show")document.documentElement.classList.add("show-spoilers");if(localStorage.getItem("width")==="wide")document.documentElement.classList.add("wide-mode");var ts=localStorage.getItem("textSize");if(ts)document.documentElement.classList.add("text-"+ts);if(localStorage.getItem("fonts")==="serif"){{var fl=document.createElement("link");fl.rel="stylesheet";fl.id="serif-fonts";fl.href=document.documentElement.dataset.serifFonts;document.head.appendChild(fl)}}}}catch(e){{}}}})()</script>
 <div class="site">
   <aside class="site-sidebar site-left workspace-split mod-left-split">
     <div class="site-sidebar-top">
@@ -1212,17 +1322,71 @@ def collect_entry_styles():
             if one:
                 target = find(one.group(1))
                 if target:
-                    NOTE_STYLE.setdefault(target.name, {"aside": True, "tagline": None, "inline": jsx_prop(src, "inline") or []})
+                    NOTE_STYLE.setdefault(target.name, {"aside": True, "tagline": None, "inline": jsx_prop(src, "inline") or [],
+                                                         "props_first": bool(re.search(r"<CovalonNote\b[^>]*\bpropsFirst\b", src))})
                 continue
             tag = jsx_prop(src, "tag")
             if tag and "<CovalonEntries" in src:
                 ENTRY_STYLE.setdefault(tag, {"aside": bool(re.search(r"<CovalonEntries\b[^>]*\baside\b", src)),
                                              "props_first": bool(re.search(r"<CovalonEntries\b[^>]*\bpropsFirst\b", src)),
+                                             "beside": bool(re.search(r"<CovalonEntries\b[^>]*\bimagesBesideProps\b", src)),
                                              "tagline": jsx_prop(src, "tagline"), "inline": jsx_prop(src, "inline") or []})
 
 
+ENTRY_ORDER = {}   # entry note name -> (overview note, [entry notes in the overview's order], index)
+
+
+def collect_entry_order():
+    """Entry pages (a deity, a guild, a location …) get ← previous / next → links through the list on their
+    overview page (its CovalonEntries and CovalonNote blocks), in the order the sidebar lists them."""
+    for o in notes.values():
+        if is_overview(o):
+            ranked = [n for m in CODE.finditer(o.body) if m.group(1) == "datacorejsx" and "<CovalonEntries" in m.group(2)
+                      and jsx_prop(m.group(2), "tag") and (jsx_prop(m.group(2), "sortBy") or "name") not in ("name", "title")
+                      for n in entries_for(m.group(2))]
+            for i, n in enumerate(ranked):
+                OVERVIEW_RANK.setdefault(n.name, i)
+    pos = sidebar_positions()
+    for o in notes.values():
+        if not is_overview(o) or o.name in GUIDES or o.name == HOME_NOTE or o.path.relative_to(SRC).parts[0].startswith("📄"):
+            continue
+        order = []
+        for m in CODE.finditer(o.body):
+            if m.group(1) != "datacorejsx":
+                continue
+            src = m.group(2)
+            one = re.search(r'<CovalonNote\b[^>]*\bname="([^"]+)"', src)
+            if one:
+                n = find(one.group(1))
+                order += [n] if n else []
+            elif "<CovalonEntries" in src and jsx_prop(src, "tag"):
+                order += entries_for(src)
+        seen = []
+        for n in order:
+            if n not in seen:
+                seen.append(n)
+        seen.sort(key=lambda n: pos.get(n.name, len(pos)))   # in the sidebar's order, so the links match it
+        for i, n in enumerate(seen):
+            ENTRY_ORDER.setdefault(n.name, (o, seen, i))
+
+
+def entry_nav(name):
+    o, order, i = ENTRY_ORDER[name]
+    prev = nav_link(order[i-1].url, order[i-1].title, "prev") if i > 0 else ""
+    nxt = nav_link(order[i+1].url, order[i+1].title, "next") if i + 1 < len(order) else ""
+    cur = order[i].title
+    return (f'<nav class="chapter-nav entry-nav" data-pagefind-ignore><span class="prev">{prev}</span>'
+            f'<span class="current" title="{html.escape(cur)}">{html.escape(cur)}</span><span class="next">{nxt}</span></nav>')
+
+
+def is_overview(note):
+    """A pinned (📍) note that lists other notes (Guilds, the Gazetteer …). A pinned note that is itself an
+    entry on an overview (a district, pinned to the top of its folder) is still an entry page."""
+    return note.name.startswith("📍") and note.name not in NOTE_STYLE and not any(t in ENTRY_STYLE for t in note.tags)
+
+
 def entry_style(note):
-    if note.name.startswith("📍"):
+    if is_overview(note):
         return None
     return NOTE_STYLE.get(note.name) or next((st for tag, st in ENTRY_STYLE.items() if tag in note.tags), None)
 
@@ -1268,7 +1432,7 @@ def build_note(note):
     if style and style["aside"]:   # tagline, text with images floated right, inline properties, properties box at the bottom
         body = (tagline_html(note, style["tagline"]) + '<div class="covalon-entry covalon-entry-aside">\n\n'
                 + render_note_aside(note, (), style["inline"], [style["tagline"]] if style["tagline"] else [],
-                                    style.get("props_first", False)) + '\n\n</div>\n')
+                                    style.get("props_first", False), style.get("beside", False), own_page=True) + '\n\n</div>\n')
     elif style:                    # tagline, properties box, then the text
         hide = [style["tagline"]] if style["tagline"] else []
         body = ('<div class="covalon-entry">\n\n' + tagline_html(note, style["tagline"]) + props_panel(note, hide)
@@ -1288,8 +1452,12 @@ def build_note(note):
         nav = chapter_nav(note.name)
         pre_title = nav.replace('class="chapter-nav"', 'class="chapter-nav chapter-nav-top"', 1)
         parts = parts + [nav]
+    elif note.name in ENTRY_ORDER and len(ENTRY_ORDER[note.name][1]) > 1:   # entry pages: the next item on their overview
+        nav = entry_nav(note.name)
+        pre_title = nav.replace('class="chapter-nav entry-nav"', 'class="chapter-nav entry-nav chapter-nav-top"', 1)
+        parts = parts + [nav]
     content = "\n".join(p for p in parts if p)
-    if not note.name.startswith("📍"):   # overview pages repeat their entries' text, so they're left out of search
+    if not is_overview(note):   # overview pages repeat their entries' text, so they're left out of search
         content = f'<div data-pagefind-body>{search_markup(note, title, first_paragraph(soup))}{content}</div>'
     side = ""
     if note.name in GUIDES:   # the whole guide on one page: offer reading it a chapter at a time (right of the title)
@@ -1299,31 +1467,7 @@ def build_note(note):
                     f'{lucide("book-open")}<span>View in paged mode</span></a>')
     write(note.url, page(title, content, toc_html(soup, title), current=note, crumbs=breadcrumbs(note, title) + pre_title, title_side=side))
 
-
-HOME = """<!-- used only if the vault has no "📍 Home" note -->
-
-Welcome to the Covalon guides: everything you need to play in, or run games for, Covalon, a Pathfinder 2nd Edition living world campaign.
-
-## The guides
-
-- [[📍 Covalon Player's Guide|Covalon Player's Guide]]: the full player's guide on one page.
-- [[📍 Covalon GM's Guide|Covalon GM's Guide]]: the full guide for Dungeon Guides on one page.
-- [[📍 Adventure Types|Adventure Types]]: every kind of adventure Covalon runs.
-- <a class="internal-link" href="search/">Advanced search</a>: search every page, filtered by page type and properties (deity domains, soul seeds, districts and more).
-
-## The world
-
-- [[📍 Covalon Gazetteer|Covalon Gazetteer]]
-- [[📍 Guilds|Guilds]]
-- [[📍 Pre-Cataclysm Civilizations|Pre-Cataclysm Civilizations]]
-- [[📍 Expeditions|Expeditions]] and the [[📍 Mission Overview|Mission Overview]]
-- [[📍 Deities, Faith, and Ideologies|Deities, Faith, and Ideologies]]
-- [[📍 Campaign Events|Campaign Events]]
-
-<p class="site-credits">Some icons by Delapouite and Lorc from <a href="https://game-icons.net">game-icons.net</a>, licensed <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-"""
-
-SEARCH = """Search every page. See [[How to Search]] for guidance.
+SEARCH = """Search every page. See [[🔎 How to Search]] for guidance.
 
 <div id="search"></div>
 """
@@ -1344,7 +1488,7 @@ def main():
     enabled = json.loads(appearance.read_text()).get("enabledCssSnippets", []) if appearance.exists() else []
     (OUT / "assets").mkdir(parents=True)
     for name in enabled:
-        if (SRC / ".obsidian" / "snippets" / f"{name}.css").exists():
+        if name != SERIF_SNIPPET and (SRC / ".obsidian" / "snippets" / f"{name}.css").exists():
             SNIPPETS.append(name)
     for f in (HERE / "assets").iterdir():
         if f.is_file() and f.suffix != ".css":
@@ -1362,11 +1506,15 @@ def main():
     (OUT / "assets" / "style.css").write_text("\n".join(imports) + "\n\n" + body, encoding="utf-8")
     # Each asset's link carries a stamp of its contents (style.css?v=3f9a1c), so after a publish browsers
     # fetch the new version straight away instead of using a cached old one.
-    for name in ("style.css", "site.js", "search.js"):
+    serif = SRC / ".obsidian" / "snippets" / f"{SERIF_SNIPPET}.css"
+    if serif.exists():
+        shutil.copy(serif, OUT / "assets" / serif.name)
+    for name in ("style.css", "site.js", "search.js") + ((serif.name,) if serif.exists() else ()):
         digest = hashlib.sha256((OUT / "assets" / name).read_bytes()).hexdigest()[:10]
         ASSET_VERSIONS[name] = f"{name}?v={digest}"
 
     collect_entry_styles()
+    collect_entry_order()
     collect_linked_as()
     file_url(LOGO)
     for n in notes.values():

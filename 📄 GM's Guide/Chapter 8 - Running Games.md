@@ -52,7 +52,7 @@ After the session is concluded, please ping the @Servant Of Terra role. This gui
 Items must be distributed according to the following procedure:
 
 - 1: At the conclusion of the adventure, all players go to the [\#🧮dice-channel](https://discord.com/channels/802423566196539412/803952560708124714) and roll 1d100.
-- 2: The GM notes each result, then posts the loot table in #💰loot-chat.
+- 2: The GM notes each result, then posts the loot table in [\#💰loot-chat](https://discord.com/channels/802423566196539412/803177961817243649).
 - 3: Players, in order of highest D100 roll to lowest, claim items by typing !claim [item name].
 
 Players can select a maximum of one permanent item. Any permanent items left over after all players have claimed an item are lost, but consumables may be claimed by player choice or distributed by the GM.
@@ -82,7 +82,7 @@ If the player character has an affliction that doesn't show symptoms until a cer
 > Wereanimal curses can result in a player losing control of their character on the night of a full moon. In the event this takes place, you must create a ticket and add the afflicted player to the ticket. There you can talk with the staff team and player to come up with a fun, safe way for the curse to be resolved!
 
 ### Dungeon Summary
-A summary of your dungeon must be posted in the #📜dungeon-summary channel, with the following format:
+A summary of your dungeon must be posted in the [\#📜dungeon-summary](https://discord.com/channels/802423566196539412/805262222498201610) channel, with the following format:
 
 > [!example] Summary Format Example
 > Dungeon Name

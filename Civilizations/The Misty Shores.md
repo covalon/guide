@@ -1,20 +1,20 @@
 ---
 Tags:
-- covalon/civilization
+  - covalon/civilization
+_url: misty-shores
 Tagline: Not-so-secret pirate settlement
 Created by:
-- Seph
+  - Seph
 Government: The Eight Spokes (council of pirate captains)
 Population: humans, elves, dwarves
 Religions:
-- '[[Noctune]]'
-- '[[Riahn, He Who Eclipses the Stars|Riahn]]'
-- '[[Trella, The Night Sky|Trella]]'
+  - "[[Noctune]]"
+  - "[[Riahn, He Who Eclipses the Stars|Riahn]]"
+  - "[[Trella, The Night Sky|Trella]]"
 Primary Exports: fish, iron, cloth
 Geography: shoreline, mountains
 Fate: abandoned
 Covalon Status: unexplored
-_url: misty-shores
 ---
 Though once a major port for the kingdom of Vyrm, the Misty Shores were overtaken by pirates long ago. They settled in and made a crude facsimile of a society, which is exactly the way the pirate gangs preferred life.
 

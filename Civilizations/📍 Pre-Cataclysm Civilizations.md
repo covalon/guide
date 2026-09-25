@@ -5,7 +5,7 @@ filters:
   and:
     - file.hasTag("covalon/civilization")
 formulas:
-  SortTitle: file.name.replace(/^the /i, '')
+  SortTitle: file.name.replace(/^(the )?(kingdom of )?/i, '')
 views:
   - type: table
     name: Civilizations

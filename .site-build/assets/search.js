@@ -248,7 +248,7 @@
         return Promise.all(res.results.slice(0, sorted ? 300 : 40).map(function (r) { return r.data(); })).then(function (data) {
           if (mine !== seq) return;
           if (sorted) {
-            var key = function (d) { return String(d.meta.title || "").replace(/^the /i, ""); };
+            var key = function (d) { return String(d.meta.title || "").replace(/^(the )?(kingdom of )?/i, ""); };
             data.sort(function (a, b) { return byName(key(a), key(b)) * (sortSel.value === "desc" ? -1 : 1); });
             data = data.slice(0, 40);
           }

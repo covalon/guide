@@ -1,5 +1,6 @@
 [
   "datacore",
   "callout-manager",
-  "image-converter"
+  "image-converter",
+  "obisidian-note-linker"
 ]

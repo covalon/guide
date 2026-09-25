@@ -5,7 +5,7 @@ filters:
   and:
     - file.hasTag("covalon/guild")
 formulas:
-  SortTitle: file.name.replace(/^the /i, '')
+  SortTitle: file.name.replace(/^(the )?(kingdom of )?/i, '')
 properties:
   file.name:
     displayName: Guild
@@ -30,6 +30,6 @@ views:
 ```datacorejsx
 const { CovalonEntries } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
-  return <CovalonEntries tag="covalon/guild" sortBy="title" aside />;
+  return <CovalonEntries tag="covalon/guild" sortBy="title" aside imagesBesideProps />;
 }
 ```

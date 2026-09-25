@@ -7,7 +7,7 @@ filters:
   and:
     - file.hasTag("covalon/deity")
 formulas:
-  SortTitle: file.name.replace(/^the /i, '')
+  SortTitle: file.name.replace(/^(the )?(kingdom of )?/i, '')
 properties:
   Divine Sanctification:
     displayName: Sanctification

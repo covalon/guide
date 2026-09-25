@@ -87,21 +87,21 @@ If you have concerns about a Dungeon Guide's rulings during an adventure, you ma
 
 ## Getting Started
 Ready to start playing? Please read the following for instructions on getting started in Covalon.
-#### 1. Read the Player Expectations
+### 1. Read the Player Expectations
 We take the safety of our community very seriously, and require all players to know our Player Expectations section of this guide.
-#### 2. Introduce Yourself
+### 2. Introduce Yourself
 If you'd like, you can tell us a little bit about yourself in the [\#👋player-introductions](https://discord.com/channels/802423566196539412/802423566196539415) channel. We would love to know more about the player behind the character.
-#### 3. Build Your Character
+### 3. Build Your Character
 The Character Creation section of this guide will walk you through the steps to create a character appropriate for the Covalon campaign. You'll want to brush up on the Campaign Lore section of this guide before writing your character's backstory.
 
 If you need assistance, feel free to ask questions in the [\#🐣newbie-help-and-discussion](https://discord.com/channels/802423566196539412/988493362371891250) channel.
-#### 4. Submit Your Character for Approval
+### 4. Submit Your Character for Approval
 Once you've finished creating your character, [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) and send a link of your digital character sheet to the Administrators and Moderators (see the next section for sheet suggestions). If there are any problems with your character, they will walk you through the necessary steps to correct them.
-#### 5. Introduce Your Character
+### 5. Introduce Your Character
 After your character has been approved, introduce them by making a post in the [\#🎭character-introductions](https://discord.com/channels/802423566196539412/1440126240030851203) channel. Feel free to add artwork, and please include any information about them that you wish to be publicly known, such as their age, ancestry, and gender.
-#### 6. Add Your Character to the Citizen Registry
+### 6. Add Your Character to the Citizen Registry
 The Citizen Registry in [\#👥citizen-directories](https://discord.com/channels/802423566196539412/874598427105828874) is used to keep track of character levels, classes, and other useful information. Please update this information as you gain levels or change aspects about your character.
-#### 7. Begin Playing!
+### 7. Begin Playing!
 You're all set to begin participating in the Covalon campaign! Head into one of the role play channels or look for an adventure to join!
 
 > [!note] First Steps into Covalon

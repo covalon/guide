@@ -28,8 +28,8 @@ Months later, the baron passed away due to natural causes, and the responsibilit
 
 ```base
 formulas:
-  SortTitle: file.name.replace(/^the /i, '')
-  DistrictSort: District.toString().replace(/[\[\]]/g, '').replace(/^the /i, '')
+  SortTitle: file.name.replace(/^(the )?(kingdom of )?/i, '')
+  DistrictSort: District.toString().replace(/[\[\]]/g, '').replace(/^(the )?(kingdom of )?/i, '')
 filters:
   and:
     - file.hasTag("covalon/location")
@@ -51,7 +51,7 @@ views:
 ```datacorejsx
 const { CovalonNote } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
-  return <CovalonNote name="City District" />;
+  return <CovalonNote name="📍 City District" propsFirst />;
 }
 ```
 
@@ -65,7 +65,7 @@ return function View() {
 ```datacorejsx
 const { CovalonNote } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
-  return <CovalonNote name="Market District" />;
+  return <CovalonNote name="📍 Market District" propsFirst />;
 }
 ```
 
@@ -79,7 +79,7 @@ return function View() {
 ```datacorejsx
 const { CovalonNote } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
-  return <CovalonNote name="Encore District" />;
+  return <CovalonNote name="📍 Encore District" propsFirst />;
 }
 ```
 
@@ -93,7 +93,7 @@ return function View() {
 ```datacorejsx
 const { CovalonNote } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
-  return <CovalonNote name="Armory District" />;
+  return <CovalonNote name="📍 Armory District" propsFirst />;
 }
 ```
 
@@ -107,7 +107,7 @@ return function View() {
 ```datacorejsx
 const { CovalonNote } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
-  return <CovalonNote name="Lake District" />;
+  return <CovalonNote name="📍 Lake District" propsFirst />;
 }
 ```
 
@@ -121,7 +121,7 @@ return function View() {
 ```datacorejsx
 const { CovalonNote } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
-  return <CovalonNote name="Heart's Forest" />;
+  return <CovalonNote name="📍 Heart's Forest" propsFirst />;
 }
 ```
 
@@ -135,7 +135,7 @@ return function View() {
 ```datacorejsx
 const { CovalonNote } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
-  return <CovalonNote name="The Docks" />;
+  return <CovalonNote name="📍 The Docks" propsFirst />;
 }
 ```
 
@@ -149,7 +149,7 @@ return function View() {
 ```datacorejsx
 const { CovalonNote } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
-  return <CovalonNote name="The Farm" />;
+  return <CovalonNote name="📍 The Farm" propsFirst />;
 }
 ```
 
@@ -163,14 +163,14 @@ return function View() {
 ```datacorejsx
 const { CovalonNote } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
-  return <CovalonNote name="Mountain View District" />;
+  return <CovalonNote name="📍 Mountain View District" propsFirst />;
 }
 ```
 ## River Run District
 ```datacorejsx
 const { CovalonNote } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
-  return <CovalonNote name="River Run District" />;
+  return <CovalonNote name="📍 River Run District" propsFirst />;
 }
 ```
 
@@ -184,7 +184,7 @@ return function View() {
 ```datacorejsx
 const { CovalonNote } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
-  return <CovalonNote name="North Gate District" />;
+  return <CovalonNote name="📍 North Gate District" propsFirst />;
 }
 ```
 
@@ -198,7 +198,7 @@ return function View() {
 ```datacorejsx
 const { CovalonNote } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
-  return <CovalonNote name="Expedition Districts and Outside Covalon" />;
+  return <CovalonNote name="📍 Expedition Districts and Outside Covalon" propsFirst />;
 }
 ```
 

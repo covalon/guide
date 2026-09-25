@@ -1,19 +1,19 @@
 ---
 Tags:
-- covalon/guild
-Headquarters: '[[Covalon Public Library]]'
+  - covalon/guild
+Headquarters: "[[Covalon Public Library]]"
 Leader: Ateia
 Members:
-- Cinna
-- Phillip Stildori
-- Tox Faelbite
-- Einheri
-- Apprentice
-- Thaniel
+  - Cinna
+  - Phillip Stildori
+  - Tox Faelbite
+  - Einheri
+  - Apprentice
+  - Thaniel
 Membership Requirements: trained in two Recall Knowledge skills
-Goals: improve the general populace's knowledge by improving the organization, state, and wealth of knowledge of Covalon's library. Find new knowledge to fill the shelves.
-Values: know and adhere to the book organization system. Uphold the order of the library - messes should be cleaned up, books and scrolls returned to their proper places, and indoor voices used.
-Anathema: leave the library in a mess or destroy any of its property. Keep new information from the library. Remove or hide any existing information
+Goals: improve the general populace's knowledge by improving the organization, state, and wealth of knowledge of Covalon's library
+Values: the pursuit and preservation of knowledge through written word, keeping the library organized
+Anathema: destroy library property, keep new information from the library, remove or hide existing information
 ---
 A guild dedicated to the maintenance and prosperity of Covalon's Library, through the organization and creation of reading material and the upkeep of its property.
 
