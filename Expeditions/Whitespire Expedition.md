@@ -2,7 +2,7 @@
 Tags:
 - covalon/expedition
 Civilization: '[[Whitespire]]'
-Soul Seed: forge aspect
+Soul Seed: '||forge aspect||'
 Finale: The Stonewyrm
 Journey Date: 2026-03-19
 Finale First Cleared: 2026-04-18
@@ -54,4 +54,4 @@ Our bravest fighters delved below, and slew the beast in its adamantine lair. Wi
 *Summary to come.*
 
 ## Soul Seed
-Completing the finale unlocks the **Forge aspect** for your Soul Seed (see [[Chapter 3 - Covalon Gameplay#Table 3-2 Aspect Category Unlocks|Table 3-2]] and [[Chapter 3 - Covalon Gameplay#Table 3-3 Soul Seed Upgrade Unlocks|3-3]] in the [[Chapter 3 - Covalon Gameplay#Soul Seeds|Player's Guide]]).
+Completing the finale unlocks the ||Forge aspect|| for your Soul Seed (see [[Chapter 3 - Covalon Gameplay#Table 3-2 Aspect Category Unlocks|Table 3-2]] and [[Chapter 3 - Covalon Gameplay#Table 3-3 Soul Seed Upgrade Unlocks|3-3]] in the [[Chapter 3 - Covalon Gameplay#Soul Seeds|Player's Guide]]).

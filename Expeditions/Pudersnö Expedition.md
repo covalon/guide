@@ -2,7 +2,7 @@
 Tags:
 - covalon/expedition
 Civilization: '[[Pudersnö]]'
-Soul Seed: beast aspect
+Soul Seed: '||beast aspect||'
 Finale: The Mpeshi King
 Journey Date: 2022-12-14
 Finale First Cleared: 2023-02-05
@@ -44,4 +44,4 @@ Little did we know how baaaad things would get. At the crescendo of our reclamat
 *Summary to come.*
 
 ## Soul Seed
-Completing the finale unlocks the **Beast aspect** for your Soul Seed (see [[Chapter 3 - Covalon Gameplay#Table 3-2 Aspect Category Unlocks|Table 3-2]] and [[Chapter 3 - Covalon Gameplay#Table 3-3 Soul Seed Upgrade Unlocks|3-3]] in the [[Chapter 3 - Covalon Gameplay#Soul Seeds|Player's Guide]]).
+Completing the finale unlocks the ||Beast aspect|| for your Soul Seed (see [[Chapter 3 - Covalon Gameplay#Table 3-2 Aspect Category Unlocks|Table 3-2]] and [[Chapter 3 - Covalon Gameplay#Table 3-3 Soul Seed Upgrade Unlocks|3-3]] in the [[Chapter 3 - Covalon Gameplay#Soul Seeds|Player's Guide]]).

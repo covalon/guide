@@ -83,8 +83,10 @@
   padding: var(--size-4-1);
   border-radius: var(--radius-s);
   cursor: pointer;
+  backdrop-filter: blur(10px);
 }
-.site-settings-toggle:hover, .site-settings-toggle[aria-expanded="true"], .site-menu-button:hover { background-color: var(--background-modifier-hover); color: var(--text-normal); }
+.site-settings-toggle:hover, .site-settings-toggle[aria-expanded="true"], .site-menu-button:hover { 
+  background-color: var(--background-modifier-hover); color: var(--text-normal); }
 
 /* search box */
 .site-search {
@@ -806,3 +808,45 @@ html.lightbox-open { overflow: hidden; }
 .covalon-toast.is-failed { border-left-color: var(--text-error, #c33); }
 .covalon-toast svg { width: 1.1em; height: 1.1em; color: var(--covalon-accent, var(--color-accent)); flex: none; }
 @media (prefers-reduced-motion: reduce) { .covalon-toast { transition: none; } }
+
+/* ||inline spoilers||: blurred like the GM sections until clicked (site.js), on a tinted pill with an
+   eye icon so it's clearly something to click. Settings → Spoilers → Shown shows them all. */
+.covalon-inline-spoiler {
+  border-radius: 4px;
+  padding: 0 0.25em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  transition: background-color 0.15s ease;
+}
+.covalon-inline-spoiler-text { transition: filter 200ms; }
+.markdown-rendered .covalon-inline-spoiler a { display: inline; }   /* links inside keep to the pill's line */
+html:not(.show-spoilers) .covalon-inline-spoiler:not(.is-revealed) {
+  cursor: pointer;
+  user-select: none;
+  background-color: color-mix(in srgb, var(--covalon-accent, var(--color-accent)) 16%, transparent);
+  outline: 1px dashed color-mix(in srgb, var(--covalon-accent, var(--color-accent)) 55%, transparent);
+  outline-offset: -1px;
+}
+html:not(.show-spoilers) .covalon-inline-spoiler:not(.is-revealed)::before {   /* the eye, not blurred */
+  content: "";
+  display: inline-block;
+  width: 0.95em;
+  height: 0.95em;
+  margin-right: 0.25em;
+  vertical-align: -0.1em;
+  background-color: var(--covalon-accent, var(--color-accent));
+  -webkit-mask: var(--covalon-eye) center / contain no-repeat;
+  mask: var(--covalon-eye) center / contain no-repeat;
+}
+html:not(.show-spoilers) .covalon-inline-spoiler:not(.is-revealed) .covalon-inline-spoiler-text {
+  filter: blur(5px);
+  pointer-events: none;
+}
+html:not(.show-spoilers) .covalon-inline-spoiler:not(.is-revealed):hover {
+  background-color: color-mix(in srgb, var(--covalon-accent, var(--color-accent)) 28%, transparent);
+}
+html:not(.show-spoilers) .covalon-inline-spoiler:not(.is-revealed):hover .covalon-inline-spoiler-text { filter: blur(4px); }
+.covalon-inline-spoiler:focus-visible { outline: 2px solid var(--covalon-accent, var(--color-accent)); outline-offset: 1px; }
+html.show-spoilers .covalon-inline-spoiler,
+.covalon-inline-spoiler.is-revealed { background-color: color-mix(in srgb, var(--covalon-accent, var(--color-accent)) 10%, transparent); }
+:root { --covalon-eye: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E"); }

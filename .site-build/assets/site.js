@@ -427,3 +427,21 @@
     wrap.appendChild(b);
   });
 })();
+
+
+// ||inline spoilers||: hidden until clicked (or Enter / Space); Settings → Spoilers → Shown shows them all
+(function () {
+  document.querySelectorAll(".covalon-inline-spoiler").forEach(function (sp) {
+    var reveal = function (e) {
+      if (sp.classList.contains("is-revealed") || document.documentElement.classList.contains("show-spoilers")) return;
+      e.preventDefault();
+      e.stopPropagation();   // the first click only uncovers it (a link inside works on the next click)
+      sp.classList.add("is-revealed");
+      sp.removeAttribute("role");
+      sp.removeAttribute("tabindex");
+      sp.removeAttribute("aria-label");
+    };
+    sp.addEventListener("click", reveal, true);
+    sp.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") reveal(e); });
+  });
+})();

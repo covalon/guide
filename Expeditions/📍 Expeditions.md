@@ -1,12 +1,12 @@
 The expeditions Covalon has launched to reclaim the lost civilizations of Elleaterra. Each note covers the base camp, the three missions and the finale for one location, along with the Soul Seed unlock it grants.
 
 ```base
-formulas:
-  JourneyDate: note["Journey Date"].format("MMMM Do, YYYY")
-  FinaleCleared: note["Finale First Cleared"].format("MMMM Do, YYYY")
 filters:
   and:
     - file.hasTag("covalon/expedition")
+formulas:
+  JourneyDate: note["Journey Date"].format("MMMM Do, YYYY")
+  FinaleCleared: note["Finale First Cleared"].format("MMMM Do, YYYY")
 properties:
   file.name:
     displayName: Expedition Location
@@ -21,9 +21,8 @@ views:
       - file.name
       - formula.JourneyDate
       - formula.FinaleCleared
-      - Soul Seed
       - Finale
-      - Civilization
+      - Soul Seed
     sort:
       - property: Journey Date
         direction: ASC

@@ -2,7 +2,7 @@
 Tags:
 - covalon/expedition
 Civilization: '[[The Kingdom of Varceta]]'
-Soul Seed: fire aspect
+Soul Seed: '||fire aspect||'
 Finale: The Great Seabird
 Journey Date: 2025-02-14
 Finale First Cleared: 2025-03-15
@@ -40,4 +40,4 @@ The Heart of Terra pushed to destroy it, but it struggled. Covalonians present f
 *Summary to come.*
 
 ## Soul Seed
-Completing the finale unlocks the **Fire aspect** for your Soul Seed (see [[Chapter 3 - Covalon Gameplay#Table 3-2 Aspect Category Unlocks|Table 3-2]] and [[Chapter 3 - Covalon Gameplay#Table 3-3 Soul Seed Upgrade Unlocks|3-3]] in the [[Chapter 3 - Covalon Gameplay#Soul Seeds|Player's Guide]]).
+Completing the finale unlocks the ||Fire aspect|| for your Soul Seed (see [[Chapter 3 - Covalon Gameplay#Table 3-2 Aspect Category Unlocks|Table 3-2]] and [[Chapter 3 - Covalon Gameplay#Table 3-3 Soul Seed Upgrade Unlocks|3-3]] in the [[Chapter 3 - Covalon Gameplay#Soul Seeds|Player's Guide]]).

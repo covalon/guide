@@ -2,7 +2,7 @@
 Tags:
 - covalon/expedition
 Civilization: '[[Taltain]]'
-Soul Seed: soul aspect
+Soul Seed: '||soul aspect||'
 Finale: The Assembled Council of Taltain
 Journey Date: 2022-03-02
 Finale First Cleared: 2022-04-23
@@ -60,4 +60,4 @@ Finally, their efforts paid off - they learned that there was a Vessel of the Ma
 *Summary to come.*
 
 ## Soul Seed
-Completing the finale unlocks the **Soul aspect** for your Soul Seed (see [[Chapter 3 - Covalon Gameplay#Table 3-2 Aspect Category Unlocks|Table 3-2]] and [[Chapter 3 - Covalon Gameplay#Table 3-3 Soul Seed Upgrade Unlocks|3-3]] in the [[Chapter 3 - Covalon Gameplay#Soul Seeds|Player's Guide]]).
+Completing the finale unlocks the ||Soul aspect|| for your Soul Seed (see [[Chapter 3 - Covalon Gameplay#Table 3-2 Aspect Category Unlocks|Table 3-2]] and [[Chapter 3 - Covalon Gameplay#Table 3-3 Soul Seed Upgrade Unlocks|3-3]] in the [[Chapter 3 - Covalon Gameplay#Soul Seeds|Player's Guide]]).

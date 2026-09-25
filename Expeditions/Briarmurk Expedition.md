@@ -2,7 +2,7 @@
 Tags:
 - covalon/expedition
 Civilization: '[[The Briarmurk]]'
-Soul Seed: plant aspect
+Soul Seed: '||plant aspect||'
 Finale: Asira, Rashai, and Terina, the three corrupted priestesses of Terrateotl
 Journey Date: 2025-12-12
 Finale First Cleared: 2026-02-01
@@ -42,4 +42,4 @@ As our camp was established, missions were quickly under way to find the Maw Ves
 *Summary to come.*
 
 ## Soul Seed
-Completing the finale unlocks the **Plant aspect** for your Soul Seed (see [[Chapter 3 - Covalon Gameplay#Table 3-2 Aspect Category Unlocks|Table 3-2]] and [[Chapter 3 - Covalon Gameplay#Table 3-3 Soul Seed Upgrade Unlocks|3-3]] in the [[Chapter 3 - Covalon Gameplay#Soul Seeds|Player's Guide]]).
+Completing the finale unlocks the ||Plant aspect|| for your Soul Seed (see [[Chapter 3 - Covalon Gameplay#Table 3-2 Aspect Category Unlocks|Table 3-2]] and [[Chapter 3 - Covalon Gameplay#Table 3-3 Soul Seed Upgrade Unlocks|3-3]] in the [[Chapter 3 - Covalon Gameplay#Soul Seeds|Player's Guide]]).

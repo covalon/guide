@@ -356,7 +356,8 @@ def render_base(src, this=None):
         out.append("| " + " | ".join(head) + " |")
         out.append("| " + " | ".join(":--" for _ in cols) + " |")
         for n in view_rows:
-            cells = [f"[[{n.name}]]" if c == "file.name" else base_cell(n, c, spec).replace("\n", " ") for c in cols]
+            # (spoilers become their HTML here, before the cells' pipes are escaped for the table)
+            cells = [f"[[{n.name}]]" if c == "file.name" else spoiler_html(base_cell(n, c, spec).replace("\n", " ")) for c in cols]
             out.append("| " + " | ".join(c.replace("|", "\\|") for c in cells) + " |")
         out.append("")
     # on the site these tables get a filter box, a drop-down per short column and click-to-sort headers
@@ -681,12 +682,17 @@ def page_type(note):
     return TYPES.get(top, top)
 
 
-def first_paragraph(soup, limit=240):
+def first_paragraph(soup, limit=240, spoiler=lambda text: "▒▒▒▒"):
     """The page's first paragraph of running text (not in a callout, table or properties box), shortened,
-    shown under a search result when there are no search words to show matches for."""
+    shown under a search result when there are no search words to show matches for. ||Spoilers|| in it
+    are shown by `spoiler` (blanked out by default)."""
     for p in soup.find_all("p"):
         if p.find_parent(class_=re.compile(r"^(callout|covalon-props|covalon-tagline|table-wrapper|chapter-nav)")) or p.find_parent("table"):
             continue
+        if p.select(".covalon-inline-spoiler"):
+            p = BeautifulSoup(str(p), "html.parser").p
+            for sp in p.select(".covalon-inline-spoiler"):
+                sp.replace_with(spoiler(" ".join(sp.get_text(" ").split())))
         text = " ".join(p.get_text(" ").split())
         if len(text) < 40:
             continue
@@ -722,6 +728,7 @@ def search_markup(note, title, snippet=""):
         if k.lower() in HIDDEN_PROPS or k.startswith("_") or v in (None, "", []):
             continue
         values = [plain_case(x) for x in (v if isinstance(v, list) else [v])]
+        values = [SPOILER.sub(r"\1", x) for x in values]   # ||spoilers|| are filters like any other value
         # long text makes a poor drop-down: those properties are filed under "~Name", which the
         # search's [property:text] syntax still searches but "Add filter" leaves out
         short = k.lower() not in NOT_FILTERS and all(0 < len(x) <= 40 for x in values)
@@ -813,13 +820,23 @@ def outside_code(text, fn):
     return "".join(out)
 
 
+# ||spoilers||, as in Discord (and Obsidian's Inline spoilers plugin): hidden until clicked
+SPOILER = re.compile(r"(?<!\|)\|\|(?=\S)(.+?)(?<=\S)\|\|(?!\|)")
+
+
+def spoiler_html(text):
+    return SPOILER.sub(r'<span class="covalon-inline-spoiler" tabindex="0" role="button" aria-label="Spoiler: click to show" '
+                       r'title="Spoiler: click to show"><span class="covalon-inline-spoiler-text">\1</span></span>', text)
+
+
 def inline_markdown(text):
-    """Obsidian's extra syntax turned into things markdown understands: wikilinks, ==highlights==, %%comments%%."""
+    """Obsidian's extra syntax turned into things markdown understands: wikilinks, ==highlights==, %%comments%%,
+    ||spoilers||."""
     def fix(t):
         t = re.sub(r"%%.*?%%", "", t, flags=re.S)
         t = WIKILINK.sub(wikilink_html, t)
         t = re.sub(r"(?<!=)==(?=\S)(.+?)(?<=\S)==(?!=)", r"<mark>\1</mark>", t)
-        return t
+        return spoiler_html(t)
     return outside_code(text, fix)
 
 
@@ -1497,7 +1514,11 @@ def preview_head(note, title, soup):
     page_url = absolute(note.url)
     lines, buttons = [], [link_button("Open in the guide", page_url)]
     tagline = plain_case(note.prop("Tagline") or note.prop("Description") or "")
-    blurb = first_paragraph(soup, 300)
+    hidden = []   # ||spoilers|| in the first paragraph: Discord spoilers on the card
+    def keep_spoiler(text):
+        hidden.append(text)
+        return f"\u2063{len(hidden) - 1}\u2063"
+    blurb = first_paragraph(soup, 300, keep_spoiler)
     if note.name == HOME_NOTE:
         blurb = first_paragraph(soup, 300) or "The Covalon guides."
         buttons = [link_button(notes[g].title, absolute(notes[g].url)) for g in GUIDES if g in notes]
@@ -1519,7 +1540,8 @@ def preview_head(note, title, soup):
     if tagline:
         lines.append("*" + md_escape(shorten(tagline, 150)) + "*")
     if blurb and blurb != tagline:
-        lines.append(md_escape(blurb))
+        lines.append(re.sub("\u2063(\\d+)\u2063", lambda m: "||" + md_escape(hidden[int(m.group(1))]) + "||", md_escape(blurb)))
+    blurb = re.sub("\u2063\\d+\u2063", "▒▒▒▒", blurb)   # the plain description (other apps) keeps them hidden
     # key properties (entries)
     for tag, keys in PREVIEW_PROPS.items():
         if tag in note.tags:
@@ -1528,8 +1550,8 @@ def preview_head(note, title, soup):
                 v = note.prop(k)
                 if v not in (None, "", []):
                     facts.append(f"**{md_escape(k)}** {md_escape(shorten(plain_case(v), 80))}")
-            if facts:
-                lines.append(" · ".join(facts))
+            if facts:   # ||spoilers|| in a property stay Discord spoilers
+                lines.append(re.sub(r"\\\|\\\|(.+?)\\\|\\\|", r"||\1||", " · ".join(facts)))
             break
     # chapters: their main sections; a whole guide: its chapters
     if note.name in NAV or note.name in GUIDES:

@@ -2,7 +2,7 @@
 Tags:
 - covalon/expedition
 Civilization: '[[Alatar]]'
-Soul Seed: emotion aspect
+Soul Seed: '||emotion aspect||'
 Finale: Alekin, the traitorous governor of Alatar Nova
 Journey Date: 2025-09-11
 Finale First Cleared: 2025-10-24
@@ -47,4 +47,4 @@ Alatar Expedition is complete! See the [\#📙expedition-logs](https://discord.c
 *Summary to come.*
 
 ## Soul Seed
-Completing the finale unlocks the **Emotion aspect** for your Soul Seed (see [[Chapter 3 - Covalon Gameplay#Table 3-2 Aspect Category Unlocks|Table 3-2]] and [[Chapter 3 - Covalon Gameplay#Table 3-3 Soul Seed Upgrade Unlocks|3-3]] in the [[Chapter 3 - Covalon Gameplay#Soul Seeds|Player's Guide]]).
+Completing the finale unlocks the ||Emotion aspect|| for your Soul Seed (see [[Chapter 3 - Covalon Gameplay#Table 3-2 Aspect Category Unlocks|Table 3-2]] and [[Chapter 3 - Covalon Gameplay#Table 3-3 Soul Seed Upgrade Unlocks|3-3]] in the [[Chapter 3 - Covalon Gameplay#Soul Seeds|Player's Guide]]).

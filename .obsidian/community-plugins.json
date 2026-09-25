@@ -2,5 +2,6 @@
   "datacore",
   "callout-manager",
   "image-converter",
-  "obisidian-note-linker"
+  "obisidian-note-linker",
+  "inline-spoilers"
 ]
