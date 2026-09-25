@@ -1,30 +1,29 @@
 ---
 Tags:
-- covalon/deity
-Edicts: Partake in the ocean's bounty, sing songs in groups, share in both the joy and despair of those close to you
-Anathema: Pollute or desecrate the ocean, keep positive or negative feelings for others a secret, enforce the laws of land cities on the ocean
-Pantheons:
-- '[[The Circle of Stars]]'
+  - covalon/deity
+Edicts: partake in the ocean's bounty, sing songs in groups, share in both the joy and despair of those close to you
+Anathema: pollute or desecrate the ocean, keep positive or negative feelings for others a secret, enforce the laws of land cities on the ocean
 Divine Font:
-- harm
-- heal
-Divine Sanctification:
-- none
+  - harm
+  - heal
+Divine Sanctification: none
 Divine Skill:
-- performance
+  - performance
 Favored Weapon:
-- trident
+  - trident
 Domains:
-- change
-- moon
-- passion
-- water
+  - change
+  - moon
+  - passion
+  - water
 Alternate Domains:
-- delirium
+  - delirium
 Cleric Spells:
-- '1st: hydraulic push'
-- '3rd: aqueous orb'
-- '5th: mariner''s curse'
+  - "1st: hydraulic push"
+  - "3rd: aqueous orb"
+  - "5th: mariner's curse"
+Pantheons:
+  - "[[The Circle of Stars]]"
 ---
 As fickle as the tides he created, Noctune is a god who favors himself and not much else. He is the patron god of many of the oceans' creatures and creatures with strong ties to the sea, including merfolk, undine, and azarketi. He is wholly unpredictable and has constant mood swings, appearing as wrathful as a stormy sea at one moment and as calm as a still sound the next. Those who follow him are instructed to share in Noctune's anguish as much as they share in his joy, and will often go swimming on calm days or shut themselves off from the rest of the world when the seas are choppy and rough.
 

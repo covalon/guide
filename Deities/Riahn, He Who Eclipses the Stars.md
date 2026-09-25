@@ -3,15 +3,12 @@ Tags:
 - covalon/deity
 Aliases:
 - Riahn
-Edicts: Find hidden secrets, make and uphold deals, hide your worship, help those in need
-Anathema: Stealing from those with little wealth, selling secrets, not upholding a deal, giving up on your comrades
+Edicts: find hidden secrets, make and uphold deals, hide your worship, help those in need
+Anathema: stealing from those with little wealth, selling secrets, not upholding a deal, giving up on your comrades
 Divine Font:
 - harm
 - heal
-Divine Sanctification:
-- can choose
-- holy
-- unholy
+Divine Sanctification: can choose holy or unholy
 Divine Skill:
 - thievery
 Favored Weapon:

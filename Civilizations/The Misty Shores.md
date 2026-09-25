@@ -1,7 +1,7 @@
 ---
 Tags:
 - covalon/civilization
-Tagline: Not-so-secret pirate settlement.
+Tagline: Not-so-secret pirate settlement
 Created by:
 - Seph
 Government: The Eight Spokes (council of pirate captains)
@@ -14,6 +14,7 @@ Primary Exports: fish, iron, cloth
 Geography: shoreline, mountains
 Fate: abandoned
 Covalon Status: unexplored
+_url: misty-shores
 ---
 Though once a major port for the kingdom of Vyrm, the Misty Shores were overtaken by pirates long ago. They settled in and made a crude facsimile of a society, which is exactly the way the pirate gangs preferred life.
 

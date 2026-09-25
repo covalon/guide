@@ -25,16 +25,15 @@ Covalon adventurers set up camp in a sandy strait several miles outside the dome
 
 The Lord of Gears appeared to be a massive construct housed in a workshop in the center of the dome, his size only matched by his tactical intellect. A fervent ally of the Maw, he possessed a Vessel hidden in his workshop, and was an enormous threat in his own right. A group of brave adventurers faced him in combat, and emerged victorious after a grueling battle, having reclaimed the city of Ratchethallow.
 
-![Covalon's outpost in Ratchethallow Designed by Rinka.](https://raw.githubusercontent.com/covalon/covalon-guide/gh-pages/assets/covalon/PlayersGuide/ExpeditionLog/RachethallowOutpost.webp)
+![[RachethallowOutpost.webp|Covalon's outpost in Ratchethallow Designed by Rinka.]]
 ## Base Camp
 *Summary to come.*
 ## Missions
-### Mission A: Machine Hunter
-Catch the enemy spy before it can report back to its master!
-### Mission B: Factory Infiltration
-Infiltrate an automated factory to figure out what the enemy is building in here.
-### Mission C: Assault the Outpost
-Assault the heavily guarded outpost and steal or destroy whatever they’re protecting in there.
+| Mission | Summary |
+| :-- | :-- |
+| A: Machine Hunter | Catch the enemy spy before it can report back to its master! |
+| B: Factory Infiltration | Infiltrate an automated factory to figure out what the enemy is building in here. |
+| C: Assault the Outpost | Assault the heavily guarded outpost and steal or destroy whatever they’re protecting in there. |
 ## Finale
 **Boss:** The Lord of Gears
 

@@ -47,18 +47,15 @@ Finally, their efforts paid off - they learned that there was a Vessel of the Ma
 
 > [!clear]
 
-![Covalon's outpost in Taltain. Designed by Sheas.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/ExpeditionLog/TaltainOutpost.webp)
+![[TaltainOutpost.webp|Covalon's outpost in Taltain. Designed by Sheas.]]
 ## Base Camp
 *Summary to come.*
 ## Missions
-### Mission A: Nighttime Ambush
-Set a trap for the enemy patrols to weaken Taltain’s forces.
-### Mission B: Gather Information
-Go undercover as Taltain citizens to learn as much about the enemy as possible.
-
-*This mission has a heavy emphasis on skill challenges and reputation systems.*
-### Mission C: Palace Infiltration
-Stealth your way into the old palaces of Taltain and explore them without getting caught.
+| Mission | Summary |
+| :-- | :-- |
+| A: Nighttime Ambush | Set a trap for the enemy patrols to weaken Taltain’s forces. |
+| B: Gather Information | Go undercover as Taltain citizens to learn as much about the enemy as possible.<br>*This mission has a heavy emphasis on skill challenges and reputation systems.* |
+| C: Palace Infiltration | Stealth your way into the old palaces of Taltain and explore them without getting caught. |
 ## Finale
 **Boss:** The Assembled Council of Taltain
 

@@ -3,13 +3,11 @@ Tags:
 - covalon/deity
 Aliases:
 - Seraphion
-Edicts: Take pride in your appearance, wear gemstones, consider the needs of those you have authority over, accept responsibility for your actions
-Anathema: Refuse to listen to someone's point of view, disrespect a gemstone, deny support to those under your care, neglect your duty to those you serve
+Edicts: take pride in your appearance, wear gemstones, consider the needs of those you have authority over, accept responsibility for your actions
+Anathema: refuse to listen to someone's point of view, disrespect a gemstone, deny support to those under your care, neglect your duty to those you serve
 Divine Font:
 - heal
-Divine Sanctification:
-- can choose
-- holy
+Divine Sanctification: can choose holy
 Divine Skill:
 - diplomacy
 Favored Weapon:

@@ -1,15 +1,12 @@
 ---
 Tags:
 - covalon/deity
-Edicts: Seek love whether romantic or otherwise but never pursue romance unrequited, make decisions with the heart and not the mind, take every opportunity for a dramatic reveal
-Anathema: Stifling feelings from yourself or others in favor of reason, hiding your presence by magical means, kill someone you consider an emotional rival
+Edicts: seek love whether romantic or otherwise but never pursue romance unrequited, make decisions with the heart and not the mind, take every opportunity for a dramatic reveal
+Anathema: stifling feelings from yourself or others in favor of reason, hiding your presence by magical means, kill someone you consider an emotional rival
 Divine Font:
 - harm
 - heal
-Divine Sanctification:
-- can choose
-- holy
-- unholy
+Divine Sanctification: can choose holy or unholy
 Divine Skill:
 - society
 Favored Weapon:

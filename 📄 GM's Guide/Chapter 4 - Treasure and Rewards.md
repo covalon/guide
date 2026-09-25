@@ -4,9 +4,9 @@
 Selecting loot for your adventure is a critical part of its design! Below, you will find the rules and guidelines for selecting loot and treasure for your Covalon adventures. Keep in mind the theme of your dungeon, and take a look through the available items and equipment in order to select thematically appropriate loot.
 
 The total value of loot for each APL value can be found in [[Chapter 4 - Treasure and Rewards#Table 4-1 Loot values for Non-Patrols|Table 4-1]] and [[Chapter 4 - Treasure and Rewards#Table 4-2 Loot values for Patrols|4-2]]. Underneath, you will find loot guidelines to ensure your submission will be approved!
-##### Table 4-1: Loot values for Non-Patrols
+#### Table 4-1: Loot values for Non-Patrols
 ![[Table 4-1 - Loot values for Non-Patrols]]
-##### Table 4-2: Loot values for Patrols
+#### Table 4-2: Loot values for Patrols
 ![[Table 4-2 - Loot values for Patrols]]
 
 Keep in mind that the above tables are for a 6 person party. You will need to adjust for a lower number of party members if you are running for fewer than 6 players! You can do this by dividing the above figures by 6, and multiplying the resulting number by the total number of players you will be running for.

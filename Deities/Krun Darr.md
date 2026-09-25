@@ -1,15 +1,12 @@
 ---
 Tags:
 - covalon/deity
-Edicts: Use your power to change the world around you, relish in the presence and sound of lightning, encourage those who change themselves
-Anathema: Waste energy or effort, consider yourself or another restricted by their form
+Edicts: use your power to change the world around you, relish in the presence and sound of lightning, encourage those who change themselves
+Anathema: waste energy or effort, consider yourself or another restricted by their form
 Divine Font:
 - harm
 - heal
-Divine Sanctification:
-- can choose
-- holy
-- unholy
+Divine Sanctification: can choose holy or unholy
 Divine Skill:
 - athletics
 Favored Weapon:

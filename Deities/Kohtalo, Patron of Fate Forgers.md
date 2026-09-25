@@ -3,14 +3,12 @@ Tags:
 - covalon/deity
 Aliases:
 - Kohtalo
-Edicts: Better yourself by your own efforts, pursue fame and glory for your achievements, crafting, reward yourself for your achievements
-Anathema: Abandoning projects or work, accepting charity, victimizing the weak or helpless, accepting bad circumstances, complacency or not having an ambitious life goal
+Edicts: better yourself by your own efforts, pursue fame and glory for your achievements, crafting, reward yourself for your achievements
+Anathema: abandoning projects or work, accepting charity, victimizing the weak or helpless, accepting bad circumstances, complacency or not having an ambitious life goal
 Divine Font:
 - harm
 - heal
-Divine Sanctification:
-- can choose
-- holy
+Divine Sanctification: can choose holy
 Divine Skill:
 - crafting
 Favored Weapon:

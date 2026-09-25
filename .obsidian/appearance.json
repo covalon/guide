@@ -4,5 +4,6 @@
     "image-captions",
     "parchment-background"
   ],
-  "theme": "moonstone"
+  "theme": "moonstone",
+  "accentColor": ""
 }

@@ -1,33 +1,30 @@
 ---
 Tags:
-- covalon/deity
+  - covalon/deity
 Aliases:
-- Golgolgoss
-Edicts: Bury a seed or body every day, protect new life, teach others to survive
-Anathema: Create constructs, end life needlessly, disrespect the dead
-Pantheons:
-- '[[The Cabal of Everlasting Rest]]'
+  - Golgolgoss
+Edicts: bury a seed or body every day, protect new life, teach others to survive
+Anathema: create constructs, end life needlessly, disrespect the dead
 Divine Font:
-- harm
-- heal
-Divine Sanctification:
-- can choose
-- holy
-- unholy
+  - harm
+  - heal
+Divine Sanctification: can choose holy or unholy
 Divine Skill:
-- survival
+  - survival
 Favored Weapon:
-- hatchet
+  - hatchet
 Domains:
-- death
-- decay
-- nature
+  - death
+  - decay
+  - nature
 Alternate Domains:
-- undeath
+  - undeath
 Cleric Spells:
-- '1st: summon plant or fungus'
-- '4th: bursting bloom'
-- '6th: tangling creepers'
+  - "1st: summon plant or fungus"
+  - "4th: bursting bloom"
+  - "6th: tangling creepers"
+Pantheons:
+  - "[[The Cabal of Everlasting Rest]]"
 ---
 Some say Golgolgoss came from the first sunbleached skull, others say they sprouted with the first tree, but those who know of the deity can agree they have been watching over the cycle of life and death from the beginning. Appearing as a giant figure shrouded in a cloak of leaves with a head made of many different skulls in the shape of a majestic moose skull, they stand vigil over nature's role in the world. Despite their appearance and duties, they are a Jolly being with a laugh that sounds like dry leaves in the wind.
 

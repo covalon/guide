@@ -4,12 +4,19 @@ Covalon's major multitable events, in chronological order.
 filters:
   and:
     - file.hasTag("covalon/event")
+formulas:
+  EventDate: note["Date"].format("MMMM Do, YYYY")
+properties:
+  formula.EventDate:
+    displayName: Date
+  file.name:
+    displayName: Event
 views:
   - type: table
     name: Events
     order:
       - file.name
-      - Date
+      - formula.EventDate
     sort:
       - property: Date
         direction: ASC

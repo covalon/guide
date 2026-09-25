@@ -31,16 +31,11 @@ Our investigations ultimately led us to face down a diabolical general named Yaz
 ## Base Camp
 *Summary to come.*
 ## Missions
-### Mission A: Ritual of Locating
-Join forces with a devil to help locate the Maw Vessel.
-### Mission B: Playing Both Sides
-While the Angels and Devils are busy fighting each other, we might be able to use that to our advantage to get our hands on some intel about Verndhelt’s situation.
-
-*This mission focuses on skill challenges and influence encounters.*
-### Mission C: Search the Sinkhole
-Protect the civilian search party as they attempt to map out the giant sinkhole.
-
-*This mission focuses on Hexploration.*
+| Mission | Summary |
+| :-- | :-- |
+| A: Ritual of Locating | Join forces with a devil to help locate the Maw Vessel. |
+| B: Playing Both Sides | While the Angels and Devils are busy fighting each other, we might be able to use that to our advantage to get our hands on some intel about Verndhelt’s situation.<br>*This mission focuses on skill challenges and influence encounters.* |
+| C: Search the Sinkhole | Protect the civilian search party as they attempt to map out the giant sinkhole.<br>*This mission focuses on Hexploration.* |
 ## Finale
 **Boss:** Archdevil Yazeri and Celestial Court Marshal Solarius
 

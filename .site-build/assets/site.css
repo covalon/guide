@@ -1,0 +1,420 @@
+/* The site's frame around the notes: left sidebar (title, search, light/dark switch, file tree),
+   the note in the middle, table of contents on the right. Styled after Obsidian's own sidebars.
+   The notes themselves are styled by base.css and the vault's snippets, not here. */
+
+.site {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr) 260px;
+  min-height: 100vh;
+}
+.site-sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: var(--background-secondary);
+  font-size: var(--font-ui-small);
+  color: var(--text-muted);
+  padding: var(--size-4-4) var(--size-4-3);
+  scrollbar-width: thin;
+}
+.site-left { border-right: 1px solid var(--background-modifier-border); }
+.site-right { border-left: 1px solid var(--background-modifier-border); }
+.site-main { min-width: 0; }
+
+/* header: site name and the light/dark switch */
+.site-header { position: relative; display: flex; align-items: center; gap: var(--size-4-2); margin-bottom: var(--size-4-3); }
+.site-title {
+  flex: 1;
+  font-size: 1.35rem;
+  font-weight: var(--font-bold);
+  color: var(--h1-color);
+  text-decoration: none;
+}
+.site-settings-toggle, .site-menu-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  padding: var(--size-4-1);
+  border-radius: var(--radius-s);
+  cursor: pointer;
+}
+.site-settings-toggle:hover, .site-settings-toggle[aria-expanded="true"], .site-menu-button:hover { background-color: var(--background-modifier-hover); color: var(--text-normal); }
+
+/* search box */
+.site-search {
+  display: flex;
+  align-items: center;
+  gap: var(--size-4-2);
+  margin-bottom: var(--size-4-4);
+  padding: var(--size-4-1) var(--size-4-2);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-s);
+  background-color: var(--background-modifier-form-field);
+}
+.site-search .svg-icon { --icon-size: 15px; color: var(--text-faint); }
+.site-search input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: none;
+  font: inherit;
+  color: var(--text-normal);
+}
+
+/* file tree (like Obsidian's file explorer) */
+.site-tree { display: flex; flex-direction: column; }
+.tree-item {
+  display: flex;
+  align-items: center;
+  gap: var(--size-4-1);
+  padding: 3px var(--size-4-2);
+  border-radius: var(--radius-s);
+  color: var(--text-muted);
+  text-decoration: none;
+  line-height: var(--line-height-tight);
+  cursor: pointer;
+}
+.tree-item:hover { background-color: var(--background-modifier-hover); color: var(--text-normal); }
+.tree-pin { font-size: 0.9em; margin-inline-end: 0.15em; }
+.tree-item.is-active { background-color: var(--background-modifier-active-hover); color: var(--text-normal); font-weight: var(--font-medium); }
+.tree-folder > summary { list-style: none; font-weight: var(--font-medium); }
+.tree-folder > summary::-webkit-details-marker { display: none; }
+.tree-folder > summary .svg-icon { --icon-size: 14px; color: var(--text-faint); transition: transform 100ms ease-in-out; }
+.tree-folder[open] > summary .svg-icon { transform: rotate(90deg); }
+.tree-children {
+  margin-inline-start: 13px;
+  padding-inline-start: var(--size-4-1);
+  border-inline-start: 1px solid var(--background-modifier-border);
+}
+.tree-children > .tree-file { padding-inline-start: var(--size-4-3); }
+
+/* table of contents (like Obsidian's outline) */
+.site-panel-title {
+  font-size: var(--font-ui-smaller);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-faint);
+  margin: var(--size-4-2) var(--size-4-2) var(--size-4-2);
+}
+.site-toc ul { list-style: none; margin: 0; padding: 0; }
+.site-toc a {
+  display: block;
+  padding: 3px var(--size-4-2);
+  border-radius: var(--radius-s);
+  color: var(--text-muted);
+  text-decoration: none;
+  line-height: var(--line-height-tight);
+}
+.site-toc a:hover { background-color: var(--background-modifier-hover); color: var(--text-normal); }
+.site-toc a.is-active { color: var(--text-normal); background-color: var(--background-modifier-active-hover); }
+.site-toc .toc-depth-1 a { padding-inline-start: 20px; }
+.site-toc .toc-depth-2 a { padding-inline-start: 32px; }
+.site-toc .toc-depth-3 a { padding-inline-start: 44px; }
+
+/* headings leave room for the sticky nothing-above when jumped to */
+.markdown-rendered [id] { scroll-margin-top: var(--size-4-6); }
+
+/* chapter navigation (← previous | chapter | next →) */
+/* the links' own padding sits outside the tables' edge, so their words line up with the tables */
+.markdown-rendered .chapter-nav {
+  --chapter-nav-pad: var(--size-4-4);
+  margin-inline: calc(min(0px, (100% - var(--covalon-table-width)) / 2) - var(--chapter-nav-pad));
+}
+.chapter-nav {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: stretch;
+  gap: var(--size-4-2);
+  margin-block: var(--size-4-4);
+  font-size: var(--font-smaller);
+}
+.chapter-nav .current { align-self: center; text-align: center; font-weight: var(--font-semibold); max-width: 40ch; }
+/* previous / next: the whole box is the link, not just the words. Names that don't fit on one line
+   are cut short with "…" (the full name shows on hover). */
+.chapter-nav :is(.prev, .next) > a {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  height: 100%;
+  box-sizing: border-box;
+  padding: var(--size-4-3) var(--chapter-nav-pad, var(--size-4-4));
+  border-radius: var(--radius-m);
+  text-decoration: none;
+  transition: background-color 100ms;
+}
+.chapter-nav .chapter-nav-name, .chapter-nav .current {
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.chapter-nav .next > a { justify-content: flex-end; }
+.chapter-nav-arrow { flex: none; }
+.chapter-nav :is(.prev, .next) > a:hover { background-color: var(--background-modifier-hover); }
+
+/* the settings pop-over under the gear icon */
+.site-settings {
+  position: absolute;
+  top: calc(100% + var(--size-4-1));
+  right: 0;
+  z-index: 30;
+  width: 250px;
+  padding: var(--size-4-3);
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  color: var(--text-normal);
+}
+.site-settings[hidden] { display: none; }
+.site-setting + .site-setting, .site-setting-note + .site-setting { margin-top: var(--size-4-3); }
+.site-setting-label {
+  margin-bottom: var(--size-4-1);
+  font-size: var(--font-ui-smaller);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-faint);
+}
+.site-setting-options {
+  display: flex;
+  padding: 2px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m);
+  background: var(--background-modifier-form-field);
+}
+.site-setting-option {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--size-4-1);
+  padding: 3px var(--size-4-2);
+  border: none;
+  border-radius: var(--radius-s);
+  background: none;
+  font: inherit;
+  font-size: var(--font-ui-small);
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.site-setting-option .svg-icon { --icon-size: 14px; }
+.site-setting-option:hover { color: var(--text-normal); background: var(--background-modifier-hover); }
+.site-setting-option.is-active { color: var(--text-normal); background: var(--background-modifier-active-hover); }
+.site-setting-note { margin: var(--size-4-2) 0 0; font-size: var(--font-ui-smaller); color: var(--text-faint); line-height: var(--line-height-tight); }
+/* spoilers: the GM section of an adventure type page is blurred until clicked
+   (or always shown, with Spoilers: Shown in the settings) */
+.covalon-spoiler { position: relative; }
+html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed) { cursor: pointer; }
+html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoiler-reveal { color: var(--link-color-hover); }
+.covalon-spoiler-content {
+  filter: blur(7px);
+  user-select: none;
+  pointer-events: none;
+  transition: filter 200ms;
+}
+.covalon-spoiler-reveal {
+  position: absolute;
+  z-index: 2;
+  top: min(6rem, 40%);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--size-4-2);
+  padding: var(--size-4-2) var(--size-4-4);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 99px;
+  background: var(--background-primary);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  font: inherit;
+  font-size: var(--font-ui-small);
+  color: var(--text-normal);
+  cursor: pointer;
+}
+.covalon-spoiler-reveal:hover { color: var(--link-color-hover); }
+.covalon-spoiler-reveal .svg-icon { --icon-size: 16px; }
+:is(.covalon-spoiler.is-revealed, html.show-spoilers .covalon-spoiler) > .covalon-spoiler-content {
+  filter: none;
+  user-select: auto;
+  pointer-events: auto;
+}
+:is(.covalon-spoiler.is-revealed, html.show-spoilers .covalon-spoiler) > .covalon-spoiler-reveal { display: none; }
+
+.site-credits { margin-top: var(--size-4-8); font-size: var(--font-smaller); color: var(--text-faint); }
+
+/* the page title at the top of "On this page" */
+.site-toc .toc-title a { font-weight: var(--font-semibold); color: var(--text-normal); }
+
+/* filterable tables (the Bases tables): filter box and sortable headers. The table sticks out 1.5rem
+   past the text on both sides (less on narrow screens, always keeping 2rem from the edge), and one
+   taller than 85% of the screen scrolls inside its box with its header row pinned to the top. */
+.site-main { container-type: inline-size; }
+.covalon-filterable, .chapter-nav {   /* the chapter navigation gets the same extra width */
+  --covalon-table-width: min(calc(100cqw - 4rem), calc(100% + 3rem));
+  margin-inline: min(0px, calc((100% - var(--covalon-table-width)) / 2));
+}
+.covalon-filter-bar { display: flex; flex-wrap: wrap; gap: var(--size-4-2); align-items: center; margin: var(--size-4-4) 0 var(--size-4-2); }
+.covalon-filter-bar input {
+  flex: 1 1 12rem;
+  font: inherit;
+  font-size: var(--font-ui-small);
+  padding: var(--size-4-1) var(--size-4-2);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-s);
+  background: var(--background-modifier-form-field);
+  color: var(--text-normal);
+}
+.covalon-filter-count { font-size: var(--font-ui-small); color: var(--text-faint); }
+.covalon-table-box { margin-block: var(--p-spacing); }
+.covalon-table-box > .table-wrapper { max-height: 85vh; overflow: auto; overscroll-behavior: auto; }
+.covalon-table-box table { width: 100%; margin: 0; }
+.covalon-table-box thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  /* the header's tint mixed into the page colour, fully solid, so rows don't show through it while scrolling */
+  background-color: color-mix(in srgb, var(--table-header-border-color) 60%, var(--background-primary)) !important;
+  /* the table's shared (collapsed) borders stay with the table and scroll away, leaving a see-through
+     line above and below the pinned header; the header draws its own top and bottom border instead */
+  box-shadow: inset 0 1px 0 var(--table-header-border-color), inset 0 -1px 0 var(--table-header-border-color);
+}
+th.covalon-sortable { cursor: pointer; user-select: none; }
+th.covalon-sortable[data-sort="asc"]::after { content: " ▲"; font-size: 0.7em; }
+th.covalon-sortable[data-sort="desc"]::after { content: " ▼"; font-size: 0.7em; }
+
+/* no rubber-band bounce when scrolling past the top or bottom of the page */
+html, body { overscroll-behavior: none; }
+/* always keep room for the page's scrollbar, so the layout doesn't shift sideways between short
+   pages (no scrollbar) and long ones, or when the search pop-over locks the page */
+html { scrollbar-gutter: stable; }
+/* scrollbars in the accent colour, on a faint track of the same colour (the page, the sidebars,
+   tables and the search results all inherit this). The theme class is on <html> as well as <body>
+   so the page's own scrollbar gets the colours too. */
+html, body {
+  scrollbar-color: var(--color-accent) color-mix(in hsl, var(--color-accent), transparent 85%);
+}
+/* dark mode: a darker, duller shade of the tan accent, so the scrollbar doesn't glare.
+   Raise the 35% for a lighter scrollbar, lower it for a darker one. */
+html.theme-dark, body.theme-dark {
+  --covalon-scrollbar: hsl(var(--accent-h), calc(var(--accent-s) * 0.6), 35%);
+  scrollbar-color: var(--covalon-scrollbar) color-mix(in hsl, var(--covalon-scrollbar), transparent 85%);
+}
+
+/* search: the pop-over (and the same search on the Advanced Search page) */
+.site-search input[readonly] { cursor: pointer; }
+.site-search kbd {
+  font: inherit;
+  font-size: var(--font-ui-smaller);
+  color: var(--text-faint);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-s);
+  padding: 0 4px;
+}
+html.search-open { overflow: hidden; }
+.covalon-search-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 8vh var(--size-4-4) var(--size-4-4);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+}
+.covalon-search-overlay[hidden] { display: none; }
+.covalon-search-panel {
+  width: min(760px, 100%);
+  max-height: 84vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-l);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+.covalon-search-panel .covalon-search { display: flex; flex-direction: column; min-height: 0; padding: var(--size-4-3); }
+.covalon-search-panel .covalon-search-results { overflow-y: auto; overscroll-behavior: contain; min-height: 0; }
+.covalon-search { font-size: var(--font-ui-medium); }
+.covalon-search-top { display: flex; gap: var(--size-4-2); }
+.covalon-search :is(input, select, button) {
+  font: inherit;
+  font-size: var(--font-ui-small);
+  color: var(--text-normal);
+  background: var(--background-modifier-form-field);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-s);
+  padding: var(--size-4-1) var(--size-4-2);
+}
+.covalon-search button { cursor: pointer; }
+.covalon-search button:hover { background: var(--background-modifier-hover); }
+.covalon-search .covalon-search-input { flex: 1; font-size: var(--font-ui-medium); padding: var(--size-4-2) var(--size-4-3); }
+.covalon-search-close { color: var(--text-muted) !important; }
+.covalon-search-options, .covalon-search-filter { display: flex; flex-wrap: wrap; gap: var(--size-4-2); align-items: center; margin-top: var(--size-4-2); }
+.covalon-search-options .covalon-search-add { color: var(--text-accent); }
+.covalon-search-options select:last-child { margin-left: auto; }
+.covalon-search-filter select:last-of-type { flex: 1 1 10rem; }
+.covalon-search-filter button { color: var(--text-muted); line-height: 1; }
+.covalon-search-status { margin: var(--size-4-3) 0 var(--size-4-1); font-size: var(--font-ui-small); color: var(--text-faint); }
+.covalon-search-status:empty { display: none; }
+.covalon-search-results { list-style: none; margin: 0; padding: 0; }
+.covalon-search-result { padding: var(--size-4-2); border-radius: var(--radius-s); }
+.covalon-search-result:hover { background: var(--background-modifier-hover); }
+.covalon-search-result a { display: flex; gap: var(--size-4-2); align-items: baseline; text-decoration: none; color: var(--link-color); }
+.covalon-search-result a:hover .covalon-search-title { text-decoration: underline; }
+.covalon-search-title { font-weight: var(--font-semibold); }
+.covalon-search-type {
+  font-size: var(--font-ui-smaller);
+  color: var(--text-muted);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 99px;
+  padding: 0 var(--size-4-2);
+}
+.covalon-search-excerpt { margin: var(--size-4-1) 0 0; font-size: var(--font-ui-small); color: var(--text-muted); }
+.covalon-search-excerpt mark { background: color-mix(in srgb, var(--text-accent) 30%, transparent); color: inherit; }
+.covalon-search-more { padding: var(--size-4-2); font-size: var(--font-ui-small); color: var(--text-faint); }
+
+/* menu button: only on small screens */
+.site-menu-button {
+  display: none;
+  position: fixed;
+  top: var(--size-4-2);
+  left: var(--size-4-2);
+  z-index: 20;
+  background-color: var(--background-secondary);
+  box-shadow: var(--shadow-s);
+}
+
+@media (max-width: 1100px) {
+  .site { grid-template-columns: 260px minmax(0, 1fr); }
+  .site-right { display: none; }
+}
+@media (max-width: 760px) {
+  .site { display: block; }
+  .site-left {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: min(85vw, 300px);
+    z-index: 10;
+    transform: translateX(-100%);
+    transition: transform 150ms ease-out;
+    box-shadow: var(--shadow-s);
+  }
+  body.menu-open .site-left { transform: none; }
+  /* the sidebar slides over the page here, so it's solid rather than see-through to the parchment */
+  :is(.theme-light, .theme-dark) .site-left.workspace-split.mod-left-split {
+    background-color: var(--background-secondary) !important;
+  }
+  /* room for the menu button, which sits over the sidebar's top left corner */
+  .site-left .site-header { padding-left: 36px; }
+  .site-menu-button { display: flex; }
+  .markdown-preview-view { padding: var(--size-4-12) var(--size-4-4) var(--size-4-8); }
+}

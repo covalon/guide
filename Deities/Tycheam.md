@@ -1,14 +1,11 @@
 ---
 Tags:
 - covalon/deity
-Edicts: Seek what you're good at and reassure your allies when necessary, live in the moment and trust the process, sleep as long and as regularly as is reasonable each day
-Anathema: Refuse to accept one's fate, worry endlessly about what you can't control, mess up your sleep schedule for trivial matters, rush the process
+Edicts: seek what you're good at and reassure your allies when necessary, live in the moment and trust the process, sleep as long and as regularly as is reasonable each day
+Anathema: refuse to accept one's fate, worry endlessly about what you can't control, mess up your sleep schedule for trivial matters, rush the process
 Divine Font:
 - heal
-Divine Sanctification:
-- can choose
-- holy
-- unholy
+Divine Sanctification: can choose holy or unholy
 Divine Skill:
 - diplomacy
 Favored Weapon:

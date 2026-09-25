@@ -58,10 +58,13 @@ return function View() {
   const changed = cm.settings?.callouts?.settings ?? {};
   // layout callouts (their own sections below) are left out of this list
   const LAYOUT = ["columns", "statblock", "clear"];
+  // one-off callouts with their own icons (the Brawls page's Monster Mash tables) go at the bottom, in this order
+  const LAST = ["dino", "fey", "dragon"];
+  const last = (c) => LAST.indexOf(c.id) + 1;
   const all = [...cm.callouts.values()]
     .filter((c) => !LAYOUT.includes(c.id))
     .map((c) => ({ c, hsv: hsv(c.color) }))
-    .sort((a, b) => byColour(a, b) || a.c.id.localeCompare(b.c.id))
+    .sort((a, b) => last(a.c) - last(b.c) || (last(a.c) ? 0 : byColour(a, b)) || a.c.id.localeCompare(b.c.id))
     .map(({ c }) => c);
   // Aliases (e.g. warning / caution / attention) share a colour and icon: show one callout per
   // group, named after Obsidian's main type when there is one, with the others listed under it

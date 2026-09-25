@@ -15,6 +15,6 @@ Stone steps intertwined with roots lead down to an underground den. Here guildma
 
 A lovely rock garden showcases another beautiful aspect of nature. One can also see a well maintained shrine to the Circle of the Stars to honor a fallen member.
 
-![Nature's Serenity, ground floor. Designed by Valerie.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/NaturesSerenity.webp)
+![[NaturesSerenity.webp|Nature's Serenity, ground floor. Designed by Valerie.]]
 
-![Nature's Serenity, basement. Designed by Valerie.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/NaturesSerenity2.webp)
+![[NaturesSerenity2.webp|Nature's Serenity, basement. Designed by Valerie.]]

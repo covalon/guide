@@ -1,7 +1,7 @@
 ---
 Tags:
 - covalon/civilization
-Tagline: The separated collective.
+Tagline: The separated collective
 Created by:
 - Onyat
 - Yksys

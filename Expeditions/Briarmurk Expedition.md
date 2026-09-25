@@ -29,16 +29,15 @@ Though "reclaimed" is a generous statement, the threat of the Maw has been thwar
 
 As our camp was established, missions were quickly under way to find the Maw Vessel. We learned that we needed to defeats its protectors, a trio of priestesses infusing it with magical energies. To what end, we still don't know, but it definitely couldn't be good! A path was carved through the ancient city of Terrateotl, and our warriors fought at its apex, ultimately slaying the trio and the vessel.
 
-![Covalon's entrenched camp in Briarmurk. Designed by Locke.](https://raw.githubusercontent.com/covalon/covalon/refs/heads/main/images/Briarmurk%20Camp.webp)
+![[Briarmurk Camp.webp|Covalon's entrenched camp in Briarmurk. Designed by Locke.]]
 ## Base Camp
 *Summary to come.*
 ## Missions
-### Mission A: Obscure the Lunar Lens
-Avoid the dangerous rain while protecting our camp from the enemy with a powerful ritual.
-### Mission B: Carve a Path
-Fight your way through the thick undergrowth, and carve a path for our heroes to push deeper into the swamp.
-### Mission C: Memories of a Time Long Past
-Enter a collective dream to discover the history of Briarmurk, long before the Cataclysm.
+| Mission | Summary |
+| :-- | :-- |
+| A: Obscure the Lunar Lens | Avoid the dangerous rain while protecting our camp from the enemy with a powerful ritual. |
+| B: Carve a Path | Fight your way through the thick undergrowth, and carve a path for our heroes to push deeper into the swamp. |
+| C: Memories of a Time Long Past | Enter a collective dream to discover the history of Briarmurk, long before the Cataclysm. |
 ## Finale
 **Boss:** Asira, Rashai, and Terina, the three corrupted priestesses of Terrateotl
 

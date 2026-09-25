@@ -1,13 +1,12 @@
 ---
 Tags:
 - covalon/deity
-Edicts: Assist in making dreams or nightmares become reality, encourage the manifestation of new ideas or growth, make efforts to decide your own fate and allow dreams or nightmares to guide you
-Anathema: Willingly relinquish your fate to someone else, dismiss dreams and nightmares as invaluable, discourage growth or change in any aspect
+Edicts: assist in making dreams or nightmares become reality, encourage the manifestation of new ideas or growth, make efforts to decide your own fate and allow dreams or nightmares to guide you
+Anathema: willingly relinquish your fate to someone else, dismiss dreams and nightmares as invaluable, discourage growth or change in any aspect
 Divine Font:
 - harm
 - heal
-Divine Sanctification:
-- none
+Divine Sanctification: none
 Divine Skill:
 - occultism
 Favored Weapon:

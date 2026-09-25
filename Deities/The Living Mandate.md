@@ -1,15 +1,12 @@
 ---
 Tags:
 - covalon/deity
-Edicts: Create personal and societal improvement, grow your lands, accrue wealth
-Anathema: Give to charity, join a workers union, hoard wealth without use
+Edicts: create personal and societal improvement, grow your lands, accrue wealth
+Anathema: give to charity, join a workers union, hoard wealth without use
 Divine Font:
 - harm
 - heal
-Divine Sanctification:
-- can choose
-- holy
-- unholy
+Divine Sanctification: can choose holy or unholy
 Divine Skill:
 - intimidation
 Favored Weapon:

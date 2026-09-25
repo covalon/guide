@@ -3,13 +3,11 @@ Tags:
 - covalon/deity
 Aliases:
 - Luxandra
-Edicts: Create works of art, dress as well as one is able, appreciate beauty in all things, actively seek improvement, foster and nurture love
-Anathema: Destroy a work of art (unless saving a life in the process), be slovenly in one’s appearance, let one’s abilities languish, interfere with genuine love
+Edicts: create works of art, dress as well as one is able, appreciate beauty in all things, actively seek improvement, foster and nurture love
+Anathema: destroy a work of art (unless saving a life in the process), be slovenly in one’s appearance, let one’s abilities languish, interfere with genuine love
 Divine Font:
 - heal
-Divine Sanctification:
-- can choose
-- holy
+Divine Sanctification: can choose holy
 Divine Skill:
 - crafting
 Favored Weapon:

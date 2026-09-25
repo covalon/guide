@@ -1,6 +1,9 @@
 {
   "types": {
     "Journey Date": "date",
-    "Finale First Cleared": "date"
+    "Finale First Cleared": "date",
+    "Divine Sanctification": "text",
+    "Date": "date",
+    "Type": "text"
   }
 }

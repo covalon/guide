@@ -3,13 +3,11 @@ Tags:
 - covalon/deity
 Aliases:
 - Gutom
-Edicts: Test yourself against nature, make animals and plants more dangerous, use what you kill
-Anathema: Cower from fights, cut down a tree
+Edicts: test yourself against nature, make animals and plants more dangerous, use what you kill
+Anathema: cower from fights, cut down a tree
 Divine Font:
 - harm
-Divine Sanctification:
-- must choose
-- unholy
+Divine Sanctification: must choose unholy
 Divine Skill:
 - nature
 Favored Weapon:

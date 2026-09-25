@@ -1,14 +1,11 @@
 ---
 Tags:
 - covalon/deity
-Edicts: Hunt with short ranged weapons, use every part of your kill, give your enemy a quick end, use eye contact to strike fear in your enemy
-Anathema: Engage your enemy from further than 60ft, let your enemy suffer in pain, use torture to get what you want, forget your enemy's face
+Edicts: hunt with short ranged weapons, use every part of your kill, give your enemy a quick end, use eye contact to strike fear in your enemy
+Anathema: engage your enemy from further than 60ft, let your enemy suffer in pain, use torture to get what you want, forget your enemy's face
 Divine Font:
 - heal
-Divine Sanctification:
-- can choose
-- holy
-- unholy
+Divine Sanctification: can choose holy or unholy
 Divine Skill:
 - intimidation
 Favored Weapon:

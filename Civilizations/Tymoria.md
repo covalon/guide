@@ -1,7 +1,7 @@
 ---
 Tags:
 - covalon/civilization
-Tagline: A collision of two worlds.
+Tagline: A collision of two worlds
 Created by:
 - Fae
 Government: Royal Court of Tymoria (monarchy)

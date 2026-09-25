@@ -2,17 +2,22 @@ Shared Datacore components used by the 📍 overview pages. Edit the code below 
 ## CovalonEntries
 Lists every note with the given tag: a linked heading, the note's properties, then the full note embedded.
 
-Options: `tag` (required), `district` (only locations in that district), `sortBy="title"` (name, ignoring a leading "The"), `sortBy="date"` (or any property name, e.g. `sortBy="Journey Date"`), `heading="h3"`, and `hide={["Some Property"]}` to leave properties out of the panel.
+Options: `tag` (required), `inline={["Roleplay Channel"]}` (with `aside`: show those properties as a line of text after the note's text, instead of in the properties box), `tagline="Tagline"` (show that property as a tagline right under each heading, instead of in the properties box), `aside` (a different layout, used for the guilds: heading, the note's text, then its properties, with the note's images floated to the right beside them), `district` (only locations in that district), `sortBy="title"` (name, ignoring a leading "The"), `sortBy="date"` (or any property name, e.g. `sortBy="Journey Date"`), `heading="h3"`, and `hide={["Some Property"]}` to leave properties out of the panel.
 
 ```jsx
+// properties never shown: these, and any starting with _ (settings for the website, e.g. _url)
 const HIDDEN = new Set(["tags", "aliases", "cssclasses"]);
 const label = (k) => k;
-const show = (v) => (Array.isArray(v) ? v.map(show).join(", ") : String(v ?? ""));
+// dates (2021-07-17) are shown as "July 17th, 2021"
+const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const ordinal = (n) => n + (n % 100 >= 11 && n % 100 <= 13 ? "th" : ({ 1: "st", 2: "nd", 3: "rd" })[n % 10] || "th");
+const niceDate = (s) => s.replace(/^(\d{4})-(\d{2})-(\d{2})(?:T[\d:.]+)?$/, (_, y, m, d) => `${MONTHS[+m - 1]} ${ordinal(+d)}, ${y}`);
+const show = (v) => (Array.isArray(v) ? v.map(show).join(", ") : niceDate(String(v ?? "")));
 const isEmpty = (v) => v === null || v === undefined || v === "" || (Array.isArray(v) && v.length === 0);
 
 function Properties({ page, hide = [] }) {
   const rows = Object.values(page.$frontmatter ?? {}).filter(
-    (e) => !HIDDEN.has(e.key.toLowerCase()) && !hide.includes(e.key) && !isEmpty(e.raw)
+    (e) => !HIDDEN.has(e.key.toLowerCase()) && !e.key.startsWith("_") && !hide.includes(e.key) && !isEmpty(e.raw)
   );
   if (!rows.length) return null;
   return (
@@ -35,7 +40,60 @@ function districtOf(page) {
   return (m ? m[1] : raw).trim();
 }
 
-function CovalonEntries({ tag, district, sortBy = "name", heading = "h2", hide = [] }) {
+// aside layout: the note's own text without its images, then its properties, with the images floated right
+const IMAGE_LINE = /^\s*!\[.*\]\(.*\)\s*$|^\s*!\[\[[^\]]+\.(png|jpe?g|webp|gif|svg)[^\]]*\]\]\s*$/i;
+// shift the note's headings so its top level sits one below the entry's heading (h2 entry -> h3 inside)
+function shiftHeadings(text, below) {
+  const levels = [...text.matchAll(/^(#{1,6})\s/gm)].map((m) => m[1].length);
+  if (!levels.length) return text;
+  const delta = below + 1 - Math.min(...levels);
+  return text.replace(/^(#{1,6})(?=\s)/gm, (h) => "#".repeat(Math.max(1, Math.min(6, h.length + delta))));
+}
+function InlineProps({ page, props = [] }) {
+  const rows = props
+    .map((k) => Object.values(page.$frontmatter ?? {}).find((e) => e.key.toLowerCase() === k.toLowerCase()))
+    .filter((e) => e && !isEmpty(e.raw));
+  if (!rows.length) return null;
+  return rows.map((e) => (
+    <p key={e.key} className="covalon-inline-prop">
+      <strong>{e.key}:</strong> <dc.Markdown inline content={show(e.raw)} sourcePath={page.$path} />
+    </p>
+  ));
+}
+
+function AsideEntry({ page, hide = [], level = 2, inline = [] }) {
+  const [parts, setParts] = dc.useState({ text: "", images: "" });
+  dc.useEffect(() => {
+    let live = true;
+    const file = dc.app.vault.getAbstractFileByPath(page.$path);
+    if (file) dc.app.vault.cachedRead(file).then((raw) => {
+      const body = raw.replace(/^---\n[\s\S]*?\n---\n?/, "");
+      const lines = body.split("\n");
+      if (live) setParts({
+        text: shiftHeadings(lines.filter((l) => !IMAGE_LINE.test(l)).join("\n").trim(), level),
+        images: lines.filter((l) => IMAGE_LINE.test(l)).join("\n\n"),
+      });
+    });
+    return () => { live = false; };
+  }, [page.$path, page.$mtime]);
+  return (
+    <div className="covalon-entry-body">
+      {parts.images && <div className="covalon-entry-images"><dc.Markdown content={parts.images} sourcePath={page.$path} /></div>}
+      <dc.Markdown content={parts.text} sourcePath={page.$path} />
+      <InlineProps page={page} props={inline} />
+      <Properties page={page} hide={[...hide, ...inline]} />
+    </div>
+  );
+}
+
+function Tagline({ page, prop }) {
+  const entry = prop && Object.values(page.$frontmatter ?? {}).find((e) => e.key.toLowerCase() === prop.toLowerCase());
+  if (!entry || isEmpty(entry.raw)) return null;
+  return <div className="covalon-tagline"><dc.Markdown inline content={show(entry.raw)} sourcePath={page.$path} /></div>;
+}
+
+function CovalonEntries({ tag, district, sortBy = "name", heading = "h2", hide = [], aside = false, tagline, inline = [] }) {
+  if (tagline) hide = [...hide, tagline];
   const pages = dc.useQuery(`@page and #${tag}`);
   let entries = [...pages];
   if (district) entries = entries.filter((p) => districtOf(p) === district);
@@ -52,36 +110,56 @@ function CovalonEntries({ tag, district, sortBy = "name", heading = "h2", hide =
   return (
     <div className="covalon-entries">
       {entries.map((p) => (
-        <div key={p.$path} className="covalon-entry">
-          <H><dc.Link link={p.$link} /></H>
-          <Properties page={p} hide={hide} />
-          <dc.LinkEmbed link={p.$link} />
-        </div>
+        aside ? (
+          <div key={p.$path} className="covalon-entry covalon-entry-aside">
+            <H><dc.Link link={p.$link} /></H>
+            <Tagline page={p} prop={tagline} />
+            <AsideEntry page={p} hide={hide} inline={inline} level={Number(heading.slice(1)) || 2} />
+          </div>
+        ) : (
+          <div key={p.$path} className="covalon-entry">
+            <H><dc.Link link={p.$link} /></H>
+            <Tagline page={p} prop={tagline} />
+            <Properties page={p} hide={hide} />
+            <dc.LinkEmbed link={p.$link} />
+          </div>
+        )
       ))}
     </div>
   );
 }
 
-return { CovalonEntries };
+// One note in the aside layout (its text, its images floated right, its properties box), without a heading.
+// Used for the districts on the Gazetteer: <CovalonNote name="City District" />
+function CovalonNote({ name, tag = "covalon/district", inline = [] }) {
+  const pages = dc.useQuery(`@page and #${tag}`);
+  const page = pages.find((p) => p.$name === name);
+  if (!page) return null;
+  return <div className="covalon-entry-aside covalon-note"><AsideEntry page={page} inline={inline} /></div>;
+}
+
+return { CovalonEntries, CovalonNote };
 ```
+## CovalonNote
+One note shown in the `aside` layout of `CovalonEntries` (its text, its images floated to the right, then its properties box), without a heading of its own. The Gazetteer uses it for each district: `<CovalonNote name="City District" />`. It's part of the CovalonEntries code block above.
+
 ## MissionOverview
-A table of every expedition's missions, read straight from the expedition notes: each `### Mission X` heading under `## Missions` (with its name after a colon, if it has one) and the text underneath it as the summary. Edit a mission on its expedition note and the table follows. Expeditions are listed in journey order.
+Every expedition's missions in one table (each named after its expedition, e.g. "Ikouga A: Retame the Island"),, read straight from the expedition notes: each `### Mission X` heading under `## Missions` (with its name after a colon, if it has one) and the text underneath it as the summary. Edit a mission on its expedition note and the table follows. Expeditions are listed in journey order.
 
 ```jsx
 function missionsIn(text) {
+  // the expedition note's "## Missions" table: | A: Mission name | summary |
   const missions = [];
-  const lines = text.split("\n");
-  let cur = null;
   let inMissions = false;
-  for (const line of lines) {
-    if (/^## /.test(line)) { inMissions = /^## Missions\s*$/.test(line); cur = null; continue; }
-    if (!inMissions) continue;
-    const m = line.match(/^### Mission ([A-Z])(?::\s*(.+))?\s*$/);
-    if (m) { cur = { letter: m[1], name: (m[2] ?? "").trim(), summary: [] }; missions.push(cur); continue; }
-    if (/^#{1,3} /.test(line)) { cur = null; continue; }
-    if (cur) cur.summary.push(line);
+  for (const line of text.split("\n")) {
+    if (/^## /.test(line)) { inMissions = /^## Missions\s*$/.test(line); continue; }
+    if (!inMissions || !line.trim().startsWith("|")) continue;
+    const cells = line.trim().replace(/^\||\|$/g, "").split(/(?<!\\)\|/).map((c) => c.trim());
+    const m = (cells[0] || "").match(/^([A-Z])(?::\s*(.+))?$/);
+    if (!m) continue;   // the header and divider rows
+    missions.push({ letter: m[1], name: (m[2] ?? "").trim(), summary: (cells[1] || "").replace(/\\\|/g, "|") });
   }
-  return missions.map((m) => ({ ...m, summary: m.summary.join("\n").trim() }));
+  return missions;
 }
 
 function MissionOverview({ tag = "covalon/expedition" }) {
@@ -99,23 +177,17 @@ function MissionOverview({ tag = "covalon/expedition" }) {
     })).then((r) => { if (live) setRows(r); });
     return () => { live = false; };
   }, [stamp]);
+  // one table of every mission, named after its expedition: "Ikouga A: Retame the Island"
   return (
     <table className="covalon-mission-overview">
       <thead>
-        <tr><th>Expedition</th><th>Mission</th><th>Summary</th></tr>
+        <tr><th>Mission</th><th>Summary</th></tr>
       </thead>
       <tbody>
         {rows.flatMap(({ page, missions }) =>
-          missions.map((m, i) => (
+          missions.map((m) => (
             <tr key={page.$path + m.letter}>
-              {i === 0 && (
-                <td rowSpan={missions.length}>
-                  <dc.Markdown content={`[[${page.$name}|${page.$name.replace(/ Expedition$/, "")}]]`} sourcePath={page.$path} inline />
-                </td>
-              )}
-              <td>
-                <dc.Markdown content={`[[${page.$name}#${m.name ? `Mission ${m.letter} ${m.name}` : `Mission ${m.letter}`}|${m.letter}${m.name ? `: ${m.name}` : ""}]]`} sourcePath={page.$path} inline />
-              </td>
+              <td>{page.$name.replace(/ Expedition$/, "")} {m.letter}{m.name ? `: ${m.name}` : ""}</td>
               <td><dc.Markdown content={m.summary} sourcePath={page.$path} /></td>
             </tr>
           ))

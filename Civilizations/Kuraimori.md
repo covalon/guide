@@ -3,7 +3,7 @@ Tags:
 - covalon/civilization
 Aliases:
 - Kuraimori (暗い森)
-Tagline: Dark Empire of Blossoms and Lanterns.
+Tagline: Dark Empire of Blossoms and Lanterns
 Created by:
 - Rinka
 Government: Commune & Court of Three Empress’ (Empire)

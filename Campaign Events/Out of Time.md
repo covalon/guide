@@ -1,8 +1,8 @@
 ---
 Tags:
   - covalon/event
-Event Type: multitable event
 Date: 2023-05-20
+Type: Multitable
 ---
 > [!heroes|right] Heroes of Out of Time
 > The following characters were the vanguard who fought the Eschatelpis Siktempora at the End of Time at the height of its power.
@@ -66,7 +66,6 @@ Date: 2023-05-20
 > - Zoe Timor
 > - Zubli
 
-## Multitable Event: May 20th, 2023
 Shortly after Covalon destroyed the Maw Vessel in Ratchethallow, a shadow passed over Covalon. A massive humanoid figure appeared, eclipsing the sun itself. Time seemed to stop, the city and its people crumbling into nothing, until six silhouettes appeared in the sky. They raised their arms, and the figure retreated, reversing the flow of time and leaving nothing in their wake but a confused and scared Covalon.
 
 We lept into action, trying to dechiper the mystery of what happened. Strange anomalies started appearing across Elleaterra - pockets of land and hostile creatures frozen in time. Covalonians recovered damaged orichalcum recording rods seeming to bear the voice of Arto Applefield, a well known mage and chronomancer in Covalon, but he didn't remember making such a recording.

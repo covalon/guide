@@ -42,16 +42,15 @@ Finally, we turned to the spirits of those who had met their end. Channelling th
 
 To approach the undead lord, we carved through swarms of countless undead in his Cathedral of Death. Yet for all their numbers, we were stronger. We destroyed the lich’s soul cages and cast his spirit into the beyond. Life beats in the heart of Drifthaven once more.
 
-![Covalon's disguised yurt in Drifthaven. Designed by Rinka.](https://raw.githubusercontent.com/covalon/covalon-guide/gh-pages/assets/covalon/PlayersGuide/ExpeditionLog/DrifthavenOutpost.webp)
+![[DrifthavenOutpost.webp|Covalon's disguised yurt in Drifthaven. Designed by Rinka.]]
 ## Base Camp
 *Summary to come.*
 ## Missions
-### Mission A: Find the Soul Cages
-Infiltrate an enemy fortress to find and destroy a series of high-profile assets.
-### Mission B: Shred and Smear
-Set a trap for the undead hordes of Drifthaven to deal a devastating blow to their infrastructure and their armies at the same time.
-### Mission C: Songs of the Past
-Return an otherworldly artifact to its proper place and grant its owner the relief of eternal rest - in exchange for a little help for our cause.
+| Mission | Summary |
+| :-- | :-- |
+| A: Find the Soul Cages | Infiltrate an enemy fortress to find and destroy a series of high-profile assets. |
+| B: Shred and Smear | Set a trap for the undead hordes of Drifthaven to deal a devastating blow to their infrastructure and their armies at the same time. |
+| C: Songs of the Past | Return an otherworldly artifact to its proper place and grant its owner the relief of eternal rest - in exchange for a little help for our cause. |
 ## Finale
 **Boss:** Archlich Faltyr
 

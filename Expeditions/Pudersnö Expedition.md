@@ -31,18 +31,15 @@ Our mission on the ground was equally perilous to our journey through the sky. F
 
 Little did we know how baaaad things would get. At the crescendo of our reclamations we had to face down The Mpeshi King himself, a vicious beast of storm given flesh. This horny fiend clashed with our finest but was ultimately thrown down, as we smote his ruin upon the mountainside.
 
-![Covalon's outpost in Pudersnö. Designed by Rinka.](https://raw.githubusercontent.com/covalon/covalon-guide/gh-pages/assets/covalon/PlayersGuide/ExpeditionLog/PudersnoOutpost.webp)
+![[PudersnoOutpost.webp|Covalon's outpost in Pudersnö. Designed by Rinka.]]
 ## Base Camp
 *Summary to come.*
 ## Missions
-### Mission A: Lightning Tamer
-Gather materials and build a magical lightning rod to help protect our base camp.
-### Mission B: Investigate the Craters
-Investigate the frozen craters to learn about the conditions at the mountaintop.
-### Mission C: Thin the Ranks
-Get launched up the mountain to take out as many monsters as you can!
-
-*This mission has a heavy emphasis on combat.*
+| Mission | Summary |
+| :-- | :-- |
+| A: Lightning Tamer | Gather materials and build a magical lightning rod to help protect our base camp. |
+| B: Investigate the Craters | Investigate the frozen craters to learn about the conditions at the mountaintop. |
+| C: Thin the Ranks | Get launched up the mountain to take out as many monsters as you can!<br>*This mission has a heavy emphasis on combat.* |
 ## Finale
 **Boss:** The Mpeshi King
 

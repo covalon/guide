@@ -1,7 +1,7 @@
 ---
 Tags:
 - covalon/civilization
-Tagline: Monument of magical mastery.
+Tagline: Monument of magical mastery
 Created by:
 - Arto Applefield
 Government: The Archmages (magocracy)

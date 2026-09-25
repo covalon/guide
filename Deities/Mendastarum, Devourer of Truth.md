@@ -3,13 +3,11 @@ Tags:
 - covalon/deity
 Aliases:
 - Mendastarum
-Edicts: Spread misinformation, seek forbidden or lost knowledge, deface what you learn so others may not learn it
-Anathema: Speak the name Mendastarum to one that doesn't know it, willingly share or be neglectful in protecting your secrets, correct a false assumption
+Edicts: spread misinformation, seek forbidden or lost knowledge, deface what you learn so others may not learn it
+Anathema: speak the name Mendastarum to one that doesn't know it, willingly share or be neglectful in protecting your secrets, correct a false assumption
 Divine Font:
 - harm
-Divine Sanctification:
-- must choose
-- unholy
+Divine Sanctification: must choose unholy
 Divine Skill:
 - deception
 Favored Weapon:

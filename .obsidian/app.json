@@ -1,3 +1,5 @@
 {
-  "settingsPopoutWindow": false
+  "settingsPopoutWindow": false,
+  "attachmentFolderPath": "🖼️ Assets",
+  "alwaysUpdateLinks": true
 }

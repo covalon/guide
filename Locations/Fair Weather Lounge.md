@@ -11,4 +11,4 @@ The owner, Lady Yali Fa'el (female human alchemist), and her co-owners, Tenvar S
 
 Located in the Encore District, the Fair Weather Lounge is the coziest place to share a drink with friends, play music by the riverside, or smoke a bowl of flayleaf while reading a good book.
 
-![The Fair Weather Lounge. Designed by Sheas.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/FairWeatherLounge.webp)
+![[FairWeatherLounge.webp|The Fair Weather Lounge. Designed by Sheas.]]

@@ -3,13 +3,11 @@ Tags:
 - covalon/deity
 Aliases:
 - Peko-Amuzo
-Edicts: Gossip, live a hedonistic existence, summon fiends
-Anathema: Soothe someone's ire, put someone's needs over your own, grow complacent and follow the same routine
+Edicts: gossip, live a hedonistic existence, summon fiends
+Anathema: soothe someone's ire, put someone's needs over your own, grow complacent and follow the same routine
 Divine Font:
 - harm
-Divine Sanctification:
-- can choose
-- unholy
+Divine Sanctification: can choose unholy
 Divine Skill:
 - crafting
 Favored Weapon:

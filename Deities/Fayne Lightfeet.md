@@ -1,13 +1,11 @@
 ---
 Tags:
 - covalon/deity
-Edicts: Be skilled and clever, defend friends and the innocent, engage in mischief that doesn’t harm others, create useful or beautiful items
-Anathema: Abandon a friend in need, deny someone shelter or food, suffer a bully’s insults to you or another without retort
+Edicts: be skilled and clever, defend friends and the innocent, engage in mischief that doesn’t harm others, create useful or beautiful items
+Anathema: abandon a friend in need, deny someone shelter or food, suffer a bully’s insults to you or another without retort
 Divine Font:
 - heal
-Divine Sanctification:
-- can choose
-- holy
+Divine Sanctification: can choose holy
 Divine Skill:
 - crafting
 Favored Weapon:

@@ -29,18 +29,15 @@ Fighting against the land itself we delved deeper and deeper into the darkness u
 
 This entity turned out to be the Shadow Titan, a being of pure shadow, composed of two grasping hands and a hideous visage all working in tandem to attempt to thwart our attempts to reclaim Middlemist from darkness. Though bombarded with a torrent of lasers, slaps and shadowspawn we were ultimately triumphant. We destroyed the Vessel of the Maw and shed light on Middlemist once more.
 
-![Covalon's outpost in Middlemist. Designed by Rinka.](https://raw.githubusercontent.com/covalon/covalon-guide/refs/heads/gh-pages/assets/covalon/PlayersGuide/ExpeditionLog/MiddlemistOutpost.webp)
+![[MiddlemistOutpost.webp|Covalon's outpost in Middlemist. Designed by Rinka.]]
 ## Base Camp
 *Summary to come.*
 ## Missions
-### Mission A: Delve the Dark
-Venture into the darkness to figure out what happened to Middlemist’s citizens.
-
-*This mission utilizes the Hexploration system for exploring uncharted territory.*
-### Mission B: In Search of Light
-Run tests on a series of experimental technologies we designed to combat the everlasting darkness in Middlemist.
-### Mission C: Penumbra
-Air drop into the darkness of Middlemist for a recon mission. Revival Contracts not included.
+| Mission | Summary |
+| :-- | :-- |
+| A: Delve the Dark | Venture into the darkness to figure out what happened to Middlemist’s citizens.<br>*This mission utilizes the Hexploration system for exploring uncharted territory.* |
+| B: In Search of Light | Run tests on a series of experimental technologies we designed to combat the everlasting darkness in Middlemist. |
+| C: Penumbra | Air drop into the darkness of Middlemist for a recon mission. Revival Contracts not included. |
 ## Finale
 **Boss:** The Shadow Titan
 

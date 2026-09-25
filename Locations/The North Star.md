@@ -13,6 +13,6 @@ After a mishap with a powerful Kraken left her beached, a group of dedicated exp
 
 Though the North Star is now a permeant base of operations in Covalon for the guild, it still offers a plethora of spaces for it's guild members to meet, plan further expedition projects, create maps, research lost cultures, and occasionally relax and have fun!
 
-![The North Star. Designed by Mikom.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/The_North_Star_-_Progress_2022-04-02-2.webp)
+![[The_North_Star_-_Progress_2022-04-02-2.webp|The North Star. Designed by Mikom.]]
 
-![The North Star. Designed by Mikom.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/The_North_Star_-_Progress_2022-04-02-1.webp)
+![[The_North_Star_-_Progress_2022-04-02-1.webp|The North Star. Designed by Mikom.]]

@@ -32,18 +32,15 @@ Efforts to reclaim Alatar are underway! Covalon has been invited to attend an en
 
 Alatar Expedition is complete! See the [\#📙expedition-logs](https://discord.com/channels/802423566196539412/927330508650725466) channel for details, summary to come.
 
-![Letter from Governor Alekin](https://raw.githubusercontent.com/covalon/covalon-guide/refs/heads/gh-pages/assets/covalon/PlayersGuide/ExpeditionLog/Alatar_Missive.webp)
+![[Alatar_Missive.webp|Letter from Governor Alekin]]
 ## Base Camp
 *Summary to come.*
 ## Missions
-### Mission A: A Hunting We Shall Go
-Go undercover as the participants of a hunting festival to learn more about Alatar and its citizens.
-
-*This mission has a heavy emphasis on skill challenges and reputation systems.*
-### Mission B: Infiltrate the Castle
-Infiltrate the castle while trying to avoid detection by the guards, and get out before anyone sees you!
-### Mission C: Kill the Queen
-Catch the royal advisor and take her out before she can escape!
+| Mission | Summary |
+| :-- | :-- |
+| A: A Hunting We Shall Go | Go undercover as the participants of a hunting festival to learn more about Alatar and its citizens.<br>*This mission has a heavy emphasis on skill challenges and reputation systems.* |
+| B: Infiltrate the Castle | Infiltrate the castle while trying to avoid detection by the guards, and get out before anyone sees you! |
+| C: Kill the Queen | Catch the royal advisor and take her out before she can escape! |
 ## Finale
 **Boss:** Alekin, the traitorous governor of Alatar Nova
 

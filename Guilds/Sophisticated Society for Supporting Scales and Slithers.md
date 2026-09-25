@@ -11,11 +11,11 @@ Members:
 - Atlacamani
 - Varrox
 - Tekhan
-Membership Requirements: A reptile ancestry, or other lizard traits! Or just... really passionate about lizards
-Goals: Host lizard themed activities, raise awareness for reptile ancestries, collect knowledge about reptile races, add cold blooded accommodations to low temperature areas of Covalon
-Values: Reptile pride, hosting fun events, building cold blooded accommodations
-Anathema: Destroying natural habitats of reptiles
+Membership Requirements: a reptile ancestry, or other lizard traits! Or just... really passionate about lizards
+Goals: host lizard themed activities, raise awareness for reptile ancestries, collect knowledge about reptile races, add cold blooded accommodations to low temperature areas of Covalon
+Values: reptile pride, hosting fun events, building cold blooded accommodations
+Anathema: destroying natural habitats of reptiles
 ---
 Reptiles and reptile adjacent covalonians unite!
 
-![SSSSS Guild Heraldry.](https://raw.githubusercontent.com/covalon/covalon-guide/refs/heads/gh-pages/assets/covalon/PlayersGuide/Guilds/sssss%20guild%20heraldry.png)
+![[sssss guild heraldry.webp|SSSSS Guild Heraldry.]]

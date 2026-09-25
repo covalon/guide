@@ -43,12 +43,11 @@ Our bravest fighters delved below, and slew the beast in its adamantine lair. Wi
 ## Base Camp
 *Summary to come.*
 ## Missions
-### Mission A: Explore the Catacombs
-Explore the Dwarven catacombs and bring back anything you can find.
-### Mission B: Fire the Forges
-Make your way to the ancient Dwarven forge to process a strangely powerful metal we found.
-### Mission C: Wardstone Defenders
-Dragons are attacking our base! Get out there and defend it!
+| Mission | Summary |
+| :-- | :-- |
+| A: Explore the Catacombs | Explore the Dwarven catacombs and bring back anything you can find. |
+| B: Fire the Forges | Make your way to the ancient Dwarven forge to process a strangely powerful metal we found. |
+| C: Wardstone Defenders | Dragons are attacking our base! Get out there and defend it! |
 ## Finale
 **Boss:** The Stonewyrm
 

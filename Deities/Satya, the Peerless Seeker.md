@@ -3,14 +3,12 @@ Tags:
 - covalon/deity
 Aliases:
 - Satya
-Edicts: Find your personal truth, look within yourself and hone your mind, body and spirit, seek and undo as much misinformation whenever possible
-Anathema: Threaten another to accept the truth, willingly spread misinformation or hide your truth, let your desires cloud your mind/practice hedonism
+Edicts: find your personal truth, look within yourself and hone your mind, body and spirit, seek and undo as much misinformation whenever possible
+Anathema: threaten another to accept the truth, willingly spread misinformation or hide your truth, let your desires cloud your mind/practice hedonism
 Divine Font:
 - heal
 - harm
-Divine Sanctification:
-- can choose
-- holy
+Divine Sanctification: can choose holy
 Divine Skill:
 - diplomacy
 Favored Weapon:

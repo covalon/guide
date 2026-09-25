@@ -3,15 +3,12 @@ Tags:
 - covalon/deity
 Aliases:
 - Abhirash
-Edicts: Obey local laws, enforce punishments, commit rules and contracts to ink, remember the dead
-Anathema: Take actions with irrevocable consequences without evidence, argue in bad faith, dispense punishment outside the local legal frameworks
+Edicts: obey local laws, enforce punishments, commit rules and contracts to ink, remember the dead
+Anathema: take actions with irrevocable consequences without evidence, argue in bad faith, dispense punishment outside the local legal frameworks
 Divine Font:
 - harm
 - heal
-Divine Sanctification:
-- can choose
-- holy
-- unholy
+Divine Sanctification: can choose holy or unholy
 Divine Skill:
 - society
 Favored Weapon:

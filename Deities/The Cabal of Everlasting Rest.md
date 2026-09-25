@@ -1,36 +1,34 @@
 ---
 Tags:
-- covalon/deity
-Edicts: Guide the living and the dead towards peace, provide counsel to those affected by death and undeath, free unwilling sentient undead from servitude
-Anathema: Willingly allow malevolent or mindless undead to attack your community, disrespect the dead
-Pantheon Members:
-- '[[Aelia]]'
-- '[[Golgolgoss, The Watcher]]'
-- '[[The Grey Ocean]]'
-- '[[The Path of the Great Spirits]]'
-- '[[Unmortus, The Dead Guardian]]'
+  - covalon/deity
+Edicts: guide the living and the dead towards peace, provide counsel to those affected by death and undeath, free unwilling sentient undead from servitude
+Anathema: willingly allow malevolent or mindless undead to attack your community, disrespect the dead
 Divine Font:
-- heal
-- harm
-Divine Sanctification:
-- can choose
-- holy
+  - heal
+  - harm
+Divine Sanctification: can choose holy
 Divine Skill:
-- occultism
+  - occultism
 Favored Weapon:
-- scythe
+  - scythe
 Domains:
-- death
-- repose
-- soul
-- undeath
+  - death
+  - repose
+  - soul
+  - undeath
 Alternate Domains:
-- introspection
-- vigil
+  - introspection
+  - vigil
 Cleric Spells:
-- '1st: equal footing'
-- '3rd: moth''s supper'
-- '4th: life''s flowing river'
+  - "1st: equal footing"
+  - "3rd: moth's supper"
+  - "4th: life's flowing river"
+Pantheon Members:
+  - "[[Aelia]]"
+  - "[[Golgolgoss, The Watcher]]"
+  - "[[The Grey Ocean]]"
+  - "[[The Path of the Great Spirits]]"
+  - "[[Unmortus, The Dead Guardian]]"
 ---
 Followers of the Cabal know well the inevitability of life, death, and undeath, each a valuable moment in a soul's journey towards its final resting place. This pantheon was originally formed by worshippers of various deities working together to handle undead related strife and unrest in their communities. The Cabal's beliefs have expanded beyond its founding, with undeath seen as an additional step along a soul's pathway, sometimes taken willingly, sometimes forced, or skipped entirely.
 

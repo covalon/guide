@@ -1,13 +1,11 @@
 ---
 Tags:
 - covalon/deity
-Edicts: Appreciate the hearth, protect the home, teach communities to defend themselves, harvest with skill
-Anathema: Deny support to loved ones, sow discord in a community, allow harm to come to children, refuse to provide for your family or community
+Edicts: appreciate the hearth, protect the home, teach communities to defend themselves, harvest with skill
+Anathema: deny support to loved ones, sow discord in a community, allow harm to come to children, refuse to provide for your family or community
 Divine Font:
 - heal
-Divine Sanctification:
-- can choose
-- holy
+Divine Sanctification: can choose holy
 Divine Skill:
 - diplomacy
 Favored Weapon:

@@ -1,7 +1,7 @@
 ---
 Tags:
 - covalon/civilization
-Tagline: Haven of goblinkind.
+Tagline: Haven of goblinkind
 Government: The Prez and Senatorz (democratic republic)
 Population: goblins, hobgoblins, halflings
 Religions: animistic shamanism, dragons, demons

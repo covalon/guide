@@ -15,11 +15,11 @@ Members:
 - Rinka
 - Yali Fa'el
 - Pyre Toof
-Membership Requirements: Trained in Medicine
-Goals: Provide holistic medical care to any citizen in need, Grow and develop the quality and scope of medical care in Covalon, Provide medical supplies and teach medical knowledge
-Values: Capability, Humility, Respect
-Anathema: Refuse to treat a patient, Break doctor/patient confidentiality, Abuse your role as a caregiver
+Membership Requirements: trained in Medicine
+Goals: provide holistic medical care to any citizen in need, Grow and develop the quality and scope of medical care in Covalon, Provide medical supplies and teach medical knowledge
+Values: capability, Humility, Respect
+Anathema: refuse to treat a patient, Break doctor/patient confidentiality, Abuse your role as a caregiver
 ---
 Healing focused adventurers dedicated to providing care to all citizens of Covalon.
 
-![Covalon Medical Society Guild Heraldry. Designed by Kona.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Guilds/CovalonMedicalSociety.webp)
+![[CovalonMedicalSociety.webp|Covalon Medical Society Guild Heraldry. Designed by Kona.]]

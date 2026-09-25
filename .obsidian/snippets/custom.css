@@ -50,7 +50,7 @@ body {
   display: contents;
 }
 .covalon-prop-key {
-  color: var(--text-muted);
+  color: color-mix(in lab, var(--text-muted), var(--covalon-accent) 40%);
   font-weight: var(--font-semibold);
 }
 
@@ -435,12 +435,21 @@ table th {
   --inline-title-color: #0c246a;
   /* faint text (markdown syntax like ## and >, callout markers, placeholders): the link blue instead of light grey */
   --text-faint: #a0836e;
-  /* links: a slightly lighter navy */
-  --link-color: #3b62c4;
-  --link-color-hover: #0c246a;
-  --link-external-color: #3b62c4;
-  --link-external-color-hover: #0c246a;
-  --link-unresolved-color: #3b62c4;
+  /* accent: a warm brown. Links are a darker shade of it, and light up to the accent on hover. */
+  --accent-h: 30;
+  --accent-s: 35%;
+  --accent-l: 55%;
+  --covalon-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --covalon-accent-dark: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 15%));
+  --text-accent: var(--covalon-accent);
+  --text-accent-hover: var(--covalon-accent-dark);
+  --interactive-accent: var(--covalon-accent);
+  --interactive-accent-hover: var(--covalon-accent-dark);
+  --link-color: var(--covalon-accent-dark);
+  --link-color-hover: var(--covalon-accent);
+  --link-external-color: var(--covalon-accent-dark);
+  --link-external-color-hover: var(--covalon-accent);
+  --link-unresolved-color: var(--covalon-accent-dark);
 }
 
 /* PF2e statblocks: > [!statblock] styled like the original guide's activity and ritual blocks.
@@ -574,4 +583,183 @@ table th {
   border-top: 1px dashed var(--text-faint) !important;
   background: none !important;
   overflow: hidden;
+}
+
+/* Table colours: tan borders to match the page (Obsidian's default grey reads as blue on the
+   parchment); inside a callout, borders and header row take the callout's own ink colour. */
+.theme-light {
+  --table-border-color: var(--background-modifier-border);
+  --table-header-border-color: var(--background-modifier-border);
+}
+.callout table {
+  --table-border-color: color-mix(in srgb, var(--callout-ink, var(--callout-color)) 30%, transparent);
+  --table-header-border-color: var(--table-border-color);
+}
+.callout table :is(th, td) {
+  border-color: var(--table-border-color);
+}
+.callout table th {
+  background-color: color-mix(in srgb, var(--callout-ink, var(--callout-color)) 15%, transparent) !important;
+}
+/* Table rows: stripes and hover, painted on the cells.
+   Obsidian paints its own table backgrounds on the cells too (a tint on every second column, and its
+   row hover), with selectors more specific than a snippet's, and a cell's background covers the row's.
+   So these rules paint the cells, and use !important to always win over Obsidian's. */
+table tbody tr > td {
+  background-color: transparent !important;
+}
+/* every second row: a faint tint (4% of the text colour; 5% of the callout's ink inside a callout) */
+table tbody tr:nth-child(even) > td {
+  background-color: color-mix(in srgb, var(--text-normal) 4%, transparent) !important;
+}
+.callout table tbody tr:nth-child(even) > td {
+  background-color: color-mix(in srgb, var(--callout-ink, var(--callout-color)) 5%, transparent) !important;
+}
+/* hovering a row: a stronger tint, on every row */
+table tbody tr:hover > td {
+  background-color: color-mix(in srgb, var(--text-normal) 10%, transparent) !important;
+}
+.callout table tbody tr:hover > td {
+  background-color: color-mix(in srgb, var(--callout-ink, var(--callout-color)) 14%, transparent) !important;
+}
+
+/* Mission Overview: a full-width table with a fixed-width Mission column */
+.covalon-mission-overview table {
+  width: 100%;
+  table-layout: fixed;
+}
+.covalon-mission-overview :is(th, td):first-child {
+  width: 18em;
+}
+
+/* Statblocks, boxed: the title sits above the box, its underline is the box's top edge, and everything
+   under the title is framed by a thin border (like the Homebrewery blocks). Each block under the title
+   carries its piece of the side borders, so their gaps become padding instead of margins. */
+.callout[data-callout="statblock"] {
+  --statblock-box-border: 1px solid currentColor;
+  --statblock-box-pad: 0.75em;
+}
+.callout[data-callout="statblock"] > .callout-content > :is(h1, h2, h3, h4, h5, h6):first-child {
+  margin-bottom: 0 !important;   /* the title's underline is the top of the box */
+}
+.callout[data-callout="statblock"] > .callout-content > :not(:first-child) {
+  margin-block: 0 !important;
+  border-inline: var(--statblock-box-border);
+  padding-inline: var(--statblock-box-pad);
+}
+.callout[data-callout="statblock"] > .callout-content > :is(p, div) {
+  padding-block: 0.2em;
+}
+.callout[data-callout="statblock"] > .callout-content > :nth-child(2) {
+  padding-top: 0.45em;
+}
+.callout[data-callout="statblock"] > .callout-content > :last-child:not(:first-child) {
+  border-bottom: var(--statblock-box-border);
+  padding-bottom: 0.45em;
+}
+.callout[data-callout="statblock"] > .callout-content > :is(ul, ol) {
+  padding-inline-start: calc(var(--statblock-box-pad) + var(--list-indent, 2em));
+  padding-block: 0.2em;
+}
+/* rules inside the box run from side to side */
+.callout[data-callout="statblock"] > .callout-content > hr {
+  height: 0;
+  padding: 0;
+  border-inline: none;
+  border-top: 1px solid currentColor;
+  box-shadow: inset 1px 0 0 currentColor, inset -1px 0 0 currentColor;
+  margin: 0 !important;
+}
+/* hanging indent after a rule keeps clear of the box's left edge */
+.callout[data-callout="statblock"] > .callout-content > hr ~ p:has(> strong:first-child) {
+  padding-left: calc(var(--statblock-box-pad) + 1em);
+}
+
+/* Overview entries in the "aside" layout (the guilds): the note's images float to the right of its
+   text and properties; the property names line up on the right, next to their values */
+.covalon-entry-aside .covalon-entry-images {
+  float: right;
+  width: min(35%, 16rem);
+  margin: 0 0 1em 1.5em;
+}
+.covalon-entry-aside .covalon-entry-images img {
+  width: 100%;
+  height: auto;
+}
+.covalon-entry-aside .covalon-entry-body::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.covalon-entry-aside .covalon-prop-key {
+  text-align: right;
+}
+@media (max-width: 700px) {
+  .covalon-entry-aside .covalon-entry-images { float: none; width: auto; margin: 0 0 1em; }
+}
+
+/* Tagline under an overview entry's heading (the tagline="…" option, e.g. the civilizations) */
+.covalon-tagline {
+  margin: -0.6em 0 1em;
+  font-style: italic;
+  font-size: 1.05em;
+  color: var(--text-muted);
+}
+/* the same layout for the Missions table on each expedition note */
+.el-h2:has(> h2[data-heading="Missions"]) + .el-table table {
+  width: 100%;
+  table-layout: fixed;
+}
+.el-h2:has(> h2[data-heading="Missions"]) + .el-table :is(th, td):first-child {
+  width: 14em;
+}
+
+/* ---------- Dark mode, in line with light mode ---------- */
+/* Accent: a warm tannish yellow, nodding to the parchment of light mode.
+   Change --covalon-accent (and its hover shade) to try another colour. */
+.theme-dark {
+  --covalon-accent: #d6b46a;
+  --covalon-accent-hover: #e8cb8c;
+  --accent-h: 41;
+  --accent-s: 57%;
+  --accent-l: 63%;
+  --text-accent: var(--covalon-accent);
+  --text-accent-hover: var(--covalon-accent-hover);
+  --interactive-accent: #b8954e;
+  --interactive-accent-hover: #c9a660;
+  --link-color: var(--covalon-accent);
+  --link-color-hover: var(--covalon-accent-hover);
+  --link-external-color: var(--covalon-accent);
+  --link-external-color-hover: var(--covalon-accent-hover);
+  --link-unresolved-color: var(--covalon-accent);
+  --text-selection: rgba(214, 180, 106, 0.25);
+}
+/* Callout outlines at half strength in dark mode */
+.theme-dark .callout:not([data-callout="statblock"], [data-callout="columns"]) {
+  border-color: color-mix(in srgb, var(--callout-ink) 50%, transparent);
+}
+
+/* The Covalon logo at the top of the Player's Guide, centred */
+img[alt="Covalon Logo"] {
+  display: block;
+  margin-inline: auto;
+}
+
+/* Custom callouts with their own icons (the Brawls page's Monster Mash tables):
+   > [!dino] Dino Brawl   > [!fey] Furious Fey   > [!dragon] Dragons
+   The icon is an SVG in --callout-icon (Obsidian draws it; the site build reads it from here too).
+   Change --callout-color for a different colour.
+   Icons from game-icons.net, licensed CC BY 3.0: "Triceratops head" and "Spiked dragon head" by Delapouite,
+   "Fairy" by Lorc (https://game-icons.net). */
+.callout[data-callout="dino"] {
+  --callout-color: rgb(76, 150, 90);
+  --callout-icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="M197.479 59.813c-5.975-10.707-12.128-21.381-23.147-31.17-3.266 14.104-12.787 25.802-21.957 37.634-3.49-14.265-20.643-19.598-35.787-26.244-1.483 11.404-2.6 22.726-8.158 35.035-7.585-6.947-20.79-9.806-33.328-13.15 3.502 14.433 2.293 29.338 1.242 44.227l-40.453 3.42 19.314 36.359-38.379 22.781 30.363 22.191-30.039 25.538 30.627 15.26-28.494 24.224 25.434 12.672-16.045 22.228c-3.382-.12-6.748-.194-10.088-.207C17.384 357.016 18 426.512 18 494h132.2c22.992-13.75 43.804-28.112 59.321-44.172-32.829-3.25-51.774-9.921-62.783-21.164-24.535-22.661 9.547-47.633 2.143-67.289-4.652-6.38-11.538-7.695-18.635-9.184-36.095 20.677-56.727 35.6-86.781 56.211-1.207-27.584 3.857-56.846 13.139-78.724-7.633-8.89-13.152-19.953-17.084-32.137l20.539 3.447c1.69 3.87 3.584 7.442 5.689 10.69 6.396-8.455 13.321-25.704 23.383-24.194 24.704 3.716 43.28 22.49 50.105 48.262 10.708 2.88 22.655 10.32 26.33 18.879 7.813 23.009-19.866 46.884-5.966 61.445 7.712 7.877 34.521 17.07 94.798 18.102 3.194-.38 4.02.475 6.166 2.592 21.499 17.817 42.34 34.325 67.122 42.613 1.716-24.108-23.276-41.757-40.71-52.389l9.254-15.437c26.32 17.04 56.79 46.733 56.515 79.483 32.58-21.474 32.567-61.684 29.476-92.858a42.244 42.244 0 0 1-14.202-2.53c-9.572-3.47-17.504-9.83-23.279-17.187-5.775-7.357-9.65-15.737-9.603-24.645 0-.037.005-.075.006-.113-1.19-4.784-1.603-9.773-1.41-14.773-3.96-6.207-8.067-13.32-10.633-21.903-49.9 3.927-65.214-41.983-58.28-66.865-41.662-13.957-69.213-54.133-68.21-95.09l17.986.71c2.176 31.16 16.438 59.117 42.582 72.439-34.508-45.38-6.576-103.394-13.322-147.237-3.146-20.442-7.997-42.573-15.65-58.798zm-22.807 21.335c16.791-.124 34.104 3.915 50.771 12.735l-8.418 15.91c-37.802-20.004-77.088-11.273-103.593 16.297-26.505 27.57-39.949 74.495-21.287 132.418l-17.133 5.52c-20.325-63.088-6.065-117.64 25.443-150.413 19.693-20.483 46.23-32.259 74.217-32.467zm279.623 26.79c-63.489 18.759-116.15 42.119-157.936 101.646 34.835-33.685 71.421-52.248 110.155-62.916 14.047-12.303 29.838-24.61 47.78-38.73zm35.478 43.632c-77.59 5.823-141.897 20.993-203.654 95.662-16.245 26.922 4.404 50.691 28.852 52.434 6.183.22 8.903-1.557 9.539-2.777 26.375-50.656 51.76-79.157 83.547-101.057 23.068-15.893 49.298-28.427 81.716-44.262zM91.353 306.408c-14.442 18.208-24.891 43.897-28.546 67.006 18.525-12.726 34.965-23.67 58-36.459-5.15-16.35-15.47-26.778-29.453-30.547zm181.772 19.108l-14.082 11.21c-5.925-8.305-14.206-9.836-21.555-7.585l-5.412-17.168c16.261-5.246 31.306 1.66 41.049 13.543zm181.977-6.428c-28.968 16.529-59.9 32.96-99.637 30.66-6.28 18.741 20.989 35.328 36.492 28.281 26.91-15.945 52.604-31.054 63.145-58.941zm-235.498 5.488c14.446 34.744 37.707 36.327 58.095 13.608l13.49 11.918c-28.908 38.081-82.138 14.665-89.394-22.914zm91.44 55.133l15.628 8.934c-3.773 6.087 6.303 9.457 10.334 10.943l-6.094 16.937c-17.03-6.242-28.59-20.687-19.867-36.814z"/></svg>';
+}
+.callout[data-callout="fey"] {
+  --callout-color: rgb(176, 102, 196);
+  --callout-icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="M58.03 24.5C23.27 94.19 12.043 159.392 21.813 208.344c9.777 48.98 38.724 81.862 88.157 91.562.273 7.875 1.34 15.623 3.155 23.156.002.01-.002.022 0 .032-28.127 27.637-42.97 61.425-43.5 97.03 48.38 13.457 82.514 3.99 106.563-18.905 6.406 3.07 13.175 5.595 20.28 7.5 7.128 1.91 14.27 3.113 21.376 3.655.156.957.32 1.9.5 2.844C225.29 452 247.24 480.26 292.53 491.81c17.09-29.536 21.327-63.994 10.94-107.906 5.174-4.5 9.967-9.482 14.31-14.875 22.468 14.3 43.262 19.52 62.158 17.595 19.33-1.97 37.185-11.402 53.218-28.28 31.266-32.916 54.233-94.763 59.906-176.876-24.374-11.548-48.163-16.737-71-16.657-24.58.086-48.055 6.17-70.03 16.593-16.08 7.626-31.292 17.67-45.313 29.47-13.61-12.85-30.473-22.608-49.783-27.782-11.663-3.125-23.398-4.37-34.875-3.906-6.836.276-13.57 1.18-20.156 2.625C178.323 111.115 129.416 47.12 58.03 24.5zm23.94 66.688c18.666 0 33.593 14.926 33.593 33.593 0 18.672-14.926 33.595-33.594 33.595-18.67 0-33.626-14.926-33.626-33.594 0-18.666 14.957-33.593 33.625-33.593zm-24.376 82.53c10.23 0 18.312 8.116 18.312 18.345 0 10.228-8.083 18.312-18.312 18.312-10.23 0-18.313-8.08-18.313-18.313 0-10.228 8.085-18.343 18.314-18.343zm156.156 24.876c-32.586 12.06-55.813 43.41-55.813 80.187 0 47.21 38.26 85.5 85.47 85.5 37.43 0 69.24-24.062 80.812-57.56-.55 4.852-1.448 9.728-2.75 14.592-14.055 52.448-67.71 83.43-120.158 69.375-52.447-14.053-83.428-67.74-69.375-120.187 10.592-39.528 43.698-66.854 81.813-71.906zm215.938 16.47c18.667 0 33.593 14.956 33.593 33.624 0 18.67-14.924 33.593-33.592 33.593s-33.625-14.925-33.625-33.592c0-18.668 14.957-33.625 33.625-33.625zm-354.75 13.155c8.86 0 15.843 6.982 15.843 15.843 0 8.86-6.982 15.843-15.843 15.843-8.86 0-15.843-6.98-15.843-15.844 0-8.86 6.983-15.843 15.843-15.843zm341.093 71.874c10.23 0 18.314 8.083 18.314 18.312 0 10.232-8.083 18.344-18.313 18.344-10.228 0-18.31-8.115-18.31-18.344 0-10.23 8.082-18.312 18.31-18.312zm-41.31 37.156c8.86 0 15.874 6.983 15.874 15.844 0 8.863-7.014 15.844-15.875 15.844-8.862 0-15.845-6.984-15.845-15.844s6.983-15.844 15.844-15.844zm-265.533 37.594c8.86 0 15.844 6.983 15.844 15.844 0 8.862-6.98 15.843-15.843 15.843-8.86 0-15.843-6.982-15.843-15.842s6.983-15.844 15.844-15.844zm163.532 52.03c8.86 0 15.874 6.984 15.874 15.845 0 8.862-7.014 15.842-15.875 15.842-8.862 0-15.845-6.983-15.845-15.843 0-8.862 6.983-15.845 15.844-15.845z"/></svg>';
+}
+.callout[data-callout="dragon"] {
+  --callout-color: rgb(196, 72, 58);
+  --callout-icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="M188.8 20.38c-5.3 26.85 4.6 55.74 34.1 86.52 11.2-7.29 31.6-10.94 50-8.16-46-22.31-66.5-47.13-84.1-78.36zM29.19 26.62C43.56 73.08 81.09 128.8 129.6 168.3 93.51 166 49.93 153.1 18.76 143c24.96 35.2 64.17 52.9 103.34 66.3C97.13 227 66.99 245 18.66 248c54.64 19.2 107.54 8.9 131.34.7-17.9 34.9-100.72 66.2-122.31 77 53.26 4.2 121.71-11 167.01-32.9 10 24.6-1.6 53.2-10.1 77.8-1.9 4.5-3.8 8.9-5.7 13.3 5.1-3.5 10.1-7 14.9-10.6 23.6-16.2 47.8-31.9 59.5-58.8 26.1 31.2 62.7 62.1 107 85.4 17.4 22.1 28.3 49 34.2 73.8 8.3-19.1 13.8-40.2 9.7-60.3 24.5-3.6 35.6-29.7 35.5-54.4-12.6 6.2-15.1 6.3-31.2 8.2 0-10.1.6-12.5-3-28.7-10.3 8.4-21 11.2-30.8 11.8 2.1-7.6 3-19.5 3.7-27.3-13 7.1-19.2 9.7-30.1 10.8-.4-10.9-.1-20-4.1-30.4-29.6 19-48.6 1.5-68-21.3 19.8-17 96.4-21.8 95.1 7.1 14-7.3 18.8-11.2 23.6-15.9 9.1 8.5 13.4 20.9 15.1 31.4 9.3-9.4 10.3-10.5 17.1-23.8 5.7 10.1 8.8 17 10.7 30.6 8.5-6.2 15.4-13.1 19.8-21.4 7.5 15.5 8.3 16 12.4 33 17.8-13.1 21.8-31.2 22.8-47.6 2-33-.3-108.2-31-142.9 1.7 36.3-13.1 70-33.8 80.7-12.6 4.9-96.5-74.6-137.6-93.3-23.5-10.2-48.1 7.1-67.8 9.3C147 106.2 83.57 70.94 29.19 26.62zM296.1 152.8c13.3 20.9 32.2 36.9 60.1 55-19.4 2.9-65.8-6.7-77.7-24-5.5-7.9 7.1-21.3 17.6-31zM180.6 319.1c-14.4 6.2-29.2 10.9-43.8 14.3-2.4 3.6-4.6 7.1-6.7 10.5 14.8 5.3 31.5 7 44.1 2.8 3.3-9.8 5.5-19.3 6.4-27.6zm-68 19.1l-10.2 1.5c-31.81 36.6-61.9 103.2-48.24 151.9h36.13c-11.12-37.7-16.53-87.1 22.31-153.4zm8.5 21.5c-5.9 11.4-10.4 22.1-13.8 32.1 12.9 6.7 29.1 8.9 44.8 8.2 4.6-10.5 9.8-21.8 14.6-33.3-15.4 1.8-31.4-1.4-45.6-7zm111.4 6.6c-12 10.5-25.2 20.3-38.9 29.6 7 34 33.4 63.4 73.9 95.7h83.3c-57.2-31.8-94.6-73.3-118.3-125.3zm-130 43.2c-2.5 11.8-3.3 22.7-3 32.9 37.3 14.2 62.5 13.5 97.5 4.1-7.2-10.3-13-21-16.9-32.3-32.7 9.4-55.4 5.7-77.6-4.7zm106.6 52.4c-38.1 10.9-68.8 13.2-107.5.3 1.8 10.4 4.5 20.1 7.5 29.4h130.1c-11.3-9.8-21.4-19.6-30.1-29.7z"/></svg>';
 }

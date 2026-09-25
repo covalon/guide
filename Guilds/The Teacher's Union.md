@@ -5,11 +5,11 @@ Headquarters: '[[The School]]'
 Leader: Onyat
 Members:
 - Reginald-4
-Membership Requirements: Expert in a skill related to an educational subject
-Goals: Educate the new and current generations of citizens
-Values: Education, safety, positivity, encouragement
-Anathema: Destroy a source of knowledge
+Membership Requirements: expert in a skill related to an educational subject
+Goals: educate the new and current generations of citizens
+Values: education, safety, positivity, encouragement
+Anathema: destroy a source of knowledge
 ---
 Members of Covalon passing on their varied knowledge to others.
 
-![The Teacher's Union Guild Heraldry. Designed by Sheas.](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/Guilds/TeachersUnion.png?raw=true)
+![[TeachersUnion.webp|The Teacher's Union Guild Heraldry. Designed by Sheas.]]

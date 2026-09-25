@@ -1,15 +1,12 @@
 ---
 Tags:
 - covalon/deity
-Edicts: Unearth the veiled histories, partake in local customs, document the past, keep your curiosity unbound
-Anathema: Desecrate historical sites, be intolerant of other cultures, remain willfully ignorant, spurn past societies
+Edicts: unearth the veiled histories, partake in local customs, document the past, keep your curiosity unbound
+Anathema: desecrate historical sites, be intolerant of other cultures, remain willfully ignorant, spurn past societies
 Divine Font:
 - harm
 - heal
-Divine Sanctification:
-- can choose
-- holy
-- unholy
+Divine Sanctification: can choose holy or unholy
 Divine Skill:
 - society
 Favored Weapon:

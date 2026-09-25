@@ -7,4 +7,4 @@ A cultural exchange center between lizardfolk and the "soft ones," Iruxi Inc. se
 
 Many in Covalon believe that the store is merely a front for a secret organization of Iruxi intelligence operatives, but there's no credible evidence to back up those rumors.
 
-![Iruxi Inc. Designed by Sheas.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/IruxiInc.webp)
+![[IruxiInc.webp|Iruxi Inc. Designed by Sheas.]]

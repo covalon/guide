@@ -59,7 +59,7 @@ A point is scored when a player on the enemy team is knocked to Dying 4, or resp
 
 On a respawn, players can elect to stay in the same stat block or switch to their other option. When you respawn, you remove all negative conditions and refresh any used abilties, such as spells or breath weapons. Unlike normal brawls, in Monster Mash you respawn upright and can immediatly take a turn.
 > [!columns|notitle]
-> > [!note] Dino Brawl
+> > [!dino] Dino Brawl
 > > | Number | Dino |
 > > | :---: | :---: |
 > > | 1 | Ankylosaurus |
@@ -76,7 +76,7 @@ On a respawn, players can elect to stay in the same stat block or switch to thei
 > > ##### Stat block complexity 
 > > Low, recommended for players newer to PF2e's rules.
 >
-> > [!note] Furious Fey
+> > [!fey] Furious Fey
 > > | Number | Fey |
 > > | :---: | :---: |
 > > | 1 | Baobhan Sith |
@@ -93,7 +93,7 @@ On a respawn, players can elect to stay in the same stat block or switch to thei
 > > ##### Stat block complexity
 > > Moderate, includes spells and unique abilities, including healing.
 >
-> > [!note] Dragons
+> > [!dragon] Dragons
 > > | Number | Dragon |
 > > | :---: | :---: |
 > > | 1 | Adamantine Dragon |

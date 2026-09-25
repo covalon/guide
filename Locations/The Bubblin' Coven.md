@@ -9,4 +9,4 @@ Though at first glance, this deep purple yurt may invoke feelings of unease and 
 
 Run by Myka Fa'el (female elf changeling witch) and her familiar Willow, they supply the town with occult crafts and services. Curse removal and potions are common purchases, but the store is also known for two specialties: serums of sex shift and careful uses of the bestial curse to help others try and find their true selves.
 
-![The Bubblin' Coven. Designed by Sheas.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/BubblingCoven.webp)
+![[BubblingCoven.webp|The Bubblin' Coven. Designed by Sheas.]]

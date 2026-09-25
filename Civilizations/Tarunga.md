@@ -1,7 +1,7 @@
 ---
 Tags:
 - covalon/civilization
-Tagline: The port to anywhere.
+Tagline: The port to anywhere
 Created by:
 - Ekko
 Government: The Seven Guilds (7 largest seafaring guilds)

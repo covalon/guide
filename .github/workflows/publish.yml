@@ -1,0 +1,47 @@
+# Publishes the site to GitHub Pages whenever the vault is pushed to the main branch.
+# (Settings → Pages → Source: "GitHub Actions" in the repository on GitHub.)
+name: Publish site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true   # the pictures in 🖼️ Assets are stored with Git LFS
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install the build's Python packages
+        run: pip install -r .site-build/requirements.txt
+      - name: Build the site
+        run: python .site-build/build.py . public
+      - name: Build the search index
+        run: python -m pagefind --site public
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

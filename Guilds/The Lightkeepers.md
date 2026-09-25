@@ -9,11 +9,11 @@ Members:
 - Dante D'Alessandro
 - Munqir
 - Yara
-Membership Requirements: A kind heart, empathy, and patience
-Goals: Forge a new joyful existence with guidance from our past, connecting people
-Values: Storytelling, positivity
-Anathema: Laughing at others’ misery with malicious intent, not helping those who need it
+Membership Requirements: a kind heart, empathy, and patience
+Goals: forge a new joyful existence with guidance from our past, connecting people
+Values: storytelling, positivity
+Anathema: laughing at others’ misery with malicious intent, not helping those who need it
 ---
 A guild for those who seek a warm home and friendly faces in a broken world.
 
-![The Lightkeepers Guild Heraldry.](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/Guilds/TheLightkeepers.png?raw=true)
+![[TheLightkeepers.webp|The Lightkeepers Guild Heraldry.]]

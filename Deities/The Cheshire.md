@@ -1,13 +1,11 @@
 ---
 Tags:
 - covalon/deity
-Edicts: Have fun, play pranks, make jokes and enjoy yourself, always prioritise your own needs and desires
-Anathema: Failing to fight for your freedoms, control the life and deaths of others at the behest of an institution or god, concern yourself with the plights of others to the detriment of yourself
+Edicts: have fun, play pranks, make jokes and enjoy yourself, always prioritise your own needs and desires
+Anathema: failing to fight for your freedoms, control the life and deaths of others at the behest of an institution or god, concern yourself with the plights of others to the detriment of yourself
 Divine Font:
 - harm
-Divine Sanctification:
-- can choose
-- unholy
+Divine Sanctification: can choose unholy
 Divine Skill:
 - acrobatics
 Favored Weapon:

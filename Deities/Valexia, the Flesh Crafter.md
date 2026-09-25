@@ -3,13 +3,11 @@ Tags:
 - covalon/deity
 Aliases:
 - Valexia
-Edicts: Encourage the development or mutation of physiology, embrace grief or pain as constructive lessons, delight in the freedom of not being in control
-Anathema: Speak of sorrow or pain in a negative way, discriminate based on physical appearance, curb your research due to other's opinions
+Edicts: encourage the development or mutation of physiology, embrace grief or pain as constructive lessons, delight in the freedom of not being in control
+Anathema: speak of sorrow or pain in a negative way, discriminate based on physical appearance, curb your research due to other's opinions
 Divine Font:
 - harm
-Divine Sanctification:
-- must choose
-- unholy
+Divine Sanctification: must choose unholy
 Divine Skill:
 - medicine
 Favored Weapon:

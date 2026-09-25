@@ -1,15 +1,12 @@
 ---
 Tags:
 - covalon/deity
-Edicts: Find hidden knowledge, protect secrets, mislead others
-Anathema: Share secrets without reason, destroy knowledge, spread worship of Xeesis
+Edicts: find hidden knowledge, protect secrets, mislead others
+Anathema: share secrets without reason, destroy knowledge, spread worship of Xeesis
 Divine Font:
 - harm
 - heal
-Divine Sanctification:
-- can choose
-- holy
-- unholy
+Divine Sanctification: can choose holy or unholy
 Divine Skill:
 - deception
 Favored Weapon:

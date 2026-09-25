@@ -13,8 +13,8 @@ The owner's partner, Locke performs quiet and calming music to enhance the exper
 
 Often members of the Sundered Circle can be found here, partaking in the guild's endeavours.
 
-![Arcane Alcove Ground. Designed by Gabriel.](https://raw.githubusercontent.com/covalon/covalon-guide/refs/heads/gh-pages/assets/covalon/PlayersGuide/Maps/The_Arcane_Alcove_Floor_1.webp)
+![[The_Arcane_Alcove_Floor_1.webp|Arcane Alcove Ground. Designed by Gabriel.]]
 
-![Arcane Alcove Sign. Designed by Gabriel.](https://raw.githubusercontent.com/covalon/covalon-guide/refs/heads/gh-pages/assets/covalon/PlayersGuide/Maps/The_Arcane_Alcove.png)
+![[The_Arcane_Alcove.webp|Arcane Alcove Sign. Designed by Gabriel.]]
 
-![Arcane Alcove Upper. Designed by Gabriel.](https://raw.githubusercontent.com/covalon/covalon-guide/refs/heads/gh-pages/assets/covalon/PlayersGuide/Maps/The_Arcane_Alcove_Floor_2.webp)
+![[The_Arcane_Alcove_Floor_2.webp|Arcane Alcove Upper. Designed by Gabriel.]]

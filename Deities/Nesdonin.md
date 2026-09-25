@@ -1,13 +1,11 @@
 ---
 Tags:
 - covalon/deity
-Edicts: Spread and nurture disease, use poisons
-Anathema: Bury or burn the dead, kill a harmless pest, aid in ending a plague or infection
+Edicts: spread and nurture disease, use poisons
+Anathema: bury or burn the dead, kill a harmless pest, aid in ending a plague or infection
 Divine Font:
 - harm
-Divine Sanctification:
-- must choose
-- unholy
+Divine Sanctification: must choose unholy
 Divine Skill:
 - medicine
 Favored Weapon:

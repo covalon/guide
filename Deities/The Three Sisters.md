@@ -1,14 +1,12 @@
 ---
 Tags:
 - covalon/deity
-Edicts: Learn new truths about the world, heal those who are wounded, create and discover new formulas
-Anathema: Destroy knowledge you come across, torture an enemy, wallow in entropy
+Edicts: learn new truths about the world, heal those who are wounded, create and discover new formulas
+Anathema: destroy knowledge you come across, torture an enemy, wallow in entropy
 Divine Font:
 - harm
 - heal
-Divine Sanctification:
-- can choose
-- holy
+Divine Sanctification: can choose holy
 Divine Skill:
 - nature
 Favored Weapon:

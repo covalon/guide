@@ -1,13 +1,12 @@
 ---
 Tags:
 - covalon/deity
-Edicts: Pursue self-improvement, cooperate with others, uphold promises and responsibilities
-Anathema: Cheat agreed-upon rules or trust, invoke Kujani's name for vanity or influence
+Edicts: pursue self-improvement, cooperate with others, uphold promises and responsibilities
+Anathema: cheat agreed-upon rules or trust, invoke Kujani's name for vanity or influence
 Divine Font:
 - harm
 - heal
-Divine Sanctification:
-- none
+Divine Sanctification: none
 Divine Skill:
 - society
 Favored Weapon:

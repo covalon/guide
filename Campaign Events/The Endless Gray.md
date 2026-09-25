@@ -1,8 +1,8 @@
 ---
 Tags:
   - covalon/event
-Event Type: multitable event
 Date: 2024-02-24
+Type: Multitable
 ---
 > [!heroes|right] Heroes of the Endless Gray
 > The following characters were the vanguard who fought against Captain Laurent Devreaux to defend the Heart of Terra.
@@ -60,8 +60,7 @@ Date: 2024-02-24
 > - Zhaal Revane
 > - 澶安处 (Chan An Chu)
 
-## Multitable Event: February 24th, 2024
-It was a clear, cool winter morning the day an unidentifiable metal orb crashed into the Ikouga outpost. Shortly after, we began to recover them from adventures across Elleaterra. They carried messages in an unknown language, but our skilled linguists eventually deciphered a series of messages: HELLO ANYBODY OUT THERE, WHO IS LEFT ALIVE, WE ARE IN THE SEA, WHO ARE YOU, and finally, WHAT IS COVALON. It became clear these orbs were somehow gathering information from us, and returning a signal to whatever, or whoever sent them.
+It was a clear, cool winter morning the day an unidentifiable metal orb crashed into the Ikouga outpost. Shortly after, we began to recover them from adventures across Elleaterra. They carried messages in an unknown language, but our skilled linguists eventually deciphered a series of messages: `HELLO ANYBODY OUT THERE`, `WHO IS LEFT ALIVE`, `WE ARE IN THE SEA`, `WHO ARE YOU`, and finally, `WHAT IS COVALON`. It became clear these orbs were somehow gathering information from us, and returning a signal to whatever, or whoever sent them.
 
 Unforunately, we discovered these strangers were not friends when we intercepted a transmission. A pirate captain addressing his crew - they had learned of Covalon's existence, the artifact that allows our survival after the Catclysm, and they wanted it for themselves. We've used the Heart of Terra's power to spread across Elleaterra and reclaim the continent by planting its saplings, but these outposts were now a vulnerability. And so we began to fortify.
 
@@ -73,4 +72,4 @@ Covalonians broke into teams and mustered defenses, beating back the attacks at 
 
 We fought the raiders in the streets of the city, and even at the Shrine of Terra, as the Endless Gray attempted to assimilate it, through the Captain. Thankfully, we fought back the invaders, crashing their airship into the mountains beyond. Our barriers were breached, but Covalon stands, stronger than before.
 
-![A crashed metal orb. Designed by Kona.](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/ExpeditionLog/crashedorbEG.gif?raw=true)
+![[crashedorbEG.webp|A crashed metal orb. Designed by Kona.]]

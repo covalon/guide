@@ -9,4 +9,4 @@ Roleplay Channel:
 ---
 Whether it be for official council business or for signing a new guild, the town hall is the heart of the legislative, executive, and judicial facets of Covalon's government. The courtroom, city planner's office, and public meeting spaces can all be found within its walls.
 
-![The Town Hall. Designed by Sheas.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/TownHall.webp)
+![[TownHall.webp|The Town Hall. Designed by Sheas.]]

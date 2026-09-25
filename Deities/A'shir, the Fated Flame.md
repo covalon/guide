@@ -3,14 +3,12 @@ Tags:
 - covalon/deity
 Aliases:
 - A'shir
-Edicts: Stoke flames, divine the future, help bring about the fated end
-Anathema: Put out flames, worship other gods, attempt to escape your fate
+Edicts: stoke flames, divine the future, help bring about the fated end
+Anathema: put out flames, worship other gods, attempt to escape your fate
 Divine Font:
 - harm
 - heal
-Divine Sanctification:
-- can choose
-- unholy
+Divine Sanctification: can choose unholy
 Divine Skill:
 - occultism
 Favored Weapon:

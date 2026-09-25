@@ -1,13 +1,11 @@
 ---
 Tags:
 - covalon/deity
-Edicts: Spread fear and madness in your foes, learn secrets
-Anathema: Take hostages, remove madness or fear, destroy secret knowledge
+Edicts: spread fear and madness in your foes, learn secrets
+Anathema: take hostages, remove madness or fear, destroy secret knowledge
 Divine Font:
 - harm
-Divine Sanctification:
-- must choose
-- unholy
+Divine Sanctification: must choose unholy
 Divine Skill:
 - intimidation
 Favored Weapon:

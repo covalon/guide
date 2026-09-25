@@ -1,33 +1,31 @@
 ---
 Tags:
-- covalon/deity
+  - covalon/deity
 Aliases:
-- Trella
-Edicts: Travel the world to learn about yourself, aid and provide charity to others on physical and spiritual journeys
-Anathema: Be complacent with your position or situation, horde wealth, lie to travelers
-Pantheons:
-- '[[The Circle of Stars]]'
+  - Trella
+Edicts: travel the world to learn about yourself, aid and provide charity to others on physical and spiritual journeys
+Anathema: be complacent with your position or situation, horde wealth, lie to travelers
 Divine Font:
-- harm
-- heal
-Divine Sanctification:
-- can choose
-- holy
+  - harm
+  - heal
+Divine Sanctification: can choose holy
 Divine Skill:
-- occultism
+  - occultism
 Favored Weapon:
-- starknife
+  - starknife
 Domains:
-- fate
-- moon
-- star
-- travel
+  - fate
+  - moon
+  - star
+  - travel
 Alternate Domains:
-- nothingness
+  - nothingness
 Cleric Spells:
-- '1st: tailwind'
-- '4th: translocate'
-- '6th: blanket of stars'
+  - "1st: tailwind"
+  - "4th: translocate"
+  - "6th: blanket of stars"
+Pantheons:
+  - "[[The Circle of Stars]]"
 ---
 Trella is a lesser-known deity of thoughtful travel. She encompasses the inky black and starlight of the night sky. Trella provides navigation for the lost.
 

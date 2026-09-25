@@ -9,4 +9,4 @@ Roleplay Channel:
 ---
 Though the gods have gone silent, many citizens of Covalon cling to their faith in hopes that the divines will deliver them from the horrors of the outside world. Covalon's chapel, staffed by NPC holy folk and the Servants of Terra guild, endeavors to provide religious services for all of the different faiths in Covalon, as well as a place of rest for those who have fought their last battle.
 
-![The Chapel. Designed by Sheas.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/Chapel.webp)
+![[Chapel.webp|The Chapel. Designed by Sheas.]]

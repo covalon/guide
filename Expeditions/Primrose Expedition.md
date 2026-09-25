@@ -43,20 +43,17 @@ Their sultan had plans to raise an army of undead and elementals in order to rec
 
 Thankfully, we were able to defeat Saddam Syed, Sultan of the Sky before his plans could come to fruition, and destroy the Maw Vessel in Primrose in the process, bringing a tentative peace to the underground city.
 
-![Al-Fazim's Letter.](https://raw.githubusercontent.com/covalon/covalon-guide/gh-pages/assets/covalon/PlayersGuide/ExpeditionLog/Letter_from_Al-Fazim.webp)
+![[Letter_from_Al-Fazim.webp|Al-Fazim's Letter.]]
 
-![Covalon's outpost under Duneveil. Designed by Sheas.](https://raw.githubusercontent.com/covalon/covalon-guide/gh-pages/assets/covalon/PlayersGuide/ExpeditionLog/PrimroseOutpost.webp)
+![[PrimroseOutpost.webp|Covalon's outpost under Duneveil. Designed by Sheas.]]
 ## Base Camp
 *Summary to come.*
 ## Missions
-### Mission A: Siege the Walls
-Launch an all-out assault against the city of Duneveil to distract the city guard while our allies sneak into the Necropolis.
-### Mission B: Playing Politics
-Our allies in Duneveil are calling in a favor. We owe them, so sneak in and help them with whatever politics game they’re planning to play.
-
-*This mission has a heavy emphasis on skill challenges and reputation systems.*
-### Mission C: Plunder the Tombs
-While other forces of Covalon are causing a distraction, we have to use the opportunity to enter the Necropolis district and figure out the source of their undead.
+| Mission | Summary |
+| :-- | :-- |
+| A: Siege the Walls | Launch an all-out assault against the city of Duneveil to distract the city guard while our allies sneak into the Necropolis. |
+| B: Playing Politics | Our allies in Duneveil are calling in a favor. We owe them, so sneak in and help them with whatever politics game they’re planning to play.<br>*This mission has a heavy emphasis on skill challenges and reputation systems.* |
+| C: Plunder the Tombs | While other forces of Covalon are causing a distraction, we have to use the opportunity to enter the Necropolis district and figure out the source of their undead. |
 ## Finale
 **Boss:** Saddam Sayed, Sultan of the Sky
 

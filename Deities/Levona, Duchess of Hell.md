@@ -3,13 +3,11 @@ Tags:
 - covalon/deity
 Aliases:
 - Levona
-Edicts: Come out ahead in contracts, show no mercy to those beneath your station, be subservient to those above you
-Anathema: Break a contract, show mercy, insult Levona in any way
+Edicts: come out ahead in contracts, show no mercy to those beneath your station, be subservient to those above you
+Anathema: break a contract, show mercy, insult Levona in any way
 Divine Font:
 - harm
-Divine Sanctification:
-- must choose
-- unholy
+Divine Sanctification: must choose unholy
 Divine Skill:
 - deception
 Favored Weapon:

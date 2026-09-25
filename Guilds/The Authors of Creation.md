@@ -11,11 +11,11 @@ Members:
 - Rengrant
 - James Juki-Kajiya
 - Von Heldberg
-Membership Requirements: Trained in Crafting or an associated Lore skill
-Goals: Through their act of creation, restoring the foundations of civilization
-Values: Values good works; Never offer less than your best.
-Anathema: Taking advantage of another's need for inordinate gain.
+Membership Requirements: trained in Crafting or an associated Lore skill
+Goals: through their act of creation, restoring the foundations of civilization
+Values: values good works; never offer less than your best.
+Anathema: taking advantage of another's need for inordinate gain.
 ---
 A guild for the crafters of Covalon.
 
-![The Authors of Creation Guild Heraldry. Designed by Kosta.](https://github.com/covalon/covalon-guide/blob/gh-pages/assets/covalon/PlayersGuide/Guilds/AuthorsofCreatrionpng.png?raw=true)
+![[AuthorsofCreatrionpng.webp|The Authors of Creation Guild Heraldry. Designed by Kosta.]]

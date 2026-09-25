@@ -3,15 +3,12 @@ Tags:
 - covalon/deity
 Aliases:
 - Xan'Zyk
-Edicts: Strive to gain magical power, research new spells and rituals, use magic to solve problems
-Anathema: Curtail magical research, destroy magical knowledge or spells, refuse to let another learn a spell from you
+Edicts: strive to gain magical power, research new spells and rituals, use magic to solve problems
+Anathema: curtail magical research, destroy magical knowledge or spells, refuse to let another learn a spell from you
 Divine Font:
 - harm
 - heal
-Divine Sanctification:
-- can choose
-- holy
-- unholy
+Divine Sanctification: can choose holy or unholy
 Divine Skill:
 - arcana
 Favored Weapon:

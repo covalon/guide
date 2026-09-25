@@ -3,13 +3,11 @@ Tags:
 - covalon/deity
 Aliases:
 - Novissime
-Edicts: Wield his favoured weapon in combat, openly show your worship through symbols and weaponry
-Anathema: Abandoning contracted work, recklessly rush into battle, show mercy to those you have sworn to slay
+Edicts: wield his favoured weapon in combat, openly show your worship through symbols and weaponry
+Anathema: abandoning contracted work, recklessly rush into battle, show mercy to those you have sworn to slay
 Divine Font:
 - harm
-Divine Sanctification:
-- must choose
-- unholy
+Divine Sanctification: must choose unholy
 Divine Skill:
 - stealth
 Favored Weapon:

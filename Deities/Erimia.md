@@ -1,13 +1,12 @@
 ---
 Tags:
 - covalon/deity
-Edicts: Guide civilization to grow in harmony with nature, live sustainably and according to natural cycles, preserve areas of natural wilderness, protect the balance of nature, protect endangered species
-Anathema: Cause damage to natural settings, kill animals for reasons other than self-defense or sustenance, remove an element or indigenous species from a natural area, encourage imbalance in nature, allow abuse of natural resources
+Edicts: guide civilization to grow in harmony with nature, live sustainably and according to natural cycles, preserve areas of natural wilderness, protect the balance of nature, protect endangered species
+Anathema: cause damage to natural settings, kill animals for reasons other than self-defense or sustenance, remove an element or indigenous species from a natural area, encourage imbalance in nature, allow abuse of natural resources
 Divine Font:
 - harm
 - heal
-Divine Sanctification:
-- none
+Divine Sanctification: none
 Divine Skill:
 - nature
 Favored Weapon:

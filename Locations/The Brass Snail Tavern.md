@@ -9,4 +9,4 @@ Adventurers run on bread and beer, and the adventurers of Covalon are no differe
 
 The proprieter, Drusk (male lizardfolk bartender), is always around to serve thirsty patrons, and some adventurers choose to work at the Snail in between adventures as well.
 
-![The Brass Snail. Designed by Sheas.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/TheBrasSnail.webp)
+![[TheBrasSnail.webp|The Brass Snail. Designed by Sheas.]]

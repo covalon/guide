@@ -1,32 +1,30 @@
 ---
 Tags:
-- covalon/deity
-Edicts: Destroy evil undead, protect the weak, provide aid to the sick and wounded, seek and allow redemption
-Anathema: Create undead, create magical darkness, lie, deny a repentant creature an opportunity for redemption, fail to strike down evil
-Pantheons:
-- '[[The Cabal of Everlasting Rest]]'
-- '[[The Circle of Stars]]'
-- '[[The Home of Hearth and Health]]'
+  - covalon/deity
+Edicts: destroy evil undead, protect the weak, provide aid to the sick and wounded, seek and allow redemption
+Anathema: create undead, create magical darkness, lie, deny a repentant creature an opportunity for redemption, fail to strike down evil
 Divine Font:
-- heal
-Divine Sanctification:
-- can choose
-- holy
+  - heal
+Divine Sanctification: can choose holy
 Divine Skill:
-- medicine
+  - medicine
 Favored Weapon:
-- morningstar
+  - morningstar
 Domains:
-- fire
-- healing
-- sun
-- truth
+  - fire
+  - healing
+  - sun
+  - truth
 Alternate Domains:
-- duty
+  - duty
 Cleric Spells:
-- '2nd: blazing bolt'
-- '3rd: fireball'
-- '7th: fiery body'
+  - "2nd: blazing bolt"
+  - "3rd: fireball"
+  - "7th: fiery body"
+Pantheons:
+  - "[[The Cabal of Everlasting Rest]]"
+  - "[[The Circle of Stars]]"
+  - "[[The Home of Hearth and Health]]"
 ---
 Aelia was one of the most worshiped gods in the world before the destruction. She was loved not only for bringing light and heat to the world daily without fail, but was also worshiped for her offers of redemption to those who asked for it.
 

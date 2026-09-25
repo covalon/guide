@@ -3,13 +3,11 @@ Tags:
 - covalon/deity
 Aliases:
 - Fah'rin
-Edicts: Sculpt ice into vicious shapes, do not fear the cold, perfect yourself
-Anathema: Create fires for warmth, intentionally melt ice, harm a wolf that has done you no wrong
+Edicts: sculpt ice into vicious shapes, do not fear the cold, perfect yourself
+Anathema: create fires for warmth, intentionally melt ice, harm a wolf that has done you no wrong
 Divine Font:
 - harm
-Divine Sanctification:
-- can choose
-- unholy
+Divine Sanctification: can choose unholy
 Divine Skill:
 - survival
 Favored Weapon:

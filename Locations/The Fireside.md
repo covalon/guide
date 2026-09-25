@@ -15,6 +15,6 @@ When not being used as a gathering spot for social meetings among friends or for
 
 *"The Fireside is always open with a flagon ready for you."* - Sign that can be read just outside the building.
 
-![The Fireside, ground floor. Designed by Ren.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/Fireside.webp)
+![[Fireside.webp|The Fireside, ground floor. Designed by Ren.]]
 
-![The Fireside, second floor. Designed by Ren.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/Fireside2.webp)
+![[Fireside2.webp|The Fireside, second floor. Designed by Ren.]]

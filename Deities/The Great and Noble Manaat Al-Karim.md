@@ -1,13 +1,11 @@
 ---
 Tags:
 - covalon/deity
-Edicts: To care for and promote the diaspora, to make honorable trades
-Anathema: To make vows, to use poison, speak her brother's name, to serve an evil genie
+Edicts: to care for and promote the diaspora, to make honorable trades
+Anathema: to make vows, to use poison, speak her brother's name, to serve an evil genie
 Divine Font:
 - heal
-Divine Sanctification:
-- can choose
-- holy
+Divine Sanctification: can choose holy
 Divine Skill:
 - performance
 Favored Weapon:

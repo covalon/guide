@@ -1,13 +1,11 @@
 ---
 Tags:
 - covalon/deity
-Edicts: Guide others through transitions in life, acknowledge Wyrms as mighty beings, consider the opinions of elders
-Anathema: Avoid personal change, desecrate or destroy knowledge, be idle in your learning
+Edicts: guide others through transitions in life, acknowledge Wyrms as mighty beings, consider the opinions of elders
+Anathema: avoid personal change, desecrate or destroy knowledge, be idle in your learning
 Divine Font:
 - heal
-Divine Sanctification:
-- can choose
-- holy
+Divine Sanctification: can choose holy
 Divine Skill:
 - society
 Favored Weapon:

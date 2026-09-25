@@ -1,15 +1,12 @@
 ---
 Tags:
 - covalon/deity
-Edicts: Find beauty in all displays of the Elements both mighty and subtle, honor the Elements in equal measure, respect that devotion to the Elements is as dynamic from person to person as the Elements themselves
-Anathema: Benefit from the Elements influence without thanks, forsake an Element for exclusive devotion to others, disregard extreme manifestations of the Elements without investigation
+Edicts: find beauty in all displays of the Elements both mighty and subtle, honor the Elements in equal measure, respect that devotion to the Elements is as dynamic from person to person as the Elements themselves
+Anathema: benefit from the Elements influence without thanks, forsake an Element for exclusive devotion to others, disregard extreme manifestations of the Elements without investigation
 Divine Font:
 - harm
 - heal
-Divine Sanctification:
-- can choose
-- holy
-- unholy
+Divine Sanctification: can choose holy or unholy
 Divine Skill:
 - nature
 Favored Weapon:

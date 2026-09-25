@@ -3,13 +3,11 @@ Tags:
 - covalon/deity
 Aliases:
 - Sinnesh
-Edicts: Respect natural caves and underground spaces, value the knowledge of your elders, utilize the resources you gather, assist underground travellers
-Anathema: End the life of a child, let precious minerals or metals go to waste, abandon a family member who cherishes and respects you
+Edicts: respect natural caves and underground spaces, value the knowledge of your elders, utilize the resources you gather, assist underground travellers
+Anathema: end the life of a child, let precious minerals or metals go to waste, abandon a family member who cherishes and respects you
 Divine Font:
 - heal
-Divine Sanctification:
-- can choose
-- holy
+Divine Sanctification: can choose holy
 Divine Skill:
 - crafting
 Favored Weapon:

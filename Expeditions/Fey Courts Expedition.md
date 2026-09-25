@@ -39,18 +39,15 @@ The Fey Courts expedition has been COMPLETED - summary to come!
 
 > [!clear]
 
-![Covalon's hidden camp in the trees. Designed by Rinka.](https://github.com/covalon/covalon-guide/raw/97e8a890004b0ccb730185fc63da8e958076d977/assets/covalon/PlayersGuide/Maps/Fey_Courts_Camp.webp)
+![[Fey_Courts_Camp.webp|Covalon's hidden camp in the trees. Designed by Rinka.]]
 ## Base Camp
 *Summary to come.*
 ## Missions
-### Mission A: Ore Collector
-Scavenge a forgotten mine for rare metals we need to break through the Fey Courts’ defensive shield.
-### Mission B: Magnetism Breaker
-Catapult yourself into the enemy lines and cause as much havoc as you can to distract the enemy.
-
-*This mission has a heavy emphasis on combat.*
-### Mission C: Fey Healer
-Rescue a potential ally in our war against the Maw forces.
+| Mission | Summary |
+| :-- | :-- |
+| A: Ore Collector | Scavenge a forgotten mine for rare metals we need to break through the Fey Courts’ defensive shield. |
+| B: Magnetism Breaker | Catapult yourself into the enemy lines and cause as much havoc as you can to distract the enemy.<br>*This mission has a heavy emphasis on combat.* |
+| C: Fey Healer | Rescue a potential ally in our war against the Maw forces. |
 ## Finale
 **Boss:** Lethallica, the metal elemental
 

@@ -9,4 +9,4 @@ While the doctors of Covalon are doing a great job keeping everyone alive and he
 
 The cozy shop with its comfy carpets and faint lavender scent pervading everything is filled to the brim with sky-high shelves offering crystals, medical herbs, esoteric implements, charms, and other occult items, created and sold by Ren and Chan, while Yara offers her holistic and spiritual healing services and harrowings for those seeking answers in the back. If you're not sure where to go with a problem, Mind and Matter is never a bad choice.
 
-![Mind and Matter. Designed by Yara.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/mind%20and%20matter.webp)
+![[mind and matter.webp|Mind and Matter. Designed by Yara.]]

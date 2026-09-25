@@ -1,4 +1,4 @@
-![Covalon Logo](https://i.ibb.co/2nWwNHT/Covalon-Logo-Bold-Wood-Cropped-Small.webp)
+![[Covalon-Logo-Bold-Wood-Cropped-Small.webp|Covalon Logo|286]]
 
 Welcome to Covalon, a Pathfinder 2nd Edition living world campaign! Our campaign offers players a way to experience the Pathfinder 2e roleplaying game at their own pace. Whether you want to dive into dangerous dungeons every other day or just do a bit of text roleplaying a couple of times a month, Covalon has something for everyone.
 ## What is Covalon?
@@ -17,3 +17,13 @@ In general, we try to stick to rules-as-written (RAW) as much as possible, in or
 ![[Chapter 3 - Covalon Gameplay]]
 # Chapter 4: Campaign Lore
 ![[Chapter 4 - Campaign Lore]]
+# Chapter 5: Pre-Cataclysm Civilizations
+![[Chapter 5 - Pre-Cataclysm Civilizations]]
+# Chapter 6: Deities, Faith, and Ideologies
+![[Chapter 6 - Deities, Faith, and Ideologies]]
+# Chapter 7: Campaign Events
+![[Chapter 7 - Campaign Events]]
+# Chapter 8: Covalon Gazetteer
+![[Chapter 8 - Covalon Gazetteer]]
+# Chapter 9: Guilds
+![[Chapter 9 - Guilds]]

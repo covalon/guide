@@ -1,13 +1,11 @@
 ---
 Tags:
 - covalon/deity
-Edicts: Better yourself and the world around you, protect the weak, help others fend for themselves
-Anathema: Attack an innocent, use vile or cruel language
+Edicts: better yourself and the world around you, protect the weak, help others fend for themselves
+Anathema: attack an innocent, use vile or cruel language
 Divine Font:
 - heal
-Divine Sanctification:
-- must choose
-- holy
+Divine Sanctification: must choose holy
 Divine Skill:
 - diplomacy
 Favored Weapon:

@@ -3,14 +3,12 @@ Tags:
 - covalon/deity
 Aliases:
 - Lysanthyr
-Edicts: Indulge your senses, embellish your beauty, preserve your body, gaze upon your reflection
-Anathema: Shatter a mirror, practice asceticism, waste a meal
+Edicts: indulge your senses, embellish your beauty, preserve your body, gaze upon your reflection
+Anathema: shatter a mirror, practice asceticism, waste a meal
 Divine Font:
 - heal
 - harm
-Divine Sanctification:
-- can choose
-- unholy
+Divine Sanctification: can choose unholy
 Divine Skill:
 - diplomacy
 Favored Weapon:

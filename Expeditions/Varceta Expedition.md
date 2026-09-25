@@ -27,20 +27,15 @@ Traseem proved to be no easy foe, even bound, and the first group to challenge h
 
 The Heart of Terra pushed to destroy it, but it struggled. Covalonians present for Traseem's destruction or at the Shrine of Terra noticed it falter. It managed to overcome the Maw, but not without cost. Varceta is freed, but it will take effort to bolster the Heart.
 
-![Covalon's outpost in Varceta. Designed by Komainu.](https://raw.githubusercontent.com/covalon/covalon-guide/refs/heads/gh-pages/assets/covalon/PlayersGuide/ExpeditionLog/VarcetaOutpost.webp)
+![[VarcetaOutpost.webp|Covalon's outpost in Varceta. Designed by Komainu.]]
 ## Base Camp
 *Summary to come.*
 ## Missions
-### Mission A: Raise Morale
-Assist the rebels and convince them to join our cause.
-
-*This mission has a heavy emphasis on skill challenges and reputation systems.*
-### Mission B: Stoke the Flames
-Don a high tech suit of armor, investigate the volcanic shores, and figure out how they affect the enemy.
-
-*This mission has a heavy emphasis on combat.*
-### Mission C: Submarine Surveillance
-Man our experimental submarine for an underwater recon mission.
+| Mission | Summary |
+| :-- | :-- |
+| A: Raise Morale | Assist the rebels and convince them to join our cause.<br>*This mission has a heavy emphasis on skill challenges and reputation systems.* |
+| B: Stoke the Flames | Don a high tech suit of armor, investigate the volcanic shores, and figure out how they affect the enemy.<br>*This mission has a heavy emphasis on combat.* |
+| C: Submarine Surveillance | Man our experimental submarine for an underwater recon mission. |
 ## Finale
 **Boss:** The Great Seabird
 

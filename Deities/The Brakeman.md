@@ -1,13 +1,11 @@
 ---
 Tags:
 - covalon/deity
-Edicts: Protect others on vehicles, assist with large infrastructure projects
-Anathema: Trust Management, use forced labor
+Edicts: protect others on vehicles, assist with large infrastructure projects
+Anathema: trust Management, use forced labor
 Divine Font:
 - heal
-Divine Sanctification:
-- can choose
-- holy
+Divine Sanctification: can choose holy
 Divine Skill:
 - athletics
 Favored Weapon:

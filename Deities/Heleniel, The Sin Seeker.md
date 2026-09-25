@@ -3,13 +3,11 @@ Tags:
 - covalon/deity
 Aliases:
 - Heleniel
-Edicts: Protect the weak, encourage the righteous, vanquish evildoers, be a bastion of the people
-Anathema: Abandon those in need, attack without just cause, allow sinners to go unrepented
+Edicts: protect the weak, encourage the righteous, vanquish evildoers, be a bastion of the people
+Anathema: abandon those in need, attack without just cause, allow sinners to go unrepented
 Divine Font:
 - heal
-Divine Sanctification:
-- must choose
-- holy
+Divine Sanctification: must choose holy
 Divine Skill:
 - society
 Favored Weapon:

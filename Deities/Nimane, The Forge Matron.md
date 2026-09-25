@@ -3,13 +3,11 @@ Tags:
 - covalon/deity
 Aliases:
 - Nimane
-Edicts: Perfect your chosen craft, learn to use the things you make, respect other crafters, teach and learn freely
-Anathema: Sell your work for less than it's worth, give up on bettering your skills, make shoddy work on purpose, disrespect fellow honest crafters
+Edicts: perfect your chosen craft, learn to use the things you make, respect other crafters, teach and learn freely
+Anathema: sell your work for less than it's worth, give up on bettering your skills, make shoddy work on purpose, disrespect fellow honest crafters
 Divine Font:
 - heal
-Divine Sanctification:
-- can choose
-- holy
+Divine Sanctification: can choose holy
 Divine Skill:
 - crafting
 Favored Weapon:

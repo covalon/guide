@@ -31,24 +31,21 @@ On the last leg of the journey, disaster struck. The ship was attacked by an uns
 
 A portal has been created between the base camp at Ikouga and Covalon, and the North Star was repaired, rehabilitated, and sailed home to be the guild hall of the newly created guild Trella's Travellers.
 
-> [!clear]
-
-![The flag of The North Star. Designed by Kona Snowdrop.](https://raw.githubusercontent.com/covalon/covalon-guide/gh-pages/assets/covalon/PlayersGuide/ExpeditionLog/NorthStarFlag.webp)
+![[NorthStarFlag.webp|The flag of The North Star. Designed by Kona Snowdrop.]]
 
 While exploring Ikouga and the surrounding islands, adventurers managed to unravel the mystery of the fate that befell Ikouga. Ancient Ikougans worshipped a legendary sea monster called Scylladon, the Starbreaker, which they believed had been responsible for creating the islands in the Noctune Tropic. Not only did Scylladon turn out to be real, it had also been corrupted by the foul energies of the Maw, enslaved to guard one of the Maw's vile Vessels that formed underneath the island.
 
 Scylladon was defeated by a bold contingent of Covalonians who targeted the creature's vulnerable tentacles instead of its heavily armored body. Since the creature's defeat and the destruction of the Maw Vessel, the wind has returned to Ikouga, which may allow civilization to flourish there once again.
 
-![Covalon's outpost in Ikouga. Designed by Sheas.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/ExpeditionLog/IkougaOutpost.webp)
+![[IkougaOutpost.webp|Covalon's outpost in Ikouga. Designed by Sheas.]]
 ## Base Camp
 *Summary to come.*
 ## Missions
-### Mission A: Retame the Island
-Clear out the flora overtaking what is left of this civilization to gain a foothold on the wild island.
-### Mission B: Investigate the Goop
-Collect and investigate samples of the strange mucus appearing all over Ikouga.
-### Mission C: Gather Resources
-Hunt and gather resources to bolster our camp’s supplies. Maybe we can even learn something about the local fauna this way?
+| Mission | Summary |
+| :-- | :-- |
+| A: Retame the Island | Clear out the flora overtaking what is left of this civilization to gain a foothold on the wild island. |
+| B: Investigate the Goop | Collect and investigate samples of the strange mucus appearing all over Ikouga. |
+| C: Gather Resources | Hunt and gather resources to bolster our camp’s supplies. Maybe we can even learn something about the local fauna this way? |
 ## Finale
 **Boss:** Scylladon
 

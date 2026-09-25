@@ -1,13 +1,11 @@
 ---
 Tags:
 - covalon/deity
-Edicts: Forgive those who have wronged you, seek redemption and encourage others to do the same, embrace balance
-Anathema: Cause lethal harm to a living humanoid or beast, deny a repentant enemy the pursuit of redemption, encourage a non-combatant to fight, especially one who has retired from such a lifestyle
+Edicts: forgive those who have wronged you, seek redemption and encourage others to do the same, embrace balance
+Anathema: cause lethal harm to a living humanoid or beast, deny a repentant enemy the pursuit of redemption, encourage a non-combatant to fight, especially one who has retired from such a lifestyle
 Divine Font:
 - heal
-Divine Sanctification:
-- can choose
-- holy
+Divine Sanctification: can choose holy
 Divine Skill:
 - diplomacy
 Favored Weapon:

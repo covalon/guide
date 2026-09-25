@@ -9,4 +9,4 @@ Roleplay Channel:
 ---
 The collective knowledge of Covalon's citizens and historical records from the outside world can be found inside Covalon's public library. In addition to housing an impressive collection of literature and spellbooks, it also serves as a base of operations for city-employed mages dedicated to uncovering the world's magical secrets.
 
-![Covalon Public Library. Designed by Sheas.](https://github.com/covalon/covalon-guide/raw/gh-pages/assets/covalon/PlayersGuide/Maps/Library.webp)
+![[Library.webp|Covalon Public Library. Designed by Sheas.]]

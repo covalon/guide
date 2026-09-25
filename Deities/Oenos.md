@@ -1,13 +1,11 @@
 ---
 Tags:
 - covalon/deity
-Edicts: Drink, contribute to the party, give sanctuary and sustenance to any who ask in good faith
-Anathema: Refuse the hungry or poor, waste food or alchohol, be rude or disruptive to the host
+Edicts: drink, contribute to the party, give sanctuary and sustenance to any who ask in good faith
+Anathema: refuse the hungry or poor, waste food or alchohol, be rude or disruptive to the host
 Divine Font:
 - heal
-Divine Sanctification:
-- can choose
-- holy
+Divine Sanctification: can choose holy
 Divine Skill:
 - diplomacy
 Favored Weapon:

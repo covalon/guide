@@ -1,14 +1,12 @@
 ---
 Tags:
 - covalon/deity
-Edicts: Fulfill your duties, oppose those who unjustly lord power over others, act with dignity
-Anathema: Refuse to give aid to an ally, enforce an unjust law
+Edicts: fulfill your duties, oppose those who unjustly lord power over others, act with dignity
+Anathema: refuse to give aid to an ally, enforce an unjust law
 Divine Font:
 - harm
 - heal
-Divine Sanctification:
-- can choose
-- holy
+Divine Sanctification: can choose holy
 Divine Skill:
 - diplomacy
 Favored Weapon:

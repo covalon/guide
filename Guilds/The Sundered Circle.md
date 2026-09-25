@@ -11,11 +11,11 @@ Members:
 - Phillip
 - Korenn Hammerfist
 - Kexyl (and Yan Yan)
-Membership Requirements: Able to prepare arcane spells
-Goals: Collect arcane lore, teach prospective arcanists magic, research new arcane spells and rituals
-Values: Knowledge, power, discovery, innovation
-Anathema: Leave arcane knowledge that you find, destroy a source of arcane knowledge, give up your ability to prepare arcane spells
+Membership Requirements: able to prepare arcane spells
+Goals: collect arcane lore, teach prospective arcanists magic, research new arcane spells and rituals
+Values: knowledge, power, discovery, innovation
+Anathema: leave arcane knowledge that you find, destroy a source of arcane knowledge, give up your ability to prepare arcane spells
 ---
 A convocation of mages determined to expand and restore Covalon's knowledge of arcane magic.
 
-![The Sundered Circle Guild Heraldry.](https://raw.githubusercontent.com/covalon/covalon-guide/refs/heads/gh-pages/assets/covalon/PlayersGuide/Guilds/sundered%20circle%20guild%20heraldry.png)
+![[sundered circle guild heraldry.webp|The Sundered Circle Guild Heraldry.]]

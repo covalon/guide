@@ -11,8 +11,8 @@ Customers can enjoy a wide selection of teas curated by the owner and tea artisa
 
 The pavilion on the water garden can be reserved for special occasions.
 
-![Token of the Heart Sign, by Yao Mei](https://raw.githubusercontent.com/covalon/covalon-guide/refs/heads/gh-pages/assets/covalon/PlayersGuide/Maps/token%20of%20the%20heart%20sign.png)
+![[token of the heart sign.webp|Token of the Heart Sign, by Yao Mei]]
 
-![Token of the Heart ground, by Yao Mei.](https://raw.githubusercontent.com/covalon/covalon-guide/refs/heads/gh-pages/assets/covalon/PlayersGuide/Maps/token%20of%20the%20heart%20ground%20floor.webp)
+![[token of the heart ground floor.webp|Token of the Heart ground, by Yao Mei.]]
 
-![Token of the Heart upper, by Yao Mei.](https://raw.githubusercontent.com/covalon/covalon-guide/refs/heads/gh-pages/assets/covalon/PlayersGuide/Maps/token%20of%20the%20heart%20second%20floor.webp)
+![[token of the heart second floor.webp|Token of the Heart upper, by Yao Mei.]]

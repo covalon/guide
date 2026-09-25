@@ -1,33 +1,31 @@
 ---
 Tags:
-- covalon/deity
+  - covalon/deity
 Aliases:
-- Unmortus
-Edicts: Defend your homeland, improve your homeland, continue your duty by any means
-Anathema: Abandon your nation, abandon your allies, disrespect your fallen comrades
-Pantheons:
-- '[[The Cabal of Everlasting Rest]]'
+  - Unmortus
+Edicts: defend your homeland, improve your homeland, continue your duty by any means
+Anathema: abandon your nation, abandon your allies, disrespect your fallen comrades
 Divine Font:
-- harm
-- heal
-Divine Sanctification:
-- can choose
-- holy
+  - harm
+  - heal
+Divine Sanctification: can choose holy
 Divine Skill:
-- society
+  - society
 Favored Weapon:
-- bastard sword
+  - bastard sword
 Domains:
-- cities
-- protection
-- soul
-- undeath
+  - cities
+  - protection
+  - soul
+  - undeath
 Alternate Domains:
-- family
+  - family
 Cleric Spells:
-- '1st: tether'
-- '2nd: false vitality'
-- '5th: wall of stone'
+  - "1st: tether"
+  - "2nd: false vitality"
+  - "5th: wall of stone"
+Pantheons:
+  - "[[The Cabal of Everlasting Rest]]"
 ---
 Often depicted as a soldier armored in skulls and bones and a sword with his blade between his feet, Unmortus is revered as the god of eternal vigilance and the one who never fell. Long ago, in the beginnings of civilization, he was worshipped as a god of protection and the homeland and the protector of the heavens.
 
