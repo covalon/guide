@@ -23,6 +23,6 @@ Cleric Spells:
 - '4th: vision of death'
 - '7th: true target'
 ---
-Zegarek was most often followed by the more bold of the hunters from the earlier days of Gornlar. His teachings encouraged his clerics to join the rangers and fighters in their hunting trips and bounty hunts. His Favored Weapon is the hornbow as it was often crafted from the pieces, usually the horn, of the largest of prey and forced their users to hunt from horseback or close by.
+Zegarek was most often followed by the more bold of the hunters from the earlier days of [[Gornlar]]. His teachings encouraged his clerics to join the rangers and fighters in their hunting trips and bounty hunts. His Favored Weapon is the hornbow as it was often crafted from the pieces, usually the horn, of the largest of prey and forced their users to hunt from horseback or close by.
 
 The temples to Zegarek were often used as early hunting lodges where his followers would share stories of their hunts be they beast or humanoid in nature. They were also places where anyone could drop off bounties to be claimed or where merchants could make requests when certain animal meats were in short supply.

@@ -28,4 +28,4 @@ Self-proclaimed prince of everything that is, was, and will be fun in this world
 
 That is the reason why he enjoys creation so much: there's always something new and exciting to make! While he may seem somewhat reasonable or even helpful at first, it turns out that he only gives his knowledge to those who will either entertain him greatly, or who simply have ill intent and will cause trouble.
 
-He has declared being quarter-demon, which is partly why he was mostly worshipped in Garn. Whether this is accurate is uncertain — after all, he also claims to be the creator of many things like trees, hedonism, or even pancakes, but that is most likely a tactic to draw the ire of many — one of his favorite hobbies.
+He has declared being quarter-demon, which is partly why he was mostly worshipped in [[Garn]]. Whether this is accurate is uncertain — after all, he also claims to be the creator of many things like trees, hedonism, or even pancakes, but that is most likely a tactic to draw the ire of many — one of his favorite hobbies.

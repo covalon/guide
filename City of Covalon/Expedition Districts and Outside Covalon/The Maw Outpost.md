@@ -7,6 +7,6 @@ Roleplay Channel:
 ---
 South of Covalon lies a horrific scar on the world known as the Maw. Ever since the cataclysm, vile creatures hellbent on Covalon's destruction have poured out of it.
 
-After repelling the Maw's undead armies and their skeletal draconic general during the Siege of Covalon, the city has managed to establish an outpost along the edge of the Maw. Here, guards keep a vigilant watch for signs of another attack and the boldest of Covalon's adventurers undertake dangerous descents into the Maw itself.
+After repelling the Maw's undead armies and their skeletal draconic general during [[The Siege of Covalon|the Siege of Covalon]], the city has managed to establish an outpost along the edge of the Maw. Here, guards keep a vigilant watch for signs of another attack and the boldest of Covalon's adventurers undertake dangerous descents into the Maw itself.
 
 ![[MawOutpost.webp|The Maw Outpost. Designed by Sheas.]]

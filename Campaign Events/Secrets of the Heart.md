@@ -68,11 +68,11 @@ Type: Multitable
 > - Yao Mei
 > - Yit
 
-After overcoming the Maw Vessel in Varceta, at great cost to Covalon, the Heart of Terra began to weaken. Covalonians sensed its distress, and interpreted a message from the Heart: NORTH LIFEBRINGER XORIA QUEEN DANGER. Those present around the artifact saw a vision of an individual trudging through the snow, carrying something precious. Using this information, we were able to go through Pre-Cataclysm records, which made our path forward clear. The Heart of Terra was recovered from an archaeological dig in the far northern reaches of Pudersno, from a place we believed to be called "Xoria."
+After overcoming the Maw Vessel in [[The Kingdom of Varceta|Varceta]], at great cost to Covalon, the [[The Shrine of Terra|Heart of Terra]] began to weaken. Covalonians sensed its distress, and interpreted a message from the Heart: NORTH LIFEBRINGER XORIA QUEEN DANGER. Those present around the artifact saw a vision of an individual trudging through the snow, carrying something precious. Using this information, we were able to go through Pre-Cataclysm records, which made our path forward clear. The Heart of Terra was recovered from an archaeological dig in the far northern reaches of [[Pudersnö|Pudersno]], from a place we believed to be called "Xoria."
 
 We journeyed north, using the airship *Sleipner*, and discovered the ruins of an ancient civilization of ant like humanoids. Over the coming months, as the Heart continued to weaken, we mapped and explored the depths of the city. We catalogued ancient items, called upon the ghosts of those long dead, snuck past ancient constructs, and finally found that an artifact eerily similar to the Heart of Terra was still sheltered in the Queen's Vault - Lifebringer.
 
-Covalonian adventurers, guided by the Dungeoneering Society, mobilized to retrieve the artifact. The Queen's Vault was magically sealed, and to open it required half a dozen teams of adventurers to activate magical obelisks scattered throughout the levels of the ruin.
+Covalonian adventurers, guided by the [[The Dungeoneering Society|Dungeoneering Society]], mobilized to retrieve the artifact. The Queen's Vault was magically sealed, and to open it required half a dozen teams of adventurers to activate magical obelisks scattered throughout the levels of the ruin.
 
 Our strongest teams were stationed deepest, to get inside the Vault and recover the artifact. There, they fought the crazed Undying Hskarren Council, and the Hskarren Queen herself, who was fused with Lifebringer in a vile attempt at eternal life. However, when Lifebringer was recovered, the entire ruin began to collapse.
 

@@ -9,9 +9,9 @@ Arcane; a tradition of magic utilized to view the world through a logical and ra
 
 Through diligent study the owner, Gabriel (male samsaran magus) provides enchanting services at a reasonable price in the warm and magically lit study and lounge.
 
-The owner's partner, Locke performs quiet and calming music to enhance the experience for any looking to study or do their own enchanting and crafting. Drinks are provided from local distilleries such as the Flowing Firkin and the Verdant Flame to provide the coziest atmosphere possible.
+The owner's partner, Locke performs quiet and calming music to enhance the experience for any looking to study or do their own enchanting and crafting. Drinks are provided from local distilleries such as the [[The Flowing Firkin|Flowing Firkin]] and the [[Verdant Flame Winery and Vineyard|Verdant Flame]] to provide the coziest atmosphere possible.
 
-Often members of the Sundered Circle can be found here, partaking in the guild's endeavours.
+Often members of the [[The Sundered Circle|Sundered Circle]] can be found here, partaking in the guild's endeavours.
 
 ![[The_Arcane_Alcove_Floor_1.webp|Arcane Alcove Ground. Designed by Gabriel.]]
 

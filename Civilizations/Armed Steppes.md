@@ -18,7 +18,7 @@ Geography: temperate grasslands, savannas, shrublands
 Fate: a combination of spilling elemental roils and being used as a battleground for conflicts between Heaven and the Abyss
 Covalon Status: unexplored
 ---
-The Armed Steppes surround the Tengeriin Uul Mountains and stretch from the Fey Courts to the northwest and Garn to the south. The rockier steppes to the north are predominantly inhabited by warring hordes, competing tooth and nail for sparse natural resources. The greener lakeside steppes to the south are mostly inhabited by descendants of nomad tribes that managed to settle down a few generations ago.
+The Armed Steppes surround the Tengeriin Uul Mountains and stretch from the [[The Fey Courts|Fey Courts]] to the northwest and [[Garn]] to the south. The rockier steppes to the north are predominantly inhabited by warring hordes, competing tooth and nail for sparse natural resources. The greener lakeside steppes to the south are mostly inhabited by descendants of nomad tribes that managed to settle down a few generations ago.
 
 Millennia ago, the Tengeriin Uul Mountains served as a focal point for outsiders venturing into the material plane. While those visits decreased over the ages, their influence remained. This led to irreparable damage to the surrounding land, causing resource scarcity and forcing the inhabitants into a largely nomadic lifestyle.
 

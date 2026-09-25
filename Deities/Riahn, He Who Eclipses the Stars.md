@@ -25,7 +25,7 @@ Cleric Spells:
 - '4th: translocate'
 - '6th: blanket of stars'
 ---
-Riahn, twin to Trella, was once known as the God of the South Star, offering alternate paths to travellers. Over time, Trella became the guiding star, leading many to see Riahn as a false star.
+Riahn, twin to [[Trella, The Night Sky|Trella]], was once known as the God of the South Star, offering alternate paths to travellers. Over time, Trella became the guiding star, leading many to see Riahn as a false star.
 
 One day, the South Star's light disappeared, leaving a void in the sky. Riahn's believers know he still watches, seeing omens in that void occasionally eclipsing the light of other stars.
 
