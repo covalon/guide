@@ -1269,6 +1269,56 @@ PICTURE_MAX_WIDTH = 1800
 PICTURE_QUALITY = 82
 
 
+# Discord crops a card's thumbnail to a square. So each thumbnail gets a square copy with the whole picture
+# centred on a see-through background (like object-fit: contain), made here (or by previews.py for the
+# pictures of tables) and cached like the other pictures. The padding is see-through, so the picture opened
+# from the thumbnail looks like the picture itself.
+THUMB_SIZE = 1800   # full size (as big as the site's own copies), so opening the thumbnail in Discord shows the whole picture large
+THUMBS = {}   # square copy's site address -> the vault picture it's made from
+
+
+def square_picture(im):
+    from PIL import Image
+    im = im.convert("RGBA")
+    side = max(im.size)
+    canvas = Image.new("RGBA", (side, side), (0, 0, 0, 0))
+    canvas.paste(im, ((side - im.width) // 2, (side - im.height) // 2))
+    return canvas.resize((THUMB_SIZE, THUMB_SIZE), Image.LANCZOS) if side > THUMB_SIZE else canvas
+
+
+def thumb_url(url):
+    """The card thumbnail for a picture on the site: a square copy, unless it's square already."""
+    if url.startswith("files/previews/"):   # a table's picture: previews.py makes its square copy
+        return url.rsplit(".", 1)[0] + "-thumb.webp"
+    src = next((k for k, v in USED_FILES.items() if v == url), None)
+    if not src or src.suffix.lower() not in {".png", ".jpg", ".jpeg", ".webp"}:
+        return url
+    try:
+        from PIL import Image
+        with Image.open(src) as im:
+            if abs(im.width - im.height) <= 0.05 * max(im.size):
+                return url
+    except Exception:
+        return url
+    thumb = "files/thumbs/" + url.split("/")[-1].rsplit(".", 1)[0] + ".webp"
+    THUMBS[thumb] = src
+    return thumb
+
+
+def write_thumbs():
+    for url, src in THUMBS.items():
+        key = hashlib.sha256(src.read_bytes() + f"|thumb|{THUMB_SIZE}".encode()).hexdigest()[:20]
+        cached = ICON_CACHE / "thumbs" / (key + ".webp")
+        if not cached.exists():
+            from PIL import Image
+            with Image.open(src) as im:
+                cached.parent.mkdir(parents=True, exist_ok=True)
+                square_picture(im).save(cached, "WEBP", quality=85, method=4)
+        dest = OUT / url
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy(cached, dest)
+
+
 def copy_picture(src, dest):
     if src.suffix.lower() not in {".png", ".jpg", ".jpeg", ".webp"}:
         shutil.copy(src, dest)
@@ -1649,11 +1699,12 @@ def preview_head(note, title, soup):
     shot = None
     if table and note.folders and note.folders[-1] == "Tables":   # tables (only): their picture full size, not as a thumbnail
         shot, picture = picture, None
-    image = absolute(picture) if picture else None
+    image = absolute(picture) if picture else None                              # other apps: the picture itself
+    thumb = absolute(thumb_url(picture)) if picture else None                   # Discord's square thumbnail
 
     text = f"## {md_escape(title)}\n" + "\n\n".join(lines)
     top = {"type": 10, "content": shorten_md(text, 3500)}   # (Discord allows 4,000 characters of text per card)
-    head = {"type": 9, "components": [top], "accessory": {"type": 11, "media": {"url": image}}} if image else top
+    head = {"type": 9, "components": [top], "accessory": {"type": 11, "media": {"url": thumb}}} if thumb else top
     gallery = [{"type": 12, "items": [{"media": {"url": absolute(shot)}, "description": shorten(title, 200)}]}] if shot else []
     card = {"type": 17, "accent_color": int(PREVIEW_COLOR[1:], 16), "components": [
         head, *gallery,
@@ -1871,6 +1922,7 @@ def main():
     # (the <base> has to come before the first link in <head>, so it goes right after the charset)
     write("404.html", missing.replace('<meta charset="utf-8">', f'<meta charset="utf-8">\n<base href="{base}">', 1))
     write_sitemap()
+    write_thumbs()
     # the tables to photograph for the link previews (previews.py takes the pictures)
     (OUT / "_previews.json").write_text(json.dumps(PREVIEW_SHOTS, ensure_ascii=False), encoding="utf-8")
     print(f"wrote {len(notes) + 2} pages to {OUT} ({len(PREVIEW_SHOTS)} table pictures for previews.py)")

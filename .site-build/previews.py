@@ -17,6 +17,7 @@ OUT = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "public").resolve()
 CACHE = pathlib.Path(os.environ.get("COVALON_CACHE", pathlib.Path.home() / ".cache" / "covalon-site")) / "previews"
 WIDTH = 960        # the width the tables are laid out in
 MAX_HEIGHT = 900   # taller tables are cut off here, fading out
+THUMB_SIZE = 2400  # the square copy for Discord card thumbnails, kept at full size (tables are photographed at 2x)
 
 PAGE = """<!doctype html>
 <html class="theme-light"><head><meta charset="utf-8"><link rel="stylesheet" href="{css}">
@@ -55,10 +56,24 @@ def main():
                 page.locator(".shot").screenshot(path=str(CACHE / pathlib.Path(url).name), type="jpeg", quality=85)
             browser.close()
         tmp.unlink()
+    from PIL import Image
     for url in jobs:
         dest = OUT / url
         dest.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy(CACHE / pathlib.Path(url).name, dest)
+        shot = CACHE / pathlib.Path(url).name
+        shutil.copy(shot, dest)
+        # the square copy for Discord's thumbnail: the whole table centred on a see-through square
+        thumb = shot.with_name(shot.stem + "-thumb.webp")
+        if not thumb.exists():
+            with Image.open(shot) as im:
+                im = im.convert("RGBA")
+                side = max(im.size)
+                canvas = Image.new("RGBA", (side, side), (0, 0, 0, 0))
+                canvas.paste(im, ((side - im.width) // 2, (side - im.height) // 2))
+                if side > THUMB_SIZE:
+                    canvas = canvas.resize((THUMB_SIZE, THUMB_SIZE), Image.LANCZOS)
+                canvas.save(thumb, "WEBP", quality=85, method=4)
+        shutil.copy(thumb, dest.with_name(thumb.name))
     jobs_file.unlink()
     print(f"previews: {len(jobs)} table pictures ({len(todo)} new)")
 
