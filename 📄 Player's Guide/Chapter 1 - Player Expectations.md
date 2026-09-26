@@ -92,11 +92,13 @@ We take the safety of our community very seriously, and require all players to k
 ### 2. Introduce Yourself
 If you'd like, you can tell us a little bit about yourself in the [\#👋player-introductions](https://discord.com/channels/802423566196539412/802423566196539415) channel. We would love to know more about the player behind the character.
 ### 3. Build Your Character
-The Character Creation section of this guide will walk you through the steps to create a character appropriate for the Covalon campaign. You'll want to brush up on the Campaign Lore section of this guide before writing your character's backstory.
+The Character Creation section of this guide will walk you through the steps to create a character appropriate for the Covalon campaign. You'll want to brush up on [[Chapter 7 - Campaign Lore]] and [[Chapter 8 - Pre-Cataclysm Civilizations]] before writing your character's backstory.
 
 If you need assistance, feel free to ask questions in the [\#🐣newbie-help-and-discussion](https://discord.com/channels/802423566196539412/988493362371891250) channel.
 ### 4. Submit Your Character for Approval
-Once you've finished creating your character, [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) and send a link of your digital character sheet to the Administrators and Moderators (see the next section for sheet suggestions). If there are any problems with your character, they will walk you through the necessary steps to correct them.
+Once you've finished creating your character, [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) and send a link of your digital character sheet to the Administrators and Moderators (see [[Chapter 2 - Character Creation#Web and App-Based Character Sheets|recommended digital sheet tools]]).
+
+If there are any problems with your character, they will walk you through the necessary steps to correct them.
 ### 5. Introduce Your Character
 After your character has been approved, introduce them by making a post in the [\#🎭character-introductions](https://discord.com/channels/802423566196539412/1440126240030851203) channel. Feel free to add artwork, and please include any information about them that you wish to be publicly known, such as their age, ancestry, and gender.
 ### 6. Add Your Character to the Citizen Registry

@@ -80,7 +80,7 @@ The properties at the top (the grey box) are what put a note in the right lists 
 | A location | City of Covalon → its district's folder | Tags `covalon/location`, **District** (a link to the district, like `[[📍 Market District\|Market District]]`) |
 | An expedition | Expeditions | Tags `covalon/expedition`, Civilization, Journey Date… |
 | A campaign event | Campaign Events | Tags `covalon/event`, Date, Type |
-| An adventure type | Adventure Types | Tags `covalon/adventure-type`, Order (its place in the list) |
+| An adventure type | Adventure Types | Tags `covalon/adventure-type`, _order (its place in the list) |
 | A guide chapter | 📄 Player's Guide or 📄 GM's Guide | Name it `Chapter 13 - Title` (the next number). It's added to the guide automatically |
 | A table | the guide's Tables folder | Name it `Table 3-12 - Title`, then add `![[Table 3-12 - Title]]` where it belongs in the chapter |
 

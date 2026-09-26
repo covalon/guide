@@ -109,6 +109,18 @@
     setTimeout(edges, 0);   // after the current page / heading has been scrolled into view
   });
 
+  // tables: a shadow along whichever edge still has more of a horizontally-scrolled table out of
+  // view (see site.css), the same idea as the outline list above
+  document.querySelectorAll(".table-wrapper").forEach(function (scroller) {
+    var edges = function () {
+      scroller.classList.toggle("has-more-left", scroller.scrollLeft > 1);
+      scroller.classList.toggle("has-more-right", scroller.scrollLeft + scroller.clientWidth < scroller.scrollWidth - 1);
+    };
+    scroller.addEventListener("scroll", edges, { passive: true });
+    window.addEventListener("resize", edges);
+    edges();
+  });
+
   // breadcrumbs: a shadow under them once the page scrolls beneath them
   var crumbs = document.querySelector(".site-breadcrumbs");
   if (crumbs) {

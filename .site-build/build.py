@@ -1635,8 +1635,8 @@ PREVIEW_COLOR = "#d6b46a"   # the dark-mode accent (Discord is mostly used in da
 # A note can pick its card's thumbnail with a hidden property: `_preview: "[[CovalonCity.webp]]"`.
 # An entry's card lists its properties (as on its page) in small print, one per line: "**Domains:** death". These
 # are left out: shown elsewhere on the card (tagline, description, roleplay channel) or only for sorting.
-PREVIEW_SKIP = {"tagline", "description", "roleplay channel", "order"}
-PREVIEW_MAX_PROPS = 10
+PREVIEW_SKIP = {"tagline", "description", "roleplay channel"}
+PREVIEW_MAX_PROPS = 15
 GUIDE_EMOJI = {"📍 Covalon Player's Guide": "⚔️", "📍 Covalon GM's Guide": "🎲"}   # the guides' buttons on the home card
 
 
@@ -1706,7 +1706,8 @@ LEADING_EMOJI = re.compile(r"^[^\w#\s(\[]+\s*")   # "🌊 Ikouga District" -> "I
 
 def preview_head(note, title, soup):
     page_url = absolute(note.url)
-    lines = []
+    lines = []   # thumbnail row: title, tagline, description
+    extra = []   # full-width row below it: properties and heading links
     rows = [button_row(md_escape(page_type(note) if note.name != HOME_NOTE else SITE_NAME), link_button("Open", page_url, "📖"))]
     tagline = plain_case(note.prop("Tagline") or note.prop("Description") or "")
     hidden = []   # ||spoilers|| in the first paragraph: Discord spoilers on the card
@@ -1716,12 +1717,13 @@ def preview_head(note, title, soup):
     blurb = first_paragraph(soup, 300, keep_spoiler)
     if note.name == HOME_NOTE:
         blurb = first_paragraph(soup, 300) or "The Covalon guides."
-        rows = [button_row("The whole guide on one page", link_button(re.sub(r"^Covalon ", "", PREFIX.sub("", notes[g].title)),
+        # keep the default "Open" button (the home page itself), then the guides, then Getting Started
+        rows += [button_row("The whole guide on one page", link_button(re.sub(r"^Covalon ", "", PREFIX.sub("", notes[g].title)),
                                                                      absolute(notes[g].url), GUIDE_EMOJI.get(g, "📖")))
                 for g in GUIDES if g in notes]
-        how = find("🔎 How to Search")
-        if how:
-            rows.append(button_row("Tips for finding things", link_button("How to Search", absolute(how.url), "🔎")))
+        started = find("🌱 Getting Started")   # a draft until Isabella publishes it: no button until then
+        if started:
+            rows.append(button_row("A quick TL;DR on how to begin", link_button("Getting Started", absolute(started.url), "🌱")))
     table = re.match(r"Table (\d+-\d+) - (.*)$", note.title)
     if table and note.folders and note.folders[-1] == "Tables":   # Table 3-1: … — from which chapter, and its columns
         title = f"Table {table.group(1)}: {table.group(2)}"
@@ -1744,7 +1746,7 @@ def preview_head(note, title, soup):
                 continue
             facts.append(f"**{md_escape(k)}:** {md_escape(shorten(plain_case(v), 120))}")
         if facts:   # ||spoilers|| in a property stay Discord spoilers
-            lines.append(re.sub(r"\\\|\\\|(.+?)\\\|\\\|", r"||\1||", "\n".join("-# " + f for f in facts[:PREVIEW_MAX_PROPS])))   # small print
+            extra.append(re.sub(r"\\\|\\\|(.+?)\\\|\\\|", r"||\1||", "\n".join("-# " + f for f in facts[:PREVIEW_MAX_PROPS])))   # small print
     # chapters: their main sections; a whole guide: its chapters
     if note.name in NAV or note.name in GUIDES:
         level = "h1" if note.name in GUIDES else "h2"
@@ -1753,7 +1755,7 @@ def preview_head(note, title, soup):
         if heads:   # each one a link to its heading on the page
             limit = len(heads) if note.name in GUIDES else 6   # a whole guide lists every chapter; a chapter, its first six sections
             shown = [f"[{md_escape(t)}]({page_url}#{urllib.parse.quote(i)})" if i else md_escape(t) for t, i in heads[:limit]]
-            lines.append(" · ".join(shown) + (" · …" if len(heads) > limit else ""))
+            extra.append("-# " + " · ".join(shown) + (" · …" if len(heads) > limit else ""))   # small print
     if note.name in NAV:
         guide, chapters, i = NAV[note.name]
         # [ 📖 Open chapter only ] [ 📜 Open in full guide ] (the chapter's heading on the one-page guide)
@@ -1765,7 +1767,7 @@ def preview_head(note, title, soup):
     if listed and is_overview(note):
         kind = page_type(notes[listed[0]])
         plural = kind[:-1] + "ies" if kind.endswith("y") else kind + "s"
-        lines.append(f"-# {len(listed)} {plural.lower()}")
+        extra.append(f"-# {len(listed)} {plural.lower()}")
     # a roleplay channel: a button straight into it
     channel = note.prop("Roleplay Channel")
     channel = channel[0] if isinstance(channel, list) and channel else channel
@@ -1787,8 +1789,9 @@ def preview_head(note, title, soup):
     top = {"type": 10, "content": shorten_md(text, 3500)}   # (Discord allows 4,000 characters of text per card)
     head = {"type": 9, "components": [top], "accessory": {"type": 11, "media": {"url": thumb}}} if thumb else top
     gallery = [{"type": 12, "items": [{"media": {"url": absolute(shot)}, "description": shorten(title, 200)}]}] if shot else []
+    extra_row = [{"type": 10, "content": shorten_md("\n\n".join(extra), 3500)}] if extra else []   # past the thumbnail, so it runs the full width
     card = {"type": 17, "accent_color": int(PREVIEW_COLOR[1:], 16), "components": [
-        head, *gallery,
+        head, *gallery, *extra_row,
         {"type": 14, "divider": True, "spacing": 1},
         {"type": 1, "components": rows[:5]},   # the buttons, in one row
     ]}

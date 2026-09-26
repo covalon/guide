@@ -6561,10 +6561,10 @@
   },
   "🏡 Home.md": {
     "a5aaef8685d8b695ce2a7d80629269a5": {
-      "position": "center",
+      "position": "right",
       "width": "",
       "height": "",
-      "wrap": false
+      "wrap": true
     },
     "bdc306742508adf3b3291acb40e5770c": {
       "position": "center",

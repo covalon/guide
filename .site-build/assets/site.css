@@ -32,7 +32,6 @@
   flex: 1;
   min-height: 0;
   overflow-y: auto;
-  overscroll-behavior: contain;
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
   --toc-fade-top: #000;
@@ -43,6 +42,10 @@
 .site-toc-list:hover, .site-toc-list:focus-within { scrollbar-color: var(--covalon-scrollbar, var(--color-accent)) transparent; }
 .site-toc-list.has-more-above { --toc-fade-top: transparent; }
 .site-toc-list.has-more-below { --toc-fade-bottom: transparent; }
+/* only trap the wheel/trackpad scroll here (rather than letting it chain through to the page)
+   when the list actually has more to scroll that way; a short outline that fits with no overflow
+   should just pass the scroll straight through to the note (site.js sets these two classes) */
+.site-toc-list.has-more-above, .site-toc-list.has-more-below { overscroll-behavior: contain; }
 .site-sidebar:hover, .site-sidebar:focus-within {
   scrollbar-color: var(--covalon-scrollbar, var(--color-accent)) transparent;
 }
@@ -436,6 +439,33 @@ html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoil
 
 /* the page title at the top of "On this page" */
 .site-toc .toc-title a { font-weight: var(--font-semibold); color: var(--text-normal); }
+
+/* every table scrolls sideways if it's wider than its box (base.css: .table-wrapper { overflow-x: auto }),
+   which on narrow screens is most of them; a shadow along whichever edge still has more of it out of view
+   (site.js sets has-more-left / has-more-right, checked against scrollWidth, the same idea as the outline
+   list above). The shadow is a sticky pseudo-element that rides along the table's edge as it scrolls, so
+   .table-wrapper has to be a flex row (not the default block) for it to sit beside the table instead of
+   stacking above/below it; align-self: stretch matches its height, since a percentage height wouldn't (the
+   wrapper is only ever as tall as its content). The negative margin keeps it from adding to the table's width. */
+.markdown-rendered .table-wrapper { display: flex; }
+.markdown-rendered .table-wrapper > table { flex-shrink: 0; }   /* keep the table's natural width (auto-layout), so it overflows and scrolls instead of the flex row squeezing it narrower */
+.markdown-rendered .table-wrapper::before, .markdown-rendered .table-wrapper::after {
+  content: "";
+  position: sticky;
+  align-self: stretch;
+  width: 14px;
+  flex: none;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 150ms;
+}
+.markdown-rendered .table-wrapper::before { left: 0; top: 0; margin-right: -14px; background: linear-gradient(to right, rgba(0, 0, 0, 0.16), transparent); }
+.markdown-rendered .table-wrapper::after { right: 0; top: 0; margin-left: -14px; background: linear-gradient(to left, rgba(0, 0, 0, 0.16), transparent); }
+.theme-dark .markdown-rendered .table-wrapper::before { background: linear-gradient(to right, rgba(0, 0, 0, 0.45), transparent); }
+.theme-dark .markdown-rendered .table-wrapper::after { background: linear-gradient(to left, rgba(0, 0, 0, 0.45), transparent); }
+.markdown-rendered .table-wrapper.has-more-left::before { opacity: 1; }
+.markdown-rendered .table-wrapper.has-more-right::after { opacity: 1; }
 
 /* filterable tables (the Bases tables): filter box and sortable headers. The table sticks out 1.5rem
    past the text on both sides (less on narrow screens, always keeping 2rem from the edge), and one

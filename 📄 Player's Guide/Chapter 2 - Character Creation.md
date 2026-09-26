@@ -6,9 +6,9 @@ Each player may only have one active character until they reach max level (see A
 ## Character Creation Rules
 For the most part, Covalon uses the same character creation rules as the default character creation rules in the Pathfinder 2nd Edition Core Rulebook (CRB), but there are some key differences.
 ### Alternative Ability Boosts
-Alternative ability boosts were added during the 4th printing Core Rulebook errata as an option to take two free ability boosts instead of your ancestry's listed ability boosts and flaws. This option is available to all characters.
+Alternative ability boosts were added during the 4th printing Core Rulebook errata as an option to take two free ability boosts instead of your ancestry's listed ability boosts and flaws. **This option is available to all characters.**
 ### Voluntary Flaws
-Voluntary Flaws - the optional rule to take additional ability flaws - are not allowed.
+Voluntary Flaws - the optional rule to take additional ability flaws - are **not** allowed.
 ### Variant Rules
 Covalon does not use any of the following Variant Rules: Free Archetype, Dual-Class PCs, Ancestry Paragon, Proficiency without Level, Mythic Callings, etc.
 ### Character Option Rarity
@@ -43,16 +43,18 @@ Once you're ready to submit your character to the Administrators and Moderators 
 ## Web and App-Based Character Sheets
 Covalon recommends two different character sheet applications for building and updating your character between adventures: Pathbuilder 2e and Wanderer's Guide.
 ### Pathbuilder 2E
-Covalon staff prefer that players use [Pathbuilder 2e](https://pathbuilder2e.com/) to build and update their characters. It is available as both a [web-based application](https://pathbuilder2e.com/app.html) and as an Android app in the [Google Play Store](https://play.google.com/store/apps/details?id=com.redrazors.pathbuilder2e&pli=1).
+Covalon staff **prefer** that players use [Pathbuilder 2e](https://pathbuilder2e.com/) to build and update their characters. It is available as both a [web-based application](https://pathbuilder2e.com/app.html) and as an Android app in the [Google Play Store](https://play.google.com/store/apps/details?id=com.redrazors.pathbuilder2e&pli=1).
 
 It's free to use most of the app, but certain premium features (such as animal companion and familiar management) must be unlocked by making a one-time $5 premium license purchase. Be sure to disable any third-party options when building your character; Covalon only plays with character options published by Paizo.
 ### Wanderer's Guide
-As an alternative to Pathbuilder 2e, [Wanderer's Guide](https://wanderersguide.app/) is also a free web-based app for player character management. It allows players to manage their animal companions and familiars without a premium license, but it does not have the ability to import directly into the Foundry Virtual Tabletop software, requiring manual data entry on either the Dungeon Guide or player's part. If you use Wanderer's Guide to create your character, be sure to check that your character is publicly viewable in the app's basic settings.
+As an alternative to Pathbuilder 2e, [Wanderer's Guide](https://wanderersguide.app/) is also a free web-based app for player character management. It allows players to manage their animal companions and familiars without a premium license. If you use Wanderer's Guide to create your character, be sure to check that your character is publicly viewable in the app's basic settings.
 ## Requesting New Character Options
 If you'd like to utilize a character option that isn't listed in the [Server Allowlist](https://docs.google.com/spreadsheets/d/1yUXF_IAmpim6wkB7QT5l6K_lS5DgOppv99BHjMYbNIU/edit#gid=2120003232), you can [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) to request the staff to review it during their next meeting.
 
 > [!note] Reflavoring Character Options
-> In order to maintain a fair gaming environment for all players, Covalon restricts the use of reflavoring equipment, abilities, and other character options. For example, a longsword cannot be reflavored as a shovel or a machete, it must be a longsword. A snake familiar cannot be reflavored as a tiny dragon or a hydra, it must be a snake.
+> In order to maintain a fair gaming environment for all players, Covalon restricts the use of reflavoring equipment, abilities, and other character options. 
+> 
+> For example, a longsword cannot be reflavored as a shovel or a machete, it must be a longsword. A snake familiar cannot be reflavored as a tiny dragon or a hydra, it must be a snake.
 >
 > Please note that this does not restrict you from adding additional detail to your items; your longsword *can* be your grandfather's long lost heirloom with a dragon-tooth pommel and gold inlay.
 

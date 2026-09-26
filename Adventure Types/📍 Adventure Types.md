@@ -17,7 +17,7 @@ views:
       - Duration
       - Description
     sort:
-      - property: Order
+      - property: "_order"
         direction: ASC
 
 ```
@@ -25,6 +25,6 @@ views:
 ```datacorejsx
 const { CovalonEntries } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
-  return <CovalonEntries tag="covalon/adventure-type" sortBy="Order" hide={["Order"]} />;
+  return <CovalonEntries tag="covalon/adventure-type" sortBy="_order" hide={["_order"]} />;
 }
 ```
