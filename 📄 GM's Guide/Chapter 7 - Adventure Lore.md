@@ -16,10 +16,6 @@ The world of Elleaterra is beginning to heal, but the setting is still post-apoc
 NPCs can never return to Covalon. Magical defenses physically prevent any outside creature from crossing through [[The Dungeoneering Society|the Dungeoneering Society]]'s portals.
 
 Players can give out directions to get to Covalon or our expedition outposts if they wish, but keep in mind NPCs are never roleplayed out of sessions, so they won't have a chance to see that NPC again. An alternative to this situation is making sure the NPCs have their own motivations or reasons to not want to come to Covalon.
-## Technology
-The level of technology for the setting can be summarised as 'Gunpowder and Clockwork'. Stasian technology is too advanced, and even the most advanced pre-Cataclysm civilisations were only in the very early stages of industrialisation.
-
-This means that settings that include heavy sci-fi elements, factories, heavy industrialisation or similarly non-clockwork mechanical elements are not appropriate for Covalon adventures. Mixtures of magic and machine can be allowable. If you're unsure, feel free to ask in a ticket along with your game approval.
 
 > [!note] Shopkeepers and Merchants
 > You may choose to include NPCs that sell items in your adventures. You may also submit a recurring merchant NPC that shows up in multiple adventures (IE Phyllis the contract devil merchant, or Frisk the celestial trader).
@@ -27,3 +23,8 @@ This means that settings that include heavy sci-fi elements, factories, heavy in
 > These NPCs may only sell consumables, and they should be sold at a 5-15% markup from their listed price. They may not sell disallowed items from the allowlist.
 >
 > Items sold by shopkeepers do not reduce the treasure budget of the adventure they are included in, as their items cost gold. Details about NPCs selling items and the items they have for sale must be approved in your adventure submission ticket.
+
+## Technology
+The level of technology for the setting can be summarised as 'Gunpowder and Clockwork'. Stasian technology is too advanced, and even the most advanced pre-Cataclysm civilisations were only in the very early stages of industrialisation.
+
+This means that settings that include heavy sci-fi elements, factories, heavy industrialisation or similarly non-clockwork mechanical elements are not appropriate for Covalon adventures. Mixtures of magic and machine can be allowable. If you're unsure, feel free to ask in a ticket along with your game approval.

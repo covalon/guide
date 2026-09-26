@@ -11,7 +11,7 @@ Adventurers in Covalon are broken up into tiers based on their levels, which det
 >
 > Alternate characters have a different max level than main characters, see the Alternate Character rules.
 
-##### Table 3-1: Character Tiers by Levels
+#### Table 3-1: Character Tiers by Levels
 ![[Table 3-1 - Character Tiers by Levels]]
 ## Resting and Daily Preparations
 Unlike a traditional campaign, your character's sleep schedule is intertwined with your own real-life sleep schedule. Your character benefits from a full night's rest every time you do in real life, and your character can choose to perform their daily preparations at any time between their last rest and their next adventure.
@@ -35,7 +35,7 @@ Covalon implements special rules for higher-level items. Generally, characters c
 
 Specific magic items also lose their properties when used by lower-tier characters. A level 2 character with a Caterwaul Sling would revert into a +1 sling during an adventure. Items made from precious materials will either lose the effect of their precious material, or revert to a lower quality version of that material if an in tier version exists. A level 5 character with a standard-grade cold iron longsword would revert to a low-grade cold iron longsword during an adventure, but a standard grade siccatite weapon would not function as siccatite below tier 4.
 
-> [!note] Buy! Sell! Trade!
+> [!note|sibling] Buy! Sell! Trade!
 > Use these channels for player to player purchases!
 > ##### Store Menus
 > Players can create a forum post in the [\#🛍store-menus](https://discord.com/channels/802423566196539412/1355639262304796724) channel to showcase wares they have available or take crafting commissions.
@@ -51,7 +51,7 @@ Covalon's mentor system allows higher-level players to play with lower-level pla
 
 Mentor players are always added to the waitlist; player characters of the appropriate tier are given priority for table slots.
 
-When you play a mentor character, you do not earn any XP, but any gp or items you obtain are transferred to your player character. You also receive 1 Hero Point (see [[Chapter 3 - Covalon Gameplay#Hero Points|the Hero Point sidebar]]).
+When you play a mentor character, you do not earn any XP, but any gp or items you obtain are transferred to your player character. You also receive 1 Hero Point (see [[Chapter 4 - Adventures#Hero Points|Hero Points]] sidebar).
 ### Covalon's Mentors
 The characters that make up Covalon's mentorship program are retired adventurers who have already lived full lives, but have been called to serve the city as wizened guides for green adventurers. The mentors were originally designed by players as part of a "Design a Mentor" contest, where over 50 characters were submitted to become Covalon's official mentor characters!
 
@@ -94,9 +94,9 @@ Initially, a character's Soul Seed can only obtain minor gifts, and their Soul S
 Adding a new gift to a Soul Seed requires communing with the Heart of Terra and paying a gold cost. This does not consume downtime, but can only be performed in between adventures. A character also must meet a minimum level requirement, based on the gift they are attempting to add. [[Chapter 3 - Covalon Gameplay#Table 3-4 Adding Gifts to a Soul Seed|Table 3-4]] lists the cost and minimum level requirement for adding a new gift.
 
 Once a gift has been added to a Soul Seed, it cannot be removed. It can be changed to a different gift within the aspect with four days of retraining. A character can also [[Chapter 5 - Downtime#Retraining|retrain]] one or more of their Soul Seed's aspects, which also takes four days. When a Soul Seed's aspect is retrained, any incompatible gifts it has are rendered inert until they are retrained. [[Chapter 5 - Downtime#Terran Reincarnation|Terran Reincarnation]] can be used to change Soul Seed's gifts or aspects.
-##### Table 3-2: Aspect Category Unlocks
+#### Table 3-2: Aspect Category Unlocks
 ![[Table 3-2 - Aspect Category Unlocks]]
-##### Table 3-3: Soul Seed Upgrade Unlocks
+#### Table 3-3: Soul Seed Upgrade Unlocks
 ![[Table 3-3 - Soul Seed Upgrade Unlocks]]
 
 > [!note] Major Gifts*
@@ -104,7 +104,7 @@ Once a gift has been added to a Soul Seed, it cannot be removed. It can be chang
 >
 > You must still meet the requirements in [[Chapter 3 - Covalon Gameplay#Table 3-4 Adding Gifts to a Soul Seed|Table 3-4]].
 
-##### Table 3-4: Adding Gifts to a Soul Seed
+#### Table 3-4: Adding Gifts to a Soul Seed
 ![[Table 3-4 - Adding Gifts to a Soul Seed]]
 ## Additional Character Slots
 The Additional Character System allows players who reach the level cap to spend gold to play new characters without retiring existing ones.

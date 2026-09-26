@@ -16,7 +16,7 @@ When making adjustments to your dungeon, these must also be approved. Please Cre
 ### Post your Adventure
 Once you have decided how you want to gather players, post your adventure in [\#📅scheduled-events](https://discord.com/channels/802423566196539412/802438937120735262). Your post should include the tier of adventure, what type of adventure it is, the date and time you intend to run the adventure, and the adventure hook. If the group was formed via LFGM, you should put player names and levels here as well in a numbered list; otherwise, fill the list out with applicants that get in contact with you, or add the players who apply to a pool and select them later.
 
-> [!note] Waitlist
+> [!note|sibling] Waitlist
 > LFGM games may have a waitlist in them, or you may get more applicants than you have slots in your game. When this happens, the extra players go on a waitlist. This waitlist is used if the primary selected players cannot make it for any reason, and waitlisters are used to fill gaps.
 
 ## During the Session

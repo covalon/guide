@@ -12,14 +12,14 @@ The Cataclysm wrought destruction across the world of Elleaterra, leveling all c
 
 Expeditions are multi-phase adventures that require players to cooperate together in order to reclaim these fallen societies. Each expedition consists of three phases.
 
-> [!info] Requesting an Expedition Mission
+> [!info] Requesting an Expedition
 > If there is a particular expedition adventure you'd like to play in, you can always use [\#🛡️lfgm-forum](https://discord.com/channels/802423566196539412/1472263264585908430) to create a party and request a Dungeon Guide to run the adventure for you. You can even choose which mission you'd like to play.
 >
 > Once Phase 2 has been unlocked for an expedition, three missions become available that are always referred to as Mission A, Mission B, and Mission C. Though the missions are all narratively linked, they can be experienced in any order, as they are not prequels or sequels to each other.
 >
 > It may also be worthwhile to select the mission that has been played the least, as all missions must be completed a number of times before the finale unlocks.
 
-> [!info] Requesting an Expedition Finale
+> [!info] Requesting a Finale
 > Soul Seed aspects must be unlocked by completing specific expedition finales, which you can use [\#🛡️lfgm-forum](https://discord.com/channels/802423566196539412/1472263264585908430) to organize a party for.
 >
 > Normal mode finales utilize variant modifications to keep repeats interesting, so if you have a friend who needs help attempting a finale that you've already completed, give them a hand and you might see something new. Players with characters in the highest tier can alternatively request hard mode, which employs all variant modifications at once!

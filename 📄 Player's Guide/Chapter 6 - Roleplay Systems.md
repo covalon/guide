@@ -25,7 +25,7 @@ Players may be in a maximum of two guilds, and a guild may have a maximum of 10 
 > - Event Goals
 > - IC announcement, to be shared in the [\#📜official-postings](https://discord.com/channels/802423566196539412/818094145033207839) channel.
 
-## Guild Event Rewards
+### Guild Event Rewards
 In addition to increasing their guild member cap by 2, individuals and guilds that host events can gain these special rewards.
 
 - Upon completion of 1 event, the individual member of the guild that created a ticket and submitted the event for staff approval will gain the @Social Butterfly tag on Discord.
@@ -73,7 +73,7 @@ Barracks-style common sleeping areas will be provided for nine members, with a p
 
 Lots must contain at least one square of green space around the building, and the building must be no taller than two stories (including anything below ground). Guild Halls may be located in Covalon, or any of the following Expedition districts: Ikouga, Gornlar, Middlemist, Pudersno, Ratchethallow.
 
-> [!note] Roleplay Channels
+> [!note|sibling] Roleplay Channels
 > Businesses and guild halls come with public roleplay channels that you can use to roleplay your personal and guild business. Standard housing does not come with a public roleplay channel, but you can always create a thread in one of the housing district channels.
 
 ### Campground
@@ -93,7 +93,7 @@ The fourth category of severity details crimes that go against our Player Expect
 
 Additionally, before a player character commits a crime against another player character(s), all involved players must privately and explicitly consent to the interaction. If your character becomes the victim of a roleplay crime that you did not explicitly consent to, please [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) and let the staff team know immediately.
 
-> [!tip] Crime as a Storytelling Device
+> [!tip|sibling] Crime as a Storytelling Device
 > Committing a crime can be a fun way to spice up roleplaying, especially when used to drive character development. For example, a character might steal something and be so riddled with guilt afterwards that they make a point to always do the right thing in the future, or a character might vandalize another character's business to ignite a conflict between the two.
 >
 > Remember to always ask for permission before committing a crime against another player's character, and inform the staff team via [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492). The staff team will determine if the city of Covalon takes legal action against a character after a crime is committed.

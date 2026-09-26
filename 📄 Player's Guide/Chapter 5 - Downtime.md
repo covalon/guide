@@ -13,7 +13,7 @@ Players are required to roll their downtime checks in [\#🎲downtime-rolls](htt
 
 For example, if you were rolling a check to Earn Income using Performance and you had a +7 bonus to Performance, you would type:
 
-> [!example] Rolling Earn Income
+> [!example] Rolling Syntax for Dice Maiden
 > `/roll 1d20+7 !Earn Income` to roll once or `/roll 7 1d20+7 !Earn Income` to roll seven days at once.
 
 ### Earn Income
@@ -51,7 +51,7 @@ Crafting material obtained this way can alternatively be sold to the [[The Gener
 All feats and abilities which specifically affect the Earn Income ability also affect Gather Resources, and the DC to Gather Resources for a particular Task Level is equivalent to the DC to Earn Income for that same Task Level.
 
 Gathering resources can also be used to obtain precious materials for crafting. The following table contains all of the precious materials that can currently be gathered in Covalon. More varieties of precious materials may become available in the future as Covalon expands and players discover new sources of materials.
-##### Table 5-1: Available Precious Materials
+#### Table 5-1: Available Precious Materials
 ![[Table 5-1 - Available Precious Materials]]
 ### Retraining
 Covalon's robust training facility and expansive library allow characters to retrain faster than in a traditional campaign. The use of these amenities is not free, however - for every day spent retraining, your character must pay the amount of gold listed for their level in [[Chapter 5 - Downtime#Table 5-2 Retraining Costs|Table 5-2: Retraining Costs]].
@@ -65,7 +65,7 @@ Ancestry, heritage, background, class, and ability scores cannot be retrained. A
 There are a number of unique activities that can be performed in between adventures in Covalon. 
 
 Activities with the **downtime** trait require you to spend your downtime to perform them, while activities with the **exploration** trait can be performed without significant time investment.
-##### Table 5-2: Retraining Costs
+#### Table 5-2: Retraining Costs
 ![[Table 5-2 - Retraining Costs]]
 
 #### Purchase Contract of Terran Revival
@@ -87,7 +87,7 @@ Activities with the **downtime** trait require you to spend your downtime to per
 > [!note] Contracts for Companions
 > You can purchase a Contract of Terran Revival for your animal companion or familiar. The price to do so is always 50 gp, and the revived companion or familiar will be the same level as the character that owns them.
 
-##### Table 5-3: Contract Pricing
+#### Table 5-3: Contract Pricing
 ![[Table 5-3 - Contract Pricing]]
 
 #### Raise a Creature

@@ -18,13 +18,6 @@ Covalon Patrols are small adventures and missions that take place in the immedia
 
 Patrols never contain permanent magic items as loot, but magical consumables (such as talismans, potions, scrolls, etc) are allowed.
 
-> [!tip] A Note on Experience
-> Remember that the experience budget for a [[Dungeons|dungeon]] is 250 **pre-adjusted** experience. 
-> 
-> This means that for a party of 4 you have 250 experience to spend on challenges. For a party of 6, you have around 375 experience to spend and a moderate encounter has a budget of 120 experience!
->
-> You can double check the experience for different party sizes [here.](https://2e.aonprd.com/Rules.aspx?ID=498)
-
 ### Patrol Locations
 #### Tier 1
 Patrols for levels 1-3 take place in the immediate vicinity around Covalon. They must not take place inside the city walls.

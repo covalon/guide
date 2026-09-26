@@ -36,7 +36,7 @@ If you're unsure if you can advertise your service, please [\#create-a-ticket](h
 ### 7. Questions and Concerns
 All suggestions for the server or sensitive concerns should be brought to the private attention of the Administrator and Moderator teams via the ticket system, which can be accessed via the [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) channel in the Discord server.
 
-> [!warning] Community Guidelines
+> [!warning|sibling] Prioritize Your Safety
 > We take the safety of our community very seriously. If at any point, you feel harassed, threatened, or uncomfortable, please [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492). The Administrators and Moderators will investigate the situation and take action appropriately.
 
 ## Roleplay Guidelines
@@ -54,7 +54,7 @@ While charity and acts of kindness are encouraged in Covalon, please do not pres
 ### 6. Player Vs. Player
 Any player vs. player (PvP) conflicts that require rolling dice must have explicit OOC consent of both parties before commencing. If you are expecting role play with another player that involves conflict, please ensure you obtain their consent first. Once you have both agreed, please [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) (adding all involved players) to inform the Moderator team of the expected narrative and outcome.
 
-> [!warning] Character Death and Equipment
+> [!warning|sibling] Character Death and Equipment
 > If you die and your corpse cannot be recovered because the party has fled, you lose all of the gear on your person permanently.
 >
 > Before a session, you must mark equipment as being explicitly "left at home" on your character sheet. Your gold is always assumed to be left at home unless you state otherwise. Any gear not marked in this way will be assumed to have been brought with you.
@@ -78,7 +78,7 @@ During an adventure, the Dungeon Guide has the final say on interpretation of ru
 
 If you have concerns about a Dungeon Guide's rulings during an adventure, you may privately message them after the game or [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492). Repeated attempts to interpret game rules in bad faith in or out of game sessions will result in warnings and further attempts may result in being removed from the server.
 
-> [!tip] Text RP Formatting
+> [!tip|sibling] Text RP Formatting
 > Text RP should be legible and understandable. Generally, *actions should be formatted in italics*, "speech should be formatted in quotes," ||and OOC comments should be formatted behind a spoiler.|| 
 > 
 > Try not to use OOC text often. 
@@ -115,14 +115,14 @@ You're all set to begin participating in the Covalon campaign! Head into one of 
 > ##### The Brass Snail Tavern
 > The [🍻 The Brass Snail Tavern](https://discord.com/channels/802423566196539412/1441826252045684806) offers a free meal for newcomers, and is a common social gathering place. Entering the Snail is a great way to signal to other players that you'd like to role play.
 
-> [!note] Joining Adventures
+> [!note|sibling] Joining Adventures
 > There are two primary methods for signing up to play in adventures in Covalon.
 > ##### Scheduled Events
 > Upcoming adventures are posted in the [\#📅scheduled-events](https://discord.com/channels/802423566196539412/802438937120735262) channel. When a Dungeon Guide has an adventure to run, they'll make a post in this channel with sign-up instructions and players of the appropriate level will be notified. If an adventure's roster is full, players can still join a waitlist in case there's a vacancy.
 > ##### LFGM
 > Players can form pre-made parties in the [\#🛡️lfgm-forum](https://discord.com/channels/802423566196539412/1472263264585908430) channel and then request a Dungeon Guide to run a certain type of adventure for the party at a particular time. Check the pinned post in the [\#🛡️lfgm-forum](https://discord.com/channels/802423566196539412/1472263264585908430) channel for specific instructions on how to use it.
 
-> [!warning] Covalon Adventures
+> [!warning|sibling] Covalon Adventure Requirements
 > Adventures are all run in the Discord voice channels and through **Foundry VTT**; it's browser-based and free to access for players. 
 > 
 > This means you will **need a working microphone and access to a desktop browser** in order to participate in game sessions.

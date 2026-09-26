@@ -10,7 +10,7 @@ There are however occasions in which we have made non-RAW rulings in order to be
 ## Choose your table
 As a Covalon Dungeon Guide you have full autonomy to choose who sits at your table. You will never be mandated to run for specific people or groups, and we will never implement server systems that impact who you take at your table.
 
-> [!note] GM Roles
+> [!note|sibling] GM Roles
 > There are 3 key roles for Dungeon Guides in Covalon.
 > ##### Aspiring Dungeon Guides
 > Individuals that have expressed an interest in running games in Covalon and have yet to complete their shadowed adventure(s).

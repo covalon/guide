@@ -42,6 +42,12 @@ views:
 > This Temporary Hero Point doesn't allow players to exceed the 3 Hero Point Limit.
 > ##### Non-Temporary Hero Points
 > Players can obtain Hero Points that don't expire at the end of an adventure (but are still consumed upon use) by playing in adventures, participating in or hosting events with a guild, or participating in special server events.
+
+> [!warning|right] Communicate Your Level!
+> When signing up for an adventure, be sure to tell the Dungeon Guide the level you expect your character to be when the adventure occurs. 
+> 
+> If you have other adventures in between, your character may level up before the adventure occurs. Be sure to let your Dungeon Guide know about this as soon as possible so they can appropriately adjust their adventure.
+
 ## Dungeons
 ![[Dungeons#For Players]]
 ## Patrols

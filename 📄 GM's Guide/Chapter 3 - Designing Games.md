@@ -57,7 +57,8 @@ In order to approve these, we will need a description of the challenge, relevant
 ### Expedition Examples
 See the end of this document for instructions to install the Covalon module, which contains our campaign's Foundry VTT content, including our expedition missions. Many of these expedition missions use unique subsystems and mechanics that you can reference as an example before building your own!
 
-- Verndhelt B: Playing Both Sides has an example of a structured social encounter using the **[influence rules](https://2e.aonprd.com/Rules.aspx?ID=1201)**, and a free form social/skill encounter using a **simple [victory point](https://2e.aonprd.com/Rules.aspx?ID=1189) system**. 
-- Verndhelt C: Search the Sinkhole and Middlemist A: Delve the Dark both use a hex grid and skill checks to represent [hexploration](https://2e.aonprd.com/Rules.aspx?ID=1265). 
-- Ikouga B: Investigate the Goop uses a simple **skill challenge** to research goop. 
-- Gornlar Mission B: Explore the Fire Mountain and Primrose Mission B: Playing Politics both utilize the [chase subsystem](https://2e.aonprd.com/Rules.aspx?ID=1210) for one of their required encounters.
+- **Verndhelt B: Playing Both Sides** has an example of a structured social encounter using the [influence rules](https://2e.aonprd.com/Rules.aspx?ID=1201), and a free form social/skill encounter using a simple [victory point](https://2e.aonprd.com/Rules.aspx?ID=1189) system. 
+- **Verndhelt C: Search the Sinkhole** and **Middlemist A: Delve the Dark** both use a hex grid and skill checks to represent [hexploration](https://2e.aonprd.com/Rules.aspx?ID=1265). 
+- **Ikouga B: Investigate the Goop** uses a simple skill challenge to research goop. 
+- **Gornlar Mission B: Explore the Fire Mountain** and **Primrose Mission B: Playing Politics** both utilize the [chase subsystem](https://2e.aonprd.com/Rules.aspx?ID=1210) for one of their required encounters.
+- **Varceta C: Submarine Surveillance** uses parts of the [vehicle subsystem](https://2e.aonprd.com/Rules.aspx?ID=3116).

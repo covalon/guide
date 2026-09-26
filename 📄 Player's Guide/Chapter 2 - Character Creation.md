@@ -3,6 +3,12 @@ This section details the rules for creating an appropriate character for Covalon
 Before you can participate in Covalon, you need to create a level 1 character. If you don't own the Pathfinder 2e source books or you're new to the game, you can find all rules and character options at the [Archives of Nethys](https://2e.aonprd.com/PlayersGuide.aspx) website.
 
 Each player may only have one active character until they reach max level (see Alternate Character rules), so create a character that you'll love to play!
+
+
+> [!faq|sibling] Questions About Builds and Rules?
+> If you're new to building a character in the PF2e system, don't hesitate to ask for help in the [\#🐣newbie-help-and-discussion](https://discord.com/channels/802423566196539412/988493362371891250) channel. 
+> 
+> If you have questions about how specific rules interactions are handled in Covalon, try searching in the [\#⁉rule-clarification-and-faqs](https://discord.com/channels/802423566196539412/809175735410884620) channel.
 ## Character Creation Rules
 For the most part, Covalon uses the same character creation rules as the default character creation rules in the Pathfinder 2nd Edition Core Rulebook (CRB), but there are some key differences.
 ### Alternative Ability Boosts
@@ -21,7 +27,7 @@ Your character's starting 15 gp may be used to purchase equipment from the follo
 - Uncommon level 0 items that your character has access to via a feat (such as Elven Weapon Familiarity or Monastic Weaponry)
 - Level 0 weapons on the "Purchasable" tab of the [Crafter's Compendium](<https://docs.google.com/spreadsheets/d/1gcVr4Zk02KkMo44fHfEk5RPuspAKWAwyKj6pAYrwWzM/edit?usp=sharing>)
 
-> [!note] Access to Uncommon Options
+> [!note|sibling] Access to Uncommon Options
 > Covalon has special rules for accessing uncommon options during character creation, which are different from accessing uncommon options after character creation.
 > ##### Region-Based Access
 > Some uncommon character options, such as backgrounds and archetypes, are only accessible to characters from certain regions of the world. Covalon exists in a separate world from Golarion so many of these access entries do not apply - check the Server Allowlist to confirm for each option.
@@ -51,7 +57,7 @@ As an alternative to Pathbuilder 2e, [Wanderer's Guide](https://wanderersguide.a
 ## Requesting New Character Options
 If you'd like to utilize a character option that isn't listed in the [Server Allowlist](https://docs.google.com/spreadsheets/d/1yUXF_IAmpim6wkB7QT5l6K_lS5DgOppv99BHjMYbNIU/edit#gid=2120003232), you can [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) to request the staff to review it during their next meeting.
 
-> [!note] Reflavoring Character Options
+> [!note|sibling] Reflavoring Character Options
 > In order to maintain a fair gaming environment for all players, Covalon restricts the use of reflavoring equipment, abilities, and other character options. 
 > 
 > For example, a longsword cannot be reflavored as a shovel or a machete, it must be a longsword. A snake familiar cannot be reflavored as a tiny dragon or a hydra, it must be a snake.
@@ -72,11 +78,6 @@ If you aren't enjoying playing your character or if you just want to start over 
 A retired character must forfeit all of their equipment, currency, and titles - these cannot be donated to another character before retirement. If the character owns private property, a business, or a guild hall, the property may be transferred to another tenant, employee, or guild member respectively, otherwise the property is forfeit as well.
 
 Once a character has been retired, they can never be played again.
-
-> [!faq] Questions About Builds and Rules?
-> If you're new to building a character in the PF2e system, don't hesitate to ask for help in the [\#🐣newbie-help-and-discussion](https://discord.com/channels/802423566196539412/988493362371891250) channel. 
-> 
-> If you have questions about how specific rules interactions are handled in Covalon, try searching in the [\#⁉rule-clarification-and-faqs](https://discord.com/channels/802423566196539412/809175735410884620) channel.
 
 > [!warning] Planning for Retirement
 > Retiring a character is a decision that shouldn't be made lightly. Here are some things to consider before deciding to retire your character:

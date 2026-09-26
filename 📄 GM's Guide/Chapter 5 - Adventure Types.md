@@ -20,6 +20,9 @@ views:
 ```
 
 You can find more information about each game in the [[📍 Adventure Types]] compendium.
+
+> [!warning] Singular Sessions
+> Excluding [[Excursions and Sagas|Excursions]], all adventures must be entirely self-contained. You may not run a dungeon or patrol that is a sequel, prequel or otherwise narratively linked to another adventure.
 ## Dungeons
 ![[Dungeons#For GMs]]
 ## Patrols

@@ -26,6 +26,11 @@ views:
 
 ```
 
+> [!warning] Communicate Your Level!
+> When signing up for an adventure, be sure to tell the Dungeon Guide the level you expect your character to be when the adventure occurs. 
+> 
+> If you have other adventures in between, your character may level up before the adventure occurs. Be sure to let your Dungeon Guide know about this as soon as possible so they can appropriately adjust their adventure.
+
 ```datacorejsx
 const { CovalonEntries } = await dc.require(dc.headerLink("🔑 Setup/Datacore Components.md", "CovalonEntries"));
 return function View() {
