@@ -4,21 +4,20 @@ _published: true
 _preview_description: "First of all, welcome to the game and the Covalon server! \n\n Here, you'll get a quick rundown of our server as well as links to resources for learning Foundry and PF2e."
 ---
 ## Covalon
-First of all, welcome to the game and the Covalon server!  
+First of all, welcome to the game and the Covalon server!
 
-You'll find almost everything you need to know about our server in [[📍 Covalon Player's Guide]]. 
+You'll find almost everything you need to know about our server in [[📍 Covalon Player's Guide]].
 
 You'll want to read the whole thing eventually, but at a bare minimum, you should read the first three chapters to learn: Player Expectations, Character Creation, and Covalon Gameplay.
 
 > [!tip] The Quick Rundown
-> ##### The Covalon Lore
-> - Covalon is the surviving settlement of a post-apocalyptic world, full of survivors from all over, working to reclaim the old world.
-> - The Cataclysm ended the world as we once knew it in 2016 and left behind a dangerous entity known as The Maw.
+> ##### Covalon: The Setting
+> - Covalon is the surviving settlement of a post-apocalyptic world. It is full of survivors from all over, working to restore the world ever since the Cataclysm in 2016.
 > - The Gods went quiet during the Cataclysm, but touches of their power remain in their clerics and champions.
-> ##### Covalon as a Server
+> ##### Covalon: The Server
 > - As a player, you have one character (for now!) but will play at many GMs' tables. To minimize table variance, we try to adhere to Rules as Written (RAW).
-> - New characters start at Level 1, eventually capping out at Level 15. 
-> - We use default character creation rules + alternative ability boosts. 
+> - New characters start at Level 1, eventually capping out at Level 15.
+> - We use default character creation rules + alternative ability boosts.
 > 	- We DO NOT use any other variant rules such as Automatic Bonus Progression or Free Archetype, nor do we use any Third Party options.
 > 	- Common character options are available to pick by default; anything rarer must get staff approval, either pre-approved on the allowlist or via ticket.
 > - Covalon has text RP for downtime, but all adventures (combat, exploration, etc.) are done through voice and require: a working mic and a computer that can run Foundry (free for players, runs through the browser).

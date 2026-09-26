@@ -21,13 +21,21 @@ SITE="$(cd "$(dirname "$0")" && pwd)"     # .site-build
 VAULT="$(dirname "$SITE")"
 HOME_DIR="${COVALON_SITE_HOME:-$HOME/.covalon-site}"
 OUT="$HOME_DIR/public"
-PY="$HOME_DIR/.venv/bin/python3"
+
+if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" || "$OSTYPE" == "cygwin" ]]; then
+    PY="$HOME_DIR/.venv/Scripts/python.exe"
+    VENV_PYTHON="python3"
+else
+    PY="$HOME_DIR/.venv/bin/python3"
+    VENV_PYTHON="python3"
+fi
 
 if [ ! -x "$PY" ]; then
-  echo "==> Setting up - first run only..."
-  mkdir -p "$HOME_DIR"
-  python3 -m venv "$HOME_DIR/.venv"
+    echo "==> Setting up - first run only..."
+    mkdir -p "$HOME_DIR"
+    "$VENV_PYTHON" -m venv "$HOME_DIR/.venv"
 fi
+
 "$PY" -m pip install --quiet --disable-pip-version-check -r "$SITE/requirements.txt"
 
 echo "==> Building the site..."

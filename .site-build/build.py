@@ -802,7 +802,7 @@ def href_to(url):
     """A link from the page being built to `url`, relative, and without "index.html" (so /Guilds/ not /Guilds/index.html)."""
     here = os.path.dirname(CUR["url"])
     path, _, anchor = url.partition("#")
-    rel = os.path.relpath(path, here or ".")
+    rel = os.path.relpath(path, here or ".").replace("\\", "/")
     if rel == "index.html" or rel.endswith("/index.html"):
         rel = rel[:-len("index.html")] or "./"
     return quote(rel + ("#" + anchor if anchor else ""), safe="/#-._~")
@@ -1282,7 +1282,7 @@ def tree_html(current):
             # open); the arrow just folds / unfolds it
             label = (f'<a class="tree-folder-link" href="{href_to(home.url)}">{inner}</a>' if home
                      else f'<span>{inner}</span>')
-            return (f'<details class="tree-folder"{" open" if inside else ""}><summary class="tree-item tree-folder-title">'
+            return (f'<details class="tree-folder"{" open" if inside or divided else ""}><summary class="tree-item tree-folder-title">'
                      f'{lucide("chevron-right")}{label}{DIVIDER_RULE if divided else ""}</summary>'
                      f'<div class="tree-children">{walk(child, depth + 1, path + (name,))}</div></details>')
         cls = "tree-item tree-file" + (" is-active" if child is current else "")
@@ -1317,7 +1317,7 @@ def tree_html(current):
                 inside = any(c is current or (k == "folder" and any(n is current for n in iter_notes(c)))
                              for (k, _), c in run)
                 icon, rest = with_icon(group)
-                out.append(f'<details class="tree-folder"{" open" if inside else ""}><summary class="tree-item tree-folder-title">'
+                out.append(f'<details class="tree-folder"{" open" if inside or pending_divider else ""}><summary class="tree-item tree-folder-title">'
                            f'{lucide("chevron-right")}<span>{(icon or "") + rest}</span>{DIVIDER_RULE if pending_divider else ""}</summary>'
                            f'<div class="tree-children">{"".join(render_item(k, n, c, path, 1) for (k, n), c in run)}</div></details>')
                 pending_divider = False
@@ -1958,7 +1958,7 @@ def last_changed():
     try:
         import subprocess
         log = subprocess.run(["git", "-C", str(SRC), "-c", "core.quotepath=off", "log", "--format=@%cI", "--name-only", "--", "*.md"],
-                             capture_output=True, text=True, timeout=60).stdout
+                             capture_output=True, text=True, encoding="utf-8", timeout=60).stdout
     except Exception:
         return {}
     seen, when = {}, None
