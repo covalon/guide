@@ -174,9 +174,9 @@
 /* named callouts in the outline: same row, plus a small muted type icon so they read
    as callouts rather than headings (see toc_html/make_callout in build.py) */
 .site-toc .toc-callout a { display: flex; align-items: center; gap: 6px; }
-.toc-callout-icon { display: inline-flex; flex: 0 0 auto; opacity: 0.6; }
+.toc-callout-icon { display: inline-flex; flex: 0 0 auto; opacity: 0.6; margin-left: -2ch; }
 .toc-callout-icon .svg-icon { width: 0.8em; height: 0.8em; }
-.toc-callout-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.toc-callout-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-style: italic; }
 
 /* headings leave room for the sticky nothing-above when jumped to */
 .markdown-rendered [id] { scroll-margin-top: 3.5rem; }   /* clear of the sticky breadcrumbs */
