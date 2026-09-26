@@ -32,15 +32,28 @@
       });
     });
   };
-  var openPanel = function (open) {
+  // on phones the pop-over sits over the whole page (like search), not inside the menu sheet:
+  // the sheet is moved with a transform, which would trap a fixed element inside it
+  var settingsHome = panel && panel.parentNode;
+  var settingsSmall = window.matchMedia("(max-width: 760px)");
+  var settingsBackdrop = document.createElement("div");
+  settingsBackdrop.className = "site-settings-backdrop";
+  settingsBackdrop.hidden = true;
+  var openSettings = function (open) {
     if (!panel) return;
+    if (open && settingsSmall.matches) {
+      if (panel.parentNode !== document.body) { document.body.appendChild(settingsBackdrop); document.body.appendChild(panel); }
+    } else if (open && panel.parentNode !== settingsHome) settingsHome.appendChild(panel);
+    settingsBackdrop.hidden = !(open && settingsSmall.matches);
+    document.documentElement.classList.toggle("settings-open", open && settingsSmall.matches);
     panel.hidden = !open;
     gear.setAttribute("aria-expanded", open ? "true" : "false");
     if (open) mark();
   };
   if (gear && panel) {
-    gear.addEventListener("click", function (e) { e.stopPropagation(); openPanel(panel.hidden); });
+    gear.addEventListener("click", function (e) { e.stopPropagation(); openSettings(panel.hidden); });
     panel.addEventListener("click", function (e) {
+      if (e.target.closest(".site-settings-close")) { openSettings(false); gear.focus(); return; }
       var b = e.target.closest(".site-setting-option");
       if (!b) return;
       var name = b.closest(".site-setting").dataset.setting;
@@ -70,9 +83,9 @@
       mark();
     });
     document.addEventListener("click", function (e) {
-      if (!panel.hidden && !e.target.closest(".site-settings, .site-settings-toggle")) openPanel(false);
+      if (!panel.hidden && !e.target.closest(".site-settings, .site-settings-toggle")) openSettings(false);
     });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !panel.hidden) { openPanel(false); gear.focus(); } });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !panel.hidden) { e.stopImmediatePropagation(); openSettings(false); gear.focus(); } });
   }
 
   // spoilers (the GM sections of the adventure type pages): click to show
@@ -110,9 +123,9 @@
   // (on medium screens, where the outline has no column of its own, a tab on the right edge opens it
   // from the side instead; it uses the same "outline" panel)
   var appButtons = Array.prototype.slice.call(document.querySelectorAll(".site-appbar-button, .site-outline-tab"));
-  var openPanel = null;
+  var activePanel = null;
   var setPanel = function (name) {
-    openPanel = name;
+    activePanel = name;
     document.body.classList.toggle("panel-menu", name === "menu");
     document.body.classList.toggle("panel-outline", name === "outline");
     document.documentElement.classList.toggle("panel-open", !!name);
@@ -123,17 +136,17 @@
     }
   };
   appButtons.forEach(function (b) {
-    b.addEventListener("click", function (e) { e.stopPropagation(); setPanel(openPanel === b.dataset.panel ? null : b.dataset.panel); });
+    b.addEventListener("click", function (e) { e.stopPropagation(); setPanel(activePanel === b.dataset.panel ? null : b.dataset.panel); });
   });
   document.addEventListener("click", function (e) {   // a tap outside the panel closes it
-    if (openPanel && !e.target.closest(".site-left, .site-right, .site-appbar, .site-outline-tab, .site-settings, .covalon-search-overlay")) setPanel(null);
+    if (activePanel && !e.target.closest(".site-left, .site-right, .site-appbar, .site-outline-tab, .site-settings, .site-settings-backdrop, .covalon-search-overlay")) setPanel(null);
   });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && openPanel) setPanel(null); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && activePanel) setPanel(null); });
   document.querySelectorAll(".site-toc a").forEach(function (a) {   // picking a heading closes the outline
-    a.addEventListener("click", function () { if (openPanel === "outline") setPanel(null); });
+    a.addEventListener("click", function () { if (activePanel === "outline") setPanel(null); });
   });
   var searchField = document.querySelector(".site-search input");
-  if (searchField) searchField.addEventListener("focus", function () { if (openPanel) setPanel(null); });
+  if (searchField) searchField.addEventListener("focus", function () { if (activePanel) setPanel(null); });
   // a panel that no longer applies at the new size (e.g. turning a tablet) closes
   ["(min-width: 761px)", "(min-width: 1101px)"].forEach(function (q) { matchMedia(q).addEventListener("change", function () { setPanel(null); }); });
 

@@ -1250,6 +1250,9 @@ FONTS_SETTING = setting("fonts", "Font", [
 
 # the settings pop-over behind the gear icon (site.js makes it work; choices are kept in the browser)
 SETTINGS = ('<div class="site-settings" hidden role="dialog" aria-label="Settings">'
+            # title and close button: only shown on phones, where the pop-over covers the page
+            + '<div class="site-settings-head"><span class="site-settings-title">Settings</span>'
+            + f'<button class="site-settings-close" type="button" title="Close settings" aria-label="Close settings">{lucide("x")}</button></div>'
             + setting("theme", "Appearance", [("light", "sun", "Light"), ("dark", "moon", "Dark"), ("auto", "monitor", "Auto")])
             + setting("textSize", "Text size", [("small", "a-arrow-down", "Small"), ("default", "type", "Default"),
                                                 ("large", "a-arrow-up", "Large"), ("larger", "a-arrow-up", "Larger")])
