@@ -1755,7 +1755,8 @@ def preview_head(note, title, soup):
         return f"\u2063{len(hidden) - 1}\u2063"
     # `_preview_description` (any note): a hand-written, uncapped description for the card, in place
     # of the auto-extracted (and 300-char-capped) first paragraph — for pages worth a fuller blurb.
-    custom_blurb = " ".join(plain_case(note.prop("_preview_description") or "").split())
+    custom_blurb = plain_case(note.prop("_preview_description") or "").replace("\r\n", "\n").replace("\r", "\n").strip()
+
     blurb = custom_blurb or first_paragraph(soup, 300, keep_spoiler)
     if note.name == HOME_NOTE:
         if not custom_blurb:
