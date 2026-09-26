@@ -4,6 +4,8 @@ Tags:
 _order: 7
 Duration: 2-4 hours
 Description: 3v3 PvP Arena combat where the strongest team wins glory and prestige!
+T1–T3 EXP: "250"
+T4–T5 EXP: "250"
 ---
 ## For Players
 Brawls are a PvP gamemode where two teams of three duke it out in Covalon's training arena. Brawls usually last one to two hours, though they can run as long as four hours. Player characters cannot die during brawls - if they would die, they receive healing from the arena medics and then rejoin the fight!
@@ -29,7 +31,7 @@ In addition to normal rewards, when your team wins a brawl, you receive a Gladia
 ### Advanced Brawl Rules
 - A "respawn" is triggered when a player's turn begins while they are unconscious with 0 hit points. They are immediately teleported back to their team's starting area, fully healed, and have all non-permanent effects removed from them (excluding afflictions acquired prior to the brawl). Their turn then ends, and if the game mode is deathmatch, the opposing team gains 1 point. (Any items they dropped as a result of being knocked unconscious remain in the original square that player was knocked unconscious in.)
 - For control points, an "end of round" token is added to initiative. Scoring is calculated when the end of round token's turn comes up. Any player who attempts to delay their turn to go just before the end of round token will instead be placed just after it.
-- [Hero Points](https://2e.aonprd.com/Rules.aspx?ID=573) cannot be used in brawls, players do not receive a temporary Hero Point for participating in a brawl, and players cannot earn Hero Points from participating in a brawl.
+- [Hero Points](https://2e.aonprd.com/Rules.aspx?ID=2333) cannot be used in brawls, players do not receive a temporary Hero Point for participating in a brawl, and players cannot earn Hero Points from participating in a brawl.
 - When entering a brawl, players are stripped of all beneficial effects currently affecting them except for effects that last "until your next daily preparations." Negative effects from any source (such as conditions, afflictions, or an Oracular curse) are not stripped when entering a Brawl. Hunt Prey, Pursue a Lead, and other similar abilities cannot be used before a Brawl.
 - The [invisible](https://2e.aonprd.com/Conditions.aspx?ID=26) condition makes a character [hidden](https://2e.aonprd.com/Conditions.aspx?ID=79) to everyone instead of [undetected](https://2e.aonprd.com/Conditions.aspx?ID=39) during a brawl. No players may become undetected or unobserved during a brawl.
 - The presiding GM may elect to enforce a two-minute turn time limit for players during a brawl if players are taking excessively long turns.
@@ -118,4 +120,4 @@ All platforms are 10 feet high. The DC to climb any ladder or rigging is 10, but
 
 For control points, the three yellow squares indicate the control points, while the blue flag in the top-left and the red flag in the bottom-right indicate the locations of the blue and red flags respectively, as well as the scoring locations for the blue and red teams, respectively.
 
-All participants in Brawl gain Gold and experience, even if they lose. The winning team's players each receive a Gladiator Token for prestige. For more information on brawls, check the Brawl listing in the Player's Guide.
+All participants in Brawl gain Gold and experience, even if they lose. The winning team's players each receive a Gladiator Token for prestige. For more information on brawls, check out [[Brawls#For Players]].

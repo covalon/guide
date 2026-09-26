@@ -937,6 +937,9 @@ BUILTIN = {   # type: (icon, colour name)
     "danger": ("zap", "red"), "error": ("zap", "red"), "bug": ("bug", "red"),
     "example": ("list", "purple"), "quote": ("quote", "gray"), "cite": ("quote", "gray"),
 }
+# Layout callouts have no real title even when one is given -- Callouts.md's gallery leaves these
+# three out too (its own `LAYOUT` list) since they are structural, not content.
+LAYOUT_CALLOUTS = {"columns", "statblock", "clear"}
 CM_FILE = SRC / ".obsidian" / "plugins" / "callout-manager" / "data.json"
 CM = json.loads(CM_FILE.read_text()).get("callouts", {}) if CM_FILE.exists() else {}
 
@@ -1010,15 +1013,17 @@ def make_callout(soup, bq):
             title_nodes.append(node)
     if rest and isinstance(rest[0], Tag) and rest[0].name == "br":
         rest = rest[1:]
+    custom_title = bool("".join(str(n) for n in title_nodes).strip())
     box = soup.new_tag("div", attrs={"class": "callout", "data-callout": kind,
-                                     "data-callout-metadata": meta, "data-callout-fold": fold})
+                                     "data-callout-metadata": meta, "data-callout-fold": fold,
+                                     "data-callout-title": "custom" if custom_title else "default"})
     if fold:
         box["class"] = ["callout", "is-collapsible"] + (["is-collapsed"] if fold == "-" else [])
     title = soup.new_tag("div", attrs={"class": "callout-title"})
     icon = soup.new_tag("div", attrs={"class": "callout-icon"})
     icon.append(BeautifulSoup(callout_icon_html(kind), "html.parser"))
     inner = soup.new_tag("div", attrs={"class": "callout-title-inner"})
-    if "".join(str(n) for n in title_nodes).strip():
+    if custom_title:
         for n in title_nodes:
             inner.append(n.extract())
     else:
@@ -1123,6 +1128,21 @@ def to_html(markdown):
         seen[base] = seen.get(base, 0) + 1
         h["id"] = base if seen[base] == 1 else f"{base}-{seen[base] - 1}"
         h["data-heading"] = text
+    # named callouts get an anchor too, so "on this page" can link into them (see toc_html). Only ones
+    # with a real, visible title: not the default kind-name fallback, not |notitle, and not a layout
+    # callout (a statblock's title is always hidden by CSS regardless of what's given).
+    for box in soup.find_all("div", class_="callout"):
+        if box.find_parent(class_="callout") or box.get("data-callout-title") != "custom":
+            continue
+        if box.get("data-callout") in LAYOUT_CALLOUTS or "notitle" in (box.get("data-callout-metadata") or "").split():
+            continue
+        inner_title = box.find(class_="callout-title-inner")
+        ctext = inner_title.get_text(" ", strip=True) if inner_title else ""
+        if not ctext:
+            continue
+        key = heading_slug(ctext)
+        seen[key] = seen.get(key, 0) + 1
+        box["id"] = key if seen[key] == 1 else f"{key}-{seen[key] - 1}"
     for table in soup.find_all("table"):
         table.wrap(soup.new_tag("div", attrs={"class": "table-wrapper"})) if table.parent.name != "div" or "table-wrapper" not in (table.parent.get("class") or []) else None
     wrap_blocks(soup, soup)
@@ -1131,16 +1151,35 @@ def to_html(markdown):
 
 # ================================================================== page frame
 def toc_html(soup, title=None):
-    heads = [h for h in soup.find_all(re.compile(r"^h[1-4]$")) if not h.find_parent(class_="callout")]
-    if not heads:
+    def is_heading(t):
+        return isinstance(t, Tag) and bool(re.match(r"^h[1-4]$", t.name)) and not t.find_parent(class_="callout")
+    def is_named_callout(t):   # only ones make_callout/to_html gave an id to end up here
+        return isinstance(t, Tag) and t.name == "div" and "callout" in (t.get("class") or []) and t.has_attr("id") and t.get("data-callout-title") == "custom"
+    entries = soup.find_all(lambda t: is_heading(t) or is_named_callout(t))
+    if not entries:
         return ""
-    items, stack = [], []
+    items = []
     if title:   # the page's own title first: back to the top
         items.append(f'<li class="toc-title"><a href="#page-title">{html.escape(title)}</a></li>')
-    base = min(int(h.name[1]) for h in heads)
-    for h in heads:
-        depth = int(h.name[1]) - base
-        items.append(f'<li class="toc-depth-{depth}"><a href="#{h["id"]}">{html.escape(h.get_text(" ", strip=True))}</a></li>')
+    levels = [int(e.name[1]) for e in entries if is_heading(e)]
+    hbase = min(levels) if levels else 1
+    depth = 0   # a named callout nests one level under whatever heading precedes it (0 if none yet); |sibling overrides this, see below
+    for e in entries:
+        if is_heading(e):
+            depth = int(e.name[1]) - hbase
+            items.append(f'<li class="toc-depth-{depth}"><a href="#{e["id"]}">{html.escape(e.get_text(" ", strip=True))}</a></li>')
+        else:
+            inner = e.find(class_="callout-title-inner")
+            text = inner.get_text(" ", strip=True) if inner else e.get_text(" ", strip=True)
+            icon = callout_icon_html(e.get("data-callout", ""))
+            # a callout nests one level under the heading above it by default (it usually elaborates on
+            # that point); add |sibling to its metadata to keep it level with that heading instead, for
+            # one that's a standalone aside rather than a child of the preceding point
+            meta = (e.get("data-callout-metadata") or "").split()
+            cdepth = depth if "sibling" in meta else min(depth + 1, 3)
+            items.append(f'<li class="toc-depth-{cdepth} toc-callout"><a href="#{e["id"]}">'
+                         f'<span class="toc-callout-icon">{icon}</span>'
+                         f'<span class="toc-callout-label">{html.escape(text)}</span></a></li>')
     return '<nav class="site-toc"><div class="site-panel-title">On this page</div><ul class="site-toc-list">' + "".join(items) + "</ul></nav>"
 
 

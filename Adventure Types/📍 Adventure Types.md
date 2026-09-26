@@ -16,9 +16,13 @@ views:
       - file.name
       - Duration
       - Description
+      - T1–T3 EXP
+      - T4–T5 EXP
     sort:
-      - property: "_order"
+      - property: _order
         direction: ASC
+    columnSize:
+      note.Description: 229
 
 ```
 

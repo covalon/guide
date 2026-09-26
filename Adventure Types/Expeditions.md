@@ -4,6 +4,8 @@ Tags:
 _order: 3
 Duration: 3-4 hours
 Description: Narratively linked adventures that tie in to the Covalon Meta-Narrative.
+T1–T3 EXP: "500"
+T4–T5 EXP: "250"
 ---
 ## For Players
 The Cataclysm wrought destruction across the world of Elleaterra, leveling all civilizations to the ground, save Covalon. These old locations are nothing more than ruins now, but those ruins may be worth searching for resources, treasures, and most importantly, answers on how to defeat the Maw once and for all.

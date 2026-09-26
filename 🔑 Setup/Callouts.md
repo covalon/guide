@@ -106,6 +106,21 @@ Add `|notitle` after the type to hide the whole title bar (title, icon and band)
 > [!note|notitle]
 > Just the text, no title bar.
 
+## On This Page
+
+A callout with a real title (not just the default, like "Note" or "Warning" on their own) now shows up in the "On this page" list on the site, with a small matching icon next to it so it's clear it's a callout and not a heading.
+
+By default it's indented under whichever heading comes before it, since it's usually elaborating on that point. If it's really a standalone aside — not part of the point right above it — add `|sibling` after the type to keep it level with that heading instead:
+
+```markdown
+> [!tip|sibling] A Standalone Aside
+> This sits level with the heading above, not indented under it.
+```
+
+`|notitle` callouts never show up in the list, since they have no title to show. Neither do statblocks, columns or clear (they're layout callouts, not content).
+
+You can also link straight to one of these callouts, the same way you'd link to a heading: `[[#A Standalone Aside]]` on the same page, or `[[Some Note#A Standalone Aside]]` from another one. Type the callout's title exactly (Obsidian won't offer it in the autocomplete list, since it only knows about real headings there) — it'll still resolve correctly once the site is built.
+
 ## Foldable
 
 > [!note]+ Open by Default

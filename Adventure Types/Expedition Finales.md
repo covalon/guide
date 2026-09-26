@@ -4,6 +4,8 @@ Tags:
 _order: 4
 Duration: 2-3 hours
 Description: A Boss Fight style encounter that is the culmination of an expedition arc.
+T1–T3 EXP: "-"
+T4–T5 EXP: "250"
 ---
 ## For GMs
 Expedition Finales are fully pre-built boss encounters with special mechanics that are narratively tied to defending the planted Seeds of Terra used to purify reclaimed areas of the world map from Maw monsters. Every Finale has a set of individual rules and instructions laid out in the Expedition Module, but all Finales have some things in common.

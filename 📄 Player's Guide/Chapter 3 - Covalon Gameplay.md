@@ -51,7 +51,7 @@ Covalon's mentor system allows higher-level players to play with lower-level pla
 
 Mentor players are always added to the waitlist; player characters of the appropriate tier are given priority for table slots.
 
-When you play a mentor character, you do not earn any XP, but any gp or items you obtain are transferred to your player character. You also receive 1 Hero Point (see the Hero Point sidebar in the Adventures section).
+When you play a mentor character, you do not earn any XP, but any gp or items you obtain are transferred to your player character. You also receive 1 Hero Point (see [[Chapter 3 - Covalon Gameplay#Hero Points|the Hero Point sidebar]]).
 ### Covalon's Mentors
 The characters that make up Covalon's mentorship program are retired adventurers who have already lived full lives, but have been called to serve the city as wizened guides for green adventurers. The mentors were originally designed by players as part of a "Design a Mentor" contest, where over 50 characters were submitted to become Covalon's official mentor characters!
 
@@ -117,7 +117,7 @@ Each character also has a **status**.
 - Active characters can join adventures, use downtime, and participate in roleplay. 
 - Inactive characters cannot do any of these activities.
 
-> [!info] Number of Character Slots
+> [!info|sibling] Number of Character Slots
 > A player starts with **1 active core**, and must unlock additional character slots through purchase. At any given moment, a player may have at most: 
 > - 1 active core, 
 > - 1 active alt, 

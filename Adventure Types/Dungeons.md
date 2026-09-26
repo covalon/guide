@@ -4,6 +4,8 @@ Tags:
 _order: 1
 Duration: 3-4 hours
 Description: A supply gathering adventure to distant lands that takes the party through a portal.
+T1–T3 EXP: "500"
+T4–T5 EXP: "250"
 ---
 ## For Players
 The standard adventure type in Covalon is the dungeon. This adventure type involves going through a portal to a random location in the world in order to salvage supplies or recover lost treasures. They don't always take place in literal dungeons!

@@ -4,6 +4,8 @@ Tags:
 _order: 2
 Duration: 1 hour
 Description: A short combat encounter of moderate difficulty near Covalon-controlled areas.
+T1–T3 EXP: "250"
+T4–T5 EXP: "-"
 ---
 ## For Players
 As the last bastion of civilization, Covalon faces minor threats on a daily basis. Patrols deal with handling these minor threats, and are intended to help lower-level characters level up quickly.
@@ -11,16 +13,6 @@ As the last bastion of civilization, Covalon faces minor threats on a daily basi
 These adventures typically last an hour and include a single combat encounter. They generally don't feature any exploration or puzzles and contain minimal roleplay opportunities, and only award gold and consumables as treasure.
 
 Patrols are currently available to Tier 1, 2 and 3 players.
-
-> [!note] Hero Points
-> Unlike a traditional campaign, not all [Hero Points](https://2e.aonprd.com/Rules.aspx?ID=573) granted in Covalon expire at the end of a session; some stay with you until they are used.
-> ##### Temporary Hero Points
-> At the beginning of each adventure (excluding [[Brawls]]), players gain 1 Temporary Hero Point. If it's not used during the adventure, it expires.
-> 
-> This Temporary Hero Point doesn't allow players to exceed the 3 Hero Point Limit.
-> ##### Non-Temporary Hero Points
-> Players can obtain Hero Points that don't expire at the end of an adventure (but are still consumed upon use) by playing in adventures, participating in or hosting events with a guild, or participating in special server events.
-
 ## For GMs
 Covalon Patrols are small adventures and missions that take place in the immediate vicinity of Covalon-controlled locations. A patrol consists of a single moderate combat encounter, and is expected to last no more than an hour. Patrols should have little to no narrative elements or non-combat encounters.
 

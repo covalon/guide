@@ -44,7 +44,7 @@ Any items marked as disallowed on our server allowlist, which can be viewed [her
 #### Table 4-3: Precious Material Values
 ![[Table 4-3 - Precious Material Values]]
 ## GM Rewards
-For running a game in Covalon, you receive a [Hero Point](https://2e.aonprd.com/Rules.aspx?ID=573), up to the normal cap of 3. You also receive the rewards listed in tables 4-4 and 4-5.
+For running a game in Covalon, you receive a [Hero Point](https://2e.aonprd.com/Rules.aspx?ID=2333), up to the normal cap of 3. You also receive the rewards listed in tables 4-4 and 4-5.
 
 When your adventure ends, you may choose to forgo the rewards in these tables if you wish. If you forgo these rewards, you must forfeit both the experience and the gold. You cannot take one without the other.
 

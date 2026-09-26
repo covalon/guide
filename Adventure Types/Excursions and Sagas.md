@@ -4,6 +4,8 @@ Tags:
 _order: 5
 Duration: 3-4 hours
 Description: An adventure that is part of a narratively connected set of missions called a Saga.
+T1–T3 EXP: "500"
+T4–T5 EXP: "250"
 ---
 ## For Players
 Excursions are a special game type that features up to three connected Excursion missions in a narrative arc called a **Saga**. 

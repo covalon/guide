@@ -5,6 +5,11 @@
     "Divine Sanctification": "text",
     "Date": "date",
     "Type": "text",
-    "_published": "checkbox"
+    "_published": "checkbox",
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "T1–T3 EXP": "text",
+    "T4–T5 EXP": "text"
   }
 }

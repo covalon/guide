@@ -73,21 +73,21 @@
       "tip": [
         {
           "changes": {
-            "color": "233, 151, 63"
+            "color": "202, 147, 88"
           }
         }
       ],
       "hint": [
         {
           "changes": {
-            "color": "233, 151, 63"
+            "color": "202, 147, 88"
           }
         }
       ],
       "important": [
         {
           "changes": {
-            "color": "233, 151, 63"
+            "color": "202, 147, 88"
           }
         }
       ],
@@ -115,42 +115,42 @@
       "question": [
         {
           "changes": {
-            "color": "83, 223, 221"
+            "color": "97, 173, 189"
           }
         }
       ],
       "help": [
         {
           "changes": {
-            "color": "83, 223, 221"
+            "color": "97, 173, 189"
           }
         }
       ],
       "faq": [
         {
           "changes": {
-            "color": "83, 223, 221"
+            "color": "97, 173, 189"
           }
         }
       ],
       "warning": [
         {
           "changes": {
-            "color": "201, 60, 65"
+            "color": "196, 84, 88"
           }
         }
       ],
       "caution": [
         {
           "changes": {
-            "color": "201, 60, 65"
+            "color": "196, 84, 88"
           }
         }
       ],
       "attention": [
         {
           "changes": {
-            "color": "201, 60, 65"
+            "color": "196, 84, 88"
           }
         }
       ],

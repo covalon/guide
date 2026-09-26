@@ -18,6 +18,8 @@ views:
         direction: ASC
 
 ```
+
+You can find more information about each game in the [[📍 Adventure Types]] compendium.
 ## Dungeons
 ![[Dungeons#For GMs]]
 ## Patrols

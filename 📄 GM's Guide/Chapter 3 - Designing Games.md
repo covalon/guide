@@ -36,7 +36,7 @@ Always make sure to double check the [Restricted Monsters](https://docs.google.c
 ## Covalon Considerations
 Unless specified otherwise in the game type instructions, all adventures in Covalon must follow the following rules:
 
-* Each player gets one temporary [Hero Point](https://2e.aonprd.com/Rules.aspx?ID=573) at the start of the adventure, up to the usual maximum of 3 if they already have any. Unlike other Hero Points, if this Hero Point is not used by the end of the adventure it is lost.
+* Each player gets one temporary [Hero Point](https://2e.aonprd.com/Rules.aspx?ID=2333) at the start of the adventure, up to the usual maximum of 3 if they already have any. Unlike other Hero Points, if this Hero Point is not used by the end of the adventure it is lost.
 * The party must be able to try to escape if they choose to. The portal cannot close behind them, and they cannot be locked into an area.
 * The adventure must stick to the timeframe for the game type. If it appears to be going over time, wrap the adventure up early.
 * As long as players overcome at least one challenge or encounter, they receive full experience if they leave early. They receive all of the loot that they have found so far.

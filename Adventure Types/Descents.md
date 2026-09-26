@@ -4,6 +4,8 @@ Tags:
 _order: 6
 Duration: 4 hours
 Description: A brutal dungeon crawl against the hardest encounters Covalon has to offer.
+T1–T3 EXP: "-"
+T4–T5 EXP: "250"
 ---
 ## For Players
 Players who seek a challenge more difficult than standard adventures need look no further than descents, which are the most dangerous but also the most lucrative of adventure types offered in Covalon. 
