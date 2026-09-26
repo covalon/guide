@@ -15,7 +15,7 @@ Goals: improve the general populace's knowledge by improving the organization, s
 Values: the pursuit and preservation of knowledge through written word, keeping the library organized
 Anathema: destroy library property, keep new information from the library, remove or hide existing information
 ---
-A guild dedicated to the maintenance and prosperity of Covalon's Library, through the organization and creation of reading material and the upkeep of its property.
+A guild dedicated to the maintenance and prosperity of [[Covalon Public Library|Covalon's Library]], through the organization and creation of reading material and the upkeep of its property.
 
 All members get a small handcrafted stamp with The Archivists' herald, to use when publishing books and approving documents. Although not a requirement, members can (and are encouraged) to earn their keep by publishing new works for The Archivists.
 
