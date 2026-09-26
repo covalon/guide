@@ -86,7 +86,7 @@ jobs:
 
         release_date = datetime.fromisoformat(os.environ["TIME"].replace("Z", "+00:00"))
         date_str = f'{release_date:%b} {release_date.day} {release_date:%Y}'
-        title = f'{date_str}'
+        title = f'Covalon Guide ({date_str})'
 
         payload = {
             "username": "Covalon Guide Changelog",
@@ -94,8 +94,9 @@ jobs:
             "embeds": [
                 {
                     "title": title,
+                    "url": "https://covalon.github.io/guide/",
                     "description": os.environ["MESSAGE"][:4096],
-                    "color": 12096090,
+                    "color": 12886888,
                 }
             ],
         }
