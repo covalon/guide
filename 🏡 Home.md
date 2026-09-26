@@ -1,7 +1,14 @@
+---
+_preview_description: "Welcome to the Covalon Guides, an ever-updating document for the PF2e living world Covalon. \n\n If this is your first time here, you might want to check out Getting Started for a quick TL;DR on how to begin. Otherwise, the Player's Guide covers everything you need to play."
+---
 ![[Covalon-Logo-Bold-Wood-Cropped-Small.webp|Covalon Logo|258x320]]
-Welcome to the Covalon Guides, for the PF2e living world Covalon. This should help you find 
+Welcome to the Covalon Guides, an ever-updating document for the PF2e living world Covalon. 
 
-If this is your first time here, you might want to check out [[🌱 Getting Started]] for a quick TL;DR on how to begin. Otherwise, the Player's Guide covers everything you need!
+If this is your first time here, you might want to check out [[🌱 Getting Started]] for a quick TL;DR on how to begin. Otherwise, the [[📍 Covalon Player's Guide|Player's Guide]] covers everything you need to play!
+
+<small>Pssst! The settings panel (⚙️) has options to customize the site's appearance to your tastes (light/dark mode, font size, and so on) which will be stored in your browser's cache and remembered between visits.</small>
+
+
 ## Guides
 - [[📍 Covalon Player's Guide|Covalon Player's Guide]]: the full player's guide on one page.
 - [[📍 Covalon GM's Guide|Covalon GM's Guide]]: the full guide for Dungeon Guides on one page
@@ -15,7 +22,7 @@ If this is your first time here, you might want to check out [[🌱 Getting Star
 - [[📍 Campaign Events|Campaign Events]]: all server-wide multitable events.
 ## Other Links
 - [[🔎 How to Search]]: tips for finding things in the guides.
-- 
+- [[🌱 Getting Started]]: a quick tldr, 
 
 
 ---

@@ -1753,16 +1753,20 @@ def preview_head(note, title, soup):
     def keep_spoiler(text):
         hidden.append(text)
         return f"\u2063{len(hidden) - 1}\u2063"
-    blurb = first_paragraph(soup, 300, keep_spoiler)
+    # `_preview_description` (any note): a hand-written, uncapped description for the card, in place
+    # of the auto-extracted (and 300-char-capped) first paragraph — for pages worth a fuller blurb.
+    custom_blurb = " ".join(plain_case(note.prop("_preview_description") or "").split())
+    blurb = custom_blurb or first_paragraph(soup, 300, keep_spoiler)
     if note.name == HOME_NOTE:
-        blurb = first_paragraph(soup, 300) or "The Covalon guides."
-        # keep the default "Open" button (the home page itself), then the guides, then Getting Started
-        rows += [button_row("The whole guide on one page", link_button(re.sub(r"^Covalon ", "", PREFIX.sub("", notes[g].title)),
+        if not custom_blurb:
+            blurb = first_paragraph(soup, 300) or "The Covalon guides."
+        # two explicit button rows: [ Open, Getting Started ] above [ Player's Guide, GM's Guide ]
+        started = find("🌱 Getting Started")   # a draft until Isabella publishes it: no button until then
+        top_row = rows + ([button_row("A quick TL;DR on how to begin", link_button("Getting Started", absolute(started.url), "🌱"))] if started else [])
+        guide_row = [button_row("The whole guide on one page", link_button(re.sub(r"^Covalon ", "", PREFIX.sub("", notes[g].title)),
                                                                      absolute(notes[g].url), GUIDE_EMOJI.get(g, "📖")))
                 for g in GUIDES if g in notes]
-        started = find("🌱 Getting Started")   # a draft until Isabella publishes it: no button until then
-        if started:
-            rows.append(button_row("A quick TL;DR on how to begin", link_button("Getting Started", absolute(started.url), "🌱")))
+        rows = [top_row, guide_row] if guide_row else [top_row]
     table = re.match(r"Table (\d+-\d+) - (.*)$", note.title)
     if table and note.folders and note.folders[-1] == "Tables":   # Table 3-1: … — from which chapter, and its columns
         title = f"Table {table.group(1)}: {table.group(2)}"
@@ -1783,7 +1787,7 @@ def preview_head(note, title, soup):
         for k, v in note.props.items():
             if (k.lower() in HIDDEN_PROPS or k.startswith("_") or k.lower() in PREVIEW_SKIP or v in (None, "", [])):
                 continue
-            facts.append(f"**{md_escape(k)}:** {md_escape(shorten(plain_case(v), 120))}")
+            facts.append(f"**{md_escape(k)}:** {md_escape(' '.join(plain_case(v).split()))}")   # full value: no per-property truncation, just whitespace-collapsed
         if facts:   # ||spoilers|| in a property stay Discord spoilers
             extra.append(re.sub(r"\\\|\\\|(.+?)\\\|\\\|", r"||\1||", "\n".join("-# " + f for f in facts[:PREVIEW_MAX_PROPS])))   # small print
     # chapters: their main sections; a whole guide: its chapters
@@ -1829,10 +1833,11 @@ def preview_head(note, title, soup):
     head = {"type": 9, "components": [top], "accessory": {"type": 11, "media": {"url": thumb}}} if thumb else top
     gallery = [{"type": 12, "items": [{"media": {"url": absolute(shot)}, "description": shorten(title, 200)}]}] if shot else []
     extra_row = [{"type": 10, "content": shorten_md("\n\n".join(extra), 3500)}] if extra else []   # past the thumbnail, so it runs the full width
+    button_rows = rows if rows and isinstance(rows[0], list) else [rows]   # normally one row; Home sends its own list of rows
     card = {"type": 17, "accent_color": int(PREVIEW_COLOR[1:], 16), "components": [
         head, *gallery, *extra_row,
         {"type": 14, "divider": True, "spacing": 1},
-        {"type": 1, "components": rows[:5]},   # the buttons, in one row
+        *[{"type": 1, "components": r[:5]} for r in button_rows if r],
     ]}
     payload = json.dumps({"component": card}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     description = shorten(tagline + (" " if tagline and blurb else "") + (blurb if blurb != tagline else ""), 300) or SITE_NAME
