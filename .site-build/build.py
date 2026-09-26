@@ -1625,8 +1625,8 @@ def preview_head(note, title, soup):
             lines.append(" · ".join(shown) + (" · …" if len(heads) > limit else ""))
     if note.name in NAV:
         guide, chapters, i = NAV[note.name]
-        # [ 📖 Open chapter ] [ 📜 Open in full guide ] (the chapter's heading on the one-page guide)
-        rows = [button_row("This chapter on its own", link_button("Open chapter", page_url, "📖")),
+        # [ 📖 Open chapter only ] [ 📜 Open in full guide ] (the chapter's heading on the one-page guide)
+        rows = [button_row("This chapter on its own", link_button("Open chapter only", page_url, "📖")),
                 button_row("The chapter in the whole guide",
                            link_button("Open in full guide", absolute(notes[guide].url) + "#" + heading_slug(chapters[i][0]), "📜"))]
     # overviews: how many entries they list
