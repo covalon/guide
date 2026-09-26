@@ -16,7 +16,7 @@ This can be as simple as a block of text, or utilising one of the tools created 
 > Covalon has a spreadsheet that lays out everything you need for submission. You can use this by visiting this [link](https://docs.google.com/spreadsheets/d/1ROCS4OqesafnsqDbvwLztm8U4CzmHruYDBtFndqIgAo/edit?usp=sharing) and creating a copy for your own use! We encourage all Covalon GMs to use this tool!
 
 ## Your Portal Specialist NPC
-Every Dungeon Guide creates their own Portal Specialist NPC. This is an individual who works for the Dungeoneering Society and provides quests and guidance to the party. They are also responsible for opening and sustaining the portal to take adventurers to the quest location.
+Every Dungeon Guide creates their own Portal Specialist NPC. This is an individual who works for [[The Dungeoneering Society|Dungeoneering Society]] and provides quests and guidance to the party. They are also responsible for opening and sustaining the portal to take adventurers to the quest location.
 
 Your Portal Specialist must be cooperative with the party, and invested in their success. You should submit a brief summary of their personality and a description of their appearance for approval.
 

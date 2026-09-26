@@ -12,11 +12,11 @@ The total value of loot for each APL value can be found in [[Chapter 4 - Treasur
 Keep in mind that the above tables are for a 6 person party. You will need to adjust for a lower number of party members if you are running for fewer than 6 players! You can do this by dividing the above figures by 6, and multiplying the resulting number by the total number of players you will be running for.
 
 > [!note|notitle]
-> For example, if you planned to run an APL 9 patrol for 5 players, you would divide 2142 by 6 to get 357. You then multiply 357 by 5 for a total loot budget for the adventure of 1785g.
+> For example, if you planned to run an APL 9 [[Patrols|patrol]] for 5 players, you would divide 2142 by 6 to get 357. You then multiply 357 by 5 for a total loot budget for the adventure of 1785g.
 
 ## Loot Should Contain
 ### Gold and Treasure
-Cash is great! At least 50% of the treasure budget must be gold to ensure people can buy or commission items they want instead of relying on drops. You may flavor a "gold" reward as various valuables that the Dungeoneering Society will pay the adventurers for, if you like.
+Cash is great! At least 50% of the treasure budget must be gold to ensure people can buy or commission items they want instead of relying on drops. You may flavor a "gold" reward as various valuables that [[The Dungeoneering Society|Dungeoneering Society]] will pay the adventurers for, if you like.
 ### Appropriately Levelled Consumable Items
 Bombs, mutagens, elixirs, potions, scrolls, talismans are great rewards that players will often not craft for themselves. Consumable items given as loot should be the same level or lower than the APL of the party.
 ### Appropriately Levelled, Thematic Permanent Items
@@ -44,7 +44,7 @@ Any items marked as disallowed on our server allowlist, which can be viewed [her
 #### Table 4-3: Precious Material Values
 ![[Table 4-3 - Precious Material Values]]
 ## GM Rewards
-For running a game in Covalon, you receive a Hero Point, up to the normal cap of 3. You also receive the rewards listed in tables 4-4 and 4-5.
+For running a game in Covalon, you receive a [Hero Point](https://2e.aonprd.com/Rules.aspx?ID=573), up to the normal cap of 3. You also receive the rewards listed in tables 4-4 and 4-5.
 
 When your adventure ends, you may choose to forgo the rewards in these tables if you wish. If you forgo these rewards, you must forfeit both the experience and the gold. You cannot take one without the other.
 
@@ -54,7 +54,7 @@ You can choose to take or forgo the Hero Point.
 #### Table 4-5: Patrol GM Rewards
 ![[Table 4-5 - Patrol GM Rewards]]
 
-'* Non-Patrol rewards consist of Dungeons, Descents, Expeditions, Finales, Excursions, and Brawls.
+'* Non-Patrol rewards consist of [[Dungeons]], [[Descents]], [[Expeditions]], [[Expedition Finales|Finales]], [[Excursions and Sagas|Excursions]], and [[Brawls]].
 ## Hero Points and Keepsakes
 You may award Hero Points at the end of your adventure for exceptional roleplay or enjoyable moments. These should be reserved for character-based interactions and decisions rather than simply rolling well with dice. You may award up to one Hero Point per hour of play.
 

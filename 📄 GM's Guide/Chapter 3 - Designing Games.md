@@ -36,7 +36,7 @@ Always make sure to double check the [Restricted Monsters](https://docs.google.c
 ## Covalon Considerations
 Unless specified otherwise in the game type instructions, all adventures in Covalon must follow the following rules:
 
-* Each player gets one Hero Point at the start of the adventure, up to the usual maximum of 3 if they already have any. Unlike other Hero Points, if this Hero Point is not used by the end of the adventure it is lost.
+* Each player gets one temporary [Hero Point](https://2e.aonprd.com/Rules.aspx?ID=573) at the start of the adventure, up to the usual maximum of 3 if they already have any. Unlike other Hero Points, if this Hero Point is not used by the end of the adventure it is lost.
 * The party must be able to try to escape if they choose to. The portal cannot close behind them, and they cannot be locked into an area.
 * The adventure must stick to the timeframe for the game type. If it appears to be going over time, wrap the adventure up early.
 * As long as players overcome at least one challenge or encounter, they receive full experience if they leave early. They receive all of the loot that they have found so far.
@@ -57,7 +57,7 @@ In order to approve these, we will need a description of the challenge, relevant
 ### Expedition Examples
 See the end of this document for instructions to install the Covalon module, which contains our campaign's Foundry VTT content, including our expedition missions. Many of these expedition missions use unique subsystems and mechanics that you can reference as an example before building your own!
 
-- Verndhelt B: Playing Both Sides has an example of a structured social encounter using the **Influence rules**, and a free form social/skill encounter using a **simple Victory Point system**. 
-- Verndhelt C: Search the Sinkhole and Middlemist A: Delve the Dark both use a **hex grid** and skill checks to represent **hexploration**. 
+- Verndhelt B: Playing Both Sides has an example of a structured social encounter using the **[influence rules](https://2e.aonprd.com/Rules.aspx?ID=1201)**, and a free form social/skill encounter using a **simple [victory point](https://2e.aonprd.com/Rules.aspx?ID=1189) system**. 
+- Verndhelt C: Search the Sinkhole and Middlemist A: Delve the Dark both use a hex grid and skill checks to represent [hexploration](https://2e.aonprd.com/Rules.aspx?ID=1265). 
 - Ikouga B: Investigate the Goop uses a simple **skill challenge** to research goop. 
-- Gornlar Mission B: Explore the Fire Mountain and Primrose Mission B: Playing Politics both utilize the **chase subsystem** for one of their required encounters.
+- Gornlar Mission B: Explore the Fire Mountain and Primrose Mission B: Playing Politics both utilize the [chase subsystem](https://2e.aonprd.com/Rules.aspx?ID=1210) for one of their required encounters.

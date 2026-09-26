@@ -13,7 +13,7 @@ Including NPCs in your adventure can allow for the inclusion of social encounter
 
 The world of Elleaterra is beginning to heal, but the setting is still post-apocalyptic. No surviving communities of NPCs should be larger than a small village (100 individuals), and they should be struggling to survive.
 
-NPCs can never return to Covalon. Magical defenses physically prevent any outside creature from crossing through the Dungeoneering Society's portals.
+NPCs can never return to Covalon. Magical defenses physically prevent any outside creature from crossing through [[The Dungeoneering Society|the Dungeoneering Society]]'s portals.
 
 Players can give out directions to get to Covalon or our expedition outposts if they wish, but keep in mind NPCs are never roleplayed out of sessions, so they won't have a chance to see that NPC again. An alternative to this situation is making sure the NPCs have their own motivations or reasons to not want to come to Covalon.
 ## Technology

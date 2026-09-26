@@ -1,5 +1,5 @@
 ## Covalon Module
-The Covalon Module provides a compendium of all information required to run games in Covalon, including all of our current Mentors, Expeditions and Deities. You can install the Covalon Module at the below Manifest URL.
+The Covalon Module provides a compendium of all information required to run games in Covalon, including all of our current Mentors, [[📍 Expeditions|Expeditions]] and [[📍 Deities, Faith, and Ideologies|Deities]]. You can install the Covalon Module at the below Manifest URL.
 
 > [!note] Manifest URL
 > ```

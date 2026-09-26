@@ -36,7 +36,7 @@ Pathfinder Second Edition is a complex game with a lot of rules, and we try to s
 
 In such cases you should make a table ruling for that session, and endeavour to look up the correct rule after the session. You can do so in any of the appropriate text channels ([\#🧮munchkins-and-mathfinder](https://discord.com/channels/802423566196539412/804570381310361631) or [\#🐣newbie-help-and-discussion](https://discord.com/channels/802423566196539412/988493362371891250) are a great place to start) or via creating a ticket to ask the staff team.
 ### Death and Downed Characters
-Pathfinder Second Edition is a tightly balanced system, and players will often find their character in the dying state in combat. For Covalon adventures, you are generally discouraged from attacking players with the dying condition, unless it makes clear tactical sense for the monster to do so.
+Pathfinder Second Edition is a tightly balanced system, and players will often find their character in the [dying](https://2e.aonprd.com/Rules.aspx?ID=2325) state in combat. For Covalon adventures, you are generally discouraged from attacking players with the dying condition, unless it makes clear tactical sense for the monster to do so.
 
 Actively trying to kill player characters is against the ethos of Covalon, but that doesn't mean to say that character death will never happen. The hallmark of a well-balanced encounter is one that is high in tension and the party barely makes it out alive. Sometimes though, characters don't make it out due to bad luck with the dice, poor tactical decisions, or a combination of both.
 
