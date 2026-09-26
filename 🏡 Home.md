@@ -2,7 +2,7 @@
 _preview_description: "Welcome to the Covalon Guides, an ever-updating document for the PF2e living world Covalon. \n\n If this is your first time here, you might want to check out Getting Started for a quick TL;DR on how to begin. Otherwise, the Player's Guide covers everything you need to play."
 ---
 ![[Covalon-Logo-Bold-Wood-Cropped-Small.webp|Covalon Logo|258x320]]
-Welcome to the Covalon Guides, an ever-updating document for the PF2e living world Covalon. 
+Welcome to the Covalon Guides, an ever-updating document for the PF2e living world Covalon.
 
 If this is your first time here, you might want to check out [[🌱 Getting Started]] for a quick TL;DR on how to begin. Otherwise, the [[📍 Covalon Player's Guide|Player's Guide]] covers everything you need to play!
 
@@ -22,7 +22,13 @@ If this is your first time here, you might want to check out [[🌱 Getting Star
 - [[📍 Campaign Events|Campaign Events]]: all server-wide multitable events.
 ## Other Links
 - [[🔎 How to Search]]: tips for finding things in the guides.
-- [[🌱 Getting Started]]: a quick tldr, 
+- [[🌱 Getting Started]]: what is covalon? what is pf2e? what is foundry??? discover here.
+
+- [Archives of Nethys](https://2e.aonprd.com/): a database of 2e, free and legal.
+- [Demiplane](https://app.demiplane.com/nexus/pathfinder2e): an alternate database of 2e, slower but with official paizo art.
+- [Pathbuilder Sheet Changelogger](https://covalon.github.io/reincarnation/): a custom tool built for Covalon that compares two Pathbuilders and outputs a changelog.
+- [GSheets Character Tracker](https://docs.google.com/spreadsheets/d/1ihgJ6LtpcIKopVw4mUMhBOZRQWGekMLKPngItIrFFSs/edit?usp=sharing): a google sheet character tracker designed by CAT-6 to aid in tracking character things between games.
+
 
 
 ---
