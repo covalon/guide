@@ -31,7 +31,7 @@ Expedition to [[Primrose]].
 > - Victor the Vulpine (Wizard 12)
 > - Violeta (Sorcerer 12)
 
-Efforts to reclaim Primrose are complete. The city had been buried under the dunes of the desert, and conventional reclamation was mostly out of the question, but it was entirely possible that some buildings may have survived and could be dug into. Trella's Travelers constructed the Oasis Seeker for this purpose - an alchemical scorpion mech that would be able to dig into the desert while crystallizing the sand left in its wake to prevent cave-ins.
+Efforts to reclaim Primrose are complete. The city had been buried under the dunes of the desert, and conventional reclamation was mostly out of the question, but it was entirely possible that some buildings may have survived and could be dug into. [[Trella's Travellers|Trella's Travelers]] constructed the Oasis Seeker for this purpose - an alchemical scorpion mech that would be able to dig into the desert while crystallizing the sand left in its wake to prevent cave-ins.
 
 The journey was tumultuous and risky, with the Oasis Seeker threatening to fall apart at multiple points throughout the journey, but the Covalonians eventually reached Primrose and managed to bore into its underground sewer system known as the Ratways… or so they thought.
 

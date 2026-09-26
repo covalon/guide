@@ -36,7 +36,7 @@ Expedition to [[Gornlar]].
 > - Turner T. Turnip (Sorcerer 12)
 > - Victor Minato (Wizard 12)
 
-Efforts to reclaim Gornlar are complete! Due to roaming dragons, the safest way to approach Gornlar was a clockwork drill to bore a tunnel through the mountains to the west of Covalon. The drill needed significant upgrades in order to complete this task, including layers of potency crystal coating to empower its drill bit, fulus of fire suppression for temperature control, and black powder kegs to blast through anything that the drill can't penetrate. The adventurers of Trella's Travelers took charge in augmenting the drill, transforming it into a mechanical marvel known as The Den Maker.
+Efforts to reclaim Gornlar are complete! Due to roaming dragons, the safest way to approach Gornlar was a clockwork drill to bore a tunnel through the mountains to the west of Covalon. The drill needed significant upgrades in order to complete this task, including layers of potency crystal coating to empower its drill bit, fulus of fire suppression for temperature control, and black powder kegs to blast through anything that the drill can't penetrate. The adventurers of [[Trella's Travellers|Trella's Travelers]] took charge in augmenting the drill, transforming it into a mechanical marvel known as The Den Maker.
 
 ![[TheDenMaker.webp|The Den Maker. Designed by Sheas.]]
 

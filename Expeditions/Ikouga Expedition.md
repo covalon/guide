@@ -25,11 +25,11 @@ Expedition to [[Ikouga]].
 > - Sheas (Monk 12)
 > - Stellarys Amaris (Sorcerer 12)
 
-Efforts to reclaim Ikouga are complete! Thanks to the contributions of Kelani Snowdrop and other citizens, Covalon was able to construct a galley and a large number of feather tokens (fan) to propel them across the windless ocean of the Noctune Tropic. Dubbed The North Star, adventurers boarded the Trella-themed vessel with starry eyes, eager to see what awaited them in Ikouga.
+Efforts to reclaim Ikouga are complete! Thanks to the contributions of Kelani Snowdrop and other citizens, Covalon was able to construct a galley and a large number of feather tokens (fan) to propel them across the windless ocean of the Noctune Tropic. Dubbed [[The North Star]], adventurers boarded the [[Trella, The Night Sky|Trella]]-themed vessel with starry eyes, eager to see what awaited them in Ikouga.
 
 On the last leg of the journey, disaster struck. The ship was attacked by an unseen creature below the waves of the ocean, and the ship crashed onto the city's beach. Luckily, everyone survived, and a base camp was erected on Ikouga's docks.
 
-A portal has been created between the base camp at Ikouga and Covalon, and the North Star was repaired, rehabilitated, and sailed home to be the guild hall of the newly created guild Trella's Travellers.
+A portal has been created between the base camp at Ikouga and Covalon, and the North Star was repaired, rehabilitated, and sailed home to be the guild hall of the newly created guild [[Trella's Travellers]].
 
 ![[NorthStarFlag.webp|The flag of The North Star. Designed by Kona Snowdrop.]]
 

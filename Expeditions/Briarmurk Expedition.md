@@ -25,7 +25,7 @@ Expedition to [[The Briarmurk]].
 > - Strawberry (Investigator 12)
 > - Yao Mei (Commander 12)
 
-Though "reclaimed" is a generous statement, the threat of the Maw has been thwarted in Briarmurk! Our finest crafters invented a low, segmented metal vehicle dubbed the S.E.N.T;I.P.E.D.E. (Swampy Excursion Navigation Trawler; Integrated Primally Energized Dragon Engine) to bring us overland from Varceta to the harsh swamps of the "Murk." The voyage was less than pleasant, as we were assailed by hostile inhabitants, nightmarish dreams, and acid rain. A giant blood moon watched us from above as we arrived at our final destination; an ancient city lost in the murk for ages.
+Though "reclaimed" is a generous statement, the threat of the Maw has been thwarted in Briarmurk! Our finest crafters invented a low, segmented metal vehicle dubbed the S.E.N.T;I.P.E.D.E. (Swampy Excursion Navigation Trawler; Integrated Primally Energized Dragon Engine) to bring us overland from [[The Kingdom of Varceta|Varceta]] to the harsh swamps of the "Murk." The voyage was less than pleasant, as we were assailed by hostile inhabitants, nightmarish dreams, and acid rain. A giant blood moon watched us from above as we arrived at our final destination; an ancient city lost in the murk for ages.
 
 As our camp was established, missions were quickly under way to find the Maw Vessel. We learned that we needed to defeat its protectors, a trio of priestesses infusing it with magical energies. To what end, we still don't know, but it definitely couldn't be good! A path was carved through the ancient city of Terrateotl, and our warriors fought at its apex, ultimately slaying the trio and the vessel.
 ## Base Camp

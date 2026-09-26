@@ -19,7 +19,7 @@ Expedition to [[Pudersnö]].
 > - Valerie (Thaumaturge 14)
 > - Zhaal Revane (Wizard 15)
 
-Our efforts to reclaim Pudersnö are complete! A journey so far into the frozen north was never going to be easy, our crafters knew this from the outset, but when so many kindle hope a blaze of inspiration is never far away. An airship had served us well on our way to Middlemist and surely it would do the same as we ventured to Pudersnö. It just needed to be warmer! And so Sleipner, vessel to the North, was born.
+Our efforts to reclaim Pudersnö are complete! A journey so far into the frozen north was never going to be easy, our crafters knew this from the outset, but when so many kindle hope a blaze of inspiration is never far away. An airship had served us well on our way to [[Middlemist]] and surely it would do the same as we ventured to Pudersnö. It just needed to be warmer! And so Sleipner, vessel to the North, was born.
 
 It was impossible to know though just how bitterly cold those frozen lands had become and it wasn't long before our heating systems needed urgent repairs. Wrenches clanging and bolts bolting we managed to keep the ship aloft, if only barely. While we thought this was the worst of it, truly the worst was yet to come…
 

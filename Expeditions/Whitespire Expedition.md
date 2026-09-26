@@ -31,7 +31,7 @@ Expedition to [[Whitespire]].
 > - Veylin (Rogue 12)
 > - Father Bauldric (Cleric 12)
 
-Covalon reclaimed Whitespire from the grasp of the Maw! Our efforts began with the restoration of the drill that dug the way to Gornlar, the Den Mother. We trekked on foot from our Drifthaven camp, narrowly avoiding hordes of undead and then drilled through the mountains to Whitesmouth.
+Covalon reclaimed Whitespire from the grasp of the Maw! Our efforts began with the restoration of the drill that dug the way to [[Gornlar]], the Den Mother. We trekked on foot from our [[Drifthaven]] camp, narrowly avoiding hordes of undead and then drilled through the mountains to Whitesmouth.
 
 As we approached Whitespire proper, we found more and more shattered humanoid statues. In the city, we located and saved a petrified dwarven elder of the Stoneheart clan.
 

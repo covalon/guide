@@ -19,11 +19,11 @@ Expedition to [[The Kingdom of Varceta]].
 > - Valerie (Swashbuckler 15)
 > - Yksys (Champion 15)
 
-Our efforts to reclaim Varceta are complete! We travelled across the plains of Ratchethallow on the backs of a herd of clockwork horses. Upon arrival in the volcanic mountains of Varceta, we were met with a resistance of Varcetan survivors, mostly Dhampir, who informed us of the true enemy - an army of Maw infested psychopomps, who completely wiped out the vampire nobles while they were distracted by their civil war.
+Our efforts to reclaim Varceta are complete! We travelled across the plains of [[Ratchethallow]] on the backs of a herd of clockwork horses. Upon arrival in the volcanic mountains of Varceta, we were met with a resistance of Varcetan survivors, mostly Dhampir, who informed us of the true enemy - an army of Maw infested psychopomps, who completely wiped out the vampire nobles while they were distracted by their civil war.
 
-We worked with this resistance to rally troops, investigate lava magic, and even performed underwater reconnaissance in a Dungeoneering Society crafted special Shark Diver Submarine! Together, we made a plan to lure in the psychopomp war master. A trap was laid at the peak of a nearby volcano, combining void and fire magic to create special Lava Tethers that bound Traseem, the Great Seabird in place!
+We worked with this resistance to rally troops, investigate lava magic, and even performed underwater reconnaissance in a [[The Dungeoneering Society|Dungeoneering Society]] crafted special Shark Diver Submarine! Together, we made a plan to lure in the psychopomp war master. A trap was laid at the peak of a nearby volcano, combining void and fire magic to create special Lava Tethers that bound Traseem, the Great Seabird in place!
 
-Traseem proved to be no easy foe, even bound, and the first group to challenge him was unfortunately slain, though revived by the Heart of Terra. When our heroes finally slayed the psychopomp, we found the vessel of the Maw contained within it.
+Traseem proved to be no easy foe, even bound, and the first group to challenge him was unfortunately slain, though revived by the [[The Shrine of Terra|Heart of Terra]]. When our heroes finally slayed the psychopomp, we found the vessel of the Maw contained within it.
 
 The Heart of Terra pushed to destroy it, but it struggled. Covalonians present for Traseem's destruction or at the Shrine of Terra noticed it falter. It managed to overcome the Maw, but not without cost. Varceta is freed, but it will take effort to bolster the Heart.
 ## Base Camp
