@@ -2,7 +2,7 @@
 _url: how-to-search
 _sidebar_group: Other
 ---
-åEverything in the guides can be searched using the search bar in the sidebar. Click it (or use **Ctrl K**, **⌘ K** on a Mac, or **/**) and a search window opens over the page you're on. 
+Everything in the guides can be searched using the search bar in the sidebar. Click it (or use **Ctrl K**, **⌘ K** on a Mac, or **/**) and a search window opens over the page you're on. 
 
 The [Advanced Search](../search/) page is a dedicated page for the search that does the same thing.
 ## Searching for words

@@ -100,7 +100,8 @@ Properties starting with `_` never show on the website:
 - `_published`: unticked (or blank, `-`) makes it a draft; ticked or removed publishes it (see above).
 - `_url`: a custom address for the page, like `briarmurk`.
 - `_preview`: a picture for the page's Discord link preview, like `"[[CovalonCity.webp]]"`.
-- `_sidebar_group`: groups a top-level folder or page in the left sidebar. Give the folder's pinned page (or the page itself, for a top-level page with no folder) the same word as the others in its section — right now `Guides`, `Compendiums` or `Helpful Links` — and a divider line is drawn wherever the word changes going down the list. Ask Izzy before adding a new group word.
+- `_sidebar_group`: groups a top-level folder or page in the left sidebar. Give the folder's pinned page (or the page itself, for a top-level page with no folder) the same word as the others in its section — right now `Compendiums` or `Other` — and a divider line is drawn wherever the word changes going down the list.
+- A page's or folder's own name can start with an emoji too (like 🔎 How to Search) and it'll show in the sidebar the same small way `📍` does — just leave a space after it.
 
 ## Stuff to not touch
 There's a buncha fiddly bits that help manage this guide and turn it into a fully functioning site. 

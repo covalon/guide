@@ -1,7 +1,7 @@
 ---
 Tags:
-- covalon/adventure-type
-Order: 8
+  - covalon/adventure-type
+_order: 8
 Duration: 0.5-1 hour
 Description: 1v1 narrative duels with no rewards except bragging rights.
 ---

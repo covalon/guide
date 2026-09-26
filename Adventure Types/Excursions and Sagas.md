@@ -1,7 +1,7 @@
 ---
 Tags:
-- covalon/adventure-type
-Order: 5
+  - covalon/adventure-type
+_order: 5
 Duration: 3-4 hours
 Description: An adventure that is part of a narratively connected set of missions called a Saga.
 ---

@@ -1,7 +1,7 @@
 ---
 Tags:
-- covalon/adventure-type
-Order: 1
+  - covalon/adventure-type
+_order: 1
 Duration: 3-4 hours
 Description: A supply gathering adventure to distant lands that takes the party through a portal.
 ---

@@ -1,7 +1,7 @@
 ---
 Tags:
-- covalon/adventure-type
-Order: 3
+  - covalon/adventure-type
+_order: 3
 Duration: 3-4 hours
 Description: Narratively linked adventures that tie in to the Covalon Meta-Narrative.
 ---

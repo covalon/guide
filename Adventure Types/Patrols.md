@@ -1,7 +1,7 @@
 ---
 Tags:
-- covalon/adventure-type
-Order: 2
+  - covalon/adventure-type
+_order: 2
 Duration: 1 hour
 Description: A short combat encounter of moderate difficulty near Covalon-controlled areas.
 ---

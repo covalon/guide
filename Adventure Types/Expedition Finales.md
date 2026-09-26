@@ -1,7 +1,7 @@
 ---
 Tags:
-- covalon/adventure-type
-Order: 4
+  - covalon/adventure-type
+_order: 4
 Duration: 2-3 hours
 Description: A Boss Fight style encounter that is the culmination of an expedition arc.
 ---

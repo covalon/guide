@@ -1,7 +1,7 @@
 ---
 Tags:
-- covalon/adventure-type
-Order: 7
+  - covalon/adventure-type
+_order: 7
 Duration: 2-4 hours
 Description: 3v3 PvP Arena combat where the strongest team wins glory and prestige!
 ---

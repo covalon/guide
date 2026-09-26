@@ -137,7 +137,12 @@
   border-inline-start: 1px solid var(--background-modifier-border);
 }
 .tree-children > .tree-file { padding-inline-start: var(--size-4-3); }
-.tree-divider { height: 1px; margin: var(--size-4-2) var(--size-4-2); background-color: var(--background-modifier-border); }
+/* a section divider combined into the row that starts the new section: a trailing rule after its own label */
+.tree-divider-rule { flex: 1 1 auto; height: 1px; margin-inline-start: var(--size-4-2); background-color: var(--background-modifier-border); }
+/* a lone folder's own link is flex:1 so its whole row is clickable; when it also carries a divider
+   rule, let the link hug its text instead so the rule gets the rest of the row */
+.tree-folder-title:has(> .tree-divider-rule) { color: var(--text-faint); }
+.tree-folder-title:has(.tree-divider-rule) .tree-folder-link { flex: 0 1 auto;}
 
 /* table of contents (like Obsidian's outline) */
 .site-panel-title {

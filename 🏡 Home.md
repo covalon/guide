@@ -1,9 +1,4 @@
----
-_sidebar_group: Guides
----
-![[Covalon-Logo-Bold-Wood-Cropped-Small.webp|Covalon Logo|258x320]]
-
-Welcome to the Covalon, a Pathfinder 2nd Edition living world campaign.
+![[Covalon-Logo-Bold-Wood-Cropped-Small.webp|Covalon Logo|258x320]]Welcome to the Covalon, a Pathfinder 2nd Edition living world campaign.
 ## Guides
 - [[📍 Covalon Player's Guide]]: the full player's guide on one page.
 - [[📍 Covalon GM's Guide]]: the full guide for Dungeon Guides on one page
@@ -15,8 +10,7 @@ Welcome to the Covalon, a Pathfinder 2nd Edition living world campaign.
 - [[📍 Expeditions]] and their [[📍 Mission Overview]]: the details on the missions Covalon undertakes to reclaim the old world.
 - [[📍 Deities, Faith, and Ideologies]]: deities and faiths, remembered despite their silence.
 - [[📍 Campaign Events]]: all server-wide multitable events.
-## Helpful Links
-- 
+## Other Links
 - [[🔎 How to Search]]: tips for finding things in the guides.
 - 
 

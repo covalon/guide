@@ -156,8 +156,11 @@ for p in sorted(SRC.rglob("*.md")):
         n.name = str(rel.with_suffix(""))   # a third note with an already-shared name
     notes[n.name] = n
 
-# The home page (/) is the note "📍 Home" in the vault's top folder, so it can be edited in Obsidian.
-HOME_NOTE = "📍 Home"
+# The home page (/) is the top-level note named Home, so it can be edited in Obsidian. Found by name
+# rather than hardcoding "📍 Home": it's still the home page whatever icon (if any) is put in front of
+# "Home" (📍, 🏡, none…), same as any other top-level page can now pick its own icon (see with_icon below).
+HOME_ICON_RE = re.compile(r"^[^\w\s'\"(\[]*\s*Home$")
+HOME_NOTE = next((nm for nm, nt in notes.items() if not nt.folders and HOME_ICON_RE.match(nm)), "📍 Home")
 if HOME_NOTE in notes:
     notes[HOME_NOTE].url = "index.html"
 
@@ -1163,7 +1166,10 @@ def tree_root():
 def tree_order(item):
     """The sidebar's order (also used by the entry pages' previous / next links)."""
     (kind, name), child = item
-    first = FIRST.index(name) if name in FIRST else len(FIRST)
+    # Home is matched by note identity, not by its (icon-able) title, so renaming its icon (see with_icon)
+    # never bumps it out of first place; the two guide folders are matched by name as before, since a
+    # folder's own name is never icon-prefixed (its 📄 marker is stripped before it gets here).
+    first = 0 if isinstance(child, Note) and child.name == HOME_NOTE else FIRST.index(name) if name in FIRST else len(FIRST)
     pinned = 0 if isinstance(child, Note) and (child.name.startswith("📍") or FOLDER_HOME.get(tuple(child.folders)) is child) else 1   # a folder's own page first
     last = 1 if kind == "folder" and name == "Tables" else 0   # a guide's Tables folder goes below its chapters
     chapter = NAV[child.name][2] if isinstance(child, Note) and child.name in NAV else 999   # guide chapters in reading order
@@ -1184,14 +1190,39 @@ def sidebar_positions():
     return pos
 
 
+def is_pinned_first(name, child):
+    """True for the always-loose top items that a group (see sidebar_group) can never fold away: Home
+    (matched by note identity, not its — possibly re-iconned — title) and the two guide folders (matched
+    by name, since a folder's own name is never icon-prefixed)."""
+    return (isinstance(child, Note) and child.name == HOME_NOTE) or name in FIRST
+
+
 def sidebar_group(kind, name, child, path):
     """A top-level item's '_sidebar_group' property (set on a folder's pinned overview note, or on a
-    standalone top-level note itself), used only to decide where to draw a divider in the sidebar: two
-    consecutive top-level items whose value differs (including one that has no value at all) get a
-    divider between them. The text isn't shown anywhere, so folders the team wants grouped together
-    just need to share the same value, in any wording."""
+    standalone top-level note itself). Two consecutive top-level items whose value differs (including one
+    that has no value at all) get a divider between them; a run of two or more sharing a value, none of
+    them one of the always-flat FIRST items, collapses behind one collapsible row named after that value
+    (see tree_html). Folders the team wants grouped together just need to share the same value, in any
+    wording — that same text is what's shown on the collapsible row."""
     home = FOLDER_HOME.get(path + (name,)) if kind == "folder" else child
     return home.props.get("_sidebar_group") if home else None
+
+
+ICON_RE = re.compile(r"^([^\w\s'\"(\[]+)\s+(.*)$")   # a name with a leading icon, e.g. "🔎 How to Search"
+
+
+def with_icon(name):
+    """A folder's or a file's own leading emoji/symbol (if it has one), drawn the same tiny way as a pinned
+    (📍) note's pin: 🔎 How to Search does this today, and any folder (Compendiums, Helpful Links, …) or
+    not-yet-pinned page can pick up its own icon the same way just by starting its name with one.
+    Returns (icon_span_html_or_None, escaped_rest_of_the_name)."""
+    m = ICON_RE.match(name)
+    if not m:
+        return None, html.escape(name)
+    return f'<span class="tree-pin" aria-hidden="true">{html.escape(m.group(1))}</span>', html.escape(m.group(2))
+
+
+DIVIDER_RULE = '<span class="tree-divider-rule" aria-hidden="true"></span>'
 
 
 def tree_html(current):
@@ -1199,32 +1230,63 @@ def tree_html(current):
     root = tree_root()
     order = tree_order
 
+    def render_item(kind, name, child, path, depth, divided=False):
+        """One row: a real vault folder (with its own children walked below it), or a note. `divided`
+        appends a trailing rule after that row's own label — combining the section divider into the row
+        that starts the new section, instead of drawing it as a separate line above."""
+        if kind == "folder":
+            inside = any(n is current for n in iter_notes(child))
+            home = FOLDER_HOME.get(path + (name,))
+            icon, rest = with_icon(name)
+            inner = (icon or "") + rest
+            # a folder with a pinned overview: its name opens the overview (where the folder is shown
+            # open); the arrow just folds / unfolds it
+            label = (f'<a class="tree-folder-link" href="{href_to(home.url)}">{inner}</a>' if home
+                     else f'<span>{inner}</span>')
+            return (f'<details class="tree-folder"{" open" if inside else ""}><summary class="tree-item tree-folder-title">'
+                     f'{lucide("chevron-right")}{label}{DIVIDER_RULE if divided else ""}</summary>'
+                     f'<div class="tree-children">{walk(child, depth + 1, path + (name,))}</div></details>')
+        cls = "tree-item tree-file" + (" is-active" if child is current else "")
+        pin = '<span class="tree-pin" aria-hidden="true">📍</span>' if child.name.startswith("📍") else ""   # pinned overviews keep their pin, as in Obsidian
+        icon = re.match(r"^([^\w\s'\"(\[]+)\s+(.*)$", name)   # a note named with an icon (🔎 How to Search) keeps it, set like the pins
+        label = (f'<span class="tree-pin" aria-hidden="true">{html.escape(icon.group(1))}</span>{html.escape(icon.group(2))}'
+                 if icon and not pin else html.escape(name))
+        rule = DIVIDER_RULE if divided else ""
+        return f'<a class="{cls}{" is-pinned" if pin or icon else ""}" href="{href_to(child.url)}">{pin}{label}{rule}</a>'
+
     def walk(node, depth, path=()):
-        out = []
-        prev_group = None
-        for i, ((kind, name), child) in enumerate(sorted(node.items(), key=order)):
-            if depth == 0:   # dividers only ever separate the top-level groups, never a folder's own contents
-                group = sidebar_group(kind, name, child, path)
-                if i and group != prev_group:
-                    out.append('<div class="tree-divider" role="separator"></div>')
-                prev_group = group
-            if kind == "folder":
-                inside = any(n is current for n in iter_notes(child))
-                home = FOLDER_HOME.get(path + (name,))
-                # a folder with a pinned overview: its name opens the overview (where the folder is shown
-                # open); the arrow just folds / unfolds it
-                label = (f'<a class="tree-folder-link" href="{href_to(home.url)}">{html.escape(name)}</a>' if home
-                         else f'<span>{html.escape(name)}</span>')
+        items = sorted(node.items(), key=order)
+        if depth != 0:   # groups and dividers only ever apply to the top level, never a folder's own contents
+            return "".join(render_item(kind, name, child, path, depth) for (kind, name), child in items)
+
+        out, prev_group, pending_divider, i, total = [], None, False, 0, len(items)
+        while i < total:
+            (kind, name), child = items[i]
+            group = sidebar_group(kind, name, child, path)
+            if i and group != prev_group:
+                pending_divider = True   # attached to whichever row starts the new section, below
+            run = [items[i]]
+            if group is not None and not is_pinned_first(name, child):   # Home/the guides always stay loose
+                j = i + 1
+                while j < total:
+                    (k2, n2), c2 = items[j]
+                    if is_pinned_first(n2, c2) or sidebar_group(k2, n2, c2, path) != group:
+                        break
+                    run.append(items[j])
+                    j += 1
+            if len(run) >= 2:   # 2+ items sharing a group collapse behind one row named after it
+                inside = any(c is current or (k == "folder" and any(n is current for n in iter_notes(c)))
+                             for (k, _), c in run)
+                icon, rest = with_icon(group)
                 out.append(f'<details class="tree-folder"{" open" if inside else ""}><summary class="tree-item tree-folder-title">'
-                           f'{lucide("chevron-right")}{label}</summary>'
-                           f'<div class="tree-children">{walk(child, depth + 1, path + (name,))}</div></details>')
+                           f'{lucide("chevron-right")}<span>{(icon or "") + rest}</span>{DIVIDER_RULE if pending_divider else ""}</summary>'
+                           f'<div class="tree-children">{"".join(render_item(k, n, c, path, 1) for (k, n), c in run)}</div></details>')
+                pending_divider = False
             else:
-                cls = "tree-item tree-file" + (" is-active" if child is current else "")
-                pin = '<span class="tree-pin" aria-hidden="true">📍</span>' if child.name.startswith("📍") else ""   # pinned overviews keep their pin, as in Obsidian
-                icon = re.match(r"^([^\w\s'\"(\[]+)\s+(.*)$", name)   # a note named with an icon (🔎 How to Search) keeps it, set like the pins
-                label = (f'<span class="tree-pin" aria-hidden="true">{html.escape(icon.group(1))}</span>{html.escape(icon.group(2))}'
-                         if icon and not pin else html.escape(name))
-                out.append(f'<a class="{cls}{" is-pinned" if pin or icon else ""}" href="{href_to(child.url)}">{pin}{label}</a>')
+                out.append(render_item(kind, name, child, path, depth, divided=pending_divider))
+                pending_divider = False
+            i += len(run)
+            prev_group = group
         return "".join(out)
     return f'<nav class="site-tree">{walk(root, 0)}</nav>'
 

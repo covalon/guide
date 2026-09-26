@@ -1,7 +1,7 @@
 ---
 Tags:
-- covalon/adventure-type
-Order: 6
+  - covalon/adventure-type
+_order: 6
 Duration: 4 hours
 Description: A brutal dungeon crawl against the hardest encounters Covalon has to offer.
 ---
