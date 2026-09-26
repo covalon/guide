@@ -64,3 +64,55 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  notify-discord:
+    needs: deploy
+    if: needs.deploy.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+    # Posts directly to the Discord webhook (instead of using an action) so the
+    # embed title is plain text with no link back to the GitHub release.
+    - name: Post Commit to Discord
+      env:
+        WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+        MESSAGE: ${{ github.event.head_commit.message }}
+        TIME: ${{ github.event.head_commit.timestamp }}
+      run: |
+        python3 <<'PYEOF'
+        import json
+        import os
+        import urllib.request
+        from datetime import datetime
+
+        release_date = datetime.fromisoformat(os.environ["TIME"].replace("Z", "+00:00"))
+        date_str = f'{release_date:%b} {release_date.day} {release_date:%Y}'
+        title = f'{date_str}'
+
+        payload = {
+            "username": "Covalon Guide Changelog",
+            "avatar_url": "https://cdn.discordapp.com/avatars/1076881817472335982/ef4c79ed8b79adf4b67d6089420f6726.webp",
+            "embeds": [
+                {
+                    "title": title,
+                    "description": os.environ["MESSAGE"][:4096],
+                    "color": 12096090,
+                }
+            ],
+        }
+
+        req = urllib.request.Request(
+            os.environ["WEBHOOK_URL"],
+            data=json.dumps(payload).encode("utf-8"),
+            headers={
+                "Content-Type": "application/json",
+                "User-Agent": "Mozilla/5.0 (compatible; CovalonReleaseBot/1.0)",
+            },
+            method="POST",
+        )
+        try:
+            with urllib.request.urlopen(req) as resp:
+                print(f"Discord webhook responded with status {resp.status}")
+        except urllib.error.HTTPError as err:
+            print(f"Discord webhook error {err.code}: {err.read().decode('utf-8', 'replace')}")
+            raise
+        PYEOF
