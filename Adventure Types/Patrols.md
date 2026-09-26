@@ -13,9 +13,9 @@ These adventures typically last an hour and include a single combat encounter. T
 Patrols are currently available to Tier 1, 2 and 3 players.
 
 > [!note] Hero Points
-> Unlike a traditional campaign, not all Hero Points granted in Covalon expire at the end of a session; some stay with you until they are used.
+> Unlike a traditional campaign, not all [Hero Points](https://2e.aonprd.com/Rules.aspx?ID=573) granted in Covalon expire at the end of a session; some stay with you until they are used.
 > ##### Temporary Hero Points
-> At the beginning of each adventure (excluding Brawls), players gain 1 Temporary Hero Point. If it's not used during the adventure, it expires.
+> At the beginning of each adventure (excluding [[Brawls]]), players gain 1 Temporary Hero Point. If it's not used during the adventure, it expires.
 > 
 > This Temporary Hero Point doesn't allow players to exceed the 3 Hero Point Limit.
 > ##### Non-Temporary Hero Points
@@ -27,7 +27,7 @@ Covalon Patrols are small adventures and missions that take place in the immedia
 Patrols never contain permanent magic items as loot, but magical consumables (such as talismans, potions, scrolls, etc) are allowed.
 
 > [!tip] A Note on Experience
-> Remember that the experience budget for a dungeon is 250 **pre-adjusted** experience. 
+> Remember that the experience budget for a [[Dungeons|dungeon]] is 250 **pre-adjusted** experience. 
 > 
 > This means that for a party of 4 you have 250 experience to spend on challenges. For a party of 6, you have around 375 experience to spend and a moderate encounter has a budget of 120 experience!
 >

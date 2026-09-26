@@ -27,7 +27,7 @@ The first phase of an expedition is to establish a camp at the site of the forme
 
 This phase of an expedition does not occur like a normal adventure, but instead functions as a community goal that players must contribute resources to complete. The specific resources that must be contributed vary depending on the expedition location, and the current requirements to establish a base camp for a given expedition can be found in the [\#📙expedition-logs](https://discord.com/channels/802423566196539412/927330508650725466) channel in the Discord server. Once base camp has been established for a location, this phase concludes and the next phase becomes available.
 ### Phase 2: Complete Missions
-The second phase of an expedition requires adventurers to complete a variety of missions in order to explore the area, secure the base camp, and uncover clues about the Cataclysm. Missions are a subtype of expedition adventures that are similar to dungeons, but contribute to an overarching narrative, and are available to all tiers.
+The second phase of an expedition requires adventurers to complete a variety of missions in order to explore the area, secure the base camp, and uncover clues about the Cataclysm. Missions are a subtype of expedition adventures that are similar to [[Dungeons|dungeons]], but contribute to an overarching narrative, and are available to all tiers.
 
 Each expedition features three missions which have distinct objectives and elements. Any individual mission is repeatable, though some content in the mission changes between repeats. Once several missions have been completed for a location, this phase concludes and the next phase becomes available (though the missions can still be played after the phase has concluded).
 ### Phase 3: Complete the Finale
@@ -37,7 +37,7 @@ Completing a finale unlocks a new way for participants to customize their Soul S
 
 Finales have two difficulty modes. Normal mode is the standard finale experience, which can be scaled to any tier. Hard mode can only be attempted by characters in the highest and second highest tiers, and is intended for max level characters. When a finale first becomes available, it can only be attempted at hard mode. Once a finale has been cleared once, normal mode becomes available.
 ### Expedition Locations
-The following is a list of currently active expeditions. For more information on each expedition, see the city's corresponding entry of the Campaign Lore chapter. Mission and finale details for each are in [[📍 Expeditions|Expeditions]].
+The following is a list of currently active expeditions. Further mission and finale details for each are in [[📍 Expeditions|Expeditions]].
 
 ```base
 filters:

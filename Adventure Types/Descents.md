@@ -8,7 +8,7 @@ Description: A brutal dungeon crawl against the hardest encounters Covalon has t
 ## For Players
 Players who seek a challenge more difficult than standard adventures need look no further than descents, which are the most dangerous but also the most lucrative of adventure types offered in Covalon. 
 
-They are similar to dungeons, but feature increased encounter difficulty and challenging modifiers that vary depending on the location in which the descent takes place. These adventures include a race against the clock and reward increased treasure compared to normal adventures, but are only open to the highest two tiers of players (and it is recommended that only max level players in each tier attempt them).
+They are similar to [[Dungeons|dungeons]], but feature increased encounter difficulty and challenging modifiers that vary depending on the location in which the descent takes place. These adventures include a race against the clock and reward increased treasure compared to normal adventures, but are only open to the highest two tiers of players (and it is recommended that only max level players in each tier attempt them).
 
 Only Senior Dungeon Guides may run descents, and descents can only be scheduled by pre-formed teams using the [\#🛡️lfgm-forum](https://discord.com/channels/802423566196539412/1472263264585908430) channel. 
 
@@ -32,7 +32,7 @@ Descents can only be run by Senior DGs and Administrators. These adventures are 
 
 Descents are composed of up to four single-room encounters. After clearing a room, players may make the decision to continue onward to the next room or retreat with any rewards they have collected so far. After an encounter is begun, the party CANNOT retreat, they must complete the encounter or die trying.
 
-After clearing a room, players have exactly ten minutes of time to perform one exploration activity (such as treat wounds or refocus).
+After clearing a room, players have exactly ten minutes of time to perform one exploration activity (such as [treat wounds](https://2e.aonprd.com/Actions.aspx?ID=57) or [refocus](https://2e.aonprd.com/Actions.aspx?ID=2621)).
 
 Descents have a soft time limit of 4 hours. After completing an encounter, the next encounter cannot be started unless at least 45 minutes of the four hour block remains. If the group reaches the 4 hour time limit during an encounter, they must complete that encounter and no more can be started. The race against the clock is part of the challenge!
 

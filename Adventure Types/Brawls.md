@@ -16,9 +16,9 @@ Only Senior Dungeon Guides may run brawls, and brawls can only be scheduled by p
 ### Deathmatch
 It's a fight to the (almost) death! When a team member is knocked out and taken to the arena medbay, the opposing team receives 1 point. The first team to 3 points wins!
 ### Control Points
-Three control points exist on the map. At the end of each round, 1 point is awarded to each team who has more allies touching the ground in a control point than their opponents do. The first team to 7 points wins. If both teams reach 7 points simultaneously, the match continues until one team creates a point lead. Unconscious bodies can't score points!
+Three control points exist on the map. At the end of each round, 1 point is awarded to each team who has more allies touching the ground in a control point than their opponents do. The first team to 7 points wins. If both teams reach 7 points simultaneously, the match continues until one team creates a point lead. [Unconscious](https://2e.aonprd.com/Conditions.aspx?ID=95) bodies can't score points!
 ### Capture the Flag
-A flag appears at the center of the arena. A player with a free hand can use an Interact action to grab the flag, which is light bulk. The player with the flag must bring it to a specified location and use a two-action Score activity to consume the flag and score 1 point for their team. After a flag is Scored, it immediately returns to the middle of the battlefield. The first team to 3 points wins. If a team is eliminated, the surviving team wins.
+A flag appears at the center of the arena. A player with a free hand can use an [Interact](https://2e.aonprd.com/Actions.aspx?ID=2297) action to grab the flag, which is light bulk. The player with the flag must bring it to a specified location and use a two-action Score activity to consume the flag and score 1 point for their team. After a flag is Scored, it immediately returns to the middle of the battlefield. The first team to 3 points wins. If a team is eliminated, the surviving team wins.
 ### Brawl Titles
 In addition to normal rewards, when your team wins a brawl, you receive a Gladiator Token that represents your martial prowess. Upon reaching certain milestones, players can [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) to gain a prestigious title for their character.
 
@@ -29,12 +29,12 @@ In addition to normal rewards, when your team wins a brawl, you receive a Gladia
 ### Advanced Brawl Rules
 - A "respawn" is triggered when a player's turn begins while they are unconscious with 0 hit points. They are immediately teleported back to their team's starting area, fully healed, and have all non-permanent effects removed from them (excluding afflictions acquired prior to the brawl). Their turn then ends, and if the game mode is deathmatch, the opposing team gains 1 point. (Any items they dropped as a result of being knocked unconscious remain in the original square that player was knocked unconscious in.)
 - For control points, an "end of round" token is added to initiative. Scoring is calculated when the end of round token's turn comes up. Any player who attempts to delay their turn to go just before the end of round token will instead be placed just after it.
-- Hero Points cannot be used in brawls, players do not receive a temporary Hero Point for participating in a brawl, and players cannot earn Hero Points from participating in a brawl.
+- [Hero Points](https://2e.aonprd.com/Rules.aspx?ID=573) cannot be used in brawls, players do not receive a temporary Hero Point for participating in a brawl, and players cannot earn Hero Points from participating in a brawl.
 - When entering a brawl, players are stripped of all beneficial effects currently affecting them except for effects that last "until your next daily preparations." Negative effects from any source (such as conditions, afflictions, or an Oracular curse) are not stripped when entering a Brawl. Hunt Prey, Pursue a Lead, and other similar abilities cannot be used before a Brawl.
-- The invisible condition makes a character hidden to everyone instead of undetected during a brawl. No players may become undetected or unobserved during a brawl.
+- The [invisible](https://2e.aonprd.com/Conditions.aspx?ID=26) condition makes a character [hidden](https://2e.aonprd.com/Conditions.aspx?ID=79) to everyone instead of [undetected](https://2e.aonprd.com/Conditions.aspx?ID=39) during a brawl. No players may become undetected or unobserved during a brawl.
 - The presiding GM may elect to enforce a two-minute turn time limit for players during a brawl if players are taking excessively long turns.
 - Players are not allowed to privately strategize OOC while they are participating during a brawl. All strategizing must be done in public and in-character.
-- All players treat their saving throws vs. effects with the incapacitation trait as one degree better during brawls. This replaces the usual effect of the incapacitation trait.
+- All players treat their saving throws vs. effects with the [incapacitation](https://2e.aonprd.com/Traits.aspx?ID=93) trait as one degree better during brawls. This replaces the usual effect of the incapacitation trait.
 - If a piece of equipment would be reduced to 0 HP during a Brawl, it instead remains at 1 HP and is treated as destroyed for the remainder of the Brawl.
 - Mentors cannot participate in brawls.
 - The beginning of a brawl occurs in this exact order. First, any players with beneficial effects that match the duration requirement must declare any that are active. Second, all players declare what items they are holding in their hands. Third, the GM reveals the brawl objective. Fourth, initiative is rolled.
@@ -55,7 +55,7 @@ None of a PC's abilities or feats work while Mythic Polymorphed. Players should 
 
 Monster Mash is a modified Death Match won by the first team to score 4 points.
 
-A point is scored when a player on the enemy team is knocked to Dying 4, or respawns. A respawn is triggered when a player begins their turn with the unconscious or dying conditions. If a player is knocked to dying, move their initiative as normal. If they take damage again and hit dying 4, they become untargetable and respawn on their initiative.
+A point is scored when a player on the enemy team is knocked to Dying 4, or respawns. A respawn is triggered when a player begins their turn with the unconscious or [dying](https://2e.aonprd.com/Conditions.aspx?ID=69) conditions. If a player is knocked to dying, move their initiative as normal. If they take damage again and hit dying 4, they become untargetable and respawn on their initiative.
 
 On a respawn, players can elect to stay in the same stat block or switch to their other option. When you respawn, you remove all negative conditions and refresh any used abilities, such as spells or breath weapons. Unlike normal brawls, in Monster Mash you respawn upright and can immediately take a turn.
 > [!columns|notitle]

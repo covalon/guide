@@ -10,7 +10,7 @@ Excursions are a special game type that features up to three connected Excursion
 
 Each Saga takes place in the vicinity of one of the Expedition camps Covalon has reclaimed. 
 
-Each Excursion can last up to one in game day, and may feature recurring locations, characters, and plot lines. They also are a little tougher than the standard dungeon! 
+Each Excursion can last up to one in game day, and may feature recurring locations, characters, and plot lines. They also are a little tougher than the standard [[Dungeons|dungeon]]! 
 
 As Excursions feature connected narratives, the GM will quickly summarize the story so far at the beginning of a connected Excursion mission.
 ## For GMs
