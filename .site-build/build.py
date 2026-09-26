@@ -1184,6 +1184,16 @@ def sidebar_positions():
     return pos
 
 
+def sidebar_group(kind, name, child, path):
+    """A top-level item's '_sidebar_group' property (set on a folder's pinned overview note, or on a
+    standalone top-level note itself), used only to decide where to draw a divider in the sidebar: two
+    consecutive top-level items whose value differs (including one that has no value at all) get a
+    divider between them. The text isn't shown anywhere, so folders the team wants grouped together
+    just need to share the same value, in any wording."""
+    home = FOLDER_HOME.get(path + (name,)) if kind == "folder" else child
+    return home.props.get("_sidebar_group") if home else None
+
+
 def tree_html(current):
     """The file tree in the sidebar (like Obsidian's file explorer)."""
     root = tree_root()
@@ -1191,7 +1201,13 @@ def tree_html(current):
 
     def walk(node, depth, path=()):
         out = []
-        for (kind, name), child in sorted(node.items(), key=order):
+        prev_group = None
+        for i, ((kind, name), child) in enumerate(sorted(node.items(), key=order)):
+            if depth == 0:   # dividers only ever separate the top-level groups, never a folder's own contents
+                group = sidebar_group(kind, name, child, path)
+                if i and group != prev_group:
+                    out.append('<div class="tree-divider" role="separator"></div>')
+                prev_group = group
             if kind == "folder":
                 inside = any(n is current for n in iter_notes(child))
                 home = FOLDER_HOME.get(path + (name,))

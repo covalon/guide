@@ -137,6 +137,7 @@
   border-inline-start: 1px solid var(--background-modifier-border);
 }
 .tree-children > .tree-file { padding-inline-start: var(--size-4-3); }
+.tree-divider { height: 1px; margin: var(--size-4-2) var(--size-4-2); background-color: var(--background-modifier-border); }
 
 /* table of contents (like Obsidian's outline) */
 .site-panel-title {

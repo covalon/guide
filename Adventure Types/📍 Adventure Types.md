@@ -1,3 +1,6 @@
+---
+_sidebar_group: Compendiums
+---
 ```base
 filters:
   and:

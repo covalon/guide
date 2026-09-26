@@ -1,4 +1,9 @@
+---
+_sidebar_group: Compendiums
+---
 The expeditions Covalon has launched to reclaim the lost civilizations of Elleaterra. Each note covers the base camp, the three missions and the finale for one location, along with the Soul Seed unlock it grants.
+
+You can get a quick overview of all the Expedition Missions in [[📍 Mission Overview]].
 
 ```base
 filters:

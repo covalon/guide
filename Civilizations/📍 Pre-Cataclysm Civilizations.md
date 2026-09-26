@@ -1,5 +1,6 @@
 ---
 _preview: "[[PC-Elleaterra_World_Map.webp]]"
+_sidebar_group: Compendiums
 ---
 Before the Cataclysm, the world flourished with nations and societies across the world. Now, only one remains: Covalon. Still, many refugees keep the faith that one day they may be able to reclaim their homelands from the terrible fates that befell them.
 

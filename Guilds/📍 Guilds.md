@@ -1,3 +1,6 @@
+---
+_sidebar_group: Compendiums
+---
 Adventurers who share a common cause can band together to establish an official company known as a guild. Guilds foster cooperative and collaborative environments that benefit Covalon in a variety of ways.
 
 ```base

@@ -1,5 +1,6 @@
 ---
 _preview: "[[CovalonCity.webp]]"
+_sidebar_group: Compendiums
 ---
 Before the Cataclysm, Covalon was nothing more than a small fief of nearly inhospitable land entrusted to the lesser baron Eagor Freetide as a cruel joke. But in a fortuitous twist of fate, the baron would discover something worth protecting in the wasteland - the seed of an artifact we now know as the [[The Shrine of Terra|Heart of Terra]].
 

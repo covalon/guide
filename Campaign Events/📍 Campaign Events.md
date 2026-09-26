@@ -1,3 +1,6 @@
+---
+_sidebar_group: Compendiums
+---
 Covalon's major multitable events, in chronological order.
 
 ```base

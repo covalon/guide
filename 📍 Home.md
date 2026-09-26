@@ -1,18 +1,24 @@
+---
+_sidebar_group: Guides
+---
 ![[Covalon-Logo-Bold-Wood-Cropped-Small.webp|Covalon Logo|258x320]]
 
 Welcome to the Covalon, a Pathfinder 2nd Edition living world campaign.
 ## Guides
 - [[📍 Covalon Player's Guide]]: the full player's guide on one page.
 - [[📍 Covalon GM's Guide]]: the full guide for Dungeon Guides on one page
-- [[🔎 How to Search]]: tips for finding things.
 ## Compendiums
-- [[📍 Adventure Types]]
-- [[📍 Covalon Gazetteer]]
-- [[📍 Guilds]]
-- [[📍 Pre-Cataclysm Civilizations]]
-- [[📍 Expeditions]] and the [[📍 Mission Overview]]
-- [[📍 Deities, Faith, and Ideologies]]
-- [[📍 Campaign Events]]
+- [[📍 Adventure Types]]: every possible adventure type ran in Covalon.
+- [[📍 City of Covalon]]: all locations under Covalon's jurisdiction.
+- [[📍 Guilds]]: all player-ran guilds.
+- [[📍 Pre-Cataclysm Civilizations]]: the old world of Elleaterra.
+- [[📍 Expeditions]] and their [[📍 Mission Overview]]: the details on the missions Covalon undertakes to reclaim the old world.
+- [[📍 Deities, Faith, and Ideologies]]: deities and faiths, remembered despite their silence.
+- [[📍 Campaign Events]]: all server-wide multitable events.
+## Helpful Links
+- 
+- [[🔎 How to Search]]: tips for finding things in the guides.
+- 
 
 
 ---

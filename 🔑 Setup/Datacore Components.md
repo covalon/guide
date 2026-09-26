@@ -41,7 +41,7 @@ function Properties({ page, hide = [] }) {
   );
 }
 
-// District may be plain text or a link like [[📍 Covalon Gazetteer#Market District|Market District]]
+// District may be plain text or a link like [[Market District]]
 function districtOf(page) {
   const entry = Object.values(page.$frontmatter ?? {}).find((e) => e.key.toLowerCase() === "district");
   const raw = String(entry?.raw ?? "");
@@ -77,7 +77,7 @@ function AsideEntry({ page, hide = [], level = 2, inline = [], propsFirst = fals
     const file = dc.app.vault.getAbstractFileByPath(page.$path);
     if (file) dc.app.vault.cachedRead(file).then((raw) => {
       // the note's own bases (and the heading above them) are left out: e.g. a district's "## Locations"
-      // table, which the Gazetteer already lists below it
+      // table, which the overview already lists below it
       const body = raw.replace(/^---\n[\s\S]*?\n---\n?/, "").replace(/(^#{1,6} [^\n]*\n+)?^```base\n[\s\S]*?\n```[ \t]*\n?/gm, "");
       const lines = body.split("\n");
       if (live) setParts({
@@ -150,7 +150,7 @@ function CovalonEntries({ tag, district, sortBy = "name", heading = "h2", hide =
 }
 
 // One note in the aside layout (its text, its images floated right, its properties box), without a heading.
-// Used for the districts on the Gazetteer: <CovalonNote name="📍 City District" propsFirst />
+// Used for the districts on the City Outline: <CovalonNote name="📍 City District" propsFirst />
 function CovalonNote({ name, tag = "covalon/district", inline = [], propsFirst = false }) {
   const pages = dc.useQuery(`@page and #${tag}`).filter(isPublished);
   const page = pages.find((p) => p.$name === name);
@@ -220,7 +220,7 @@ The whole guide on one page. It embeds every note named "Chapter N - Title" in t
 A bulleted list of notes with a tag, each linked, sorted by name (ignoring a leading "The"). Options: `tag` (required), `where` and `is` (only the notes whose property `where` has the value `is`, e.g. `where="Covalon Status" is="district"`), and `after` (a property shown in brackets after each name, e.g. `after="Roleplay Channel"`). The Expedition Districts and Outside Covalon page uses it to list the civilizations that are districts and camps. It's part of the CovalonEntries code block above.
 
 ## CovalonNote
-One note shown in the `aside` layout of `CovalonEntries` (its text, its images floated to the right, then its properties box), without a heading of its own. The Gazetteer uses it for each district: `<CovalonNote name="📍 City District" propsFirst />`. Options: `tag` (default `covalon/district`), `inline`, and `propsFirst` (the properties box before the note's text), as for `CovalonEntries`. It's part of the CovalonEntries code block above.
+One note shown in the `aside` layout of `CovalonEntries` (its text, its images floated to the right, then its properties box), without a heading of its own. The Covalon Overview uses it for each district: `<CovalonNote name="📍 City District" propsFirst />`. Options: `tag` (default `covalon/district`), `inline`, and `propsFirst` (the properties box before the note's text), as for `CovalonEntries`. It's part of the CovalonEntries code block above.
 
 ## MissionOverview
 Every expedition's missions in one table (each named after its expedition, e.g. "Ikouga A: Retame the Island"),, read straight from the expedition notes: each `### Mission X` heading under `## Missions` (with its name after a colon, if it has one) and the text underneath it as the summary. Edit a mission on its expedition note and the table follows. Expeditions are listed in journey order.
