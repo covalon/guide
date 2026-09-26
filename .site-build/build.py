@@ -1620,8 +1620,9 @@ def preview_head(note, title, soup):
         heads = [(" ".join(h.get_text(" ").split()), h.get("id")) for h in soup.find_all(level)]
         heads = [(t, i) for t, i in heads if t and t != title]
         if heads:   # each one a link to its heading on the page
-            shown = [f"[{md_escape(t)}]({page_url}#{urllib.parse.quote(i)})" if i else md_escape(t) for t, i in heads[:6]]
-            lines.append(" · ".join(shown) + (" · …" if len(heads) > 6 else ""))
+            limit = len(heads) if note.name in GUIDES else 6   # a whole guide lists every chapter; a chapter, its first six sections
+            shown = [f"[{md_escape(t)}]({page_url}#{urllib.parse.quote(i)})" if i else md_escape(t) for t, i in heads[:limit]]
+            lines.append(" · ".join(shown) + (" · …" if len(heads) > limit else ""))
     if note.name in NAV:
         guide, chapters, i = NAV[note.name]
         # [ 📖 Open chapter ] [ 📜 Open in full guide ] (the chapter's heading on the one-page guide)
@@ -1651,7 +1652,7 @@ def preview_head(note, title, soup):
     image = absolute(picture) if picture else None
 
     text = f"## {md_escape(title)}\n" + "\n\n".join(lines)
-    top = {"type": 10, "content": shorten_md(text, 1800)}
+    top = {"type": 10, "content": shorten_md(text, 3500)}   # (Discord allows 4,000 characters of text per card)
     head = {"type": 9, "components": [top], "accessory": {"type": 11, "media": {"url": image}}} if image else top
     gallery = [{"type": 12, "items": [{"media": {"url": absolute(shot)}, "description": shorten(title, 200)}]}] if shot else []
     card = {"type": 17, "accent_color": int(PREVIEW_COLOR[1:], 16), "components": [
