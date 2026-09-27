@@ -2,6 +2,7 @@
 _preview_description: "Welcome to the Covalon Guides, an ever-updating document for the PF2e living world Covalon. \n\n If this is your first time here, you might want to check out Getting Started for a quick TL;DR on how to begin. Otherwise, the Player's Guide covers everything you need to play."
 ---
 ![[Covalon-Logo-Bold-Wood-Cropped-Small.webp|Covalon Logo|258x320]]
+
 Welcome to the Covalon Guides, an ever-updating document for the PF2e living world Covalon.
 
 If this is your first time here, you might want to check out [[🌱 Getting Started]] for a quick TL;DR on how to begin. Otherwise, the [[📍 Covalon Player's Guide|Player's Guide]] covers everything you need to play!

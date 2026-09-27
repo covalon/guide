@@ -26,8 +26,17 @@
 /* the right sidebar: "On this page" stays put at the top, and only the list of headings under it
    scrolls, with its top / bottom edge fading while there's more to scroll that way (site.js sets
    has-more-above / has-more-below) and its scrollbar showing on hover like the sidebars' */
-.site-right { display: flex; flex-direction: column; overflow: hidden; }
-.site-right .site-toc { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+.site-right {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.site-right .site-toc {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
 .site-toc-list {
   flex: 1;
   min-height: 0;
@@ -39,25 +48,42 @@
   -webkit-mask-image: linear-gradient(to bottom, var(--toc-fade-top), #000 2rem, #000 calc(100% - 2rem), var(--toc-fade-bottom));
   mask-image: linear-gradient(to bottom, var(--toc-fade-top), #000 2rem, #000 calc(100% - 2rem), var(--toc-fade-bottom));
 }
-.site-toc-list:hover, .site-toc-list:focus-within { scrollbar-color: var(--covalon-scrollbar, var(--color-accent)) transparent; }
-.site-toc-list.has-more-above { --toc-fade-top: transparent; }
-.site-toc-list.has-more-below { --toc-fade-bottom: transparent; }
+.site-toc-list:hover,
+.site-toc-list:focus-within {
+  scrollbar-color: var(--covalon-scrollbar, var(--color-accent)) transparent;
+}
+.site-toc-list.has-more-above {
+  --toc-fade-top: transparent;
+}
+.site-toc-list.has-more-below {
+  --toc-fade-bottom: transparent;
+}
 /* only trap the wheel/trackpad scroll here (rather than letting it chain through to the page)
    when the list actually has more to scroll that way; a short outline that fits with no overflow
    should just pass the scroll straight through to the note (site.js sets these two classes) */
-.site-toc-list.has-more-above, .site-toc-list.has-more-below { overscroll-behavior: contain; }
-.site-sidebar:hover, .site-sidebar:focus-within {
+.site-toc-list.has-more-above,
+.site-toc-list.has-more-below {
+  overscroll-behavior: contain;
+}
+.site-sidebar:hover,
+.site-sidebar:focus-within {
   scrollbar-color: var(--covalon-scrollbar, var(--color-accent)) transparent;
 }
 
-.site-left { border-right: 1px solid var(--background-modifier-border); }
-.site-right { border-left: 1px solid var(--background-modifier-border); }
-.site-main { min-width: 0; }
+.site-left {
+  border-right: 1px solid var(--background-modifier-border);
+}
+.site-right {
+  border-left: 1px solid var(--background-modifier-border);
+}
+.site-main {
+  min-width: 0;
+}
 
 /* the top of the left sidebar (site name, settings, search) stays put while the file tree scrolls under it */
 .site-sidebar-top {
   position: sticky;
-  top: calc(-1 * var(--size-4-4));   /* flush with the sidebar's top edge, over its padding */
+  top: calc(-1 * var(--size-4-4)); /* flush with the sidebar's top edge, over its padding */
   z-index: 5;
   margin: calc(-1 * var(--size-4-4)) calc(-1 * var(--size-4-3)) var(--size-4-2);
   padding: var(--size-4-4) var(--size-4-3) var(--size-4-2);
@@ -65,13 +91,21 @@
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
-.site-sidebar-top .site-search { margin-bottom: 0; }
+.site-sidebar-top .site-search {
+  margin-bottom: 0;
+}
 
 /* header: site name and the light/dark switch */
-.site-header { position: relative; display: flex; align-items: center; gap: var(--size-4-2); margin-bottom: var(--size-4-3); }
+.site-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--size-4-2);
+  margin-bottom: var(--size-4-3);
+}
 .site-title {
   flex: 1;
-  font-size: calc(1.45 * var(--font-ui-medium));   /* follows Settings → Text size */
+  font-size: calc(1.45 * var(--font-ui-medium)); /* follows Settings → Text size */
   font-weight: var(--font-bold);
   color: var(--h1-color);
   text-decoration: none;
@@ -88,8 +122,11 @@
   cursor: pointer;
   backdrop-filter: blur(10px);
 }
-.site-settings-toggle:hover, .site-settings-toggle[aria-expanded="true"] { 
-  background-color: var(--background-modifier-hover); color: var(--text-normal); }
+.site-settings-toggle:hover,
+.site-settings-toggle[aria-expanded="true"] {
+  background-color: var(--background-modifier-hover);
+  color: var(--text-normal);
+}
 
 /* search box */
 .site-search {
@@ -102,7 +139,10 @@
   border-radius: var(--radius-s);
   background-color: var(--background-modifier-form-field);
 }
-.site-search .svg-icon { --icon-size: 15px; color: var(--text-faint); }
+.site-search .svg-icon {
+  --icon-size: 15px;
+  color: var(--text-faint);
+}
 .site-search input {
   flex: 1;
   min-width: 0;
@@ -114,7 +154,10 @@
 }
 
 /* file tree (like Obsidian's file explorer) */
-.site-tree { display: flex; flex-direction: column; }
+.site-tree {
+  display: flex;
+  flex-direction: column;
+}
 .tree-item {
   display: flex;
   align-items: center;
@@ -126,26 +169,62 @@
   line-height: var(--line-height-tight);
   cursor: pointer;
 }
-.tree-item:hover { background-color: var(--background-modifier-hover); color: var(--text-normal); }
-.tree-pin { font-size: 0.9em; margin-inline-end: 0.15em; }
-.tree-item.is-active { background-color: var(--background-modifier-active-hover); color: var(--text-normal); font-weight: var(--font-medium); }
-.tree-folder > summary { list-style: none; font-weight: var(--font-medium); }
-.tree-folder-link { flex: 1; color: inherit; text-decoration: none; }
-.tree-folder > summary::-webkit-details-marker { display: none; }
-.tree-folder > summary .svg-icon { --icon-size: 14px; color: var(--text-faint); transition: transform 100ms ease-in-out; }
-.tree-folder[open] > summary .svg-icon { transform: rotate(90deg); }
+.tree-item:hover {
+  background-color: var(--background-modifier-hover);
+  color: var(--text-normal);
+}
+.tree-pin {
+  font-size: 0.9em;
+  margin-inline-end: 0.15em;
+}
+.tree-item.is-active {
+  background-color: var(--background-modifier-active-hover);
+  color: var(--text-normal);
+  font-weight: var(--font-medium);
+}
+.tree-folder > summary {
+  list-style: none;
+  font-weight: var(--font-medium);
+}
+.tree-folder-link {
+  flex: 1;
+  color: inherit;
+  text-decoration: none;
+}
+.tree-folder > summary::-webkit-details-marker {
+  display: none;
+}
+.tree-folder > summary .svg-icon {
+  --icon-size: 14px;
+  color: var(--text-faint);
+  transition: transform 100ms ease-in-out;
+}
+.tree-folder[open] > summary .svg-icon {
+  transform: rotate(90deg);
+}
 .tree-children {
   margin-inline-start: 13px;
   padding-inline-start: var(--size-4-1);
   border-inline-start: 1px solid var(--background-modifier-border);
 }
-.tree-children > .tree-file { padding-inline-start: var(--size-4-3); }
+.tree-children > .tree-file {
+  padding-inline-start: var(--size-4-3);
+}
 /* a section divider combined into the row that starts the new section: a trailing rule after its own label */
-.tree-divider-rule { flex: 1 1 auto; height: 1px; margin-inline-start: var(--size-4-2); background-color: var(--background-modifier-border); }
+.tree-divider-rule {
+  flex: 1 1 auto;
+  height: 1px;
+  margin-inline-start: var(--size-4-2);
+  background-color: var(--background-modifier-border);
+}
 /* a lone folder's own link is flex:1 so its whole row is clickable; when it also carries a divider
    rule, let the link hug its text instead so the rule gets the rest of the row */
-.tree-folder-title:has(> .tree-divider-rule) { color: var(--text-faint); }
-.tree-folder-title:has(.tree-divider-rule) .tree-folder-link { flex: 0 1 auto;}
+.tree-folder-title:has(> .tree-divider-rule) {
+  color: var(--text-faint);
+}
+.tree-folder-title:has(.tree-divider-rule) .tree-folder-link {
+  flex: 0 1 auto;
+}
 
 /* table of contents (like Obsidian's outline) */
 .site-panel-title {
@@ -156,7 +235,11 @@
   color: var(--text-faint);
   margin: var(--size-4-2) var(--size-4-2) var(--size-4-2);
 }
-.site-toc ul { list-style: none; margin: 0; padding: 0; }
+.site-toc ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 .site-toc a {
   display: block;
   padding: 3px var(--size-4-2);
@@ -165,21 +248,51 @@
   text-decoration: none;
   line-height: var(--line-height-tight);
 }
-.site-toc a:hover { background-color: var(--background-modifier-hover); color: var(--text-normal); }
-.site-toc a.is-active { color: var(--text-normal); background-color: var(--background-modifier-active-hover); }
-.site-toc .toc-depth-1 a { padding-inline-start: 20px; }
-.site-toc .toc-depth-2 a { padding-inline-start: 32px; }
-.site-toc .toc-depth-3 a { padding-inline-start: 44px; }
+.site-toc a:hover {
+  background-color: var(--background-modifier-hover);
+  color: var(--text-normal);
+}
+.site-toc a.is-active {
+  color: var(--text-normal);
+  background-color: var(--background-modifier-active-hover);
+}
+.site-toc .toc-depth-1 a {
+  padding-inline-start: 20px;
+}
+.site-toc .toc-depth-2 a {
+  padding-inline-start: 32px;
+}
+.site-toc .toc-depth-3 a {
+  padding-inline-start: 44px;
+}
 
 /* named callouts in the outline: same row, plus a small muted type icon so they read
    as callouts rather than headings (see toc_html/make_callout in build.py) */
-.site-toc .toc-callout a { display: flex; align-items: center; gap: 0.5ch; opacity: 0.75; }
-.toc-callout-icon { display: inline-flex; flex: 0 0 auto; }
-.toc-callout-icon .svg-icon { width: 0.8em; height: 0.8em; }
-.toc-callout-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-style: italic; }
+.site-toc .toc-callout a {
+  display: flex;
+  align-items: center;
+  gap: 0.5ch;
+  opacity: 0.75;
+}
+.toc-callout-icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+}
+.toc-callout-icon .svg-icon {
+  width: 0.8em;
+  height: 0.8em;
+}
+.toc-callout-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-style: italic;
+}
 
 /* headings leave room for the sticky nothing-above when jumped to */
-.markdown-rendered [id] { scroll-margin-top: 3.5rem; }   /* clear of the sticky breadcrumbs */
+.markdown-rendered [id] {
+  scroll-margin-top: 3.5rem;
+} /* clear of the sticky breadcrumbs */
 
 /* chapter navigation (← previous | chapter | next →) */
 /* the links' own padding sits outside the tables' edge, so their words line up with the tables */
@@ -203,16 +316,25 @@
    guide (title + its margin, then a heading's spacing), so a chapter's title sits exactly where that
    chapter's heading does on the one-page guide (e.g. "Introduction") */
 .markdown-rendered .chapter-nav-top {
-  font-size: var(--font-text-size);   /* so the title size (in em) below is measured at the note's text size */
+  font-size: var(--font-text-size); /* so the title size (in em) below is measured at the note's text size */
   box-sizing: border-box;
   height: calc(1.7 * var(--inline-title-size));
   margin-top: 0;
-  margin-bottom: calc(2.5 * var(--font-text-size));   /* a heading's spacing, at the note's text size */
+  margin-bottom: calc(2.5 * var(--font-text-size)); /* a heading's spacing, at the note's text size */
   align-items: center;
 }
-.markdown-rendered .chapter-nav-top :is(.prev, .next) > a { height: auto; }
-.markdown-rendered .chapter-nav-top > * { font-size: var(--font-smaller); }
-.chapter-nav .current { align-self: center; text-align: center; font-weight: var(--font-semibold); max-width: 40ch; }
+.markdown-rendered .chapter-nav-top :is(.prev, .next) > a {
+  height: auto;
+}
+.markdown-rendered .chapter-nav-top > * {
+  font-size: var(--font-smaller);
+}
+.chapter-nav .current {
+  align-self: center;
+  text-align: center;
+  font-weight: var(--font-semibold);
+  max-width: 40ch;
+}
 /* previous / next: the whole box is the link, not just the words. Names that don't fit on one line
    are cut short with "…" (the full name shows on hover). */
 .chapter-nav :is(.prev, .next) > a {
@@ -226,38 +348,84 @@
   text-decoration: none;
   transition: background-color 100ms;
 }
-.chapter-nav .chapter-nav-name, .chapter-nav .current {
+.chapter-nav .chapter-nav-name,
+.chapter-nav .current {
   min-width: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.chapter-nav .next > a { justify-content: flex-end; }
-.chapter-nav-arrow { flex: none; width: 1em; text-align: center; }
-.chapter-nav :is(.prev, .next) > a:hover { background-color: var(--background-modifier-hover); }
+.chapter-nav .next > a {
+  justify-content: flex-end;
+}
+.chapter-nav-arrow {
+  flex: none;
+  width: 1em;
+  text-align: center;
+}
+.chapter-nav :is(.prev, .next) > a:hover {
+  background-color: var(--background-modifier-hover);
+}
 
 /* text size (Settings → Text size): the notes' text and the interface text (sidebars, outline,
    breadcrumbs, search, settings) scale together; the readable line length and sidebars grow to match */
-html.text-small body { --font-text-size: 14px; --font-ui-smaller: 11px; --font-ui-small: 12px; --font-ui-medium: 13px; --file-line-width: 620px; }
-html.text-large body { --font-text-size: 18px; --font-ui-smaller: 13.5px; --font-ui-small: 14.5px; --font-ui-medium: 17px; --file-line-width: 790px; }
-html.text-larger body { --font-text-size: 20px; --font-ui-smaller: 15px; --font-ui-small: 16px; --font-ui-medium: 19px; --file-line-width: 875px; }
-html.text-small .site { grid-template-columns: 260px minmax(0, 1fr) 240px; }
-html.text-large .site { grid-template-columns: 310px minmax(0, 1fr) 290px; }
-html.text-larger .site { grid-template-columns: 340px minmax(0, 1fr) 320px; }
+html.text-small body {
+  --font-text-size: 14px;
+  --font-ui-smaller: 11px;
+  --font-ui-small: 12px;
+  --font-ui-medium: 13px;
+  --file-line-width: 620px;
+}
+html.text-large body {
+  --font-text-size: 18px;
+  --font-ui-smaller: 13.5px;
+  --font-ui-small: 14.5px;
+  --font-ui-medium: 17px;
+  --file-line-width: 790px;
+}
+html.text-larger body {
+  --font-text-size: 20px;
+  --font-ui-smaller: 15px;
+  --font-ui-small: 16px;
+  --font-ui-medium: 19px;
+  --file-line-width: 875px;
+}
+html.text-small .site {
+  grid-template-columns: 260px minmax(0, 1fr) 240px;
+}
+html.text-large .site {
+  grid-template-columns: 310px minmax(0, 1fr) 290px;
+}
+html.text-larger .site {
+  grid-template-columns: 340px minmax(0, 1fr) 320px;
+}
 @media (max-width: 1100px) {
-  html:is(.text-small, .text-large, .text-larger) .site { grid-template-columns: 260px minmax(0, 1fr); }
-  html.text-large .site { grid-template-columns: 290px minmax(0, 1fr); }
-  html.text-larger .site { grid-template-columns: 310px minmax(0, 1fr); }
+  html:is(.text-small, .text-large, .text-larger) .site {
+    grid-template-columns: 260px minmax(0, 1fr);
+  }
+  html.text-large .site {
+    grid-template-columns: 290px minmax(0, 1fr);
+  }
+  html.text-larger .site {
+    grid-template-columns: 310px minmax(0, 1fr);
+  }
 }
 @media (max-width: 760px) {
-  html:is(.text-small, .text-large, .text-larger) .site { display: block; }
+  html:is(.text-small, .text-large, .text-larger) .site {
+    display: block;
+  }
 }
 /* four choices: two to a row in the settings pop-over */
-.site-setting[data-setting="textSize"] .site-setting-options { display: grid; grid-template-columns: 1fr 1fr; }
+.site-setting[data-setting="textSize"] .site-setting-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 
 /* wide mode (Settings → Page width → Wide): the note uses the whole middle column instead of a
    readable line length, up to a limit so lines don't get absurdly long on huge screens */
-html.wide-mode .markdown-preview-sizer { max-width: min(100%, 1400px); }
+html.wide-mode .markdown-preview-sizer {
+  max-width: min(100%, 1400px);
+}
 
 /* the settings pop-over under the gear icon */
 .site-settings {
@@ -273,9 +441,16 @@ html.wide-mode .markdown-preview-sizer { max-width: min(100%, 1400px); }
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   color: var(--text-normal);
 }
-.site-settings[hidden] { display: none; }
-.site-settings-head { display: none; }
-.site-setting + .site-setting, .site-setting-note + .site-setting { margin-top: var(--size-4-3); }
+.site-settings[hidden] {
+  display: none;
+}
+.site-settings-head {
+  display: none;
+}
+.site-setting + .site-setting,
+.site-setting-note + .site-setting {
+  margin-top: var(--size-4-3);
+}
 .site-setting-label {
   margin-bottom: var(--size-4-1);
   font-size: var(--font-ui-smaller);
@@ -306,15 +481,34 @@ html.wide-mode .markdown-preview-sizer { max-width: min(100%, 1400px); }
   color: var(--text-muted);
   cursor: pointer;
 }
-.site-setting-option .svg-icon { --icon-size: 14px; }
-.site-setting-option:hover { color: var(--text-normal); background: var(--background-modifier-hover); }
-.site-setting-option.is-active { color: var(--text-normal); background: var(--background-modifier-active-hover); }
-.site-setting-note { margin: var(--size-4-2) 0 0; font-size: var(--font-ui-smaller); color: var(--text-faint); line-height: var(--line-height-tight); }
+.site-setting-option .svg-icon {
+  --icon-size: 14px;
+}
+.site-setting-option:hover {
+  color: var(--text-normal);
+  background: var(--background-modifier-hover);
+}
+.site-setting-option.is-active {
+  color: var(--text-normal);
+  background: var(--background-modifier-active-hover);
+}
+.site-setting-note {
+  margin: var(--size-4-2) 0 0;
+  font-size: var(--font-ui-smaller);
+  color: var(--text-faint);
+  line-height: var(--line-height-tight);
+}
 /* spoilers: the GM section of an adventure type page is blurred until clicked
    (or always shown, with Spoilers: Shown in the settings) */
-.covalon-spoiler { position: relative; }
-html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed) { cursor: pointer; }
-html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoiler-reveal { color: var(--link-color-hover); }
+.covalon-spoiler {
+  position: relative;
+}
+html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed) {
+  cursor: pointer;
+}
+html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoiler-reveal {
+  color: var(--link-color-hover);
+}
 .covalon-spoiler-content {
   filter: blur(7px);
   user-select: none;
@@ -340,16 +534,26 @@ html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoil
   color: var(--text-normal);
   cursor: pointer;
 }
-.covalon-spoiler-reveal:hover { color: var(--link-color-hover); }
-.covalon-spoiler-reveal .svg-icon { --icon-size: 16px; }
+.covalon-spoiler-reveal:hover {
+  color: var(--link-color-hover);
+}
+.covalon-spoiler-reveal .svg-icon {
+  --icon-size: 16px;
+}
 :is(.covalon-spoiler.is-revealed, html.show-spoilers .covalon-spoiler) > .covalon-spoiler-content {
   filter: none;
   user-select: auto;
   pointer-events: auto;
 }
-:is(.covalon-spoiler.is-revealed, html.show-spoilers .covalon-spoiler) > .covalon-spoiler-reveal { display: none; }
+:is(.covalon-spoiler.is-revealed, html.show-spoilers .covalon-spoiler) > .covalon-spoiler-reveal {
+  display: none;
+}
 
-.site-credits { margin-top: var(--size-4-8); font-size: var(--font-smaller); color: var(--text-faint); }
+.site-credits {
+  margin-top: var(--size-4-8);
+  font-size: var(--font-smaller);
+  color: var(--text-faint);
+}
 
 /* breadcrumbs above the page title: Home › Guilds › The Archivists */
 /* It stays at the top of the screen while reading, on a frosted strip of the page colour whose ends fade
@@ -374,7 +578,8 @@ html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoil
   color: var(--text-faint);
   --breadcrumb-fade: linear-gradient(to right, transparent, #000 2rem, #000 calc(100% - 2rem), transparent);
 }
-.site-breadcrumbs::before, .site-breadcrumbs::after {
+.site-breadcrumbs::before,
+.site-breadcrumbs::after {
   content: "";
   position: absolute;
   left: 0;
@@ -383,7 +588,8 @@ html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoil
   -webkit-mask-image: var(--breadcrumb-fade);
   mask-image: var(--breadcrumb-fade);
 }
-.site-breadcrumbs::before {   /* the frosted strip */
+.site-breadcrumbs::before {
+  /* the frosted strip */
   inset-block: 0;
   z-index: -1;
   background: color-mix(in lab, var(--background-primary), transparent 30%);
@@ -394,19 +600,34 @@ html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoil
   opacity: 0;
   transition: opacity 150ms;
 }
-.site-breadcrumbs.is-stuck::before { opacity: 1; }
-.site-breadcrumbs::after {    /* the shadow under it, only while the page scrolls beneath it */
+.site-breadcrumbs.is-stuck::before {
+  opacity: 1;
+}
+.site-breadcrumbs::after {
+  /* the shadow under it, only while the page scrolls beneath it */
   top: 100%;
   height: 10px;
   background: linear-gradient(rgba(0, 0, 0, 0.14), transparent);
   opacity: 0;
   transition: opacity 150ms;
 }
-.site-breadcrumbs.is-stuck::after { opacity: 1; }
-.theme-dark .site-breadcrumbs::after { background: linear-gradient(rgba(0, 0, 0, 0.4), transparent); }
-.site-breadcrumbs a { color: var(--text-muted); text-decoration: none; }
-.site-breadcrumbs a:hover { color: var(--link-color-hover); text-decoration: underline; }
-.site-breadcrumbs [aria-current] { color: var(--text-muted); }
+.site-breadcrumbs.is-stuck::after {
+  opacity: 1;
+}
+.theme-dark .site-breadcrumbs::after {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), transparent);
+}
+.site-breadcrumbs a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+.site-breadcrumbs a:hover {
+  color: var(--link-color-hover);
+  text-decoration: underline;
+}
+.site-breadcrumbs [aria-current] {
+  color: var(--text-muted);
+}
 /* the one-page guides: a small "View in paged mode" link to the right of the title */
 .page-title-row {
   display: flex;
@@ -415,7 +636,10 @@ html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoil
   justify-content: space-between;
   gap: var(--size-4-1) var(--size-4-4);
 }
-.page-title-row > .inline-title { flex: 1 1 auto; min-width: 0; }
+.page-title-row > .inline-title {
+  flex: 1 1 auto;
+  min-width: 0;
+}
 .guide-paged-link {
   display: inline-flex;
   align-items: center;
@@ -424,28 +648,72 @@ html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoil
   font-size: var(--font-ui-small);
   text-decoration: none;
 }
-.guide-paged-link:hover span { text-decoration: underline; }
-.guide-paged-link .svg-icon { --icon-size: 1.15em; width: var(--icon-size); height: var(--icon-size); flex: none; }
+.guide-paged-link:hover span {
+  text-decoration: underline;
+}
+.guide-paged-link .svg-icon {
+  --icon-size: 1.15em;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  flex: none;
+}
 /* "Last updated …" on the home page */
-.site-updated { font-size: var(--font-ui-small); color: var(--text-faint); }
+.site-updated {
+  font-size: var(--font-ui-small);
+  color: var(--text-faint);
+}
 
 /* picture alignment from the Image Converter plugin (on the picture, or on its captioned figure) */
-.markdown-rendered :is(img, figure).image-converter-aligned { clear: both; float: none; }
-.markdown-rendered :is(img, figure).image-position-center { display: block; margin-inline: auto; }
-.markdown-rendered :is(img, figure).image-position-left.image-no-wrap { display: block; margin-left: 0; margin-right: auto; }
-.markdown-rendered :is(img, figure).image-position-right.image-no-wrap { display: block; margin-left: auto; margin-right: 0; }
-.markdown-rendered :is(img, figure).image-position-left.image-wrap { float: left; clear: left; margin: 0 1em 0.5em 0; }
-.markdown-rendered :is(img, figure).image-position-right.image-wrap { float: right; clear: right; margin: 0 0 0.5em 1em; }
-.markdown-rendered figure.image-converter-aligned { width: fit-content; max-width: 100%; }
-.markdown-rendered figure.image-wrap { max-width: min(50%, 24rem); }
-@container covalon-note (max-width: 500px) {   /* a narrow note: a wrapped (floated) picture sits centred on its own instead */
+.markdown-rendered :is(img, figure).image-converter-aligned {
+  clear: both;
+  float: none;
+}
+.markdown-rendered :is(img, figure).image-position-center {
+  display: block;
+  margin-inline: auto;
+}
+.markdown-rendered :is(img, figure).image-position-left.image-no-wrap {
+  display: block;
+  margin-left: 0;
+  margin-right: auto;
+}
+.markdown-rendered :is(img, figure).image-position-right.image-no-wrap {
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+}
+.markdown-rendered :is(img, figure).image-position-left.image-wrap {
+  float: left;
+  clear: left;
+  margin: 0 1em 0.5em 0;
+}
+.markdown-rendered :is(img, figure).image-position-right.image-wrap {
+  float: right;
+  clear: right;
+  margin: 0 0 0.5em 1em;
+}
+.markdown-rendered figure.image-converter-aligned {
+  width: fit-content;
+  max-width: 100%;
+}
+.markdown-rendered figure.image-wrap {
+  max-width: min(50%, 24rem);
+}
+@container covalon-note (max-width: 500px) {
+  /* a narrow note: a wrapped (floated) picture sits centred on its own instead */
   .markdown-rendered :is(img, figure).image-wrap:is(.image-position-left, .image-position-right) {
-    float: none; display: block; margin: 0.5em auto 1em; max-width: min(100%, 24rem);
+    float: none;
+    display: block;
+    margin: 0.5em auto 1em;
+    max-width: min(100%, 24rem);
   }
 }
 
 /* the page title at the top of "On this page" */
-.site-toc .toc-title a { font-weight: var(--font-semibold); color: var(--text-normal); }
+.site-toc .toc-title a {
+  font-weight: var(--font-semibold);
+  color: var(--text-normal);
+}
 
 /* every table scrolls sideways if it's wider than its box (base.css: .table-wrapper { overflow-x: auto }),
    which on narrow screens is most of them; a shadow along whichever edge still has more of it out of view
@@ -454,9 +722,15 @@ html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoil
    .table-wrapper has to be a flex row (not the default block) for it to sit beside the table instead of
    stacking above/below it; align-self: stretch matches its height, since a percentage height wouldn't (the
    wrapper is only ever as tall as its content). The negative margin keeps it from adding to the table's width. */
-.markdown-rendered .table-wrapper { display: flex; }
-.markdown-rendered .table-wrapper > table { flex-shrink: 0; }   /* keep the table's natural width (auto-layout), so it overflows and scrolls instead of the flex row squeezing it narrower */
-.markdown-rendered .table-wrapper::before, .markdown-rendered .table-wrapper::after {
+.markdown-rendered .table-wrapper {
+  display: flex;
+}
+.markdown-rendered .table-wrapper > table {
+  /* flex-shrink: 0; */
+  /* disabling to see if this was causing the bug?? */
+} /* keep the table's natural width (auto-layout), so it overflows and scrolls instead of the flex row squeezing it narrower */
+.markdown-rendered .table-wrapper::before,
+.markdown-rendered .table-wrapper::after {
   content: "";
   position: sticky;
   align-self: stretch;
@@ -467,26 +741,60 @@ html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoil
   opacity: 0;
   transition: opacity 150ms;
 }
-.markdown-rendered .table-wrapper::before { left: 0; top: 0; margin-right: -14px; background: linear-gradient(to right, rgba(0, 0, 0, 0.16), transparent); }
-.markdown-rendered .table-wrapper::after { right: 0; top: 0; margin-left: -14px; background: linear-gradient(to left, rgba(0, 0, 0, 0.16), transparent); }
-.theme-dark .markdown-rendered .table-wrapper::before { background: linear-gradient(to right, rgba(0, 0, 0, 0.45), transparent); }
-.theme-dark .markdown-rendered .table-wrapper::after { background: linear-gradient(to left, rgba(0, 0, 0, 0.45), transparent); }
-.markdown-rendered .table-wrapper.has-more-left::before { opacity: 1; }
-.markdown-rendered .table-wrapper.has-more-right::after { opacity: 1; }
+.markdown-rendered .table-wrapper::before {
+  left: 0;
+  top: 0;
+  margin-right: -14px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.16), transparent);
+}
+.markdown-rendered .table-wrapper::after {
+  right: 0;
+  top: 0;
+  margin-left: -14px;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.16), transparent);
+}
+.theme-dark .markdown-rendered .table-wrapper::before {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.45), transparent);
+}
+.theme-dark .markdown-rendered .table-wrapper::after {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.45), transparent);
+}
+.markdown-rendered .table-wrapper.has-more-left::before {
+  opacity: 1;
+}
+.markdown-rendered .table-wrapper.has-more-right::after {
+  opacity: 1;
+}
 
 /* filterable tables (the Bases tables): filter box and sortable headers. The table sticks out 1.5rem
    past the text on both sides (less on narrow screens, always keeping 2rem from the edge), and one
    taller than 85% of the screen scrolls inside its box with its header row pinned to the top. */
-.site-main { container-type: inline-size; }
+.site-main {
+  container-type: inline-size;
+}
 /* the main column's width, taken where it's measured (on its children) and passed down as a length, so the
    note's own container (covalon-note, in custom.css) doesn't change what the tables measure against */
-@property --covalon-main-width { syntax: "<length>"; inherits: true; initial-value: 100vw; }
-.site-main > * { --covalon-main-width: 100cqw; }
-.covalon-filterable, .chapter-nav {   /* the chapter navigation gets the same extra width */
+@property --covalon-main-width {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 100vw;
+}
+.site-main > * {
+  --covalon-main-width: 100cqw;
+}
+.covalon-filterable,
+.chapter-nav {
+  /* the chapter navigation gets the same extra width */
   --covalon-table-width: min(calc(var(--covalon-main-width) - 4rem), calc(100% + 3rem));
   margin-inline: min(0px, calc((100% - var(--covalon-table-width)) / 2));
 }
-.covalon-filter-bar { display: flex; flex-wrap: wrap; gap: var(--size-4-2); align-items: center; margin: var(--size-4-4) 0 var(--size-4-2); }
+.covalon-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--size-4-2);
+  align-items: center;
+  margin: var(--size-4-4) 0 var(--size-4-2);
+}
 .covalon-filter-bar input {
   flex: 1 1 12rem;
   font: inherit;
@@ -497,16 +805,36 @@ html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoil
   background: var(--background-modifier-form-field);
   color: var(--text-normal);
 }
-.covalon-filter-count { font-size: var(--font-ui-small); color: var(--text-faint); }
-.covalon-table-box { margin-block: var(--p-spacing); }
-.covalon-table-box > .table-wrapper { max-height: 75vh; overflow: auto; overscroll-behavior: auto; }
+.covalon-filter-count {
+  font-size: var(--font-ui-small);
+  color: var(--text-faint);
+}
+.covalon-table-box {
+  margin-block: var(--p-spacing);
+}
+.covalon-table-box > .table-wrapper {
+  max-height: 75vh;
+  overflow: auto;
+  overscroll-behavior: auto;
+}
 /* separate (not shared) cell borders, so the pinned header row carries its own borders: with shared
    borders, the table's top edge stays behind while scrolling and the rows show through a thin gap
    above the header (Safari especially) */
-.covalon-table-box table { width: 100%; margin: 0; border-collapse: separate; border-spacing: 0; }
-.covalon-table-box :is(th, td) { border-width: 0 1px 1px 0; }
-.covalon-table-box :is(th, td):first-child { border-left-width: 1px; }
-.covalon-table-box thead th { border-top-width: 1px; }
+.covalon-table-box table {
+  width: 100%;
+  margin: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.covalon-table-box :is(th, td) {
+  border-width: 0 1px 1px 0;
+}
+.covalon-table-box :is(th, td):first-child {
+  border-left-width: 1px;
+}
+.covalon-table-box thead th {
+  border-top-width: 1px;
+}
 /* (::before, since ::after shows the sort arrow) a slight shadow under the pinned header row while rows scroll beneath it (a strip under each
    cell, running on into the next one, so it reads as one shadow across the row) */
 .covalon-table-box thead th::before {
@@ -521,8 +849,12 @@ html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoil
   opacity: 0;
   transition: opacity 150ms;
 }
-.theme-dark .covalon-table-box thead th::before { background: linear-gradient(rgba(0, 0, 0, 0.45), transparent); }
-.covalon-table-box.is-scrolled thead th::before { opacity: 1; }
+.theme-dark .covalon-table-box thead th::before {
+  background: linear-gradient(rgba(0, 0, 0, 0.45), transparent);
+}
+.covalon-table-box.is-scrolled thead th::before {
+  opacity: 1;
+}
 .covalon-table-box thead th {
   position: sticky;
   top: 0;
@@ -531,13 +863,24 @@ html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoil
   background-color: color-mix(in srgb, var(--table-header-border-color) 60%, var(--background-primary)) !important;
 }
 /* list properties (in tables and properties boxes): each item and its comma wrap together */
-.covalon-list-item { display: inline-block; max-width: 100%; }
-.markdown-rendered .covalon-list-item a { display: inline; }   /* the item is the block; the comma follows the link's last word */
+.covalon-list-item {
+  display: inline-block;
+  max-width: 100%;
+}
+.markdown-rendered .covalon-list-item a {
+  display: inline;
+} /* the item is the block; the comma follows the link's last word */
 
 /* column headers never wrap; a sortable one always keeps room at its end for the sort arrow, so the
    column doesn't change width when it's sorted */
-.markdown-rendered th { white-space: nowrap; }
-th.covalon-sortable { cursor: pointer; user-select: none; padding-right: calc(var(--size-4-2) + 1em); }
+.markdown-rendered th {
+  white-space: nowrap;
+}
+th.covalon-sortable {
+  cursor: pointer;
+  user-select: none;
+  padding-right: calc(var(--size-4-2) + 1em);
+}
 th.covalon-sortable[data-sort]::after {
   position: absolute;
   right: var(--size-4-2);
@@ -545,29 +888,43 @@ th.covalon-sortable[data-sort]::after {
   transform: translateY(-50%);
   font-size: 0.7em;
 }
-th.covalon-sortable[data-sort="asc"]::after { content: "▲"; }
-th.covalon-sortable[data-sort="desc"]::after { content: "▼"; }
+th.covalon-sortable[data-sort="asc"]::after {
+  content: "▲";
+}
+th.covalon-sortable[data-sort="desc"]::after {
+  content: "▼";
+}
 
 /* no rubber-band bounce when scrolling past the top or bottom of the page */
-html, body { overscroll-behavior: none; }
+html,
+body {
+  overscroll-behavior: none;
+}
 /* always keep room for the page's scrollbar, so the layout doesn't shift sideways between short
    pages (no scrollbar) and long ones, or when the search pop-over locks the page */
-html { overflow-y: scroll; scrollbar-gutter: stable; }
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
 /* scrollbars in the accent colour, on a faint track matching the sidebar sidebars,
    tables and the search results all inherit this). The theme class is on <html> as well as <body>
    so the page's own scrollbar gets the colours too. */
-html, body {
+html,
+body {
   scrollbar-color: var(--color-accent) color-mix(in hsl, var(--background-secondary), transparent 15%);
 }
 /* dark mode: a darker, duller shade of the tan accent, so the scrollbar doesn't glare.
    Raise the 35% for a lighter scrollbar, lower it for a darker one. */
-html.theme-dark, body.theme-dark {
+html.theme-dark,
+body.theme-dark {
   --covalon-scrollbar: hsl(var(--accent-h), calc(var(--accent-s) * 0.6), 35%);
   scrollbar-color: var(--covalon-scrollbar) color-mix(in hsl, var(--background-secondary), transparent 55%);
 }
 
 /* search: the pop-over (and the same search on the Advanced Search page) */
-.site-search input[readonly] { cursor: pointer; }
+.site-search input[readonly] {
+  cursor: pointer;
+}
 .site-search kbd {
   font: inherit;
   font-size: var(--font-ui-smaller);
@@ -576,7 +933,9 @@ html.theme-dark, body.theme-dark {
   border-radius: var(--radius-s);
   padding: 0 4px;
 }
-html.search-open { overflow: hidden; }
+html.search-open {
+  overflow: hidden;
+}
 .covalon-search-overlay {
   position: fixed;
   inset: 0;
@@ -588,7 +947,9 @@ html.search-open { overflow: hidden; }
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(2px);
 }
-.covalon-search-overlay[hidden] { display: none; }
+.covalon-search-overlay[hidden] {
+  display: none;
+}
 .covalon-search-panel {
   width: min(760px, 100%);
   max-height: 84vh;
@@ -601,10 +962,24 @@ html.search-open { overflow: hidden; }
   /* no overflow clipping here, so the property suggestions can hang out below the panel;
      the results list scrolls on its own */
 }
-.covalon-search-panel .covalon-search { display: flex; flex-direction: column; min-height: 0; padding: var(--size-4-3); }
-.covalon-search-panel .covalon-search-results { overflow-y: auto; overscroll-behavior: contain; min-height: 0; }
-.covalon-search { font-size: var(--font-ui-medium); }
-.covalon-search-top { display: flex; gap: var(--size-4-2); }
+.covalon-search-panel .covalon-search {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: var(--size-4-3);
+}
+.covalon-search-panel .covalon-search-results {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  min-height: 0;
+}
+.covalon-search {
+  font-size: var(--font-ui-medium);
+}
+.covalon-search-top {
+  display: flex;
+  gap: var(--size-4-2);
+}
 .covalon-search :is(input, select, button) {
   font: inherit;
   font-size: var(--font-ui-small);
@@ -614,9 +989,17 @@ html.search-open { overflow: hidden; }
   border-radius: var(--radius-s);
   padding: var(--size-4-1) var(--size-4-2);
 }
-.covalon-search button { cursor: pointer; }
-.covalon-search button:hover { background: var(--background-modifier-hover); }
-.covalon-search-field { position: relative; flex: 1; display: flex; }
+.covalon-search button {
+  cursor: pointer;
+}
+.covalon-search button:hover {
+  background: var(--background-modifier-hover);
+}
+.covalon-search-field {
+  position: relative;
+  flex: 1;
+  display: flex;
+}
 .covalon-search-suggest {
   position: absolute;
   top: calc(100% + 2px);
@@ -631,7 +1014,9 @@ html.search-open { overflow: hidden; }
   border-radius: var(--radius-s);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
-.covalon-search-suggest[hidden] { display: none; }
+.covalon-search-suggest[hidden] {
+  display: none;
+}
 .covalon-search-suggestion {
   display: flex;
   justify-content: space-between;
@@ -641,25 +1026,83 @@ html.search-open { overflow: hidden; }
   font-size: var(--font-ui-small);
   cursor: pointer;
 }
-.covalon-search-suggestion.is-active, .covalon-search-suggestion:hover { background: var(--background-modifier-hover); }
-.covalon-search-suggestion-hint { color: var(--text-faint); }
-.covalon-search .covalon-search-input { flex: 1; font-size: var(--font-ui-medium); padding: var(--size-4-2) var(--size-4-3); }
-.covalon-search-close { color: var(--text-muted) !important; }
-.covalon-search-options, .covalon-search-filter { display: flex; flex-wrap: wrap; gap: var(--size-4-2); align-items: center; margin-top: var(--size-4-2); }
-.covalon-search-options .covalon-search-add { color: var(--text-accent); }
-.covalon-search-options select:last-child { margin-left: auto; }
-.covalon-search-tips { margin-left: auto; font-size: var(--font-ui-small); color: var(--text-muted); }
-.covalon-search-tips + select { margin-left: 0 !important; }
-.covalon-search-filter select:last-of-type { flex: 1 1 10rem; }
-.covalon-search-filter button { color: var(--text-muted); line-height: 1; }
-.covalon-search-status { margin: var(--size-4-3) 0 var(--size-4-1); font-size: var(--font-ui-small); color: var(--text-faint); }
-.covalon-search-status:empty { display: none; }
-.covalon-search-results { list-style: none; margin: 0; padding: 0; }
-.covalon-search-result { padding: var(--size-4-2); border-radius: var(--radius-s); }
-.covalon-search-result:hover { background: var(--background-modifier-hover); }
-.covalon-search-result a { display: flex; gap: var(--size-4-2); align-items: baseline; text-decoration: none; color: var(--link-color); }
-.covalon-search-result a:hover .covalon-search-title { text-decoration: underline; }
-.covalon-search-title { font-weight: var(--font-semibold); }
+.covalon-search-suggestion.is-active,
+.covalon-search-suggestion:hover {
+  background: var(--background-modifier-hover);
+}
+.covalon-search-suggestion-hint {
+  color: var(--text-faint);
+}
+.covalon-search .covalon-search-input {
+  flex: 1;
+  font-size: var(--font-ui-medium);
+  padding: var(--size-4-2) var(--size-4-3);
+}
+.covalon-search-close {
+  color: var(--text-muted) !important;
+}
+.covalon-search-options,
+.covalon-search-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--size-4-2);
+  align-items: center;
+  margin-top: var(--size-4-2);
+}
+.covalon-search-options .covalon-search-add {
+  color: var(--text-accent);
+}
+.covalon-search-options select:last-child {
+  margin-left: auto;
+}
+.covalon-search-tips {
+  margin-left: auto;
+  font-size: var(--font-ui-small);
+  color: var(--text-muted);
+}
+.covalon-search-tips + select {
+  margin-left: 0 !important;
+}
+.covalon-search-filter select:last-of-type {
+  flex: 1 1 10rem;
+}
+.covalon-search-filter button {
+  color: var(--text-muted);
+  line-height: 1;
+}
+.covalon-search-status {
+  margin: var(--size-4-3) 0 var(--size-4-1);
+  font-size: var(--font-ui-small);
+  color: var(--text-faint);
+}
+.covalon-search-status:empty {
+  display: none;
+}
+.covalon-search-results {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.covalon-search-result {
+  padding: var(--size-4-2);
+  border-radius: var(--radius-s);
+}
+.covalon-search-result:hover {
+  background: var(--background-modifier-hover);
+}
+.covalon-search-result a {
+  display: flex;
+  gap: var(--size-4-2);
+  align-items: baseline;
+  text-decoration: none;
+  color: var(--link-color);
+}
+.covalon-search-result a:hover .covalon-search-title {
+  text-decoration: underline;
+}
+.covalon-search-title {
+  font-weight: var(--font-semibold);
+}
 .covalon-search-type {
   font-size: var(--font-ui-smaller);
   color: var(--text-muted);
@@ -667,33 +1110,103 @@ html.search-open { overflow: hidden; }
   border-radius: 99px;
   padding: 0 var(--size-4-2);
 }
-.covalon-search-excerpt { margin: var(--size-4-1) 0 0; font-size: var(--font-ui-small); color: var(--text-muted); }
-.covalon-search-excerpt mark { background: color-mix(in srgb, var(--text-accent) 30%, transparent); color: inherit; }
-.covalon-search-help { padding: var(--size-4-3) var(--size-4-2) var(--size-4-2); font-size: var(--font-ui-small); color: var(--text-muted); }
-.covalon-search-help-intro { margin: 0 0 var(--size-4-2); }
-.covalon-search-examples { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--size-4-1); }
-.covalon-search-examples li { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--size-4-1) var(--size-4-3); }
-.covalon-search .covalon-search-example { padding: 1px var(--size-4-2); background: var(--background-modifier-form-field); }
-.covalon-search-example code { font-size: var(--font-ui-small); background: none; padding: 0; color: var(--text-normal); }
-.covalon-search-example-note { color: var(--text-faint); }
-.covalon-search-help-link { font-size: var(--font-ui-small); color: var(--link-color); }
-.covalon-search-help-link:hover { color: var(--link-color-hover); }
-.covalon-search-more { padding: var(--size-4-2); font-size: var(--font-ui-small); color: var(--text-faint); }
-
+.covalon-search-excerpt {
+  margin: var(--size-4-1) 0 0;
+  font-size: var(--font-ui-small);
+  color: var(--text-muted);
+}
+.covalon-search-excerpt mark {
+  background: color-mix(in srgb, var(--text-accent) 30%, transparent);
+  color: inherit;
+}
+.covalon-search-help {
+  padding: var(--size-4-3) var(--size-4-2) var(--size-4-2);
+  font-size: var(--font-ui-small);
+  color: var(--text-muted);
+}
+.covalon-search-help-intro {
+  margin: 0 0 var(--size-4-2);
+}
+.covalon-search-examples {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--size-4-1);
+}
+.covalon-search-examples li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--size-4-1) var(--size-4-3);
+}
+.covalon-search .covalon-search-example {
+  padding: 1px var(--size-4-2);
+  background: var(--background-modifier-form-field);
+}
+.covalon-search-example code {
+  font-size: var(--font-ui-small);
+  background: none;
+  padding: 0;
+  color: var(--text-normal);
+}
+.covalon-search-example-note {
+  color: var(--text-faint);
+}
+.covalon-search-help-link {
+  font-size: var(--font-ui-small);
+  color: var(--link-color);
+}
+.covalon-search-help-link:hover {
+  color: var(--link-color-hover);
+}
+.covalon-search-more {
+  padding: var(--size-4-2);
+  font-size: var(--font-ui-small);
+  color: var(--text-faint);
+}
 
 @media (max-width: 1100px) {
-  .site { grid-template-columns: 260px minmax(0, 1fr); }
-  .site-right { display: none; }
+  .site {
+    grid-template-columns: 260px minmax(0, 1fr);
+  }
+  .site-right {
+    display: none;
+  }
 }
 /* the Font setting's icons: an "Aa" in each kind of font */
-.site-font-sample { font-size: 1.05em; line-height: 1; min-width: 1.4em; text-align: center; font-weight: 600; }
-.site-font-sample.is-sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
-.site-font-sample.is-serif { font-family: Georgia, "Times New Roman", serif; }
+.site-font-sample {
+  font-size: 1.05em;
+  line-height: 1;
+  min-width: 1.4em;
+  text-align: center;
+  font-weight: 600;
+}
+.site-font-sample.is-sans {
+  font-family:
+    ui-sans-serif,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+.site-font-sample.is-serif {
+  font-family: Georgia, "Times New Roman", serif;
+}
 
 /* lightbox: pictures in the text open large over the page (site.js) */
-.markdown-rendered img.covalon-zoomable { cursor: zoom-in; }
-.markdown-rendered img.covalon-zoomable:focus-visible { outline: 2px solid var(--covalon-accent, var(--color-accent)); outline-offset: 2px; }
-html.lightbox-open { overflow: hidden; }
+.markdown-rendered img.covalon-zoomable {
+  cursor: zoom-in;
+}
+.markdown-rendered img.covalon-zoomable:focus-visible {
+  outline: 2px solid var(--covalon-accent, var(--color-accent));
+  outline-offset: 2px;
+}
+html.lightbox-open {
+  overflow: hidden;
+}
 .covalon-lightbox {
   position: fixed;
   inset: 0;
@@ -705,7 +1218,9 @@ html.lightbox-open { overflow: hidden; }
   color: #eee;
   font-family: var(--font-interface);
 }
-.covalon-lightbox[hidden] { display: none; }
+.covalon-lightbox[hidden] {
+  display: none;
+}
 .covalon-lightbox-stage {
   flex: 1;
   min-height: 0;
@@ -723,11 +1238,26 @@ html.lightbox-open { overflow: hidden; }
   user-select: none;
   -webkit-user-drag: none;
 }
-.covalon-lightbox.can-zoom .covalon-lightbox-img { cursor: zoom-in; }
-.covalon-lightbox.is-zoomed .covalon-lightbox-stage { overflow: auto; padding: 0; cursor: grab; }
-.covalon-lightbox.is-zoomed .covalon-lightbox-stage:active { cursor: grabbing; }
-.covalon-lightbox.is-zoomed .covalon-lightbox-img { max-width: none; max-height: none; border-radius: 0; cursor: zoom-out; }
-.covalon-lightbox.is-zoomed .covalon-lightbox-caption { display: none; }
+.covalon-lightbox.can-zoom .covalon-lightbox-img {
+  cursor: zoom-in;
+}
+.covalon-lightbox.is-zoomed .covalon-lightbox-stage {
+  overflow: auto;
+  padding: 0;
+  cursor: grab;
+}
+.covalon-lightbox.is-zoomed .covalon-lightbox-stage:active {
+  cursor: grabbing;
+}
+.covalon-lightbox.is-zoomed .covalon-lightbox-img {
+  max-width: none;
+  max-height: none;
+  border-radius: 0;
+  cursor: zoom-out;
+}
+.covalon-lightbox.is-zoomed .covalon-lightbox-caption {
+  display: none;
+}
 .covalon-lightbox-caption {
   display: flex;
   gap: 1rem;
@@ -738,8 +1268,14 @@ html.lightbox-open { overflow: hidden; }
   text-align: center;
   color: rgba(255, 255, 255, 0.85);
 }
-.covalon-lightbox-caption[hidden] { display: none; }
-.covalon-lightbox-count { color: rgba(255, 255, 255, 0.5); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.covalon-lightbox-caption[hidden] {
+  display: none;
+}
+.covalon-lightbox-count {
+  color: rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
 .covalon-lightbox-button {
   position: absolute;
   display: grid;
@@ -757,23 +1293,57 @@ html.lightbox-open { overflow: hidden; }
   box-shadow: none;
   cursor: pointer;
 }
-.covalon-lightbox-button:hover { background: rgba(255, 255, 255, 0.2); }
-.covalon-lightbox-button:focus-visible { outline: 2px solid var(--covalon-accent, var(--color-accent)); }
-.covalon-lightbox-button[hidden] { display: none; }
-.covalon-lightbox-button.is-close { top: 0.75rem; right: 0.75rem; }
-.covalon-lightbox-button.is-prev { left: 0.75rem; top: 50%; translate: 0 -50%; }
-.covalon-lightbox-button.is-next { right: 0.75rem; top: 50%; translate: 0 -50%; }
-.covalon-lightbox.is-zoomed :is(.is-prev, .is-next) { display: none; }
+.covalon-lightbox-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.covalon-lightbox-button:focus-visible {
+  outline: 2px solid var(--covalon-accent, var(--color-accent));
+}
+.covalon-lightbox-button[hidden] {
+  display: none;
+}
+.covalon-lightbox-button.is-close {
+  top: 0.75rem;
+  right: 0.75rem;
+}
+.covalon-lightbox-button.is-prev {
+  left: 0.75rem;
+  top: 50%;
+  translate: 0 -50%;
+}
+.covalon-lightbox-button.is-next {
+  right: 0.75rem;
+  top: 50%;
+  translate: 0 -50%;
+}
+.covalon-lightbox.is-zoomed :is(.is-prev, .is-next) {
+  display: none;
+}
 @media (max-width: 700px) {
-  .covalon-lightbox-stage { padding: 3.5rem 0.5rem 0.5rem; }
-  .covalon-lightbox-caption { padding: 0 1rem 4.25rem; }
-  .covalon-lightbox-button.is-prev, .covalon-lightbox-button.is-next { top: auto; bottom: 0.75rem; translate: none; }
-  .covalon-lightbox-button.is-next { right: 0.75rem; }
+  .covalon-lightbox-stage {
+    padding: 3.5rem 0.5rem 0.5rem;
+  }
+  .covalon-lightbox-caption {
+    padding: 0 1rem 4.25rem;
+  }
+  .covalon-lightbox-button.is-prev,
+  .covalon-lightbox-button.is-next {
+    top: auto;
+    bottom: 0.75rem;
+    translate: none;
+  }
+  .covalon-lightbox-button.is-next {
+    right: 0.75rem;
+  }
 }
 
 /* code blocks: a copy button in the corner, and a notice once copied (site.js) */
-.covalon-code { position: relative; }
-.markdown-rendered .covalon-code pre { padding-right: 6.5rem; }
+.covalon-code {
+  position: relative;
+}
+.markdown-rendered .covalon-code pre {
+  padding-right: 6.5rem;
+}
 .covalon-copy {
   position: absolute;
   top: 50%;
@@ -793,10 +1363,22 @@ html.lightbox-open { overflow: hidden; }
   box-shadow: none;
   cursor: pointer;
 }
-.covalon-copy svg { width: 1em; height: 1em; flex: none; }
-.covalon-copy:hover { color: var(--text-normal); border-color: var(--covalon-accent, var(--color-accent)); }
-.covalon-copy:focus-visible { outline: 2px solid var(--covalon-accent, var(--color-accent)); outline-offset: 1px; }
-.covalon-copy.is-done { color: var(--covalon-accent, var(--color-accent)); }
+.covalon-copy svg {
+  width: 1em;
+  height: 1em;
+  flex: none;
+}
+.covalon-copy:hover {
+  color: var(--text-normal);
+  border-color: var(--covalon-accent, var(--color-accent));
+}
+.covalon-copy:focus-visible {
+  outline: 2px solid var(--covalon-accent, var(--color-accent));
+  outline-offset: 1px;
+}
+.covalon-copy.is-done {
+  color: var(--covalon-accent, var(--color-accent));
+}
 .covalon-toast {
   position: fixed;
   left: 50%;
@@ -816,12 +1398,28 @@ html.lightbox-open { overflow: hidden; }
   opacity: 0;
   translate: -50% 0.75rem;
   pointer-events: none;
-  transition: opacity 0.2s ease, translate 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    translate 0.2s ease;
 }
-.covalon-toast.is-shown { opacity: 1; translate: -50% 0; }
-.covalon-toast.is-failed { border-left-color: var(--text-error, #c33); }
-.covalon-toast svg { width: 1.1em; height: 1.1em; color: var(--covalon-accent, var(--color-accent)); flex: none; }
-@media (prefers-reduced-motion: reduce) { .covalon-toast { transition: none; } }
+.covalon-toast.is-shown {
+  opacity: 1;
+  translate: -50% 0;
+}
+.covalon-toast.is-failed {
+  border-left-color: var(--text-error, #c33);
+}
+.covalon-toast svg {
+  width: 1.1em;
+  height: 1.1em;
+  color: var(--covalon-accent, var(--color-accent));
+  flex: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .covalon-toast {
+    transition: none;
+  }
+}
 
 /* ||inline spoilers||: blurred like the GM sections until clicked (site.js), on a tinted pill with an
    eye icon so it's clearly something to click. Settings → Spoilers → Shown shows them all. */
@@ -832,8 +1430,12 @@ html.lightbox-open { overflow: hidden; }
   -webkit-box-decoration-break: clone;
   transition: background-color 0.15s ease;
 }
-.covalon-inline-spoiler-text { transition: filter 200ms; }
-.markdown-rendered .covalon-inline-spoiler a { display: inline; }   /* links inside keep to the pill's line */
+.covalon-inline-spoiler-text {
+  transition: filter 200ms;
+}
+.markdown-rendered .covalon-inline-spoiler a {
+  display: inline;
+} /* links inside keep to the pill's line */
 html:not(.show-spoilers) .covalon-inline-spoiler:not(.is-revealed) {
   cursor: pointer;
   user-select: none;
@@ -841,7 +1443,8 @@ html:not(.show-spoilers) .covalon-inline-spoiler:not(.is-revealed) {
   outline: 1px dashed color-mix(in srgb, var(--covalon-accent, var(--color-accent)) 55%, transparent);
   outline-offset: -1px;
 }
-html:not(.show-spoilers) .covalon-inline-spoiler:not(.is-revealed)::before {   /* the eye, not blurred */
+html:not(.show-spoilers) .covalon-inline-spoiler:not(.is-revealed)::before {
+  /* the eye, not blurred */
   content: "";
   display: inline-block;
   width: 0.95em;
@@ -859,21 +1462,40 @@ html:not(.show-spoilers) .covalon-inline-spoiler:not(.is-revealed) .covalon-inli
 html:not(.show-spoilers) .covalon-inline-spoiler:not(.is-revealed):hover {
   background-color: color-mix(in srgb, var(--covalon-accent, var(--color-accent)) 28%, transparent);
 }
-html:not(.show-spoilers) .covalon-inline-spoiler:not(.is-revealed):hover .covalon-inline-spoiler-text { filter: blur(4px); }
-.covalon-inline-spoiler:focus-visible { outline: 2px solid var(--covalon-accent, var(--color-accent)); outline-offset: 1px; }
+html:not(.show-spoilers) .covalon-inline-spoiler:not(.is-revealed):hover .covalon-inline-spoiler-text {
+  filter: blur(4px);
+}
+.covalon-inline-spoiler:focus-visible {
+  outline: 2px solid var(--covalon-accent, var(--color-accent));
+  outline-offset: 1px;
+}
 html.show-spoilers .covalon-inline-spoiler,
-.covalon-inline-spoiler.is-revealed { background-color: color-mix(in srgb, var(--covalon-accent, var(--color-accent)) 10%, transparent); }
-:root { --covalon-eye: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E"); }
+.covalon-inline-spoiler.is-revealed {
+  background-color: color-mix(in srgb, var(--covalon-accent, var(--color-accent)) 10%, transparent);
+}
+:root {
+  --covalon-eye: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E");
+}
 
 /* ================================================================== small screens (phones)
    The sidebars become panels that open from the bottom, from an app bar with two buttons: Menu (the file
    tree, search and settings) and On this page (the outline). One panel at a time (site.js). */
-.site-appbar { display: none; }
+.site-appbar {
+  display: none;
+}
 @media (max-width: 760px) {
-  :root { --appbar-height: calc(56px + env(safe-area-inset-bottom, 0px)); }
-  .site { display: block; }
-  body { padding-bottom: var(--appbar-height); }
-  html.panel-open { overflow: hidden; }   /* the page stays put while a panel is open: the panel scrolls */
+  :root {
+    --appbar-height: calc(56px + env(safe-area-inset-bottom, 0px));
+  }
+  .site {
+    display: block;
+  }
+  body {
+    padding-bottom: var(--appbar-height);
+  }
+  html.panel-open {
+    overflow: hidden;
+  } /* the page stays put while a panel is open: the panel scrolls */
   .site-appbar {
     position: fixed;
     inset: auto 0 0 0;
@@ -904,15 +1526,24 @@ html.show-spoilers .covalon-inline-spoiler,
     box-shadow: none;
     cursor: pointer;
   }
-  .site-appbar-button .svg-icon { --icon-size: 22px; width: 22px; height: 22px; }
-  .site-appbar-button[aria-expanded="true"] {   /* the open panel's button: a bar on top, and stronger text */
+  .site-appbar-button .svg-icon {
+    --icon-size: 22px;
+    width: 22px;
+    height: 22px;
+  }
+  .site-appbar-button[aria-expanded="true"] {
+    /* the open panel's button: a bar on top, and stronger text */
     color: var(--link-color);
     font-weight: var(--font-semibold);
     box-shadow: inset 0 2px 0 var(--covalon-accent, var(--color-accent));
   }
-  .site-appbar-button:focus-visible { outline: 2px solid var(--covalon-accent, var(--color-accent)); outline-offset: -4px; }
+  .site-appbar-button:focus-visible {
+    outline: 2px solid var(--covalon-accent, var(--color-accent));
+    outline-offset: -4px;
+  }
   /* the panels */
-  .site-sidebar.site-left, .site-sidebar.site-right {
+  .site-sidebar.site-left,
+  .site-sidebar.site-right {
     position: fixed;
     inset: auto 0 var(--appbar-height) 0;
     z-index: 150;
@@ -929,15 +1560,29 @@ html.show-spoilers .covalon-inline-spoiler,
     box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
     transform: translateY(calc(100% + var(--appbar-height)));
     visibility: hidden;
-    transition: transform 180ms ease-out, visibility 0s linear 180ms;
+    transition:
+      transform 180ms ease-out,
+      visibility 0s linear 180ms;
   }
-  .site-sidebar.site-left { display: block; }
+  .site-sidebar.site-left {
+    display: block;
+  }
   body.panel-menu .site-sidebar.site-left,
-  body.panel-outline .site-sidebar.site-right { transform: none; visibility: visible; transition: transform 180ms ease-out; }
-  .site-sidebar.site-right { overflow: hidden; }   /* its outline list does the scrolling */
-  .site-right .site-toc { min-height: 0; }
+  body.panel-outline .site-sidebar.site-right {
+    transform: none;
+    visibility: visible;
+    transition: transform 180ms ease-out;
+  }
+  .site-sidebar.site-right {
+    overflow: hidden;
+  } /* its outline list does the scrolling */
+  .site-right .site-toc {
+    min-height: 0;
+  }
   /* the panels are solid, not see-through to the parchment */
-  :is(.theme-light, .theme-dark) .site-sidebar.workspace-split { background-color: var(--background-secondary) !important; }
+  :is(.theme-light, .theme-dark) .site-sidebar.workspace-split {
+    background-color: var(--background-secondary) !important;
+  }
   /* the page dims behind an open panel; a tap there closes it */
   body::after {
     content: "";
@@ -949,15 +1594,31 @@ html.show-spoilers .covalon-inline-spoiler,
     pointer-events: none;
     transition: opacity 180ms;
   }
-  html.panel-open body::after { opacity: 1; pointer-events: auto; }
-  .markdown-preview-view { padding: var(--size-4-2) var(--size-4-4) var(--size-4-8); }   /* breadcrumbs right at the top */
-  .site-breadcrumbs { margin-inline: calc(-1 * var(--size-4-4)); padding-inline: var(--size-4-4); }
+  html.panel-open body::after {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .markdown-preview-view {
+    padding: var(--size-4-2) var(--size-4-4) var(--size-4-8);
+  } /* breadcrumbs right at the top */
+  .site-breadcrumbs {
+    margin-inline: calc(-1 * var(--size-4-4));
+    padding-inline: var(--size-4-4);
+  }
   /* the strip spans the whole narrow screen: no fading at its ends (it would eat into the words) */
-  .site-breadcrumbs { --breadcrumb-fade: none; }
-  .covalon-toast { bottom: calc(var(--appbar-height) + 1rem); }
-  .covalon-search-overlay { z-index: 170; }
+  .site-breadcrumbs {
+    --breadcrumb-fade: none;
+  }
+  .covalon-toast {
+    bottom: calc(var(--appbar-height) + 1rem);
+  }
+  .covalon-search-overlay {
+    z-index: 170;
+  }
   /* settings: a pop-over over the whole page, like search (site.js moves it to <body> here) */
-  html.settings-open { overflow: hidden; }
+  html.settings-open {
+    overflow: hidden;
+  }
   .site-settings-backdrop {
     position: fixed;
     inset: 0;
@@ -965,7 +1626,9 @@ html.show-spoilers .covalon-inline-spoiler,
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(2px);
   }
-  .site-settings-backdrop[hidden] { display: none; }
+  .site-settings-backdrop[hidden] {
+    display: none;
+  }
   body > .site-settings {
     position: fixed;
     top: 8vh;
@@ -995,7 +1658,10 @@ html.show-spoilers .covalon-inline-spoiler,
     background: var(--background-primary);
     border-bottom: 1px solid var(--background-modifier-border);
   }
-  .site-settings-title { font-weight: var(--font-semibold); font-size: var(--font-ui-medium); }
+  .site-settings-title {
+    font-weight: var(--font-semibold);
+    font-size: var(--font-ui-medium);
+  }
   .site-settings-close {
     display: inline-flex;
     align-items: center;
@@ -1009,42 +1675,110 @@ html.show-spoilers .covalon-inline-spoiler,
     color: var(--text-muted);
     cursor: pointer;
   }
-  .site-settings-close:hover { color: var(--text-normal); background: var(--background-modifier-hover) !important; }
-  .site-settings-close svg { width: 22px; height: 22px; }
-  @media (prefers-reduced-motion: reduce) { .site-sidebar.site-left, .site-sidebar.site-right, body::after { transition: none; } }
+  .site-settings-close:hover {
+    color: var(--text-normal);
+    background: var(--background-modifier-hover) !important;
+  }
+  .site-settings-close svg {
+    width: 22px;
+    height: 22px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .site-sidebar.site-left,
+    .site-sidebar.site-right,
+    body::after {
+      transition: none;
+    }
+  }
 }
 
 /* touch screens and small screens: everything tappable is at least 24px tall (most are 32px or more) */
 @media (max-width: 760px), (pointer: coarse) {
-  .tree-item { min-height: 32px; padding-block: 4px; box-sizing: border-box; }
-  .tree-folder-link { display: flex; align-items: center; align-self: stretch; flex: 1; min-height: 24px; }
-  .site-toc a { display: flex; align-items: center; min-height: 32px; padding-block: 4px; box-sizing: border-box; }
-  .site-settings-toggle { min-width: 36px; min-height: 36px; }
-  .site-setting-option { min-height: 36px; }
-  .site-breadcrumbs a { display: inline-flex; align-items: center; min-height: 28px; }
-  .chapter-nav :is(.prev, .next) > a { min-height: 44px; }
-  .covalon-copy { min-height: 32px; }
-  .covalon-search :is(input, select, button) { min-height: 36px; }
-  .site-search { min-height: 40px; box-sizing: border-box; }
+  .tree-item {
+    min-height: 32px;
+    padding-block: 4px;
+    box-sizing: border-box;
+  }
+  .tree-folder-link {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    flex: 1;
+    min-height: 24px;
+  }
+  .site-toc a {
+    display: flex;
+    align-items: center;
+    min-height: 32px;
+    padding-block: 4px;
+    box-sizing: border-box;
+  }
+  .site-settings-toggle {
+    min-width: 36px;
+    min-height: 36px;
+  }
+  .site-setting-option {
+    min-height: 36px;
+  }
+  .site-breadcrumbs a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+  }
+  .chapter-nav :is(.prev, .next) > a {
+    min-height: 44px;
+  }
+  .covalon-copy {
+    min-height: 32px;
+  }
+  .covalon-search :is(input, select, button) {
+    min-height: 36px;
+  }
+  .site-search {
+    min-height: 40px;
+    box-sizing: border-box;
+  }
 }
 
 /* narrow notes: previous / next are just their arrows (a name cut down to a letter or two helps no one);
    the name stays for screen readers and in the link's tooltip */
 @container covalon-note (max-width: 500px) {
-  .markdown-rendered .chapter-nav { grid-template-columns: 44px minmax(0, 1fr) 44px; margin-inline: 0; }
-  .chapter-nav :is(.prev, .next) > a { justify-content: center; padding: 0; min-width: 44px; min-height: 44px; font-size: 1.25em; }
-  .chapter-nav .chapter-nav-name {
-    position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+  .markdown-rendered .chapter-nav {
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    margin-inline: 0;
   }
-  .chapter-nav .current { max-width: none; }
+  .chapter-nav :is(.prev, .next) > a {
+    justify-content: center;
+    padding: 0;
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 1.25em;
+  }
+  .chapter-nav .chapter-nav-name {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .chapter-nav .current {
+    max-width: none;
+  }
 }
 
 /* medium screens (761–1100px): the outline has no column here, so a half-round tab on the right edge
    slides it out over the page (and back in). The tab rides along on the panel's edge while it's open. */
-.site-outline-tab { display: none; }
+.site-outline-tab {
+  display: none;
+}
 @media (min-width: 761px) and (max-width: 1100px) {
-  :root { --outline-drawer: min(320px, 80vw); }
-  html.panel-open { overflow: hidden; }
+  :root {
+    --outline-drawer: min(320px, 80vw);
+  }
+  html.panel-open {
+    overflow: hidden;
+  }
   .site-sidebar.site-right {
     position: fixed;
     inset: 0 0 0 auto;
@@ -1059,10 +1793,18 @@ html.show-spoilers .covalon-inline-spoiler,
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
     transform: translateX(100%);
     visibility: hidden;
-    transition: transform 200ms ease-out, visibility 0s linear 200ms;
+    transition:
+      transform 200ms ease-out,
+      visibility 0s linear 200ms;
   }
-  :is(.theme-light, .theme-dark) .site-sidebar.site-right.workspace-split { background-color: var(--background-secondary) !important; }
-  body.panel-outline .site-sidebar.site-right { transform: none; visibility: visible; transition: transform 200ms ease-out; }
+  :is(.theme-light, .theme-dark) .site-sidebar.site-right.workspace-split {
+    background-color: var(--background-secondary) !important;
+  }
+  body.panel-outline .site-sidebar.site-right {
+    transform: none;
+    visibility: visible;
+    transition: transform 200ms ease-out;
+  }
   .site-outline-tab {
     position: fixed;
     top: 50%;
@@ -1082,13 +1824,29 @@ html.show-spoilers .covalon-inline-spoiler,
     border-radius: 30px 0 0 30px;
     box-shadow: -3px 0 10px rgba(0, 0, 0, 0.12);
     cursor: pointer;
-    transition: right 200ms ease-out, color 100ms;
+    transition:
+      right 200ms ease-out,
+      color 100ms;
   }
-  .site-outline-tab .svg-icon { --icon-size: 16px; width: 16px; height: 16px; }
-  .site-outline-tab:hover, .site-outline-tab[aria-expanded="true"] { color: var(--covalon-accent, var(--color-accent)); }
-  .site-outline-tab:focus-visible { outline: 2px solid var(--covalon-accent, var(--color-accent)); outline-offset: 2px; }
-  body.panel-outline .site-outline-tab { right: var(--outline-drawer); box-shadow: none; }
-  body::after {   /* the page dims behind the open outline; a tap there closes it */
+  .site-outline-tab .svg-icon {
+    --icon-size: 16px;
+    width: 16px;
+    height: 16px;
+  }
+  .site-outline-tab:hover,
+  .site-outline-tab[aria-expanded="true"] {
+    color: var(--covalon-accent, var(--color-accent));
+  }
+  .site-outline-tab:focus-visible {
+    outline: 2px solid var(--covalon-accent, var(--color-accent));
+    outline-offset: 2px;
+  }
+  body.panel-outline .site-outline-tab {
+    right: var(--outline-drawer);
+    box-shadow: none;
+  }
+  body::after {
+    /* the page dims behind the open outline; a tap there closes it */
     content: "";
     position: fixed;
     inset: 0;
@@ -1098,8 +1856,17 @@ html.show-spoilers .covalon-inline-spoiler,
     pointer-events: none;
     transition: opacity 200ms;
   }
-  html.panel-open body::after { opacity: 1; pointer-events: auto; }
-  @media (prefers-reduced-motion: reduce) { .site-sidebar.site-right, .site-outline-tab, body::after { transition: none; } }
+  html.panel-open body::after {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .site-sidebar.site-right,
+    .site-outline-tab,
+    body::after {
+      transition: none;
+    }
+  }
 }
 
 /* heading links: a small link icon after a heading copies its address (site.js) */
@@ -1122,14 +1889,31 @@ html.show-spoilers .covalon-inline-spoiler,
   box-shadow: none;
   cursor: pointer;
   opacity: 0;
-  transition: opacity 120ms, color 120ms;
+  transition:
+    opacity 120ms,
+    color 120ms;
 }
-.covalon-heading-link svg { width: 1em; height: 1em; }
+.covalon-heading-link svg {
+  width: 1em;
+  height: 1em;
+}
 :is(h1, h2, h3, h4, h5, h6):hover > .covalon-heading-link,
-.covalon-heading-link:focus-visible { opacity: 1; }
-.covalon-heading-link:hover { color: var(--covalon-accent, var(--color-accent)); background: var(--background-modifier-hover); }
-.covalon-heading-link:focus-visible { outline: 2px solid var(--covalon-accent, var(--color-accent)); outline-offset: 1px; }
-@media (hover: none) { .covalon-heading-link { opacity: 0.45; } }   /* touch screens: always there, faintly */
+.covalon-heading-link:focus-visible {
+  opacity: 1;
+}
+.covalon-heading-link:hover {
+  color: var(--covalon-accent, var(--color-accent));
+  background: var(--background-modifier-hover);
+}
+.covalon-heading-link:focus-visible {
+  outline: 2px solid var(--covalon-accent, var(--color-accent));
+  outline-offset: 1px;
+}
+@media (hover: none) {
+  .covalon-heading-link {
+    opacity: 0.45;
+  }
+} /* touch screens: always there, faintly */
 
 /* links to other websites: a small ↗ after them (like Obsidian's external-link icon), so they stand apart
    from links within the guide. Not on Discord channel chips (already their own look) or picture links. */
@@ -1145,4 +1929,6 @@ html.show-spoilers .covalon-inline-spoiler,
   -webkit-mask: var(--covalon-external-icon) center / contain no-repeat;
   mask: var(--covalon-external-icon) center / contain no-repeat;
 }
-:root { --covalon-external-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17 17 7'/%3E%3Cpath d='M8 7h9v9'/%3E%3C/svg%3E"); }
+:root {
+  --covalon-external-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17 17 7'/%3E%3Cpath d='M8 7h9v9'/%3E%3C/svg%3E");
+}
