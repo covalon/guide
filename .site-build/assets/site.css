@@ -50,7 +50,7 @@
 }
 .site-toc-list:hover,
 .site-toc-list:focus-within {
-  scrollbar-color: var(--covalon-scrollbar, var(--color-accent)) transparent;
+  scrollbar-color: var(--covalon-scrollbar, var(--color-accent-yellow)) transparent;
 }
 .site-toc-list.has-more-above {
   --toc-fade-top: transparent;
@@ -67,7 +67,7 @@
 }
 .site-sidebar:hover,
 .site-sidebar:focus-within {
-  scrollbar-color: var(--covalon-scrollbar, var(--color-accent)) transparent;
+  scrollbar-color: var(--covalon-scrollbar, var(--color-accent-yellow)) transparent;
 }
 
 .site-left {
@@ -911,7 +911,7 @@ html {
    so the page's own scrollbar gets the colours too. */
 html,
 body {
-  scrollbar-color: var(--color-accent) color-mix(in hsl, var(--background-secondary), transparent 15%);
+  scrollbar-color: var(--color-accent-yellow) color-mix(in hsl, var(--background-secondary), transparent 15%);
 }
 /* dark mode: a darker, duller shade of the tan accent, so the scrollbar doesn't glare.
    Raise the 35% for a lighter scrollbar, lower it for a darker one. */

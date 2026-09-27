@@ -57,17 +57,15 @@ body {
   display: contents;
 }
 .covalon-prop-key {
-  color: color-mix(in lab, var(--text-muted), var(--covalon-accent) 40%);
+  color: color-mix(in lab, var(--text-muted), var(--color-accent-yellow) 40%);
   font-weight: var(--font-semibold);
   text-align: right;
 }
 
 /* Adventure types: the guides embed just the "For Players" / "For GMs" section of each note,
    so hide that section heading inside those embeds (it still shows on the note itself) */
-.internal-embed[src$='#For Players']
-  :is(h1, h2, h3, h4, h5, h6)[data-heading='For Players'],
-.internal-embed[src$='#For GMs']
-  :is(h1, h2, h3, h4, h5, h6)[data-heading='For GMs'] {
+.internal-embed[src$="#For Players"] :is(h1, h2, h3, h4, h5, h6)[data-heading="For Players"],
+.internal-embed[src$="#For GMs"] :is(h1, h2, h3, h4, h5, h6)[data-heading="For GMs"] {
   display: none;
 }
 
@@ -161,7 +159,7 @@ body {
   display: flex;
   gap: 1ch;
   &::after {
-    content: '';
+    content: "";
     flex: 1;
     border-bottom: 0.5px solid currentColor;
     align-self: center;
@@ -187,7 +185,7 @@ body {
   background-color: inherit;
   contain: layout paint;
   display: flex;
-  
+
   .callout-title-inner {
     --shadow-depth: 15%;
     font-size: 1.1em;
@@ -223,7 +221,7 @@ body {
 }
 .callout > .callout-title::before {
   --mask-gradient: linear-gradient(to right, #000 10%, transparent 150%);
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
@@ -236,13 +234,13 @@ body {
 /* Callouts without a title: add |notitle after the type, e.g. > [!note|notitle]
    (CSS can't tell a default "Note" title from a written one, so it needs the marker).
    Hides the whole title bar (text, icon and band) and moves the text up into its place. */
-.callout[data-callout-metadata~='notitle'] > .callout-title {
+.callout[data-callout-metadata~="notitle"] > .callout-title {
   display: none;
 }
-.callout[data-callout-metadata~='notitle'] > .callout-content {
+.callout[data-callout-metadata~="notitle"] > .callout-content {
   padding-top: var(--size-4-2);
 }
-.callout[data-callout-metadata~='notitle'] > .callout-content > :first-child {
+.callout[data-callout-metadata~="notitle"] > .callout-content > :first-child {
   margin-top: 0.2em;
 }
 
@@ -253,7 +251,7 @@ body {
     margin-top: 0.2em;
   }
 
-  &:is([data-callout-metadata~='right'], [data-callout-metadata~='left']) {
+  &:is([data-callout-metadata~="right"], [data-callout-metadata~="left"]) {
     width: min(40%, 20rem);
     margin-block: 0.25em 0.3em;
 
@@ -272,12 +270,12 @@ body {
   }
 }
 
-.markdown-rendered .callout[data-callout-metadata~='right'] {
+.markdown-rendered .callout[data-callout-metadata~="right"] {
   float: right;
   clear: right;
   margin-left: 1.5em;
 }
-.markdown-rendered .callout[data-callout-metadata~='left'] {
+.markdown-rendered .callout[data-callout-metadata~="left"] {
   float: left;
   clear: left;
   margin-right: 1.5em;
@@ -287,19 +285,17 @@ body {
    width the note actually has (a narrow pane in Obsidian, the text column on the site) rather than the
    window's width. Reading view and the site use .markdown-preview-sizer, the editor .cm-sizer. */
 .markdown-preview-sizer,
-.markdown-source-view.mod-cm6 .cm-sizer { container: covalon-note / inline-size; }
+.markdown-source-view.mod-cm6 .cm-sizer {
+  container: covalon-note / inline-size;
+}
 
 .covalon-entry::after {
-  content: '';
+  content: "";
   display: table;
   clear: both;
 }
 @container covalon-note (max-width: 500px) {
-  .markdown-rendered
-    .callout:is(
-      [data-callout-metadata~='right'],
-      [data-callout-metadata~='left']
-    ) {
+  .markdown-rendered .callout:is([data-callout-metadata~="right"], [data-callout-metadata~="left"]) {
     float: none;
     width: auto;
     margin-inline: 0;
@@ -331,7 +327,7 @@ body.obsidian-app:not(html > body) {
 .markdown-rendered :is(p, li, td, th) a {
   display: inline-block;
   max-width: 100%;
-  text-indent: 0;   /* an inline block takes on its paragraph's text-indent, e.g. a statblock's hanging -1em */
+  text-indent: 0; /* an inline block takes on its paragraph's text-indent, e.g. a statblock's hanging -1em */
 }
 
 /* Links to Discord channels (#create-a-ticket …): a soft, squared-off chip in the accent colour,
@@ -364,10 +360,7 @@ body.obsidian-app:not(html > body) {
     --callout-max-chroma: 0.4;
   }
   .theme-light .callout {
-    --callout-ink: oklch(
-      from var(--callout-color) min(l, var(--callout-max-lightness))
-        min(c, var(--callout-max-chroma)) h
-    );
+    --callout-ink: oklch(from var(--callout-color) min(l, var(--callout-max-lightness)) min(c, var(--callout-max-chroma)) h);
     background-color: color-mix(in srgb, var(--callout-ink) 10%, transparent);
 
     :is(.callout-title, [data-heading]) {
@@ -482,8 +475,12 @@ table th {
   overflow: visible;
   margin-block: 1.5em;
 }
-.callout[data-callout="statblock"] > .callout-title { display: none; }
-.callout[data-callout="statblock"] > .callout-content { padding: 0 !important; }
+.callout[data-callout="statblock"] > .callout-title {
+  display: none;
+}
+.callout[data-callout="statblock"] > .callout-content {
+  padding: 0 !important;
+}
 .callout[data-callout="statblock"] > .callout-content > :is(h1, h2, h3, h4, h5, h6):first-child {
   display: flex;
   justify-content: space-between;
@@ -518,15 +515,32 @@ table th {
   line-height: 1.3;
   text-transform: uppercase;
 }
-.callout[data-callout="statblock"] :is(mark, .text-highlight) { background: var(--statblock-uncommon); }
-.callout[data-callout="statblock"] :is(mark, .text-highlight):has(> strong) { background: var(--statblock-rare); }
-.callout[data-callout="statblock"] :is(mark, .text-highlight):has(> em) { background: var(--statblock-unique); }
-.callout[data-callout="statblock"] :is(mark, .text-highlight) :is(strong, em) { font-weight: inherit; font-style: normal; }
+.callout[data-callout="statblock"] :is(mark, .text-highlight) {
+  background: var(--statblock-uncommon);
+}
+.callout[data-callout="statblock"] :is(mark, .text-highlight):has(> strong) {
+  background: var(--statblock-rare);
+}
+.callout[data-callout="statblock"] :is(mark, .text-highlight):has(> em) {
+  background: var(--statblock-unique);
+}
+.callout[data-callout="statblock"] :is(mark, .text-highlight) :is(strong, em) {
+  font-weight: inherit;
+  font-style: normal;
+}
 /* text: tight lines, later paragraphs indented, rules between sections */
-.callout[data-callout="statblock"] .callout-content p { margin: 0.2em 0 !important; }
-.callout[data-callout="statblock"] .callout-content p + p { text-indent: 1em; }
-.callout[data-callout="statblock"] .callout-content p:has(> strong:first-child) { text-indent: 0; }
-.callout[data-callout="statblock"] .callout-content strong { color: inherit; }
+.callout[data-callout="statblock"] .callout-content p {
+  margin: 0.2em 0 !important;
+}
+.callout[data-callout="statblock"] .callout-content p + p {
+  text-indent: 1em;
+}
+.callout[data-callout="statblock"] .callout-content p:has(> strong:first-child) {
+  text-indent: 0;
+}
+.callout[data-callout="statblock"] .callout-content strong {
+  color: inherit;
+}
 .callout[data-callout="statblock"] .callout-content hr {
   margin: 0.35em 0;
   border: none;
@@ -540,7 +554,9 @@ table th {
   border: 1px solid var(--callout-ink);
 }
 
-.callout:is([data-callout="statblock"], [data-callout="columns"]) { border: none; }
+.callout:is([data-callout="statblock"], [data-callout="columns"]) {
+  border: none;
+}
 
 /* Note title bar: a slight drop shadow so it stands out from the note */
 .workspace-leaf-content > .view-header {
@@ -559,7 +575,7 @@ table th {
   background: transparent;
 }
 .image-captions-caption {
-  margin-top: 0;   /* the plugin overlaps the caption by 5px, which would double the tint there */
+  margin-top: 0; /* the plugin overlaps the caption by 5px, which would double the tint there */
 }
 
 /* Clear floats: a line with just > [!clear] makes whatever follows start below any floated callout.
@@ -649,7 +665,7 @@ table tbody tr:hover > td {
   --statblock-box-pad: 0.75em;
 }
 .callout[data-callout="statblock"] > .callout-content > :is(h1, h2, h3, h4, h5, h6):first-child {
-  margin-bottom: 0 !important;   /* the title's underline is the top of the box */
+  margin-bottom: 0 !important; /* the title's underline is the top of the box */
 }
 .callout[data-callout="statblock"] > .callout-content > :not(:first-child) {
   margin-block: 0 !important;
@@ -676,7 +692,9 @@ table tbody tr:hover > td {
   padding: 0;
   border-inline: none;
   border-top: 1px solid currentColor;
-  box-shadow: inset 1px 0 0 currentColor, inset -1px 0 0 currentColor;
+  box-shadow:
+    inset 1px 0 0 currentColor,
+    inset -1px 0 0 currentColor;
   margin: 0 !important;
 }
 
@@ -705,7 +723,9 @@ table tbody tr:hover > td {
 :is(.el-h1, .el-h2, .el-h3, .el-h4, .el-h5, .el-h6):has(+ .el-div > .callout[data-callout="statblock"]) {
   --statblock-font: "Roboto Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
 }
-.el-div:has(> .callout[data-callout="statblock"]) { margin-top: 0; }
+.el-div:has(> .callout[data-callout="statblock"]) {
+  margin-top: 0;
+}
 /* live preview: the heading line takes the title's look too, but stays an ordinary line (no flex or margins,
    which would throw off the cursor), and the box's widget lets the type show above it */
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-header:has(+ .cm-callout .callout[data-callout="statblock"]) {
@@ -724,9 +744,11 @@ table tbody tr:hover > td {
 .markdown-source-view.mod-cm6 .cm-embed-block.cm-callout:has(> .callout[data-callout="statblock"]):is(:hover, :focus-within),
 .markdown-source-view.mod-cm6 .cm-embed-block.cm-callout > .callout[data-callout="statblock"] {
   overflow: visible !important;
-  contain: none !important;   /* Obsidian's "contain: paint" (and its hover styles) would clip the type, which sits above the box */
+  contain: none !important; /* Obsidian's "contain: paint" (and its hover styles) would clip the type, which sits above the box */
 }
-.markdown-source-view.mod-cm6 .cm-embed-block.cm-callout:has(> .callout[data-callout="statblock"]) { margin-top: 0 !important; }
+.markdown-source-view.mod-cm6 .cm-embed-block.cm-callout:has(> .callout[data-callout="statblock"]) {
+  margin-top: 0 !important;
+}
 .callout[data-callout="statblock"]:not(:has(> .callout-content > :is(h1, h2, h3, h4, h5, h6):first-child)) {
   position: relative;
   margin-top: 0 !important;
@@ -766,20 +788,33 @@ table tbody tr:hover > td {
   --statblock-box-border: 1px solid var(--statblock-line);
   line-height: 1.6;
 }
-.callout[data-callout="statblock"] > .callout-content > :is(p, div) { padding-block: 0.35em !important; }
-.callout[data-callout="statblock"] .callout-content p + p { text-indent: 0 !important; }
+.callout[data-callout="statblock"] > .callout-content > :is(p, div) {
+  padding-block: 0.35em !important;
+}
+.callout[data-callout="statblock"] .callout-content p + p {
+  text-indent: 0 !important;
+}
 /* first and last lines of the box: a little more breathing room from the frame */
 .callout[data-callout="statblock"] > .callout-content > :is(:first-child:not(:is(h1, h2, h3, h4, h5, h6)), :is(h1, h2, h3, h4, h5, h6):first-child + *) {
   padding-top: 0.75em !important;
 }
-.callout[data-callout="statblock"] > .callout-content > :last-child:not(:first-child) { padding-bottom: 0.75em !important; }
+.callout[data-callout="statblock"] > .callout-content > :last-child:not(:first-child) {
+  padding-bottom: 0.75em !important;
+}
 /* the traits line sits a little apart from what follows */
-.callout[data-callout="statblock"] > .callout-content > p:has(> :is(code, mark, .text-highlight):first-child) { padding-bottom: 0.5em !important; }
-.callout[data-callout="statblock"] :is(code, mark, .text-highlight) { margin: 0 0.15em 0.2em 0; font-size: 0.82em; }
+.callout[data-callout="statblock"] > .callout-content > p:has(> :is(code, mark, .text-highlight):first-child) {
+  padding-bottom: 0.5em !important;
+}
+.callout[data-callout="statblock"] :is(code, mark, .text-highlight) {
+  margin: 0 0.15em 0.2em 0;
+  font-size: 0.82em;
+}
 /* rules: softer, with space on both sides */
 .callout[data-callout="statblock"] > .callout-content > hr {
   border-top-color: var(--statblock-line) !important;
-  box-shadow: inset 1px 0 0 var(--statblock-line), inset -1px 0 0 var(--statblock-line) !important;
+  box-shadow:
+    inset 1px 0 0 var(--statblock-line),
+    inset -1px 0 0 var(--statblock-line) !important;
 }
 /* hanging indents: lines marked with an extra ">" ("> > **Success** …", a quote inside the statblock), e.g.
    the degrees of success and heightened entries. No quote bar; the first line hangs out by 1em. */
@@ -798,10 +833,16 @@ table tbody tr:hover > td {
   padding: 0 0 0 1em !important;
   text-indent: -1em !important;
 }
-.callout[data-callout="statblock"] > .callout-content > blockquote > p + p { margin-top: 0.3em !important; }
+.callout[data-callout="statblock"] > .callout-content > blockquote > p + p {
+  margin-top: 0.3em !important;
+}
 
-.callout[data-callout="statblock"] > .callout-content > :has(+ hr) { padding-bottom: 1.2em !important; }
-.callout[data-callout="statblock"] > .callout-content > hr + * { padding-top: 1.2em !important; }
+.callout[data-callout="statblock"] > .callout-content > :has(+ hr) {
+  padding-bottom: 1.2em !important;
+}
+.callout[data-callout="statblock"] > .callout-content > hr + * {
+  padding-top: 1.2em !important;
+}
 
 /* Overview entries in the "aside" layout (the guilds): the note's images float to the right of its
    text and properties */
@@ -820,7 +861,11 @@ table tbody tr:hover > td {
   clear: both;
 }
 @container covalon-note (max-width: 500px) {
-  .covalon-entry-aside .covalon-entry-images { float: none; width: auto; margin: 0 0 1em; }
+  .covalon-entry-aside .covalon-entry-images {
+    float: none;
+    width: auto;
+    margin: 0 0 1em;
+  }
 }
 
 /* imagesBesideProps (the guilds): the properties box (2/3) and the note's pictures (1/3) side by
@@ -832,7 +877,11 @@ table tbody tr:hover > td {
   margin: 0.5em 0 1em;
 }
 .covalon-props-row > .covalon-props,
-.covalon-props-row > :has(> .covalon-props) { flex: 2 1 0; min-width: 0; margin: 0; }
+.covalon-props-row > :has(> .covalon-props) {
+  flex: 2 1 0;
+  min-width: 0;
+  margin: 0;
+}
 .covalon-props-images {
   flex: 1 1 0;
   min-width: 0;
@@ -841,7 +890,7 @@ table tbody tr:hover > td {
 }
 /* every wrapper between the column and the picture passes the height down */
 .covalon-props-images :is(div, p, span, figure):has(img) {
-  display: flex !important;   /* over the picture alignment classes, which make figures blocks */
+  display: flex !important; /* over the picture alignment classes, which make figures blocks */
   flex-direction: column;
   flex: 1 1 0;
   min-height: 0;
@@ -854,14 +903,24 @@ table tbody tr:hover > td {
   object-fit: contain;
   object-position: center;
 }
-.covalon-props-images figcaption { flex: none; }
+.covalon-props-images figcaption {
+  flex: none;
+}
 @container covalon-note (max-width: 500px) {
   /* stacked: the picture sits under the properties box at its own height (up to 16rem), since there's
      no box beside it to take the height from; otherwise the zero-basis flex sizing above squashes it away */
-  .covalon-props-row { flex-direction: column; }
+  .covalon-props-row {
+    flex-direction: column;
+  }
   .covalon-props-images,
-  .covalon-props-images :is(div, p, span, figure):has(img) { flex: none; }
-  .covalon-props-images img { flex: none; height: auto; max-height: 16rem; }
+  .covalon-props-images :is(div, p, span, figure):has(img) {
+    flex: none;
+  }
+  .covalon-props-images img {
+    flex: none;
+    height: auto;
+    max-height: 16rem;
+  }
 }
 
 /* Tagline under an overview entry's heading (the tagline="…" option, e.g. the civilizations) */
@@ -941,9 +1000,9 @@ img[alt="Covalon Logo"] {
 /* Light mode: parchment colours from the original Homebrewery guide (tan page, darker tan panels,
    navy headings). */
 .theme-light {
-  --background-primary: #f1ece0;          /* page */
-  --background-primary-alt: rgba(94, 82, 62, 0.1);   /* see-through dark tan-grey (code, embeds, inputs) */
-  --background-secondary: #eadcbd;        /* sidebars */
+  --background-primary: #f1ece0; /* page */
+  --background-primary-alt: rgba(94, 82, 62, 0.1); /* see-through dark tan-grey (code, embeds, inputs) */
+  --background-secondary: #eadcbd; /* sidebars */
   --background-secondary-alt: #e2d2b0;
   --background-modifier-border: #d7c9a8;
   --background-modifier-form-field: #f8efdb;
@@ -954,9 +1013,9 @@ img[alt="Covalon Logo"] {
   --text-normal: #1f1a12;
   --heading-color: #193894;
   /* faint text (markdown syntax like ## and >, callout markers, placeholders): the link blue instead of light grey */
-  --text-faint: #a0836e;
+  --text-faint: #967761;
   /* accent: a warm brown. Links are a darker shade of it, and light up to the accent on hover. */
-  --accent-h: 30;
+  --accent-h: 210;
   --accent-s: 35%;
   --accent-l: 55%;
   --covalon-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
@@ -972,7 +1031,8 @@ img[alt="Covalon Logo"] {
   --link-unresolved-color: var(--covalon-accent-dark);
 }
 
-.theme-light, .theme-dark {
+.theme-light,
+.theme-dark {
   --h1-color: color-mix(in lab, var(--heading-color), var(--text-normal) 20%);
   --h2-color: color-mix(in lab, var(--heading-color), var(--text-normal) 20%);
   --h3-color: color-mix(in lab, var(--heading-color), var(--text-normal) 10%);
