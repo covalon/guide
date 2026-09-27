@@ -27,10 +27,13 @@ You only do this once per computer.
 **When you're done making your edits:**
 
 1. Open GitHub Desktop. Your changed notes are listed on the left.
-2. At the bottom left, write a short **Summary** of what you changed, like *"Added the Ember Guild"* or *"Fixed typos in Chapter 3"*.
+2. At the bottom left, write a short **Summary** of what you changed, like *"- Added the Ember Guild"* or *"- Fixed typos in Chapter 3"*.
+  You can list as many changes as you'd like with as many line breaks as you'd like. Your Summary will be automatically sent as a patchnote to the pogchamp channel.
+  If you want to push up changes WITHOUT the site updating, make sure to start the summary with `DRAFT`.
+  If you want to push up changes to make the site update WITHOUT sending a patchnote, start the summary with `QUICKFIX`.
 3. Click **Commit to main**, then **Push origin** at the top.
 4. The website rebuilds itself. It takes about 3–5 minutes. You can watch it on GitHub under the repository's **Actions** tab. A green tick means it's live; a red cross means something went wrong. 
-   *(Izzy gets an email when that happens but always good to ping her anyways.)*
+   *(Izzy gets an email when that happens but always good to ping her anyways.)* When it's done, an alert will be sent in the pogchamp channel.
 ## Reading, editing and source views
 Obsidian can show a note in three ways. Switching between them is a local thing - your view doesn't impact the site.
 
