@@ -57,6 +57,7 @@ jobs:
 
   deploy:
     needs: build
+    if: ${{ !startsWith(github.event.head_commit.message, 'DRAFT') }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -67,7 +68,7 @@ jobs:
 
   notify-discord:
     needs: deploy
-    if: needs.deploy.result == 'success'
+    if: ${{ needs.deploy.result == 'success' &&  !startsWith(github.event.head_commit.message, 'QUICKFIX') }}
     runs-on: ubuntu-latest
     steps:
     # Posts directly to the Discord webhook (instead of using an action) so the

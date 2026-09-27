@@ -15,7 +15,7 @@ You'll want to read the whole thing eventually, but at a bare minimum, you shoul
 > - Covalon is the surviving settlement of a post-apocalyptic world. It is full of survivors from all over, working to restore the world ever since the Cataclysm in 2016.
 > - The Gods went quiet during the Cataclysm, but touches of their power remain in their clerics and champions.
 > ##### Covalon: The Server
-> - As a player, you have one character (for now!) but will play at many GMs' tables. To minimize table variance, we try to adhere to Rules as Written (RAW).
+> - As a player, you start with one character but will play at many GMs' tables. To minimize table variance, we try to adhere to Rules as Written (RAW).
 > - New characters start at Level 1, eventually capping out at Level 15.
 > - We use default character creation rules + alternative ability boosts.
 > 	- We DO NOT use any other variant rules such as Automatic Bonus Progression or Free Archetype, nor do we use any Third Party options.
