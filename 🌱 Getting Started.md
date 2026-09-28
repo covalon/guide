@@ -12,7 +12,7 @@ You'll want to read the whole thing eventually, but at a bare minimum, you shoul
 
 > [!tip] The Quick Rundown
 > ##### Covalon: The Setting
-> - Covalon is the surviving settlement of a post-apocalyptic world. It is full of survivors from all over, working to restore the world ever since the Cataclysm in 2016.
+> - Covalon is the surviving settlement of a post-apocalyptic world. It is full of survivors from all over, working to restore the world ever since the Cataclysm in 2019.
 > - The Gods went quiet during the Cataclysm, but touches of their power remain in their clerics and champions.
 > ##### Covalon: The Server
 > - As a player, you start with one character but will play at many GMs' tables. To minimize table variance, we try to adhere to Rules as Written (RAW).
