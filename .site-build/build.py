@@ -1143,6 +1143,30 @@ def to_html(markdown):
         key = heading_slug(ctext)
         seen[key] = seen.get(key, 0) + 1
         box["id"] = key if seen[key] == 1 else f"{key}-{seen[key] - 1}"
+    # a heading immediately before a plain (non-Bases, non-callout) table becomes that table's <caption>
+    # instead of a sibling: a <caption>'s box width always equals its table's own rendered width (the
+    # nowrap in site.css forces the table to widen enough to fit it on one line), so the title can
+    # center along with the table when the table ends up narrower than its (now wide) box, while staying
+    # flush-left like normal body text when the table is wide/full -- a plain sibling heading has no such
+    # correlation and would center unconditionally. id / data-heading move to the <caption> too, and
+    # data-heading-level records the original h-level, so toc_html (see heading_level) and anchor links
+    # still find it exactly like any other heading.
+    for table in soup.find_all("table"):
+        if table.find_parent(class_="covalon-filterable") or table.find_parent(class_="callout"):
+            continue
+        prev = table.previous_sibling
+        while isinstance(prev, NavigableString) and not prev.strip():
+            prev = prev.previous_sibling
+        if isinstance(prev, Tag) and re.match(r"^h[1-6]$", prev.name):
+            cap = soup.new_tag("caption")
+            if prev.has_attr("id"):
+                cap["id"] = prev["id"]
+            if prev.has_attr("data-heading"):
+                cap["data-heading"] = prev["data-heading"]
+            cap["data-heading-level"] = prev.name[1]
+            cap.extend(prev.contents)
+            table.insert(0, cap)
+            prev.decompose()
     for table in soup.find_all("table"):
         table.wrap(soup.new_tag("div", attrs={"class": "table-wrapper"})) if table.parent.name != "div" or "table-wrapper" not in (table.parent.get("class") or []) else None
     wrap_blocks(soup, soup)
@@ -1151,8 +1175,16 @@ def to_html(markdown):
 
 # ================================================================== page frame
 def toc_html(soup, title=None):
+    def heading_level(t):
+        # an ordinary h1-h4, or a table-title <caption> (see to_html's table-wrap loop): both get an id
+        # and count as a heading here, just at the level recorded in data-heading-level for a caption
+        if isinstance(t, Tag) and bool(re.match(r"^h[1-4]$", t.name)) and not t.find_parent(class_="callout"):
+            return int(t.name[1])
+        if isinstance(t, Tag) and t.name == "caption" and t.has_attr("data-heading-level"):
+            return int(t["data-heading-level"])
+        return None
     def is_heading(t):
-        return isinstance(t, Tag) and bool(re.match(r"^h[1-4]$", t.name)) and not t.find_parent(class_="callout")
+        return heading_level(t) is not None
     def is_named_callout(t):   # only ones make_callout/to_html gave an id to end up here
         return isinstance(t, Tag) and t.name == "div" and "callout" in (t.get("class") or []) and t.has_attr("id") and t.get("data-callout-title") == "custom"
     entries = soup.find_all(lambda t: is_heading(t) or is_named_callout(t))
@@ -1161,12 +1193,12 @@ def toc_html(soup, title=None):
     items = []
     if title:   # the page's own title first: back to the top
         items.append(f'<li class="toc-title"><a href="#page-title">{html.escape(title)}</a></li>')
-    levels = [int(e.name[1]) for e in entries if is_heading(e)]
+    levels = [heading_level(e) for e in entries if is_heading(e)]
     hbase = min(levels) if levels else 1
     depth = 0   # a named callout nests one level under whatever heading precedes it (0 if none yet); |sibling overrides this, see below
     for e in entries:
         if is_heading(e):
-            depth = int(e.name[1]) - hbase
+            depth = heading_level(e) - hbase
             items.append(f'<li class="toc-depth-{depth}"><a href="#{e["id"]}">{html.escape(e.get_text(" ", strip=True))}</a></li>')
         else:
             inner = e.find(class_="callout-title-inner")
