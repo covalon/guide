@@ -972,6 +972,7 @@ img[alt="Covalon Logo"] {
 /* table cells: even out the lines when text wraps, rather than leaving a lone word on the last line */
 :is(.markdown-rendered, .markdown-source-view) :is(th, td) {
   text-wrap: pretty;
+  max-width: 45ch;
 }
 
 /* ---------- Dark mode, in line with light mode ---------- */

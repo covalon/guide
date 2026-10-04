@@ -567,23 +567,22 @@ html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoil
   align-items: baseline;
   gap: 0 var(--size-4-2);
   padding-block: 0.5rem;
-  padding-inline: 2rem;
-  margin-inline: -2rem;
-  /* the words start where the chapter navigation's "← Previous" words do (after its arrow): the
-     tables' extra width, plus the arrow (1em) and its gap (0.4em) at the navigation's text size */
-  --covalon-table-width: min(calc(var(--covalon-main-width) - 4rem), calc(100% + 3rem));
-  padding-left: calc(2rem + min(0px, (100% - var(--covalon-table-width)) / 2) + 1.4 * 0.875 * var(--font-text-size));
   margin-bottom: var(--size-4-2);
   font-size: var(--font-ui-small);
   color: var(--text-faint);
+  /* the box itself is never stretched or offset: it's exactly the reading column's own width, so the
+     words sit flush with the paragraph text above/below them (same left edge). Only the background
+     (::before/::after) bleeds wider than the box, independently, to cover the tables -- see below,
+     where --covalon-table-width is set (shared with .covalon-filterable and .table-wrapper, and
+     switched by the Tables setting) */
   --breadcrumb-fade: linear-gradient(to right, transparent, #000 2rem, #000 calc(100% - 2rem), transparent);
 }
 .site-breadcrumbs::before,
 .site-breadcrumbs::after {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
+  left: min(0px, calc((100% - var(--covalon-table-width)) / 2) - 2rem);
+  right: min(0px, calc((100% - var(--covalon-table-width)) / 2) - 2rem);
   pointer-events: none;
   -webkit-mask-image: var(--breadcrumb-fade);
   mask-image: var(--breadcrumb-fade);
@@ -766,14 +765,71 @@ html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoil
   opacity: 1;
 }
 
-/* filterable tables (the Bases tables): filter box and sortable headers. The table sticks out 1.5rem
-   past the text on both sides (less on narrow screens, always keeping 2rem from the edge), and one
+/* every table (not just the Bases ones) can fill the main column (keeping 2rem from the edge, less on
+   narrow screens) instead of stopping near the text column's width -- "Full width" below, the default.
+   The Tables setting (html.table-width-text) switches every table (and the breadcrumbs' background
+   strip) back to the old, reading-width-capped behaviour instead, for anyone who prefers that; one
    taller than 85% of the screen scrolls inside its box with its header row pinned to the top. */
 .site-main {
   container-type: inline-size;
 }
 /* the main column's width, taken where it's measured (on its children) and passed down as a length, so the
    note's own container (covalon-note, in custom.css) doesn't change what the tables measure against */
+@property --covalon-main-width { syntax: "<length>"; inherits: true; initial-value: 100vw; }
+.site-main > * { --covalon-main-width: 100cqw; }
+:is(.covalon-filterable, .site-breadcrumbs, .table-wrapper:not(.callout .table-wrapper)) {
+  --covalon-table-width: calc(var(--covalon-main-width) - 4rem);
+}
+html.table-width-text :is(.covalon-filterable, .site-breadcrumbs, .table-wrapper:not(.callout .table-wrapper)) {
+  --covalon-table-width: min(calc(var(--covalon-main-width) - 4rem), calc(100% + 3rem));
+}
+.covalon-filterable, .table-wrapper:not(.callout .table-wrapper) {
+  margin-inline: min(0px, calc((100% - var(--covalon-table-width)) / 2));
+}
+/* a plain table that doesn't need its whole (now wide) box gets centered instead of sitting flush left
+   with empty space beside it; "safe" falls back to flush-start the moment the table is wide enough to
+   need the horizontal scrollbar, so an overflowing table's near edge stays exactly where it always was
+   (reachable by normal left-to-right scrolling) instead of starting mid-scroll. Bases/filterable tables
+   are always meant to fill their box, so they're left out, same as the width rule above. */
+.table-wrapper:not(.callout .table-wrapper) {
+  justify-content: safe center;
+}
+/* a plain table's title (see build.py: a heading right before such a table becomes its <caption> instead
+   of a sibling) centers along with its table for the same reason -- a <caption>'s box is always exactly
+   as wide as its table, so the title tracks whichever width the table actually ended up at. nowrap keeps
+   a long title from wrapping above a small table, widening the table just enough to fit it (same overflow
+   -> horizontal scroll as an oversized table would get on its own). The table's own top margin is zeroed
+   when it has a caption, since the caption carries that spacing instead (matching the heading it replaced). */
+.table-wrapper:not(.callout .table-wrapper) table:has(> caption) {
+  margin-top: 0;
+}
+.table-wrapper:not(.callout .table-wrapper) table > caption {
+  caption-side: top;
+  text-align: center;
+  white-space: nowrap;
+  font-variant: normal;
+  letter-spacing: -0.015em;
+  margin-top: var(--heading-spacing);
+  margin-bottom: var(--p-spacing);
+}
+/* centering the title only makes sense once the table itself is centered; a table too wide to fit
+   scrolls (see site.js's has-more-left/-right, reused here, not just a new class for this), and its
+   caption's box is exactly as wide as the table -- centered text there could land anywhere across that
+   whole width, including scrolled out of view. Left-aligned, it sits at the table's visible near edge
+   instead, same place the old sibling heading always was. */
+.table-wrapper:not(.callout .table-wrapper):is(.has-more-left, .has-more-right) table > caption {
+  text-align: left;
+}
+.table-wrapper:not(.callout .table-wrapper) table > caption[data-heading-level="1"] { font-size: var(--h1-size); font-weight: var(--h1-weight); line-height: var(--h1-line-height); color: var(--h1-color); }
+.table-wrapper:not(.callout .table-wrapper) table > caption[data-heading-level="2"] { font-size: var(--h2-size); font-weight: var(--h2-weight); line-height: var(--h2-line-height); color: var(--h2-color); }
+.table-wrapper:not(.callout .table-wrapper) table > caption[data-heading-level="3"] { font-size: var(--h3-size); font-weight: var(--h3-weight); line-height: var(--h3-line-height); color: var(--h3-color); }
+.table-wrapper:not(.callout .table-wrapper) table > caption[data-heading-level="4"] { font-size: var(--h4-size); font-weight: var(--h4-weight); line-height: var(--h4-line-height); color: var(--h4-color); }
+.table-wrapper:not(.callout .table-wrapper) table > caption[data-heading-level="5"] { font-size: var(--h5-size); font-weight: var(--h5-weight); line-height: var(--h5-line-height); color: var(--h5-color); }
+.table-wrapper:not(.callout .table-wrapper) table > caption[data-heading-level="6"] { font-size: var(--h6-size); font-weight: var(--h6-weight); line-height: var(--h6-line-height); color: var(--h6-color); }
+.covalon-filterable > .table-wrapper {   /* don't stretch twice: the outer .covalon-filterable (a Bases table) already did, so its own inner table-wrapper just fills that stretched box normally */
+  margin-inline: 0;
+}
+.chapter-nav {   /* stays tied to the reading width always, unlike the tables above: it's prev/next links, not a data table, and not part of the Tables setting -- it shouldn't spread out across a wide screen */
 @property --covalon-main-width {
   syntax: "<length>";
   inherits: true;
