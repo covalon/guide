@@ -1374,6 +1374,7 @@ SETTINGS = ('<div class="site-settings" hidden role="dialog" aria-label="Setting
             + setting("textSize", "Text size", [("small", "a-arrow-down", "Small"), ("default", "type", "Default"),
                                                 ("large", "a-arrow-up", "Large"), ("larger", "a-arrow-up", "Larger")])
             + setting("width", "Page width", [("readable", "align-center", "Readable"), ("wide", "move-horizontal", "Wide")])
+            + setting("tableWidth", "Tables", [("full", "move-horizontal", "Full width"), ("text", "align-center", "Text width")])
             + FONTS_SETTING
             + setting("spoilers", "Spoilers", [("hide", "eye-off", "Hidden"), ("show", "eye", "Shown")])
             + '<p class="site-setting-note">GM sections on the adventure type pages are hidden until you click them, unless spoilers are shown.</p>'
@@ -1511,7 +1512,7 @@ def page(title, body_html, toc, current=None, extra_head="", search_page=False, 
 {links}{scripts}{favicon(root)}{extra_head}
 </head>
 <body class="theme-light">
-<script>(function(){{var t=null;try{{t=localStorage.getItem("theme")}}catch(e){{}}if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.body.className=document.documentElement.className="theme-"+t;try{{if(localStorage.getItem("spoilers")==="show")document.documentElement.classList.add("show-spoilers");if(localStorage.getItem("width")==="wide")document.documentElement.classList.add("wide-mode");var ts=localStorage.getItem("textSize");if(ts)document.documentElement.classList.add("text-"+ts);if(localStorage.getItem("fonts")==="serif"){{var fl=document.createElement("link");fl.rel="stylesheet";fl.id="serif-fonts";fl.href=document.documentElement.dataset.serifFonts;document.head.appendChild(fl)}}}}catch(e){{}}}})()</script>
+<script>(function(){{var t=null;try{{t=localStorage.getItem("theme")}}catch(e){{}}if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.body.className=document.documentElement.className="theme-"+t;try{{if(localStorage.getItem("spoilers")==="show")document.documentElement.classList.add("show-spoilers");if(localStorage.getItem("width")==="wide")document.documentElement.classList.add("wide-mode");if(localStorage.getItem("tableWidth")==="text")document.documentElement.classList.add("table-width-text");var ts=localStorage.getItem("textSize");if(ts)document.documentElement.classList.add("text-"+ts);if(localStorage.getItem("fonts")==="serif"){{var fl=document.createElement("link");fl.rel="stylesheet";fl.id="serif-fonts";fl.href=document.documentElement.dataset.serifFonts;document.head.appendChild(fl)}}}}catch(e){{}}}})()</script>
 <div class="site">
   <aside class="site-sidebar site-left workspace-split mod-left-split">
     <div class="site-sidebar-top">

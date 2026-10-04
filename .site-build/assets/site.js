@@ -18,6 +18,7 @@
   var settingValue = function (name) {
     if (name === "theme") return get("theme") || "auto";
     if (name === "width") return get("width") || "readable";
+    if (name === "tableWidth") return get("tableWidth") || "full";
     if (name === "textSize") return get("textSize") || "default";
     if (name === "fonts") return get("fonts") === "serif" ? "serif" : "sans";
     return get("spoilers") || "hide";
@@ -75,6 +76,10 @@
       else if (name === "width") {
         put("width", b.dataset.value === "wide" ? "wide" : null);
         document.documentElement.classList.toggle("wide-mode", b.dataset.value === "wide");
+      }
+      else if (name === "tableWidth") {
+        put("tableWidth", b.dataset.value === "text" ? "text" : null);
+        document.documentElement.classList.toggle("table-width-text", b.dataset.value === "text");
       }
       else if (name === "spoilers") {
         put("spoilers", b.dataset.value === "show" ? "show" : null);

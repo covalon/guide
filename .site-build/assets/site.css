@@ -363,22 +363,21 @@ html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoil
   align-items: baseline;
   gap: 0 var(--size-4-2);
   padding-block: 0.5rem;
-  padding-inline: 2rem;
-  margin-inline: -2rem;
-  /* the words start where the chapter navigation's "← Previous" words do (after its arrow): the
-     tables' extra width, plus the arrow (1em) and its gap (0.4em) at the navigation's text size */
-  --covalon-table-width: min(calc(var(--covalon-main-width) - 4rem), calc(100% + 3rem));
-  padding-left: calc(2rem + min(0px, (100% - var(--covalon-table-width)) / 2) + 1.4 * 0.875 * var(--font-text-size));
   margin-bottom: var(--size-4-2);
   font-size: var(--font-ui-small);
   color: var(--text-faint);
+  /* the box itself is never stretched or offset: it's exactly the reading column's own width, so the
+     words sit flush with the paragraph text above/below them (same left edge). Only the background
+     (::before/::after) bleeds wider than the box, independently, to cover the tables -- see below,
+     where --covalon-table-width is set (shared with .covalon-filterable and .table-wrapper, and
+     switched by the Tables setting) */
   --breadcrumb-fade: linear-gradient(to right, transparent, #000 2rem, #000 calc(100% - 2rem), transparent);
 }
 .site-breadcrumbs::before, .site-breadcrumbs::after {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
+  left: min(0px, calc((100% - var(--covalon-table-width)) / 2) - 2rem);
+  right: min(0px, calc((100% - var(--covalon-table-width)) / 2) - 2rem);
   pointer-events: none;
   -webkit-mask-image: var(--breadcrumb-fade);
   mask-image: var(--breadcrumb-fade);
@@ -474,15 +473,29 @@ html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoil
 .markdown-rendered .table-wrapper.has-more-left::before { opacity: 1; }
 .markdown-rendered .table-wrapper.has-more-right::after { opacity: 1; }
 
-/* filterable tables (the Bases tables): filter box and sortable headers. The table sticks out 1.5rem
-   past the text on both sides (less on narrow screens, always keeping 2rem from the edge), and one
+/* every table (not just the Bases ones) can fill the main column (keeping 2rem from the edge, less on
+   narrow screens) instead of stopping near the text column's width -- "Full width" below, the default.
+   The Tables setting (html.table-width-text) switches every table (and the breadcrumbs' background
+   strip) back to the old, reading-width-capped behaviour instead, for anyone who prefers that; one
    taller than 85% of the screen scrolls inside its box with its header row pinned to the top. */
 .site-main { container-type: inline-size; }
 /* the main column's width, taken where it's measured (on its children) and passed down as a length, so the
    note's own container (covalon-note, in custom.css) doesn't change what the tables measure against */
 @property --covalon-main-width { syntax: "<length>"; inherits: true; initial-value: 100vw; }
 .site-main > * { --covalon-main-width: 100cqw; }
-.covalon-filterable, .chapter-nav {   /* the chapter navigation gets the same extra width */
+:is(.covalon-filterable, .site-breadcrumbs, .table-wrapper:not(.callout .table-wrapper)) {
+  --covalon-table-width: calc(var(--covalon-main-width) - 4rem);
+}
+html.table-width-text :is(.covalon-filterable, .site-breadcrumbs, .table-wrapper:not(.callout .table-wrapper)) {
+  --covalon-table-width: min(calc(var(--covalon-main-width) - 4rem), calc(100% + 3rem));
+}
+.covalon-filterable, .table-wrapper:not(.callout .table-wrapper) {
+  margin-inline: min(0px, calc((100% - var(--covalon-table-width)) / 2));
+}
+.covalon-filterable > .table-wrapper {   /* don't stretch twice: the outer .covalon-filterable (a Bases table) already did, so its own inner table-wrapper just fills that stretched box normally */
+  margin-inline: 0;
+}
+.chapter-nav {   /* stays tied to the reading width always, unlike the tables above: it's prev/next links, not a data table, and not part of the Tables setting -- it shouldn't spread out across a wide screen */
   --covalon-table-width: min(calc(var(--covalon-main-width) - 4rem), calc(100% + 3rem));
   margin-inline: min(0px, calc((100% - var(--covalon-table-width)) / 2));
 }
