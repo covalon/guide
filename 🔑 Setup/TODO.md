@@ -1,0 +1,6 @@
+- [x] Set light mode as default
+- [x] Set old fonts to be default
+- [x] Make sure KBD shows CTRL to non-mac
+- [ ] Add templates for all the common item entries (with templater)
+- [x] Make tables wider on large screens
+- [ ] Add Vyrm Expedition

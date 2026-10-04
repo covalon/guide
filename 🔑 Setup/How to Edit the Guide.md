@@ -102,7 +102,7 @@ Properties starting with `_` never show on the website:
 
 - `_published`: unticked (or blank, `-`) makes it a draft; ticked or removed publishes it (see above).
 - `_url`: a custom address for the page, like `briarmurk`.
-- `_preview`: a picture for the page's Discord link preview, like `"[[CovalonCity.webp]]"`.
+- `_preview`: a picture for the page's Discord link preview, like `"[[CovalonCity.webp]]"` - if one isn't provided, it defaults to the first image on the page or the table, if it's a table or overview page.
 - `_preview_description`: a longer, hand-written description for the page's Discord link preview, used instead of the first paragraph (which normally gets cut short). Use it on a page whose first paragraph doesn't say enough on its own, like Home or a whole guide.
 - `_sidebar_group`: groups a top-level folder or page in the left sidebar. Give the folder's pinned page (or the page itself, for a top-level page with no folder) the same word as the others in its section — right now `Compendiums` or `Other` — and a divider line is drawn wherever the word changes going down the list.
 - A page's or folder's own name can start with an emoji too (like 🔎 How to Search) and it'll show in the sidebar the same small way `📍` does — just leave a space after it.
@@ -115,7 +115,7 @@ There's a buncha fiddly bits that help manage this guide and turn it into a full
 - The `.site-build` and `.obsidian` folders (you won't normally see them).
 ## If something goes wrong
 - **GitHub Desktop says there's a conflict:** someone else changed the same note. If you don't know how to fix merge conflicts, let Izzy know.
-- **You made a mistake:** in GitHub Desktop, right-click a changed file → *Discard changes* to go back to the last saved version (BEFORE you push). 
+- **You made a mistake:** in GitHub Desktop, right-click a changed file → *Discard changes* to go back to the last saved version (BEFORE you push).  You can even discard all changes if you want to reset to the last live state.
   *If you do push, don't fret. Anything already pushed can always be undone from the history, it's just a bit of a pain in the ass.*
 - **The website didn't update:** check the **Actions** tab on GitHub. If the latest run has a red cross, let Izzy know.
 

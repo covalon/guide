@@ -1402,7 +1402,7 @@ SETTINGS = ('<div class="site-settings" hidden role="dialog" aria-label="Setting
             # title and close button: only shown on phones, where the pop-over covers the page
             + '<div class="site-settings-head"><span class="site-settings-title">Settings</span>'
             + f'<button class="site-settings-close" type="button" title="Close settings" aria-label="Close settings">{lucide("x")}</button></div>'
-            + setting("theme", "Appearance", [("light", "sun", "Light"), ("dark", "moon", "Dark"), ("auto", "monitor", "Auto")])
+            + setting("theme", "Appearance", [("light", "sun", "Light"), ("dark", "moon", "Dark"), ("system", "monitor", "System")])
             + setting("textSize", "Text size", [("small", "a-arrow-down", "Small"), ("default", "type", "Default"),
                                                 ("large", "a-arrow-up", "Large"), ("larger", "a-arrow-up", "Larger")])
             + setting("width", "Page width", [("readable", "align-center", "Readable"), ("wide", "move-horizontal", "Wide")])
@@ -1544,7 +1544,7 @@ def page(title, body_html, toc, current=None, extra_head="", search_page=False, 
 {links}{scripts}{favicon(root)}{extra_head}
 </head>
 <body class="theme-light">
-<script>(function(){{var t=null;try{{t=localStorage.getItem("theme")}}catch(e){{}}if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.body.className=document.documentElement.className="theme-"+t;try{{if(localStorage.getItem("spoilers")==="show")document.documentElement.classList.add("show-spoilers");if(localStorage.getItem("width")==="wide")document.documentElement.classList.add("wide-mode");if(localStorage.getItem("tableWidth")==="text")document.documentElement.classList.add("table-width-text");var ts=localStorage.getItem("textSize");if(ts)document.documentElement.classList.add("text-"+ts);if(localStorage.getItem("fonts")==="serif"){{var fl=document.createElement("link");fl.rel="stylesheet";fl.id="serif-fonts";fl.href=document.documentElement.dataset.serifFonts;document.head.appendChild(fl)}}}}catch(e){{}}}})()</script>
+<script>(function(){{var t=null;try{{t=localStorage.getItem("theme")}}catch(e){{}}if(!t)t="light";document.body.className=document.documentElement.className="theme-"+t;try{{if(localStorage.getItem("spoilers")==="show")document.documentElement.classList.add("show-spoilers");if(localStorage.getItem("width")==="wide")document.documentElement.classList.add("wide-mode");if(localStorage.getItem("tableWidth")==="text")document.documentElement.classList.add("table-width-text");var ts=localStorage.getItem("textSize");if(ts)document.documentElement.classList.add("text-"+ts);if(localStorage.getItem("fonts")!=="sans-serif"){{var fl=document.createElement("link");fl.rel="stylesheet";fl.id="serif-fonts";fl.href=document.documentElement.dataset.serifFonts;document.head.appendChild(fl)}}}}catch(e){{}}}})()</script>
 <div class="site">
   <aside class="site-sidebar site-left workspace-split mod-left-split">
     <div class="site-sidebar-top">
@@ -1554,7 +1554,7 @@ def page(title, body_html, toc, current=None, extra_head="", search_page=False, 
       {SETTINGS}
     </div>
     <form class="site-search" action="{root}search/" role="search">
-      {lucide("search")}<input type="search" name="q" placeholder="Search…" aria-label="Search the guides"><kbd>⌘K</kbd>
+      {lucide("search")}<input type="search" name="q" placeholder="Search…" aria-label="Search the guides"><kbd class="modifier"><span class="mac">⌘</span><span class="other">CTRL</span></kbd><kbd class="key">K</kbd>
     </form>
     </div>
     {tree_html(current)}

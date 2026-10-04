@@ -775,15 +775,22 @@ html:not(.show-spoilers) .covalon-spoiler:not(.is-revealed):hover .covalon-spoil
 }
 /* the main column's width, taken where it's measured (on its children) and passed down as a length, so the
    note's own container (covalon-note, in custom.css) doesn't change what the tables measure against */
-@property --covalon-main-width { syntax: "<length>"; inherits: true; initial-value: 100vw; }
-.site-main > * { --covalon-main-width: 100cqw; }
+@property --covalon-main-width {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 100vw;
+}
+.site-main > * {
+  --covalon-main-width: 100cqw;
+}
 :is(.covalon-filterable, .site-breadcrumbs, .table-wrapper:not(.callout .table-wrapper)) {
   --covalon-table-width: calc(var(--covalon-main-width) - 4rem);
 }
 html.table-width-text :is(.covalon-filterable, .site-breadcrumbs, .table-wrapper:not(.callout .table-wrapper)) {
   --covalon-table-width: min(calc(var(--covalon-main-width) - 4rem), calc(100% + 3rem));
 }
-.covalon-filterable, .table-wrapper:not(.callout .table-wrapper) {
+.covalon-filterable,
+.table-wrapper:not(.callout .table-wrapper) {
   margin-inline: min(0px, calc((100% - var(--covalon-table-width)) / 2));
 }
 /* a plain table that doesn't need its whole (now wide) box gets centered instead of sitting flush left
@@ -820,24 +827,47 @@ html.table-width-text :is(.covalon-filterable, .site-breadcrumbs, .table-wrapper
 .table-wrapper:not(.callout .table-wrapper):is(.has-more-left, .has-more-right) table > caption {
   text-align: left;
 }
-.table-wrapper:not(.callout .table-wrapper) table > caption[data-heading-level="1"] { font-size: var(--h1-size); font-weight: var(--h1-weight); line-height: var(--h1-line-height); color: var(--h1-color); }
-.table-wrapper:not(.callout .table-wrapper) table > caption[data-heading-level="2"] { font-size: var(--h2-size); font-weight: var(--h2-weight); line-height: var(--h2-line-height); color: var(--h2-color); }
-.table-wrapper:not(.callout .table-wrapper) table > caption[data-heading-level="3"] { font-size: var(--h3-size); font-weight: var(--h3-weight); line-height: var(--h3-line-height); color: var(--h3-color); }
-.table-wrapper:not(.callout .table-wrapper) table > caption[data-heading-level="4"] { font-size: var(--h4-size); font-weight: var(--h4-weight); line-height: var(--h4-line-height); color: var(--h4-color); }
-.table-wrapper:not(.callout .table-wrapper) table > caption[data-heading-level="5"] { font-size: var(--h5-size); font-weight: var(--h5-weight); line-height: var(--h5-line-height); color: var(--h5-color); }
-.table-wrapper:not(.callout .table-wrapper) table > caption[data-heading-level="6"] { font-size: var(--h6-size); font-weight: var(--h6-weight); line-height: var(--h6-line-height); color: var(--h6-color); }
-.covalon-filterable > .table-wrapper {   /* don't stretch twice: the outer .covalon-filterable (a Bases table) already did, so its own inner table-wrapper just fills that stretched box normally */
+.table-wrapper:not(.callout .table-wrapper) table > caption[data-heading-level="1"] {
+  font-size: var(--h1-size);
+  font-weight: var(--h1-weight);
+  line-height: var(--h1-line-height);
+  color: var(--h1-color);
+}
+.table-wrapper:not(.callout .table-wrapper) table > caption[data-heading-level="2"] {
+  font-size: var(--h2-size);
+  font-weight: var(--h2-weight);
+  line-height: var(--h2-line-height);
+  color: var(--h2-color);
+}
+.table-wrapper:not(.callout .table-wrapper) table > caption[data-heading-level="3"] {
+  font-size: var(--h3-size);
+  font-weight: var(--h3-weight);
+  line-height: var(--h3-line-height);
+  color: var(--h3-color);
+}
+.table-wrapper:not(.callout .table-wrapper) table > caption[data-heading-level="4"] {
+  font-size: var(--h4-size);
+  font-weight: var(--h4-weight);
+  line-height: var(--h4-line-height);
+  color: var(--h4-color);
+}
+.table-wrapper:not(.callout .table-wrapper) table > caption[data-heading-level="5"] {
+  font-size: var(--h5-size);
+  font-weight: var(--h5-weight);
+  line-height: var(--h5-line-height);
+  color: var(--h5-color);
+}
+.table-wrapper:not(.callout .table-wrapper) table > caption[data-heading-level="6"] {
+  font-size: var(--h6-size);
+  font-weight: var(--h6-weight);
+  line-height: var(--h6-line-height);
+  color: var(--h6-color);
+}
+.covalon-filterable > .table-wrapper {
+  /* don't stretch twice: the outer .covalon-filterable (a Bases table) already did, so its own inner table-wrapper just fills that stretched box normally */
   margin-inline: 0;
 }
-.chapter-nav {   /* stays tied to the reading width always, unlike the tables above: it's prev/next links, not a data table, and not part of the Tables setting -- it shouldn't spread out across a wide screen */
-@property --covalon-main-width {
-  syntax: "<length>";
-  inherits: true;
-  initial-value: 100vw;
-}
-.site-main > * {
-  --covalon-main-width: 100cqw;
-}
+
 .covalon-filterable,
 .chapter-nav {
   /* the chapter navigation gets the same extra width */
@@ -988,7 +1018,18 @@ body.theme-dark {
   border: 1px solid var(--background-modifier-border);
   border-radius: var(--radius-s);
   padding: 0 4px;
+
+  &.modifier {
+    html.is-apple & :not(.mac) {
+      display: none;
+    }
+
+    html:not(.is-apple) & .mac {
+      display: none;
+    }
+  }
 }
+
 html.search-open {
   overflow: hidden;
 }

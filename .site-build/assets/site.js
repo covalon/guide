@@ -1,22 +1,45 @@
+// ctrl / cmd key show
+(function () {
+  const isApple = navigator.platform.startsWith("Mac") || navigator.platform.startsWith("i");
+  if (isApple) document.documentElement.classList.add("is-apple");
+})();
+
 // The site's small bits of behaviour: the settings pop-over (light/dark, spoilers), foldable callouts, the menu on small screens,
 // highlighting the current heading in the table of contents, and the filterable tables.
 (function () {
-  // settings pop-over (the gear icon): appearance (light / dark / auto) and spoilers
-  var get = function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } };
-  var put = function (k, v) { try { if (v == null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) {} };
+  // settings pop-over (the gear icon): appearance (light / dark / system) and spoilers
+  var get = function (k) {
+    try {
+      return localStorage.getItem(k);
+    } catch (e) {
+      return null;
+    }
+  };
+  var put = function (k, v) {
+    try {
+      if (v == null) localStorage.removeItem(k);
+      else localStorage.setItem(k, v);
+    } catch (e) { }
+  };
   var gear = document.querySelector(".site-settings-toggle");
   var panel = document.querySelector(".site-settings");
-  var dark = matchMedia("(prefers-color-scheme: dark)");
+  var prefersDark = matchMedia("(prefers-color-scheme: dark)");
   var applyTheme = function () {
-    var t = get("theme") || (dark.matches ? "dark" : "light");
-    [document.documentElement, document.body].forEach(function (el) {   // on <html> too, for the page's own scrollbar
+    console.log("HELLO?????")
+    var t = get("theme") || "light";
+    if (get("theme") === "system") t = (prefersDark.matches ? "dark" : "light");
+    [document.documentElement, document.body].forEach(function (el) {
+      // on <html> too, for the page's own scrollbar
       el.classList.toggle("theme-dark", t === "dark");
       el.classList.toggle("theme-light", t !== "dark");
     });
   };
-  dark.addEventListener && dark.addEventListener("change", function () { if (!get("theme")) applyTheme(); });
+  prefersDark.addEventListener &&
+    prefersDark.addEventListener("change", function () {
+      if (!get("theme")) applyTheme();
+    });
   var settingValue = function (name) {
-    if (name === "theme") return get("theme") || "auto";
+    if (name === "theme") return get("theme") || "light";
     if (name === "width") return get("width") || "readable";
     if (name === "tableWidth") return get("tableWidth") || "full";
     if (name === "textSize") return get("textSize") || "default";
@@ -43,7 +66,10 @@
   var openSettings = function (open) {
     if (!panel) return;
     if (open && settingsSmall.matches) {
-      if (panel.parentNode !== document.body) { document.body.appendChild(settingsBackdrop); document.body.appendChild(panel); }
+      if (panel.parentNode !== document.body) {
+        document.body.appendChild(settingsBackdrop);
+        document.body.appendChild(panel);
+      }
     } else if (open && panel.parentNode !== settingsHome) settingsHome.appendChild(panel);
     settingsBackdrop.hidden = !(open && settingsSmall.matches);
     document.documentElement.classList.toggle("settings-open", open && settingsSmall.matches);
@@ -52,28 +78,40 @@
     if (open) mark();
   };
   if (gear && panel) {
-    gear.addEventListener("click", function (e) { e.stopPropagation(); openSettings(panel.hidden); });
+    gear.addEventListener("click", function (e) {
+      e.stopPropagation();
+      openSettings(panel.hidden);
+    });
     panel.addEventListener("click", function (e) {
-      if (e.target.closest(".site-settings-close")) { openSettings(false); gear.focus(); return; }
+      if (e.target.closest(".site-settings-close")) {
+        openSettings(false);
+        gear.focus();
+        return;
+      }
       var b = e.target.closest(".site-setting-option");
       if (!b) return;
       var name = b.closest(".site-setting").dataset.setting;
-      if (name === "theme") { put("theme", b.dataset.value === "auto" ? null : b.dataset.value); applyTheme(); }
-      else if (name === "textSize") {
+      if (name === "theme") {
+        put("theme", b.dataset.value);
+        applyTheme();
+      } else if (name === "textSize") {
         put("textSize", b.dataset.value === "default" ? null : b.dataset.value);
-        ["small", "large", "larger"].forEach(function (t) { document.documentElement.classList.toggle("text-" + t, b.dataset.value === t); });
-      }
-      else if (name === "fonts") {   // serif: add the original guide's fonts (see SERIF_SNIPPET in build.py)
+        ["small", "large", "larger"].forEach(function (t) {
+          document.documentElement.classList.toggle("text-" + t, b.dataset.value === t);
+        });
+      } else if (name === "fonts") {
+        // serif: add the original guide's fonts (see SERIF_SNIPPET in build.py)
         var serif = b.dataset.value === "serif";
         put("fonts", serif ? "serif" : null);
         var fl = document.getElementById("serif-fonts");
         if (serif && !fl) {
           fl = document.createElement("link");
-          fl.rel = "stylesheet"; fl.id = "serif-fonts"; fl.href = document.documentElement.dataset.serifFonts;
+          fl.rel = "stylesheet";
+          fl.id = "serif-fonts";
+          fl.href = document.documentElement.dataset.serifFonts;
           document.head.appendChild(fl);
         } else if (!serif && fl) fl.remove();
-      }
-      else if (name === "width") {
+      } else if (name === "width") {
         put("width", b.dataset.value === "wide" ? "wide" : null);
         document.documentElement.classList.toggle("wide-mode", b.dataset.value === "wide");
       }
@@ -90,7 +128,13 @@
     document.addEventListener("click", function (e) {
       if (!panel.hidden && !e.target.closest(".site-settings, .site-settings-toggle")) openSettings(false);
     });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !panel.hidden) { e.stopImmediatePropagation(); openSettings(false); gear.focus(); } });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !panel.hidden) {
+        e.stopImmediatePropagation();
+        openSettings(false);
+        gear.focus();
+      }
+    });
   }
 
   // spoilers (the GM sections of the adventure type pages): click to show
@@ -111,7 +155,7 @@
     bar.addEventListener("scroll", edges, { passive: true });
     window.addEventListener("resize", edges);
     edges();
-    setTimeout(edges, 0);   // after the current page / heading has been scrolled into view
+    setTimeout(edges, 0); // after the current page / heading has been scrolled into view
   });
 
   // tables: a shadow along whichever edge still has more of a horizontally-scrolled table out of
@@ -129,7 +173,9 @@
   // breadcrumbs: a shadow under them once the page scrolls beneath them
   var crumbs = document.querySelector(".site-breadcrumbs");
   if (crumbs) {
-    var stuck = function () { crumbs.classList.toggle("is-stuck", window.scrollY > 0 && crumbs.getBoundingClientRect().top <= 0.5); };
+    var stuck = function () {
+      crumbs.classList.toggle("is-stuck", window.scrollY > 0 && crumbs.getBoundingClientRect().top <= 0.5);
+    };
     window.addEventListener("scroll", stuck, { passive: true });
     stuck();
   }
@@ -146,26 +192,45 @@
     document.body.classList.toggle("panel-menu", name === "menu");
     document.body.classList.toggle("panel-outline", name === "outline");
     document.documentElement.classList.toggle("panel-open", !!name);
-    appButtons.forEach(function (b) { b.setAttribute("aria-expanded", b.dataset.panel === name ? "true" : "false"); });
-    if (name === "outline") {   // show the heading being read
+    appButtons.forEach(function (b) {
+      b.setAttribute("aria-expanded", b.dataset.panel === name ? "true" : "false");
+    });
+    if (name === "outline") {
+      // show the heading being read
       var here = document.querySelector(".site-toc a.is-active");
       if (here) scrollWithin(here, here.closest(".site-toc-list"), true);
     }
   };
   appButtons.forEach(function (b) {
-    b.addEventListener("click", function (e) { e.stopPropagation(); setPanel(activePanel === b.dataset.panel ? null : b.dataset.panel); });
+    b.addEventListener("click", function (e) {
+      e.stopPropagation();
+      setPanel(activePanel === b.dataset.panel ? null : b.dataset.panel);
+    });
   });
-  document.addEventListener("click", function (e) {   // a tap outside the panel closes it
+  document.addEventListener("click", function (e) {
+    // a tap outside the panel closes it
     if (activePanel && !e.target.closest(".site-left, .site-right, .site-appbar, .site-outline-tab, .site-settings, .site-settings-backdrop, .covalon-search-overlay")) setPanel(null);
   });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && activePanel) setPanel(null); });
-  document.querySelectorAll(".site-toc a").forEach(function (a) {   // picking a heading closes the outline
-    a.addEventListener("click", function () { if (activePanel === "outline") setPanel(null); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && activePanel) setPanel(null);
+  });
+  document.querySelectorAll(".site-toc a").forEach(function (a) {
+    // picking a heading closes the outline
+    a.addEventListener("click", function () {
+      if (activePanel === "outline") setPanel(null);
+    });
   });
   var searchField = document.querySelector(".site-search input");
-  if (searchField) searchField.addEventListener("focus", function () { if (activePanel) setPanel(null); });
+  if (searchField)
+    searchField.addEventListener("focus", function () {
+      if (activePanel) setPanel(null);
+    });
   // a panel that no longer applies at the new size (e.g. turning a tablet) closes
-  ["(min-width: 761px)", "(min-width: 1101px)"].forEach(function (q) { matchMedia(q).addEventListener("change", function () { setPanel(null); }); });
+  ["(min-width: 761px)", "(min-width: 1101px)"].forEach(function (q) {
+    matchMedia(q).addEventListener("change", function () {
+      setPanel(null);
+    });
+  });
 
   // foldable callouts: > [!note]- Title
   document.querySelectorAll(".callout.is-collapsible > .callout-title").forEach(function (title) {
@@ -184,7 +249,11 @@
     a.addEventListener("click", function (e) {
       if (e.metaKey || e.ctrlKey || e.shiftKey) return;
       e.preventDefault();
-      if (small.matches) { var d = a.closest("details"); d.open = !d.open; return; }
+      if (small.matches) {
+        var d = a.closest("details");
+        d.open = !d.open;
+        return;
+      }
       a.closest("details").open = true;
       location.href = a.href;
     });
@@ -196,7 +265,7 @@
   // opened a little way down)
   var scrollWithin = function (el, box, center, margin) {
     if (!el || !box) return;
-    margin = margin || 0;   // keep this far from the edges (e.g. clear of the outline's faded ends)
+    margin = margin || 0; // keep this far from the edges (e.g. clear of the outline's faded ends)
     var top = el.getBoundingClientRect().top - box.getBoundingClientRect().top + box.scrollTop;
     if (center) box.scrollTop = top - box.clientHeight / 2 + el.offsetHeight / 2;
     else if (top - margin < box.scrollTop) box.scrollTop = top - margin;
@@ -211,27 +280,44 @@
   var links = Array.prototype.slice.call(document.querySelectorAll(".site-toc a"));
   if (links.length) {
     var byId = {};
-    links.forEach(function (a) { byId[decodeURIComponent(a.getAttribute("href").slice(1))] = a; });
-    var heads = Object.keys(byId).map(function (id) { return document.getElementById(id); }).filter(Boolean);
+    links.forEach(function (a) {
+      byId[decodeURIComponent(a.getAttribute("href").slice(1))] = a;
+    });
+    var heads = Object.keys(byId)
+      .map(function (id) {
+        return document.getElementById(id);
+      })
+      .filter(Boolean);
     var tocList = links[0].closest(".site-toc-list");
-    var current = null, queued = false;
+    var current = null,
+      queued = false;
     var READ_LINE = 120;
     var update = function () {
       queued = false;
       var view = window.innerHeight;
-      var left = document.documentElement.scrollHeight - view - window.scrollY;   // scrolling still to go
+      var left = document.documentElement.scrollHeight - view - window.scrollY; // scrolling still to go
       var line = left < view ? READ_LINE + (view - READ_LINE) * (1 - Math.max(0, left) / view) : READ_LINE;
       var top = null;
-      heads.forEach(function (h) { if (h.getBoundingClientRect().top < line) top = h; });
+      heads.forEach(function (h) {
+        if (h.getBoundingClientRect().top < line) top = h;
+      });
       var link = top ? byId[top.id] : null;
       if (link !== current) {
         if (current) current.classList.remove("is-active");
-        if (link) { link.classList.add("is-active"); scrollWithin(link, tocList, false, 40); }
+        if (link) {
+          link.classList.add("is-active");
+          scrollWithin(link, tocList, false, 40);
+        }
         current = link;
       }
-      if (tocList && left <= 2) tocList.scrollTop = tocList.scrollHeight;   // at the very end: the outline's end too
+      if (tocList && left <= 2) tocList.scrollTop = tocList.scrollHeight; // at the very end: the outline's end too
     };
-    var queue = function () { if (!queued) { queued = true; requestAnimationFrame(update); } };
+    var queue = function () {
+      if (!queued) {
+        queued = true;
+        requestAnimationFrame(update);
+      }
+    };
     window.addEventListener("scroll", queue, { passive: true });
     window.addEventListener("resize", queue);
     update();
@@ -243,13 +329,15 @@
     if (!table) return;
     var heads = Array.prototype.slice.call(table.querySelectorAll("thead th"));
     var rows = Array.prototype.slice.call(table.querySelectorAll("tbody tr"));
-    var cellText = function (tr, i) { return ((tr.children[i] || {}).textContent || "").trim(); };
+    var cellText = function (tr, i) {
+      return ((tr.children[i] || {}).textContent || "").trim();
+    };
 
     var bar = document.createElement("div");
     bar.className = "covalon-filter-bar";
     var text = document.createElement("input");
     text.type = "search";
-    text.placeholder = "Filter " + rows.length + " entries…  (-word to leave out, \"word\" for whole words)";
+    text.placeholder = "Filter " + rows.length + ' entries…  (-word to leave out, "word" for whole words)';
     bar.appendChild(text);
 
     var count = document.createElement("span");
@@ -258,15 +346,31 @@
 
     // the filter box: every word has to be in the row; -word leaves out rows with it; "quotes" match a
     // whole word or phrase only (so "holy" doesn't match unholy); -"holy" leaves out rows with the word holy
-    var escRe = function (t) { return t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); };
+    var escRe = function (t) {
+      return t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    };
     var terms = function (q) {
-      var out = [], m, re = /(-?)(?:"([^"]*)"?|(\S+))/g;
+      var out = [],
+        m,
+        re = /(-?)(?:"([^"]*)"?|(\S+))/g;
       while ((m = re.exec(q))) {
         var t = (m[2] !== undefined ? m[2] : m[3] || "").trim().toLowerCase();
         if (!t) continue;
-        out.push({ not: !!m[1] && t !== "", test: m[2] !== undefined
-          ? (function (w) { return function (s) { return w.test(s); }; })(new RegExp("(^|[^\\p{L}\\p{N}])" + escRe(t) + "($|[^\\p{L}\\p{N}])", "u"))
-          : (function (w) { return function (s) { return s.indexOf(w) >= 0; }; })(t) });
+        out.push({
+          not: !!m[1] && t !== "",
+          test:
+            m[2] !== undefined
+              ? (function (w) {
+                return function (s) {
+                  return w.test(s);
+                };
+              })(new RegExp("(^|[^\\p{L}\\p{N}])" + escRe(t) + "($|[^\\p{L}\\p{N}])", "u"))
+              : (function (w) {
+                return function (s) {
+                  return s.indexOf(w) >= 0;
+                };
+              })(t),
+        });
       }
       return out;
     };
@@ -275,7 +379,9 @@
       var shown = 0;
       rows.forEach(function (tr) {
         var row = tr.textContent.toLowerCase();
-        var ok = want.every(function (t) { return t.test(row) !== t.not; });
+        var ok = want.every(function (t) {
+          return t.test(row) !== t.not;
+        });
         tr.hidden = !ok;
         if (ok) shown++;
       });
@@ -288,11 +394,19 @@
       th.classList.add("covalon-sortable");
       th.addEventListener("click", function () {
         var dir = th.dataset.sort === "asc" ? "desc" : "asc";
-        heads.forEach(function (h) { delete h.dataset.sort; });
+        heads.forEach(function (h) {
+          delete h.dataset.sort;
+        });
         th.dataset.sort = dir;
-        var key = function (tr) { return cellText(tr, i).replace(/^(the )?(kingdom of )?/i, ""); };
-        rows.sort(function (a, b) { return key(a).localeCompare(key(b), undefined, { numeric: true }) * (dir === "asc" ? 1 : -1); });
-        rows.forEach(function (tr) { tbody.appendChild(tr); });
+        var key = function (tr) {
+          return cellText(tr, i).replace(/^(the )?(kingdom of )?/i, "");
+        };
+        rows.sort(function (a, b) {
+          return key(a).localeCompare(key(b), undefined, { numeric: true }) * (dir === "asc" ? 1 : -1);
+        });
+        rows.forEach(function (tr) {
+          tbody.appendChild(tr);
+        });
       });
     });
     wrap.insertBefore(bar, wrap.firstChild);
@@ -303,7 +417,9 @@
       var box = scroller.parentElement;
       box.classList.add("covalon-table-box");
       // a slight shadow under the pinned header row once rows are scrolling beneath it
-      var pinned = function () { box.classList.toggle("is-scrolled", scroller.scrollTop > 0); };
+      var pinned = function () {
+        box.classList.toggle("is-scrolled", scroller.scrollTop > 0);
+      };
       scroller.addEventListener("scroll", pinned, { passive: true });
       pinned();
     }
@@ -318,7 +434,11 @@
     return !img.closest("a") && !/logo/i.test(img.getAttribute("src") || "");
   });
   if (!pics.length) return;
-  var el = function (tag, cls) { var e = document.createElement(tag); e.className = cls; return e; };
+  var el = function (tag, cls) {
+    var e = document.createElement(tag);
+    e.className = cls;
+    return e;
+  };
   var box = el("div", "covalon-lightbox");
   box.hidden = true;
   box.setAttribute("role", "dialog");
@@ -333,17 +453,23 @@
   caption.appendChild(count);
   var button = function (cls, label, glyph) {
     var b = el("button", "covalon-lightbox-button " + cls);
-    b.type = "button"; b.title = label; b.setAttribute("aria-label", label); b.textContent = glyph;
+    b.type = "button";
+    b.title = label;
+    b.setAttribute("aria-label", label);
+    b.textContent = glyph;
     return b;
   };
   var close = button("is-close", "Close (Esc)", "×");
   var prev = button("is-prev", "Previous picture (←)", "‹");
   var next = button("is-next", "Next picture (→)", "›");
   stage.appendChild(big);
-  [stage, caption, close, prev, next].forEach(function (e) { box.appendChild(e); });
+  [stage, caption, close, prev, next].forEach(function (e) {
+    box.appendChild(e);
+  });
   document.body.appendChild(box);
 
-  var at = 0, lastFocus = null;
+  var at = 0,
+    lastFocus = null;
   var show = function (i) {
     at = (i + pics.length) % pics.length;
     var img = pics[at];
@@ -352,8 +478,8 @@
     box.classList.remove("is-zoomed");
     big.src = img.currentSrc || img.src;
     big.alt = img.alt || "";
-    text.textContent = cap ? cap.textContent : (img.alt && !/\.(webp|png|jpe?g|gif|avif)$/i.test(img.alt) ? img.alt : "");
-    count.textContent = pics.length > 1 ? (at + 1) + " / " + pics.length : "";
+    text.textContent = cap ? cap.textContent : img.alt && !/\.(webp|png|jpe?g|gif|avif)$/i.test(img.alt) ? img.alt : "";
+    count.textContent = pics.length > 1 ? at + 1 + " / " + pics.length : "";
     caption.hidden = !text.textContent && !count.textContent;
     prev.hidden = next.hidden = pics.length < 2;
   };
@@ -372,26 +498,48 @@
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   };
   // zoom only helps when the picture is bigger than it's shown
-  var canZoom = function () { return big.naturalWidth > big.clientWidth + 8 || big.naturalHeight > big.clientHeight + 8; };
-  big.addEventListener("load", function () { box.classList.toggle("can-zoom", canZoom()); });
+  var canZoom = function () {
+    return big.naturalWidth > big.clientWidth + 8 || big.naturalHeight > big.clientHeight + 8;
+  };
+  big.addEventListener("load", function () {
+    box.classList.toggle("can-zoom", canZoom());
+  });
 
   pics.forEach(function (img, i) {
     img.classList.add("covalon-zoomable");
     img.tabIndex = 0;
     img.setAttribute("role", "button");
     img.setAttribute("aria-label", "View larger" + (img.alt ? ": " + img.alt : ""));
-    img.addEventListener("click", function (e) { e.preventDefault(); e.stopPropagation(); open(i); });
-    img.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(i); } });
+    img.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      open(i);
+    });
+    img.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        open(i);
+      }
+    });
   });
   close.addEventListener("click", shut);
-  prev.addEventListener("click", function () { show(at - 1); });
-  next.addEventListener("click", function () { show(at + 1); });
+  prev.addEventListener("click", function () {
+    show(at - 1);
+  });
+  next.addEventListener("click", function () {
+    show(at + 1);
+  });
   big.addEventListener("click", function (e) {
     e.stopPropagation();
-    if (box.classList.contains("is-zoomed")) { box.classList.remove("is-zoomed"); return; }
+    if (box.classList.contains("is-zoomed")) {
+      box.classList.remove("is-zoomed");
+      return;
+    }
     if (!box.classList.contains("can-zoom")) return;
     // zoom in on the spot that was clicked
-    var r = big.getBoundingClientRect(), fx = (e.clientX - r.left) / r.width, fy = (e.clientY - r.top) / r.height;
+    var r = big.getBoundingClientRect(),
+      fx = (e.clientX - r.left) / r.width,
+      fy = (e.clientY - r.top) / r.height;
     box.classList.add("is-zoomed");
     stage.scrollLeft = fx * big.naturalWidth - stage.clientWidth / 2;
     stage.scrollTop = fy * big.naturalHeight - stage.clientHeight / 2;
@@ -404,28 +552,48 @@
   });
   window.addEventListener("pointermove", function (e) {
     if (!drag) return;
-    var dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+    var dx = e.clientX - drag.x,
+      dy = e.clientY - drag.y;
     if (Math.abs(dx) + Math.abs(dy) > 4) drag.moved = true;
-    stage.scrollLeft = drag.l - dx; stage.scrollTop = drag.t - dy;
+    stage.scrollLeft = drag.l - dx;
+    stage.scrollTop = drag.t - dy;
   });
-  window.addEventListener("pointerup", function () { if (drag && drag.moved) big.addEventListener("click", swallow, { capture: true, once: true }); drag = null; });
-  var swallow = function (e) { e.stopPropagation(); e.preventDefault(); };
-  stage.addEventListener("click", function (e) { if (e.target === stage && !box.classList.contains("is-zoomed")) shut(); });
-  box.addEventListener("click", function (e) { if (e.target === box) shut(); });
-  document.addEventListener("keydown", function (e) {
-    if (box.hidden) return;
-    if (e.key === "Escape") { e.stopPropagation(); shut(); }
-    else if (e.key === "ArrowLeft" && pics.length > 1) show(at - 1);
-    else if (e.key === "ArrowRight" && pics.length > 1) show(at + 1);
-    else if (e.key === "Tab") {   // keep the keyboard inside the lightbox
-      var stops = [close, prev, next].filter(function (b) { return !b.hidden; });
-      var i = stops.indexOf(document.activeElement);
-      e.preventDefault();
-      stops[(i + (e.shiftKey ? -1 : 1) + stops.length) % stops.length].focus();
-    }
-  }, true);
+  window.addEventListener("pointerup", function () {
+    if (drag && drag.moved) big.addEventListener("click", swallow, { capture: true, once: true });
+    drag = null;
+  });
+  var swallow = function (e) {
+    e.stopPropagation();
+    e.preventDefault();
+  };
+  stage.addEventListener("click", function (e) {
+    if (e.target === stage && !box.classList.contains("is-zoomed")) shut();
+  });
+  box.addEventListener("click", function (e) {
+    if (e.target === box) shut();
+  });
+  document.addEventListener(
+    "keydown",
+    function (e) {
+      if (box.hidden) return;
+      if (e.key === "Escape") {
+        e.stopPropagation();
+        shut();
+      } else if (e.key === "ArrowLeft" && pics.length > 1) show(at - 1);
+      else if (e.key === "ArrowRight" && pics.length > 1) show(at + 1);
+      else if (e.key === "Tab") {
+        // keep the keyboard inside the lightbox
+        var stops = [close, prev, next].filter(function (b) {
+          return !b.hidden;
+        });
+        var i = stops.indexOf(document.activeElement);
+        e.preventDefault();
+        stops[(i + (e.shiftKey ? -1 : 1) + stops.length) % stops.length].focus();
+      }
+    },
+    true,
+  );
 })();
-
 
 // Copy buttons: every code block gets one (e.g. the Covalon Module's manifest URL, written as a code block
 // so Obsidian offers its own copy button too). A short "Copied" notice confirms it.
@@ -433,7 +601,8 @@
   var blocks = document.querySelectorAll(".markdown-rendered pre");
   var ICON_COPY = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>';
   var ICON_DONE = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
-  var toast = null, toastTimer = null;
+  var toast = null,
+    toastTimer = null;
   var notify = function (text, failed) {
     if (!toast) {
       toast = document.createElement("div");
@@ -446,19 +615,28 @@
     toast.lastChild.textContent = text;
     toast.classList.toggle("is-failed", !!failed);
     toast.classList.remove("is-shown");
-    void toast.offsetWidth;   // restart the fade when copying twice in a row
+    void toast.offsetWidth; // restart the fade when copying twice in a row
     toast.classList.add("is-shown");
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(function () { toast.classList.remove("is-shown"); }, 2200);
+    toastTimer = setTimeout(function () {
+      toast.classList.remove("is-shown");
+    }, 2200);
   };
   var copyText = function (text) {
     if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
-    return new Promise(function (ok, fail) {   // older browsers, or the site opened from a file
+    return new Promise(function (ok, fail) {
+      // older browsers, or the site opened from a file
       var area = document.createElement("textarea");
-      area.value = text; area.setAttribute("readonly", ""); area.style.position = "fixed"; area.style.opacity = "0";
-      document.body.appendChild(area); area.select();
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "fixed";
+      area.style.opacity = "0";
+      document.body.appendChild(area);
+      area.select();
       var done = false;
-      try { done = document.execCommand("copy"); } catch (e) {}
+      try {
+        done = document.execCommand("copy");
+      } catch (e) { }
       area.remove();
       done ? ok() : fail();
     });
@@ -478,10 +656,17 @@
       e.preventDefault();
       e.stopPropagation();
       var url = location.href.split("#")[0] + "#" + encodeURIComponent(h.id);
-      copyText(url).then(function () {
-        try { history.replaceState(null, "", "#" + encodeURIComponent(h.id)); } catch (err) {}
-        notify("Link to “" + h.textContent.trim() + "” copied");
-      }, function () { notify("Couldn't copy the link", true); });
+      copyText(url).then(
+        function () {
+          try {
+            history.replaceState(null, "", "#" + encodeURIComponent(h.id));
+          } catch (err) { }
+          notify("Link to “" + h.textContent.trim() + "” copied");
+        },
+        function () {
+          notify("Couldn't copy the link", true);
+        },
+      );
     });
     h.appendChild(b);
   });
@@ -498,17 +683,24 @@
     b.innerHTML = ICON_COPY + "<span>Copy</span>";
     b.title = "Copy to clipboard";
     b.addEventListener("click", function () {
-      copyText(code.textContent.replace(/\n$/, "")).then(function () {
-        b.innerHTML = ICON_DONE + "<span>Copied</span>";
-        b.classList.add("is-done");
-        setTimeout(function () { b.innerHTML = ICON_COPY + "<span>Copy</span>"; b.classList.remove("is-done"); }, 2000);
-        notify("Copied to clipboard");
-      }, function () { notify("Couldn't copy — select the text and copy it instead", true); });
+      copyText(code.textContent.replace(/\n$/, "")).then(
+        function () {
+          b.innerHTML = ICON_DONE + "<span>Copied</span>";
+          b.classList.add("is-done");
+          setTimeout(function () {
+            b.innerHTML = ICON_COPY + "<span>Copy</span>";
+            b.classList.remove("is-done");
+          }, 2000);
+          notify("Copied to clipboard");
+        },
+        function () {
+          notify("Couldn't copy — select the text and copy it instead", true);
+        },
+      );
     });
     wrap.appendChild(b);
   });
 })();
-
 
 // ||inline spoilers||: hidden until clicked (or Enter / Space); Settings → Spoilers → Shown shows them all
 (function () {
@@ -516,13 +708,15 @@
     var reveal = function (e) {
       if (sp.classList.contains("is-revealed") || document.documentElement.classList.contains("show-spoilers")) return;
       e.preventDefault();
-      e.stopPropagation();   // the first click only uncovers it (a link inside works on the next click)
+      e.stopPropagation(); // the first click only uncovers it (a link inside works on the next click)
       sp.classList.add("is-revealed");
       sp.removeAttribute("role");
       sp.removeAttribute("tabindex");
       sp.removeAttribute("aria-label");
     };
     sp.addEventListener("click", reveal, true);
-    sp.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") reveal(e); });
+    sp.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") reveal(e);
+    });
   });
 })();

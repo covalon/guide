@@ -3,5 +3,6 @@
   "callout-manager",
   "image-converter",
   "inline-spoilers",
-  "easy-wikilink"
+  "easy-wikilink",
+  "templater-obsidian"
 ]
