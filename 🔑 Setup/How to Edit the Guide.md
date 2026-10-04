@@ -1,5 +1,5 @@
 
-This vault **is** the Covalon guide. Everything you see at [covalon.github.io/guide](https://covalon.github.io/guide/) is made from the notes in this vault. You edit notes in Obsidian, send your changes to GitHub, and the website updates itself a few minutes later.
+This vault **is** the Covalon guide. Everything you see at [covalon.github.io/guide](https://covalon.github.io/guide/) is made from the notes in this vault. You edit notes in Obsidian, send your changes to GitHub, and the website updates itself a few minutes later...
 
 > [!tip] The short version
 > 1. **Get the latest** (GitHub Desktop → *Fetch origin*, then *Pull origin*).
