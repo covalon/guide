@@ -1,51 +1,65 @@
+<%*
+const civFolder = "Civilizations";
+const logFolder = "Expeditions";
+
+// 1. Pick the civilization (Esc cancels the whole template)
+const civs = tp.app.vault.getMarkdownFiles()
+  .filter(f => f.path.startsWith(civFolder + "/") && !f.basename.includes(`📍`));
+const civ = await tp.system.suggester(
+  civs.map(f => f.basename), civs, true, "Which civilization?"
+)
+
+// 2. Name and file the log
+const name = await tp.system.prompt("Expedition log name?", civ.basename);
+await tp.file.move(`${logFolder}/${name} Expedition`);
+
+// 3. Add a link to this log inside the civilization note
+const link = `[[${name} Expedition]]`;
+await tp.app.fileManager.processFrontMatter(civ, fm => {
+  fm["Expedition Log"] = fm["Expedition Log"] ?? link;
+  fm["Roleplay Channel"] = fm["Roleplay Channel"] ?? [];
+});
+
+await new Promise(r => setTimeout(r, 200));   // let the move/rename settle
+
+// Show in File Explorer
+const file = tp.app.vault.getAbstractFileByPath(tp.file.path(true));
+const explorer = tp.app.workspace.getLeavesOfType("file-explorer")[0]?.view;
+explorer?.revealInFolder(file);
+-%>
 ---
 Tags:
   - covalon/expedition
-Civilization: "[[Alatar]]"
-Soul Seed: "||emotion aspect||"
-Finale: Alekin, the traitorous governor of Alatar Nova
-Journey Date: 2025-09-11
-Finale First Cleared: 2025-10-24
-_published: true
+Civilization: "[[<% civ.basename %>]]"
+Soul Seed:
+Finale:
+Journey Date:
+Finale First Cleared:
+_published: false
 ---
-Expedition to [[Alatar]].
+Expedition to [[<% civ.basename %>]].
 ## Expedition Log
-> [!heroes|right] Heroes of Alatar
+> [!heroes|right] Heroes of <% name %>
 > The following characters were the first to defeat ???
 >
-> - Atticus (Rogue 15)
-> - Bhoomi (Fighter 15)
-> - Brumata (Summoner 15)
-> - Cinna (Sorcerer 15)
-> - Cressida (Rogue 15)
-> - Foram (Fighter 15)
-> - Gardi (Druid 15)
-> - Kona Snowdrop (Investigator 15)
-> - Kosta (Magus 15)
-> - Maxwell (Thaumaturge 15)
-> - Night (Barbarian 15)
-> - Pyre Toof (Cleric 15)
-> - Valerie (Guardian 15)
-> - Yara (Psychic 15)
-> - Zoe Timor (Wizard 15)
+> -
 
-Efforts to reclaim Alatar are underway! Covalon has been invited to attend an end of summer festival by "Alatar Nova." Could we finally have found allies in this Post-Cataclysm world?
+SUMMARY
 
-Alatar Expedition is complete! See the [\#📙expedition-logs](https://discord.com/channels/802423566196539412/927330508650725466) channel for details, summary to come.
-
-![[Alatar_Missive.webp|Letter from Governor Alekin]]
 ## Base Camp
 *Image to come.*
+
 ## Missions
 | Mission | Summary |
 | :-- | :-- |
-| A: A Hunting We Shall Go | Go undercover as the participants of a hunting festival to learn more about Alatar and its citizens.<br>*This mission has a heavy emphasis on skill challenges and reputation systems.* |
-| B: Infiltrate the Castle | Infiltrate the castle while trying to avoid detection by the guards, and get out before anyone sees you! |
-| C: Kill the Queen | Catch the royal advisor and take her out before she can escape! |
+| A: NAME | TEXT |
+| B: NAME | TEXT |
+| C: NAME | TEXT |
+
 ## Finale
-**Boss:** Alekin, the traitorous governor of Alatar Nova
+**Boss:** ???
 
 *Summary to come.*
 
 ## Soul Seed
-Completing the finale unlocks the [||Emotion aspect||](https://2e.aonprd.com/Relics.aspx?Aspect=16) for your Soul Seed (see [[Chapter 3 - Covalon Gameplay#Table 3-2 Aspect Category Unlocks|Table 3-2]] and [[Chapter 3 - Covalon Gameplay#Table 3-3 Soul Seed Upgrade Unlocks|3-3]] in the [[Chapter 3 - Covalon Gameplay#Soul Seeds|Player's Guide]]).
+Completing the finale unlocks the [||??? aspect||](https://2e.aonprd.com/Relics.aspx) for your Soul Seed (see [[Chapter 3 - Covalon Gameplay#Table 3-2 Aspect Category Unlocks|Table 3-2]] and [[Chapter 3 - Covalon Gameplay#Table 3-3 Soul Seed Upgrade Unlocks|3-3]] in the [[Chapter 3 - Covalon Gameplay#Soul Seeds|Player's Guide]]).

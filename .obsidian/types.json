@@ -10,6 +10,7 @@
     "cssclasses": "multitext",
     "tags": "tags",
     "T1–T3 EXP": "text",
-    "T4–T5 EXP": "text"
+    "T4–T5 EXP": "text",
+    "Expedition Log": "text"
   }
 }

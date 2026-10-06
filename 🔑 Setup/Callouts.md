@@ -137,9 +137,9 @@ You can also link straight to one of these callouts, the same way you'd link to 
 
 ## Floating Callouts
 
-Add `|right` or `|left` after the type to float a callout beside the text, like a sidebar. 
+Add `|right` or `|left` after the type to float a callout beside the text, like a sidebar.
 
-Floats wrap around in reading view and on the site; the editing view makes them take up the full space to prevent some typical Obsidian glitching.
+Floats wrap around in reading view and on the site; **the editing view makes them take up the full space to prevent some typical Obsidian glitching.**
 
 > [!heroes|right] Floated Right
 > Used for the Heroes sidebars on events and expeditions.
@@ -205,12 +205,12 @@ A `[!columns]` callout lays out the callouts inside it side by side, like the th
 
 ## Statblocks
 
-A `[!statblock]` callout is styled like a PF2e activity, spell or ritual block. 
+A `[!statblock]` callout is styled like a PF2e activity, spell or ritual block.
 
 Put the title as a heading **just above** the callout (so it can be linked to, and shows in the outline and "On this page"). The type, if there is one, goes after a `|` in the callout's first line and sits on the right of the title: `> [!statblock|Ritual 3]`. Without a type, just write `> [!statblock]`.
 
 Inline code is a trait: \`Trait\`.
-A highlight is the rarity: `==Uncommon==`, `==**Rare**==` or `==*Unique*==`. 
+A highlight is the rarity: `==Uncommon==`, `==**Rare**==` or `==*Unique*==`.
 
 Leave a blank `>` line around each `---`. For a hanging indent (the first line sticks out, the rest are indented), like the degrees of success, start the line with an extra `>`: `> > **Success** …`.
 

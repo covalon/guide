@@ -29,27 +29,29 @@ You only do this once per computer.
 1. Open GitHub Desktop. Your changed notes are listed on the left.
 2. At the bottom left, write a short **Summary** of what you changed, like *"- Added the Ember Guild"* or *"- Fixed typos in Chapter 3"*.
   You can list as many changes as you'd like with as many line breaks as you'd like. Your Summary will be automatically sent as a patchnote to the pogchamp channel.
+
   If you want to push up changes WITHOUT the site updating, make sure to start the summary with `DRAFT`.
   If you want to push up changes to make the site update WITHOUT sending a patchnote, start the summary with `QUICKFIX`.
-3. Click **Commit to main**, then **Push origin** at the top.
-4. The website rebuilds itself. It takes about 3–5 minutes. You can watch it on GitHub under the repository's **Actions** tab. A green tick means it's live; a red cross means something went wrong. 
-   *(Izzy gets an email when that happens but always good to ping her anyways.)* When it's done, an alert will be sent in the pogchamp channel.
+
+1. Click **Commit to main**, then **Push origin** at the top.
+2. The website rebuilds itself. It takes about 3–5 minutes. You can watch it on GitHub under the repository's **Actions** tab. A green tick means it's live; a red cross means something went wrong.
+   *(Izzy gets an email when that happens but always good to ping her anyways.)* When it's done, as long as it didn't start with DRAFT or QUICKFIX, an alert will be sent in the pogchamp channel!
 ## Reading, editing and source views
 Obsidian can show a note in three ways. Switching between them is a local thing - your view doesn't impact the site.
 
-| View                       | What it's for                                                                                                                                                      | How to get there                                                                                                                                                |
-| :------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Reading view**           | Looks like the website: pictures, tables, the generated lists, the properties box. Nothing can be typed by accident.                                               | Click the 📖 book icon at the top right of the note, or press **Ctrl+E** (**Cmd+E** on a Mac).                                                                  |
-| **Live Preview** (editing) | Where you'll edit almost all the time. It looks nearly finished, but the line your cursor is on shows its formatting (`**bold**`, `[[links]]`).                    | The ✏️ pencil icon (same button as the book), or **Ctrl/Cmd+E** again.                                                                                          |
-| **Source mode**            | The note's raw text, with nothing hidden or drawn. Handy when something looks wrong and you want to see exactly what's written, or to edit the properties as text. | While editing, open the **⋯** menu at the top right of the note → **Source mode** (or the command palette, **Ctrl/Cmd+P** → "Toggle Live Preview/Source mode"). |
+| View                       | What it's for                                                                                                               | How to get there                                                                                                                                                |
+| :------------------------- | :-------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Reading view**           | Looks (as close as I could get it!) like the website. Nothing can be typed.                                                 | Click the 📖 book icon at the top right of the note, or press **Ctrl+E** (**Cmd+E** on a Mac).                                                                  |
+| **Live Preview** (editing) | Where you'll edit almost all the time. It will show you a rendered preview, sometimes showing you markdown when relevant.   | The ✏️ pencil icon (same button as the book), or **Ctrl/Cmd+E** again.                                                                                          |
+| **Source mode**            | The note's raw source code - how it would look in e.g. notepad. <br>Handy if the rendered previews are getting in your way. | While editing, open the **⋯** menu at the top right of the note → **Source mode** (or the command palette, **Ctrl/Cmd+P** → "Toggle Live Preview/Source mode"). |
 
-> [!tip] Which one to use
-> - **Just checking how it looks?** Reading view.
-> - **Writing or fixing text?** Live Preview.
-> - **Something's odd, or a link or picture won't behave?** Peek in Source mode, then switch back.
 
 > [!warning] Generated pages
-> The overview pages, the pinned guides and the Vault Map are drawn by small bits of code (grey blocks starting with `datacorejsx` or `base`). In Reading view and Live Preview you see the finished list or table. In Source mode, or if you click into one in Live Preview, you see the code instead. That's normal: click elsewhere or switch back, and **don't edit the code**. To change what a list shows, edit the notes it lists.
+> There are a number of pages like: 📌overview pages that are 'drawn' by small bits of code (grey blocks starting with `datacorejsx` or `base`).
+>
+> In Reading view and Live Preview you see the finished list or table. In Source mode, or if you click into one in Live Preview, you see the code instead. That's normal: click elsewhere or switch back, and **don't edit the code**.
+>
+> To change what a list shows, edit the notes it lists.
 
 ## Editing text
 
@@ -57,11 +59,12 @@ Just type! A few things are special:
 
 | To get…                | Write…                                                                                                                     |
 | :--------------------- | :------------------------------------------------------------------------------------------------------------------------- |
-| A link to another note | `[[Note name]]`, or `[[Note name\|the words shown]]`                                                                       |
+| A link to another note | `[[Note name]]`, or `[[Note name\|link text]]`                                                                             |
 | A link to a heading    | `[[Note name#Heading]]`                                                                                                    |
+| An embedded note       | `![[Note name]]`                                                                                                           |
 | A picture              | Drag it into the note (it automatically saves itself into 🖼️ Assets). Add a caption with `![[picture.webp\|The caption]]` |
 | A box (tip, warning…)  | `> [!note] Title` on the first line, then `> ` before each line inside. See [[Callouts]] for all the kinds                 |
-| A hidden spoiler       |  Double pipe for spoilers                                                                                      |
+| A hidden spoiler       | Double pipe for spoilers `\|\|` on either side                                                                             |
 | A Discord channel      | `[#channel-name](https://discord.com/channels/…)` (copy the link from Discord: right-click the channel → *Copy Link*)      |
 
 **Headings** (`## Heading`, `### Smaller heading`) make the "On this page" outline on the website, and every heading gets its own link. Use them for sections instead of bold text.
@@ -71,7 +74,9 @@ Just type! A few things are special:
 
 ## Adding new things
 
-The easiest way is to **copy an existing note of the same kind** (right-click → *Make a copy*), rename it, and replace the contents. 
+The easiest way is to use a template! You can either create a new note and hit the `<%` symbol on the side to select the template, or use `ALT+N` to do both steps at once!
+
+It'll put out all the possible properties associated with that entry type. You do not have to fill all of them out! Any that are left blank will not show up on the final guide.
 
 The properties at the top (the grey box) are what put a note in the right lists and tables.
 
@@ -90,10 +95,11 @@ The properties at the top (the grey box) are what put a note in the right lists 
 New notes show up by themselves on their overview page, in the tables, in the sidebar, in search and in the previous / next links.
 
 If you need a new type of entry, please let Izzy know.
-### Drafts
-If you don't want a page to show up on the site yet or on any tables/etc., add the **`_published`** property and leave its box **unticked** (a newly added one shows as `-`, which counts as unticked). Tick it when the page is ready. 
 
-If you did this right, the note gets an orange **Draft** badge and stays off the website (and out of the lists). 
+### Drafts
+If you don't want a page to show up on the site yet or on any tables/etc., add the **`_published`** property and leave its box **unticked** (a newly added one shows as `-`, which counts as unticked). Tick it when the page is ready.
+
+If you did this right, the note gets an orange **Draft** badge and stays off the website (and out of the lists).
 
 Tick the box or remove the property and push to publish when it's ready.
 
@@ -103,16 +109,15 @@ Properties starting with `_` never show on the website:
 - `_published`: unticked (or blank, `-`) makes it a draft; ticked or removed publishes it (see above).
 - `_url`: a custom address for the page, like `briarmurk`.
 - `_preview`: a picture for the page's Discord link preview, like `"[[CovalonCity.webp]]"` - if one isn't provided, it defaults to the first image on the page or the table, if it's a table or overview page.
-- `_preview_description`: a longer, hand-written description for the page's Discord link preview, used instead of the first paragraph (which normally gets cut short). Use it on a page whose first paragraph doesn't say enough on its own, like Home or a whole guide.
+- `_preview_description`: a longer, hand-written description for the page's Discord link preview, used instead of the page's first paragraph. Use it when the first paragraph of a page isn't a good enough preview text.
 - `_sidebar_group`: groups a top-level folder or page in the left sidebar. Give the folder's pinned page (or the page itself, for a top-level page with no folder) the same word as the others in its section — right now `Compendiums` or `Other` — and a divider line is drawn wherever the word changes going down the list.
-- A page's or folder's own name can start with an emoji too (like 🔎 How to Search) and it'll show in the sidebar the same small way `📍` does — just leave a space after it.
+- A page's or folder's own name can start with an emoji too (like 🔎 How to Search) and it'll show in the sidebar the same small way `📍` does!
 
 ## Stuff to not touch
-There's a buncha fiddly bits that help manage this guide and turn it into a fully functioning site. 
+There's a buncha fiddly bits that help manage this guide and turn it into a fully functioning site.
 
-- The **grey code blocks** that start with `datacorejsx` or `base`. They draw the lists and tables. Edit the notes they list instead.
-- The **📍 pinned notes'** generated parts. The guides and overviews fill themselves in.
-- The `.site-build` and `.obsidian` folders (you won't normally see them).
+- The **grey code blocks** that start with `datacorejsx` or `base`.
+- The `.site-build` and `.obsidian` folders (you won't normally see them unless you're peeking at the files directly outside of obsidian!)
 ## If something goes wrong
 - **GitHub Desktop says there's a conflict:** someone else changed the same note. If you don't know how to fix merge conflicts, let Izzy know.
 - **You made a mistake:** in GitHub Desktop, right-click a changed file → *Discard changes* to go back to the last saved version (BEFORE you push).  You can even discard all changes if you want to reset to the last live state.
