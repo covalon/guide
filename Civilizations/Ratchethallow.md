@@ -9,7 +9,7 @@ Primary Exports: technological research, worked metals, jewellery
 Geography: brush desert surrounded by mountains
 Fate: unknown
 Covalon Status: district
-Expedition Log: '[[Ratchethallow Expedition#Expedition Log|Ratchethallow Expedition]]'
+Expedition Log: '[[Ratchethallow Expedition]]'
 Roleplay Channel:
 - "[⚙️ Ratchethallow District](https://discord.com/channels/802423566196539412/1441848835855880333)"
 ---

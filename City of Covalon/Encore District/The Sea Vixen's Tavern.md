@@ -1,7 +1,8 @@
 ---
 Tags:
-- covalon/location
-District: '[[📍 Encore District|Encore District]]'
+  - covalon/location
+District: "[[📍 Encore District|Encore District]]"
+Player Owned: true
 ---
 Behind the maple sliding door and Japanese facade, lies a warm and comfy restaurant. This restaurant serves all types of seafood, you name it, she can cook it and you can even challenge the chef!
 

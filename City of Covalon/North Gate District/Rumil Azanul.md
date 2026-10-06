@@ -1,13 +1,14 @@
 ---
 Tags:
-- covalon/location
+  - covalon/location
 Aliases:
-- Rumil Azanul (ᚱᚢᛗᛁᛚ ᚨᛉᚨᚾᚢᛚ)
-District: '[[📍 North Gate District|North Gate District]]'
+  - Rumil Azanul (ᚱᚢᛗᛁᛚ ᚨᛉᚨᚾᚢᛚ)
+District: "[[📍 North Gate District|North Gate District]]"
 Guild Headquarters of:
-- '[[The Stouthearts]]'
+  - "[[The Stouthearts]]"
 Roleplay Channel:
-- "[🏔 Rumil Azanul](https://discord.com/channels/802423566196539412/1443102719958061229)"
+  - "[🏔 Rumil Azanul](https://discord.com/channels/802423566196539412/1443102719958061229)"
+Player Owned: true
 ---
 Nestled in the hills of the [[📍 North Gate District|north gate district]], an awe-inspiring monument stands tall. Behold Rumil Azanul, the Mountain Home both in name and purpose. This great hall symbolizes the alliance of the surviving dwarven clans, united to rebuild and preserve the ancient customs and artisanal crafts of their people.
 

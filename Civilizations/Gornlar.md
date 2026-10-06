@@ -10,7 +10,7 @@ Primary Exports: weapons, armor, ore, tools, lumber, ships
 Geography: mountain ridges and rocky flatlands
 Fate: razed by dragons
 Covalon Status: district
-Expedition Log: '[[Gornlar Expedition#Expedition Log|Gornlar Expedition]]'
+Expedition Log: '[[Gornlar Expedition]]'
 Roleplay Channel:
 - "[🐲 Gornlar District](https://discord.com/channels/802423566196539412/1441830556752023617)"
 ---

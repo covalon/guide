@@ -10,7 +10,7 @@ Primary Exports: oil, fish, papyrus, lumber, darkwood
 Geography: wetland, swampy bayou, briars
 Fate: unknown
 Covalon Status: outpost camp
-Expedition Log: "[[Briarmurk Expedition#Expedition Log|Briarmurk Expedition]]"
+Expedition Log: "[[Briarmurk Expedition]]"
 Roleplay Channel:
   - "[🐛 Briarmurk Camp](https://discord.com/channels/802423566196539412/1447663387831177458)"
 ---

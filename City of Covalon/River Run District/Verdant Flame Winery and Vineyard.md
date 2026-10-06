@@ -1,9 +1,10 @@
 ---
 Tags:
-- covalon/location
-District: '[[📍 River Run District|River Run District]]'
+  - covalon/location
+District: "[[📍 River Run District|River Run District]]"
 Roleplay Channel:
-- "[🍇🔥 Verdant Flame](https://discord.com/channels/802423566196539412/1441918787031924837)"
+  - "[🍇🔥 Verdant Flame](https://discord.com/channels/802423566196539412/1441918787031924837)"
+Player Owned: true
 ---
 Nestled atop the hills of the [[📍 River Run District|River Run District]], the Verdant Flame Vineyard and Winery allows its patrons to relax apart from the usual hustle and bustle of the City. Owned by Lady Cerise Solé (female human kineticist) and her wife Sresk Solé (female lizardfolk rogue), this winery prides itself on providing one of the finest tasting experiences in Covalon.
 

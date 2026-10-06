@@ -1,7 +1,8 @@
 ---
 Tags:
-- covalon/location
-District: '[[📍 Market District|Market District]]'
+  - covalon/location
+District: "[[📍 Market District|Market District]]"
+Player Owned: true
 ---
 A cultural exchange center between lizardfolk and the "soft ones," Iruxi Inc. sells traditional Iruxi talismans to the adventurers of Covalon. Founded and run by Lord Hazi (male lizardfolk champion) and Sheas (female lizardfolk monk), the shop also holds classes on Iruxi language, literature, history, art, and ancient meditation practices, complete with periodic tea breaks.
 

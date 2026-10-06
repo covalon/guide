@@ -1,9 +1,10 @@
 ---
 Tags:
-- covalon/location
-District: '[[📍 Encore District|Encore District]]'
+  - covalon/location
+District: "[[📍 Encore District|Encore District]]"
 Roleplay Channel:
-- "[🍰 Fayne's Sweet Freedoms](https://discord.com/channels/802423566196539412/1444144012712874156)"
+  - "[🍰 Fayne's Sweet Freedoms](https://discord.com/channels/802423566196539412/1444144012712874156)"
+Player Owned: true
 ---
 The soft sounds of music and the sweet smell of pastries linger around Fayne's Sweet Freedoms, owned by Mima Melonbun (female halfling witch). She prides herself on creating a safe and comfortable space for all ages, personally greeting each customer when she isn't at work on the next batch of pastries.
 

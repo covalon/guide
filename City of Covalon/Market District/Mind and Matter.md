@@ -1,9 +1,10 @@
 ---
 Tags:
-- covalon/location
-District: '[[📍 Market District|Market District]]'
+  - covalon/location
+District: "[[📍 Market District|Market District]]"
 Roleplay Channel:
-- "[🪄💎 Mind & Matter](https://discord.com/channels/802423566196539412/1487523020741410827)"
+  - "[🪄💎 Mind & Matter](https://discord.com/channels/802423566196539412/1487523020741410827)"
+Player Owned: true
 ---
 While the doctors of Covalon are doing a great job keeping everyone alive and healthy, not every ailment can be fixed with a bandaid and a bunch of potions. And for just these cases, Mind and Matter offers a different, more personalized approach to helping people.
 

@@ -1,9 +1,10 @@
 ---
 Tags:
-- covalon/location
-District: '[[📍 City District|City District]]'
+  - covalon/location
+District: "[[📍 City District|City District]]"
 Roleplay Channel:
-- "[✨ Dungeoneering Society](https://discord.com/channels/802423566196539412/1441825505002393650)"
+  - "[✨ Dungeoneering Society](https://discord.com/channels/802423566196539412/1441825505002393650)"
+Player Owned:
 ---
 Covalon produces what it can to sustain itself, but as more refugees flock to the city, Covalon's needs grow greater and greater. The outside world is desolate and full of monsters, but thanks to the mages of the Dungeoneering Society, adventurers can travel through portals to places all over the world and secure useful supplies for Covalon.
 

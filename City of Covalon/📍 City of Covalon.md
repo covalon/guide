@@ -31,9 +31,6 @@ Months later, the baron passed away due to natural causes, and the responsibilit
 > > **The City at the End of the World** Covalon is the only known civilization to have survived the Cataclysm, thanks to a living artifact known as the Heart of Terra. Though it started out as little more than a baron's keep on infertile land, it has grown into a hospitable place to live - though it lacks many of the modern conveniences that previous societies developed. Nevertheless, a stubbornness to survive has allowed Covalon to grow to its current state and is what keeps it standing to this day.
 
 ```base
-formulas:
-  SortTitle: file.name.replace(/^(the )?(kingdom of )?/i, '')
-  DistrictSort: District.toString().replace(/[\[\]]/g, '').replace(/^(the )?(kingdom of )?/i, '')
 filters:
   and:
     - or:
@@ -41,6 +38,9 @@ filters:
             - file.hasProperty("_published")
         - note["_published"] == true
     - file.hasTag("covalon/location")
+formulas:
+  SortTitle: file.name.replace(/^(the )?(kingdom of )?/i, '')
+  DistrictSort: District.toString().replace(/[\[\]]/g, '').replace(/^(the )?(kingdom of )?/i, '')
 views:
   - type: table
     name: All Locations
@@ -48,12 +48,14 @@ views:
       - file.name
       - District
       - Roleplay Channel
+      - Player Owned
       - Guild Headquarters of
     sort:
       - property: formula.DistrictSort
         direction: ASC
       - property: formula.SortTitle
         direction: ASC
+
 ```
 ## City District
 ```datacorejsx

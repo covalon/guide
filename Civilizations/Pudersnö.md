@@ -11,7 +11,7 @@ Primary Exports: animal skins, ores
 Geography: glaciers, snowy mountains, tundra, frozen coastlines
 Fate: lightning storm
 Covalon Status: district
-Expedition Log: '[[Pudersnö Expedition#Expedition Log|Pudersnö Expedition]]'
+Expedition Log: '[[Pudersnö Expedition]]'
 Roleplay Channel:
 - "[❄️ Pudersnö District](https://discord.com/channels/802423566196539412/1441841799285969099)"
 ---

@@ -1,7 +1,8 @@
 ---
 Tags:
-- covalon/location
-District: '[[📍 Market District|Market District]]'
+  - covalon/location
+District: "[[📍 Market District|Market District]]"
+Player Owned: true
 ---
 Even the dark days of a post-Cataclysm world need a splash of color to brighten them up every now and then! Citizens of Covalon looking to adorn themselves with the latest fashion need look no further than The Weaver's Web.
 

@@ -1,9 +1,10 @@
 ---
 Tags:
-- covalon/location
-District: '[[📍 River Run District|River Run District]]'
+  - covalon/location
+District: "[[📍 River Run District|River Run District]]"
 Roleplay Channel:
-- "[🍵 Token of the Heart 🥮](https://discord.com/channels/802423566196539412/1451647323477377097)"
+  - "[🍵 Token of the Heart 🥮](https://discord.com/channels/802423566196539412/1451647323477377097)"
+Player Owned: true
 ---
 A Little Token of the Heart or 點點心意 is a cozy teahouse overlooking a beautiful lotus water garden.
 

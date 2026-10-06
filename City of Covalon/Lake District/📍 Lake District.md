@@ -26,6 +26,7 @@ views:
     order:
       - file.name
       - Roleplay Channel
+      - Player Owned
       - Guild Headquarters of
     sort:
       - property: formula.SortTitle

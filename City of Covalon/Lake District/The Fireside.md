@@ -1,11 +1,12 @@
 ---
 Tags:
-- covalon/location
-District: '[[📍 Lake District|Lake District]]'
+  - covalon/location
+District: "[[📍 Lake District|Lake District]]"
 Guild Headquarters of:
-- '[[The Lightkeepers]]'
+  - "[[The Lightkeepers]]"
 Roleplay Channel:
-- "[🔥 The Fireside](https://discord.com/channels/802423566196539412/1444145052057342135)"
+  - "[🔥 The Fireside](https://discord.com/channels/802423566196539412/1444145052057342135)"
+Player Owned: true
 ---
 The Fireside, the headquarters of [[The Lightkeepers|the Lightkeepers]], is a quaint building made of simple stone bricks and wood, at first glance looking more like a home than anything else, with a thick column of white smoke coming out of the impressively sized chimney. It has a small passage with a stony floor somewhat over-taken by the surrounding grass that leads to a set of double doors that give entrance to the main tavern.
 

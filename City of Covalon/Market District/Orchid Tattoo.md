@@ -1,9 +1,10 @@
 ---
 Tags:
-- covalon/location
-District: '[[📍 Market District|Market District]]'
+  - covalon/location
+District: "[[📍 Market District|Market District]]"
 Roleplay Channel:
-- "[🌺 Orchid Tattoo](https://discord.com/channels/802423566196539412/1444104927914754130)"
+  - "[🌺 Orchid Tattoo](https://discord.com/channels/802423566196539412/1444104927914754130)"
+Player Owned: true
 ---
 Welcome to the Orchid Tattoo! Founded by Cressida (female human rogue) and named to honor her beloved deity, this shop serves multiple functions; while primarily a tattoo parlor, one may also find various alchemical and magical items here.
 

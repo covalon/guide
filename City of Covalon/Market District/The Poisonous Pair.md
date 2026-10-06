@@ -1,9 +1,10 @@
 ---
 Tags:
-- covalon/location
-District: '[[📍 Market District|Market District]]'
+  - covalon/location
+District: "[[📍 Market District|Market District]]"
 Roleplay Channel:
-- "[🕷️ The Poisonous Pair](https://discord.com/channels/802423566196539412/1446887963668517015)"
+  - "[🕷️ The Poisonous Pair](https://discord.com/channels/802423566196539412/1446887963668517015)"
+Player Owned: true
 ---
 WELCOME TO THE POISONOUS PAIR:
 

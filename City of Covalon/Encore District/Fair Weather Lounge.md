@@ -1,9 +1,10 @@
 ---
 Tags:
-- covalon/location
-District: '[[📍 Encore District|Encore District]]'
+  - covalon/location
+District: "[[📍 Encore District|Encore District]]"
 Roleplay Channel:
-- "[🍃 The Fair Weather Lounge](https://discord.com/channels/802423566196539412/1441829361933357176)"
+  - "[🍃 The Fair Weather Lounge](https://discord.com/channels/802423566196539412/1441829361933357176)"
+Player Owned: true
 ---
 The post-Cataclysm world can be dreary, and everyone needs a place to relax for an hour (or ten). The Fair Weather Lounge happily welcomes anyone needing somewhere to sit down and unwind, or celebrate life and joy.
 

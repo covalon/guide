@@ -16,7 +16,7 @@ Primary Exports: rum, coffee, fruits, precious stones, drugs, seafood, ships, sp
 Geography: tropical island
 Fate: environmental catastrophe
 Covalon Status: district
-Expedition Log: '[[Ikouga Expedition#Expedition Log|Ikouga Expedition]]'
+Expedition Log: '[[Ikouga Expedition]]'
 Roleplay Channel:
 - "[🌊 Ikouga District](https://discord.com/channels/802423566196539412/1441829791580946532)"
 ---

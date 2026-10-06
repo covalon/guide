@@ -1,7 +1,8 @@
 ---
 Tags:
-- covalon/location
-District: '[[📍 Market District|Market District]]'
+  - covalon/location
+District: "[[📍 Market District|Market District]]"
+Player Owned: true
 ---
 If an adventurer is ever in need of magical wood working seek out Reginald-4’s (nonbinary android wizard) W.O.O.D. S.H.O.P., and when you do make sure to ask for the full name.
 

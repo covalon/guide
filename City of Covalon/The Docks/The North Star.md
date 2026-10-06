@@ -1,11 +1,12 @@
 ---
 Tags:
-- covalon/location
-District: '[[📍 The Docks|The Docks]]'
+  - covalon/location
+District: "[[📍 The Docks|The Docks]]"
 Guild Headquarters of:
-- '[[Trella''s Travellers]]'
+  - "[[Trella's Travellers]]"
 Roleplay Channel:
-- "[🌟 The North Star](https://discord.com/channels/802423566196539412/1442196076336648452)"
+  - "[🌟 The North Star](https://discord.com/channels/802423566196539412/1442196076336648452)"
+Player Owned: true
 ---
 Welcome to the North Star! Covalon's first full scale galleon, which ferried our adventurers on their first expedition to [[Ikouga]].
 

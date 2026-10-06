@@ -1,9 +1,10 @@
 ---
 Tags:
-- covalon/location
+  - covalon/location
 District: "[[📍 Heart's Forest|Heart's Forest]]"
 Roleplay Channel:
-- "[🎃🪴 Wild Draughts](https://discord.com/channels/802423566196539412/1478067067008843937)"
+  - "[🎃🪴 Wild Draughts](https://discord.com/channels/802423566196539412/1478067067008843937)"
+Player Owned: true
 ---
 A modest structure for those who wish to partake in the wilds of the forest alongside the comforts of town. The Heart’s Forest provides the herbalists Rinka and Yksys with ample resources for their elixirs and tonics, and they, in turn, wish to share this bounty with all Covalonians. An open deck provides seating for those who wish to linger among the growth whilst enjoying the small waterfall and a curated variety of teas and herbal infusions served throughout the day.
 

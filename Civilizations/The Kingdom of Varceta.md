@@ -14,7 +14,7 @@ Primary Exports: wine, spices, lumber, darkwood, stone, crops, livestock
 Geography: temperate plains, volcanic mountains
 Fate: decimated by civil war
 Covalon Status: outpost camp
-Expedition Log: "[[Varceta Expedition#Expedition Log|Varceta Expedition]]"
+Expedition Log: "[[Varceta Expedition]]"
 Roleplay Channel:
   - "[🌋 Varceta Camp](https://discord.com/channels/802423566196539412/1441864527418359999)"
 ---

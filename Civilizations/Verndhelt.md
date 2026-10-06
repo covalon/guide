@@ -12,7 +12,7 @@ Primary Exports: iron, copper, tin, precious metals, precious stones, weapons, a
 Geography: snowy coast and mountains
 Fate: swallowed by the earth
 Covalon Status: outpost camp
-Expedition Log: '[[Verndhelt Expedition#Expedition Log|Verndhelt Expedition]]'
+Expedition Log: '[[Verndhelt Expedition]]'
 Roleplay Channel:
 - "[😇😈 Verndhelt Camp](https://discord.com/channels/802423566196539412/1441853024845693200)"
 ---

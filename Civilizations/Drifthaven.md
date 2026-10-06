@@ -9,7 +9,7 @@ Primary Exports: artwork, flayleaf, artisanal goods (such as cheeses and fruit j
 Geography: warm and humid plain with heavy rains in the spring time, adjacent to dense forest
 Fate: overrun by undead
 Covalon Status: outpost camp
-Expedition Log: '[[Drifthaven Expedition#Expedition Log|Drifthaven Expedition]]'
+Expedition Log: '[[Drifthaven Expedition]]'
 Roleplay Channel:
 - "[💀 Drifthaven Camp](https://discord.com/channels/802423566196539412/1441854608178942054)"
 ---

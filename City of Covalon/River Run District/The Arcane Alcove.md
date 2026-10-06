@@ -1,9 +1,10 @@
 ---
 Tags:
-- covalon/location
-District: '[[📍 River Run District|River Run District]]'
+  - covalon/location
+District: "[[📍 River Run District|River Run District]]"
 Roleplay Channel:
-- "[📖🌸 Arcane Alcove](https://discord.com/channels/802423566196539412/1446322442631905372)"
+  - "[📖🌸 Arcane Alcove](https://discord.com/channels/802423566196539412/1446322442631905372)"
+Player Owned: true
 ---
 Arcane; a tradition of magic utilized to view the world through a logical and rational lens. Alcove; a recess in the wall of a room or garden. What better place to learn and to enchant than the Arcane Alcove!
 

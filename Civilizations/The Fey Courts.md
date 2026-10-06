@@ -10,7 +10,7 @@ Primary Exports: none (isolationist)
 Geography: large forest featuring many glades, two major rivers, and a series of hidden waterfalls
 Fate: unknown
 Covalon Status: district
-Expedition Log: "[[Fey Courts Expedition#Expedition Log|Fey Courts Expedition]]"
+Expedition Log: "[[Fey Courts Expedition]]"
 Roleplay Channel:
   - "[🦋 Fey Courts District](https://discord.com/channels/802423566196539412/1441863884469436537)"
 ---

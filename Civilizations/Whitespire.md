@@ -13,7 +13,7 @@ Primary Exports: raw ores, precious metals, weapons
 Geography: taiga forests, mountain peaks stretching beyond the clouds
 Fate: razed by dragons
 Covalon Status: outpost camp
-Expedition Log: '[[Whitespire Expedition#Expedition Log|Whitespire Expedition]]'
+Expedition Log: '[[Whitespire Expedition]]'
 Roleplay Channel:
 - "[🏔️ Whitespire Camp](https://discord.com/channels/802423566196539412/1483180870280941711)"
 ---

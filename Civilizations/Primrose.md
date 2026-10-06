@@ -14,7 +14,7 @@ Primary Exports: glassware, pottery, textiles, jewelry
 Geography: coast of an arid desert, surrounded by rocky cliffs
 Fate: destroyed by a series of natural disasters
 Covalon Status: outpost camp
-Expedition Log: '[[Primrose Expedition#Expedition Log|Primrose Expedition]]'
+Expedition Log: '[[Primrose Expedition]]'
 Roleplay Channel:
 - "[⌛ Primrose Duneveil Camp](https://discord.com/channels/802423566196539412/1441851847391445134)"
 ---

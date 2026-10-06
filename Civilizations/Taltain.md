@@ -12,7 +12,7 @@ Primary Exports: seafood, silk, wine, clothing, silver, sugar, cotton
 Geography: coastal islands with inland tropical jungle
 Fate: monstrous coup
 Covalon Status: outpost camp
-Expedition Log: '[[Taltain Expedition#Expedition Log|Taltain Expedition]]'
+Expedition Log: '[[Taltain Expedition]]'
 Roleplay Channel:
 - "[🐙 Taltain Tavern Camp](https://discord.com/channels/802423566196539412/1441850011087274105)"
 ---

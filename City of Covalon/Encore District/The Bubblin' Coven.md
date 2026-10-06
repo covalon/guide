@@ -1,9 +1,10 @@
 ---
 Tags:
-- covalon/location
-District: '[[📍 Encore District|Encore District]]'
+  - covalon/location
+District: "[[📍 Encore District|Encore District]]"
 Roleplay Channel:
-- "[The Bubblin' Coven](https://discord.com/channels/802423566196539412/1446891589053190245)"
+  - "[The Bubblin' Coven](https://discord.com/channels/802423566196539412/1446891589053190245)"
+Player Owned: true
 ---
 Though at first glance, this deep purple yurt may invoke feelings of unease and fear, those who know the eccentric owner know that the Bubblin' Coven is a welcoming place.
 

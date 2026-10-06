@@ -10,7 +10,7 @@ Primary Exports: herbs, medicine, fruits, nuts
 Geography: giant evergreen forest
 Fate: swallowed by darkness
 Covalon Status: district
-Expedition Log: '[[Middlemist Expedition#Expedition Log|Middlemist Expedition]]'
+Expedition Log: '[[Middlemist Expedition]]'
 Roleplay Channel:
 - "[🌲 Middlemist District](https://discord.com/channels/802423566196539412/1441840287399018747)"
 ---

@@ -11,7 +11,7 @@ Primary Exports: lumber, stone, ore, fish
 Geography: partially forested mountain range next to the ocean
 Fate: madness and undead
 Covalon Status: outpost camp
-Expedition Log: '[[Alatar Expedition#Expedition Log|Alatar Expedition]]'
+Expedition Log: '[[Alatar Expedition]]'
 Roleplay Channel:
 - "[🏰 Alatar Nova Camp](https://discord.com/channels/802423566196539412/1441866301088858134)"
 ---

@@ -1,9 +1,10 @@
 ---
 Tags:
-- covalon/location
-District: '[[📍 Expedition Districts and Outside Covalon|Expedition Districts and Outside Covalon]]'
+  - covalon/location
+District: "[[📍 Expedition Districts and Outside Covalon|Expedition Districts and Outside Covalon]]"
 Roleplay Channel:
-- "[🗡️ Maw Outpost](https://discord.com/channels/802423566196539412/1441823937695580312)"
+  - "[🗡️ Maw Outpost](https://discord.com/channels/802423566196539412/1441823937695580312)"
+Player Owned:
 ---
 South of Covalon lies a horrific scar on the world known as the Maw. Ever since the cataclysm, vile creatures hellbent on Covalon's destruction have poured out of it.
 
