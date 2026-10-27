@@ -44,7 +44,7 @@ Guild Halls may be located in Covalon, or any of the following Expedition distri
 ### Standard Housing
 Private housing suitable as a permanent living residence can be purchased for 200 gp. A single house can accommodate up to four players, including any companions, familiars, or pets they may own.
 
-After the staff team approves your purchase, you may speak with the City Planner to choose your plot of land and have your house added to the official map of Covalon. Plots of land can be chosen from one of the below housing districts, or any of the following Expedition districts: Ikouga, Gornlar, Middlemist, Pudersno, Ratchethallow.
+After the staff team approves your purchase, you may speak with the City Planner to choose your plot of land and have your house added to the official map of Covalon. Plots of land can be chosen from one of the below housing districts, or any of the following Expedition districts: Fey Courts, Gornlar, Ikouga, Middlemist, Pudersno, Ratchethallow.
 
 > [!note] Covalon Residential Districts
 > - **Main Street** Located east of the town square, and south of the marketplace.
@@ -57,13 +57,13 @@ Houses can have up to four bedrooms, a common living area, a kitchen, a bathroom
 
 Housing lots are 75' x 75' (15 x 15 grid). This includes all exterior features, such as gardens. Lots must contain at least one square of green space around the building, and the building must be no taller than two stories (including anything below ground).
 
-After your house has been constructed and you have moved in, be sure to update the housing registry in [\#👥citizen-directories](https://discord.com/channels/802423566196539412/874598427105828874).
+After your house has been constructed and you have moved in, be sure to create a forum post for your new dwelling in the appropriate roleplay channel and district. Please follow the [channel guidelines](https://discord.com/channels/802423566196539412/1441502648410050672/1441921537719668869).
 ### Businesses
-Larger buildings suitable for running a store can be purchased for 500 gp. Purchasing a business comes with a public RP text channel. Businesses may be located in Covalon, or any of the following Expedition districts: Ikouga, Gornlar, Middlemist, Pudersno, Ratchethallow.
+Larger buildings suitable for running a store can be purchased for 500 gp. Purchasing a business comes with a public RP text channel. Businesses may be located in Covalon, or any of the following Expedition districts: Fey Courts, Gornlar, Ikouga, Middlemist, Pudersno, Ratchethallow.
 
 Commercial lots are 100' x 100' (20 x 20 grid), must contain at least one square of green space around the building, and can be no more than two stories tall (including anything below ground). This includes all exterior amenities.
 ### House and Business Combinations
-A business with adjoined living quarters can be purchased for 700 gp. House and Businesses may be located in Covalon, or any of the following Expedition districts: Ikouga, Gornlar, Middlemist, Pudersno, Ratchethallow. Living quarters are to be located above or behind the store front, and may not exceed the lot's total square footage.
+A business with adjoined living quarters can be purchased for 700 gp. House and Businesses may be located in Covalon, or any of the following Expedition districts: Fey Courts, Gornlar, Ikouga, Middlemist, Pudersno, Ratchethallow. Living quarters are to be located above or behind the store front, and may not exceed the lot's total square footage.
 
 The size of the lot is 100' x 100' (20 x 20 grid), must contain at least one square of green space around the building, and can be no more than two stories tall (including anything below ground). This includes all exterior amenities.
 ### Guild Halls
@@ -71,7 +71,7 @@ A player serving as a guild leader may optionally purchase a hall for their guil
 
 Barracks-style common sleeping areas will be provided for nine members, with a private room for the guild leader. A small kitchen, bathroom, and living area are included.
 
-Lots must contain at least one square of green space around the building, and the building must be no taller than two stories (including anything below ground). Guild Halls may be located in Covalon, or any of the following Expedition districts: Ikouga, Gornlar, Middlemist, Pudersno, Ratchethallow.
+Lots must contain at least one square of green space around the building, and the building must be no taller than two stories (including anything below ground). Guild Halls may be located in Covalon, or any of the following Expedition districts: Fey Courts, Gornlar, Ikouga, Middlemist, Pudersno, Ratchethallow.
 
 > [!note|sibling] Roleplay Channels
 > Businesses and guild halls come with public roleplay channels that you can use to roleplay your personal and guild business. Standard housing does not come with a public roleplay channel, but you can always create a thread in one of the housing district channels.
@@ -91,7 +91,7 @@ In Covalon, laws are categorized into four groups of severity, where more severe
 
 The fourth category of severity details crimes that go against our Player Expectations; if any of these crimes are committed, there will be significant out-of-character consequences, which could include dismissal from the campaign. While we encourage players to interact with the Roleplay Laws in ways that enhance their roleplaying experience, we forbid players from breaking any of the laws that coincide with our Player Expectations (known as Extreme Offenses).
 
-Additionally, before a player character commits a crime against another player character(s), all involved players must privately and explicitly consent to the interaction. If your character becomes the victim of a roleplay crime that you did not explicitly consent to, please [\#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) and let the staff team know immediately.
+Additionally, before a player character commits a crime against another player character(s), all involved players must privately and explicitly consent to the interaction. If your character becomes the victim of a roleplay crime that you did not explicitly consent to, please [#create-a-ticket](https://discord.com/channels/802423566196539412/889551411438825492) and let the staff team know immediately.
 
 > [!tip|sibling] Crime as a Storytelling Device
 > Committing a crime can be a fun way to spice up roleplaying, especially when used to drive character development. For example, a character might steal something and be so riddled with guilt afterwards that they make a point to always do the right thing in the future, or a character might vandalize another character's business to ignite a conflict between the two.
