@@ -1,19 +1,21 @@
 ---
 Tags:
-- covalon/guild
-Headquarters: '[[Town Hall]]'
+  - covalon/guild
+Headquarters: "[[Town Hall]] Basement"
 Members:
-- Varrox
-- Doctor Nova
-- Hershk
-- Delbyar
-- Dagnir
-- Kali
-- Oozey
-- Ally
-- Rikella
-- Marius
-- Muffin (deceased)
+  - Varrox
+  - Doctor Nova
+  - Hershk
+  - Delbyar
+  - Dagnir
+  - Kali
+  - Oozey
+  - Ally
+  - Rikella
+  - Marius
+  - Reiko
+  - Soldarian
+  - Muffin (Deceased)
 Membership Requirements: trained in Crafting, Diplomacy, Medicine, Performance, Society, Survival or a related Lore skill
 Goals: reduce risk factors that may cause harm to Covalon and its citizens through proactive and preventative measures
 Values: standards, preventative safeguards, proactive involvement, teaching others
