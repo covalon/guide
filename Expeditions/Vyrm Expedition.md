@@ -4,9 +4,9 @@ Tags:
 Civilization: "[[The Kingdom of Vyrm]]"
 Soul Seed:
 Finale:
-Journey Date:
+Journey Date: 2026-11-13
 Finale First Cleared:
-_published: false
+_published: true
 ---
 Expedition to [[The Kingdom of Vyrm]].
 ## Expedition Log
@@ -15,17 +15,26 @@ Expedition to [[The Kingdom of Vyrm]].
 >
 > -
 
-SUMMARY
+Efforts to reclaim Vyrm are underway! 
+
+Our journey began at the [[Drifthaven Expedition|Drifthaven]] outpost, where we set out aboard our amphibious vehicle: the STICKBUG (Surface Tension Insectoid Crawler for Kicking, Blasting, and Unnecessary Gallivanting). The STICKBUG delivered our forward explorers to the woods just outside of Vyrm, where we have secured a basecamp. 
+
+During the journey, our finest Covalonians managed to expertly troubleshoot issues with the vehicle's Levitation Core, and rescued a number of Flash Beetles seemingly infected with some kind of mental curse ...potentially the Mindrot itself. 
+
+Just outside of the city itself, the STICKBUG's built in mental wards began reacting to powerful magic, which led to the decision to make camp in the woods just outside the city proper. 
+
+![[Vyrm Expedition-1795457018155.webp|The travelled path from Drifthaven to Vyrm]]
+
+We now focus on studying the Mindrot, investigating Vyrm, and reclaiming the city once and for all.
 
 ## Base Camp
-*Image to come.*
-
+![[Vyrm Expedition-1795454329992.webp|Covalon's outpost in Vyrm. Designed by Ateia.]]
 ## Missions
-| Mission | Summary |
-| :-- | :-- |
-| A: NAME | TEXT |
-| B: NAME | TEXT |
-| C: NAME | TEXT |
+| Mission               | Summary                                                                                                                                                                              |
+| :-------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A: Capture the Puppet | Capture a living puppet and safely return it to Covalon to study the Mindrot.                                                                                                        |
+| B: Map the Ritual     | Magically track minor ritual sites around Vyrm and destroy them before being discovered by guards, or succumbing to the Mindrot yourselves! <br>*Heavy emphasis on skill challenges* |
+| C: Destroy the Node   | Smash your way into a powerful ritual site and destroy the source of its magic before you can be overwhelmed by hordes of Mindrot puppets. *Heavy emphasis on combat*                |
 
 ## Finale
 **Boss:** ???

@@ -14,7 +14,8 @@ Covalon Status: unexplored
 aliases:
   - Vyrm
 Expedition Log: "[[Vyrm Expedition]]"
-Roleplay Channel: []
+Roleplay Channel:
+  - "[🪻 Vyrm Camp](https://discord.com/channels/802423566196539412/1570148490091171840)"
 ---
 The Kingdom of Vyrm had a storied history of success due to its unique partnership between its nobility and common citizens. Working hand-in-hand to secure better lives for their future generations, Vyrm prospered economically for dozens of generations, until recent years. Once the [[The Misty Shores|Misty Shores]] were captured by pirates, the king of Vyrm became increasingly uncooperative with the people's council, sealing himself and the nobility inside his palace right before the Cataclysm reached the nation.
 
